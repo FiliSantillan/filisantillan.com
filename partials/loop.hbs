@@ -1,0 +1,33 @@
+<div class="loop">
+   {{! This is the post loop - each post will be output using this markup }}
+    <div class="post-row">
+        <article class="js-post-block-grid post-block-grid">
+            {{#foreach posts}}
+                <div class="{{post_class}} js-post-block-grid-item post-block-grid-item" data-tags="{{#foreach tags}}{{#if @first}}{{name}}{{else}},{{name}}{{/if}}{{/foreach}}" data-groups='["{{#foreach tags}}{{#if @first}}{{name}}{{else}}","{{name}}{{/if}}{{/foreach}}"]'>
+                    <div class="post-block-wrapper">
+                        {{#if image}}
+                            <figure>
+                                <a href="{{url}}"><img src="{{image}}" alt="{{title}}" class="index-post-image"></a>
+                            </figure>
+                        {{/if}}
+                        <div class="post-block-grid-content {{#if image}}with-image{{else}}no-image{{/if}}">
+                            <header class="post-header">
+                                <h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
+                                <div class="post-title-separator"></div>
+                                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+                            </header>
+                            <div>
+                                <a href="{{url}}" class="post-read-more-btn">Leer más ...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/foreach}}
+        </article>
+    </div>
+
+    {{! Previous/next page links - displayed on every page - this is a custom pagination partial}}
+    <div class="row">
+        {{pagination}}
+    </div>
+</div>

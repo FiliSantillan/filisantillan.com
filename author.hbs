@@ -1,0 +1,17 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! The sticky header }}
+{{> 'sticky-header'}}
+
+{{! Everything inside the #author tags pulls data from the author }}
+{{#author}}
+    {{> "big-header"}}
+{{/author}}
+
+<main class="content author-template scene-element fade-in-right" role="main">
+    {{! The tag below includes the post loop - partials/loop.hbs }}
+    {{> "loop"}}
+</main>
+
+{{> "footer"}}

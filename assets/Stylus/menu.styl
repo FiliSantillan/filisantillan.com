@@ -1,0 +1,167 @@
+/*
+    Based on great Codrops article
+    http://tympanus.net/Development/OffCanvasMenuEffects/sideslide.html
+    with changes..
+*/
+.menu-container,
+.content-wrap {
+  overflow: hidden;
+  width: 100%;
+  height: 100%; }
+
+.menu-container .menu-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1001;
+  width: 18.75rem;
+  height: 100%;
+  background: #23222d;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  -webkit-transform: translate3d(100%, 0, 0);
+  -ms-transform: translate(100%, 0);
+  transform: translate3d(100%, 0, 0);
+  -webkit-transition: -webkit-transform 0.4s;
+  -ms-transition: -ms-transform 0.4s;
+  transition: transform 0.4s;
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -ms-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1); }
+  .menu-container .menu-wrap a {
+    color: white; }
+  .menu-container .menu-wrap a:hover, .menu-container .menu-wrap a:focus {
+    color: #cccccc; }
+  .menu-container .menu-wrap .close-button {
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    right: 0.9375rem;
+    top: 1.5625rem;
+    overflow: hidden;
+    text-indent: 1em;
+    font-size: 0.75em;
+    border: none;
+    background: transparent;
+    color: transparent;
+    outline: none; }
+    .menu-container .menu-wrap .close-button::before, .menu-container .menu-wrap .close-button::after {
+      content: '';
+      position: absolute;
+      width: 3px;
+      height: 100%;
+      top: 0;
+      left: 50%;
+      background: white; }
+    .menu-container .menu-wrap .close-button::before {
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg); }
+    .menu-container .menu-wrap .close-button::after {
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg); }
+
+.menu {
+  margin-top: 30%; }
+
+.menu,
+.icon-list {
+  height: 100%; }
+
+.icon-list {
+  -webkit-transform: translate3d(0, 100%, 0);
+  -ms-transform: translate(0, 100%);
+  transform: translate3d(0, 100%, 0);
+  -webkit-transition: -webkit-transform 0s 0.4s;
+  -ms-transition: -webkit-transform 0s 0.4s;
+  transition: transform 0s 0.4s;
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1); }
+  .icon-list a {
+    display: block;
+    padding: 0.8em;
+    -webkit-transform: translate3d(0, 31.25rem, 0);
+    -ms-transform: translate(0, 31.25rem);
+    transform: translate3d(0, 31.25rem, 0);
+    -webkit-transition: -webkit-transform 0s 0.4s;
+    -ms-transition: -ms-transform 0s 0.4s;
+    transition: transform 0s 0.4s;
+    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1); }
+    .icon-list a:nth-child(2) {
+      -webkit-transform: translate3d(0, 62.5rem, 0);
+      -ms-transform: translate(0, 62.5rem);
+      transform: translate3d(0, 62.5rem, 0); }
+    .icon-list a:nth-child(3) {
+      -webkit-transform: translate3d(0, 93.75rem, 0);
+      -ms-transform: translate(0, 93.75rem);
+      transform: translate3d(0, 125rem, 0); }
+    .icon-list a:nth-child(4) {
+      -webkit-transform: translate3d(0, 125rem, 0);
+      -ms-transform: translate(0, 125rem);
+      transform: translate3d(0, 187.5rem, 0); }
+    .icon-list a:nth-child(5) {
+      -webkit-transform: translate3d(0, 156.25rem, 0);
+      -ms-transform: translate(0, 156.25rem);
+      transform: translate3d(0, 250rem, 0); }
+    .icon-list a:nth-child(6) {
+      -webkit-transform: translate3d(0, 187.5rem, 0);
+      -ms-transform: translate(0, 187.5rem);
+      transform: translate3d(0, 312.5rem, 0); }
+    .icon-list a span {
+      margin-left: 0.625rem;
+      font-weight: 700; }
+    .icon-list a:hover, .icon-list a:active, .icon-list a:focus {
+      text-decoration: none; }
+
+.show-menu .menu-wrap {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.8s;
+  -ms-transition: -ms-transform 0.8s;
+  transition: transform 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1); }
+.show-menu .icon-list,
+.show-menu .icon-list a {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.8s;
+  -ms-transition: -ms-transform 0.8s;
+  transition: transform 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1); }
+.show-menu .icon-list a {
+  -webkit-transition-duration: 0.9s;
+  transition-duration: 0.9s; }
+
+.menu-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: none;
+  background-color: transparent; }
+  .menu-overlay.visible {
+    display: block; }
+
+html[data-useragent*='Android 4.0'] .menu-container .menu-wrap,
+html[data-useragent*='Android 4.1'] .menu-container .menu-wrap,
+html[data-useragent*='Android 4.2'] .menu-container .menu-wrap {
+  right: -20rem !important;
+  -webkit-transform: none !important;
+  transform: none !important; }
+html[data-useragent*='Android 4.0'] .show-menu .menu-wrap,
+html[data-useragent*='Android 4.1'] .show-menu .menu-wrap,
+html[data-useragent*='Android 4.2'] .show-menu .menu-wrap {
+  right: 0 !important; }
+html[data-useragent*='Android 4.0'] .icon-list,
+html[data-useragent*='Android 4.1'] .icon-list,
+html[data-useragent*='Android 4.2'] .icon-list {
+  -webkit-transform: none !important;
+  transform: none !important; }

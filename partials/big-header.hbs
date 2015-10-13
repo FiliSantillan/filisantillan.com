@@ -1,0 +1,129 @@
+{{!-- big header with image blog cover --}}
+<div class="big-header-container scene-element fade-in-down">
+    <header class="main-header"
+        {{#is "author"}}
+            {{#if cover}}
+                style="background-image: url({{cover}})"
+            {{else}}
+                {{#if @blog.cover}}
+                    style="background-image: url({{@blog.cover}})"
+                {{/if}}
+            {{/if}}
+        {{else}}
+            {{#is "tag"}}
+                {{#if tag.image}}
+                    style="background-image: url({{tag.image}})"
+                {{else}}
+                    {{#if @blog.cover}}
+                        style="background-image: url({{@blog.cover}})"
+                    {{/if}}
+                {{/if}}
+            {{else}}
+                {{#if @blog.cover}}
+                    style="background-image: url({{@blog.cover}})"
+                {{/if}}
+            {{/is}}
+        {{/is}}>
+
+        <div class="main-header-bars animated bounceInDown">
+            <i class="fa fa-fw fa-search js-open-search"></i>
+            {{#if @blog.navigation}}
+                <i class="fa fa-fw fa-bars js-open-main-menu"></i>
+            {{/if}}
+        </div>
+        <div class="row main-header-content">
+            <div class="small-12 columns animated bounceInLeft">
+                <h1 class="page-title"><span>{{@blog.title}}</span></h1>
+                <h2 class="page-description"><span>Web Developer</span></h2>
+                <p>{{@blog.description}}</p>
+            </div>
+        </div>
+    </header>
+
+    {{!-- only for index page view --}}
+    {{#is "index"}}
+        {{! The index page filters }}
+        <div class="index-filters">
+            <div class="row">
+                <div class="follow small-12 medium-6 columns animated bounceInRight">
+                    {{!-- Facebook --}}
+                    <a href="https://www.facebook.com/FiliSantillanMX" target="blank">
+                        <i class="fa fa-facebook-square"></i>
+                    </a>
+                    {{!-- Twitter --}}
+                    <a href="https://twitter.com/FiliMX" target="blank">
+                        <i class="fa fa-twitter-square"></i>
+                    </a>
+                    {{!-- Google --}}
+                    <a href="https://plus.google.com/+FiliMart%C3%ADnezZ" target="blank" >
+                        <i class="fa fa-google-plus-square"></i>
+                    </a>
+                    {{!-- Instagram --}}
+                    <a href="https://instagram.com/filimx/" target="blank">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                    {{!-- Linkedin --}}
+                    <a href="http://mx.linkedin.com/in/filisantillan" target="blank">
+                        <i class="fa fa-linkedin-square"></i>
+                    </a>
+                    {{!-- Github --}}
+                    <a href="https://github.com/FiliMX" target="blank">
+                        <i class="fa fa-github-square"></i>
+                    </a>
+                    {{!-- Mail --}}
+                    <a href="mailto:fili06604@gmail.com">
+                        <i class="fa fa-envelope"></i>
+                    </a>
+
+                </div>
+                {{!-- <div class="medium-6 columns text-right view animated bounceInUp">
+                    <a href="#" class="js-grid-filter-button">
+                        <i class="fa fa-fw fa-th"></i>
+                    </a>
+                    <a href="#" class="js-list-filter-button">
+                        <i class="fa fa-fw fa-align-justify"></i>
+                    </a>
+                </div> --}}
+            </div>
+        </div>
+    {{/is}}
+
+    {{!-- only for tag page view --}}
+    {{#is "tag"}}
+        <div class="tag-view-info">
+            <div class="row">
+                <div class="small-12 columns">
+                    <a href="{{@blog.url}}" class="back-to-index">
+                        <i class="fa fa-fw fa-chevron-circle-left"></i>
+                    </a>
+                    <span class="tag-view-label">
+                         <span class="tag-view-label-text">Posts con el tag: </span>
+                         <span class="tag-name">{{tag.name}}</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    {{/is}}
+
+    {{!-- only for author page view --}}
+    {{#is "author"}}
+        <div class="author-view-info">
+            <div class="row">
+                <div class="small-12 columns">
+                    {{#if image}}
+                        <div class="author-avatar">
+                            <a href="{{url}}rss/" class="no-smoothstate right author-rss"><i class="fa fa-rss"></i></a>
+                            <img class="author-avatar-img" src="{{image}}" alt="{{name}}">
+                        </div>
+                    {{/if}}
+                    <div class="author-name">
+                        {{name}}
+                    </div>
+                    <div class="author-bio">
+                        {{bio}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/is}}
+</div>

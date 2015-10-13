@@ -1,0 +1,16 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! The sticky header }}
+{{> 'sticky-header'}}
+
+{{! The big header with bg image }}
+{{> 'big-header'}}
+
+{{! The main content area on the homepage }}
+<main id="content" class="content tag-template scene-element fade-in-right" role="main">
+    {{! The tag below includes the post loop - partials/loop.hbs }}
+    {{> "loop"}}
+</main>
+
+{{> "footer"}}

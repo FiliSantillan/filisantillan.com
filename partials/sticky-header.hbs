@@ -1,0 +1,23 @@
+{{!-- sticky header partial --}}
+<div class="headroom headroom--top">
+    <div class="row row-with-header-logo">
+        {{#if @blog.logo}}
+            <div class="small-6 columns headroom-logo">
+                <a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /><strong class="title-sticky">{{@blog.title}}</strong></a>
+            </div>
+            <div class="small-6 columns text-right headeroom-icons">
+                <i class="fa fa-fw fa-search js-open-search"></i>
+                {{#if @blog.navigation}}
+                    <i class="fa fa-fw fa-bars js-open-main-menu"></i>
+                {{/if}}
+            </div>
+        {{else}}
+            <div class="small-12 columns text-right headeroom-icons">
+                <i class="fa fa-fw fa-search js-open-search"></i>
+                {{#if @blog.navigation}}
+                    <i class="fa fa-fw fa-bars js-open-main-menu"></i>
+                {{/if}}
+            </div>
+        {{/if}}
+    </div>
+</div>
