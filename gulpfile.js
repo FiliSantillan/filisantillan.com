@@ -2,8 +2,13 @@ var gulp = require('gulp'),
     stylus = require('gulp-stylus'),
     concat = require('gulp-concat'),
     minifyCss = require('gulp-minify-css'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    path = {},
+    stylusTasks = ['styles'];
 
+path.watch = {
+    stylus: ['./assets/stylus/*.styl']
+};
 
 gulp.task('styles', function () {
   gulp.src('./assets/Stylus/styles.styl')
@@ -35,4 +40,8 @@ gulp.task('concat-scripts', function() {
   return gulp.src('./assets/js/vendor/*.js')
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest('./assets/js/vendor/'));
+});
+
+gulp.task('watch', function () {
+    gulp.watch(path.watch.stylus, stylusTasks);
 });
