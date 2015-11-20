@@ -2,10 +2,14 @@
 <div class="headroom headroom--top">
     <div class="row row-with-header-logo">
         {{#if @blog.logo}}
-            <div class="small-6 columns headroom-logo">
+            <div class="medium-5 columns headroom-logo">
                 <a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /><strong class="title-sticky">{{@blog.title}}</strong></a>
             </div>
-            <div class="small-6 columns text-right headeroom-icons">
+            <div class="header-social small-8 medium-4 columns">
+                <a href='http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Ffilisantillan.com%2Frss%2F'  target='blank'><img id='feedlyFollow' src='http://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-small_2x.png' alt='follow us in feedly' width='66' height='20'></a>
+                <div class="fb-like" data-href="https://www.facebook.com/FiliSantillanMX" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+            </div>
+            <div class="small-4 medium-3 columns text-right headeroom-icons">
                 <i class="fa fa-fw fa-search js-open-search"></i>
                 {{#if @blog.navigation}}
                     <i class="fa fa-fw fa-bars js-open-main-menu"></i>

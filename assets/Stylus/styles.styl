@@ -167,7 +167,8 @@ a.button
     transform: translate3d(0, -100%, 0); }
   .headroom .headroom-logo img {
     max-height: 3.125rem;
-    float: left; }
+    float: left;
+    display none; }
   .headroom .headroom-logo a strong {
     font-size: 2.3em;
     color: white;
@@ -175,6 +176,8 @@ a.button
     display: none;}
 
   @media only screen and (min-width: 48em) {
+    .headroom .headroom-logo img {
+      display inline-block; }
     .headroom .headroom-logo a strong {
     display: inline-block;} }
   .headroom .headeroom-icons {
@@ -296,8 +299,8 @@ html.no-csstransforms3d .headroom {
     background-repeat: no-repeat;
     background-color: #23222d; }
     .big-header-container .main-header .main-header-content {
-      padding-top: 5.375rem;
-      padding-bottom: 1.75rem; }
+      padding-top: 4.375rem;
+      padding-bottom: 1rem; }
 
     .big-header-container .main-header .main-header-content p{
           font-size: 1em !important;
@@ -308,13 +311,14 @@ html.no-csstransforms3d .headroom {
       color: white;
       font-weight: 800;
       font-size: 2.875rem;
-      margin-bottom 0.3rem }
+      margin 0 0 0.1rem 0;
+    }
       @media only screen and (min-width: 48em) {
         .big-header-container .main-header .page-title {
           font-size: 3.75rem; } 
         .big-header-container .main-header .main-header-content {
-          padding-top: 5.375rem;
-          padding-bottom: 2.75rem; }
+          padding-top: 4.375rem;
+          padding-bottom: 1rem; }
 
         .big-header-container .main-header .main-header-content p{
           font-size: 1.1em !important;
@@ -648,7 +652,7 @@ html.no-csstransforms3d .headroom {
         text-decoration: none; }
 
 .tag-view-info {
-  height: 6.25rem;
+  height: 3.75rem;
   line-height: 6.25rem;
   background-color: white;
   font-weight: 400;
@@ -656,8 +660,8 @@ html.no-csstransforms3d .headroom {
   text-transform: uppercase;
   position: relative; }
   .tag-view-info .tag-view-label {
-    height: 6.25rem;
-    line-height: 6.25rem;
+    height: 3.75rem;
+    line-height: 3.75rem;
     float: left;
     margin-top: 0.125rem; }
     .tag-view-info .tag-view-label .tag-view-label-text {
@@ -667,8 +671,8 @@ html.no-csstransforms3d .headroom {
           display: inline; } }
   .tag-view-info .back-to-index {
     color: #23222d;
-    height: 6.25rem;
-    line-height: 6.25rem;
+    height: 3.75rem;
+    line-height: 3.75rem;
     float: left; }
     .tag-view-info .back-to-index .fa {
       -webkit-transition: -webkit-transform .2s;
@@ -690,12 +694,14 @@ html.no-csstransforms3d .headroom {
   background-color: white;
   font-weight: 400;
   font-size: 1.5rem;
-  position: relative; }
+  position: relative;
+  height: 3.75rem; }
   .author-view-info .author-name {
-    margin-top: 1.5625rem;
     font-weight: 900;
     font-size: 2rem;
-    font-family: "Bariol", arial; }
+    font-family: "Bariol", arial;
+    height: 3.75rem;
+    line-height: 3.75rem; }
   .author-view-info .author-bio {
     font-size: 0.8125rem;
     text-transform: none;
@@ -950,7 +956,43 @@ html.no-csstransforms3d .headroom {
 
 .twitter-tweet
   margin 0 auto
-        
+  
+.header-social > div
+.header-social > iframe
+.header-social a
+  vertical-align: top
+  margin 17px 5px 0 5px !important
+
+.header-social a
+  display inline-block
+  
+.feedly-big
+  position absolute
+  bottom 4.5em
+  right 1em
+  display none
+  
+.languages
+  display flex
+  justify-content flex-start
+  
+  .language
+    margin 0.5rem 1rem
+    
+    a
+      opacity 0.8
+      transition 0.3s
+      
+      &:hover
+        opacity 1
+  
+@media only screen and (min-width: 64em)
+  .feedly-big
+    position absolute
+    bottom 4.5em
+    right 1em
+    display inline-block
+    
 @media only screen and (min-width: 48em)
 
   .agenda
@@ -968,9 +1010,6 @@ html.no-csstransforms3d .headroom {
       .h2
         margin 0
         
-
-      
-
 /* Resolution iphone*/
 
 @media only screen and (min-width: 320px){

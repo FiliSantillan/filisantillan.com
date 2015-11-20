@@ -33,11 +33,23 @@
         </div>
         <div class="row main-header-content">
             <div class="small-12 columns animated bounceInLeft">
-                <h1 class="page-title"><span>{{@blog.title}}</span></h1>
-                <h2 class="page-description"><span>Web Developer</span></h2>
+                <a href="{{@blog.url}}"><h1 class="page-title"><span>{{@blog.title}}</span></h1></a>
                 <p>{{@blog.description}}</p>
+                <h2 class="page-description"><span>¿Qué te gustaría aprender hoy?</span></h2>
+                <div class="languages">
+                    <figure class="language">
+                        <a href="http://filisantillan.com/tag/html/"><img src="{{asset "html.png"}}" alt="HTML5"></a>
+                    </figure>
+                    <figure class="language">
+                        <a href="http://filisantillan.com/tag/css/"><img src="{{asset "css.png"}}" alt="CSS3"></a>
+                    </figure>
+                    <figure class="language">
+                        <a href="http://filisantillan.com/tag/javascript/"><img src="{{asset "javascript.png"}}" alt="JavaScript"></a>
+                    </figure>
+                </div>
             </div>
         </div>
+        <a class="feedly-big "href='http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Ffilisantillan.com%2Frss%2F'  target='blank'><img id='feedlyFollow' src='http://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-big_2x.png' alt='follow us in feedly' width='131' height='56'></a>
     </header>
 
     {{!-- only for index page view --}}
@@ -46,29 +58,35 @@
         <div class="index-filters">
             <div class="row">
                 <div class="follow small-12 medium-6 columns animated bounceInRight">
+                    {{!-- Codepen --}}
+                    <a href="http://codepen.io/FiliMX/" target="blank">
+                        <i class="fa fa-codepen"></i>
+                    </a>
                     {{!-- Facebook --}}
-                    <a href="https://www.facebook.com/FiliSantillanMX" target="blank">
-                        <i class="fa fa-facebook-square"></i>
+                    <a href="http://codepen.io/FiliMX/" target="blank">
+                        <i class="fa fa-facebook"></i>
                     </a>
                     {{!-- Twitter --}}
                     <a href="https://twitter.com/FiliMX" target="blank">
-                        <i class="fa fa-twitter-square"></i>
+                        <i class="fa fa-twitter"></i>
                     </a>
+
                     {{!-- Google --}}
-                    <a href="https://plus.google.com/+FiliMart%C3%ADnezZ" target="blank" >
+                    {{!-- <a href="https://plus.google.com/+FiliMart%C3%ADnezZ" target="blank" >
                         <i class="fa fa-google-plus-square"></i>
-                    </a>
+                    </a> --}}
+
                     {{!-- Instagram --}}
                     <a href="https://instagram.com/filimx/" target="blank">
                         <i class="fa fa-instagram"></i>
                     </a>
                     {{!-- Linkedin --}}
                     <a href="http://mx.linkedin.com/in/filisantillan" target="blank">
-                        <i class="fa fa-linkedin-square"></i>
+                        <i class="fa fa-linkedin"></i>
                     </a>
                     {{!-- Github --}}
                     <a href="https://github.com/FiliMX" target="blank">
-                        <i class="fa fa-github-square"></i>
+                        <i class="fa fa-github-alt"></i>
                     </a>
                     {{!-- Mail --}}
                     <a href="mailto:fili06604@gmail.com">
@@ -110,12 +128,12 @@
         <div class="author-view-info">
             <div class="row">
                 <div class="small-12 columns">
-                    {{#if image}}
+                    {{!-- {{#if image}}
                         <div class="author-avatar">
                             <a href="{{url}}rss/" class="no-smoothstate right author-rss"><i class="fa fa-rss"></i></a>
                             <img class="author-avatar-img" src="{{image}}" alt="{{name}}">
                         </div>
-                    {{/if}}
+                    {{/if}} --}}
                     <div class="author-name">
                         {{name}}
                     </div>
