@@ -1,22 +1,58 @@
 {{!< default}}
-{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
-{{!-- index content wrapper --}}
+{{> "header"}}
+{{> "cover"}}
+<section class="code">
+    <strong class="code__title">¿Qué te gustaría aprender hoy?</strong>
+    
+    <section class="code__languages">
 
-<div class="main-content-wrapper">
+        <figure class="language languages__html">
+            <a href="#"><img src='{{asset "images/html.png"}}' alt="html"></a>
+            <figcaption>
+                <a href="#">HTML</a>
+            </figcaption>
+        </figure>
 
-    {{! The sticky header }}
-    {{> 'sticky-header'}}
+        <figure class="language languages__css">
+            <a href="#"><img src='{{asset "images/css.png"}}' alt="css"></a>
+            <figcaption>
+                <a href="#">CSS</a>
+            </figcaption>
+        </figure>
 
-    {{! The big header with bg image }}
-    {{> 'big-header'}}
+        <figure class="language languages__javascript">
+            <a href="#"><img src='{{asset "images/javascript.png"}}' alt="javascript"></a>
+            <figcaption>
+                <a href="#">JavaScript</a>
+            </figcaption>
+        </figure>
 
-    {{! The main content area on the homepage }}
-    <main id="content" class="content home-template scene-element fade-in-right" role="main">
-        {{! The tag below includes the post loop - partials/loop.hbs }}
-        {{> "loop"}}
-    </main>
+    </section>
+</section>
 
-    {{> "footer"}}
+{{!-- <header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+    <nav class="main-nav overlay clearfix">
+        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
+        {{#if @blog.navigation}}
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        {{/if}}
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">{{@blog.title}}</h1>
+            <h2 class="page-description">{{@blog.description}}</h2>
+        </div>
+    </div>
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+</header> --}}
 
-</div>
+<section id="post__content" class="post__content" role="main">
+    {{> "loop"}}
+</section>
+
+{{!-- <main id="content" class="content" role="main">
+
+    {{> "loop"}}
+
+</main> --}}

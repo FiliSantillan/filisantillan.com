@@ -1,113 +1,72 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
     <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
 
-    {{!-- VENDOR --}}
-    <link rel="stylesheet" href="{{asset "css/vendor/vendor.css"}}">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {{!-- STYLES --}}
-    <link rel="stylesheet" href="{{asset "css/styles.css"}}">
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
-    {{!-- FONT AWESOME --}}
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/styles.css"}}" />
+    <link rel="stylesheet" href="{{asset "css/vendor/animate.css"}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='//fonts.googleapis.com/css?family=Raleway:700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
-    {{!-- GOOGLE FONTS --}}
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-
-    {{!-- FAVICON --}}
-    <link rel="shortcut icon" href="{{asset "fili.ico"}}">
-
-    {{!-- SEO --}}
-    <link rel="author" href="https://plus.google.com/+FiliMart%C3%ADnezZ/posts"/>
-    <link rel="canonical" href="{{url}}" />
-    
-    {{! METAS }}
-    <meta charset="utf-8">
-    <meta name="author" content="Filiberto Santillán">
-    <meta name="description" content="{{meta_description}}">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="PUVeHiwvS1T4_Q8FaieZHfE0GjL2rsKJ3LU4eabFdtA" />
-    
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
+<body class="{{body_class}} nav-closed">
 
-{{! If you want NiceScroll enabled just add 'nicescroll' class here in the body tag}}
-<body class="{{body_class}}">
+    {{!-- {{navigation}} --}}
 
-    {{! Everything else gets inserted here }}
-    <div id="main" class="main-scene">
+    <div class="site-wrapper">
+
+        {{! Everything else gets inserted here }}
         {{{body}}}
-        {{#if @blog.navigation}}
-            {{> "menu"}}
-        {{/if}}
-        {{> "search"}}
+
+        {{!-- <footer class="site-footer clearfix">
+            <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer> --}}
+
     </div>
 
-    {{!-- Back to top button --}}
-    <a href="#" class="back-to-top-btn js-back-to-top-btn hidden">
-        <i class="fa fa-chevron-up"></i>
-    </a>
-
+    {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="{{asset "js/headroom.js"}}"></script>
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
-    
-    {{!-- Social --}}
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56324eb92b56efd7" async="async"></script>
 
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-
-    {{! Gooogle Analytics }}
+    {{!-- <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script> --}}
+    {{! The main JavaScript file for Casper }}
+    {{!-- <script type="text/javascript" src="{{asset "js/index.js"}}"></script> --}}
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        // grab an element
+        var myElement = document.querySelector("header");
+        // construct an instance of Headroom, passing the element
+        var headroom = new Headroom(myElement, {
+          "offset": 205,
+          "tolerance": 5,
+          "classes": {
+            "initial": "animated",
+            "pinned": "slideDown",
+            "unpinned": "slideUp"
+          }
+        });
+        headroom.init();
 
-      ga('create', 'UA-59139943-5', 'auto');
-      ga('send', 'pageview');
-
+        // to destroy
+        headroom.destroy();
     </script>
 
-    {{! The main JavaScript files }}
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
-
-    <script src="{{asset "js/vendor/vendor.js"}}"></script>
-    <script src="{{asset "js/anima.js"}}"></script>
-
-    {{!-- MailChimp --}}
-    <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text'; /*
-     * Translated default messages for the $ validation plugin.
-     * Locale: ES
-     */
-    $.extend($.validator.messages, {
-      required: "Por favor, rellena este campo para que seas parte.",
-      remote: "Por favor, rellena este campo para que seas parte.",
-      email: "Por favor, escribe una dirección de correo válida",
-      url: "Por favor, escribe una URL válida.",
-      date: "Por favor, escribe una fecha válida.",
-      dateISO: "Por favor, escribe una fecha (ISO) válida.",
-      number: "Por favor, escribe un número entero válido.",
-      digits: "Por favor, escribe sólo dígitos.",
-      creditcard: "Por favor, escribe un número de tarjeta válido.",
-      equalTo: "Por favor, escribe el mismo valor de nuevo.",
-      accept: "Por favor, escribe un valor con una extensión aceptada.",
-      maxlength: $.validator.format("Por favor, no escribas más de {0} caracteres."),
-      minlength: $.validator.format("Por favor, no escribas menos de {0} caracteres."),
-      rangelength: $.validator.format("Por favor, escribe un valor entre {0} y {1} caracteres."),
-      range: $.validator.format("Por favor, escribe un valor entre {0} y {1}."),
-      max: $.validator.format("Por favor, escribe un valor menor o igual a {0}."),
-      min: $.validator.format("Por favor, escribe un valor mayor o igual a {0}.")
-    });}(jQuery));var $mcj = jQuery.noConflict(true);
-    </script>
-
+</body>
 </html>
