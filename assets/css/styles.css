@@ -178,6 +178,7 @@ th {
 }
 body {
   font-family: 'Josefin Sans', sans-serif;
+  background: #ebebeb;
 }
 figure {
   margin: 0;
@@ -192,10 +193,16 @@ h6 {
 }
 a {
   text-decoration: none;
+  color: #4299d4;
 }
 strong[class*="title"] {
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
+}
+ul[class*="list"] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .icon {
   background: none;
@@ -429,4 +436,68 @@ strong[class*="title"] {
   color: #4299d4;
   text-transform: uppercase;
   background-color: #242f38;
+}
+.pagination {
+  text-align: center;
+  margin: 2rem 0;
+}
+.pagination .newer-posts,
+.pagination .older-posts {
+  padding: 0.7rem 0.8rem;
+  display: inline-block;
+  border: 2px solid #1e252a;
+  color: #1e252a;
+}
+.footer {
+  background-color: #1e252a;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 0.5rem;
+}
+.footer__info {
+  width: 100%;
+  box-sizing: border-box;
+}
+.footer__info .footer__logo img {
+  width: 120px;
+  display: inline-block;
+}
+.footer__info .footer__logo figcaption {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1.5rem 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+.footer__social .footer__list {
+  display: flex;
+  justify-content: center;
+}
+.footer__social .footer__list .footer__item {
+  margin: 0 0.7rem;
+}
+.footer__social .footer__list .footer__item a {
+  color: #fff;
+  font-size: 1.7rem;
+}
+.footer__moreInfo .footer__love {
+  margin: 1.3rem 0;
+}
+.footer__moreInfo .footer__love span {
+  margin: 0 0.2rem;
+  font-size: 1.4rem;
+}
+.footer__moreInfo .footer__love span:nth-child(3) {
+  color: #eb104c;
+}
+.footer__moreInfo .footer__love img {
+  width: 45px;
+  vertical-align: top;
+}
+.footer__moreInfo .footer__technologies .footer__ghost,
+.footer__moreInfo .footer__technologies .footer__digitalOcean {
+  display: inline-block;
+  margin: 0.5rem;
 }
