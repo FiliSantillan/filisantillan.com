@@ -51,21 +51,18 @@
     {{!-- <script type="text/javascript" src="{{asset "js/index.js"}}"></script> --}}
     <script>
         // grab an element
-        var myElement = document.querySelector("header");
+        var elem = document.querySelector("header");
         // construct an instance of Headroom, passing the element
-        var headroom = new Headroom(myElement, {
+        var headroom = new Headroom(elem, {
           "offset": 205,
           "tolerance": 5,
           "classes": {
             "initial": "animated",
-            "pinned": "slideDown",
-            "unpinned": "slideUp"
+            "top": "bounceOutUp",
+            "notTop": "bounceInDown"
           }
         });
         headroom.init();
-
-        // to destroy
-        headroom.destroy();
     </script>
 
 </body>

@@ -1,16 +1,16 @@
 body
-    font-family 'Josefin Sans', sans-serif
+    font-family $FontDefault
     background #EBEBEB
 
 figure
     margin 0
     
 h1, h2, h3, h4, h5, h6
-    font-family 'Raleway', sans-serif
+    font-family $FontTitles
     
 a
     text-decoration none
-    color #4299D4
+    color $ColorBlue
     
 strong[class*="title"]
     font-family 'Raleway', sans-serif
@@ -26,7 +26,8 @@ ul[class*="list"]
     border none
     
 .btn-default
-    padding 0.5rem 2rem
+    padding 0.8rem 2rem
     background none
-    border 2px solid #1E252A
+    border 1px solid $ColorDark
+    box-shadow 3px 3px 0px $ColorDark
     text-transform uppercase

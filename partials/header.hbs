@@ -1,10 +1,15 @@
-<header class="headroom headroom--top header">
+<header class="header">
 
     <div class="header__title">
         <figure class="header__logo">
             <img src="{{@blog.logo}}" alt="Logo Fili Santillán">
         </figure>
         <strong class="header__name title">{{@blog.title}}</strong>
+        <nav class="nav">
+            <ul class="header__list">
+                {{navigation}}
+            </ul>
+        </nav>
     </div>
 
     <div class="header__options">
