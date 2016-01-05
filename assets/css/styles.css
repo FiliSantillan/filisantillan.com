@@ -519,6 +519,14 @@ ul[class*="list"] {
 .cover .logo img {
   width: 300px;
 }
+.cover .logo__author {
+  margin: 1rem 0 0 0;
+}
+.cover .logo__author img {
+  width: 200px;
+  border-radius: 50%;
+  border: 3px solid #1e252a;
+}
 .info-block .title {
   letter-spacing: 5px;
   font-size: 2.7rem;
@@ -551,6 +559,9 @@ ul[class*="list"] {
   color: #fff;
   font-size: 1.7rem;
 }
+.cover__feddly {
+  z-index: 500;
+}
 @media all and (min-width: 360px) {
   .info-block .title {
     font-size: 3.2rem;
@@ -563,6 +574,9 @@ ul[class*="list"] {
   }
 }
 @media all and (min-width: 1080px) {
+  .cover__tags {
+    height: 350px !important;
+  }
   .cover {
     position: relative;
     height: 470px;
@@ -579,6 +593,16 @@ ul[class*="list"] {
   }
   .cover .logo img {
     width: 600px;
+  }
+  .cover .logo__author {
+    margin: 0;
+    bottom: -8rem;
+  }
+  .cover .logo__author img {
+    width: 300px;
+  }
+  .info-block {
+    padding: 0 10rem;
   }
   .info-block .title {
     font-size: 6rem;
@@ -1241,7 +1265,7 @@ ul[class*="list"] {
 }
 /*------------------------------------*    $AUTHOR
 \*------------------------------------*/
-.post__author {
+.post__authorDescription {
   background: #e1e1e1;
   padding: 0.5rem;
   border-radius: 5px;

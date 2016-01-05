@@ -1,0 +1,15 @@
+<section class="cover cover__tags{{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}{{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}{{/if}}">
+    {{#if @blog.logo}}
+        <figure class="logo">
+            <img class="img" src="{{@blog.logo}}" alt="{{@blog.title}}" />
+        </figure>
+    {{/if}}
+    <div class="info-block">
+        <h1 class="title">{{tag.name}}</h1>
+        {{#if tag.description}}
+            <strong class="description">{{tag.description}}</strong>
+        {{else}}
+            <strong class="description">{{pagination.total}} Artículo(s)</strong>
+        {{/if}}
+    </div>
+</section>

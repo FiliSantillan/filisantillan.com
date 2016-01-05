@@ -1,12 +1,12 @@
 <section class="cover {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{/if}}">
-    {{#if @blog.logo}}
-        <figure class="logo">
-            <img class="img" src="{{@blog.logo}}" alt="{{@blog.title}}" />
+    {{#if image}}
+        <figure class="logo logo__author">
+            <img class="img" src="{{image}}" alt="{{@blog.title}}" />
         </figure>
     {{/if}}
     <div class="info-block">
-        <h1 class="title">{{@blog.title}}</h1>
-        <strong class="description">{{@blog.description}}</strong>
+        <h1 class="title">{{name}}</h1>
+        <strong class="description">{{bio}}</strong>
     </div>
     <div class="cover__social">
         <ul class="cover__list">

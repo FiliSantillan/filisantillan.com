@@ -5,81 +5,81 @@
 
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
-{{> "header"}}
+    {{> "header"}}
 
-{{> "cover-post"}}
+    {{> "cover-post"}}
 
-<main class="content" role="main">
-    <article class="post-container {{post_class}}">
+    <main class="content" role="main">
+        <article class="post-container {{post_class}}">
 
-        <section class="post-social">
-            <div class="addthis_sharing_toolbox"></div>
-        </section>
-
-        <section class="post-content">
-            {{content}}
-        </section>
-
-        <secntion class="post-social">
-            <strong class="post-socialText">¿Te gustó el artículo?, por favor, ayudame a compartir para que otras personas puedan leerlo.</strong>
-            <div class="addthis_sharing_toolbox"></div>
-        </secntion>
-
-        {{> "newsletter"}}
-
-        <section class="tags">
-            {{#foreach tags}}
-                <a href="{{url}}" class="tag">
-                    {{name}}
-                </a>
-            {{/foreach}}
-        </section>
-
-        {{#author}}
-
-            <section class="post__author">
-
-                {{#if image}}
-                <figure class="post__authorImage">
-                    <a class="img" href="{{url}}">
-                        <img src="{{image}}" alt="Fili Santillán">
-                    </a>
-                    {{#if website}}
-                        <a href="{{website}}"><button class="btn-default">Sobre mí</button></a>
-                    {{/if}}
-                </figure>
-                {{/if}}
-
-                <section class="post__authorInfo">
-                    <h4><a class="post__authorName"href="{{url}}">{{name}}</a></h4>
-
-                    {{#if location}}
-                        <span class="post__authorLocation fa fa-globe"></span>
-                        <span class="post__authorLocation icon-location">{{location}}</span>
-                    {{/if}}
-
-                    {{#if bio}}
-                        <p class="post__authorBio">{{bio}}</p>
-
-                    {{else}}
-                        <p>Read <a href="{{url}}">more posts</a> by this author.</p>
-
-                    {{/if}}
-
-                </section>
+            <section class="post-social">
+                <div class="addthis_sharing_toolbox"></div>
             </section>
 
-        {{/author}}
+            <section class="post-content">
+                {{content}}
+            </section>
+
+            <section class="post-social">
+                <strong class="post-socialText">¿Te gustó el artículo?, por favor, ayudame a compartir para que otras personas puedan leerlo.</strong>
+                <div class="addthis_sharing_toolbox"></div>
+            </section>
+
+            {{> "newsletter"}}
+
+            <section class="tags">
+                {{#foreach tags}}
+                    <a href="{{url}}" class="tag">
+                        {{name}}
+                    </a>
+                {{/foreach}}
+            </section>
+
+            {{#author}}
+
+                <section class="post__authorDescription">
+
+                    {{#if image}}
+                    <figure class="post__authorImage">
+                        <a class="img" href="{{url}}">
+                            <img src="{{image}}" alt="Fili Santillán">
+                        </a>
+                        {{#if website}}
+                            <a href="{{website}}"><button class="btn-default">Sobre mí</button></a>
+                        {{/if}}
+                    </figure>
+                    {{/if}}
+
+                    <section class="post__authorInfo">
+                        <h4><a class="post__authorName"href="{{url}}">{{name}}</a></h4>
+
+                        {{#if location}}
+                            <span class="post__authorLocation fa fa-globe"></span>
+                            <span class="post__authorLocation icon-location">{{location}}</span>
+                        {{/if}}
+
+                        {{#if bio}}
+                            <p class="post__authorBio">{{bio}}</p>
+
+                        {{else}}
+                            <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+
+                        {{/if}}
+
+                    </section>
+                </section>
+
+            {{/author}}
 
 
 
-        {{> "disqus"}}
+            {{> "disqus"}}
 
 
-    </article>
-</main>
+        </article>
+    </main>
 
-{{> "footer"}}
+    {{> "footer"}}
 
 {{/post}}
 {{!-- {{#post}} --}}
