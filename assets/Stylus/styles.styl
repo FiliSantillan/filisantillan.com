@@ -1,6 +1,7 @@
 @import normalize
 @import variables
 @import default
+@import syntax
 
 /*------------------------------------*\
     $COVER
@@ -29,6 +30,11 @@
         color $ColorGray
         margin 0 0 1.5rem 0
         display inline-block
+    
+    .info-date
+        font-size 1.2rem
+        span
+            margin 0 0.5rem 0 0
         
 .cover__social
     padding 1rem 0
@@ -76,7 +82,12 @@
             font-size 6rem
             margin 0 0 0.5rem 0
             padding 1rem 0 0 0
-            text-shadow 5px 5px 1px $ColorDark
+            text-shadow 5px 5px 0 $ColorDark
+            
+        .info-date
+            font-size 1.5rem
+            text-shadow 2px 2px 0 $ColorDark
+            font-weight 700
             
     .cover__social
         .cover__list
@@ -445,6 +456,10 @@
             .post__cover
                 height 300px
                 
+            .post__header
+                .post__title
+                    margin 0.3rem 0
+                
             .post__tags
                 display block
                 .tag
@@ -470,6 +485,9 @@
     $NEWSLETTER
 \*------------------------------------*/
         
+.newsletter
+    margin 1rem 0
+    
 .newsletter__form
     text-align center
     padding 1rem
@@ -662,4 +680,45 @@
         
     .footer__moreInfo
         width 30%
+        
+/*------------------------------------*\
+    $POST
+\*------------------------------------*/
 
+.post-container
+    max-width 900px
+    margin 0 auto
+    width 100%
+    padding 0.5rem
+    box-sizing border-box
+    
+.post-social
+    margin 1.5rem 0
+    text-align center
+    .addthis_sharing_toolbox a
+        margin 0 0.4rem
+        
+    .post-socialText
+        font-size 1.2rem
+        display inline-block
+        margin 0.5rem 0
+        
+.post-content 
+    line-height 1.2rem
+    img
+        display block
+        max-width 1080px
+        width 100%
+        height auto
+        margin 0 auto
+
+@media all and (min-width 1080px)
+    .post-social
+        .post-socialText
+            font-size 1.8rem
+
+    .post-content
+        font-size 1.2rem
+        line-height 1.5rem
+        img
+            width auto

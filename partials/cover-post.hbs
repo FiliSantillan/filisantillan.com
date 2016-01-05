@@ -1,0 +1,11 @@
+<section class="cover {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+    {{#if @blog.logo}}
+        <figure class="logo">
+            <img class="img" src="{{@blog.logo}}" alt="{{@blog.title}}" />
+        </figure>
+    {{/if}}
+    <div class="info-block">
+        <h1 class="title">{{title}}</h1>
+        <time class="info-date description" datetime="{{date format='YYYY-MM-DD'}}"><span class="fa fa-calendar-o"></span>{{date format="DD MMM YYYY"}}</time>
+    </div>
+</section>
