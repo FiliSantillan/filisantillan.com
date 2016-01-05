@@ -42,28 +42,12 @@
 
     {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="{{asset "js/headroom.js"}}"></script>
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
 
     {{!-- <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script> --}}
     {{! The main JavaScript file for Casper }}
     {{!-- <script type="text/javascript" src="{{asset "js/index.js"}}"></script> --}}
-    <script>
-        // grab an element
-        var elem = document.querySelector("header");
-        // construct an instance of Headroom, passing the element
-        var headroom = new Headroom(elem, {
-          "offset": 205,
-          "tolerance": 5,
-          "classes": {
-            "initial": "animated",
-            "top": "bounceOutUp",
-            "notTop": "bounceInDown"
-          }
-        });
-        headroom.init();
-    </script>
 
 </body>
 </html>

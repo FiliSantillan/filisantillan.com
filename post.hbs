@@ -5,6 +5,10 @@
 
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
+{{> "header"}}
+
+{{/post}}
+{{!-- {{#post}}
 
 <header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
     <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
@@ -96,4 +100,4 @@
     {{/prev_post}}
 </aside>
 
-{{/post}}
+{{/post}} --}}

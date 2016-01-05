@@ -11,9 +11,11 @@
     background-repeat no-repeat
     background-position center
     background-size cover
+    padding-top 4rem
     
     .logo
-        padding 1rem 0 0 0
+        img
+            width 300px
         
 .info-block
     .title
@@ -55,7 +57,7 @@
 @media all and (min-width 1080px)
     .cover
         position relative
-        height 450px
+        height 470px
         margin 0 0 8rem 0
         background-attachment fixed
         .logo
@@ -131,13 +133,7 @@
             
     .header__menu
         font-size 1.8rem
-        
-.headroom--top
-    top -68px
 
-.headromm--not-top
-    top 0
-    
 @media all and (min-width 360px)
     .header__options
         .header__search
@@ -171,7 +167,6 @@
             li
                 display inline-block
                 padding 0.5rem
-                border-right 1px solid rgba(white,0.4)
                 
     .header__options
         .header__menu
@@ -286,6 +281,7 @@
         background-color $ColorDark
         color white
         width 100%
+        max-width 868px
         position relative
         
         .post__first
@@ -349,6 +345,9 @@
         
 .post__description
     margin 0 0.5rem
+    
+.post__tags
+    display none
         
 .post__footer
     display flex
@@ -423,8 +422,16 @@
             .post__description
                 display block
                 
+                
             .post__footer
                 margin 0.8rem 0.5rem 0 0.5rem
+                
+@media all and (min-width 896px)
+    .post__content
+        .post
+            width 38%
+            .post__cover
+                height 260px
             
 @media all and (min-width 1080px)
     .post__content
@@ -434,10 +441,29 @@
                 height 200px
                 
         article:first-child
-            max-width 868px
             margin 2rem 0 1.5rem 0
             .post__cover
                 height 300px
+                
+            .post__tags
+                display block
+                .tag
+                    padding 0.5rem
+                    border 2px solid $ColorBlue
+                    margin 0.2rem
+                    display inline-block
+                    
+            .post__footer
+                .post__author
+                    a
+                        margin 0.9rem 3rem 0 0
+                        font-size 1.2rem
+                    img
+                        width 60px
+                        position absolute
+                        bottom -1.2rem
+                        right -1.2rem
+                        border 2px solid $ColorBlue
     
                 
 /*------------------------------------*\

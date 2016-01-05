@@ -222,9 +222,10 @@ ul[class*="list"] {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  padding-top: 4rem;
 }
-.cover .logo {
-  padding: 1rem 0 0 0;
+.cover .logo img {
+  width: 300px;
 }
 .info-block .title {
   letter-spacing: 5px;
@@ -266,7 +267,7 @@ ul[class*="list"] {
 @media all and (min-width: 1080px) {
   .cover {
     position: relative;
-    height: 450px;
+    height: 470px;
     margin: 0 0 8rem 0;
     background-attachment: fixed;
   }
@@ -342,12 +343,6 @@ ul[class*="list"] {
 .header__options .header__menu {
   font-size: 1.8rem;
 }
-.headroom--top {
-  top: -68px;
-}
-.headromm--not-top {
-  top: 0;
-}
 @media all and (min-width: 360px) {
   .header__options .header__search .header__input {
     width: 155px;
@@ -376,7 +371,6 @@ ul[class*="list"] {
   .header__title .nav li {
     display: inline-block;
     padding: 0.5rem;
-    border-right: 1px solid rgba(255,255,255,0.4);
   }
   .header__options .header__menu {
     display: none;
@@ -483,6 +477,7 @@ ul[class*="list"] {
   background-color: #1e252a;
   color: #fff;
   width: 100%;
+  max-width: 868px;
   position: relative;
 }
 .post__content article:first-child .post__first {
@@ -549,6 +544,9 @@ ul[class*="list"] {
 }
 .post__description {
   margin: 0 0.5rem;
+}
+.post__tags {
+  display: none;
 }
 .post__footer {
   display: flex;
@@ -632,6 +630,14 @@ ul[class*="list"] {
     margin: 0.8rem 0.5rem 0 0.5rem;
   }
 }
+@media all and (min-width: 896px) {
+  .post__content .post {
+    width: 38%;
+  }
+  .post__content .post .post__cover {
+    height: 260px;
+  }
+}
 @media all and (min-width: 1080px) {
   .post__content .post {
     width: 30%;
@@ -640,11 +646,30 @@ ul[class*="list"] {
     height: 200px;
   }
   .post__content article:first-child {
-    max-width: 868px;
     margin: 2rem 0 1.5rem 0;
   }
   .post__content article:first-child .post__cover {
     height: 300px;
+  }
+  .post__content article:first-child .post__tags {
+    display: block;
+  }
+  .post__content article:first-child .post__tags .tag {
+    padding: 0.5rem;
+    border: 2px solid #4299d4;
+    margin: 0.2rem;
+    display: inline-block;
+  }
+  .post__content article:first-child .post__footer .post__author a {
+    margin: 0.9rem 3rem 0 0;
+    font-size: 1.2rem;
+  }
+  .post__content article:first-child .post__footer .post__author img {
+    width: 60px;
+    position: absolute;
+    bottom: -1.2rem;
+    right: -1.2rem;
+    border: 2px solid #4299d4;
   }
 }
 /*------------------------------------*    $NEWSLETTER
