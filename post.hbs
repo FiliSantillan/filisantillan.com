@@ -27,7 +27,54 @@
 
         {{> "newsletter"}}
 
+        <section class="tags">
+            {{#foreach tags}}
+                <a href="{{url}}" class="tag">
+                    {{name}}
+                </a>
+            {{/foreach}}
+        </section>
+
+        {{#author}}
+
+            <section class="post__author">
+
+                {{#if image}}
+                <figure class="post__authorImage">
+                    <a class="img" href="{{url}}">
+                        <img src="{{image}}" alt="Fili Santillán">
+                    </a>
+                    {{#if website}}
+                        <a href="{{website}}"><button class="btn-default">Sobre mí</button></a>
+                    {{/if}}
+                </figure>
+                {{/if}}
+
+                <section class="post__authorInfo">
+                    <h4><a class="post__authorName"href="{{url}}">{{name}}</a></h4>
+
+                    {{#if location}}
+                        <span class="post__authorLocation fa fa-globe"></span>
+                        <span class="post__authorLocation icon-location">{{location}}</span>
+                    {{/if}}
+
+                    {{#if bio}}
+                        <p class="post__authorBio">{{bio}}</p>
+
+                    {{else}}
+                        <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+
+                    {{/if}}
+
+                </section>
+            </section>
+
+        {{/author}}
+
+
+
         {{> "disqus"}}
+
 
     </article>
 </main>
@@ -47,29 +94,6 @@
         <footer class="post-footer">
 
         {{! Everything inside the #author tags pulls data from the author }}
-        {{#author}}
-
-            {{#if image}}
-            <figure class="author-image">
-                <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
-            </figure>
-            {{/if}}
-
-            <section class="author">
-                <h4><a href="{{url}}">{{name}}</a></h4>
-
-                {{#if bio}}
-                    <p>{{bio}}</p>
-                {{else}}
-                    <p>Read <a href="{{url}}">more posts</a> by this author.</p>
-                {{/if}}
-                <div class="author-meta">
-                    {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
-                    {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
-                </div>
-            </section>
-
-        {{/author}}
 
             <section class="share">
                 <h4>Share this post</h4>

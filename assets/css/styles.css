@@ -1188,22 +1188,39 @@ ul[class*="list"] {
   padding: 0.5rem;
   box-sizing: border-box;
 }
-.post-social {
+.post-container .tags {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.post-container .tags .tag {
+  padding: 0.5rem 0.8rem;
+  background-color: #4299d4;
+  color: #1e252a;
+  font-size: 1.2rem;
+  vertical-align: top;
+  font-weight: 700;
+  margin: 0.3rem 0.5rem;
+}
+.post-container .tags .tag span {
+  margin: 0 0.3rem 0 0;
+}
+.post-container .post-social {
   margin: 1.5rem 0;
   text-align: center;
 }
-.post-social .addthis_sharing_toolbox a {
+.post-container .post-social .addthis_sharing_toolbox a {
   margin: 0 0.4rem;
 }
-.post-social .post-socialText {
+.post-container .post-social .post-socialText {
   font-size: 1.2rem;
   display: inline-block;
   margin: 0.5rem 0;
 }
-.post-content {
+.post-container .post-content {
   line-height: 1.2rem;
 }
-.post-content img {
+.post-container .post-content img {
   display: block;
   max-width: 1080px;
   width: 100%;
@@ -1211,14 +1228,69 @@ ul[class*="list"] {
   margin: 0 auto;
 }
 @media all and (min-width: 1080px) {
-  .post-social .post-socialText {
+  .post-container .post-social .post-socialText {
     font-size: 1.8rem;
   }
-  .post-content {
+  .post-container .post-content {
     font-size: 1.2rem;
     line-height: 1.5rem;
   }
-  .post-content img {
+  .post-container .post-content img {
     width: auto;
+  }
+}
+/*------------------------------------*    $AUTHOR
+\*------------------------------------*/
+.post__author {
+  background: #e1e1e1;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin: 1rem 0;
+}
+.post__authorImage {
+  text-align: center;
+}
+.post__authorImage img {
+  border-radius: 50%;
+  width: 200px;
+  margin: 0.5rem 0;
+  border: 3px solid #1e252a;
+}
+.post__authorImage a:nth-child(2) {
+  display: block;
+}
+.post__authorInfo {
+  text-align: center;
+}
+.post__authorInfo .post__authorLocation {
+  font-size: 1.2rem;
+}
+.post__authorInfo .post__authorBio {
+  font-size: 1.1rem;
+}
+@media all and (min-width: 640px) {
+  .post__authorImage {
+    width: 35%;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+  .post__authorImage a:nth-child(2) {
+    margin: 0 0 0.5rem 0;
+  }
+  .post__authorInfo {
+    width: 60%;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+  }
+  .post__authorInfo .post__authorName {
+    font-size: 2.5rem;
+  }
+  .post__authorInfo .post__authorLocation {
+    font-size: 1.5rem;
+  }
+  .post__authorInfo .post__authorBio {
+    font-size: 1.3rem;
   }
 }

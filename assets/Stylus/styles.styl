@@ -692,33 +692,107 @@
     padding 0.5rem
     box-sizing border-box
     
-.post-social
-    margin 1.5rem 0
-    text-align center
-    .addthis_sharing_toolbox a
-        margin 0 0.4rem
+    .tags
+        display flex
+        justify-content flex-start
+        flex-wrap wrap
         
-    .post-socialText
-        font-size 1.2rem
-        display inline-block
-        margin 0.5rem 0
+        .tag
+            padding 0.5rem 0.8rem
+            background-color $ColorBlue
+            color $ColorDark
+            font-size 1.2rem
+            vertical-align top
+            font-weight 700
+            margin 0.3rem 0.5rem
+            span
+                margin 0 0.3rem 0 0
+    
+    .post-social
+        margin 1.5rem 0
+        text-align center
+        .addthis_sharing_toolbox a
+            margin 0 0.4rem
+            
+        .post-socialText
+            font-size 1.2rem
+            display inline-block
+            margin 0.5rem 0
         
-.post-content 
-    line-height 1.2rem
-    img
-        display block
-        max-width 1080px
-        width 100%
-        height auto
-        margin 0 auto
+    .post-content 
+        line-height 1.2rem
+        img
+            display block
+            max-width 1080px
+            width 100%
+            height auto
+            margin 0 auto
 
 @media all and (min-width 1080px)
-    .post-social
-        .post-socialText
-            font-size 1.8rem
+    .post-container
+        .post-social
+            .post-socialText
+                font-size 1.8rem
 
-    .post-content
+        .post-content
+            font-size 1.2rem
+            line-height 1.5rem
+            img
+                width auto
+                
+/*------------------------------------*\
+    $AUTHOR
+\*------------------------------------*/
+
+.post__author
+    background $ColorGray-1
+    padding 0.5rem
+    border-radius 5px
+    margin 1rem 0
+    
+.post__authorImage
+    text-align center
+    
+    img
+        border-radius 50%
+        width 200px
+        margin 0.5rem 0
+        border 3px solid $ColorDark
+        
+    a:nth-child(2)
+        display block
+        
+.post__authorInfo
+    text-align center
+    
+    .post__authorLocation
         font-size 1.2rem
-        line-height 1.5rem
-        img
-            width auto
+        
+    .post__authorBio
+        font-size 1.1rem
+        
+
+@media all and (min-width 640px)
+    .post__authorImage
+        width 35%
+        display inline-block
+        box-sizing border-box
+        
+        a:nth-child(2)
+            margin 0 0 0.5rem 0
+        
+    .post__authorInfo
+        width 60%
+        box-sizing border-box
+        display inline-block
+        text-align left
+        vertical-align top
+        
+        .post__authorName
+            font-size 2.5rem
+            
+        .post__authorLocation
+            font-size 1.5rem
+            
+        .post__authorBio
+            font-size 1.3rem
