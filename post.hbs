@@ -5,9 +5,13 @@
 
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
-    {{> "header-progress"}}
+    {{> "progress"}}
+
+    {{> "header"}}
 
     {{> "cover-post"}}
+
+    {{> "menu"}}
 
     <main class="content" role="main">
         <article class="post-container {{post_class}}">

@@ -6,6 +6,34 @@
 /*------------------------------------*\
     $HEADER
 \*------------------------------------*/
+
+progress
+    position fixed
+    left 0
+    top 0
+    width 100%
+    height 4px
+    appearance none
+    border none
+    background-color transparent
+    color $ColorBlue
+    z-index 2000
+    
+progress::-webkit-progress-bar 
+    background-color transparent
+
+
+progress::-webkit-progress-value 
+     background-color $ColorBlue
+
+
+progress::-moz-progress-bar 
+     background-color $ColorBlue
+
+
+/*------------------------------------*\
+    $HEADER
+\*------------------------------------*/
         
 .header
     background-color $ColorDark

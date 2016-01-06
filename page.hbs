@@ -5,10 +5,14 @@
 
 {{! Everything inside the #post tags pulls data from the page }}
 {{#post}}
+    
+    {{> "progress"}}
 
     {{> "header-progress"}}
 
     {{> "cover-post"}}
+
+    {{> "menu"}}
 
     <main class="content" role="main">
         <article class="post-container {{post_class}}">
