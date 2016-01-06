@@ -4,6 +4,94 @@
 @import syntax
 
 /*------------------------------------*\
+    $HEADER
+\*------------------------------------*/
+        
+.header
+    background-color $ColorDark
+    color white
+    padding 0.5rem 0.3rem
+    position fixed
+    width 100%
+    box-sizing border-box
+    border-bottom 1px solid white
+    z-index 1000
+    
+.header-wrap
+    display flex
+    justify-content space-between
+    
+.header__title
+    display flex
+    justify-content flex-start
+    .header__logo
+        img
+            width 80px
+        
+    .header__name
+        display none
+    
+    .nav
+        display none
+        
+.header__options
+    display flex
+    justify-content flex-end
+    .header__search
+        margin 0.3rem 0.2rem 0 0
+        .header__input
+            padding 0.6rem 0.5rem
+            width 130px
+            border-radius 3px
+            border none
+            color $ColorDark
+            
+        .header__search
+            font-size 1.6rem
+            vertical-align -15%
+            
+    .header__menu
+        font-size 1.8rem
+
+@media all and (min-width 360px)
+    .header__options
+        .header__search
+            .header__input
+                width 155px
+                
+@media all and (min-width 412px)
+    .header__options
+        .header__search
+            .header__input
+                width 200px
+                
+@media all and (min-width 601px)
+    .header__title
+        .header__name
+            display block
+            font-size 2rem
+            margin 0.5rem 0 0 0.3rem
+            
+    .header__options
+        .header__search
+            .header__input
+                width 180px
+                
+@media all and (min-width 1080px)
+    .header__title
+        .nav
+            display block
+            margin 0.8rem 0 0 1.5rem
+            
+            li
+                display inline-block
+                padding 0.5rem
+                
+    .header__options
+        .header__menu
+            display none
+
+/*------------------------------------*\
     $COVER
 \*------------------------------------*/
 
@@ -119,95 +207,54 @@
                     font-size 2.5rem
                     
 /*------------------------------------*\
-    $HEADER
+    $MENU
 \*------------------------------------*/
-        
-.header
-    background-color $ColorDark
-    color white
-    padding 0.5rem 0.3rem
-    display flex
-    justify-content space-between
-    position fixed
-    width 100%
-    box-sizing border-box
-    border-bottom 1px solid white
-    z-index 1000
-    
-.header__title
-    display flex
-    justify-content flex-start
-    .header__logo
-        img
-            width 80px
-        
-    .header__name
-        display none
-    
-    .nav
-        display none
-        
-.header__options
-    display flex
-    justify-content flex-end
-    .header__search
-        margin 0.3rem 0.2rem 0 0
-        .header__input
-            padding 0.6rem 0.5rem
-            width 130px
-            border-radius 3px
-            border none
-            color $ColorDark
-            
-        .header__search
-            font-size 1.6rem
-            vertical-align -15%
-            
-    .header__menu
-        font-size 1.8rem
 
-@media all and (min-width 360px)
-    .header__options
-        .header__search
-            .header__input
-                width 155px
-                
-@media all and (min-width 412px)
-    .header__options
-        .header__search
-            .header__input
-                width 200px
-                
-@media all and (min-width 601px)
-    .header__title
-        .header__name
-            display block
-            font-size 2rem
-            margin 0.5rem 0 0 0.3rem
+.menu
+    background-color $ColorDark
+    width 80%
+    position fixed
+    top 0
+    z-index 2000
+    height 100vh
+    right 0
+    text-align center
+    display none
+    overflow-y scroll
+    
+    .menu__close
+        color white
+        position absolute
+        top 0.8rem
+        right 1rem
+        background none
+        border none
+        font-size 2rem
+    
+    .menu__logo
+        margin 1rem 0
+        img
+            width 200px
+        
+    .menu__list
+        padding 0 0 0 1.8rem
+        li
+            text-align left
+            font-size 1.1rem
+            padding 1rem 0 1rem 0
+            text-transform uppercase
             
-    .header__options
-        .header__search
-            .header__input
-                width 180px
-                
-@media all and (min-width 1080px)
-    .header__title
-        .nav
-            display block
-            margin 0.8rem 0 0 1.5rem
-            
-            li
-                display inline-block
+            a
                 padding 0.5rem
                 
-    .header__options
-        .header__menu
-            display none
+.menu-active
+    display block
+        
 
 /*------------------------------------*\
     $CODE
 \*------------------------------------*/
-    
+
 .code
     padding 0.5rem
     text-align center
@@ -598,12 +645,14 @@
 .footer
     background-color $ColorDark
     color white
-    display flex
-    justify-content space-between
-    flex-wrap wrap
     text-align center
     padding 0.5rem
     text-align center
+    
+.footer-wrap
+    display flex
+    justify-content space-between
+    flex-wrap wrap
     
 .footer__info
     width 100%
@@ -817,3 +866,83 @@
             
         .post__authorBio
             font-size 1.3rem
+            
+/*------------------------------------*\
+    $DIARY - DEMOS - VIDEOS - OTHERS
+\*------------------------------------*/
+
+.post__special
+    display flex
+    justify-content space-around
+    flex-wrap wrap
+    
+.special
+    width 100%
+    position relative
+    box-sizing border-box
+    margin 1rem 0 0.5rem 0
+    background-color $ColorDark
+    color white
+    
+    .special__title
+        position absolute
+        padding 0.5rem
+        top 0
+        z-index 500
+        margin 0 auto
+        background rgba(white,0.5)
+        text-align center
+        
+        h2
+            margin 0
+            font-size 1.3rem
+        
+    .special__cover
+        position relative
+        .special__image
+            width 100%
+            height 250px
+            
+        .special__platform
+            border-radius 50%
+            position absolute
+            width 60px
+            margin 0 auto
+            left 0
+            right 0
+            bottom -1.5rem
+            border 2px solid white
+            
+    .special__info
+        .special__titleInfo
+            font-size 1.6rem
+            text-align center
+            color white
+            
+        .special__theme
+            font-size 1.1rem
+            display block
+            margin 0.5rem 1rem
+            color white
+            
+    .special__button
+        text-align center
+        .btn-default
+            border-color $ColorBlue
+            box-shadow 2px 2px 0px $ColorBlue
+            margin 1rem 0
+            
+@media all and (min-width 640px)
+    .special
+        width 46%
+        
+@media all and (min-width 896px)
+    .special
+        width 40%
+        
+        .special__cover
+            .special__image
+                width 100%
+                height 200px
+        
+    

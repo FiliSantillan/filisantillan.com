@@ -6,14 +6,14 @@
 {{! Everything inside the #post tags pulls data from the page }}
 {{#post}}
 
-    {{> "header"}}
+    {{> "header-progress"}}
 
     {{> "cover-post"}}
 
     <main class="content" role="main">
         <article class="post-container {{post_class}}">
 
-            <section class="post-content">
+            <section class="post-content post__special">
                 {{content}}
             </section>
 

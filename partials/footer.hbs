@@ -1,60 +1,62 @@
 <footer class="footer">
-    <section class="footer__info">
-        <figure class="footer__logo">
-            <img src="{{@blog.logo}}" alt="Logo Fili Santillán">
-            <figcaption>
-                <strong class="footer__name title">{{@blog.title}}</strong>
-            </figcaption>
-        </figure>
-        <div class="footer__description">
-            <p>
-                {{@blog.description}}
-            </p>
-        </div>
-        <div class="footer__social">
-            <ul class="footer__list">
-                <li class="footer__item"><a href="" class="footer__icon fa fa-facebook"></a></li>
-                <li class="footer__item"><a href="" class="footer__icon fa fa-twitter"></a></li>
-                <li class="footer__item"><a href="" class="footer__icon fa fa-instagram"></a></li>
-                <li class="footer__item"><a href="" class="footer__icon fa fa-github-alt"></a></li>
-            </ul>
-        </div>
-    </section>
-    
-    <section class="footer__nav">
-        <div class="my-fancy-nav-wrapper">
-            <ul class="nav footer__list">
-                {{navigation}}
-            </ul>
-        </div>
-    </section>
-
-    <section class="footer__moreInfo">
-
-        <div class="footer__love">
-            <span class="fa fa-code"></span>
-            <span>+</span>
-            <span class="fa fa-heart"></span>
-            <span>=</span>
-            <img src="{{@blog.logo}}" alt="Logo Fili Santillán">
-        </div>
-
-        <div class="footer__technologies">
-            <p>Publicado con <a href="https://ghost.org/download/" target="blank">Ghost</a> & alojado en <a href="https://www.digitalocean.com/?refcode=c4c217c06b83" target="blank">DigitalOcean</a></p>
-
-            <figure class="footer__ghost">
-                <a href="https://ghost.org/download/" target="blank">
-                    <img src="{{asset "images/ghost.png"}}" alt="">
-                </a>
+    <div class="footer-wrap wrap-center">
+        <section class="footer__info">
+            <figure class="footer__logo">
+                <img src="{{@blog.logo}}" alt="Logo Fili Santillán">
+                <figcaption>
+                    <strong class="footer__name title">{{@blog.title}}</strong>
+                </figcaption>
             </figure>
-            <figure class="footer__digitalOcean">
-                <a href="https://www.digitalocean.com/?refcode=c4c217c06b83" target="blank">
-                    <img src="{{asset "images/sammy.png"}}" alt="">
-                </a>
-            </figure>
-            <p>
-                <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="blank">© 2015 Filiberto Santillán</a>
-            </p>
-        </div>
-    </section>
+            <div class="footer__description">
+                <p>
+                    {{@blog.description}}
+                </p>
+            </div>
+            <div class="footer__social">
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="" class="footer__icon fa fa-facebook"></a></li>
+                    <li class="footer__item"><a href="" class="footer__icon fa fa-twitter"></a></li>
+                    <li class="footer__item"><a href="" class="footer__icon fa fa-instagram"></a></li>
+                    <li class="footer__item"><a href="" class="footer__icon fa fa-github-alt"></a></li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="footer__nav">
+            <div class="my-fancy-nav-wrapper">
+                <ul class="nav footer__list">
+                    {{navigation}}
+                </ul>
+            </div>
+        </section>
+
+        <section class="footer__moreInfo">
+
+            <div class="footer__love">
+                <span class="fa fa-code"></span>
+                <span>+</span>
+                <span class="fa fa-heart"></span>
+                <span>=</span>
+                <img src="{{@blog.logo}}" alt="Logo Fili Santillán">
+            </div>
+
+            <div class="footer__technologies">
+                <p>Publicado con <a href="https://ghost.org/download/" target="blank">Ghost</a> & alojado en <a href="https://www.digitalocean.com/?refcode=c4c217c06b83" target="blank">DigitalOcean</a></p>
+
+                <figure class="footer__ghost">
+                    <a href="https://ghost.org/download/" target="blank">
+                        <img src="{{asset "images/ghost.png"}}" alt="">
+                    </a>
+                </figure>
+                <figure class="footer__digitalOcean">
+                    <a href="https://www.digitalocean.com/?refcode=c4c217c06b83" target="blank">
+                        <img src="{{asset "images/sammy.png"}}" alt="">
+                    </a>
+                </figure>
+                <p>
+                    <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="blank">© 2015 Filiberto Santillán</a>
+                </p>
+            </div>
+        </section>
+    </div>
 </footer>
