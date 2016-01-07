@@ -19,7 +19,7 @@ gulp.task('watch', function () {
 
 // Compila stylus a css
 gulp.task('styles', function () {
-  gulp.src('./assets/stylus/*.styl')
+  gulp.src('./assets/stylus/styles.styl')
     .pipe(stylus({
       compress: true
     }))
