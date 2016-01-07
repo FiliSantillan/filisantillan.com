@@ -335,6 +335,10 @@ table.plain tbody > tr:nth-child(odd) > td,
 table.plain tbody > tr:nth-child(odd) > th {
   background: transparent;
 }
+input,
+button {
+  outline: 0;
+}
 strong[class*="title"] {
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
@@ -354,6 +358,14 @@ ul[class*="list"] {
   border: 1px solid #1e252a;
   box-shadow: 3px 3px 0px #1e252a;
   text-transform: uppercase;
+  transition: 0.3s;
+}
+.btn-default:hover {
+  background: #1e252a;
+  box-shadow: 3px 3px 0px #4299d4;
+}
+.btn-default:active {
+  transform: scale(0.9);
 }
 .wrap-center {
   margin: 0 auto;
@@ -511,7 +523,7 @@ ul[class*="list"] {
 .php .xml {
   opacity: 0.5;
 }
-/*------------------------------------*    $HEADER
+/*------------------------------------*    $PROGRESS
 \*------------------------------------*/
 progress {
   position: fixed;
@@ -558,7 +570,9 @@ progress::-moz-progress-bar {
   width: 80px;
 }
 .header__title .header__name {
-  display: none;
+  font-size: 1.5rem;
+  margin: 0.8rem 0 0 0.3rem;
+  color: #fff;
 }
 .header__title .nav {
   display: none;
@@ -570,13 +584,6 @@ progress::-moz-progress-bar {
 .header__options .header__search {
   margin: 0.3rem 0.2rem 0 0;
 }
-.header__options .header__search .header__input {
-  padding: 0.6rem 0.5rem;
-  width: 130px;
-  border-radius: 3px;
-  border: none;
-  color: #1e252a;
-}
 .header__options .header__search .header__search {
   font-size: 1.6rem;
   vertical-align: -15%;
@@ -585,6 +592,10 @@ progress::-moz-progress-bar {
   font-size: 1.8rem;
 }
 @media all and (min-width: 360px) {
+  .header__title .header__name {
+    font-size: 1.9rem;
+    margin: 0.5rem 0 0 0.3rem;
+  }
   .header__options .header__search .header__input {
     width: 155px;
   }
@@ -595,11 +606,6 @@ progress::-moz-progress-bar {
   }
 }
 @media all and (min-width: 601px) {
-  .header__title .header__name {
-    display: block;
-    font-size: 2rem;
-    margin: 0.5rem 0 0 0.3rem;
-  }
   .header__options .header__search .header__input {
     width: 180px;
   }
@@ -612,6 +618,15 @@ progress::-moz-progress-bar {
   .header__title .nav li {
     display: inline-block;
     padding: 0.5rem;
+  }
+  .header__title .nav li a {
+    padding: 0.5rem 0.2rem 1rem 0.2rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: 0.3s;
+  }
+  .header__title .nav li a:hover {
+    color: #fff;
   }
   .header__options .header__menu {
     display: none;
@@ -656,7 +671,7 @@ progress::-moz-progress-bar {
   margin: 0 0.5rem 0 0;
 }
 .cover__social {
-  padding: 1rem 0;
+  padding: 0 0 0.5rem 0;
 }
 .cover__social .cover__list {
   display: flex;
@@ -668,9 +683,6 @@ progress::-moz-progress-bar {
 .cover__social .cover__list .cover__item a {
   color: #fff;
   font-size: 1.7rem;
-}
-.cover__feddly {
-  z-index: 500;
 }
 @media all and (min-width: 360px) {
   .info-block .title {
@@ -730,12 +742,23 @@ progress::-moz-progress-bar {
   }
   .cover__social .cover__list .cover__item a {
     font-size: 2.5rem;
+    transition: 0.3s;
+  }
+  .cover__social .cover__list .cover__item a:hover {
+    transform: scale(1.2);
+    color: #1e252a;
+  }
+  .cover__feddly img {
+    transition: 0.3s;
+  }
+  .cover__feddly img:hover {
+    transform: scale(1.2);
   }
 }
 /*------------------------------------*    $MENU
 \*------------------------------------*/
 .menu {
-  background-color: #1e252a;
+  background: rgba(30,37,42,0.95);
   width: 80%;
   position: fixed;
   top: 0;
@@ -929,7 +952,6 @@ progress::-moz-progress-bar {
   background-position: center;
   background-size: cover;
   height: 200px;
-  border-top: 7px solid #4299d4;
 }
 .post__header {
   padding: 0 0 0.5rem 0;
@@ -1064,7 +1086,7 @@ progress::-moz-progress-bar {
     display: inline-block;
   }
   .post__content article:first-child .post__footer .post__author a {
-    margin: 0.9rem 3rem 0 0;
+    margin: 0.9rem 1.3rem 0 0;
     font-size: 1.2rem;
   }
   .post__content article:first-child .post__footer .post__author img {
@@ -1107,6 +1129,7 @@ progress::-moz-progress-bar {
   padding: 0.8rem 0.5rem;
   margin: 0.5rem 0;
   border: 2px solid #4299d4;
+  color: #fff;
   background-color: #242f38;
 }
 .newsletter__content .newsletter__inputs input[type="submit"] {
@@ -1470,4 +1493,87 @@ progress::-moz-progress-bar {
     width: 100%;
     height: 200px;
   }
+}
+/*------------------------------------*    $SEARCH SECTION
+\*------------------------------------*/
+.big-search {
+  position: fixed;
+  width: 100%;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(30,37,42,0.95);
+  user-select: none;
+  z-index: 99999;
+  overflow-y: scroll;
+  transition: 0.3s;
+  display: none;
+}
+.big-search .icon-close {
+  font-size: 3.5rem;
+  color: #fff;
+  position: absolute;
+  right: 2rem;
+  top: 1.3rem;
+}
+.big-search .big-search__form {
+  width: 90%;
+  max-width: 1080px;
+  margin: 5rem auto 1rem auto;
+}
+.big-search .big-search__form input {
+  width: 100%;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  border: none;
+  color: #fff;
+  appearance: none;
+  font-size: 3rem;
+  font-weight: 800;
+  background: none;
+  border-bottom: 4px solid #fff;
+}
+.big-search .big-search__form input:placeholder-shown {
+  color: #fff;
+}
+.big-search .big-search__form ::-webkit-input-placeholder {
+  color: #fff;
+}
+.big-search .big-search__form :-moz-placeholder {
+  color: #fff;
+}
+.big-search .big-search__form ::-moz-placeholder {
+  color: #fff;
+}
+.big-search .big-search__form :-ms-input-placeholder {
+  color: #fff;
+}
+.big-search .big-search__form ::-ms-input-placeholder {
+  color: #fff;
+}
+.big-search .results {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1080px;
+  overflow-y: scroll;
+  padding: 0.5rem 1rem;
+}
+.big-search .results p {
+  display: none;
+}
+.big-search .results a {
+  display: block;
+}
+.big-search .results a span {
+  display: inline-block;
+  margin: 0 0.5rem 0 0;
+}
+.big-search .results a h2 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 0.6rem 0;
+  display: inline-block;
+}
+.search-active {
+  display: block;
 }

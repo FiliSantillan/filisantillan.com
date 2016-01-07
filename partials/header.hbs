@@ -3,9 +3,11 @@
     <div class="header-wrap wrap-center">
         <div class="header__title">
             <figure class="header__logo">
-                <img src="{{@blog.logo}}" alt="Logo Fili Santillán">
+                <a href="http://filisantillan.com/"><img src="{{@blog.logo}}" alt="Logo Fili Santillán"></a>
             </figure>
-            <strong class="header__name title">{{@blog.title}}</strong>
+            <a href="http://filisantillan.com/" class="header__name title">
+                <strong class="header__name title">{{@blog.title}}</strong>
+            </a>
             <nav class="nav">
                 <ul class="header__list">
                     {{navigation}}
@@ -15,11 +17,9 @@
 
         <div class="header__options">
             <div class="header__search">
-                <input class="header__input" type="text" placeholder="Buscar...">
-                <button class="header__search icon fa fa-search"></button>
+                <button class="header__search icon fa fa-search" id='js-openSearch'></button>
             </div>
             <button class="header__menu icon fa fa-bars" id="js-openMenu"></button>
         </div>
     </div>
-
 </header>

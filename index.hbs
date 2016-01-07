@@ -6,6 +6,8 @@
 
 {{> "menu"}}
 
+{{> "search"}}
+
 <section class="code">
     <strong class="code__title">¿Qué te gustaría aprender hoy?</strong>
     
@@ -35,22 +37,6 @@
     </section>
 </section>
 
-{{!-- <header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
-    <nav class="main-nav overlay clearfix">
-        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-        {{#if @blog.navigation}}
-            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-        {{/if}}
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">{{@blog.title}}</h1>
-            <h2 class="page-description">{{@blog.description}}</h2>
-        </div>
-    </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
-</header> --}}
-
 <section id="post__content" class="post__content" role="main">
     {{> "loop"}}
 </section>
@@ -61,10 +47,3 @@
 
 {{> "footer"}}
 
-
-
-{{!-- <main id="content" class="content" role="main">
-
-    {{> "loop"}}
-
-</main> --}}

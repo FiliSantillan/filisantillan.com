@@ -32,6 +32,7 @@ a
     text-decoration none
     color $ColorBlue
     
+    
 p, ul, ol, dl
     font-feature-settings 'liga' 1, 'onum' 1, 'kern' 1
     margin 0.8rem 0 0.8rem 0
@@ -145,6 +146,10 @@ table tbody > tr:nth-child(odd) > th
 table.plain tbody > tr:nth-child(odd) > td,
 table.plain tbody > tr:nth-child(odd) > th
    background: transparent
+   
+input
+button
+    outline 0
 
 strong[class*="title"]
     font-family 'Raleway', sans-serif
@@ -165,7 +170,15 @@ ul[class*="list"]
     border 1px solid $ColorDark
     box-shadow 3px 3px 0px $ColorDark
     text-transform uppercase
+    transition 0.3s
     
+    &:hover
+        background $ColorDark
+        box-shadow 3px 3px 0px $ColorBlue
+        
+    &:active
+        transform scale(0.9)
+        
 .wrap-center
     margin 0 auto
     max-width 1080px

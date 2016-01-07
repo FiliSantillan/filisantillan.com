@@ -1,23 +1,32 @@
 var $buttonShowMenu = document.getElementById('js-openMenu'),
-	$buttonHideMenu = document.getElementById('js-closeMenu'),
-	$menu = document.getElementById('js-menu'),
-	$html = document.querySelector('html'),
-	slide = new Hammer($html);
+    $buttonHideMenu = document.getElementById('js-closeMenu'),
+    $menu = document.getElementById('js-menu'),
+    $buttonShowSearch = document.getElementById('js-openSearch'),
+    $buttonHideSearch = document.getElementById('js-closeSearch'),
+    $search = document.getElementById('js-search')
 
 var showMenu = function(){
-	$menu.classList.add('menu-active');
+    $menu.classList.add('menu-active', 'bounceInRight');
 };
 
 var hideMenu = function(){
-	$menu.classList.remove('menu-active');
+    $menu.classList.remove('menu-active');
 };
 
+var showSearch = function(){
+    $search.classList.add('search-active');
+    $search.classList.add('search-active', 'zoomInDown');
+};
 
-slide.on('panleft', hideMenu);
-slide.on('panright', showMenu);
+var hideSearch = function(){
+    $search.classList.remove('search-active');
+};
 
 $buttonShowMenu.addEventListener('click',showMenu);
 $buttonHideMenu.addEventListener('click', hideMenu);
+
+$buttonShowSearch.addEventListener('click',showSearch);
+$buttonHideSearch.addEventListener('click', hideSearch);
 
 $(document).ready(function(){
     

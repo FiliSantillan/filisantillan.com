@@ -4,7 +4,7 @@
 @import syntax
 
 /*------------------------------------*\
-    $HEADER
+    $PROGRESS
 \*------------------------------------*/
 
 progress
@@ -57,7 +57,9 @@ progress::-moz-progress-bar
             width 80px
         
     .header__name
-        display none
+        font-size 1.5rem
+        margin 0.8rem 0 0 0.3rem
+        color white
     
     .nav
         display none
@@ -67,13 +69,6 @@ progress::-moz-progress-bar
     justify-content flex-end
     .header__search
         margin 0.3rem 0.2rem 0 0
-        .header__input
-            padding 0.6rem 0.5rem
-            width 130px
-            border-radius 3px
-            border none
-            color $ColorDark
-            
         .header__search
             font-size 1.6rem
             vertical-align -15%
@@ -82,6 +77,11 @@ progress::-moz-progress-bar
         font-size 1.8rem
 
 @media all and (min-width 360px)
+    .header__title
+        .header__name
+            font-size 1.9rem
+            margin 0.5rem 0 0 0.3rem
+            
     .header__options
         .header__search
             .header__input
@@ -93,13 +93,7 @@ progress::-moz-progress-bar
             .header__input
                 width 200px
                 
-@media all and (min-width 601px)
-    .header__title
-        .header__name
-            display block
-            font-size 2rem
-            margin 0.5rem 0 0 0.3rem
-            
+@media all and (min-width 601px)        
     .header__options
         .header__search
             .header__input
@@ -114,6 +108,15 @@ progress::-moz-progress-bar
             li
                 display inline-block
                 padding 0.5rem
+                
+                a
+                    padding 0.5rem 0.2rem 1rem 0.2rem
+                    font-weight 700
+                    font-size 1.1rem
+                    transition 0.3s
+                    
+                    &:hover
+                        color white
                 
     .header__options
         .header__menu
@@ -160,7 +163,7 @@ progress::-moz-progress-bar
             margin 0 0.5rem 0 0
         
 .cover__social
-    padding 1rem 0
+    padding 0 0 0.5rem 0
     .cover__list
         display flex
         justify-content center
@@ -171,9 +174,6 @@ progress::-moz-progress-bar
             a
                 color white
                 font-size 1.7rem
-
-.cover__feddly
-    z-index 500
         
 @media all and (min-width 360px)
     .info-block
@@ -233,13 +233,24 @@ progress::-moz-progress-bar
                 
                 a
                     font-size 2.5rem
+                    transition 0.3s
+                    
+                    &:hover
+                        transform scale(1.2)
+                        color $ColorDark
+                        
+    .cover__feddly
+        img
+            transition 0.3s
+            &:hover
+                transform scale(1.2)
                     
 /*------------------------------------*\
     $MENU
 \*------------------------------------*/
 
 .menu
-    background-color $ColorDark
+    background rgba($ColorDark,0.95)
     width 80%
     position fixed
     top 0
@@ -438,7 +449,6 @@ progress::-moz-progress-bar
     background-position center
     background-size cover
     height 200px
-    border-top 7px solid $ColorBlue
     
 .post__header
     padding 0 0 0.5rem 0
@@ -567,7 +577,7 @@ progress::-moz-progress-bar
             .post__footer
                 .post__author
                     a
-                        margin 0.9rem 3rem 0 0
+                        margin 0.9rem 1.3rem 0 0
                         font-size 1.2rem
                     img
                         width 60px
@@ -610,6 +620,7 @@ progress::-moz-progress-bar
             padding 0.8rem 0.5rem
             margin 0.5rem 0
             border 2px solid $ColorBlue
+            color white
             background-color $ColorDark-2
             
         input[type="submit"]
@@ -972,5 +983,90 @@ progress::-moz-progress-bar
             .special__image
                 width 100%
                 height 200px
-        
+                
+/*------------------------------------*\
+    $SEARCH SECTION
+\*------------------------------------*/
+
+.big-search
+    position fixed
+    width 100%
+    min-height 100%
+    top 0
+    left 0
+    background rgba($ColorDark,0.95)
+    user-select none
+    z-index 99999
+    overflow-y scroll
+    transition 0.3s
+    display none
     
+    .icon-close
+        font-size 3.5rem
+        color white
+        position absolute
+        right 2rem
+        top 1.3rem
+    
+    .big-search__form
+        width 90%
+        max-width 1080px
+        margin 5rem auto 1rem auto
+        input
+            width 100%
+            padding 2rem 1rem
+            box-sizing border-box
+            border none
+            color white
+            appearance none
+            font-size 3rem
+            font-weight 800
+            background none
+            border-bottom 4px solid white
+            
+        input:placeholder-shown
+            color white
+        
+        ::-webkit-input-placeholder
+            color white
+            
+        :-moz-placeholder
+            color white
+            
+        ::-moz-placeholder
+            color white
+            
+        :-ms-input-placeholder
+            color white
+            
+        ::-ms-input-placeholder
+            color white
+            
+    .results
+        margin 0 auto
+        width 100%
+        max-width 1080px
+        overflow-y scroll
+        padding 0.5rem 1rem
+        
+        p
+            display none
+            
+        a
+            display block
+            
+            span
+                display inline-block
+                margin 0 0.5rem 0 0
+                
+            h2
+                color white
+                font-size 1.2rem
+                margin 0.6rem 0
+                display inline-block
+                
+.search-active
+    display block
+            
+        
+        

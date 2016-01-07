@@ -1,18 +1,16 @@
 {{!< default}}
 
-{{! This is a page template. A page outputs content just like any other post, and has all the same
-    attributes by default, but you can also customise it to behave differently if you prefer. }}
-
-{{! Everything inside the #post tags pulls data from the page }}
 {{#post}}
     
     {{> "progress"}}
 
-    {{> "header-progress"}}
+    {{> "header"}}
 
     {{> "cover-post"}}
 
     {{> "menu"}}
+
+    {{> "search"}}
 
     <main class="content" role="main">
         <article class="post-container {{post_class}}">
@@ -24,6 +22,6 @@
         </article>
     </main>
 
-    {{> "footer"}}
-
 {{/post}}
+
+{{> "footer"}}

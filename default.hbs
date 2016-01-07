@@ -46,6 +46,7 @@
     <script src="{{asset "js/vendor/hammer.js"}}"></script>
     <script src="{{asset "js/vendor/highlight.pack.js"}}"></script>
     <script src="{{asset "js/vendor/prefixfree.min.js"}}"></script>
+    <script src="{{asset "js/vendor/jquery.ghostHunter.js"}}"></script>
     <script src="{{asset "js/filisantillan.js"}}"></script>
     <script>
         // https://highlightjs.org/
@@ -56,6 +57,11 @@
         };
 
         syntaxHighlighter();
+
+        $("#search-field").ghostHunter({
+            results         : "#results",
+            onKeyUp         : true
+        });
     </script>
     <script>
         // disqus init
@@ -89,12 +95,9 @@
 
         disqus(window.location.href, window.location.href, $('.post-title').text());
     </script>
+
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
-
-    {{!-- <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script> --}}
-    {{! The main JavaScript file for Casper }}
-    {{!-- <script type="text/javascript" src="{{asset "js/index.js"}}"></script> --}}
 
 </body>
 </html>
