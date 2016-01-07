@@ -104,8 +104,8 @@
             width 80px
         
     .header__name
-        font-size 1.5rem
-        margin 0.8rem 0 0 0.3rem
+        font-size 1.3rem
+        margin 0.9rem 0 0 0.3rem
         color white
         
     .nav
@@ -208,15 +208,19 @@
         font-size 2.7rem
         color $ColorGray
         font-weight 800
+        text-shadow 3px 3px 0 $ColorDark
+        padding 0 1rem
         
     .description
         letter-spacing 3px
         color $ColorGray
         margin 0 0 1.5rem 0
         display inline-block
+        padding 0 1rem
     
     .info-date
         font-size 1.2rem
+        text-shadow 1px 1px 0 $ColorDark
         span
             margin 0 0.5rem 0 0
         
@@ -277,12 +281,16 @@
                 width 300px
             
     .info-block
-        padding 0 10rem
+        
         .title
             font-size 6rem
             margin 0 0 0.5rem 0
-            padding 1rem 0 0 0
+            padding 1rem 5rem 0 5rem
             text-shadow 5px 5px 0 $ColorDark
+            
+        .description
+            padding 0 13rem
+            font-size 1.1rem
             
         .info-date
             font-size 1.5rem
@@ -566,7 +574,7 @@
             margin 0 0.4rem
             
         .post-socialText
-            font-size 1.2rem
+            font-size 1.4rem
             display inline-block
             margin 0.5rem 0
         
@@ -575,10 +583,13 @@
         
         img
             display block
-            max-width 1080px
-            width 100%
+            max-width 100%
+            width auto
             height auto
             margin 0 auto
+            
+        h1,h2,h3,h4,h5,h6
+            line-height 2rem
             
 // Resolución para Desktop
 @media all and (min-width 1080px)
@@ -591,7 +602,7 @@
             font-size 1.2rem
             line-height 1.5rem
             img
-                width auto
+                max-width 900px
                 
 /*------------------------------------*\
     8. $Loop
