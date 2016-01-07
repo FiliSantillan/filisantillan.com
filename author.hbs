@@ -1,20 +1,28 @@
+{{!-- Sitio para el autor --}}
+
 {{!< default}}
 
 {{#author}}
-
+    {{!-- Header --}}
     {{> "header"}}
+
+    {{!-- Portada --}}
     {{> "cover-author"}}
+
+    {{!-- Menú --}}
     {{> "menu"}}
+
+    {{!-- Busqueda--}}
     {{> "search"}}
 
 {{/author}}
 
-{{! The main content area on the homepage }}
+{{!-- Contenido --}}
 <main class="post__content" role="main">
 
-    {{! The tag below includes the post loop - partials/loop.hbs }}
     {{> "loop"}}
 
 </main>
 
+{{!-- Footer --}}
 {{> "footer"}}

@@ -1,7 +1,14 @@
-# Código para post estaticos
+# Fili Santillán
 
+![Logo Fili Santillán](https://s-media-cache-ak0.pinimg.com/originals/4b/2a/8a/4b2a8aedb10dc94db8b720acfecf703a.png)
 
-## Agenda
+Front-end Developer | Blogger | Platzi Student Ambassador
+
+## Código para post estaticos
+
+Código para usar el post estaticos especiales: Agenda - Demos - Videos - Otros Artículos
+
+### Agenda
 ```
 <article class="special">
  <header class="special__title">
@@ -24,7 +31,7 @@
 </article>
 ```
 
-## Demos
+### Demos
 ```
 <article class="special">
  <figure class="special__cover">
@@ -65,7 +72,7 @@
 </article>
 ```
 
-## Videos
+### Videos
 ```
 <article class="special">
  <header class="special__title">
@@ -79,7 +86,7 @@
  <section class="special__info">
   <h3 class="special__titleInfo">Aprende git empezando desde cero</h3>
   <span class="special__theme"><i class="fa fa-clock-o"></i> 45min.</span>
-  <span class="special__theme"><i class="fa fa-code"></i> Git</span>
+  <span class="special__theme"><i class="fa fa-terminal"></i> Git</span>
  </section>
 
  <footer class="special__button">
@@ -88,7 +95,7 @@
 </article>
 ```
 
-##Otros Artículos
+### Otros Artículos
 ```
 <article class="special">
  <header class="special__title">
@@ -109,3 +116,33 @@
  </footer>
 </article>
 ```
+
+## Orden para ejecutar dependencias de gulp
+
+### 1.- Minificar archivos JS
+```
+gulp minify-js
+```
+
+### 2.- Minificar archivos CSS
+```
+gulp minify-css
+```
+
+### 3.- Concatenar archivos JS
+```
+gulp concat-js
+```
+
+### 4.- Concatenar archivos CSS
+```
+gulp concat-css
+```
+
+## Contacto
+
+[Facebook](https://www.facebook.com/FiliSantillanMX)
+[Twitter](https://twitter.com/FiliMX)
+
+
+© Fili Santillán

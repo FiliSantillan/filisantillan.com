@@ -1,38 +1,46 @@
+{{!-- Sitio para artículos --}}
+
 {{!< default}}
 
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
-
-{{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
+    {{!-- Barra de progreso --}}
     {{> "progress"}}
-
+    
+    {{!-- Header --}}
     {{> "header"}}
 
+    {{!-- Portada --}}
     {{> "cover-post"}}
 
+    {{!-- Menú --}}
     {{> "menu"}}
-
+    
+    {{!-- Busqueda --}}
     {{> "search"}}
 
     <main class="content" role="main">
         <article class="post-container {{post_class}}">
 
+            {{!-- Redes sociales --}}
             <section class="post-social">
                 <div class="addthis_sharing_toolbox"></div>
             </section>
-
+            
+            {{!-- Lectura --}}
             <section class="post-content">
                 {{content}}
             </section>
-
+            
+            {{!-- Redes sociales --}}
             <section class="post-social">
                 <strong class="post-socialText">¿Te gustó el artículo?, por favor, ayudame a compartir para que otras personas puedan leerlo.</strong>
                 <div class="addthis_sharing_toolbox"></div>
             </section>
-
+            
+            {{!-- Newsletter --}}
             {{> "newsletter"}}
 
+            {{!-- Tags --}}
             <section class="tags">
                 {{#foreach tags}}
                     <a href="{{url}}" class="tag">
@@ -40,11 +48,13 @@
                     </a>
                 {{/foreach}}
             </section>
-
+            
+            {{!-- Autor --}}
             {{#author}}
 
                 <section class="post__authorDescription">
-
+                    
+                    {{!-- Imagen del autor --}}
                     {{#if image}}
                     <figure class="post__authorImage">
                         <a class="img" href="{{url}}">
@@ -55,7 +65,8 @@
                         {{/if}}
                     </figure>
                     {{/if}}
-
+                    
+                    {{!-- Información del autor --}}
                     <section class="post__authorInfo">
                         <h4><a class="post__authorName"href="{{url}}">{{name}}</a></h4>
 
@@ -78,68 +89,14 @@
             {{/author}}
 
 
-
+            {{!-- Disqus - Comentarios s--}}
             {{> "disqus"}}
 
 
         </article>
     </main>
 
+    {{!-- Footer --}}
     {{> "footer"}}
 
 {{/post}}
-{{!-- {{#post}} --}}
-
-{{!-- <main class="content" role="main">
-    <article class="{{post_class}}">
-
-        <section class="post-content">
-            {{content}}
-        </section>
-
-        <footer class="post-footer">
-
-        {{! Everything inside the #author tags pulls data from the author }}
-
-            <section class="share">
-                <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
-                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                    <span class="hidden">Twitter</span>
-                </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                    <span class="hidden">Facebook</span>
-                </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
-                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                    <span class="hidden">Google+</span>
-                </a>
-            </section>
-
-        </footer>
-
-    </article>
-</main>
-
-<aside class="read-next">
-    {{#next_post}}
-    <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-        <section class="post">
-            <h2>{{title}}</h2>
-            <p>{{excerpt words="19"}}&hellip;</p>
-        </section>
-    </a>
-    {{/next_post}}
-    {{#prev_post}}
-    <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-        <section class="post">
-            <h2>{{title}}</h2>
-            <p>{{excerpt words="19"}}&hellip;</p>
-        </section>
-    </a>
-    {{/prev_post}}
-</aside>
-
-{{/post}}
- --}}

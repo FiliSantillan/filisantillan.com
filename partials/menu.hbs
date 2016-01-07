@@ -1,10 +1,18 @@
+{{!-- Menú --}}
+
 <section class="menu animated" id="js-menu">
+
+	{{!-- Icono cerrar menú --}}
     <button class="menu__close fa fa-times" id="js-closeMenu"></button>
+
+	{{!-- Logo --}}
     <figure class="menu__logo">
         <img src="{{@blog.logo}}" alt="Logo Fili Santillán">
     </figure>
-
+	
+	{{!-- Lista de navegación --}}
     <ul class="menu__list">
         {{navigation}}
     </ul>
+
 </section>

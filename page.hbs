@@ -1,27 +1,33 @@
+{{!-- Sitio para artículos estaticos --}}
+
 {{!< default}}
 
 {{#post}}
-    
+    {{!-- Barra de progreso --}}
     {{> "progress"}}
-
+    
+    {{!-- Header --}}
     {{> "header"}}
-
+    
+    {{!-- Portada --}}
     {{> "cover-post"}}
 
+    {{!-- Menú --}}
     {{> "menu"}}
 
+    {{!-- Busqueda --}}
     {{> "search"}}
 
-    <main class="content" role="main">
-        <article class="post-container {{post_class}}">
-
-            <section class="post-content post__special">
-                {{content}}
-            </section>
-
-        </article>
-    </main>
+{{!-- Contenido --}}
+<main class="content" role="main">
+    <article class="post-container {{post_class}}">
+        <section class="post-content post__special">
+            {{content}}
+        </section>
+    </article>
+</main>
 
 {{/post}}
 
+{{!-- Footer --}}
 {{> "footer"}}

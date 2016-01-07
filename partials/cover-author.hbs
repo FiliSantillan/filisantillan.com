@@ -1,13 +1,21 @@
+{{!-- Portada para el autor --}}
+
 <section class="cover {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{/if}}">
+
+    {{!-- Imagen del autor --}}
     {{#if image}}
         <figure class="logo logo__author">
             <img class="img" src="{{image}}" alt="{{@blog.title}}" />
         </figure>
     {{/if}}
+
+    {{!-- Nombre y biografía --}}
     <div class="info-block">
         <h1 class="title">{{name}}</h1>
         <strong class="description">{{bio}}</strong>
     </div>
+    
+    {{!-- Redes sociales --}}
     <div class="cover__social">
         <ul class="cover__list">
             <li class="cover__item"><a href="" class="cover__icon fa fa-codepen"></a></li>
@@ -19,7 +27,10 @@
             <li class="cover__item"><a href="" class="cover__icon fa fa-linkedin"></a></li>
         </ul>
     </div>
-    <a class="cover__feddly" href='http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Ffilisantillan.com%2Frss%2F'  target='blank'>
+
+    {{!-- Icono de feedly --}}
+    <a class="cover__feedly" href='http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Ffilisantillan.com%2Frss%2F'  target='blank'>
         <img id='feedlyFollow' src='http://s3.feedly.com/img/follows/feedly-follow-rectangle-volume-medium_2x.png' alt='follow us in feedly' width='71' height='28'>
     </a>
+    
 </section>

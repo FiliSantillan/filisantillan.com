@@ -1,12 +1,19 @@
+{{!-- Paginación --}}
+
 <nav class="pagination" role="navigation">
+
+    {{!-- Anterior --}}
     {{#if prev}}
         <a class="newer-posts" href="{{page_url prev}}">
         	<i class="fa fa-arrow-left"></i> Anterior
         </a>
     {{/if}}
+
+    {{!-- Siguiente --}}
     {{#if next}}
         <a class="older-posts" href="{{page_url next}}">
         	Siguiente <i class="fa fa-arrow-right"></i>
         </a>
     {{/if}}
+    
 </nav>

@@ -1,23 +1,26 @@
+{{!-- Sitio para artículos estaticos --}}
+
 {{!< default}}
-{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
-{{! If we have a tag cover, display that - else blog cover - else nothing }}
-
+{{!-- Header --}}
 {{> "header"}}
 
+{{!-- Portada --}}
 {{> "cover-tags"}}
 
+{{!-- Menú --}}
 {{> "menu"}}
 
+{{!-- Busqueda --}}
 {{> "search"}}
 
 
-{{! The main content area on the homepage }}
+{{!-- Contenido --}}
 <main class="post__content" role="main">
 
-    {{! The tag below includes the post loop - partials/loop.hbs }}
     {{> "loop"}}
 
 </main>
 
+{{!-- Footer --}}
 {{> "footer"}}
