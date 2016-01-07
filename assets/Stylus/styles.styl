@@ -1,13 +1,54 @@
+
+/*------------------------------------*\
+    $Tabla de contenido
+\*------------------------------------*/
+
+/*
+
+    0.  Imports
+    1.  Progress
+    2.  Header
+    3.  Cover
+    4.  Menu
+    5.  Search
+    6.  Code
+    7.  Post
+    8.  Loop
+    9.  Newsletter
+    10. Pagination
+    11. Diary - Demos - Videos - Others
+    12. Footer
+
+*/
+
+
+
+/*------------------------------------*\
+    0. $Imports
+\*------------------------------------*/
+
+// Estilos que forman parte del sitio pero estan separados para una mejor oganización
+
+// Para normalizar los estilos
 @import normalize
+
+// Variables que se usan en los estilos
 @import variables
+
+// Estilos para el sitio por default y OOCSS
 @import default
+
+// Sintaxis para el código en los posts
 @import syntax
 
 /*------------------------------------*\
-    $PROGRESS
+    1. $Progress
 \*------------------------------------*/
 
-progress
+// Estilos de la barra de progreso que se utiliza para la lectura de los artículos 
+
+//Barra de progreso
+.progress
     position fixed
     left 0
     top 0
@@ -19,22 +60,26 @@ progress
     color $ColorBlue
     z-index 2000
     
-progress::-webkit-progress-bar 
+//Barra transparente por default
+.progress::-webkit-progress-bar 
     background-color transparent
-
-
-progress::-webkit-progress-value 
+    
+//Color de la barra al hacer scroll (Webkit)
+.progress::-webkit-progress-value 
      background-color $ColorBlue
 
-
-progress::-moz-progress-bar 
+//Color de la barra al hacer scroll (Moz)
+.progress::-moz-progress-bar 
      background-color $ColorBlue
 
 
 /*------------------------------------*\
-    $HEADER
+    2. $Header
 \*------------------------------------*/
-        
+
+// Estilos del Header
+
+// Header
 .header
     background-color $ColorDark
     color white
@@ -45,10 +90,12 @@ progress::-moz-progress-bar
     border-bottom 1px solid white
     z-index 1000
     
+// Contenedor para usar FlexBox y el contenido se centre
 .header-wrap
     display flex
     justify-content space-between
     
+// Título y logo del blog + nav (no visible)
 .header__title
     display flex
     justify-content flex-start
@@ -60,22 +107,25 @@ progress::-moz-progress-bar
         font-size 1.5rem
         margin 0.8rem 0 0 0.3rem
         color white
-    
+        
     .nav
         display none
-        
+
+
+// Iconos de busqueda y menú
 .header__options
     display flex
     justify-content flex-end
     .header__search
-        margin 0.3rem 0.2rem 0 0
-        .header__search
+        margin 0.6rem 0.5rem 0 0
+        .header__iconSearch
             font-size 1.6rem
             vertical-align -15%
             
     .header__menu
         font-size 1.8rem
-
+    
+// Resolución para dispositivos de 360px
 @media all and (min-width 360px)
     .header__title
         .header__name
@@ -86,19 +136,23 @@ progress::-moz-progress-bar
         .header__search
             .header__input
                 width 155px
-                
+
+// Resolución para dispositivos de 412px
 @media all and (min-width 412px)
     .header__options
         .header__search
             .header__input
                 width 200px
                 
-@media all and (min-width 601px)        
+
+// Resolución para dispositivos de 601px
+@media all and (min-width 601px)
     .header__options
         .header__search
             .header__input
                 width 180px
-                
+
+// Resolución para Desktop
 @media all and (min-width 1080px)
     .header__title
         .nav
@@ -123,9 +177,12 @@ progress::-moz-progress-bar
             display none
 
 /*------------------------------------*\
-    $COVER
+    3. $Cover
 \*------------------------------------*/
 
+// Estilos de la imagen de portada para el blog/artículo/autor/tags + contenido
+
+//Portada + logo
 .cover
     text-align center
     background-repeat no-repeat
@@ -143,7 +200,8 @@ progress::-moz-progress-bar
             width 200px
             border-radius 50%
             border 3px solid $ColorDark
-            
+
+// Título / Descripción / Fecha
 .info-block
     .title
         letter-spacing 5px
@@ -162,6 +220,7 @@ progress::-moz-progress-bar
         span
             margin 0 0.5rem 0 0
         
+// Redes sociales
 .cover__social
     padding 0 0 0.5rem 0
     .cover__list
@@ -174,18 +233,22 @@ progress::-moz-progress-bar
             a
                 color white
                 font-size 1.7rem
-        
+
+// Resolución para dispositivos de 360px
 @media all and (min-width 360px)
     .info-block
         .title
             font-size 3.2rem
 
+// Resolución para dispositivos de 412px
 @media all and (min-width 412px)
     .info-block
         .title
             letter-spacing 5px
             font-size 3.7rem
             
+
+// Resolución para Desktop
 @media all and (min-width 1080px)
     .cover__tags
         height 350px !important
@@ -246,9 +309,12 @@ progress::-moz-progress-bar
                 transform scale(1.2)
                     
 /*------------------------------------*\
-    $MENU
+    4. $Menu
 \*------------------------------------*/
 
+// Estilos del menú lateral (En caso de estar en un smartphone/tablet)
+
+// Menú
 .menu
     background rgba($ColorDark,0.95)
     width 80%
@@ -285,709 +351,18 @@ progress::-moz-progress-bar
             
             a
                 padding 0.5rem
-                
+
+// En caso de que el menú este activo
 .menu-active
     display block
-        
-
-/*------------------------------------*\
-    $CODE
-\*------------------------------------*/
-
-.code
-    padding 0.5rem
-    text-align center
-    
-    &__title
-        margin 1rem 0
-        font-size 1.4rem
-        text-transform uppercase
-        display inline-block
-        
-    &__languages
-        display flex
-        justify-content space-around
-        
-.language
-    padding 0.5rem 0.7rem
-    border 4px solid white
-    background-color $ColorGray
-    
-    img
-        width 60px
-        padding 0 0 0.5rem 0
-        
-    figcaption
-        padding 0.5rem 0 0 0
-        border-top 2px solid $ColorDark
-        
-        a
-            color $ColorDark
-            font-weight 700
-
-@media all and (min-width 360px)
-    .code
-        &__title
-            font-size 1.4rem
-            letter-spacing 1px
-
-@media all and (min-width 412px)
-    .code
-        &__title
-            font-size 1.5rem
-            letter-spacing 2px
-            
-    .language
-        img
-            width 70px
-            
-@media all and (min-width 1080px)
-    .code
-        
-        &__title
-            font-size 2rem
-            
-        &__languages
-            justify-content space-around
-            
-    .language
-        padding 0.5rem 1.5rem
-        border 4px solid white
-        background-color $ColorGray
-        
-        img
-            width 128px
-            
-        figcaption
-            padding 0.5rem 0 0 0
-            border-top 3px solid $ColorDark
-            
-            a
-                color $ColorDark
-                font-weight 700
-                font-size 1.2rem
-
     
 /*------------------------------------*\
-    $POSTS
-\*------------------------------------*/
-            
-.post__content
-    display flex
-    justify-content space-around
-    flex-wrap wrap
-    max-width 1200px
-    margin 0 auto
-    
-    .post
-        box-sizing border-box
-        padding 0 0 0.8rem 0
-        width 100%
-        margin 0.7rem 0.7rem
-        background-color white
-        
-        .post__first
-            padding 0.8rem
-            text-align center
-            text-transform uppercase
-            letter-spacing 3px
-            display none
-        
-        
-    article:first-child
-        margin 1rem 0 0 0
-        background-color $ColorDark
-        color white
-        width 100%
-        max-width 868px
-        position relative
-        
-        .post__first
-            padding 0.8rem
-            text-transform uppercase
-            letter-spacing 3px
-            display block
-            position absolute
-            background-color white
-            color $ColorDark
-            top 0
-            
-        .post__cover
-            max-width 640px
-            border none
-            
-        .post__header
-            border-bottom 3px solid $ColorBlue
-            .post__title
-                a
-                    color $ColorBlue
-                    
-        .post__description
-            display none
-            
-        .post__footer
-            margin 0.8rem 0.5rem 0 0.5rem
-            .post__author
-                display block
-                a
-                    vertical-align top
-                    margin 0.9rem 0.5rem 0 0
-                    display inline-block
-                    
-                img
-                    width 40px
-                    border-radius 50%
-            
-        .btn-default
-            border 1px solid $ColorBlue
-            box-shadow 3px 3px 0px $ColorBlue
-        
-.post__cover
-    width 100%
-    max-width 412px
-    background-repeat no-repeat
-    background-position center
-    background-size cover
-    height 200px
-    
-.post__header
-    padding 0 0 0.5rem 0
-    border-bottom 3px solid $ColorDark
-    margin 0 0.5rem
-    
-    .post__title
-        margin 0.8rem 0 0 0
-        a
-            color $ColorDark
-        
-.post__description
-    margin 0 0.5rem
-    
-.post__tags
-    display none
-        
-.post__footer
-    display flex
-    justify-content space-between
-    margin 0 0.5rem
-    .post__author
-        display none
-        
-@media all and (min-width 360px)
-    .post__cover
-        height 230px
-        
-@media all and (min-width 412px)
-    .post__content
-        .post
-            width 412px
-        
-    .post__cover
-        height 250px
-        
-@media all and (min-width 601px)
-    .post__content
-        article:first-child
-            padding 0 0 1.5rem 0
-            .post__cover
-                height 350px
-                
-            .post__header
-                 margin 0 2.5rem
-                 .post__title
-                     margin 1.5rem 0 0 0
-                
-            .post__footer
-                margin 0.8rem 2.5rem 0 2.5rem
-                                
-@media all and (min-width 640px)
-    .post__content
-        .post
-            width 46%
-            .post__cover
-                height 200px
-                
-        article:first-child
-            margin 2rem 0 0 0
-            padding 0
-            position relative
-            
-            .post__first
-                top -1.5rem
-                left 1rem
-                padding 1rem
-                border 2px solid $ColorDark
-                
-            .post__cover
-                width 49%
-                height 250px
-                display inline-block
-                box-sizing border-box
-                vertical-align bottom
-            
-            .post__info
-                width 50%
-                display inline-block
-                box-sizing border-box
-                vertical-align top
-                
-            .post__header
-                 margin 0 0.5rem
-                 .post__title
-                     margin 1rem 0 0 0
-                     
-            .post__description
-                display block
-                
-                
-            .post__footer
-                margin 0.8rem 0.5rem 0 0.5rem
-                
-@media all and (min-width 896px)
-    .post__content
-        .post
-            width 38%
-            .post__cover
-                height 260px
-            
-@media all and (min-width 1080px)
-    .post__content
-        .post
-            width 30%
-            .post__cover
-                height 200px
-                
-        article:first-child
-            margin 2rem 0 1.5rem 0
-            .post__cover
-                height 300px
-                
-            .post__header
-                .post__title
-                    margin 0.3rem 0
-                
-            .post__tags
-                display block
-                .tag
-                    padding 0.5rem
-                    border 2px solid $ColorBlue
-                    margin 0.2rem
-                    display inline-block
-                    
-            .post__footer
-                .post__author
-                    a
-                        margin 0.9rem 1.3rem 0 0
-                        font-size 1.2rem
-                    img
-                        width 60px
-                        position absolute
-                        bottom -1.2rem
-                        right -1.2rem
-                        border 2px solid $ColorBlue
-    
-                
-/*------------------------------------*\
-    $NEWSLETTER
-\*------------------------------------*/
-        
-.newsletter
-    margin 1rem 0
-    
-.newsletter__form
-    text-align center
-    padding 1rem
-    background-color $ColorDark
-    color white
-    margin 1rem 0 0 0
-    
-.newsletter__content
-    .newsletter__title
-        font-size 1.5rem
-        display block
-    .newsletter__otherTitle
-        font-weight 300
-        
-    .newsletter__inputs
-        margin 0.8rem 0 0 0
-        input
-            color $ColorDark
-            
-        input[type="text"]
-        input[type="email"]
-            width 100%
-            box-sizing border-box
-            padding 0.8rem 0.5rem
-            margin 0.5rem 0
-            border 2px solid $ColorBlue
-            color white
-            background-color $ColorDark-2
-            
-        input[type="submit"]
-            padding 0.8rem
-            border 1px solid $ColorBlue
-            box-shadow 2px 2px 0px $ColorBlue
-            background none
-            color $ColorBlue
-            text-transform uppercase
-            background-color $ColorDark-2
-            
-@media all and (min-width 412px)
-    .newsletter__form
-        padding 1.5rem 1rem
-        
-@media all and (min-width 601px)
-    .newsletter__form
-        padding 1.5rem
-        
-    .newsletter__content
-        .newsletter__inputs
-            input[type="text"]
-            input[type="email"]
-                width 48%
-    
-            input:first-child
-                margin 0.5rem 3% 0.5rem 0
-                
-@media all and (min-width 1080px)
-    .newsletter__form
-        padding 2rem 0
-        margin 0 auto
-        max-width 868px
-        
-    .newsletter__content
-        width 600px
-        margin 0 auto
-        .newsletter__title
-            font-size 2.2rem
-        .newsletter__otherTitle
-            font-size 1.4rem
-
-/*------------------------------------*\
-    $PAGINATION
-\*------------------------------------*/
-            
-.pagination
-    text-align center
-    margin 2rem 0
-    .newer-posts
-    .older-posts
-        padding 0.7rem 0.8rem
-        display inline-block
-        border 2px solid $ColorDark
-        color $ColorDark
-        
-/*------------------------------------*\
-    $FOOTER
+    5. $Search
 \*------------------------------------*/
 
-.footer
-    background-color $ColorDark
-    color white
-    text-align center
-    padding 0.5rem
-    text-align center
-    
-.footer-wrap
-    display flex
-    justify-content space-between
-    flex-wrap wrap
-    
-.footer__info
-    width 100%
-    box-sizing border-box
-    .footer__logo
-        img
-            width 120px
-            display inline-block
-        figcaption
-            display inline-block
-            vertical-align top
-            margin 1.5rem 0 0 0.5rem
-            font-size 1.5rem
+// Estilos para la sección de para busqueda de artículos
 
-.footer__social
-    .footer__list
-        display flex
-        justify-content center
-        
-        .footer__item
-            margin 0 0.7rem
-            
-            &:first-child
-                margin 0 0.7rem 0 0
-            
-            a
-                color white
-                font-size 1.7rem
-                
-.footer__nav
-    display none
-                
-.footer__moreInfo
-    width 100%
-    .footer__love
-        margin 1.3rem 0
-        span
-            margin 0 0.2rem
-            font-size 1.4rem
-            &:nth-child(3)
-                color $ColorPink
-                
-        img
-            width 45px
-            vertical-align top
-            
-    .footer__technologies
-        .footer__ghost
-        .footer__digitalOcean
-            display inline-block
-            margin 0.5rem
-            
-@media all and (min-width 412px)
-    .footer__info
-        .footer__logo
-            figcaption
-                font-size 2rem
-                
-    .footer__social
-        .footer__list
-            .footer__item
-                margin 0 0.9rem
-                
-                a
-                    font-size 2rem
-                    
-@media all and (min-width 601px)
-    .footer
-        text-align left
-        
-    .footer__info
-        width 48%
-        .footer__logo
-            figcaption
-                font-size 1.5rem
-    
-    .footer__social
-        .footer__list
-            justify-content flex-start
-        
-    .footer__moreInfo
-        width 48%
-        
-@media all and (min-width 1080px)
-    .footer
-        padding 0.5rem 2rem
-    .footer__info
-        width 30%
-        
-    .footer__nav
-        width 30%
-        display block
-        li
-            margin 1rem 0
-        
-    .footer__moreInfo
-        width 30%
-        
-/*------------------------------------*\
-    $POST
-\*------------------------------------*/
-
-.post-container
-    max-width 900px
-    margin 0 auto
-    width 100%
-    padding 0.5rem
-    box-sizing border-box
-    
-    .tags
-        display flex
-        justify-content flex-start
-        flex-wrap wrap
-        
-        .tag
-            padding 0.5rem 0.8rem
-            background-color $ColorBlue
-            color $ColorDark
-            font-size 1.2rem
-            vertical-align top
-            font-weight 700
-            margin 0.3rem 0.5rem
-            span
-                margin 0 0.3rem 0 0
-    
-    .post-social
-        margin 1.5rem 0
-        text-align center
-        .addthis_sharing_toolbox a
-            margin 0 0.4rem
-            
-        .post-socialText
-            font-size 1.2rem
-            display inline-block
-            margin 0.5rem 0
-        
-    .post-content 
-        line-height 1.2rem
-        img
-            display block
-            max-width 1080px
-            width 100%
-            height auto
-            margin 0 auto
-
-@media all and (min-width 1080px)
-    .post-container
-        .post-social
-            .post-socialText
-                font-size 1.8rem
-
-        .post-content
-            font-size 1.2rem
-            line-height 1.5rem
-            img
-                width auto
-                
-/*------------------------------------*\
-    $AUTHOR
-\*------------------------------------*/
-
-.post__authorDescription
-    background $ColorGray-1
-    padding 0.5rem
-    border-radius 5px
-    margin 1rem 0
-    
-.post__authorImage
-    text-align center
-    
-    img
-        border-radius 50%
-        width 200px
-        margin 0.5rem 0
-        border 3px solid $ColorDark
-        
-    a:nth-child(2)
-        display block
-        
-.post__authorInfo
-    text-align center
-    
-    .post__authorLocation
-        font-size 1.2rem
-        
-    .post__authorBio
-        font-size 1.1rem
-        
-
-@media all and (min-width 640px)
-    .post__authorImage
-        width 35%
-        display inline-block
-        box-sizing border-box
-        
-        a:nth-child(2)
-            margin 0 0 0.5rem 0
-        
-    .post__authorInfo
-        width 60%
-        box-sizing border-box
-        display inline-block
-        text-align left
-        vertical-align top
-        
-        .post__authorName
-            font-size 2.5rem
-            
-        .post__authorLocation
-            font-size 1.5rem
-            
-        .post__authorBio
-            font-size 1.3rem
-            
-/*------------------------------------*\
-    $DIARY - DEMOS - VIDEOS - OTHERS
-\*------------------------------------*/
-
-.post__special
-    display flex
-    justify-content space-around
-    flex-wrap wrap
-    
-.special
-    width 100%
-    position relative
-    box-sizing border-box
-    margin 1rem 0 0.5rem 0
-    background-color $ColorDark
-    color white
-    
-    .special__title
-        position absolute
-        padding 0.5rem
-        top 0
-        z-index 500
-        margin 0 auto
-        background rgba(white,0.5)
-        text-align center
-        
-        h2
-            margin 0
-            font-size 1.3rem
-        
-    .special__cover
-        position relative
-        .special__image
-            width 100%
-            height 250px
-            
-        .special__platform
-            border-radius 50%
-            position absolute
-            width 60px
-            margin 0 auto
-            left 0
-            right 0
-            bottom -1.5rem
-            border 2px solid white
-            
-    .special__info
-        .special__titleInfo
-            font-size 1.6rem
-            text-align center
-            color white
-            
-        .special__theme
-            font-size 1.1rem
-            display block
-            margin 0.5rem 1rem
-            color white
-            
-    .special__button
-        text-align center
-        .btn-default
-            border-color $ColorBlue
-            box-shadow 2px 2px 0px $ColorBlue
-            margin 1rem 0
-            
-@media all and (min-width 640px)
-    .special
-        width 46%
-        
-@media all and (min-width 896px)
-    .special
-        width 40%
-        
-        .special__cover
-            .special__image
-                width 100%
-                height 200px
-                
-/*------------------------------------*\
-    $SEARCH SECTION
-\*------------------------------------*/
-
+// Contenedor de la busqueda - Icono para cerrar - Input - Resultados
 .big-search
     position fixed
     width 100%
@@ -1065,8 +440,770 @@ progress::-moz-progress-bar
                 margin 0.6rem 0
                 display inline-block
                 
+// En caso de que la busqueda este activa
 .search-active
     display block
+        
+
+/*------------------------------------*\
+    6. $Code
+\*------------------------------------*/
+
+// Estilos para la sección de ¿QUÉ TE GUSTARÍA APRENDER HOY? que esta antes de los artículos
+
+// Contenedor y título
+.code
+    padding 0.5rem
+    text-align center
+    
+    &__title
+        margin 1rem 0
+        font-size 1.4rem
+        text-transform uppercase
+        display inline-block
+        
+    &__languages
+        display flex
+        justify-content space-around
+ 
+// Lenguajes: HTML - CSS - JavaScript
+.language
+    padding 0.5rem 0.7rem
+    border 4px solid white
+    background-color $ColorGray
+    
+    img
+        width 60px
+        padding 0 0 0.5rem 0
+        
+    figcaption
+        padding 0.5rem 0 0 0
+        border-top 2px solid $ColorDark
+        
+        a
+            color $ColorDark
+            font-weight 700
+
+// Resolución para dispositivos de 360px
+@media all and (min-width 360px)
+    .code
+        &__title
+            font-size 1.4rem
+            letter-spacing 1px
+
+// Resolución para dispositivos de 412px
+@media all and (min-width 412px)
+    .code
+        &__title
+            font-size 1.5rem
+            letter-spacing 2px
             
+    .language
+        img
+            width 70px
+
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    .code
         
+        &__title
+            font-size 2rem
+            
+        &__languages
+            justify-content space-around
+            
+    .language
+        padding 0.5rem 1.5rem
+        border 4px solid white
+        background-color $ColorGray
         
+        img
+            width 128px
+            
+        figcaption
+            padding 0.5rem 0 0 0
+            border-top 3px solid $ColorDark
+            
+            a
+                color $ColorDark
+                font-weight 700
+                font-size 1.2rem
+                
+/*------------------------------------*\
+    7. $Post
+\*------------------------------------*/
+
+// Estilos de la lectura de un artículo
+
+//Contenedor de todo el artículo + tags, botones para compartir
+.post-container
+    max-width 900px
+    margin 0 auto
+    width 100%
+    padding 0.5rem
+    box-sizing border-box
+    
+    .tags
+        display flex
+        justify-content flex-start
+        flex-wrap wrap
+        
+        .tag
+            padding 0.5rem 0.8rem
+            background-color $ColorBlue
+            color $ColorDark
+            font-size 1.2rem
+            vertical-align top
+            font-weight 700
+            margin 0.3rem 0.5rem
+            span
+                margin 0 0.3rem 0 0
+    
+    .post-social
+        margin 1.5rem 0
+        text-align center
+        .addthis_sharing_toolbox a
+            margin 0 0.4rem
+            
+        .post-socialText
+            font-size 1.2rem
+            display inline-block
+            margin 0.5rem 0
+        
+    .post-content 
+        line-height 1.2rem
+        
+        img
+            display block
+            max-width 1080px
+            width 100%
+            height auto
+            margin 0 auto
+            
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    .post-container
+        .post-social
+            .post-socialText
+                font-size 1.8rem
+
+        .post-content
+            font-size 1.2rem
+            line-height 1.5rem
+            img
+                width auto
+                
+/*------------------------------------*\
+    8. $Loop
+\*------------------------------------*/
+
+// Estilos de los artículos en el index (No la lectura)
+
+// Contenedor de todos los artículos
+.post__content
+    display flex
+    justify-content space-around
+    flex-wrap wrap
+    max-width 1200px
+    margin 0 auto
+    
+    .post
+        box-sizing border-box
+        padding 0 0 0.8rem 0
+        width 100%
+        margin 0.7rem 0.7rem
+        background-color white
+        
+        .post__first
+            padding 0.8rem
+            text-align center
+            text-transform uppercase
+            letter-spacing 3px
+            display none
+        
+    // Estilos únicamente para el primer artículo
+    article:first-child
+        margin 1rem 0 0 0
+        background-color $ColorDark
+        color white
+        width 100%
+        max-width 868px
+        position relative
+        
+        .post__first
+            padding 0.8rem
+            text-transform uppercase
+            letter-spacing 3px
+            display block
+            position absolute
+            background-color white
+            color $ColorDark
+            top 0
+            
+        .post__cover
+            max-width 640px
+            border none
+            
+        .post__header
+            border-bottom 3px solid $ColorBlue
+            .post__title
+                a
+                    color $ColorBlue
+                    
+        .post__description
+            display none
+            
+        .post__footer
+            display flex
+            justify-content space-between
+            margin 0.8rem 0.5rem 0 0.5rem
+            .post__author
+                display block
+                
+                a
+                    vertical-align top
+                    margin 0.9rem 0.5rem 0 0
+                    display inline-block
+                    
+                .post__image
+                    margin 0.2rem 0.5rem 0 0
+                    
+                img
+                    width 40px
+                    border-radius 50%
+            
+        .btn-default
+            border 1px solid $ColorBlue
+            box-shadow 3px 3px 0px $ColorBlue
+            
+// Imagen de los artículos
+.post__cover
+    width 100%
+    max-width 412px
+    background-repeat no-repeat
+    background-position center
+    background-size cover
+    height 200px
+   
+// Título de los artículos
+.post__header
+    padding 0 0 0.5rem 0
+    border-bottom 3px solid $ColorDark
+    margin 0 0.5rem
+    
+    .post__title
+        margin 0.8rem 0 0 0
+        a
+            color $ColorDark
+
+// Descripción de los artílos
+.post__description
+    margin 0 0.5rem
+
+// Tags para los artículos (Solo se muestran para el primer artículo)
+.post__tags
+    display none
+    
+
+// Autor de los artículos (Solo se muestran para el primer artículo)
+.post__footer
+    margin 0 0.5rem
+    .post__author
+        display none
+        
+// Resolución para dispositivos de 360px
+@media all and (min-width 360px)
+    .post__cover
+        height 230px
+        
+// Resolución para dispositivos de 412px
+@media all and (min-width 412px)
+    .post__content
+        .post
+            width 412px
+        
+    .post__cover
+        height 250px
+    
+// Resolución para dispositivos de 601px
+@media all and (min-width 601px)
+    .post__content
+        article:first-child
+            padding 0 0 1.5rem 0
+            .post__cover
+                height 350px
+                
+            .post__header
+                 margin 0 2.5rem
+                 .post__title
+                     margin 1.5rem 0 0 0
+                
+            .post__footer
+                margin 0.8rem 2.5rem 0 2.5rem
+
+// Resolución para dispositivos de 640px
+@media all and (min-width 640px)
+    .post__content
+        .post
+            width 46%
+            .post__cover
+                height 200px
+                
+        article:first-child
+            margin 2rem 0 0 0
+            padding 0
+            position relative
+            
+            .post__first
+                top -1.5rem
+                left 1rem
+                padding 1rem
+                border 2px solid $ColorDark
+                
+            .post__cover
+                width 49%
+                height 250px
+                display inline-block
+                box-sizing border-box
+                vertical-align bottom
+            
+            .post__info
+                width 50%
+                display inline-block
+                box-sizing border-box
+                vertical-align top
+                
+            .post__header
+                 margin 0 0.5rem
+                 .post__title
+                     margin 1rem 0 0 0
+                     
+            .post__description
+                display block
+                
+                
+            .post__footer
+                margin 0.8rem 0.5rem 0 0.5rem
+
+// Resolución para dispositivos de 896px
+@media all and (min-width 896px)
+    .post__content
+        .post
+            width 38%
+            .post__cover
+                height 260px
+                
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    .post__content
+        .post
+            width 30%
+            .post__cover
+                height 200px
+                
+        article:first-child
+            margin 2rem 0 1.5rem 0
+            .post__cover
+                height 300px
+                
+            .post__header
+                .post__title
+                    margin 0.3rem 0
+                
+            .post__tags
+                display block
+                .tag
+                    padding 0.5rem
+                    border 2px solid $ColorBlue
+                    margin 0.2rem
+                    display inline-block
+                    
+            .post__footer
+                .post__author
+                    a
+                        margin 0.9rem 2rem 0 0
+                        font-size 1.2rem
+                    img
+                        width 60px
+                        position absolute
+                        bottom -1.2rem
+                        right -1.2rem
+                        border 2px solid $ColorBlue
+                        
+/*------------------------------------*\
+    $Author
+\*------------------------------------*/
+
+// Estilos para la descripción del autor al final de un artículo
+
+// Contenedor del autor
+.post__authorDescription
+    background $ColorGray-1
+    padding 0.5rem
+    border-radius 5px
+    margin 1rem 0
+    
+// Imagen del autor y botón
+.post__authorImage
+    text-align center
+    
+    img
+        border-radius 50%
+        width 200px
+        margin 0.5rem 0
+        border 3px solid $ColorDark
+        
+    a:nth-child(2)
+        display block
+        
+// Información del autor
+.post__authorInfo
+    text-align center
+    
+    .post__authorLocation
+        font-size 1.2rem
+        
+    .post__authorBio
+        font-size 1.1rem
+        
+// Resolución para dispositivos de 640px
+@media all and (min-width 640px)
+    .post__authorImage
+        width 35%
+        display inline-block
+        box-sizing border-box
+        
+        a:nth-child(2)
+            margin 0 0 0.5rem 0
+        
+    .post__authorInfo
+        width 60%
+        box-sizing border-box
+        display inline-block
+        text-align left
+        vertical-align top
+        
+        .post__authorName
+            font-size 2.5rem
+            
+        .post__authorLocation
+            font-size 1.5rem
+            
+        .post__authorBio
+            font-size 1.3rem
+    
+                
+/*------------------------------------*\
+    9. $Newsletter
+\*------------------------------------*/
+
+// Estilos del Newsletter (Subscripción)
+
+// Newsletter
+.newsletter
+    margin 1rem 0
+    
+// Fomulario del newsletter
+.newsletter__form
+    text-align center
+    padding 1rem
+    background-color $ColorDark
+    color white
+    margin 1rem 0 0 0
+    
+//Contenedor del newsletter - Títulos - Inputs - Botón
+.newsletter__content
+    .newsletter__title
+        font-size 1.5rem
+        display block
+    .newsletter__otherTitle
+        font-weight 300
+        
+    .newsletter__inputs
+        margin 0.8rem 0 0 0
+        input
+            color $ColorDark
+            
+        input[type="text"]
+        input[type="email"]
+            width 100%
+            box-sizing border-box
+            padding 0.8rem 0.5rem
+            margin 0.5rem 0
+            border 2px solid $ColorBlue
+            color white
+            background-color $ColorDark-2
+            
+        input[type="submit"]
+            padding 0.8rem
+            border 1px solid $ColorBlue
+            box-shadow 2px 2px 0px $ColorBlue
+            background none
+            color $ColorBlue
+            text-transform uppercase
+            background-color $ColorDark-2
+            
+// Resolución para dispositivos de 412px
+@media all and (min-width 412px)
+    .newsletter__form
+        padding 1.5rem 1rem
+        
+// Resolución para dispositivos de 601px
+@media all and (min-width 601px)
+    .newsletter__form
+        padding 1.5rem
+        
+    .newsletter__content
+        .newsletter__inputs
+            input[type="text"]
+            input[type="email"]
+                width 48%
+    
+            input:first-child
+                margin 0.5rem 3% 0.5rem 0
+
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    .newsletter__form
+        padding 2rem 0
+        margin 0 auto
+        max-width 868px
+        
+    .newsletter__content
+        width 600px
+        margin 0 auto
+        .newsletter__title
+            font-size 2.2rem
+        .newsletter__otherTitle
+            font-size 1.4rem
+
+/*------------------------------------*\
+    10. $Pagination
+\*------------------------------------*/
+            
+// Estilos para la paginación del blog (Solo aparece en caso de sobre pasar el número de artículos por página)
+
+//Pagination - Botones
+.pagination
+    text-align center
+    margin 2rem 0
+    .newer-posts
+        
+    .older-posts
+        padding 0.7rem 0.8rem
+        display inline-block
+        border 2px solid $ColorDark
+        color $ColorDark
+        
+/*------------------------------------*\
+    11. $Diary - Demos - Videos - Others
+\*------------------------------------*/
+
+// Estios de la Agenda - Demos - Videos - Otros artículos (Artículos estaticos)
+
+// Contenedor principal
+.post__special
+    display flex
+    justify-content space-around
+    flex-wrap wrap
+    
+// Bloque - Título - Imagen - Plataforma - Tema - Botón
+.special
+    width 100%
+    position relative
+    box-sizing border-box
+    margin 1rem 0 0.5rem 0
+    background-color $ColorDark
+    color white
+    
+    .special__title
+        position absolute
+        padding 0.5rem
+        top 0
+        z-index 500
+        margin 0 auto
+        background rgba(white,0.5)
+        text-align center
+        
+        h2
+            margin 0
+            font-size 1.3rem
+        
+    .special__cover
+        position relative
+        .special__image
+            width 100%
+            height 250px
+            
+        .special__platform
+            border-radius 50%
+            position absolute
+            width 60px
+            margin 0 auto
+            left 0
+            right 0
+            bottom -1.5rem
+            border 2px solid white
+            
+    .special__info
+        .special__titleInfo
+            font-size 1.6rem
+            text-align center
+            color white
+            
+        .special__theme
+            font-size 1.1rem
+            display block
+            margin 0.5rem 1rem
+            color white
+            
+    .special__button
+        text-align center
+        .btn-default
+            border-color $ColorBlue
+            box-shadow 2px 2px 0px $ColorBlue
+            margin 1rem 0
+
+// Resolución para dispositivos de 640px
+@media all and (min-width 640px)
+    .special
+        width 46%
+
+// Resolución para dispositivos de 896px
+@media all and (min-width 896px)
+    .special
+        width 40%
+        
+        .special__cover
+            .special__image
+                width 100%
+                height 200px
+        
+/*------------------------------------*\
+    12. $Footer
+\*------------------------------------*/
+
+// Estilos del Footer
+
+// Footer
+.footer
+    background-color $ColorDark
+    color white
+    text-align center
+    padding 0.5rem
+    text-align center
+    
+// Contenedor para usar FlexBox y el contenido se centre
+.footer-wrap
+    display flex
+    justify-content space-between
+    flex-wrap wrap
+    
+// Información - Logo y nombre
+.footer__info
+    width 100%
+    box-sizing border-box
+    .footer__logo
+        img
+            width 120px
+            display inline-block
+        figcaption
+            display inline-block
+            vertical-align top
+            margin 1.5rem 0 0 0.5rem
+            font-size 1.5rem
+
+// Redes sociales del footer
+.footer__social
+    .footer__list
+        display flex
+        justify-content center
+        
+        .footer__item
+            margin 0 0.7rem
+            
+            &:first-child
+                margin 0 0.7rem 0 0
+            
+            a
+                color white
+                font-size 1.7rem
+
+// Nav en el footer (Solo se muestra en Desktop)
+.footer__nav
+    display none
+
+// Información sobre Ghost y DigitalOcean
+.footer__moreInfo
+    width 100%
+    
+    .footer__love
+        margin 1.3rem 0
+        
+        span
+            margin 0 0.2rem
+            font-size 1.4rem
+            &:nth-child(3)
+                color $ColorPink
+                
+        img
+            width 45px
+            vertical-align top
+            
+    .footer__technologies
+        .footer__ghost
+        .footer__digitalOcean
+            display inline-block
+            margin 0.5rem
+            
+        .footer__ghost
+            margin 0 0.5rem 0 0
+            
+// Resolución para dispositivos de 412px
+@media all and (min-width 412px)
+    .footer__info
+        .footer__logo
+            figcaption
+                font-size 2rem
+                
+    .footer__social
+        .footer__list
+            .footer__item
+                margin 0 0.9rem
+                
+                a
+                    font-size 2rem
+
+// Resolución para dispositivos de 601px
+@media all and (min-width 601px)
+    .footer
+        text-align left
+        
+    .footer__info
+        width 48%
+        .footer__logo
+            figcaption
+                font-size 1.5rem
+    
+    .footer__social
+        .footer__list
+            justify-content flex-start
+        
+    .footer__moreInfo
+        width 48%
+
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    .footer
+        padding 0.5rem 2rem
+    .footer__info
+        width 30%
+        
+    .footer__nav
+        width 30%
+        display block
+        li
+            margin 1rem 0
+        
+    .footer__moreInfo
+        width 30%
