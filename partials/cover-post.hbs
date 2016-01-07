@@ -1,9 +1,16 @@
+{{!-- Portada para los artículos --}}
+
+
 <section class="cover{{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+
+	{{!-- Logo --}}
     {{#if @blog.logo}}
         <figure class="logo">
             <img class="img" src="{{@blog.logo}}" alt="{{@blog.title}}" />
         </figure>
     {{/if}}
+
+    {{!-- Título y fecha --}}
     <div class="info-block">
         <h1 class="title">{{title}}</h1>
         <time class="info-date description" datetime="{{date format='YYYY-MM-DD'}}"><span class="fa fa-calendar-o"></span>{{date format="DD MMM YYYY"}}</time>
