@@ -6,7 +6,7 @@ Front-end Developer | Blogger | Platzi Student Ambassador
 
 ## Código para post estaticos
 
-Código para usar el post estaticos especiales: Agenda - Demos - Videos - Otros Artículos
+Código para usar en post estaticos especiales: Agenda - Demos - Videos - Otros Artículos
 
 ### Agenda
 ```
@@ -15,7 +15,7 @@ Código para usar el post estaticos especiales: Agenda - Demos - Videos - Otros 
   <h2 class="special__name">Comunidad Platzi</h2>
  </header>
  <figure class="special__cover">
-  <img class="special__image" src="https://scontent-lax3-1.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/10336784_1182814881745853_4184856902694513907_n.jpg?oh=eaa1a8df125e1a31c1b9c6a35ef20a9c&oe=5718E80D" alt="">
+  <img class="special__image" src="" alt="">
   <img class="special__platform" src="/assets/images/codepen.jpg" alt="">
  </figure>
 
@@ -35,7 +35,7 @@ Código para usar el post estaticos especiales: Agenda - Demos - Videos - Otros 
 ```
 <article class="special">
  <figure class="special__cover">
-  <img class="special__image" src="https://scontent-lax3-1.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/10336784_1182814881745853_4184856902694513907_n.jpg?oh=eaa1a8df125e1a31c1b9c6a35ef20a9c&oe=5718E80D" alt="">
+  <img class="special__image" src="" alt="">
   <img class="special__platform" src="/assets/images/codepen.jpg" alt="">
  </figure>
 
@@ -55,7 +55,7 @@ Código para usar el post estaticos especiales: Agenda - Demos - Videos - Otros 
 ```
 <article class="special">
  <figure class="special__cover">
-  <img class="special__image" src="https://scontent-lax3-1.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/10336784_1182814881745853_4184856902694513907_n.jpg?oh=eaa1a8df125e1a31c1b9c6a35ef20a9c&oe=5718E80D" alt="">
+  <img class="special__image" src="" alt="">
   <img class="special__platform" src="/assets/images/github.jpg" alt="">
  </figure>
 
@@ -79,7 +79,7 @@ Código para usar el post estaticos especiales: Agenda - Demos - Videos - Otros 
   <h2 class="special__name">Curso de Git</h2>
  </header>
  <figure class="special__cover">
-  <img class="special__image" src="https://scontent-lax3-1.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/10336784_1182814881745853_4184856902694513907_n.jpg?oh=eaa1a8df125e1a31c1b9c6a35ef20a9c&oe=5718E80D" alt="">
+  <img class="special__image" src="" alt="">
   <img class="special__platform" src="/assets/images/codigofacilito.jpg" alt="">
  </figure>
 
@@ -102,7 +102,7 @@ Código para usar el post estaticos especiales: Agenda - Demos - Videos - Otros 
   <h2 class="special__name">Platzi</h2>
  </header>
  <figure class="special__cover">
-  <img class="special__image" src="https://scontent-lax3-1.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/10336784_1182814881745853_4184856902694513907_n.jpg?oh=eaa1a8df125e1a31c1b9c6a35ef20a9c&oe=5718E80D" alt="">
+  <img class="special__image" src="" alt="">
   <img class="special__platform" src="/assets/images/platzi.jpg" alt="">
  </figure>
 
@@ -144,5 +144,6 @@ gulp concat-css
 [Facebook](https://www.facebook.com/FiliSantillanMX)
 [Twitter](https://twitter.com/FiliMX)
 
+## Licencia
 
 © Fili Santillán
