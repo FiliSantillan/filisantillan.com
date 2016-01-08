@@ -104,9 +104,7 @@
             width 80px
         
     .header__name
-        font-size 1.3rem
-        margin 0.9rem 0 0 0.3rem
-        color white
+        display none
         
     .nav
         display none
@@ -130,7 +128,9 @@
     .header__title
         .header__name
             font-size 1.8rem
-            margin 0.6rem 0 0 0.3rem
+            margin 0.3rem 0 0 0.3rem
+            display block
+            color white
             
     .header__options
         .header__search
@@ -343,11 +343,12 @@
         background none
         border none
         font-size 2rem
+        z-index 1000
     
     .menu__logo
         margin 1rem 0
         img
-            width 200px
+            width 150px
         
     .menu__list
         padding 0 0 0 1.8rem
@@ -1010,7 +1011,7 @@
     11. $Diary - Demos - Videos - Others
 \*------------------------------------*/
 
-// Estios de la Agenda - Demos - Videos - Otros artículos (Artículos estaticos)
+// Estios de la Agenda - Demos - Videos - Otros artículos (Artículos estáticos)
 
 // Contenedor principal
 .post__special
@@ -1059,7 +1060,8 @@
     .special__info
         .special__titleInfo
             font-size 1.6rem
-            text-align center
+            text-align left
+            margin 1.8rem 0 0.5rem 1rem
             color white
             
         .special__theme
@@ -1083,12 +1085,12 @@
 // Resolución para dispositivos de 896px
 @media all and (min-width 896px)
     .special
-        width 40%
+        width 32%
         
         .special__cover
             .special__image
                 width 100%
-                height 200px
+                height 180px
         
 /*------------------------------------*\
     12. $Footer

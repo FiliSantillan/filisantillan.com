@@ -4,30 +4,28 @@
 
 Front-end Developer | Blogger | Platzi Student Ambassador
 
-## Código para post estaticos
+## Código para post estáticos
 
-Código para usar en post estaticos especiales: Agenda - Demos - Videos - Otros Artículos
+Código para usar en post estáticos especiales: Agenda - Demos - Videos - Otros Artículos
 
 ### Agenda
 ```
 <article class="special">
+
  <header class="special__title">
-  <h2 class="special__name">Comunidad Platzi</h2>
+  <h2 class="special__name"> </h2>
  </header>
+
  <figure class="special__cover">
-  <img class="special__image" src="" alt="">
-  <img class="special__platform" src="/assets/images/codepen.jpg" alt="">
+  <img class="special__image" src=" " alt=" ">
  </figure>
 
  <section class="special__info">
-  <h3 class="special__titleInfo">Selectores y Pseudo-selectores CSS</h3>
+  <h3 class="special__titleInfo"> </h3>
   <span class="special__theme"><i class="fa fa-globe"></i> Streaming</span>
-  <span class="special__theme"><i class="fa fa-calendar-o"></i> 9 Nov 2015</span>
+  <span class="special__theme"><i class="fa fa-calendar-o"></i> </span>
  </section>
 
- <footer class="special__button">
-  <a href="#"><button class="btn-default">Ver</button></a>
- </footer>
 </article>
 ```
 
@@ -35,19 +33,19 @@ Código para usar en post estaticos especiales: Agenda - Demos - Videos - Otros 
 ```
 <article class="special">
  <figure class="special__cover">
-  <img class="special__image" src="" alt="">
+  <img class="special__image" src=" " alt=" ">
   <img class="special__platform" src="/assets/images/codepen.jpg" alt="">
  </figure>
 
  <section class="special__info">
-  <h3 class="special__titleInfo">Text-stroke</h3>
-  <span class="special__theme"><i class="fa fa-html5"></i> HTML5</span>
-  <span class="special__theme"><i class="fa fa-css3"></i> CSS3</span>
+  <h3 class="special__titleInfo"> </h3>
+  <span class="special__theme"><i class="fa fa-html5"></i> HTML</span>
+  <span class="special__theme"><i class="fa fa-css3"></i> CSS</span>
   <span class="special__theme"><i class="fa fa-code"></i> JavaScript</span>
  </section>
 
  <footer class="special__button">
-  <a href="#"><button class="btn-default">Ver Demo</button></a>
+  <a href="#" target="blank"><button class="btn-default">Ver Demo</button></a>
  </footer>
 </article>
 ```
@@ -55,19 +53,19 @@ Código para usar en post estaticos especiales: Agenda - Demos - Videos - Otros 
 ```
 <article class="special">
  <figure class="special__cover">
-  <img class="special__image" src="" alt="">
+  <img class="special__image" src=" " alt=" ">
   <img class="special__platform" src="/assets/images/github.jpg" alt="">
  </figure>
 
  <section class="special__info">
-  <h3 class="special__titleInfo">Vibration API</h3>
-  <span class="special__theme"><i class="fa fa-html5"></i> HTML5</span>
-  <span class="special__theme"><i class="fa fa-css3"></i> CSS3</span>
+  <h3 class="special__titleInfo"> </h3>
+  <span class="special__theme"><i class="fa fa-html5"></i> HTML</span>
+  <span class="special__theme"><i class="fa fa-css3"></i> CSS</span>
   <span class="special__theme"><i class="fa fa-code"></i> JavaScript</span>
  </section>
 
  <footer class="special__button">
-  <a href="#"><button class="btn-default">Ver Demo</button></a>
+  <a href="#" target="blank"><button class="btn-default">Ver Demo</button></a>
  </footer>
 </article>
 ```
@@ -76,21 +74,21 @@ Código para usar en post estaticos especiales: Agenda - Demos - Videos - Otros 
 ```
 <article class="special">
  <header class="special__title">
-  <h2 class="special__name">Curso de Git</h2>
+  <h2 class="special__name"> </h2>
  </header>
  <figure class="special__cover">
-  <img class="special__image" src="" alt="">
+  <img class="special__image" src=" " alt=" ">
   <img class="special__platform" src="/assets/images/codigofacilito.jpg" alt="">
  </figure>
 
  <section class="special__info">
   <h3 class="special__titleInfo">Aprende git empezando desde cero</h3>
-  <span class="special__theme"><i class="fa fa-clock-o"></i> 45min.</span>
-  <span class="special__theme"><i class="fa fa-terminal"></i> Git</span>
+  <span class="special__theme"><i class="fa fa-clock-o"></i> min.</span>
+  <span class="special__theme"><i class="fa fa-terminal"></i> </span>
  </section>
 
  <footer class="special__button">
-  <a href="#"><button class="btn-default">Tomar Curso</button></a>
+  <a href="#" target="blank"><button class="btn-default">Ver video</button></a>
  </footer>
 </article>
 ```
@@ -99,7 +97,7 @@ Código para usar en post estaticos especiales: Agenda - Demos - Videos - Otros 
 ```
 <article class="special">
  <header class="special__title">
-  <h2 class="special__name">Platzi</h2>
+  <h2 class="special__name"> </h2>
  </header>
  <figure class="special__cover">
   <img class="special__image" src="" alt="">
@@ -107,12 +105,12 @@ Código para usar en post estaticos especiales: Agenda - Demos - Videos - Otros 
  </figure>
 
  <section class="special__info">
-  <h3 class="special__titleInfo">GitHub Pages, un sitio web para tus proyectos</h3>
-  <span class="special__theme"><i class="fa fa-code"></i> Git, Github</span>
+  <h3 class="special__titleInfo"> </h3>
+  <span class="special__theme"><i class="fa fa-code"></i> </span>
  </section>
 
  <footer class="special__button">
-  <a href="#"><button class="btn-default">Ver</button></a>
+  <a href="#" target="blank"><button class="btn-default">Ver</button></a>
  </footer>
 </article>
 ```
