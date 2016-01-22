@@ -118,13 +118,14 @@ mark
     background-color #fdffb6
 
 // Código
+    
 code
-    padding 2px 5px
+    padding 1px 5px
     white-space pre-wrap
     display inline-block
     background $ColorDark
     border-radius 3px
-    color $ColorBlue
+    color white
     
 // Tablas
 table
@@ -220,6 +221,24 @@ ul[class*="list"]
     margin 0 auto
     max-width 1080px
     
+//Videos Responsive
+.flex-video
+    height 0
+    overflow hidden
+    padding-bottom 56.25%
+    padding-top 30px
+    position relative
+    
+    iframe
+    object
+    embed
+    video
+        height 100%
+        left 0
+        position absolute
+        top 0
+        width 100%
+        
 /*------------------------------------*\
     $Media queries
 \*------------------------------------*/
@@ -243,3 +262,12 @@ ul[class*="list"]
 
     h6
         font-size: 1.4rem
+        
+    pre
+        width 900px
+        max-width 900px
+        
+    .flex-video
+        width 900px
+        max-width 900px
+        
