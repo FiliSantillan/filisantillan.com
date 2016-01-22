@@ -89,15 +89,6 @@ $("#search-field").ghostHunter({
     onKeyUp         : true
 });
 
-// Highlightjs
-var syntaxHighlighter = function () {
-    $('pre code').each(function(i, block) {
-        hljs.highlightBlock(block);
-    });
-};
-
-syntaxHighlighter();
-
 // Disqus
 disqus = function (newIdentifier, newUrl, newTitle) {
     if ($('#disqus_thread').length) {
