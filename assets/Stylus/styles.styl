@@ -96,13 +96,10 @@
 .header__title
     display flex
     justify-content flex-start
-    .header__logo
-        img
-            width 80px
         
     .header__name
         font-size 1.5rem
-        margin 0.8rem 0 0 0.3rem
+        margin 0.3rem 0 0 0.3rem
         color white
         
     .nav
@@ -114,10 +111,9 @@
     display flex
     justify-content flex-end
     .header__search
-        margin 0.6rem 0.5rem 0 0
+        margin 0.1rem 0.3rem 0 0
         .header__iconSearch
-            font-size 1.6rem
-            vertical-align -15%
+            font-size 1.5rem
             
     .header__menu
         font-size 1.8rem
@@ -127,34 +123,23 @@
     .header__title
         .header__name
             font-size 1.9rem
-            margin 0.5rem 0 0 0.3rem
+            margin 0.4rem 0 0 0.3rem
             
     .header__options
         .header__search
-            .header__input
-                width 155px
-
-// Resolución para dispositivos de 412px
-@media all and (min-width 412px)
-    .header__options
-        .header__search
-            .header__input
-                width 200px
+            margin 0.5rem 0.3rem 0 0
                 
-
-// Resolución para dispositivos de 601px
-@media all and (min-width 601px)
-    .header__options
-        .header__search
-            .header__input
-                width 180px
+        .header__menu
+            margin 0.2rem 0 0 0
 
 // Resolución para Desktop
 @media all and (min-width 1080px)
     .header__title
+        .header__name
+            margin 0.2rem 0 0 0.3rem
         .nav
             display block
-            margin 0.8rem 0 0 1.5rem
+            margin 0.4rem 0 0 1.5rem
             
             li
                 display inline-block
@@ -162,7 +147,7 @@
                 
                 a
                     padding 0.5rem 0.2rem 1rem 0.2rem
-                    font-weight 700
+                    font-weight 300
                     font-size 1.1rem
                     transition 0.3s
                     
