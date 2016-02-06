@@ -19,27 +19,33 @@
     <section class="code__languages">
         
         {{!-- HTML --}}
-        <figure class="language languages__html">
-            <a href="#"><img src='{{asset "images/html.png"}}' alt="html"></a>
-            <figcaption>
-                <a href="#">HTML</a>
-            </figcaption>
+        <figure>
+            <a href="/tag/html/">
+                <img src='{{asset "images/html-mobile.jpg"}}' 
+                     srcset='{{asset "images/html-tablet.jpg"}} 412w,
+                             {{asset "images/html-desktop.jpg"}} 1080w'
+                     alt="html" />
+            </a>
         </figure>
         
         {{!-- CSS --}}
-        <figure class="language languages__css">
-            <a href="#"><img src='{{asset "images/css.png"}}' alt="css"></a>
-            <figcaption>
-                <a href="#">CSS</a>
-            </figcaption>
+        <figure>
+            <a href="/tag/css/">
+                <img src='{{asset "images/css-mobile.jpg"}}' 
+                     srcset='{{asset "images/css-tablet.jpg"}} 412w,
+                             {{asset "images/css-desktop.jpg"}} 1080w'
+                     alt="css" />
+            </a>
         </figure>
 
         {{!-- JavaScript --}}
-        <figure class="language languages__javascript">
-            <a href="#"><img src='{{asset "images/javascript.png"}}' alt="javascript"></a>
-            <figcaption>
-                <a href="#">JavaScript</a>
-            </figcaption>
+        <figure>
+            <a href="/tag/javascript/">
+                <img src='{{asset "images/javascript-mobile.jpg"}}' 
+                     srcset='{{asset "images/javascript-tablet.jpg"}} 412w,
+                             {{asset "images/javascript-desktop.jpg"}} 1080w'
+                     alt="javascript" />
+            </a>
         </figure>
 
     </section>
