@@ -953,77 +953,74 @@
     justify-content space-around
     flex-wrap wrap
     
-// Bloque - Título - Imagen - Plataforma - Tema - Botón
+// Template - Contenedor
 .special
     width 100%
-    position relative
-    box-sizing border-box
-    margin 1rem 0 0.5rem 0
-    background-color $ColorDark
-    color white
+    margin 1rem 0
     
-    .special__title
-        position absolute
-        padding 0.5rem
-        top 0
-        z-index 500
-        margin 0 auto
-        background rgba(white,0.5)
-        text-align center
+// Imagen
+.special-cover
+    img
+        width 100%
+        height auto
+
+// Iconos - Descripción
+.special-footer
+    background $ColorDark
+    color white
+    padding 0.5rem 0.7rem
+    
+    .special-title
+        color white
+        margin 0
+        padding 0.5rem 0
+        font-size 1.7rem
         
-        h2
-            margin 0
-            font-size 1.3rem
+    .special-icon
+        display block
+        font-size 1.1rem
+        margin 0.6rem 0
+        font-weight 400
         
-    .special__cover
-        position relative
-        .special__image
-            width 100%
-            height 250px
+        i
+            margin 0 0.3rem 0 0
+            font-size 1.5rem
             
-        .special__platform
-            border-radius 50%
-            position absolute
-            width 60px
-            margin 0 auto
-            left 0
-            right 0
-            bottom -1.5rem
-            border 2px solid white
-            
-    .special__info
-        .special__titleInfo
-            font-size 1.6rem
-            text-align center
-            color white
-            
-        .special__theme
-            font-size 1.1rem
-            display block
-            margin 0.5rem 1rem
-            color white
-            
-    .special__button
+    .special-description
+        font-size 1rem
+        font-weight 300
+        
+    .special-button
+        width 100%
+        background $ColorDark-2
         text-align center
-        .btn-default
-            border-color $ColorBlue
-            box-shadow 2px 2px 0px $ColorBlue
-            margin 1rem 0
+        cursor pointer
+        
+        a
+            color white
+            font-weight 700
+            text-transform uppercase
+            padding 1rem 0.8rem 
+            display inline-block
 
 // Resolución para dispositivos de 640px
 @media all and (min-width 640px)
     .special
-        width 46%
-
-// Resolución para dispositivos de 896px
-@media all and (min-width 896px)
-    .special
-        width 40%
+        width 48%
+        background $ColorDark
         
-        .special__cover
-            .special__image
-                width 100%
-                height 200px
+    .special-cover
+        img
+            width 100% !important
+            
+    .special-footer
+        .special-button
+            transition 0.5s
+            &:hover
+                background white
+                a
+                    color $ColorDark
+
         
 /*------------------------------------*\
     12. $Footer
