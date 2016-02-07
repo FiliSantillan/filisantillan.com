@@ -195,6 +195,7 @@
         color $ColorGray
         margin 0 0 1.5rem 0
         display inline-block
+        line-height 1.4rem
     
     .info-date
         font-size 1.2rem
@@ -203,7 +204,7 @@
         
 // Redes sociales
 .cover__social
-    padding 0 0 0.5rem 0
+    margin 0 0 1.5rem 0
     .cover__list
         display flex
         justify-content center
@@ -213,7 +214,11 @@
             
             a
                 color white
-                font-size 1.7rem
+                font-size 2rem
+                
+.cover__feedly
+    img
+        margin 0 0 1.5rem 0
 
 // Resolución para dispositivos de 360px
 @media all and (min-width 360px)
@@ -633,7 +638,7 @@
     margin 0 0.5rem
     
     .post__title
-        margin 0.8rem 0 0 0
+        margin 0.6rem 0
         a
             color $ColorDark
 
@@ -1053,6 +1058,10 @@
             vertical-align top
             margin 1.5rem 0 0 0.5rem
             font-size 1.5rem
+            
+    .footer__description
+        p
+            line-height 1.4rem
 
 // Redes sociales del footer
 .footer__social
@@ -1144,7 +1153,7 @@
         width 30%
         display block
         li
-            margin 1rem 0
+            margin 0.8rem 0
         
     .footer__moreInfo
         width 30%
