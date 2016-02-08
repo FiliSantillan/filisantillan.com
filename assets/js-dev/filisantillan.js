@@ -16,7 +16,7 @@ var hideMenu = function(){
 
 var showSearch = function(){
     $search.classList.add('search-active');
-    $search.classList.add('search-active', 'zoomInDown');
+    $search.classList.add('search-active', 'zoomIn');
 };
 
 var hideSearch = function(){
@@ -81,12 +81,6 @@ $(document).ready(function(){
             setWidth();
         });
     }
-});
-
-// Ghost Hunter
-$("#search-field").ghostHunter({
-    results         : "#results",
-    onKeyUp         : true
 });
 
 // Disqus

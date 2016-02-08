@@ -2,17 +2,9 @@
     $Estilos por default
 \*------------------------------------*/
 
-// Body
-body
-    font-family $FontDefault
-    background #EBEBEB
-    
-// Encabezados
-h1, h2, h3, h4, h5, h6
-    font-family $FontTitles
-    
 // Encabezados
 h2, h3,h4, h5, h6
+    font-family $FontTitles
     color $ColorDark
     text-rendering geometricPrecision
     margin 2rem 0 0.8rem 0
@@ -33,23 +25,14 @@ h5
 h6
     font-size 1.2rem
     
-// Enlaces
-a
-    text-decoration none
-    color $ColorBlue
-    
-// Figure
-figure
-    margin 0
-    
 // Párrafos y listas
-p, ul, ol, dl
+p, ol, dl
     font-feature-settings 'liga' 1, 'onum' 1, 'kern' 1
     margin 0.8rem 0 0.8rem 0
     text-rendering geometricPrecision
 
 // Listas
-ol, ul
+ol
     padding-left 3rem
     
 // Listas
@@ -120,7 +103,7 @@ mark
 // Código
     
 code
-    padding 1px 5px
+    padding 0 5px
     white-space pre-wrap
     display inline-block
     background $ColorDark
@@ -174,31 +157,15 @@ table tbody > tr:nth-child(odd) > th
 table.plain tbody > tr:nth-child(odd) > td,
 table.plain tbody > tr:nth-child(odd) > th
    background: transparent
-
-// Inputs y botones
-input
-button
-    outline 0
-
-// Todos los strong que tengan la palabra "title" en su clase
-strong[class*="title"]
-    font-family 'Raleway', sans-serif
-    font-weight 800
-
-// Todos las listas (ul) que tengan la palabra "list" en su clase
-ul[class*="list"]
-    list-style none
-    padding 0
-    margin 0
+    
+// Tweets centrados
+iframe[id*="twitter-widget"]
+    margin 0 auto
     
 /*------------------------------------*\
     OOCSS - CSS Orientado a objetos
 \*------------------------------------*/
     
-// Elementos con la clase icon
-.icon
-    background none
-    border none
     
 // boton - default
 .btn-default
@@ -208,6 +175,7 @@ ul[class*="list"]
     box-shadow 3px 3px 0px $ColorDark
     text-transform uppercase
     transition 0.3s
+    cursor pointer
     
     &:hover
         background $ColorDark
@@ -216,10 +184,6 @@ ul[class*="list"]
     &:active
         transform scale(0.9)
 
-// Contenido desktop - Centrado y no más de 1080px
-.wrap-center
-    margin 0 auto
-    max-width 1080px
     
 //Videos Responsive
 .flex-video

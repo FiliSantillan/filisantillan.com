@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     minifyCss = require('gulp-minify-css'),
     concat = require('gulp-concat'),
+    gcmq = require('gulp-group-css-media-queries'),
     path = {},
     stylusTasks = ['styles'];
 
@@ -52,4 +53,11 @@ gulp.task('concat-css', function() {
   return gulp.src('./assets/css/vendor/*.css')
     .pipe(concat('vendor.css'))
     .pipe(gulp.dest('./assets/css/vendor/'));
+});
+
+// Agrupa los media-queries
+gulp.task('group-mq', function () {
+  gulp.src('./assets/css/styles.css')
+    .pipe(gcmq())
+    .pipe(gulp.dest('./assets/css'));
 });

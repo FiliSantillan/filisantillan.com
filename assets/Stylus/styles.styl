@@ -43,19 +43,6 @@
 \*------------------------------------*/
 
 // Estilos de la barra de progreso que se utiliza para la lectura de los artículos 
-
-//Barra de progreso
-.progress
-    position fixed
-    left 0
-    top 0
-    width 100%
-    height 4px
-    appearance none
-    border none
-    background-color transparent
-    color $ColorBlue
-    z-index 2000
     
 //Barra transparente por default
 .progress::-webkit-progress-bar 
@@ -81,98 +68,21 @@
     background-color $ColorDark
     color white
     padding 0.5rem 0.3rem
-    position fixed
     width 100%
-    box-sizing border-box
     border-bottom 1px solid white
     z-index 1000
     
-// Contenedor para usar FlexBox y el contenido se centre
-.header-wrap
-    display flex
-    justify-content space-between
-    
-// Título y logo del blog + nav (no visible)
-.header__title
-    display flex
-    justify-content flex-start
-    .header__logo
-        img
-            width 80px
-        
-    .header__name
-        display none
-        
-    .nav
-        display none
-
-
-// Iconos de busqueda y menú
-.header__options
-    display flex
-    justify-content flex-end
-    .header__search
-        margin 0.6rem 0.5rem 0 0
-        .header__iconSearch
-            font-size 1.6rem
-            vertical-align -15%
-            
-    .header__menu
-        font-size 1.8rem
-    
-// Resolución para dispositivos de 360px
-@media all and (min-width 360px)
-    .header__title
-        .header__name
-            font-size 1.8rem
-            margin 0.3rem 0 0 0.3rem
-            display block
-            color white
-            
-    .header__options
-        .header__search
-            .header__input
-                width 155px
-
-// Resolución para dispositivos de 412px
-@media all and (min-width 412px)
-    .header__options
-        .header__search
-            .header__input
-                width 200px
-                
-
-// Resolución para dispositivos de 601px
-@media all and (min-width 601px)
-    .header__options
-        .header__search
-            .header__input
-                width 180px
-
 // Resolución para Desktop
 @media all and (min-width 1080px)
     .header__title
         .nav
-            display block
-            margin 0.8rem 0 0 1.5rem
-            
             li
-                display inline-block
-                padding 0.5rem
-                
                 a
-                    padding 0.5rem 0.2rem 1rem 0.2rem
-                    font-weight 700
-                    font-size 1.1rem
                     transition 0.3s
                     
                     &:hover
                         color white
                 
-    .header__options
-        .header__menu
-            display none
-
 /*------------------------------------*\
     3. $Cover
 \*------------------------------------*/
@@ -181,16 +91,6 @@
 
 //Portada + logo
 .cover
-    text-align center
-    background-repeat no-repeat
-    background-position center
-    background-size cover
-    padding-top 4rem
-    
-    .logo
-        img
-            width 300px
-    
     .logo__author
         margin 1rem 0 0 0
         img
@@ -200,21 +100,6 @@
 
 // Título / Descripción / Fecha
 .info-block
-    .title
-        letter-spacing 2px
-        font-size 2.5rem
-        color $ColorGray
-        font-weight 800
-        text-shadow 3px 3px 0 $ColorDark
-        padding 0 1rem
-        
-    .description
-        letter-spacing 3px
-        color $ColorGray
-        margin 0 0 1.5rem 0
-        display inline-block
-        padding 0 1rem
-    
     .info-date
         font-size 1.2rem
         text-shadow 1px 1px 0 $ColorDark
@@ -223,54 +108,19 @@
         
 // Redes sociales
 .cover__social
-    padding 0 0 0.5rem 0
     .cover__list
-        display flex
-        justify-content center
         
         .cover__item
-            margin 0 0.5rem
             
             a
-                color white
-                font-size 1.7rem
-
-// Resolución para dispositivos de 360px
-@media all and (min-width 360px)
-    .info-block
-        .title
-            font-size 3.2rem
-
-// Resolución para dispositivos de 412px
-@media all and (min-width 412px)
-    .info-block
-        .title
-            letter-spacing 5px
-            font-size 3.7rem
-            
+                color white            
 
 // Resolución para Desktop
 @media all and (min-width 1080px)
     .cover__tags
         height 350px !important
         
-    .cover
-        position relative
-        height 470px
-        margin 0 0 8rem 0
-        background-attachment fixed
-        
-        .logo
-            position absolute
-            bottom -9.8rem
-            left 1rem
-            margin 0 auto
-            left 0
-            right 0
-            
-            img
-                width 600px
-                
+    .cover      
         .logo__author
             margin 0
             bottom -8rem
@@ -278,16 +128,6 @@
                 width 300px
             
     .info-block
-        
-        .title
-            font-size 5.5rem
-            margin 0 0 0.5rem 0
-            padding 1rem 2rem 0 2rem
-            text-shadow 5px 5px 0 $ColorDark
-            
-        .description
-            padding 0 13rem
-            font-size 1.1rem
             
         .info-date
             font-size 1.5rem
@@ -297,10 +137,7 @@
     .cover__social
         .cover__list
             .cover__item
-                margin 0 1rem
-                
                 a
-                    font-size 2.5rem
                     transition 0.3s
                     
                     &:hover
@@ -321,43 +158,10 @@
 
 // Menú
 .menu
-    background rgba($ColorDark,0.95)
-    width 80%
-    position fixed
-    top 0
-    z-index 2000
-    height 100vh
-    right 0
-    text-align center
-    display none
-    overflow-y scroll
     
     .menu__close
         color white
-        position absolute
-        top 0.8rem
-        right 1rem
-        background none
-        border none
-        font-size 2rem
-        z-index 1000
-    
-    .menu__logo
-        margin 1rem 0
-        img
-            width 150px
         
-    .menu__list
-        padding 0 0 0 1.8rem
-        li
-            text-align left
-            font-size 1.1rem
-            padding 1rem 0 1rem 0
-            text-transform uppercase
-            
-            a
-                padding 0.5rem
-
 // En caso de que el menú este activo
 .menu-active
     display block
@@ -370,65 +174,15 @@
 
 // Contenedor de la busqueda - Icono para cerrar - Input - Resultados
 .big-search
-    position fixed
-    width 100%
-    min-height 100%
-    top 0
-    left 0
-    background rgba($ColorDark,0.95)
     user-select none
-    z-index 99999
-    overflow-y scroll
     transition 0.3s
-    display none
-    
-    .icon-close
-        font-size 3.5rem
-        color white
-        position absolute
-        right 2rem
-        top 1.3rem
     
     .big-search__form
-        width 90%
-        max-width 1080px
-        margin 5rem auto 1rem auto
-        input
-            width 100%
-            padding 2rem 1rem
-            box-sizing border-box
-            border none
-            color white
-            appearance none
-            font-size 3rem
-            font-weight 800
-            background none
-            border-bottom 4px solid white
-            
+           
         input:placeholder-shown
-            color white
-        
-        ::-webkit-input-placeholder
-            color white
-            
-        :-moz-placeholder
-            color white
-            
-        ::-moz-placeholder
-            color white
-            
-        :-ms-input-placeholder
-            color white
-            
-        ::-ms-input-placeholder
             color white
             
     .results
-        margin 0 auto
-        width 100%
-        max-width 1080px
-        overflow-y scroll
-        padding 0.5rem 1rem
         
         p
             display none
@@ -459,36 +213,7 @@
 
 // Contenedor y título
 .code
-    padding 0.5rem
     text-align center
-    
-    &__title
-        margin 1rem 0
-        font-size 1.4rem
-        text-transform uppercase
-        display inline-block
-        
-    &__languages
-        display flex
-        justify-content space-around
- 
-// Lenguajes: HTML - CSS - JavaScript
-.language
-    padding 0.5rem 0.7rem
-    border 4px solid white
-    background-color $ColorGray
-    
-    img
-        width 60px
-        padding 0 0 0.5rem 0
-        
-    figcaption
-        padding 0.5rem 0 0 0
-        border-top 2px solid $ColorDark
-        
-        a
-            color $ColorDark
-            font-weight 700
 
 // Resolución para dispositivos de 360px
 @media all and (min-width 360px)
@@ -504,9 +229,6 @@
             font-size 1.5rem
             letter-spacing 2px
             
-    .language
-        img
-            width 70px
 
 // Resolución para Desktop
 @media all and (min-width 1080px)
@@ -515,26 +237,7 @@
         &__title
             font-size 2rem
             
-        &__languages
-            justify-content space-around
             
-    .language
-        padding 0.5rem 1.5rem
-        border 4px solid white
-        background-color $ColorGray
-        
-        img
-            width 128px
-            
-        figcaption
-            padding 0.5rem 0 0 0
-            border-top 3px solid $ColorDark
-            
-            a
-                color $ColorDark
-                font-weight 700
-                font-size 1.2rem
-                
 /*------------------------------------*\
     7. $Post
 \*------------------------------------*/
@@ -598,7 +301,7 @@
 
         .post-content
             font-size 1.2rem
-            line-height 1.5rem
+            line-height 1.9rem
             img
                 max-width 900px
                 
@@ -622,13 +325,6 @@
         width 100%
         margin 0.7rem 0.7rem
         background-color white
-        
-        .post__first
-            padding 0.8rem
-            text-align center
-            text-transform uppercase
-            letter-spacing 3px
-            display none
         
     // Estilos únicamente para el primer artículo
     article:first-child
@@ -692,7 +388,7 @@
     background-repeat no-repeat
     background-position center
     background-size cover
-    height 200px
+    height 240px
    
 // Título de los artículos
 .post__header
@@ -701,7 +397,7 @@
     margin 0 0.5rem
     
     .post__title
-        margin 0.8rem 0 0 0
+        margin 0.6rem 0
         a
             color $ColorDark
 
@@ -709,30 +405,16 @@
 .post__description
     margin 0 0.5rem
 
-// Tags para los artículos (Solo se muestran para el primer artículo)
-.post__tags
-    display none
-    
-
 // Autor de los artículos (Solo se muestran para el primer artículo)
 .post__footer
     margin 0 0.5rem
-    .post__author
-        display none
         
-// Resolución para dispositivos de 360px
-@media all and (min-width 360px)
-    .post__cover
-        height 230px
         
 // Resolución para dispositivos de 412px
 @media all and (min-width 412px)
     .post__content
         .post
             width 412px
-        
-    .post__cover
-        height 250px
     
 // Resolución para dispositivos de 601px
 @media all and (min-width 601px)
@@ -755,8 +437,6 @@
     .post__content
         .post
             width 46%
-            .post__cover
-                height 200px
                 
         article:first-child
             margin 2rem 0 0 0
@@ -799,16 +479,12 @@
     .post__content
         .post
             width 38%
-            .post__cover
-                height 260px
                 
 // Resolución para Desktop
 @media all and (min-width 1080px)
     .post__content
         .post
             width 30%
-            .post__cover
-                height 200px
                 
         article:first-child
             margin 2rem 0 1.5rem 0
@@ -1016,79 +692,73 @@
     justify-content space-around
     flex-wrap wrap
     
-// Bloque - Título - Imagen - Plataforma - Tema - Botón
+// Template - Contenedor
 .special
     width 100%
-    position relative
-    box-sizing border-box
-    margin 1rem 0 0.5rem 0
-    background-color $ColorDark
-    color white
+    max-width 412px
+    margin 1rem 0
     
-    .special__title
-        position absolute
-        padding 0.5rem
-        top 0
-        z-index 500
-        margin 0 auto
-        background rgba(white,0.5)
-        text-align center
+// Imagen
+.special-cover
+    img
+        width 100% !important
+        height 240px !important
+        max-width 412px !important
+
+// Iconos - Descripción
+.special-footer
+    background $ColorDark
+    color white
+    padding 0.5rem 0.7rem
+    
+    .special-title
+        color white
+        margin 0
+        padding 0.5rem 0
+        font-size 1.7rem
         
-        h2
-            margin 0
-            font-size 1.3rem
+    .special-icon
+        display block
+        font-size 1.1rem
+        margin 0.6rem 0
+        font-weight 400
         
-    .special__cover
-        position relative
-        .special__image
-            width 100%
-            height 250px
+        i
+            margin 0 0.3rem 0 0
+            font-size 1.5rem
             
-        .special__platform
-            border-radius 50%
-            position absolute
-            width 60px
-            margin 0 auto
-            left 0
-            right 0
-            bottom -1.5rem
-            border 2px solid white
-            
-    .special__info
-        .special__titleInfo
-            font-size 1.6rem
-            text-align left
-            margin 1.8rem 0 0.5rem 1rem
-            color white
-            
-        .special__theme
-            font-size 1.1rem
-            display block
-            margin 0.5rem 1rem
-            color white
-            
-    .special__button
+    .special-description
+        font-size 1rem
+        font-weight 300
+        
+    .special-button
+        width 100%
+        background $ColorDark-2
         text-align center
-        .btn-default
-            border-color $ColorBlue
-            box-shadow 2px 2px 0px $ColorBlue
-            margin 1rem 0
+        cursor pointer
+        
+        a
+            color white
+            font-weight 700
+            text-transform uppercase
+            padding 1rem 0.8rem 
+            display inline-block
 
 // Resolución para dispositivos de 640px
 @media all and (min-width 640px)
     .special
-        width 46%
+        width 412px
+        background $ColorDark
 
-// Resolución para dispositivos de 896px
-@media all and (min-width 896px)
-    .special
-        width 32%
-        
-        .special__cover
-            .special__image
-                width 100%
-                height 180px
-        
+            
+    .special-footer
+        .special-button
+            transition 0.5s
+            &:hover
+                background white
+                a
+                    color $ColorDark
+                    
 /*------------------------------------*\
     12. $Footer
 \*------------------------------------*/
@@ -1122,6 +792,10 @@
             vertical-align top
             margin 1.5rem 0 0 0.5rem
             font-size 1.5rem
+            
+    .footer__description
+        p
+            line-height 1.4rem
 
 // Redes sociales del footer
 .footer__social
@@ -1213,7 +887,7 @@
         width 30%
         display block
         li
-            margin 1rem 0
+            margin 0.8rem 0
         
     .footer__moreInfo
         width 30%
