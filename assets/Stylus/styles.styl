@@ -695,13 +695,15 @@
 // Template - Contenedor
 .special
     width 100%
+    max-width 412px
     margin 1rem 0
     
 // Imagen
 .special-cover
     img
-        width 100%
-        height auto
+        width 100% !important
+        height 240px !important
+        max-width 412px !important
 
 // Iconos - Descripción
 .special-footer
@@ -745,12 +747,9 @@
 // Resolución para dispositivos de 640px
 @media all and (min-width 640px)
     .special
-        width 48%
+        width 412px
         background $ColorDark
-        
-    .special-cover
-        img
-            width 100% !important
+
             
     .special-footer
         .special-button
@@ -759,7 +758,7 @@
                 background white
                 a
                     color $ColorDark
-        
+                    
 /*------------------------------------*\
     12. $Footer
 \*------------------------------------*/
