@@ -24,7 +24,7 @@ gulp.task('styles', function () {
     .pipe(stylus({
       compress: true
     }))
-    .pipe(gulp.dest('./assets/css-dev/'));
+    .pipe(gulp.dest('./assets/css/'));
 });
 
 // Minifica archivos JS
@@ -57,7 +57,7 @@ gulp.task('concat-css', function() {
 
 // Agrupa los media-queries
 gulp.task('group-mq', function () {
-  gulp.src('./assets/css-dev/styles.css')
+  gulp.src('./assets/css/styles.css')
     .pipe(gcmq())
-    .pipe(gulp.dest('./assets/css-dev/'));
+    .pipe(gulp.dest('./assets/css'));
 });
