@@ -1,121 +1,138 @@
-# Fili Santillán
+# Fili Santillán Blog 2.1.0
+Ghost 0.7.6
+
+❤ HTML • CSS • JS ❤ | Web Developer | Blogger | Geek | YouTube | Platzi Student Ambassador
 
 ![Logo Fili Santillán](https://s-media-cache-ak0.pinimg.com/originals/4b/2a/8a/4b2a8aedb10dc94db8b720acfecf703a.png)
 
-Front-end Developer | Blogger | Platzi Student Ambassador
+Mini guía para el uso de Fili Santillán.
 
-## Código para post estáticos
+## Tamaño para las imágenes 
 
-Código para usar en post estáticos especiales: Agenda - Demos - Videos - Otros Artículos
+Tamaño para las imágenes de los artículos (también artículos estáticos)
+
+| Imagen        | Pixel Ratio 1 | Pixel Ratio 2 |
+| ------------- |:-------------:| :------------:|
+| Ancho         | 412px         | 824px         |
+| Alto          | 240px         | 480px         |
+
+## Código para artículos estáticos
+
+Código para usar en artículos estáticos especiales: Agenda - Demos - Videos - Otros Artículos
 
 ### Agenda
 ```
 <article class="special">
 
- <header class="special__title">
-  <h2 class="special__name"> </h2>
- </header>
+    <figure class="special-cover">
+        <img src="" alt="">
+    </figure>
 
- <figure class="special__cover">
-  <img class="special__image" src=" " alt=" ">
- </figure>
+    <footer class="special-footer">
+        <h2 class="special-title">Título</h2>
 
- <section class="special__info">
-  <h3 class="special__titleInfo"> </h3>
-  <span class="special__theme"><i class="fa fa-globe"></i> Streaming</span>
-  <span class="special__theme"><i class="fa fa-calendar-o"></i> </span>
- </section>
+        <span class="special-icon"><i class="fa fa-globe"></i> Lugar</span>
+        <span class="special-icon"><i class="fa fa-calendar-o"></i> Fecha</span>
 
+        <p class="special-description">
+            Descripción ...
+        </p>
+    </footer>
 </article>
 ```
 
 ### Demos
 ```
 <article class="special">
- <figure class="special__cover">
-  <img class="special__image" src=" " alt=" ">
-  <img class="special__platform" src="/assets/images/codepen.jpg" alt="">
- </figure>
 
- <section class="special__info">
-  <h3 class="special__titleInfo"> </h3>
-  <span class="special__theme"><i class="fa fa-html5"></i> HTML</span>
-  <span class="special__theme"><i class="fa fa-css3"></i> CSS</span>
-  <span class="special__theme"><i class="fa fa-code"></i> JavaScript</span>
- </section>
+    <figure class="special-cover">
+        <img src="" alt="">
+    </figure>
 
- <footer class="special__button">
-  <a href="#" target="blank"><button class="btn-default">Ver Demo</button></a>
- </footer>
+    <footer class="special-footer">
+        <h2 class="special-title">Título</h2>
+
+        <p class="special-description">
+            Descripción ...
+        </p>
+
+        <div class="special-button">
+            <a href="#" target="blank">Ver demo</a>
+        </div>
+    </footer>
 </article>
-```
 
-```
-<article class="special">
- <figure class="special__cover">
-  <img class="special__image" src=" " alt=" ">
-  <img class="special__platform" src="/assets/images/github.jpg" alt="">
- </figure>
-
- <section class="special__info">
-  <h3 class="special__titleInfo"> </h3>
-  <span class="special__theme"><i class="fa fa-html5"></i> HTML</span>
-  <span class="special__theme"><i class="fa fa-css3"></i> CSS</span>
-  <span class="special__theme"><i class="fa fa-code"></i> JavaScript</span>
- </section>
-
- <footer class="special__button">
-  <a href="#" target="blank"><button class="btn-default">Ver Demo</button></a>
- </footer>
-</article>
 ```
 
 ### Videos
 ```
 <article class="special">
- <header class="special__title">
-  <h2 class="special__name"> </h2>
- </header>
- <figure class="special__cover">
-  <img class="special__image" src=" " alt=" ">
-  <img class="special__platform" src="/assets/images/codigofacilito.jpg" alt="">
- </figure>
 
- <section class="special__info">
-  <h3 class="special__titleInfo">Aprende git empezando desde cero</h3>
-  <span class="special__theme"><i class="fa fa-clock-o"></i> min.</span>
-  <span class="special__theme"><i class="fa fa-terminal"></i> </span>
- </section>
+    <figure class="special-cover">
+        <img src="" alt="">
+    </figure>
 
- <footer class="special__button">
-  <a href="#" target="blank"><button class="btn-default">Ver video</button></a>
- </footer>
+    <footer class="special-footer">
+        <h2 class="special-title">Título</h2>
+
+        <p class="special-description">
+            Descripción ... 
+        </p>
+
+        <span class="special-icon"><i class="fa fa-clock-o"></i> Tiempo</span>
+
+        <div class="special-button">
+            <a href="#" target="blank">Ver video</a>
+        </div>
+    </footer>
 </article>
 ```
 
 ### Otros Artículos
 ```
 <article class="special">
- <header class="special__title">
-  <h2 class="special__name"> </h2>
- </header>
- <figure class="special__cover">
-  <img class="special__image" src="" alt="">
-  <img class="special__platform" src="/assets/images/platzi.jpg" alt="">
- </figure>
 
- <section class="special__info">
-  <h3 class="special__titleInfo"> </h3>
-  <span class="special__theme"><i class="fa fa-code"></i> </span>
- </section>
+    <figure class="special-cover">
+        <img src="" alt="">
+    </figure>
 
- <footer class="special__button">
-  <a href="#" target="blank"><button class="btn-default">Ver</button></a>
- </footer>
+    <footer class="special-footer">
+
+        <h2 class="special-title">Título</h2>
+
+        <p class="special-description">
+            Descripción ...
+        </p>
+
+        <div class="special-button">
+            <a href="#" target="blank">Ver Demo</a>
+        </div>
+    </footer>
 </article>
 ```
 
-## Orden para ejecutar dependencias de gulp
+## Dependencias Gulp
+
+En el caso de Agregar nuevos archivos CSS o JS, hay que tener cuidado al concatenar ya que se puede duplicar el código.
+
+## (Stylus)
+
+### 1.- Watch
+```
+gulp watch
+```
+
+### 2.- Agrupar media-queries
+```
+gulp group-mq
+```
+
+## 3.- Minificar archivo CSS
+```
+gulp minify-css
+```
+
+## (Vendor)
 
 ### 1.- Minificar archivos JS
 ```
@@ -139,8 +156,8 @@ gulp concat-css
 
 ## Contacto
 
-[Facebook](https://www.facebook.com/FiliSantillanMX)
-[Twitter](https://twitter.com/FiliMX)
+* [Facebook](https://www.facebook.com/FiliSantillanMX)
+* [Twitter](https://twitter.com/FiliMX)
 
 ## Licencia
 
