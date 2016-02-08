@@ -1,23 +1,5 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
-/**
- * 1. Set default font family to sans-serif.
- * 2. Prevent iOS and IE text size adjust after device orientation change,
- *    without disabling user zoom.
- */
-
-html
-  font-family: sans-serif // 1
-  -ms-text-size-adjust: 100% // 2
-  -webkit-text-size-adjust: 100% // 2
-
-/**
- * Remove default margin.
- */
-
-body
-  margin: 0
-
 /* HTML5 display definitions
    ========================================================================== */
 
@@ -27,19 +9,20 @@ body
  * and Firefox.
  * Correct `block` display not defined for `main` in IE 11.
  */
+ 
 
 article,
 aside,
 details,
-figcaption,
-figure,
+// figcaption, CRITICAL CSS
+// figure, CRITICAL CSS
 footer,
-header,
+// header, CRITICAL CSS
 hgroup,
 main,
 menu,
-nav,
-section,
+// nav, CRITICAL CSS
+// section, CRITICAL CSS
 summary
   display: block
 
@@ -83,7 +66,6 @@ template
  */
 
 a
-  background-color: transparent // 1
   &:active,
   &:hover
     outline: 0 // 2
@@ -102,8 +84,7 @@ abbr[title]
  * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
  */
 
-b,
-strong
+b
   font-weight: bold
 
 /**
@@ -112,15 +93,6 @@ strong
 
 dfn
   font-style: italic
-
-/**
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari, and Chrome.
- */
-
-h1
-  font-size: 2em
-  margin: 0.67em 0
 
 /**
  * Address styling not present in IE 8/9.
@@ -160,9 +132,7 @@ sub
 /**
  * Remove border when inside `a` element in IE 8/9/10.
  */
-
-img
-  border: 0
+ 
 
 /**
  * Correct overflow not hidden in IE 9/10/11.
@@ -211,8 +181,6 @@ pre
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
 
-button,
-input,
 optgroup,
 select,
 textarea
@@ -224,8 +192,6 @@ textarea
  * Address `overflow` set to `hidden` in IE 8/9/10/11.
  */
 
-button
-  overflow: visible
 
 /**
  * Address inconsistent `text-transform` inheritance for `button` and `select`.
@@ -234,7 +200,6 @@ button
  * Correct `select` style inheritance in Firefox.
  */
 
-button,
 select
   text-transform: none
 
@@ -246,7 +211,6 @@ select
  *    `input` and others.
  */
 
-button,
 html input[type="button"], // 1
 input[type="reset"],
 input[type="submit"]
@@ -260,23 +224,6 @@ input[type="submit"]
 button[disabled],
 html input[disabled]
   cursor: default
-
-/**
- * Remove inner padding and border in Firefox 4+.
- */
-
-button::-moz-focus-inner,
-input::-moz-focus-inner
-  border: 0
-  padding: 0
-
-/**
- * Address Firefox 4+ setting `line-height` on `input` using `!important` in
- * the UA stylesheet.
- */
-
-input
-  line-height: normal
 
 /**
  * It's recommended that you don't attempt to style these elements.

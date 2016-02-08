@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     minifyCss = require('gulp-minify-css'),
     concat = require('gulp-concat'),
+    gcmq = require('gulp-group-css-media-queries'),
     path = {},
     stylusTasks = ['styles'];
 
@@ -23,7 +24,7 @@ gulp.task('styles', function () {
     .pipe(stylus({
       compress: true
     }))
-    .pipe(gulp.dest('./assets/css/'));
+    .pipe(gulp.dest('./assets/css-dev/'));
 });
 
 // Minifica archivos JS
@@ -35,9 +36,9 @@ gulp.task('minify-js', function() {
 
 // Minifica archivos CSS
 gulp.task('minify-css', function() {
-  return gulp.src('./assets/css-dev/vendor/*.css')
+  return gulp.src('./assets/css-dev/styles.css')
     .pipe(minifyCss())
-    .pipe(gulp.dest('./assets/css/vendor/'));
+    .pipe(gulp.dest('./assets/css/'));
 });
 
 // Concatena archivos JS
@@ -52,4 +53,11 @@ gulp.task('concat-css', function() {
   return gulp.src('./assets/css/vendor/*.css')
     .pipe(concat('vendor.css'))
     .pipe(gulp.dest('./assets/css/vendor/'));
+});
+
+// Agrupa los media-queries
+gulp.task('group-mq', function () {
+  gulp.src('./assets/css-dev/styles.css')
+    .pipe(gcmq())
+    .pipe(gulp.dest('./assets/css-dev/'));
 });
