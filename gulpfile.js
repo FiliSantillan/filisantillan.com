@@ -36,9 +36,9 @@ gulp.task('minify-js', function() {
 
 // Minifica archivos CSS
 gulp.task('minify-css', function() {
-  return gulp.src('./assets/css-dev/styles.css')
+  return gulp.src('./assets/css-dev/vendor/*.css')
     .pipe(minifyCss())
-    .pipe(gulp.dest('./assets/css/'));
+    .pipe(gulp.dest('./assets/css/vendor/'));
 });
 
 // Concatena archivos JS

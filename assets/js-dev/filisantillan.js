@@ -83,12 +83,6 @@ $(document).ready(function(){
     }
 });
 
-// Ghost Hunter
-$("#search-field").ghostHunter({
-    results         : "#results",
-    onKeyUp         : true
-});
-
 // Disqus
 disqus = function (newIdentifier, newUrl, newTitle) {
     if ($('#disqus_thread').length) {
