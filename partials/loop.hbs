@@ -1,33 +1,53 @@
-<div class="loop">
-   {{! This is the post loop - each post will be output using this markup }}
-    <div class="post-row">
-        <article class="js-post-block-grid post-block-grid">
-            {{#foreach posts}}
-                <div class="{{post_class}} js-post-block-grid-item post-block-grid-item" data-tags="{{#foreach tags}}{{#if @first}}{{name}}{{else}},{{name}}{{/if}}{{/foreach}}" data-groups='["{{#foreach tags}}{{#if @first}}{{name}}{{else}}","{{name}}{{/if}}{{/foreach}}"]'>
-                    <div class="post-block-wrapper">
-                        {{#if image}}
-                            <figure>
-                                <a href="{{url}}"><img src="{{image}}" alt="{{title}}" class="index-post-image"></a>
-                            </figure>
-                        {{/if}}
-                        <div class="post-block-grid-content {{#if image}}with-image{{else}}no-image{{/if}}">
-                            <header class="post-header">
-                                <h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
-                                <div class="post-title-separator"></div>
-                                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
-                            </header>
-                            <div>
-                                <a href="{{url}}" class="post-read-more-btn">Leer más ...</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{!-- Loop: Artículos del index --}}
+
+{{#foreach posts}}
+<article class="{{post_class}}">
+
+    {{!-- Primer artículo del blog --}}
+    <section class="post__first">
+        <strong class="post__first--title"><i class="fa fa-quote-left"></i> Primer Artículo <i class="fa fa-quote-right"></i></strong>
+    </section>
+    
+    {{!-- Imagen del artículo --}}
+    <section class="post__cover {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+    </section>
+
+    {{!-- Título - Fecha - Mini-descripción - Tags - Botón - Autor --}}
+    <div class="post__info">
+
+        <header class="post__header">
+            <h2 class="post__title"><a href="{{url}}">{{{title}}}</a></h2>
+            <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+        </header>
+
+        <section class="post__description">
+            <p>{{excerpt words="24"}}<span>...</span></p>
+        </section>
+
+        <section class="post__tags">
+            {{#foreach tags}}
+                <a href="{{url}}" class="tag">
+                    {{name}}
+                </a>
             {{/foreach}}
-        </article>
+        </section>
+
+        <footer class="post__footer">
+            <a href="{{url}}">
+                <button class="btn-default">
+                    Ver más
+                </button>
+            </a>
+            <div class="post__author">
+                {{author}}
+                {{#if author.image}}
+                    <a class="post__image" href="http://filisantillan.com/author/filiberto/">
+                        <img src="{{author.image}}" alt="{{author.name}}" nopin="nopin" />
+                    </a>
+                {{/if}}
+            </div>
+        </footer>
     </div>
 
-    {{! Previous/next page links - displayed on every page - this is a custom pagination partial}}
-    <div class="row">
-        {{pagination}}
-    </div>
-</div>
+</article>
+{{/foreach}}

@@ -1,9 +1,33 @@
-{{!-- Default static page is almost the same as post page view so the css classes remains the same --}}
-{{!-- you can add your own static pages and style it as you want --}}
+{{!-- Sitio para artículos estáticos --}}
 
 {{!< default}}
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
 
-{{!-- You'll find one view for the post and static page with a little differences in the partials/details-view.hbs file. It is imported below --}}
-{{> "details-view"}}
+{{#post}}
+    {{!-- Barra de progreso --}}
+    {{> "progress"}}
+    
+    {{!-- Header --}}
+    {{> "header"}}
+    
+    {{!-- Portada --}}
+    {{> "cover-post"}}
+
+    {{!-- Menú --}}
+    {{> "menu"}}
+
+    {{!-- Busqueda --}}
+    {{> "search"}}
+
+{{!-- Contenido --}}
+<main class="content" role="main">
+    <article class="post-container {{post_class}}">
+        <section class="post-content post__special">
+            {{content}}
+        </section>
+    </article>
+</main>
+
+{{/post}}
+
+{{!-- Footer --}}
+{{> "footer"}}

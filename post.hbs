@@ -1,6 +1,102 @@
-{{!< default}}
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
+{{!-- Sitio para artículos --}}
 
-{{!-- You'll find one view for the post and static page with a little differences in the partials/details-view.hbs file. It is imported below --}}
-{{> "details-view"}}
+{{!< default}}
+
+{{#post}}
+    {{!-- Barra de progreso --}}
+    {{> "progress"}}
+    
+    {{!-- Header --}}
+    {{> "header"}}
+
+    {{!-- Portada --}}
+    {{> "cover-post"}}
+
+    {{!-- Menú --}}
+    {{> "menu"}}
+    
+    {{!-- Busqueda --}}
+    {{> "search"}}
+
+    <main class="content" role="main">
+        <article class="post-container {{post_class}}">
+
+            {{!-- Redes sociales --}}
+            <section class="post-social">
+                <div class="addthis_sharing_toolbox"></div>
+            </section>
+            
+            {{!-- Lectura --}}
+            <section class="post-content">
+                {{content}}
+            </section>
+            
+            {{!-- Redes sociales --}}
+            <section class="post-social">
+                <strong class="post-socialText">¿Te gustó el artículo?, por favor, ayudame a compartir para que otras personas puedan leerlo.</strong>
+                <div class="addthis_sharing_toolbox"></div>
+            </section>
+            
+            {{!-- Newsletter --}}
+            {{> "newsletter"}}
+
+            {{!-- Tags --}}
+            <section class="tags">
+                {{#foreach tags}}
+                    <a href="{{url}}" class="tag">
+                        {{name}}
+                    </a>
+                {{/foreach}}
+            </section>
+            
+            {{!-- Autor --}}
+            {{#author}}
+
+                <section class="post__authorDescription">
+                    
+                    {{!-- Imagen del autor --}}
+                    {{#if image}}
+                    <figure class="post__authorImage">
+                        <a class="img" href="{{url}}">
+                            <img src="{{image}}" alt="Fili Santillán">
+                        </a>
+                        {{#if website}}
+                            <a href="{{website}}"><button class="btn-default">Sobre mí</button></a>
+                        {{/if}}
+                    </figure>
+                    {{/if}}
+                    
+                    {{!-- Información del autor --}}
+                    <section class="post__authorInfo">
+                        <h4><a class="post__authorName"href="{{url}}">{{name}}</a></h4>
+
+                        {{#if location}}
+                            <span class="post__authorLocation fa fa-globe"></span>
+                            <span class="post__authorLocation icon-location">{{location}}</span>
+                        {{/if}}
+
+                        {{#if bio}}
+                            <p class="post__authorBio">{{bio}}</p>
+
+                        {{else}}
+                            <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+
+                        {{/if}}
+
+                    </section>
+                </section>
+
+            {{/author}}
+
+
+            {{!-- Disqus - Comentarios s--}}
+            {{> "disqus"}}
+
+
+        </article>
+    </main>
+
+    {{!-- Footer --}}
+    {{> "footer"}}
+
+{{/post}}

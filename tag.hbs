@@ -1,16 +1,29 @@
+{{!-- Sitio para artículos estáticos --}}
+
 {{!< default}}
-{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
-{{! The sticky header }}
-{{> 'sticky-header'}}
+{{!-- Header --}}
+{{> "header"}}
 
-{{! The big header with bg image }}
-{{> 'big-header'}}
+{{!-- Portada --}}
+{{> "cover-tags"}}
 
-{{! The main content area on the homepage }}
-<main id="content" class="content tag-template scene-element fade-in-right" role="main">
-    {{! The tag below includes the post loop - partials/loop.hbs }}
+{{!-- Menú --}}
+{{> "menu"}}
+
+{{!-- Busqueda --}}
+{{> "search"}}
+
+
+{{!-- Contenido --}}
+<main class="post__content" role="main">
+
     {{> "loop"}}
+
 </main>
 
+{{!-- Paginación --}}
+{{pagination}}
+
+{{!-- Footer --}}
 {{> "footer"}}

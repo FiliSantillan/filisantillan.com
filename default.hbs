@@ -1,37 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    {{!-- Page Meta --}}
     <title>{{meta_title}}</title>
 
-    {{!-- VENDOR --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    {{!-- Styles --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/styles.css"}}" />
     <link rel="stylesheet" href="{{asset "css/vendor/vendor.css"}}">
 
-    {{!-- STYLES --}}
-    <link rel="stylesheet" href="{{asset "css/styles.css"}}">
+    {{!-- Font-awesome --}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-    {{!-- FONT AWESOME --}}
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    {{!-- Google Fonts --}}
+    <link href='//fonts.googleapis.com/css?family=Raleway:700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
-    {{!-- GOOGLE FONTS --}}
-    <link href="//fonts.googleapis.com/css?family=Lato:200,300,400,700,900" rel="stylesheet" type="text/css">
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {{!-- FAVICON --}}
-    <link rel="shortcut icon" href="{{asset "fili.ico"}}">
+    {{!-- Favicon --}}
+    <link rel="shortcut icon" href="{{asset "images/favicon.ico"}}">
 
-    {{!-- SEO --}}
-    <link rel="author" href="https://plus.google.com/+FiliMart%C3%ADnezZ/posts"/>
+    {{!-- Autor y Descripción --}}
+    <meta name="author" content="Filiberto Santillán">
+    <meta name="description" content="{{meta_description}}" />
+
+    {{!-- Friendly --}}
+    <meta name="HandheldFriendly" content="True" />
+
+    {{!-- Google --}}
+    <link rel="author" href="https://plus.google.com/+FiliMart%C3%ADnezZ"/>
     <link rel="canonical" href="{{url}}" />
+
+    {{!-- Otras configuraciones --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="google-site-verification" content="PUVeHiwvS1T4_Q8FaieZHfE0GjL2rsKJ3LU4eabFdtA" />
     
-    {{! METAS }}
-    <meta charset="utf-8">
-    <meta name="author" content="Filiberto Martínez Santillán">
-    <meta name="description" content="{{meta_description}}">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
+
+</head>
+<body class="{{body_class}} nav-closed">
+    
+    {{!-- Contenido --}}
+    <div class="site-wrapper">
+
+        {{{body}}}
+
+    </div>
 
     {{! Gooogle Analytics }}
     <script>
@@ -39,125 +57,24 @@
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
       ga('create', 'UA-59139943-5', 'auto');
       ga('send', 'pageview');
-
     </script>
-</head>
 
-{{! If you want NiceScroll enabled just add 'nicescroll' class here in the body tag}}
-<body class="{{body_class}}">
+    {{!-- Jquery --}}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-    {{! Everything else gets inserted here }}
-    <div id="main" class="main-scene">
-        {{{body}}}
-        {{#if @blog.navigation}}
-            {{> "menu"}}
-        {{/if}}
-        {{> "search"}}
-    </div>
+    
+    {{!-- Addthis --}}
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56324eb92b56efd7" async="async"></script>
 
-    {{!-- Back to top button --}}
-    <a href="#" class="back-to-top-btn js-back-to-top-btn hidden">
-        <i class="fa fa-chevron-up"></i>
-    </a>
+    {{!-- Vendor --}}
+    <script src="{{asset "js/vendor/vendor.js"}}"></script>
 
-    {{! Ghost outputs important scripts and data with this tag }}
+    {{!-- Scripts --}}
+    <script src="{{asset "js/filisantillan.js"}}"></script>
+
     {{ghost_foot}}
 
-    {{! The main JavaScript files }}
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
-
-    <script src="{{asset "js/vendor/vendor.js"}}"></script>
-    <script src="{{asset "js/anima.js"}}"></script>
-
-    {{!-- MailChimp --}}
-    <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text'; /*
-     * Translated default messages for the $ validation plugin.
-     * Locale: ES
-     */
-    $.extend($.validator.messages, {
-      required: "Por favor, rellena este campo para que seas parte.",
-      remote: "Por favor, rellena este campo para que seas parte.",
-      email: "Por favor, escribe una dirección de correo válida",
-      url: "Por favor, escribe una URL válida.",
-      date: "Por favor, escribe una fecha válida.",
-      dateISO: "Por favor, escribe una fecha (ISO) válida.",
-      number: "Por favor, escribe un número entero válido.",
-      digits: "Por favor, escribe sólo dígitos.",
-      creditcard: "Por favor, escribe un número de tarjeta válido.",
-      equalTo: "Por favor, escribe el mismo valor de nuevo.",
-      accept: "Por favor, escribe un valor con una extensión aceptada.",
-      maxlength: $.validator.format("Por favor, no escribas más de {0} caracteres."),
-      minlength: $.validator.format("Por favor, no escribas menos de {0} caracteres."),
-      rangelength: $.validator.format("Por favor, escribe un valor entre {0} y {1} caracteres."),
-      range: $.validator.format("Por favor, escribe un valor entre {0} y {1}."),
-      max: $.validator.format("Por favor, escribe un valor menor o igual a {0}."),
-      min: $.validator.format("Por favor, escribe un valor mayor o igual a {0}.")
-    });}(jQuery));var $mcj = jQuery.noConflict(true);
-    </script>
-
-    {{!-- Social --}}
-    <script>
-
-      //Facebook
-      $.getScript("http://connect.facebook.net/es_LA/all.js#xfbml=1", function () {
-           FB.init({ status: true, cookie: true, xfbml: true });
-      });
-
-      if (typeof (FB) != 'undefined') {
-           FB.init({ status: true, cookie: true, xfbml: true });
-      }
-      function loadFacebook()
-      {
-          if (typeof (FB) != 'undefined') {
-              FB.init({ status: true, cookie: true, xfbml: true });
-          } else {
-              $.getScript("http://connect.facebook.net/es_LA/all.js#xfbml=1", function () {
-                  FB.init({ status: true, cookie: true, xfbml: true });
-              });
-          }
-      }
-
-      // Twitter
-      $.getScript('http://platform.twitter.com/widgets.js');
-
-      if (typeof (twttr) != 'undefined'){
-           twttr.widgets.load();
-      }
-
-      function loadTwitter()
-      {
-          if (typeof (twttr) != 'undefined'){
-              twttr.widgets.load();
-          } else {
-              $.getScript('http://platform.twitter.com/widgets.js');
-          }
-      }
-
-      // Google Plus
-      (function() {
-        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-        po.src = 'https://apis.google.com/js/plusone.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-      })();
-
-      // Linkedin
-      $.getScript("http://platform.linkedin.com/in.js");
-
-      if (typeof (IN) != 'undefined') {
-           IN.parse();
-      }
-      function loadLinkedIn()
-      {
-           if (typeof (IN) != 'undefined') {
-                IN.parse();
-           } else {
-                $.getScript("http://platform.linkedin.com/in.js");
-
-           }
-      }
-    </script>
-
+</body>
 </html>

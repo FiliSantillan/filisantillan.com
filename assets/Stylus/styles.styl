@@ -1,977 +1,1219 @@
-@import 'fonts'
-@import 'menu'
-@import 'select'
-@import 'post'
 
-//VARIABLES
-vendor-prefixes ?= webkit moz official
+/*------------------------------------*\
+    $Tabla de contenido
+\*------------------------------------*/
 
-.loop .post-row .post-block-grid figure:before, .loop .post-row .post-block-grid figure:after
-  content ""
-  display table
-  clear both
+/*
 
-html
-  height auto
-  min-height 100%
+    0.  Imports
+    1.  Progress
+    2.  Header
+    3.  Cover
+    4.  Menu
+    5.  Search
+    6.  Code
+    7.  Post
+    8.  Loop
+    9.  Newsletter
+    10. Pagination
+    11. Diary - Demos - Videos - Others
+    12. Footer
 
-body
-  font-family "Lato" sans-serif
-  font-weight 200
-  background-color #f2f2f2
-  min-height 100%
-  overflow-x hidden
-  
-  .nicescroll
-    overflow-y hidden
-
-h1, h2, h3, h4, h5, h6
-  font-weight 900
-  font-family "BariolBold" arial
-  text-transform none
-  color #23222D
-  
-h1 a
-h1 a:hover
-h1 a:focus
-h1 a:active
-h2 a
-h2 a:hover
-h2 a:focus
-h2 a:active
-h3 a
-h3 a:hover
-h3 a:focus 
-h3 a:active 
-h4 a
-h4 a:hover
-h4 a:focus
-h4 a:active
-h5 a
-h5 a:hover
-h5 a:focus
-h5 a:active
-h6 a
-h6 a:hover
-h6 a:focus
-h6 a:active
-  color inherit
-  text-decoration none
+*/
 
 
-p
-ul
-ol
-  font-family "Lato" sans-serif
-  font-weight 200
 
-pre
-  margin-bottom 1.25rem
+/*------------------------------------*\
+    0. $Imports
+\*------------------------------------*/
+ 
+// Estilos que forman parte del sitio pero estan separados para una mejor oganización
 
-.row
-  width 100%
-  max-width 75rem
-  
-  .column, .row .columns
-    padding-left 1.875rem
-    padding-right 1.875rem
+// Para normalizar los estilos
+@import normalize
+
+// Variables que se usan en los estilos
+@import variables
+
+// Estilos para el sitio por default y OOCSS
+@import default
+
+/*------------------------------------*\
+    1. $Progress
+\*------------------------------------*/
+
+// Estilos de la barra de progreso que se utiliza para la lectura de los artículos 
+
+//Barra de progreso
+.progress
+    position fixed
+    left 0
+    top 0
+    width 100%
+    height 4px
+    appearance none
+    border none
+    background-color transparent
+    color $ColorBlue
+    z-index 2000
     
-  .row-with-header-logo
-    max-width none
+//Barra transparente por default
+.progress::-webkit-progress-bar 
+    background-color transparent
     
-  .row-with-header-logo .column .row.row-with-header-logo .columns
-    padding-left 0.9375rem
-    padding-right 0.9375rem
+//Color de la barra al hacer scroll (Webkit)
+.progress::-webkit-progress-value 
+     background-color $ColorBlue
 
-a.button
-  text-decoration none
-  color white
-  
-  &:hover
-  &:active
-  &:focus
-    text-decoration none
+//Color de la barra al hacer scroll (Moz)
+.progress::-moz-progress-bar 
+     background-color $ColorBlue
+
+
+/*------------------------------------*\
+    2. $Header
+\*------------------------------------*/
+
+// Estilos del Header
+
+// Header
+.header
+    background-color $ColorDark
     color white
-
-[class*="block-grid-"]
-  margin 0
-  
-::-webkit-scrollbar
-  width: 0.625rem
-  background-color white
-
-::-webkit-scrollbar-track
-  box-shadow inset 0 0 0.375rem rgba(35, 34, 45, 0.3)
-  background-color white
-  
-::-webkit-scrollbar-thumb
-  box-shadow inset 0 0 0.375rem rgba(35, 34, 45, 0.3)
-  background-color #23222d
-
-.anima-carousel
-  margin-bottom 1.5625rem
-
-.back-to-top-btn
-  display none
-  background-color #23222d
-  color white
-  position fixed
-  bottom 0
-  right 2.8125rem
-  width 3.125rem
-  height 2.5rem
-  line-height 2.5rem
-  text-align center
-  cursor pointer
-  transition all .4s
-  transition all .4s
-  border-radius 0.1875rem 0.1875rem 0 0
-  z-index 999
-  transform translateZ(0)
-  transform translateZ(0)
-  
-  .hidden
-    transform translateY(100%)
+    padding 0.5rem 0.3rem
+    position fixed
+    width 100%
+    box-sizing border-box
+    border-bottom 1px solid white
+    z-index 1000
     
-  //STYLUS EN PROCESO 
+// Contenedor para usar FlexBox y el contenido se centre
+.header-wrap
+    display flex
+    justify-content space-between
     
-  .back-to-top-btn:hover, .back-to-top-btn:focus, .back-to-top-btn:active {
-    color: white;
-    background-color: #2e2d3c; }
-  @media only screen and (min-width: 40.063em) {
-    .back-to-top-btn {
-      display: block; } }
-
-.headroom {
-  padding: 1.25rem;
-  -webkit-transition: -webkit-transform .5s;
-  -ms-transition: -ms-transform .5s;
-  transition: transform .5s;
-  background-color: #23222d;
-  color: white;
-  position: fixed;
-  z-index: 10;
-  right: 0;
-  left: 0;
-  top: 0;
-  -webkit-transform: translate3d(0, -100%, 0);
-  -ms-transform: translate(0, -100%);
-  transform: translate3d(0, -100%, 0); }
-  .headroom.headroom--not-top {
-    -webkit-transform: translate3d(0, 0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate3d(0, 0, 0); }
-  .headroom.headroom--top {
-    -webkit-transform: translate3d(0, -100%, 0);
-    -ms-transform: translate(0, -100%);
-    transform: translate3d(0, -100%, 0); }
-  .headroom .headroom-logo img {
-    max-height: 3.125rem;
-    float: left; }
-  .headroom .headroom-logo a strong {
-    font-size: 2.3em;
-    color: white;
-    margin-left: 0.5em;
-    display: none;}
-
-  @media only screen and (min-width: 48em) {
-    .headroom .headroom-logo a strong {
-    display: inline-block;} }
-  .headroom .headeroom-icons {
-    line-height: 3.125rem;
-    font-size: 2.25rem; }
-    .headroom .headeroom-icons .fa {
-      cursor: pointer;
-      height: 3.125rem;
-      line-height: 3.125rem;
-      vertical-align: middle; }
-      .headroom .headeroom-icons .fa.fa-search {
-        font-size: 60%; }
-
-html[data-useragent*='Android 4.0'] .headroom,
-html[data-useragent*='Android 4.1'] .headroom,
-html[data-useragent*='Android 4.2'] .headroom,
-html.no-csstransforms3d .headroom {
-  top: -300px;
-  -webkit-transition: top .5s;
-  transition: top .5s; }
-  html[data-useragent*='Android 4.0'] .headroom.headroom--not-top,
-  html[data-useragent*='Android 4.1'] .headroom.headroom--not-top,
-  html[data-useragent*='Android 4.2'] .headroom.headroom--not-top,
-  html.no-csstransforms3d .headroom.headroom--not-top {
-    top: 0; }
-  html[data-useragent*='Android 4.0'] .headroom.headroom--top,
-  html[data-useragent*='Android 4.1'] .headroom.headroom--top,
-  html[data-useragent*='Android 4.2'] .headroom.headroom--top,
-  html.no-csstransforms3d .headroom.headroom--top {
-    top: -300px; }
-
-.big-search {
-  position: absolute;
-  width: 100%;
-  min-height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(35, 34, 45, 0.95);
-  -webkit-user-select: none;
-  user-select: none;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
-  transition: opacity 0.5s, visibility 0s 0.5s;
-  z-index: 99999;
-  overflow-y: auto; }
-  .big-search .big-search-close-btn {
-    font-size: 3.75rem;
-    text-align: center;
-    position: absolute;
-    right: 2.1875rem;
-    top: 2.1875rem;
-    overflow: hidden;
-    border: none;
-    color: white;
-    outline: none;
-    z-index: 100;
-    cursor: pointer;
-    -webkit-user-select: none;
-    user-select: none; }
-  .big-search.open {
-    opacity: 1;
-    visibility: visible;
-    -webkit-transition: opacity 0.5s;
-    transition: opacity 0.5s; }
-  .big-search .big-search-container {
-    margin-top: 11%; }
-    .big-search .big-search-container .big-search-form-input {
-      color: white;
-      height: 7.5rem;
-      font-size: 3.125rem;
-      padding: 1.25rem 0;
-      font-weight: 900;
-      background-color: transparent;
-      box-shadow: none;
-      border: 0;
-      border-bottom: 0.1875rem solid white; }
-      .big-search .big-search-container .big-search-form-input:focus {
-        box-shadow: none;
-        background-color: transparent; }
-      .big-search .big-search-container .big-search-form-input::-webkit-input-placeholder {
-        color: white; }
-      .big-search .big-search-container .big-search-form-input:-moz-placeholder {
-        color: white;
-        opacity: 1; }
-      .big-search .big-search-container .big-search-form-input::-moz-placeholder {
-        color: white;
-        opacity: 1; }
-      .big-search .big-search-container .big-search-form-input:-ms-input-placeholder {
-        color: white; }
-    .big-search .big-search-container .big-search-results {
-      color: white; }
-      .big-search .big-search-container .big-search-results > p {
-        font-weight: 600;
-        font-size: 2.25rem;
-        padding-top: 0.9375rem;
-        padding-bottom: 0.9375rem; }
-      .big-search .big-search-container .big-search-results a {
-        color: white; }
-        .big-search .big-search-container .big-search-results a p, .big-search .big-search-container .big-search-results a h1, .big-search .big-search-container .big-search-results a h2, .big-search .big-search-container .big-search-results a h3, .big-search .big-search-container .big-search-results a h4, .big-search .big-search-container .big-search-results a h5, .big-search .big-search-container .big-search-results a h6 {
-          color: white;
-          font-weight: 400;
-          text-transform: none;
-          -webkit-transition: color .3s;
-          transition: color .3s; }
-        .big-search .big-search-container .big-search-results a:hover, .big-search .big-search-container .big-search-results a:active, .big-search .big-search-container .big-search-results a:focus {
-          text-decoration: none; }
-        .big-search .big-search-container .big-search-results a:hover p, .big-search .big-search-container .big-search-results a:hover h1, .big-search .big-search-container .big-search-results a:hover h2, .big-search .big-search-container .big-search-results a:hover h3, .big-search .big-search-container .big-search-results a:hover h4, .big-search .big-search-container .big-search-results a:hover h5, .big-search .big-search-container .big-search-results a:hover h6 {
-          color: #999999; }
-
-.big-header-container {
-  position: relative;
-  z-index: 1; }
-  .big-header-container .main-header {
-    text-align: left;
-    color: white;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-color: #23222d; }
-    .big-header-container .main-header .main-header-content {
-      padding-top: 5.375rem;
-      padding-bottom: 1.75rem; }
-
-    .big-header-container .main-header .main-header-content p{
-          font-size: 1em !important;
-          width: 100% !important; }
-      .big-header-container .main-header .main-header-content .blog-logo img {
-        max-width: 7.5rem; }
-    .big-header-container .main-header .page-title {
-      color: white;
-      font-weight: 800;
-      font-size: 2.875rem;
-      margin-bottom 0.3rem }
-      @media only screen and (min-width: 48em) {
-        .big-header-container .main-header .page-title {
-          font-size: 3.75rem; } 
-        .big-header-container .main-header .main-header-content {
-          padding-top: 5.375rem;
-          padding-bottom: 2.75rem; }
-
-        .big-header-container .main-header .main-header-content p{
-          font-size: 1.1em !important;
-          width: 70% !important; }
-        }
-      @media only screen and (min-width: 64em) {
-        .big-header-container .main-header .page-title {
-          font-size: 7rem; } }
-    .big-header-container .main-header .page-description {
-      font-weight: 400;
-      color: white; }
-
-    .big-header-container .main-header .main-header-logo-container .main-header-logo img {
-      max-height: 6.25rem; }
-    .big-header-container .main-header .main-header-bars {
-      position: absolute;
-      right: 0.9375rem;
-      top: 0;
-      width: 5.625rem;
-      height: 6.25rem;
-      font-size: 2.25rem;
-      text-align: center; }
-      .big-header-container .main-header .main-header-bars .fa {
-        cursor: pointer;
-        line-height: 6.25rem;
-        height: 6.25rem;
-        vertical-align: middle; }
-        .big-header-container .main-header .main-header-bars .fa.fa-search {
-          font-size: 60%; }
-      @media only screen and (min-width: 48em) {
-        .big-header-container .main-header .main-header-bars {
-          right: 1.875rem; } }
-
-.index-filters {
-  height: 3.75rem;
-  line-height: 3.75rem;
-  background-color: white; }
-  .index-filters a {
-    display: inline-block;
-    color: #23222d;
-    outline: none; }
-    .index-filters a .fa {
-      line-height: 3.75rem;
-      font-size: 1.625rem; }
-    .index-filters a.active .fa {
-      color: #ff4d4d; }
-    .index-filters a:focus, .index-filters a:active {
-      color: inherit; }
-    .index-filters a:hover {
-      color: #3a384a; }
-
-.main-content-wrapper {
-  position: relative;
-  overflow: hidden; }
-
-.loop {
-  padding-top: 1.75rem;
-  padding-bottom: 3.75rem; }
-  .loop .post-row {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-    max-width: 75rem;
-    margin-left: auto;
-    margin-right: auto; }
-    @media only screen and (min-width: 48em) {
-      .loop .post-row {
-        padding-left: 1.875rem;
-        padding-right: 1.875rem; } }
-    .loop .post-row .post-block-grid .post-block-grid-item {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem;
-      float: left;
-      width: 100%; }
-      @media only screen and (min-width: 62.5em) {
-        .loop .post-row .post-block-grid .post-block-grid-item {
-          width: 33.33%; } }
-      .loop .post-row .post-block-grid .post-block-grid-item .post-block-wrapper {
-        overflow: hidden;
-        border 2px solid 
-        border-radius 4px 
-        background white}
-      @media only screen and (min-width: 62.5em) {
-        .loop .post-row .post-block-grid .post-block-grid-item.list {
-          width: 100%; } }
-      .loop .post-row .post-block-grid .post-block-grid-item.list .post-block-wrapper {
-        background-color: white; }
-        .loop .post-row .post-block-grid .post-block-grid-item.list .post-block-wrapper figure {
-          width: 100%; }
-          @media only screen and (min-width: 48em) {
-            .loop .post-row .post-block-grid .post-block-grid-item.list .post-block-wrapper figure {
-              width: 40%; } }
-        .loop .post-row .post-block-grid .post-block-grid-item.list .post-block-wrapper .post-block-grid-content {
-          width: 100%; }
-          @media only screen and (min-width: 48em) {
-            .loop .post-row .post-block-grid .post-block-grid-item.list .post-block-wrapper .post-block-grid-content {
-              width: 60%; } }
-          .loop .post-row .post-block-grid .post-block-grid-item.list .post-block-wrapper .post-block-grid-content.no-image {
-            width: 100%; }
-      .loop .post-row .post-block-grid .post-block-grid-item.featured:before {
-        position: absolute;
-        bottom: 1.25rem;
-        right: 1.5rem;
-        content: "\f005";
-        color: white;
-        font-family: "FontAwesome";
-        font-size: 1rem;
-        display: block;
-        z-index: 2; }
-      .loop .post-row .post-block-grid .post-block-grid-item.featured:after {
-        content: " ";
-        position: absolute;
-        display: block;
-        bottom: -0.6875rem;
-        right: 0.5625rem;
-        width: 0;
-        height: 0;
-        border-top: 2.5rem solid transparent;
-        border-bottom: 2.5rem solid transparent;
-        border-right: 2.5rem solid #23222d;
-        -webkit-transform: rotate(225deg);
-        -ms-transform: rotate(225deg);
-        transform: rotate(225deg); }
-    .loop .post-row .post-block-grid .post-block-grid-content {
-      background-color: white;
-      padding: 1.875rem;
-      overflow-x: hidden; }
-      .loop .post-row .post-block-grid .post-block-grid-content .index-post-image {
-        display: block; }
-      @media only screen and (min-width: 40.063em) {
-        .loop .post-row .post-block-grid .post-block-grid-content {
-          padding: 0.5rem 1rem; } }
-    .loop .post-row .post-block-grid figure {
-      position: relative;
-      float: left;
-      overflow: hidden;
-      width: 100%;
-      text-align: center;
-      text-align: center;
-      cursor: pointer;
-      margin: 0;
-      background-color: white; }
-      .loop .post-row .post-block-grid figure img {
-        position: relative;
-        display: block;
-        max-width: 100%;
-        margin: 0 auto; }
-      .loop .post-row .post-block-grid figure figcaption {
-        padding: 2em;
-        color: #fff;
-        text-transform: uppercase;
-        font-size: 1.25em;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%; }
-        .loop .post-row .post-block-grid figure figcaption > a {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 1000;
-          text-indent: 200%;
-          white-space: nowrap;
-          font-size: 0;
-          opacity: 0; }
-        .loop .post-row .post-block-grid figure figcaption::after, .loop .post-row .post-block-grid figure figcaption::before {
-          pointer-events: none; }
-      .loop .post-row .post-block-grid figure p {
-        margin: 0;
-        letter-spacing: 1px;
-        font-size: 68.5%; }
-      .loop .post-row .post-block-grid figure.effect-hera p {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-        -ms-transition: opacity 0.35s, -ms-transform 0.35s;
-        transition: opacity 0.35s, transform 0.35s;
-        -webkit-transform: translate3d(-50%, -50%, 0);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate3d(-50%, -50%, 0);
-        -webkit-transform-origin: 50%;
-        -ms-transform-origin: 50%;
-        transform-origin: 50%;
-        width: 100px;
-        text-transform: none;
-        font-size: 121%;
-        line-height: 2; }
-        .loop .post-row .post-block-grid figure.effect-hera p a {
-          color: white;
-          outline: none; }
-          .loop .post-row .post-block-grid figure.effect-hera p a i {
-            outline: none;
-            opacity: 0;
-            font-size: 2rem;
-            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-            -ms-transition: opacity 0.35s, -ms-transform 0.35s;
-            transition: opacity 0.35s, transform 0.35s; }
-          .loop .post-row .post-block-grid figure.effect-hera p a:first-child i {
-            -webkit-transform: translate3d(-3.75rem, -3.75rem, 0);
-            -ms-transform: translate(-3.75rem, -3.75rem);
-            transform: translate3d(-3.75rem, -3.75rem, 0); }
-          .loop .post-row .post-block-grid figure.effect-hera p a:nth-child(2) i {
-            -webkit-transform: translate3d(3.75rem, -3.75rem, 0);
-            -ms-transform: translate(3.75rem, -3.75rem);
-            transform: translate3d(3.75rem, -3.75rem, 0); }
-          .loop .post-row .post-block-grid figure.effect-hera p a:hover {
-            opacity: 0.6;
-            text-decoration: none; }
-      .loop .post-row .post-block-grid figure.effect-hera figcaption::before {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 10.625rem;
-        height: 10.625rem;
-        border: 0.125rem solid white;
-        content: '';
-        opacity: 0;
-        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-        -ms-transition: opacity 0.35s, -ms-transform 0.35s;
-        transition: opacity 0.35s, transform 0.35s;
-        -webkit-transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(0, 0, 1);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(0, 0, 1);
-        -webkit-transform-origin: 50%;
-        -ms-transform-origin: 50%;
-        transform-origin: 50%; }
-      .loop .post-row .post-block-grid figure.effect-hera:hover figcaption::before {
-        opacity: 1;
-        -webkit-transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(1, 1, 1);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(1, 1, 1); }
-      .loop .post-row .post-block-grid figure.effect-hera:hover p i:empty {
-        -webkit-transform: translate3d(0, 0, 0);
-        -ms-transform: translate(0, 0);
-        transform: translate3d(0, 0, 0);
-        opacity: 1; }
-    .loop .post-row .post {
-      padding-top: 0.9375rem;
-      padding-bottom: 0.9375rem;
-      -webkit-transition: all .3s;
-      transition: all .3s; }
-      .loop .post-row .post .post-date {
-        font-weight: 900;
-        font-size: 0.875rem;
-        text-transform: uppercase; }
-        .loop .post-row .post .post-date a {
-          color: #ff4d4d;
-          position: relative;
-          display: inline-block; }
-          .loop .post-row .post .post-date a:after {
-            position: absolute;
-            content: " ";
-            display: block;
-            width: 0%;
-            height: 0.125rem;
-            background-color: #ff4d4d;
-            bottom: 0;
-            left: 50%;
-            -webkit-transform: translateX(-50%);
-            -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
-            -webkit-transition: width .2s;
-            transition: width .2s; }
-          .loop .post-row .post .post-date a:hover, .loop .post-row .post .post-date a:focus, .loop .post-row .post .post-date a:active {
-            text-decoration: none;
-            color: #ff4d4d; }
-            .loop .post-row .post .post-date a:hover:after, .loop .post-row .post .post-date a:focus:after, .loop .post-row .post .post-date a:active:after {
-              width: 100%; }
-      .loop .post-row .post .post-title {
-        font-weight: 300;
-        font-size: 1.7rem;
-        text-transform: none;
-        line-height: 1.1;
-        padding-bottom: 0.625rem;
-        padding-top: 0.625rem; }
-      .loop .post-row .post .post-title-separator {
-        width: 100%;
-        height: 0.3125rem;
-        margin-bottom: 0.5rem;
-        background-color: #23222d; }
-      .loop .post-row .post .post-meta {
-        font-weight: 600;
-        padding-top: 0.9375rem;
-        padding-bottom: 0.9375rem;
-        font-size: 0.75rem;
-        text-transform: uppercase; }
-        .loop .post-row .post .post-meta a {
-          color: #ff4d4d;
-          position: relative;
-          display: inline-block; }
-          .loop .post-row .post .post-meta a:after {
-            position: absolute;
-            content: " ";
-            display: block;
-            width: 0%;
-            height: 0.125rem;
-            background-color: #ff4d4d;
-            bottom: 0;
-            left: 50%;
-            -webkit-transform: translateX(-50%);
-            -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
-            -webkit-transition: width .2s;
-            transition: width .2s; }
-          .loop .post-row .post .post-meta a:hover, .loop .post-row .post .post-meta a:focus, .loop .post-row .post .post-meta a:active {
-            text-decoration: none;
-            color: #ff4d4d; }
-            .loop .post-row .post .post-meta a:hover:after, .loop .post-row .post .post-meta a:focus:after, .loop .post-row .post .post-meta a:active:after {
-              width: 100%; }
-    .loop .post-row .post-read-more-btn {
-      margin-top: 0.625rem;
-      margin-bottom: 0.625rem;
-      display: inline-block;
-      padding: 0.625rem 1.875rem;
-      border: 0.1875rem solid #23222d;
-      font-weight: 900;
-      text-transform: uppercase;
-      text-align: center;
-      color: #23222d;
-      font-size: 0.75rem;
-      -webkit-transition: background-color .3s;
-      transition: background-color .3s; }
-      .loop .post-row .post-read-more-btn:hover {
-        color: white;
-        background-color: #23222d;
-        text-decoration: none; }
-
-.tag-view-info {
-  height: 6.25rem;
-  line-height: 6.25rem;
-  background-color: white;
-  font-weight: 400;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  position: relative; }
-  .tag-view-info .tag-view-label {
-    height: 6.25rem;
-    line-height: 6.25rem;
-    float: left;
-    margin-top: 0.125rem; }
-    .tag-view-info .tag-view-label .tag-view-label-text {
-      display: none; }
-      @media only screen and (min-width: 48em) {
-        .tag-view-info .tag-view-label .tag-view-label-text {
-          display: inline; } }
-  .tag-view-info .back-to-index {
-    color: #23222d;
-    height: 6.25rem;
-    line-height: 6.25rem;
-    float: left; }
-    .tag-view-info .back-to-index .fa {
-      -webkit-transition: -webkit-transform .2s;
-      -ms-transition: -ms-transform .2s;
-      transition: transform .2s; }
-    .tag-view-info .back-to-index:hover {
-      color: #23222d; }
-      .tag-view-info .back-to-index:hover .fa {
-        -webkit-transform: translateX(-15%);
-        -ms-transform: translateX(-15%);
-        transform: translateX(-15%); }
-  .tag-view-info .fa {
-    font-size: 2.5rem;
-    vertical-align: middle; }
-  .tag-view-info .tag-name {
-    font-weight: 900; }
-
-.author-view-info {
-  background-color: white;
-  font-weight: 400;
-  font-size: 1.5rem;
-  position: relative; }
-  .author-view-info .author-name {
-    margin-top: 1.5625rem;
-    font-weight: 900;
-    font-size: 2rem;
-    font-family: "Bariol", arial; }
-  .author-view-info .author-bio {
-    font-size: 0.8125rem;
-    text-transform: none;
-    margin-bottom: 1.5625rem; }
-  .author-view-info .author-avatar {
-    display: none; }
-    .author-view-info .author-avatar .author-rss {
-      position: absolute;
-      bottom: 0.3125rem;
-      right: 0;
-      z-index: 99;
-      padding: 0.3125rem 0.9375rem 0.625rem;
-      background-color: white;
-      line-height: 1.1;
-      height: auto;
-      border-radius: 0.625rem;
-      color: #23222d; }
-      .author-view-info .author-avatar .author-rss:hover {
-        color: black; }
-      .author-view-info .author-avatar .author-rss .fa {
-        font-size: 1.25rem; }
-    .author-view-info .author-avatar .author-avatar-img {
-      display: block;
-      position: absolute;
-      max-width: 15.625rem;
-      border: 1.25rem solid white;
-      bottom: 0.3125rem;
-      right: 0; }
-    @media only screen and (min-width: 64em) {
-      .author-view-info .author-avatar {
-        display: block; } }
-
-.footer {
-  background-color: #23222d;
-  text-align: center;
-  color: #b3b3b3;
-  padding: 2rem; }
-  .footer .footer-social-icons a {
-    color: #23222d; }
-    .footer .footer-social-icons a:hover, .footer .footer-social-icons a:focus, .footer .footer-social-icons a:active {
-      color: #23222d; }
-  .footer .footer-info strong {
-    font-size:  1.5em;
-  }
-  .footer .footer-info p {
-    font-size:  1.2em;
-    border-bottom: 2px solid white;
-    padding-bottom: 0.5em;
-  }
-  .footer .footer-tools{
-    margin-top: 1em;
-  }
-
-  .footer .footer-tools img:last-child{
-    margin-left: 1.5em;
-  }
-
-  .footer .footer-final .creativecommons span{
-    width: 200px;
-  }
-
-  .view{
-    display: none;
-  }
-
-  .follow{
-    text-align: center;
-  }
-
-  .follow a i{
-    font-size: 1.7em !important;
-    color: #1A1A21;
-    margin-left: 0.3em;
-  }
-
-@media only screen and (min-width: 48em){
-  .footer{
-    overflow: hidden;
-  }
-  .footer .footer-content-left{
-    float: left;
-    vertical-align: top;
-  }
-  .footer .footer-content-right{
-    float: right;
-    vertical-align: top;
-  }
-
-  .footer .footer-tools{
-    margin-top: 0;
-  }
-
-  .view{
-    display: block;
-  }
-
-  .follow{
-    text-align: left;
-  }
-
-  .follow a i{
-    font-size: 2.5em !important;
-    color: #1A1A21;
-    margin-left: 0.3em;
-    transition: 0.3s;
-  }
-
-  .follow a i:hover{
-    transform: scale(1.3);
-  }
-
-}
-
-@media only screen and (min-width: 64em) {
-  .wrap-center{
-    margin: 0 auto;
-    max-width: 64em;
-  }
-}
-
-.pagination {
-  margin-top: 3.4375rem;
-  text-align: center; }
-  .pagination a {
-    margin-top: 0.625rem;
-    margin-bottom: 0.625rem;
-    display: inline-block;
-    padding: 0.625rem 1.875rem;
-    border: 0.1875rem solid #23222d;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-align: center;
-    color: #23222d;
-    font-size: 0.75rem;
-    -webkit-transition: background-color .3s;
-    transition: background-color .3s; }
-    .pagination a:hover {
-      color: white;
-      background-color: #23222d;
-      text-decoration: none; }
-    .pagination a:active, .pagination a:focus {
-      color: white;
-      background-color: #23222d; }
-    .pagination a .fa {
-      font-size: 0.75rem;
-      margin-right: 0.3125rem; }
-
-.header-back-btn{
-  font-size: 1.5em;
-}
-
-.subscribers{
-  background: #E5E5E5;
-  padding: 0.5em 2em;
-  text-align: center;
-  border-radius: 5px;
-  max-width: 64em;
-  margin: 2rem auto 0 auto;
-}
-
-.subscribers input[type="text"], .subscribers input[type="email"]{
-  padding: 1.4em 1.4em!important;
-  font-size: 18px;
-}
-
-.subscribers input[type="text"]:focus, .subscribers input[type="email"]:focus{
-  border: 1px solid #F4483A;
-}
-
-.subscribers input[type="submit"]{
-  font-size: 18px;
-  transition: 0.3s;
-  margin-top: 1em;
-}
-
-.subscribers input[type="submit"]:hover{
-  transform: scale(1.2);
-  background: #F4483A;
-}
+// Título y logo del blog + nav (no visible)
+.header__title
+    display flex
+    justify-content flex-start
+    .header__logo
+        img
+            width 80px
+        
+    .header__name
+        display none
+        
+    .nav
+        display none
 
 
-.social-buttons > div, .social-buttons > iframe{
-  vertical-align: top;
-  margin: 0 16px 0 0 !important;
-}
-
-.portafolio img{
-  border: 3px solid #2D79AC;
-}
-
-.portafolio figcaption{
-  margin: 1em 0 0 0;
-}
-
-.portafolio figcaption h4{
-  text-transform: uppercase;
-  font-size: 2em;
-}
-  
-.btn-platzi
-  background #87C130 !important
-  padding 0.5em 1em
-  color white !important
-  transition 0.3s
-  
-  &:hover
-    transform scale(1.1)
+// Iconos de busqueda y menú
+.header__options
+    display flex
+    justify-content flex-end
+    .header__search
+        margin 0.6rem 0.5rem 0 0
+        .header__iconSearch
+            font-size 1.6rem
+            vertical-align -15%
+            
+    .header__menu
+        font-size 1.8rem
     
-.agenda
-  background white
-  margin 2rem 0
-  padding 0.5em
-  
-  .agenda-img
-    margin 0
+// Resolución para dispositivos de 360px
+@media all and (min-width 360px)
+    .header__title
+        .header__name
+            font-size 1.8rem
+            margin 0.3rem 0 0 0.3rem
+            display block
+            color white
+            
+    .header__options
+        .header__search
+            .header__input
+                width 155px
+
+// Resolución para dispositivos de 412px
+@media all and (min-width 412px)
+    .header__options
+        .header__search
+            .header__input
+                width 200px
+                
+
+// Resolución para dispositivos de 601px
+@media all and (min-width 601px)
+    .header__options
+        .header__search
+            .header__input
+                width 180px
+
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    .header__title
+        .nav
+            display block
+            margin 0.8rem 0 0 1.5rem
+            
+            li
+                display inline-block
+                padding 0.5rem
+                
+                a
+                    padding 0.5rem 0.2rem 1rem 0.2rem
+                    font-weight 700
+                    font-size 1.1rem
+                    transition 0.3s
+                    
+                    &:hover
+                        color white
+                
+    .header__options
+        .header__menu
+            display none
+
+/*------------------------------------*\
+    3. $Cover
+\*------------------------------------*/
+
+// Estilos de la imagen de portada para el blog/artículo/autor/tags + contenido
+
+//Portada + logo
+.cover
+    text-align center
+    background-repeat no-repeat
+    background-position center
+    background-size cover
+    padding-top 4rem
+    
+    .logo
+        img
+            width 300px
+    
+    .logo__author
+        margin 1rem 0 0 0
+        img
+            width 200px
+            border-radius 50%
+            border 3px solid $ColorDark
+
+// Título / Descripción / Fecha
+.info-block
+    .title
+        letter-spacing 2px
+        font-size 2.5rem
+        color $ColorGray
+        font-weight 800
+        text-shadow 3px 3px 0 $ColorDark
+        padding 0 1rem
+        
+    .description
+        letter-spacing 3px
+        color $ColorGray
+        margin 0 0 1.5rem 0
+        display inline-block
+        padding 0 1rem
+    
+    .info-date
+        font-size 1.2rem
+        text-shadow 1px 1px 0 $ColorDark
+        span
+            margin 0 0.5rem 0 0
+        
+// Redes sociales
+.cover__social
+    padding 0 0 0.5rem 0
+    .cover__list
+        display flex
+        justify-content center
+        
+        .cover__item
+            margin 0 0.5rem
+            
+            a
+                color white
+                font-size 1.7rem
+
+// Resolución para dispositivos de 360px
+@media all and (min-width 360px)
+    .info-block
+        .title
+            font-size 3.2rem
+
+// Resolución para dispositivos de 412px
+@media all and (min-width 412px)
+    .info-block
+        .title
+            letter-spacing 5px
+            font-size 3.7rem
+            
+
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    .cover__tags
+        height 350px !important
+        
+    .cover
+        position relative
+        height 470px
+        margin 0 0 8rem 0
+        background-attachment fixed
+        
+        .logo
+            position absolute
+            bottom -9.8rem
+            left 1rem
+            margin 0 auto
+            left 0
+            right 0
+            
+            img
+                width 600px
+                
+        .logo__author
+            margin 0
+            bottom -8rem
+            img
+                width 300px
+            
+    .info-block
+        
+        .title
+            font-size 5.5rem
+            margin 0 0 0.5rem 0
+            padding 1rem 2rem 0 2rem
+            text-shadow 5px 5px 0 $ColorDark
+            
+        .description
+            padding 0 13rem
+            font-size 1.1rem
+            
+        .info-date
+            font-size 1.5rem
+            text-shadow 2px 2px 0 $ColorDark
+            font-weight 700
+            
+    .cover__social
+        .cover__list
+            .cover__item
+                margin 0 1rem
+                
+                a
+                    font-size 2.5rem
+                    transition 0.3s
+                    
+                    &:hover
+                        transform scale(1.2)
+                        color $ColorDark
+                        
+    .cover__feedly
+        img
+            transition 0.3s
+            &:hover
+                transform scale(1.2)
+                    
+/*------------------------------------*\
+    4. $Menu
+\*------------------------------------*/
+
+// Estilos del menú lateral (En caso de estar en un smartphone/tablet)
+
+// Menú
+.menu
+    background rgba($ColorDark,0.95)
+    width 80%
+    position fixed
+    top 0
+    z-index 2000
+    height 100vh
+    right 0
+    text-align center
+    display none
+    overflow-y scroll
+    
+    .menu__close
+        color white
+        position absolute
+        top 0.8rem
+        right 1rem
+        background none
+        border none
+        font-size 2rem
+        z-index 1000
+    
+    .menu__logo
+        margin 1rem 0
+        img
+            width 150px
+        
+    .menu__list
+        padding 0 0 0 1.8rem
+        li
+            text-align left
+            font-size 1.1rem
+            padding 1rem 0 1rem 0
+            text-transform uppercase
+            
+            a
+                padding 0.5rem
+
+// En caso de que el menú este activo
+.menu-active
+    display block
+    
+/*------------------------------------*\
+    5. $Search
+\*------------------------------------*/
+
+// Estilos para la sección de para busqueda de artículos
+
+// Contenedor de la busqueda - Icono para cerrar - Input - Resultados
+.big-search
+    position fixed
+    width 100%
+    min-height 100%
+    top 0
+    left 0
+    background rgba($ColorDark,0.95)
+    user-select none
+    z-index 99999
+    overflow-y scroll
+    transition 0.3s
+    display none
+    
+    .icon-close
+        font-size 3.5rem
+        color white
+        position absolute
+        right 2rem
+        top 1.3rem
+    
+    .big-search__form
+        width 90%
+        max-width 1080px
+        margin 5rem auto 1rem auto
+        input
+            width 100%
+            padding 2rem 1rem
+            box-sizing border-box
+            border none
+            color white
+            appearance none
+            font-size 3rem
+            font-weight 800
+            background none
+            border-bottom 4px solid white
+            
+        input:placeholder-shown
+            color white
+        
+        ::-webkit-input-placeholder
+            color white
+            
+        :-moz-placeholder
+            color white
+            
+        ::-moz-placeholder
+            color white
+            
+        :-ms-input-placeholder
+            color white
+            
+        ::-ms-input-placeholder
+            color white
+            
+    .results
+        margin 0 auto
+        width 100%
+        max-width 1080px
+        overflow-y scroll
+        padding 0.5rem 1rem
+        
+        p
+            display none
+            
+        a
+            display block
+            
+            span
+                display inline-block
+                margin 0 0.5rem 0 0
+                
+            h2
+                color white
+                font-size 1.2rem
+                margin 0.6rem 0
+                display inline-block
+                
+// En caso de que la busqueda este activa
+.search-active
+    display block
+        
+
+/*------------------------------------*\
+    6. $Code
+\*------------------------------------*/
+
+// Estilos para la sección de ¿QUÉ TE GUSTARÍA APRENDER HOY? que esta antes de los artículos
+
+// Contenedor y título
+.code
+    padding 0.5rem
+    text-align center
+    
+    &__title
+        margin 1rem 0
+        font-size 1.4rem
+        text-transform uppercase
+        display inline-block
+        
+    &__languages
+        display flex
+        justify-content space-around
+ 
+// Lenguajes: HTML - CSS - JavaScript
+.language
+    padding 0.5rem 0.7rem
+    border 4px solid white
+    background-color $ColorGray
+    
+    img
+        width 60px
+        padding 0 0 0.5rem 0
+        
+    figcaption
+        padding 0.5rem 0 0 0
+        border-top 2px solid $ColorDark
+        
+        a
+            color $ColorDark
+            font-weight 700
+
+// Resolución para dispositivos de 360px
+@media all and (min-width 360px)
+    .code
+        &__title
+            font-size 1.4rem
+            letter-spacing 1px
+
+// Resolución para dispositivos de 412px
+@media all and (min-width 412px)
+    .code
+        &__title
+            font-size 1.5rem
+            letter-spacing 2px
+            
+    .language
+        img
+            width 70px
+
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    .code
+        
+        &__title
+            font-size 2rem
+            
+        &__languages
+            justify-content space-around
+            
+    .language
+        padding 0.5rem 1.5rem
+        border 4px solid white
+        background-color $ColorGray
+        
+        img
+            width 128px
+            
+        figcaption
+            padding 0.5rem 0 0 0
+            border-top 3px solid $ColorDark
+            
+            a
+                color $ColorDark
+                font-weight 700
+                font-size 1.2rem
+                
+/*------------------------------------*\
+    7. $Post
+\*------------------------------------*/
+
+// Estilos de la lectura de un artículo
+
+//Contenedor de todo el artículo + tags, botones para compartir
+.post-container
+    max-width 900px
+    margin 0 auto
+    width 100%
+    padding 0.5rem
+    box-sizing border-box
+    
+    .tags
+        display flex
+        justify-content flex-start
+        flex-wrap wrap
+        
+        .tag
+            padding 0.5rem 0.8rem
+            background-color $ColorBlue
+            color $ColorDark
+            font-size 1.2rem
+            vertical-align top
+            font-weight 700
+            margin 0.3rem 0.5rem
+            span
+                margin 0 0.3rem 0 0
+    
+    .post-social
+        margin 1.5rem 0
+        text-align center
+        .addthis_sharing_toolbox a
+            margin 0 0.4rem
+            
+        .post-socialText
+            font-size 1.4rem
+            display inline-block
+            margin 0.5rem 0
+        
+    .post-content 
+        line-height 1.2rem
+        
+        img
+            display block
+            max-width 100%
+            width auto
+            height auto
+            margin 0 auto
+            
+        h1,h2,h3,h4,h5,h6
+            line-height 2rem
+            
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    .post-container
+        .post-social
+            .post-socialText
+                font-size 1.8rem
+
+        .post-content
+            font-size 1.2rem
+            line-height 1.5rem
+            img
+                max-width 900px
+                
+/*------------------------------------*\
+    8. $Loop
+\*------------------------------------*/
+
+// Estilos de los artículos en el index (No la lectura)
+
+// Contenedor de todos los artículos
+.post__content
+    display flex
+    justify-content space-around
+    flex-wrap wrap
+    max-width 1200px
+    margin 0 auto
+    
+    .post
+        box-sizing border-box
+        padding 0 0 0.8rem 0
+        width 100%
+        margin 0.7rem 0.7rem
+        background-color white
+        
+        .post__first
+            padding 0.8rem
+            text-align center
+            text-transform uppercase
+            letter-spacing 3px
+            display none
+        
+    // Estilos únicamente para el primer artículo
+    article:first-child
+        margin 1rem 0 0 0
+        background-color $ColorDark
+        color white
+        width 100%
+        max-width 868px
+        position relative
+        
+        .post__first
+            padding 0.8rem
+            text-transform uppercase
+            letter-spacing 3px
+            display block
+            position absolute
+            background-color white
+            color $ColorDark
+            top 0
+            
+        .post__cover
+            max-width 640px
+            border none
+            
+        .post__header
+            border-bottom 3px solid $ColorBlue
+            .post__title
+                a
+                    color $ColorBlue
+                    
+        .post__description
+            display none
+            
+        .post__footer
+            display flex
+            justify-content space-between
+            margin 0.8rem 0.5rem 0 0.5rem
+            .post__author
+                display block
+                
+                a
+                    vertical-align top
+                    margin 0.9rem 0.5rem 0 0
+                    display inline-block
+                    
+                .post__image
+                    margin 0.2rem 0.5rem 0 0
+                    
+                img
+                    width 40px
+                    border-radius 50%
+            
+        .btn-default
+            border 1px solid $ColorBlue
+            box-shadow 3px 3px 0px $ColorBlue
+            
+// Imagen de los artículos
+.post__cover
+    width 100%
+    max-width 412px
+    background-repeat no-repeat
+    background-position center
+    background-size cover
+    height 200px
+   
+// Título de los artículos
+.post__header
+    padding 0 0 0.5rem 0
+    border-bottom 3px solid $ColorDark
+    margin 0 0.5rem
+    
+    .post__title
+        margin 0.8rem 0 0 0
+        a
+            color $ColorDark
+
+// Descripción de los artílos
+.post__description
+    margin 0 0.5rem
+
+// Tags para los artículos (Solo se muestran para el primer artículo)
+.post__tags
+    display none
+    
+
+// Autor de los artículos (Solo se muestran para el primer artículo)
+.post__footer
+    margin 0 0.5rem
+    .post__author
+        display none
+        
+// Resolución para dispositivos de 360px
+@media all and (min-width 360px)
+    .post__cover
+        height 230px
+        
+// Resolución para dispositivos de 412px
+@media all and (min-width 412px)
+    .post__content
+        .post
+            width 412px
+        
+    .post__cover
+        height 250px
+    
+// Resolución para dispositivos de 601px
+@media all and (min-width 601px)
+    .post__content
+        article:first-child
+            padding 0 0 1.5rem 0
+            .post__cover
+                height 350px
+                
+            .post__header
+                 margin 0 2.5rem
+                 .post__title
+                     margin 1.5rem 0 0 0
+                
+            .post__footer
+                margin 0.8rem 2.5rem 0 2.5rem
+
+// Resolución para dispositivos de 640px
+@media all and (min-width 640px)
+    .post__content
+        .post
+            width 46%
+            .post__cover
+                height 200px
+                
+        article:first-child
+            margin 2rem 0 0 0
+            padding 0
+            position relative
+            
+            .post__first
+                top -1.5rem
+                left 1rem
+                padding 1rem
+                border 2px solid $ColorDark
+                
+            .post__cover
+                width 49%
+                height 250px
+                display inline-block
+                box-sizing border-box
+                vertical-align bottom
+            
+            .post__info
+                width 50%
+                display inline-block
+                box-sizing border-box
+                vertical-align top
+                
+            .post__header
+                 margin 0 0.5rem
+                 .post__title
+                     margin 1rem 0 0 0
+                     
+            .post__description
+                display block
+                
+                
+            .post__footer
+                margin 0.8rem 0.5rem 0 0.5rem
+
+// Resolución para dispositivos de 896px
+@media all and (min-width 896px)
+    .post__content
+        .post
+            width 38%
+            .post__cover
+                height 260px
+                
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    .post__content
+        .post
+            width 30%
+            .post__cover
+                height 200px
+                
+        article:first-child
+            margin 2rem 0 1.5rem 0
+            .post__cover
+                height 300px
+                
+            .post__header
+                .post__title
+                    margin 0.3rem 0
+                
+            .post__tags
+                display block
+                .tag
+                    padding 0.5rem
+                    border 2px solid $ColorBlue
+                    margin 0.2rem
+                    display inline-block
+                    
+            .post__footer
+                .post__author
+                    a
+                        margin 0.9rem 2rem 0 0
+                        font-size 1.2rem
+                    img
+                        width 60px
+                        position absolute
+                        bottom -1.2rem
+                        right -1.2rem
+                        border 2px solid $ColorBlue
+                        
+/*------------------------------------*\
+    $Author
+\*------------------------------------*/
+
+// Estilos para la descripción del autor al final de un artículo
+
+// Contenedor del autor
+.post__authorDescription
+    background $ColorGray-1
+    padding 0.5rem
+    border-radius 5px
+    margin 1rem 0
+    
+// Imagen del autor y botón
+.post__authorImage
+    text-align center
+    
+    img
+        border-radius 50%
+        width 200px
+        margin 0.5rem 0
+        border 3px solid $ColorDark
+        
+    a:nth-child(2)
+        display block
+        
+// Información del autor
+.post__authorInfo
+    text-align center
+    
+    .post__authorLocation
+        font-size 1.2rem
+        
+    .post__authorBio
+        font-size 1.1rem
+        
+// Resolución para dispositivos de 640px
+@media all and (min-width 640px)
+    .post__authorImage
+        width 35%
+        display inline-block
+        box-sizing border-box
+        
+        a:nth-child(2)
+            margin 0 0 0.5rem 0
+        
+    .post__authorInfo
+        width 60%
+        box-sizing border-box
+        display inline-block
+        text-align left
+        vertical-align top
+        
+        .post__authorName
+            font-size 2.5rem
+            
+        .post__authorLocation
+            font-size 1.5rem
+            
+        .post__authorBio
+            font-size 1.3rem
+    
+                
+/*------------------------------------*\
+    9. $Newsletter
+\*------------------------------------*/
+
+// Estilos del Newsletter (Subscripción)
+
+// Newsletter
+.newsletter
+    margin 1rem 0
+    
+// Fomulario del newsletter
+.newsletter__form
+    text-align center
+    padding 1rem
+    background-color $ColorDark
+    color white
+    margin 1rem 0 0 0
+    
+//Contenedor del newsletter - Títulos - Inputs - Botón
+.newsletter__content
+    .newsletter__title
+        font-size 1.5rem
+        display block
+    .newsletter__otherTitle
+        font-weight 300
+        
+    .newsletter__inputs
+        margin 0.8rem 0 0 0
+        input
+            color $ColorDark
+            
+        input[type="text"]
+        input[type="email"]
+            width 100%
+            box-sizing border-box
+            padding 0.8rem 0.5rem
+            margin 0.5rem 0
+            border 2px solid $ColorBlue
+            color white
+            background-color $ColorDark-2
+            
+        input[type="submit"]
+            padding 0.8rem
+            border 1px solid $ColorBlue
+            box-shadow 2px 2px 0px $ColorBlue
+            background none
+            color $ColorBlue
+            text-transform uppercase
+            background-color $ColorDark-2
+            
+// Resolución para dispositivos de 412px
+@media all and (min-width 412px)
+    .newsletter__form
+        padding 1.5rem 1rem
+        
+// Resolución para dispositivos de 601px
+@media all and (min-width 601px)
+    .newsletter__form
+        padding 1.5rem
+        
+    .newsletter__content
+        .newsletter__inputs
+            input[type="text"]
+            input[type="email"]
+                width 48%
+    
+            input:first-child
+                margin 0.5rem 3% 0.5rem 0
+
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    .newsletter__form
+        padding 2rem 0
+        margin 0 auto
+        max-width 868px
+        
+    .newsletter__content
+        width 600px
+        margin 0 auto
+        .newsletter__title
+            font-size 2.2rem
+        .newsletter__otherTitle
+            font-size 1.4rem
+
+/*------------------------------------*\
+    10. $Pagination
+\*------------------------------------*/
+            
+// Estilos para la paginación del blog (Solo aparece en caso de sobre pasar el número de artículos por página)
+
+//Pagination - Botones
+.pagination
+    text-align center
+    margin 2rem 0
+    .newer-posts
+        
+    .older-posts
+        padding 0.7rem 0.8rem
+        display inline-block
+        border 2px solid $ColorDark
+        color $ColorDark
+        
+/*------------------------------------*\
+    11. $Diary - Demos - Videos - Others
+\*------------------------------------*/
+
+// Estios de la Agenda - Demos - Videos - Otros artículos (Artículos estáticos)
+
+// Contenedor principal
+.post__special
+    display flex
+    justify-content space-around
+    flex-wrap wrap
+    
+// Bloque - Título - Imagen - Plataforma - Tema - Botón
+.special
+    width 100%
+    position relative
+    box-sizing border-box
+    margin 1rem 0 0.5rem 0
+    background-color $ColorDark
+    color white
+    
+    .special__title
+        position absolute
+        padding 0.5rem
+        top 0
+        z-index 500
+        margin 0 auto
+        background rgba(white,0.5)
+        text-align center
+        
+        h2
+            margin 0
+            font-size 1.3rem
+        
+    .special__cover
+        position relative
+        .special__image
+            width 100%
+            height 250px
+            
+        .special__platform
+            border-radius 50%
+            position absolute
+            width 60px
+            margin 0 auto
+            left 0
+            right 0
+            bottom -1.5rem
+            border 2px solid white
+            
+    .special__info
+        .special__titleInfo
+            font-size 1.6rem
+            text-align left
+            margin 1.8rem 0 0.5rem 1rem
+            color white
+            
+        .special__theme
+            font-size 1.1rem
+            display block
+            margin 0.5rem 1rem
+            color white
+            
+    .special__button
+        text-align center
+        .btn-default
+            border-color $ColorBlue
+            box-shadow 2px 2px 0px $ColorBlue
+            margin 1rem 0
+
+// Resolución para dispositivos de 640px
+@media all and (min-width 640px)
+    .special
+        width 46%
+
+// Resolución para dispositivos de 896px
+@media all and (min-width 896px)
+    .special
+        width 32%
+        
+        .special__cover
+            .special__image
+                width 100%
+                height 180px
+        
+/*------------------------------------*\
+    12. $Footer
+\*------------------------------------*/
+
+// Estilos del Footer
+
+// Footer
+.footer
+    background-color $ColorDark
+    color white
+    text-align center
+    padding 0.5rem
+    text-align center
+    
+// Contenedor para usar FlexBox y el contenido se centre
+.footer-wrap
+    display flex
+    justify-content space-between
+    flex-wrap wrap
+    
+// Información - Logo y nombre
+.footer__info
+    width 100%
+    box-sizing border-box
+    .footer__logo
+        img
+            width 120px
+            display inline-block
+        figcaption
+            display inline-block
+            vertical-align top
+            margin 1.5rem 0 0 0.5rem
+            font-size 1.5rem
+
+// Redes sociales del footer
+.footer__social
+    .footer__list
+        display flex
+        justify-content center
+        
+        .footer__item
+            margin 0 0.7rem
+            
+            &:first-child
+                margin 0 0.7rem 0 0
+            
+            a
+                color white
+                font-size 1.7rem
+
+// Nav en el footer (Solo se muestra en Desktop)
+.footer__nav
+    display none
+
+// Información sobre Ghost y DigitalOcean
+.footer__moreInfo
     width 100%
     
-  .agenda-info
-    .h2
-      margin 0.5em 0
-      color #2D79AC
-      
-    .prox
-      padding 0.2em 0.5em
-      background #1A1921
-      display inline-block
-      border-radius 5px
-      color white
-      
-    .h3:before
-      content '" '
-      
-    .h3:after
-      content ' "'
-      
-    .strong
-      display block
-      font-size 1.2em
-      margin 0.2em 0
-      color #E34949
-      
-    .place
-      .icon
-        margin 0 0.5em 0 0.2em
-      
-    .date
-      .icon
-        margin 0 0.3em 0 0
-
-.twitter-tweet
-  margin 0 auto
+    .footer__love
+        margin 1.3rem 0
         
-@media only screen and (min-width: 48em)
+        span
+            margin 0 0.2rem
+            font-size 1.4rem
+            &:nth-child(3)
+                color $ColorPink
+                
+        img
+            width 45px
+            vertical-align top
+            
+    .footer__technologies
+        .footer__ghost
+        .footer__digitalOcean
+            display inline-block
+            margin 0.5rem
+            
+        .footer__ghost
+            margin 0 0.5rem 0 0
+            
+// Resolución para dispositivos de 412px
+@media all and (min-width 412px)
+    .footer__info
+        .footer__logo
+            figcaption
+                font-size 2rem
+                
+    .footer__social
+        .footer__list
+            .footer__item
+                margin 0 0.9rem
+                
+                a
+                    font-size 2rem
 
-  .agenda
+// Resolución para dispositivos de 601px
+@media all and (min-width 601px)
+    .footer
+        text-align left
+        
+    .footer__info
+        width 48%
+        .footer__logo
+            figcaption
+                font-size 1.5rem
     
-    .agenda-img
-      width 40%
-      display inline-block
-      vertical-align top
-      
-    .agenda-info
-      width 57%
-      margin 0 0 0 2%
-      display inline-block
-      
-      .h2
-        margin 0
+    .footer__social
+        .footer__list
+            justify-content flex-start
         
+    .footer__moreInfo
+        width 48%
 
-      
-
-/* Resolution iphone*/
-
-@media only screen and (min-width: 320px){
-  .footer .footer-tools img:last-child{
-    margin-bottom: 1em;
-  }
-}
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    .footer
+        padding 0.5rem 2rem
+    .footer__info
+        width 30%
+        
+    .footer__nav
+        width 30%
+        display block
+        li
+            margin 1rem 0
+        
+    .footer__moreInfo
+        width 30%

@@ -1,18 +1,16 @@
-<div class="big-search">
-    <i class="fa fa-times big-search-close-btn js-close-search"></i>
-    <div class="big-search-container">
-        <div class="row">
-            <div class="small-12 columns">
-                <form class="big-search-form">
-                    <input class="big-search-form-input js-search-input" type="text" placeholder="Buscar ..."/>
-                </form>
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-12 columns">
-                {{!-- your search results here --}}
-                <div class="big-search-results js-search-results"></div>
-            </div>
-        </div>
-    </div>
-</div>
+{{!-- Busqueda de artículo --}}
+
+<section class="big-search animated" id="js-search">
+
+	{{!-- Icono para cerrar --}}
+    <a href="#" class="icon-close fa fa-times" id="js-closeSearch"></a>
+
+	{{!-- Input --}}
+    <form action="" class="big-search__form">
+        <input id="search-field" type="text" placeholder="Buscar...">
+    </form>
+
+	{{!-- Resultados--}}
+    <section id="results" class="results"></section>
+
+</section>

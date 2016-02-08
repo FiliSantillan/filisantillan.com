@@ -1,3 +1,9 @@
+{{!-- Navegación --}}
+
 {{#foreach navigation}}
-    <a href="{{url absolute="true"}}"><i class="fa fa-fw fa-circle-o"></i><span>{{label}}</span></a>
+	{{!-- Lista de navegación --}}
+    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation">
+    	<a href="{{url absolute="true"}}">{{label}}</a>
+    </li>
 {{/foreach}}
+

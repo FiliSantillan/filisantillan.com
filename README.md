@@ -1,57 +1,147 @@
-#filisantillan.com
+# Fili Santillán
 
-***
+![Logo Fili Santillán](https://s-media-cache-ak0.pinimg.com/originals/4b/2a/8a/4b2a8aedb10dc94db8b720acfecf703a.png)
 
-**Fili Santillán** Student Ambassador en Platzi, Desarrollador & Diseñador Web, Gamer, Geek, Amante de los perros, con una gran pasión por aprender y compartir conocimiento.
+Front-end Developer | Blogger | Platzi Student Ambassador
 
-![Fili Santillán](https://s-media-cache-ak0.pinimg.com/originals/57/6c/44/576c4457cef97f90b4e4bd7912e1a96d.png)
+## Código para post estáticos
 
-##Filiberto Martínez Santillán
+Código para usar en post estáticos especiales: Agenda - Demos - Videos - Otros Artículos
 
-***
+### Agenda
+```
+<article class="special">
 
-![Sobre mí](https://s-media-cache-ak0.pinimg.com/originals/22/8c/1e/228c1ea8dfc5d62d4dffe642a452e1c3.png)
+ <header class="special__title">
+  <h2 class="special__name"> </h2>
+ </header>
 
-##Lecturas Increíbles
+ <figure class="special__cover">
+  <img class="special__image" src=" " alt=" ">
+ </figure>
 
-***
+ <section class="special__info">
+  <h3 class="special__titleInfo"> </h3>
+  <span class="special__theme"><i class="fa fa-globe"></i> Streaming</span>
+  <span class="special__theme"><i class="fa fa-calendar-o"></i> </span>
+ </section>
 
-![Introducción a Ghost](https://s-media-cache-ak0.pinimg.com/originals/03/cb/4b/03cb4b7312d83fc75c1668059b7a50e0.png)
+</article>
+```
 
-##Temas Interesantes
+### Demos
+```
+<article class="special">
+ <figure class="special__cover">
+  <img class="special__image" src=" " alt=" ">
+  <img class="special__platform" src="/assets/images/codepen.jpg" alt="">
+ </figure>
 
-***
+ <section class="special__info">
+  <h3 class="special__titleInfo"> </h3>
+  <span class="special__theme"><i class="fa fa-html5"></i> HTML</span>
+  <span class="special__theme"><i class="fa fa-css3"></i> CSS</span>
+  <span class="special__theme"><i class="fa fa-code"></i> JavaScript</span>
+ </section>
 
-![Temas Interesantes](https://s-media-cache-ak0.pinimg.com/originals/b9/02/42/b9024208536cf5a7d7d3568a51ef5ed5.png)
+ <footer class="special__button">
+  <a href="#" target="blank"><button class="btn-default">Ver Demo</button></a>
+ </footer>
+</article>
+```
 
-##Contacto
+```
+<article class="special">
+ <figure class="special__cover">
+  <img class="special__image" src=" " alt=" ">
+  <img class="special__platform" src="/assets/images/github.jpg" alt="">
+ </figure>
 
-***
+ <section class="special__info">
+  <h3 class="special__titleInfo"> </h3>
+  <span class="special__theme"><i class="fa fa-html5"></i> HTML</span>
+  <span class="special__theme"><i class="fa fa-css3"></i> CSS</span>
+  <span class="special__theme"><i class="fa fa-code"></i> JavaScript</span>
+ </section>
 
-Cuéntame sobre ti, tus proyectos, tus ideas y todo lo que tengas en mente . . . 
+ <footer class="special__button">
+  <a href="#" target="blank"><button class="btn-default">Ver Demo</button></a>
+ </footer>
+</article>
+```
 
-![Footer](https://s-media-cache-ak0.pinimg.com/originals/f4/c9/9c/f4c99c3d57ab493b37edc22c97482101.png)
+### Videos
+```
+<article class="special">
+ <header class="special__title">
+  <h2 class="special__name"> </h2>
+ </header>
+ <figure class="special__cover">
+  <img class="special__image" src=" " alt=" ">
+  <img class="special__platform" src="/assets/images/codigofacilito.jpg" alt="">
+ </figure>
 
-[Ghost](https://ghost.org/download/)
+ <section class="special__info">
+  <h3 class="special__titleInfo">Aprende git empezando desde cero</h3>
+  <span class="special__theme"><i class="fa fa-clock-o"></i> min.</span>
+  <span class="special__theme"><i class="fa fa-terminal"></i> </span>
+ </section>
 
-[DigitalOcean](https://www.digitalocean.com/?refcode=c4c217c06b83)
+ <footer class="special__button">
+  <a href="#" target="blank"><button class="btn-default">Ver video</button></a>
+ </footer>
+</article>
+```
 
-###Social
+### Otros Artículos
+```
+<article class="special">
+ <header class="special__title">
+  <h2 class="special__name"> </h2>
+ </header>
+ <figure class="special__cover">
+  <img class="special__image" src="" alt="">
+  <img class="special__platform" src="/assets/images/platzi.jpg" alt="">
+ </figure>
 
-***
+ <section class="special__info">
+  <h3 class="special__titleInfo"> </h3>
+  <span class="special__theme"><i class="fa fa-code"></i> </span>
+ </section>
+
+ <footer class="special__button">
+  <a href="#" target="blank"><button class="btn-default">Ver</button></a>
+ </footer>
+</article>
+```
+
+## Orden para ejecutar dependencias de gulp
+
+### 1.- Minificar archivos JS
+```
+gulp minify-js
+```
+
+### 2.- Minificar archivos CSS
+```
+gulp minify-css
+```
+
+### 3.- Concatenar archivos JS
+```
+gulp concat-js
+```
+
+### 4.- Concatenar archivos CSS
+```
+gulp concat-css
+```
+
+## Contacto
 
 [Facebook](https://www.facebook.com/FiliSantillanMX)
-
 [Twitter](https://twitter.com/FiliMX)
 
-[Instagram](https://instagram.com/filimx/)
+## Licencia
 
-[Google Plus](https://plus.google.com/+FiliMartínezZ)
-
-[Linkedin](https://mx.linkedin.com/in/filisantillan)
-
-[Github](https://github.com/FiliMX)
-
-
-
-
+© Fili Santillán

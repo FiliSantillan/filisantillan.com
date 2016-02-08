@@ -1,11 +1,18 @@
-<div class="menu-container js-menu-container">
-    <div class="menu-wrap">
-        <nav class="menu">
-            <div class="icon-list">
-                {{navigation}}
-            </div>
-        </nav>
-        <button class="close-button js-close-main-menu" id="close-button">Cerrar Menu</button>
-    </div>
-</div>
-<div class="menu-overlay js-menu-overlay"></div>
+{{!-- Menú --}}
+
+<section class="menu animated" id="js-menu">
+
+	{{!-- Icono cerrar menú --}}
+    <button class="menu__close fa fa-times" id="js-closeMenu"></button>
+
+	{{!-- Logo --}}
+    <figure class="menu__logo">
+        <img src="{{@blog.logo}}" alt="Logo Fili Santillán">
+    </figure>
+	
+	{{!-- Lista de navegación --}}
+    <ul class="menu__list">
+        {{navigation}}
+    </ul>
+
+</section>

@@ -1,17 +1,31 @@
+{{!-- Sitio para el autor --}}
+
 {{!< default}}
-{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
-{{! The sticky header }}
-{{> 'sticky-header'}}
-
-{{! Everything inside the #author tags pulls data from the author }}
 {{#author}}
-    {{> "big-header"}}
+    {{!-- Header --}}
+    {{> "header"}}
+
+    {{!-- Portada --}}
+    {{> "cover-author"}}
+
+    {{!-- Menú --}}
+    {{> "menu"}}
+
+    {{!-- Busqueda--}}
+    {{> "search"}}
+
 {{/author}}
 
-<main class="content author-template scene-element fade-in-right" role="main">
-    {{! The tag below includes the post loop - partials/loop.hbs }}
+{{!-- Contenido --}}
+<main class="post__content" role="main">
+
     {{> "loop"}}
+
 </main>
 
+{{!-- Paginación --}}
+{{pagination}}
+
+{{!-- Footer --}}
 {{> "footer"}}
