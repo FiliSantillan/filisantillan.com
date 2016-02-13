@@ -1,4 +1,4 @@
-# Fili Santillán Blog 2.1.0
+# Fili Santillán Blog 2.1.1
 ##Ghost 0.7.6
 
 ❤ HTML • CSS • JS ❤ | Web Developer | Blogger | Geek | YouTube | Platzi Student Ambassador
@@ -88,7 +88,7 @@ Código para usar en artículos estáticos especiales: Agenda - Demos - Videos -
 </article>
 ```
 
-### Otros Artículos
+### Más Artículos
 ```
 <article class="special">
 
@@ -105,7 +105,7 @@ Código para usar en artículos estáticos especiales: Agenda - Demos - Videos -
         </p>
 
         <div class="special-button">
-            <a href="#" target="blank">Ver Demo</a>
+            <a href="#" target="blank">Ver Artículo</a>
         </div>
     </footer>
 </article>
@@ -129,7 +129,7 @@ gulp group-mq
 
 ## 3.- Minificar archivo CSS
 ```
-gulp minify-css
+gulp minify-stylus
 ```
 
 ## (Vendor)
