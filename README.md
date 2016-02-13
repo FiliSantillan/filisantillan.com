@@ -88,7 +88,7 @@ Código para usar en artículos estáticos especiales: Agenda - Demos - Videos -
 </article>
 ```
 
-### Otros Artículos
+### Más Artículos
 ```
 <article class="special">
 
@@ -105,7 +105,7 @@ Código para usar en artículos estáticos especiales: Agenda - Demos - Videos -
         </p>
 
         <div class="special-button">
-            <a href="#" target="blank">Ver Demo</a>
+            <a href="#" target="blank">Ver Artículo</a>
         </div>
     </footer>
 </article>
