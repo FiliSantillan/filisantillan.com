@@ -129,7 +129,7 @@ gulp group-mq
 
 ## 3.- Minificar archivo CSS
 ```
-gulp minify-css
+gulp minify-stylus
 ```
 
 ## (Vendor)
