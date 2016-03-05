@@ -34,11 +34,18 @@ gulp.task('minify-js', function() {
     .pipe(gulp.dest('./assets/js/vendor/'));
 });
 
-// Minifica archivos CSS
+// Minifica archivos CSS (Vendor)
 gulp.task('minify-css', function() {
   return gulp.src('./assets/css-dev/vendor/*.css')
     .pipe(minifyCss())
     .pipe(gulp.dest('./assets/css/vendor/'));
+});
+
+// Minifica archivos CSS (Stylus)
+gulp.task('minify-stylus', function() {
+  return gulp.src('./assets/css/styles.css')
+    .pipe(minifyCss())
+    .pipe(gulp.dest('./assets/css/'));
 });
 
 // Concatena archivos JS
