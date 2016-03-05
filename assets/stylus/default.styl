@@ -11,7 +11,7 @@ h2, h3,h4, h5, h6
     
 // Encabezados
 h2
-    font-size 2rem
+    font-size 2.3rem
 
 h3
     font-size 1.8rem
@@ -28,7 +28,7 @@ h6
 // Párrafos y listas
 p, ol, dl
     font-feature-settings 'liga' 1, 'onum' 1, 'kern' 1
-    margin 0.8rem 0 0.8rem 0
+    margin 1rem 0 1rem 0
     text-rendering geometricPrecision
 
 // Listas
@@ -103,12 +103,12 @@ mark
 // Código
     
 code
-    padding 0 5px
+    padding .1rem .3rem
     white-space pre-wrap
-    display inline-block
-    background $ColorDark
+    background rgba($ColorDark,0.2)
+    box-sizing border-box
     border-radius 3px
-    color white
+    color $ColorDark
     
 // Tablas
 table
@@ -228,8 +228,11 @@ iframe[id*="twitter-widget"]
         font-size: 1.4rem
         
     pre
-        width 900px
         max-width 900px
+        
+        code
+            background none
+            border none
         
     .flex-video
         width 900px
