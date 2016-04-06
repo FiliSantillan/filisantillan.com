@@ -1,6 +1,6 @@
 {
   "name": "filisantillan",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "Fili Santillán: http://filisantillan.com/",
   "main": "index.js",
   "scripts": {

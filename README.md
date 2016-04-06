@@ -1,4 +1,4 @@
-# Fili Santillán Blog 2.1.2
+# Fili Santillán Blog 2.1.3
 ##Ghost 0.7.6
 
 ❤ HTML • CSS • JS ❤ | Web Developer | Blogger | Geek | YouTube | Platzi Student Ambassador
