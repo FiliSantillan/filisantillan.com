@@ -1,70 +1,137 @@
-// Dependencias
+// Dependences
 var gulp = require('gulp'),
+    runSequence = require('run-sequence'),
+    gutil = require('gulp-util'),
+    plumber = require('gulp-plumber'),
+    merge = require('merge-stream'),
+    rename = require('gulp-rename'),
     stylus = require('gulp-stylus'),
-    uglify = require('gulp-uglify'),
+    cmq = require('gulp-combine-mq'),
+    autoprefixer = require('gulp-autoprefixer'),
     minifyCss = require('gulp-minify-css'),
     concat = require('gulp-concat'),
-    gcmq = require('gulp-group-css-media-queries'),
-    path = {},
-    stylusTasks = ['styles'];
+    uglify = require('gulp-uglify'),
+    livereload = require('gulp-livereload');
 
-// Path - Watch
-path.watch = {
-    stylus: ['./assets/stylus/*.styl']
-};
+const imagemin = require('gulp-imagemin');
 
-// Monitorea cambios en los estilos
-gulp.task('watch', function () {
-    gulp.watch(path.watch.stylus, stylusTasks);
-});
+var onError = function(err) {
+    gutil.log(gutil.colors.red('¡Oh, no! 😱'));
+    gutil.beep();
+    console.log(err);
+}
 
-// Compila stylus a css
-gulp.task('styles', function () {
-  gulp.src('./assets/stylus/styles.styl')
-    .pipe(stylus({
-      compress: true
-    }))
-    .pipe(gulp.dest('./assets/css/'));
-});
+gulp.task('styles', function() {
+    return gulp
+        .src('./assets/src/styles/main.styl')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(stylus({
+            'include css': true
+        }))
+        .pipe(rename('styles.css'))
+        .pipe(gulp.dest('./assets/src/css-dev/'))
+})
 
-// Minifica archivos JS
-gulp.task('minify-js', function() {
-  return gulp.src('./assets/js-dev/vendor/*.js')
-    .pipe(uglify())
-    .pipe(gulp.dest('./assets/js/vendor/'));
-});
+gulp.task('cmq', function() {
+    return gulp
+        .src('./assets/src/css-dev/*.css')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(cmq())
+        .pipe(gulp.dest('./assets/src/css-dev/'))
+})
 
-// Minifica archivos CSS (Vendor)
-gulp.task('minify-css', function() {
-  return gulp.src('./assets/css-dev/vendor/*.css')
-    .pipe(minifyCss())
-    .pipe(gulp.dest('./assets/css/vendor/'));
-});
+gulp.task('prefix', function() {
+    return gulp
+        .src('./assets/src/css-dev/*.css')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: true
+        }))
+        .pipe(minifyCss())
+        .pipe(gulp.dest('./assets/dist/css/'))
+        .pipe(livereload())
+})
 
-// Minifica archivos CSS (Stylus)
-gulp.task('minify-stylus', function() {
-  return gulp.src('./assets/css/styles.css')
-    .pipe(minifyCss())
-    .pipe(gulp.dest('./assets/css/'));
-});
+// gulp.task('concat', function() {
 
-// Concatena archivos JS
-gulp.task('concat-js', function() {
-  return gulp.src('./assets/js/vendor/*.js')
-    .pipe(concat('vendor.js'))
-    .pipe(gulp.dest('./assets/js/vendor/'));
-});
+//     var views = gulp
+//         .src('./src/js/views/*.js')
+//         .pipe(plumber({
+//             errorHandler: onError
+//         }))
+//         .pipe(concat('views.js'))
+//         .pipe(gulp.dest('./dist/js/'))
 
-// Concatena archivos CSS
-gulp.task('concat-css', function() {
-  return gulp.src('./assets/css/vendor/*.css')
-    .pipe(concat('vendor.css'))
-    .pipe(gulp.dest('./assets/css/vendor/'));
-});
+//     var vendor = gulp
+//         .src('./src/js/vendor/*.js')
+//         .pipe(plumber({
+//             errorHandler: onError
+//         }))
+//         .pipe(concat('vendor.js'))
+//         .pipe(gulp.dest('./dist/js/'))
 
-// Agrupa los media-queries
-gulp.task('group-mq', function () {
-  gulp.src('./assets/css/styles.css')
-    .pipe(gcmq())
-    .pipe(gulp.dest('./assets/css'));
-});
+//     return merge(cloudPrivate, social_group);
+// })
+
+
+// gulp.task('minifyJS', function() {
+//     var js = gulp
+//         .src('./dist/js/*')
+//         .pipe(plumber({
+//             errorHandler: onError
+//         }))
+//         .pipe(uglify())
+//         .pipe(gulp.dest('./dist/js'))
+
+//     var jsRender = gulp
+//         .src('./dist/js-render/*')
+//         .pipe(plumber({
+//             errorHandler: onError
+//         }))
+//         .pipe(uglify())
+//         .pipe(concat('render.js'))
+//         .pipe(gulp.dest('./dist/js/'))
+
+//     var reload = gulp
+//         .src('./dist')
+//         .pipe(livereload())
+
+//     return merge(js, jsRender, reload)
+// })
+
+gulp.task('c-img', function() {
+    return gulp
+        .src('./assets/src/images/**/*')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(imagemin({
+            optimizationLevel: 5
+        }))
+        .pipe(gulp.dest('./assets/dist/images/'))
+})
+
+gulp.task('build-styles', function() {
+    runSequence('styles', 'cmq', 'prefix')
+})
+
+// gulp.task('build-js', function() {
+//     runSequence(['concat'], 'emerald', 'minifyJS')
+// })
+
+gulp.task('watch', function() {
+    livereload.listen({ start: true })
+    gulp.watch('./assets/src/styles/**/*.styl', ['build-styles'])
+    // gulp.watch('./src/js/**/*.js', ['build-js'])
+})
+
+gulp.task('default', function() {
+    runSequence(['build-styles'], 'watch') //runSequence(['build-styles', 'build-js'], 'watch')
+})
