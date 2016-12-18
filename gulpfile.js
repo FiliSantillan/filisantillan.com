@@ -60,6 +60,12 @@ gulp.task('prefix', function() {
         .pipe(livereload())
 })
 
+gulp.task('c-fonts', function () {
+    return gulp.src('./assets/src/fonts/*')
+        .pipe(fontmin())
+        .pipe(gulp.dest('./assets/dist/fonts/'));
+});
+
 // gulp.task('concat', function() {
 
 //     var views = gulp
@@ -107,7 +113,7 @@ gulp.task('prefix', function() {
 //     return merge(js, jsRender, reload)
 // })
 
-gulp.task('c-img', function() {
+gulp.task('c-images', function() {
     return gulp
         .src('./assets/src/images/**/*')
         .pipe(plumber({
