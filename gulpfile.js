@@ -9,6 +9,7 @@ var gulp = require('gulp'),
     cmq = require('gulp-combine-mq'),
     autoprefixer = require('gulp-autoprefixer'),
     minifyCss = require('gulp-minify-css'),
+    fontmin = require('gulp-fontmin'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     livereload = require('gulp-livereload');
