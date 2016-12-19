@@ -360,6 +360,27 @@ ul[class*='oo-no-list'] {
   font-weight: 300;
 }
 
+.cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 150px;
+  width: 100%;
+  position: relative;
+}
+
+.cover .cover__description {
+  position: absolute;
+  background-color: #247ba0;
+  left: 0.5rem;
+  bottom: -5rem;
+  color: #f8fbfb;
+  font-family: 'Nunito', sans-serif;
+  padding: 1rem;
+  font-weight: 300;
+  box-shadow: 8px 8px 0 #f25f5c;
+  max-width: 70%;
+}
+
 @font-face {
   font-family:'icons';src:url("../fonts/icons.ttf?i6ha4") format('truetype'), url("../fonts/icons.woff?i6ha4") format('woff'), url("../fonts/icons.svg?i6ha4#icons") format('svg');font-weight:normal;font-style:normal;
 }

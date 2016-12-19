@@ -1,9 +1,11 @@
 {{!-- Header --}}
 
 <header class='header'>
+    {{#if @blog.logo}}
     <figure class='header__image'>
-        <img src='{{asset "./dist/images/logo.png"}}' alt='' class='header__img'>
+        <img src='{{@blog.logo}}' alt='{{@blog.title}}' class='header__img'>
     </figure>
+    {{/if}}
     <a href='#', class="header__menu">
         <span class='header__text'>Menú</span>
         <i class='header__icon icon-menu'></i>
