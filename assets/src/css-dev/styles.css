@@ -211,6 +211,11 @@ figure {
   margin: 0;
 }
 
+ul[class*='oo-no-list'] {
+  list-style: none;
+  padding: 0;
+}
+
 [class^="icon-"],[class*=" icon-"] {
  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icons' !important;
@@ -223,6 +228,18 @@ figure {
  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-instagram:before {
+  content: "\e903";
+}
+
+.icon-twitter:before {
+  content: "\e901";
+}
+
+.icon-facebook:before {
+  content: "\e902";
 }
 
 .icon-home:before {
@@ -243,6 +260,10 @@ figure {
 
 .icon-user:before {
   content: "\e074";
+}
+
+.icon-arrow-right:before {
+  content: "\e095";
 }
 
 .icon-menu:before {
@@ -274,6 +295,69 @@ figure {
 
 .header__menu .header__icon {
   font-size: 1.5rem;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 90%;
+  height: 100vh;
+  background-color: #247ba0;
+  padding: 1rem 0.5rem;
+  color: #f8fbfb;
+  box-sizing: border-box;
+  display: none;
+}
+
+.menu__close {
+  position: absolute;
+  background-color: #ffe066;
+  top: 0.8rem;
+  left: -1.5rem;
+  padding: 0.8rem;
+  box-shadow: 5px 5px 0 #f25f5c;
+}
+
+.menu__close .menu__icon {
+  font-size: 1.7rem;
+  color: #1b1b1b;
+}
+
+.menu__image {
+  text-align: center;
+}
+
+.menu__image .menu__img {
+  width: 120px;
+  margin: 0 0 0.6rem 0;
+}
+
+.menu__image .menu__text {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+}
+
+.menu__options {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.menu__options .menu__option {
+  width: 33.33%;
+  text-align: center;
+}
+
+.menu__options .menu__option .menu__icon {
+  font-size: 1.8rem;
+  display: block;
+  margin: 1rem 0 0.3rem 0;
+}
+
+.menu__options .menu__option .menu__text {
+  font-weight: 300;
 }
 
 @font-face {

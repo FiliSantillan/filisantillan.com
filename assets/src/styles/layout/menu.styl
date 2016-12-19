@@ -1,0 +1,51 @@
+.menu
+    position fixed
+    top 0
+    right 0
+    width 90%
+    height 100vh
+    background-color $color-blue
+    padding 1rem 0.5rem
+    color $color-white
+    box-sizing border-box
+    display none
+    
+    &__close
+        position absolute
+        background-color $color-yellow
+        top 0.8rem
+        left -1.5rem
+        padding 0.8rem
+        box-shadow 5px 5px 0 $color-red
+        
+        .menu__icon
+            font-size 1.7rem
+            color $color-black
+    
+.menu__image
+    text-align center
+    
+    .menu__img
+        width 120px
+        margin 0 0 0.6rem 0
+    .menu__text
+        font-size 2rem
+        font-weight 700
+        font-family $font-nutito
+    
+.menu__options
+    display flex
+    justify-content flex-start
+    flex-wrap wrap
+    
+    .menu__option
+        width 33.33%
+        text-align center
+        
+        .menu__icon
+            font-size 1.8rem
+            display block
+            margin 1rem 0 0.3rem 0
+            
+        .menu__text
+            font-weight 300
