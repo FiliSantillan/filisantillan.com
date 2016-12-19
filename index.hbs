@@ -1,25 +1,25 @@
+{{!-- Default --}}
 {{!< default}}
 
 {{!-- Header --}}
 {{> 'header' }}
 
-{{!-- {{!-- Portada --}}
-{{> "cover"}}
 
-{{!-- Menú --}}
+{{!-- {{> "cover"}}
+
+
 {{> "menu"}}
 
-{{!-- Busqueda --}}
+
 {{> "search"}}
 
-{{!-- Lenguajes para aprender --}}
+
 <section class="code">
     <strong class="code__title">¿Qué te gustaría aprender hoy?</strong>
     
     <section class="code__languages">
         
-        {{!-- HTML --}}
-        <figure>x
+        <figure>
             <a href="/tag/html/">
                 <img src='{{asset "images/html-mobile.jpg"}}' 
                      srcset='{{asset "images/html-tablet.jpg"}} 412w,
@@ -28,7 +28,6 @@
             </a>
         </figure>
         
-        {{!-- CSS --}}
         <figure>
             <a href="/tag/css/">
                 <img src='{{asset "images/css-mobile.jpg"}}' 
@@ -38,7 +37,6 @@
             </a>
         </figure>
 
-        {{!-- JavaScript --}}
         <figure>
             <a href="/tag/javascript/">
                 <img src='{{asset "images/javascript-mobile.jpg"}}' 
@@ -51,17 +49,13 @@
     </section>
 </section>
 
-{{!-- Contenido --}}
 <section id="post__content" class="post__content" role="main">
     {{> "loop"}}
 </section>
 
-{{!-- Newsletter --}}
 {{> "newsletter"}}
 
-{{!-- Paginación --}}
 {{pagination}}
 
-{{!-- Footer --}}
 {{> "footer"}} --}}
 

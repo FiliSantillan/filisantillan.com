@@ -251,7 +251,29 @@ figure {
 
 .header {
   background: #f25f5c;
-  padding: 0.5rem;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__image .header__img {
+  width: 40px;
+}
+
+.header__menu {
+  margin: 0.5rem 0 0 0;
+  color: #1b1b1b;
+  display: inline-block;
+}
+
+.header__menu .header__text {
+  font-size: 1.1rem;
+  vertical-align: 20%;
+  margin: 0 0.2rem 0 0;
+}
+
+.header__menu .header__icon {
+  font-size: 1.5rem;
 }
 
 @font-face {

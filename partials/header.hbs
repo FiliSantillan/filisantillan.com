@@ -2,21 +2,21 @@
 
 <header class='header'>
     <figure class='header__image'>
-        <img src='' alt='' class='header__img'>
+        <img src='{{asset "./dist/images/logo.png"}}' alt='' class='header__img'>
     </figure>
-    <div class="header__menu">
+    <a href='#', class="header__menu">
         <span class='header__text'>Menú</span>
         <i class='header__icon icon-menu'></i>
-    </div>
+    </a>
 </header>
 
 
 {{!-- <header class="header">
 
-    <div class="header-wrap wrap-center">
+    <div class="header-wrap wrap-center"> --}}
 
         {{!-- Logo - Nombre - Nav --}}
-        <div class="header__title">
+        {{!-- <div class="header__title">
             <a href="http://filisantillan.com/" class="header__name title">
                 <strong class="header__name title">{{@blog.title}}</strong>
             </a>
@@ -25,10 +25,10 @@
                     {{navigation}}
                 </ul>
             </nav>
-        </div>
+        </div> --}}
         
         {{!-- Iconos: Menú - Busqueda --}}
-        <div class="header__options">
+        {{!-- <div class="header__options">
             <div class="header__search">
                 <button class="header__iconSearch icon fa fa-search" id='js-openSearch'></button>
             </div>
