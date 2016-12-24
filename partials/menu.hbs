@@ -1,52 +1,48 @@
-{{!-- Menú --}}
+<div class='menu__close'>
+    <a href='#' class="menu__icon icon-arrow-right"></a>
+</div>
 
-<section class='menu'>
-    <div class='menu__close'>
-        <a href='#' class="menu__icon icon-arrow-right"></a>
-    </div>
+<figure class='menu__image'>
+    <img src='{{asset "./dist/images/logo.png"}}' alt='' class='menu__img'>
+    <figcaption class="menu__text">
+        <span class="menu__name">{{@blog.title}}</span>
+    </figcaption>
+</figure>
 
-    <figure class='menu__image'>
-        <img src='{{asset "./dist/images/logo.png"}}' alt='' class='menu__img'>
-        <figcaption class="menu__text">
-            <span class="menu__name">{{@blog.title}}</span>
-        </figcaption>
-    </figure>
-
-    <ul class='menu__options oo-no-list'>
-        <li class="menu__option">
-            <i class="menu__icon icon-home"></i>
-            <span class="menu__text">Inicio</span>
-        </li>
-        <li class="menu__option">
-            <i class="menu__icon icon-user"></i>
-            <span class="menu__text">Sobre mí</span>
-        </li>
-        <li class="menu__option">
-            <i class="menu__icon icon-video"></i>
-            <span class="menu__text">Videos</span>
-        </li>
-        <li class="menu__option">
-            <i class="menu__icon icon-paper"></i>
-            <span class="menu__text">Agenda</span>
-        </li>
-        <li class="menu__option">
-            <i class="menu__icon icon-heart"></i>
-            <span class="menu__text">Contacto</span>
-        </li>
-        <li class="menu__option">
-            <i class="menu__icon icon-facebook"></i>
-            <span class="menu__text">Facebook</span>
-        </li>
-        <li class="menu__option">
-            <i class="menu__icon icon-twitter"></i>
-            <span class="menu__text">Twitter</span>
-        </li>
-        <li class="menu__option">
-            <i class="menu__icon icon-instagram"></i>
-            <span class="menu__text">Instagram</span>
-        </li>
-    </ul>
-</section>
+<ul class='menu__options oo-no-list'>
+    <li class="menu__option">
+        <i class="menu__icon icon-home"></i>
+        <span class="menu__text">Inicio</span>
+    </li>
+    <li class="menu__option">
+        <i class="menu__icon icon-user"></i>
+        <span class="menu__text">Sobre mí</span>
+    </li>
+    <li class="menu__option">
+        <i class="menu__icon icon-video"></i>
+        <span class="menu__text">Videos</span>
+    </li>
+    <li class="menu__option">
+        <i class="menu__icon icon-paper"></i>
+        <span class="menu__text">Agenda</span>
+    </li>
+    <li class="menu__option">
+        <i class="menu__icon icon-heart"></i>
+        <span class="menu__text">Contacto</span>
+    </li>
+    <li class="menu__option">
+        <i class="menu__icon icon-facebook"></i>
+        <span class="menu__text">Facebook</span>
+    </li>
+    <li class="menu__option">
+        <i class="menu__icon icon-twitter"></i>
+        <span class="menu__text">Twitter</span>
+    </li>
+    <li class="menu__option">
+        <i class="menu__icon icon-instagram"></i>
+        <span class="menu__text">Instagram</span>
+    </li>
+</ul>
 
 
 {{!-- <section class='menu'>
