@@ -1,19 +1,15 @@
-{{!-- Paginación --}}
+{{#if prev}}
+    <a class="pagination__newer-posts" href="{{page_url prev}}">
+        <i class="pagination__icon icon-arrow-mini-left"></i>
+    </a>
+{{/if}}
 
-<nav class="pagination" role="navigation">
+<span class="pagination__number">
+    Página <strong>{{page}}</strong> de <strong>{{pages}}</strong>
+</span>
 
-    {{!-- Anterior --}}
-    {{#if prev}}
-        <a class="newer-posts" href="{{page_url prev}}">
-        	<i class="fa fa-arrow-left"></i> Anterior
-        </a>
-    {{/if}}
-
-    {{!-- Siguiente --}}
-    {{#if next}}
-        <a class="older-posts" href="{{page_url next}}">
-        	Siguiente <i class="fa fa-arrow-right"></i>
-        </a>
-    {{/if}}
-    
-</nav>
+{{#if next}}
+    <a class="pagination__older-posts" href="{{page_url next}}">
+        <i class="pagination__icon icon-arrow-mini-right"></i>
+    </a>
+{{/if}}
