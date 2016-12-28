@@ -1,11 +1,8 @@
-.post-wrapper
-    margin 5rem 0 0 0
-    padding 0.5rem 1rem
-
 .post
     border-radius 5px
     background $color-gray-A
-    margin 1.5rem 0
+    margin 1.5rem 1rem
+        
     &__cover
         margin 0 0 0.5rem 0
         .post__img
@@ -32,7 +29,7 @@
         font-family $font-nutito
         
 .post__author
-    background $color-gray-B
+    background-color $color-gray-B
     padding 0.3rem 0.5rem
     border-radius 0 0 5px 5px
     position relative
@@ -57,3 +54,47 @@
         top 23%
         right 0.8rem
         font-size 1.8rem
+
+// First Article in the blog
+.post:first-child
+    margin 0
+    position relative
+    
+    .post__cover
+        .post__img
+            border-radius 0
+            height 50vh
+
+    .post__info
+        position absolute
+        bottom 0.1rem
+        background-color rgba($color-black,0.8)
+        width 100%
+        box-sizing border-box
+        
+        .post__title
+            padding 0.5rem 0.7rem 0 0.7rem
+            
+            .post__text
+                font-size 1.3rem
+                
+                .post__link
+                    color $color-white
+                    
+        .post__description
+            padding 0 0.7rem
+            border-bottom 1px solid $color-white
+            
+            .post__text
+                color $color-white
+                font-size 0.9rem
+                margin 0 0 0.5rem 0
+                    
+        .post__author
+            background none
+            padding 0.3rem 0.7rem
+            border-radius 0
+            
+            .post__text
+                .post__name
+                    color $color-white
