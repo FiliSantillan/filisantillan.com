@@ -1,18 +1,43 @@
-.cover
+.cover-post
     background-repeat no-repeat
     background-size cover
-    height 150px
-    width 100%
+    height 40vh
     position relative
     
-    .cover__description
+    &__wrapper
         position absolute
-        background-color $color-blue
-        left 0.5rem
-        bottom -5rem
+        bottom 0
+        width 100%
+        
+.cover-post__title
+    padding 0.5rem 0.7rem
+    .cover-post__text
+        font-size 1.5rem
+        margin 0
         color $color-white
-        font-family $font-nutito
-        padding 1rem
+        text-shadow 1px 1px 0 rgba($color-black,0.9)
+        
+.cover-post__info
+    background-color rgba($color-black,0.8)
+    height 35px
+    padding 0.5rem 0.7rem
+    
+    .cover-post__date
+        line-height 35px
+        color $color-white
         font-weight 300
-        box-shadow 8px 8px 0 $color-red
-        max-width 70%
+        display inline-block
+        
+        .cover-post__icon
+            font-size 1.5rem
+            vertical-align middle
+            
+        .cover-post__text
+            margin 0 0 0 0.2rem
+            
+    .cover-post__tag
+        float right
+        
+        .cover-post__icon
+            font-size 1.8rem
+            line-height 35px
