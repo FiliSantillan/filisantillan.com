@@ -1,0 +1,129 @@
+.article-wrapper
+    padding 0.5rem
+    
+.article
+    color $color-dark
+    font-size 16px
+    
+    h2
+    h3
+    h4
+    h5
+    h6
+        margin 2rem 0 0 0
+        
+    h2
+        font-size 1.8em
+        
+    h3
+        font-size 1.5em
+        
+    h4
+        font-size 1.3em
+        
+    h5
+        font-size 1.2em
+        
+    h6
+        font-size 1.1em
+        
+    p
+        font-size 1em
+        line-height 20px
+        margin 0.5rem 0 1rem 0
+
+    strong
+        color $color-black
+        
+    a
+        color $color-blue
+        border-bottom 1px dashed $color-blue
+        
+    blockquote
+        background $color-gray-B
+        border-left 10px solid rgba($color-gray-C,0.7)
+        width 100%
+        box-sizing border-box
+        font-weight 300
+        margin 1.5rem 0
+        padding 0.3rem 0.5rem
+        position relative
+        
+        strong
+            color $color-dark
+            font-weight 700
+        
+        &:before
+            color rgba($color-gray-C,0.7)
+            content '\ea36'
+            font-size 2rem
+            position absolute
+            top -0.9rem
+            left 0.4rem
+            // Icon styles
+            font-family: 'icons' !important
+            speak none
+            font-style normal
+            font-weight normal
+            font-variant normal
+            text-transform none
+            line-height 1
+            -webkit-font-smoothing: antialiased
+            -moz-osx-font-smoothing: grayscale
+            
+    blockquote[class*='warning']
+        background rgba($color-warning,0.3)
+        border-left 10px solid rgba($color-warning,0.7)
+        color $color-warning
+        
+        strong
+            color $color-warning
+        
+        &:before
+            color $color-warning
+            content "\ea34"
+        
+    blockquote[class*='tip']
+        background rgba($color-tip,0.3)
+        border-left 10px solid rgba($color-tip,0.7)
+        color $color-tip
+        
+        strong
+            color $color-tip
+        
+        &:before
+            color $color-tip
+            content "\ea33"
+
+    blockquote p
+        margin 0.8em 0
+        padding 0.7rem 0 0.7rem 0
+
+    blockquote small
+        display inline-block
+        margin 0.8em 0 0.8em 1.5em
+        font-size 0.9em
+        color $color-gray-Z
+
+    blockquote cite 
+        font-weight 700
+
+    blockquote cite a 
+        font-weight normal
+        
+    code
+        box-sizing border-box
+        padding 0 0.2rem
+        font-weight 300
+        font-family $font-nutito
+        white-space pre-wrap
+        background $color-gray-A
+        border 1px solid $color-gray-B
+        border-radius 2px
+        vertical-align middle
+        color $color-dark
+        user-select text
+        
+    img
+        width 100%
+        

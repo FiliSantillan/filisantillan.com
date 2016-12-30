@@ -1,102 +1,84 @@
-{{!-- Sitio para artículos --}}
+{{!-- Default --}}
+{{!< default }}
 
-{{!< default}}
+{{!-- Header --}}
+<header class='header'>
+    {{> 'header' }}
+</header>
+
+<section class='menu'>
+    {{> 'menu' }}
+</section>
 
 {{#post}}
-    {{!-- Barra de progreso --}}
-    {{> "progress"}}
-    
-    {{!-- Header --}}
-    {{> "header"}}
+<section class='cover {{#if image}} cover-post' style='background-image: url({{image}}){{/if}}'>
+    {{> 'cover-post'}}
+</section>
 
-    {{!-- Portada --}}
-    {{> "cover-post"}}
+<main class='article-wrapper' role='main'>
+    <article class="article {{post_class}}">
 
-    {{!-- Menú --}}
-    {{> "menu"}}
-    
-    {{!-- Busqueda --}}
-    {{> "search"}}
+        <section class="article__content">
+            {{content}}
+        </section>
+        
+        {{!-- Redes sociales --}}
+        <section class="post-social">
+            <strong class="post-socialText">Si te gusto el artículo, por favor, ayudame a compartir para que otras personas puedan leerlo.</strong>
+            <div class="addthis_sharing_toolbox"></div>
+        </section>
 
-    <main class="content" role="main">
-        <article class="post-container {{post_class}}">
+    </article>
+</main>
 
-            {{!-- Redes sociales --}}
-            <section class="post-social">
-                <div class="addthis_sharing_toolbox"></div>
-            </section>
-            
-            {{!-- Lectura --}}
-            <section class="post-content">
-                {{content}}
-            </section>
-            
-            {{!-- Redes sociales --}}
-            <section class="post-social">
-                <strong class="post-socialText">¿Te gustó el artículo?, por favor, ayudame a compartir para que otras personas puedan leerlo.</strong>
-                <div class="addthis_sharing_toolbox"></div>
-            </section>
-            
-            {{!-- Newsletter --}}
-            {{> "newsletter"}}
+{{!-- Disqus - Comentarios s--}}
+{{> "disqus"}}
 
-            {{!-- Tags --}}
-            <section class="tags">
-                {{#foreach tags}}
-                    <a href="{{url}}" class="tag">
-                        {{name}}
-                    </a>
-                {{/foreach}}
-            </section>
-            
-            {{!-- Autor --}}
-            {{#author}}
+{{!-- Autor --}}
+{{#author}}
 
-                <section class="post__authorDescription">
-                    
-                    {{!-- Imagen del autor --}}
-                    {{#if image}}
-                    <figure class="post__authorImage">
-                        <a class="img" href="{{url}}">
-                            <img src="{{image}}" alt="Fili Santillán">
-                        </a>
-                        {{#if website}}
-                            <a href="{{website}}"><button class="btn-default">Sobre mí</button></a>
-                        {{/if}}
-                    </figure>
-                    {{/if}}
-                    
-                    {{!-- Información del autor --}}
-                    <section class="post__authorInfo">
-                        <h4><a class="post__authorName"href="{{url}}">{{name}}</a></h4>
+    <section class="post__authorDescription">
+        
+        {{!-- Imagen del autor --}}
+        {{#if image}}
+        <figure class="post__authorImage">
+            <a class="img" href="{{url}}">
+                <img src="{{image}}" alt="Fili Santillán">
+            </a>
+            {{#if website}}
+                <a href="{{website}}"><button class="btn-default">Sobre mí</button></a>
+            {{/if}}
+        </figure>
+        {{/if}}
+        
+        {{!-- Información del autor --}}
+        <section class="post__authorInfo">
+            <h4><a class="post__authorName"href="{{url}}">{{name}}</a></h4>
 
-                        {{#if location}}
-                            <span class="post__authorLocation fa fa-globe"></span>
-                            <span class="post__authorLocation icon-location">{{location}}</span>
-                        {{/if}}
+            {{#if location}}
+                <span class="post__authorLocation fa fa-globe"></span>
+                <span class="post__authorLocation icon-location">{{location}}</span>
+            {{/if}}
 
-                        {{#if bio}}
-                            <p class="post__authorBio">{{bio}}</p>
+            {{#if bio}}
+                <p class="post__authorBio">{{bio}}</p>
 
-                        {{else}}
-                            <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+            {{else}}
+                <p>Read <a href="{{url}}">more posts</a> by this author.</p>
 
-                        {{/if}}
+            {{/if}}
 
-                    </section>
-                </section>
+        </section>
+    </section>
 
-            {{/author}}
+{{/author}}
 
+<section id='mc_embed_signup'>
+    {{> 'subscribe' }}
+</section>
 
-            {{!-- Disqus - Comentarios s--}}
-            {{> "disqus"}}
-
-
-        </article>
-    </main>
-
-    {{!-- Footer --}}
+<footer class="footer">
     {{> "footer"}}
+</footer>
 
 {{/post}}
