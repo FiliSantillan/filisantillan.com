@@ -1,7 +1,7 @@
 .article-wrapper
     padding 0.5rem
     
-.article
+.article__content
     color $color-dark
     font-size 16px
     
@@ -126,4 +126,88 @@
         
     img
         width 100%
+        
+.article__social
+    margin 3rem 0 0 0
+    .article__text
+        font-size $font-nutito
+        font-size 1.2rem
+        font-weight 300
+        letter-spacing 2px
+        margin 0 0 1.5rem 0
+        display inline-block
+        
+.article-author-wrapper
+    position relative
+    overflow hidden
+    padding 2rem 0 0 0
+    height 230px
+    
+    .article-author__cover
+        position absolute
+        top 0
+        margin-top -1rem
+        background-repeat no-repeat
+        background-size cover
+        filter blur(4px)
+        width 100%
+        height 300px
+        z-index -1
+        
+.article-author__options
+    text-align center
+    
+    .article-author__img
+        width 100px
+        height 100px
+        border-radius 50%
+        
+    .article-author__button
+        display inline-block
+        margin 0.5rem 0 0 0
+        
+.article-author__name
+    margin 0.5rem 0
+    
+    .article-author__text
+        font-size 1.4rem
+        text-shadow 2px 2px 0 rgba($color-black, 0.9)
+        text-transform uppercase
+        font-family $font-nutito
+        letter-spacing 2px
+        
+        .article-author__link
+             color $color-white
+             
+.article-author__info
+    padding 1.5rem 0.7rem
+    text-align center
+    box-sizing border-box
+    background-color $color-gray-B
+    
+    .article-author__location
+        color $color-dark
+        font-size 1.1rem
+        
+        .article-author__icon
+            vertical-align bottom
+            
+        .article-author__text
+            font-family $font-nutito
+            letter-spacing 1px
+            text-transform uppercase
+            font-weight 700
+            
+.article-author__about
+    text-align left
+    
+    .article-author__bio
+    .article__author__post
+        font-weight 300
+        line-height 1.5rem
+        color $color-dark
+        .article-author__link
+            color $color-blue
+            border-bottom 1px dashed $color-blue
+        
         

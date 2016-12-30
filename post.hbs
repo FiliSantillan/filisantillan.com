@@ -22,56 +22,62 @@
             {{content}}
         </section>
         
-        {{!-- Redes sociales --}}
-        <section class="post-social">
-            <strong class="post-socialText">Si te gusto el artículo, por favor, ayudame a compartir para que otras personas puedan leerlo.</strong>
-            <div class="addthis_sharing_toolbox"></div>
+        <section class="article__social">
+            <strong class="article__text">Si te gusto el artículo, por favor, ayudame a compartir para que otras personas puedan leerlo.</strong>
+            <div class="article__addthis addthis_sharing_toolbox"></div>
         </section>
 
     </article>
 </main>
 
-{{!-- Disqus - Comentarios s--}}
-{{> "disqus"}}
-
-{{!-- Autor --}}
 {{#author}}
+<section class='article-author'>
 
-    <section class="post__authorDescription">
-        
-        {{!-- Imagen del autor --}}
-        {{#if image}}
-        <figure class="post__authorImage">
-            <a class="img" href="{{url}}">
-                <img src="{{image}}" alt="Fili Santillán">
+    <div class="article-author-wrapper">
+        <div class='article-author__cover {{#if image}} article-author--yes' style='background-image: url({{image}})'>
+        </div>
+
+        <figure class="article-author__options">
+
+            <a href="{{url}}">
+                <img class='article-author__img'src="{{image}}" alt='{{name}}'>
             </a>
+
+            <figcaption class="article-author__name">
+                <strong class='article-author__text'>
+                    <a class='article-author__link' href="{{url}}">{{name}}</a>
+                </strong>
+            </figcaption>
+
             {{#if website}}
-                <a href="{{website}}"><button class="btn-default">Sobre mí</button></a>
+            <a href="{{website}}" class='article-author__button btn-default btn--radius'>Sobre mí</a>
             {{/if}}
         </figure>
         {{/if}}
-        
-        {{!-- Información del autor --}}
-        <section class="post__authorInfo">
-            <h4><a class="post__authorName"href="{{url}}">{{name}}</a></h4>
+    </div>
+    
+    <div class="article-author__info">
 
-            {{#if location}}
-                <span class="post__authorLocation fa fa-globe"></span>
-                <span class="post__authorLocation icon-location">{{location}}</span>
-            {{/if}}
+        {{#if location}}
+        <div class="article-author__location">
+            <i class="article-author__icon icon-check-in"></i>
+            <span class="article-author__text">{{location}}</span>
+        </div>
+        {{/if}}
 
+        <div class="article-author__about">
             {{#if bio}}
-                <p class="post__authorBio">{{bio}}</p>
-
+            <p class="article-author__bio">{{bio}}</p>
             {{else}}
-                <p>Read <a href="{{url}}">more posts</a> by this author.</p>
-
+            <p class='article-author__post'>Lee más <a class='article-author__link'href="{{url}}">artículos</a> sobre este autor.</p>
             {{/if}}
-
-        </section>
-    </section>
-
+        </div>
+    </div>
+</section>
 {{/author}}
+
+{{!-- Disqus - Comentarios s--}}
+{{> "disqus"}}
 
 <section id='mc_embed_signup'>
     {{> 'subscribe' }}
