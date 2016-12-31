@@ -1,33 +1,36 @@
-{{!-- Sitio para artículos estáticos --}}
+{{!-- Default --}}
+{{!< default }}
 
-{{!< default}}
+{{!-- Header --}}
+<header class='header'>
+    {{> 'header' }}
+</header>
+
+<section class='menu'>
+    {{> 'menu' }}
+</section>
 
 {{#post}}
-    {{!-- Barra de progreso --}}
-    {{> "progress"}}
-    
-    {{!-- Header --}}
-    {{> "header"}}
-    
-    {{!-- Portada --}}
-    {{> "cover-post"}}
+<section class='cover {{#if image}} cover-post' style='background-image: url({{image}}){{/if}}'>
+    {{> 'cover-post'}}
+</section>
 
-    {{!-- Menú --}}
-    {{> "menu"}}
+<main class='article-wrapper' role='main'>
+    <article class="article {{post_class}}">
 
-    {{!-- Busqueda --}}
-    {{> "search"}}
-
-{{!-- Contenido --}}
-<main class="content" role="main">
-    <article class="post-container {{post_class}}">
-        <section class="post-content post__special">
+        <section class="article__content">
             {{content}}
         </section>
+        
     </article>
 </main>
 
-{{/post}}
+<section id='mc_embed_signup'>
+    {{> 'subscribe' }}
+</section>
 
-{{!-- Footer --}}
-{{> "footer"}}
+<footer class="footer">
+    {{> "footer"}}
+</footer>
+
+{{/post}}
