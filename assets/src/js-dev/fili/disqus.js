@@ -25,4 +25,4 @@ disqus = function (newIdentifier, newUrl, newTitle) {
     }
 };
 
-disqus(window.location.href, window.location.href, $('.post-title').text());
+disqus(window.location.href, window.location.href, $('#post-text').text());
