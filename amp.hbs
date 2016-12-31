@@ -140,6 +140,16 @@
             text-align: left;
         }
 
+        .article__content .article__notice {
+            display: inline-block;
+            padding: 0.5rem 0.3rem;
+            margin: 1rem 0 0 0;
+            background-color: var(--color-white);
+            border: 1px solid var(--color-gray-B);
+            box-sizing: border-box;
+            border-radius: 3px;
+        }
+
         .article__content h1, h2,h3,h4,h5,h6{
             margin: 2rem 0 0 0;
         }
@@ -435,12 +445,11 @@
             </header>
 
             <section class="article__content">
-
-                <p class="article__notice">
-                    Esta es la versión AMP del artículo, si quieres ver el original <a href='{{url}}'>da click aquí</a>. Recuerda que consumiras más datos
-                </p>
-
                 {{amp_content}}
+
+                <span class="article__notice">
+                    Esta es la versión <a href='https://www.ampproject.org/'>AMP</a> del artículo, si quieres ver el artículo original y tener una mejor experiencia <a href='{{url}}'>da click aquí</a>. <strong>Recuerda que consumiras más datos</strong>
+                </span>
             </section>
 
             <section class="article__social">
