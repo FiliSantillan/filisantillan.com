@@ -1,31 +1,73 @@
-{{!-- Sitio para el autor --}}
+{{!-- Default --}}
+{{!< default }}
 
-{{!< default}}
+{{!-- Header --}}
+<header class='header'>
+    {{> 'header' }}
+</header>
+
+<section class='menu'>
+    {{> 'menu' }}
+</section>
 
 {{#author}}
-    {{!-- Header --}}
-    {{> "header"}}
+<section class='author'>
 
-    {{!-- Portada --}}
-    {{> "cover-author"}}
+    <div class="author-wrapper">
+        <div class='author__cover {{#if image}} author--yes' style='background-image: url({{image}})'>
+        </div>
 
-    {{!-- Menú --}}
-    {{> "menu"}}
+        <figure class="author__options">
 
-    {{!-- Busqueda--}}
-    {{> "search"}}
+            <a href="{{url}}">
+                <img class='author__img'src="{{image}}" alt='{{name}}'>
+            </a>
 
+            <figcaption class="author__name">
+                <strong class='author__text'>
+                    <a class='author__link' href="{{url}}">{{name}}</a>
+                </strong>
+            </figcaption>
+
+            {{#if website}}
+            <a href="{{website}}" class='author__button btn-default btn--radius'>Sobre mí</a>
+            {{/if}}
+        </figure>
+        {{/if}}
+    </div>
+    
+    <div class="author__info">
+
+        {{#if location}}
+        <div class="author__location">
+            <i class="author__icon icon-check-in"></i>
+            <span class="author__text">{{location}}</span>
+        </div>
+        {{/if}}
+
+        <div class="author__about">
+            {{#if bio}}
+            <p class="author__bio">{{bio}}</p>
+            {{else}}
+            <p class='author__post'>Lee más <a class='author__link'href="{{url}}">artículos</a> sobre este autor.</p>
+            {{/if}}
+        </div>
+    </div>
+</section>
 {{/author}}
 
-{{!-- Contenido --}}
-<main class="post__content" role="main">
+<section id='post-wrapper' class='post-wrapper' role='main'>
+    {{> 'loop'}}
+</section>
 
-    {{> "loop"}}
+<nav class="pagination" role="navigation">
+    {{pagination}}
+</nav>
 
-</main>
+<section id='mc_embed_signup'>
+    {{> 'subscribe' }}
+</section>
 
-{{!-- Paginación --}}
-{{pagination}}
-
-{{!-- Footer --}}
-{{> "footer"}}
+<footer class="footer">
+    {{> "footer"}}
+</footer>

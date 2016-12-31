@@ -31,45 +31,45 @@
 </main>
 
 {{#author}}
-<section class='article-author'>
+<section class='author'>
 
-    <div class="article-author-wrapper">
-        <div class='article-author__cover {{#if image}} article-author--yes' style='background-image: url({{image}})'>
+    <div class="author-wrapper">
+        <div class='author__cover {{#if image}} author--yes' style='background-image: url({{image}})'>
         </div>
 
-        <figure class="article-author__options">
+        <figure class="author__options">
 
             <a href="{{url}}">
-                <img class='article-author__img'src="{{image}}" alt='{{name}}'>
+                <img class='author__img'src="{{image}}" alt='{{name}}'>
             </a>
 
-            <figcaption class="article-author__name">
-                <strong class='article-author__text'>
-                    <a class='article-author__link' href="{{url}}">{{name}}</a>
+            <figcaption class="author__name">
+                <strong class='author__text'>
+                    <a class='author__link' href="{{url}}">{{name}}</a>
                 </strong>
             </figcaption>
 
             {{#if website}}
-            <a href="{{website}}" class='article-author__button btn-default btn--radius'>Sobre mí</a>
+            <a href="{{website}}" class='author__button btn-default btn--radius'>Sobre mí</a>
             {{/if}}
         </figure>
         {{/if}}
     </div>
     
-    <div class="article-author__info">
+    <div class="author__info">
 
         {{#if location}}
-        <div class="article-author__location">
-            <i class="article-author__icon icon-check-in"></i>
-            <span class="article-author__text">{{location}}</span>
+        <div class="author__location">
+            <i class="author__icon icon-check-in"></i>
+            <span class="author__text">{{location}}</span>
         </div>
         {{/if}}
 
-        <div class="article-author__about">
+        <div class="author__about">
             {{#if bio}}
-            <p class="article-author__bio">{{bio}}</p>
+            <p class="author__bio">{{bio}}</p>
             {{else}}
-            <p class='article-author__post'>Lee más <a class='article-author__link'href="{{url}}">artículos</a> sobre este autor.</p>
+            <p class='author__post'>Lee más <a class='author__link'href="{{url}}">artículos</a> sobre este autor.</p>
             {{/if}}
         </div>
     </div>
