@@ -259,7 +259,7 @@
 
         .author {
             background-color: var(--color-gray-A);
-            padding: 1rem 0;
+            padding: 1.5rem 0 1rem 0;
         }
 
         .author__options {
@@ -307,7 +307,7 @@
         }
 
         .author__info {
-            padding: 1.5rem 0.7rem;
+            padding: 1.5rem 0.7rem 0 0.7rem;
             text-align: center;
             box-sizing: border-box;
         }
@@ -343,6 +343,40 @@
             border-bottom: 1px dashed var(--color-blue);
         }
 
+        .footer {
+            background-color: var(--color-blue);
+            color: var(--color-white);
+            padding: 0.8rem;
+            text-align: center;
+        }
+
+        .footer .footer__title {
+            font-size: 1.5rem;
+            font-family: var(--font-nutito);
+            letter-spacing: 1px;
+        }
+
+        .footer .footer__title .footer__link {
+            color: var(--color-white);
+        }
+
+        .footer .footer__info {
+            text-align: left;
+        }
+
+        .footer .footer__info .footer__copyright, .footer .footer__info .footer__digitalocean {
+            display: block;
+            margin: 0.5rem 0;
+            font-weight: 300;
+        }
+
+        .footer .footer__info .footer__copyright .footer__link, .footer .footer__info .footer__digitalocean .footer__link {
+            color: var(--color-yellow);
+            margin: 0 0 0 0.2rem;
+            padding: 0 0 0.1rem 0;
+            border-bottom: 1px dashed var(--color-yellow);
+        }
+
     </style>
 
     {{!-- The AMP boilerplate --}}
@@ -350,7 +384,6 @@
 
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
-    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 
     {{amp_components}}
 
@@ -472,16 +505,19 @@
     </section>
     {{/author}}
 
-    <amp-iframe width=600 height=140
-        layout="responsive"
-        sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
-        resizable
-        src="https://gist.githubusercontent.com/FiliMX/329f960505cebbd0a8d8aebe41edb39d/raw/bd7e547fb7c0ce84f79c674fd9c0f20d212dabd4/disqus%2520amp/">
-    </amp-iframe>
+    <footer class="footer">
+        <strong class="footer__title">
+            <a class='footer__link' href="{{@blog.url}}">{{@blog.title}}</a>
+        </strong>
 
-    <footer class="site-footer clearfix">
-        <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        <div class="footer__info">
+            <span class="footer__copyright">
+                © 2015-2017 <a href='http://creativecommons.org/licenses/by-sa/4.0/' target='_blank' class="footer__link">Filiberto Santillán</a>
+            </span>
+            <span class="footer__digitalocean">
+                Alojado en <a href='https://m.do.co/c/c4c217c06b83' target='_blank' class="footer__link">DigitalOcean</a>
+            </span>
+        </div>
     </footer>
 
     {{/post}}
