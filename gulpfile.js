@@ -66,52 +66,47 @@ gulp.task('c-fonts', function () {
         .pipe(gulp.dest('./assets/dist/fonts/'));
 });
 
-// gulp.task('concat', function() {
+gulp.task('concat', function() {
 
-//     var views = gulp
-//         .src('./src/js/views/*.js')
-//         .pipe(plumber({
-//             errorHandler: onError
-//         }))
-//         .pipe(concat('views.js'))
-//         .pipe(gulp.dest('./dist/js/'))
+    var scripts = gulp
+        .src('./assets/src/js-dev/fili/*.js')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(concat('scripts.js'))
+        .pipe(gulp.dest('./assets/src/js-dev/'))
 
-//     var vendor = gulp
-//         .src('./src/js/vendor/*.js')
-//         .pipe(plumber({
-//             errorHandler: onError
-//         }))
-//         .pipe(concat('vendor.js'))
-//         .pipe(gulp.dest('./dist/js/'))
+    var vendor = gulp
+        .src('./assets/src/js-dev/vendor/**/*.js')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(concat('vendor.js'))
+        .pipe(gulp.dest('./assets/src/js-dev/'))
 
-//     return merge(cloudPrivate, social_group);
-// })
+    return merge(scripts);
+})
 
 
-// gulp.task('minifyJS', function() {
-//     var js = gulp
-//         .src('./dist/js/*')
-//         .pipe(plumber({
-//             errorHandler: onError
-//         }))
-//         .pipe(uglify())
-//         .pipe(gulp.dest('./dist/js'))
+gulp.task('minifyJS', function() {
+    var scripts = gulp
+        .src('./assets/src/js-dev/scripts.js')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(uglify())
+        .pipe(gulp.dest('./assets/dist/js/'))
 
-//     var jsRender = gulp
-//         .src('./dist/js-render/*')
-//         .pipe(plumber({
-//             errorHandler: onError
-//         }))
-//         .pipe(uglify())
-//         .pipe(concat('render.js'))
-//         .pipe(gulp.dest('./dist/js/'))
+    var vendor = gulp
+        .src('./assets/src/js-dev/vendor.js')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(uglify())
+        .pipe(gulp.dest('./assets/dist/js/'))
 
-//     var reload = gulp
-//         .src('./dist')
-//         .pipe(livereload())
-
-//     return merge(js, jsRender, reload)
-// })
+    return merge(scripts)
+})
 
 gulp.task('c-images', function() {
     return gulp
@@ -129,16 +124,16 @@ gulp.task('build-styles', function() {
     runSequence('styles', 'cmq', 'prefix')
 })
 
-// gulp.task('build-js', function() {
-//     runSequence(['concat'], 'emerald', 'minifyJS')
-// })
+gulp.task('build-js', function() {
+    runSequence(['concat', 'minifyJS'])
+})
 
 gulp.task('watch', function() {
     livereload.listen({ start: true })
     gulp.watch('./assets/src/styles/**/*.styl', ['build-styles'])
-    // gulp.watch('./src/js/**/*.js', ['build-js'])
+    gulp.watch('./assets/src/js-dev/**/*.js', ['build-js'])
 })
 
 gulp.task('default', function() {
-    runSequence(['build-styles'], 'watch') //runSequence(['build-styles', 'build-js'], 'watch')
+    runSequence(['build-styles', 'build-js'], 'watch')
 })
