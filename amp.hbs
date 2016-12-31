@@ -224,7 +224,6 @@
             padding: 0 0.2rem;
             font-weight: 300;
             font-family: var(--font-nutito);
-            white-space: pre-wrap;
             background-color: var(--color-gray-A);
             border: 1px solid var(--color-gray-B);
             border-radius: 2px;
@@ -233,10 +232,21 @@
             user-select: text;
         }
 
+        .article__content pre {
+            background-color: var(--color-white);
+            border: 1px solid var(--color-gray-B);
+            padding: 1rem 0.5rem;
+            overflow: auto;
+            -moz-tab-size: 4;
+            -o-tab-size: 4;
+            tab-size: 4;
+            line-height: 1.5;
+        }
+
         .article__content pre code {
             background: none;
             border: none;
-            color: $color-black;
+            color: var(--color-blue);
         }
 
         .article__social {
