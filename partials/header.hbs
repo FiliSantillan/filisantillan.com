@@ -1,7 +1,9 @@
 {{#if @blog.logo}}
-<figure class='header__image'>
+<a href='{{@blog.url}}'>
+    <figure class='header__image'>
     <img src='{{@blog.logo}}' alt='{{@blog.title}}' class='header__img'>
 </figure>
+</a>
 {{/if}}
 
 <a href='#', class='header__menu'>
