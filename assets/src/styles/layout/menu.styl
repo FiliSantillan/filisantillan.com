@@ -6,9 +6,8 @@
     height 100vh
     background-color $color-blue
     padding 1rem 0.5rem
-    color $color-white
     box-sizing border-box
-    display none
+    z-index 150
     
     &__close
         position absolute
@@ -28,7 +27,9 @@
     .menu__img
         width 120px
         margin 0 0 0.6rem 0
+        
     .menu__text
+        color $color-white
         font-size 2rem
         font-weight 700
         font-family $font-nutito
@@ -42,10 +43,28 @@
         width 33.33%
         text-align center
         
-        .menu__icon
-            font-size 1.8rem
-            display block
-            margin 1rem 0 0.3rem 0
-            
-        .menu__text
-            font-weight 300
+        &:first-child .menu__link > .menu__icon:before
+            content '\e900'
+        &:nth-child(2) .menu__link > .menu__icon:before
+            content '\e074'
+        &:nth-child(3) .menu__link > .menu__icon:before
+            content '\e018'
+        &:nth-child(4) .menu__link > .menu__icon:before
+            content '\e034'
+        &:nth-child(5) .menu__link > .menu__icon:before
+            content '\e024'
+        &:nth-last-child(3) .menu__link > .menu__icon:before
+            content '\e902'
+        &:nth-last-child(2) .menu__link > .menu__icon:before
+            content '\e901'
+        &:last-child .menu__link > .menu__icon:before
+            content '\e903'
+    
+.menu__link
+    color $color-white
+    font-weight 300
+    
+    .menu__icon
+        font-size 1.8rem
+        display block
+        margin 1rem 0 0.3rem 0

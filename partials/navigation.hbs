@@ -2,8 +2,11 @@
 
 {{#foreach navigation}}
 	{{!-- Lista de navegación --}}
-    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation">
-    	<a href="{{url absolute="true"}}">{{label}}</a>
+    <li class="menu__option nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation">
+        <a class='menu__link' href="{{url absolute="true"}}">
+            <i class="menu__icon icon-"></i>
+            <span class='menu__text'>{{label}}</span>
+        </a>
     </li>
 {{/foreach}}
 
