@@ -37,12 +37,27 @@
     {{amp_ghost_head}}
 
     <style amp-custom>
+        :root {
+            --font-nutito: 'Nunito', sans-serif;
+            --font-lato: 'Lato', sans-serif;
+            --color-black: #1B1B1B;
+            --color-dark: #50514F;
+            --color-red: #F25F5C;
+            --color-yellow: #FFE066;
+            --color-blue: #299FD3;
+            --color-green: #70C1B3;
+            --color-gray-C: #9998A4;
+            --color-gray-B: #E1E4E7;
+            --color-gray-A: #F5F5F5;
+            --color-white: #F8FBFB;
+        }
+
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Nunito', sans-serif;
+            font-family: var(--font-nutito);
         }
             
         body {
-            font-family: 'Lato', sans-serif;
+            font-family: var(--font-lato);
         }
 
         a {
@@ -54,7 +69,7 @@
         }
 
         .header {
-            background-color: #299FD3;
+            background-color: var(--color-blue);
             padding: 0.5rem 0.7rem;
             height: 40px;
         }
@@ -65,7 +80,7 @@
 
         .header__title .header__text {
             font-size: 1.5rem;
-            font-family: 'Nunito', sans-serif;
+            font-family: var(--font-nutito);
             letter-spacing: 1px;
         }
 
@@ -85,13 +100,258 @@
             height: auto;
             min-height: 100%;
         }
+
+        .article-wrapper {
+            padding: 0.5rem;
+        }
+
+        .article__info {
+            padding-bottom: 0.9rem;
+            border-bottom: 1px solid var(--color-gray-B);
+            color: var(--color-dark);
+        }
+
+        .article__info .article__title {
+            margin: 0 0 0.4rem 0;
+            font-size: 1.6rem;
+        }
+
+        .article__info .article__date {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--color-gray-C);
+        }
+
+        .article__info .article__date .article__icon {
+            font-size: 1.1rem;
+            vertical-align: -5%;
+            margin: 0 0 0.2rem 0;
+        }
+
+        .article__info .article__tag {
+            text-transform: capitalize;
+            color: var(--color-blue);
+            border-bottom: 1px dashed var(--color-blue);
+        }
+
+        .article__content {
+            color: var(--color-dark);
+            font-size: 16px;
+            text-align: left;
+        }
+
+        .article__content h1, h2,h3,h4,h5,h6{
+            margin: 2rem 0 0 0;
+        }
+
+        .article__content h1 {
+            font-size: 2em;
+        }
+
+        .article__content h2 {
+            font-size: 1.8em;
+        }
+
+        .article__content h3 {
+            font-size: 1.5em;
+        }
+
+        .article__content h4 {
+            font-size: 1.3em;
+        }
+
+        .article__content h5 {
+            font-size: 1.2em;
+        }
+
+        .article__content h6 {
+            font-size: 1.1em;
+        }
+
+        .article__content p {
+            font-size: 1em;
+            line-height: 20px;
+            margin: 0.5rem 0 1rem 0;
+        }
+
+        .article__content strong {
+            color: var(--color-black);
+        }
+
+        .article__content a {
+            color: var(--color-blue);
+            border-bottom: 1px dashed var(--color-blue);
+        }
+
+        .article__content blockquote {
+            background: var(--color-gray-B);
+            border-left: 8px solid var(--color-gray-C);
+            width: 100%;
+            box-sizing: border-box;
+            font-weight: 300;
+            margin: 1.5rem 0;
+            padding: 0.3rem 0.5rem;
+            position: relative;
+        }
+
+        .article__content blockquote strong {
+            color: var(--color-dark);
+            font-weight:  700;
+        }
+
+        .article__content blockquote p {
+            margin: 0.8em 0;
+            padding: 0.7rem 0 0.7rem 0;
+        }
+
+        .article__content blockquote small {
+            display: inline-block;
+            margin: 0.8em 0 0.8em 1.5em;
+            font-size: 0.9em;
+            color: var(--color-gray-C);
+        }
+
+        .article__content blockquote cite {
+            font-weight: 700;
+        }
+
+        .article__content blockquote cite a {
+            font-weight: normal;
+        }
+
+        .article__content code {
+            box-sizing: border-box;
+            padding: 0 0.2rem;
+            font-weight: 300;
+            font-family: var(--font-nutito);
+            white-space: pre-wrap;
+            background-color: var(--color-gray-A);
+            border: 1px solid var(--color-gray-B);
+            border-radius: 2px;
+            vertical-align: middle;
+            color: var(--color-dark);
+            user-select: text;
+        }
+
+        .article__content pre code {
+            background: none;
+            border: none;
+            color: $color-black;
+        }
+
+        .article__social {
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .article__social .article__text {
+            font-size: var(--font-nutito);
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin: 0 0 1.5rem 0;
+            display: inline-block;
+        }
+
+        .article__social .article__icons {
+            text-align: center;
+        }
+
+        .author {
+            background-color: var(--color-gray-A);
+            padding: 1rem 0;
+        }
+
+        .author__options {
+            text-align: center;
+        }
+
+        .author__options .author__icon {
+            vertical-align: 115%;
+            font-size: 2rem;
+            color: var(--color-blue);
+            border-radius: 50%;
+            margin: 0 0.7rem;
+        }
+
+        .author__options .author__img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .author__options .author__button {
+            display: inline-block;
+            margin: 0.5rem 0 0 0;
+            padding: 0.7rem 1.3rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            background-color: var(--color-blue);
+            color: var(--color-white);
+            border-radius: 20px;
+        }
+
+        .author__name {
+            margin: 0.5rem 0;
+        }
+
+        .author__name .author__text {
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            font-family: var(--font-nutito);
+            letter-spacing: 2px;
+        }
+
+        .author__name .author__text .author__link {
+            color: var(--color-dark);
+        }
+
+        .author__info {
+            padding: 1.5rem 0.7rem;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .author__info .author__location {
+            color: var(--color-dark);
+            font-size: 1.1rem;
+        }
+
+        .author__info .author__location .author__icon {
+            margin: 0 0.2rem 0 0;
+        }
+
+        .author__info .author__location .author__text {
+            font-family: var(--font-nutito);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .author__about {
+            text-align: left;
+        }
+
+        .author__about .author__bio, .author__about .author__post {
+            font-weight: 300;
+            line-height: 1.5rem;
+            color: var(--color-dark);
+        }
+
+        .author__about .author__bio .author__link, .author__about .author__post .author__link {
+            color: var(--color-blue);
+            border-bottom: 1px dashed var(--color-blue);
+        }
+
     </style>
 
     {{!-- The AMP boilerplate --}}
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    {{!-- amp_components helper renders the necessary script tags for AMP depending on the HTML in the content --}}
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+
     {{amp_components}}
 
 </head>
@@ -110,7 +370,7 @@
     {{#if image}}
     <section class='cover'>
         <figure class='cover__image'>
-            <amp-img class='cover__img' src={{image absolute="true"}} width="320" height="180" layout="responsive"></amp-img>
+            <amp-img class='cover__img' src={{image absolute="true"}} alt='{{title}}' width="320" height="180" layout="responsive"></amp-img>
         </figure>
     </section>
     {{/if}}
@@ -131,28 +391,99 @@
                 {{/if}}
             </header>
 
-            <header class="post-header">
-                
-                <section class="post-meta">
-                    {{#author}}
-                    <p class="author">by <a href="{{url}}">{{name}}</a></p>
-                    {{/author}}
-                    <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="YYYY-MM-DD"}}</time>
-                </section>
-            </header>
+            <section class="article__content">
 
-            <section class="post-content">
+                <p class="article__notice">
+                    Esta es la versión AMP del artículo, si quieres ver el original <a href='{{url}}'>da click aquí</a>. Recuerda que consumiras más datos
+                </p>
 
                 {{amp_content}}
-
             </section>
+
+            <section class="article__social">
+            <strong class="article__text">Si te gusto el artículo, por favor, ayudame a compartir para que otras personas puedan leerlo.</strong>
+            <div class="article__icons">
+                <amp-social-share type="facebook" 
+                    data-param-app_id="254325784911610"
+                    data-param-text="{{title}}"
+                    data-param-url="https://filisantillan.com{{url}}">
+                </amp-social-share>
+
+                <amp-social-share type="twitter"
+                    data-param-text="{{title}}"
+                    data-param-url="https://filisantillan.com{{url}}">
+                </amp-social-share>
+
+                <amp-social-share type="gplus"
+                    data-param-text="{{title}}"
+                    data-param-url="https://filisantillan.com{{url}}">
+                </amp-social-share>
+
+                <amp-social-share type="linkedin"
+                    data-param-text="{{title}}"
+                    data-param-url="https://filisantillan.com{{url}}">
+                </amp-social-share>
+            </div>
+        </section>
 
         </article>
     </main>
-    {{/post}}
+
+    {{#author}}
+    <section class='author'>
+        <figure class="author__options">
+            
+            <a href='{{facebook_url}}' class='author__icon fa fa-facebook'></a>
+
+            <a href="{{url}}">
+                <amp-img class='author__img' src={{image absolute="true"}} alt='{{name}}' width="100" height="100"></amp-img>
+            </a>
+
+            <a href='{{twitter_url}}' class='author__icon fa fa-twitter'></a>
+
+            <figcaption class="author__name">
+                <strong class='author__text'>
+                    <a class='author__link' href="{{url}}">{{name}}</a>
+                </strong>
+            </figcaption>
+
+            {{#if website}}
+            <a href="{{website}}" class='author__button btn-default btn--radius'>Sobre mí</a>
+            {{/if}}
+        </figure>
+        
+        <div class="author__info">
+
+            {{#if location}}
+            <div class="author__location">
+                <i class="author__icon fa fa-map-marker"></i>
+                <span class="author__text">{{location}}</span>
+            </div>
+            {{/if}}
+
+            <div class="author__about">
+                {{#if bio}}
+                <p class="author__bio">{{bio}}</p>
+                {{else}}
+                <p class='author__post'>Lee más <a class='author__link'href="{{url}}">artículos</a> sobre este autor.</p>
+                {{/if}}
+            </div>
+        </div>
+    </section>
+    {{/author}}
+
+    <amp-iframe width=600 height=140
+        layout="responsive"
+        sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
+        resizable
+        src="https://gist.githubusercontent.com/FiliMX/329f960505cebbd0a8d8aebe41edb39d/raw/bd7e547fb7c0ce84f79c674fd9c0f20d212dabd4/disqus%2520amp/">
+    </amp-iframe>
+
     <footer class="site-footer clearfix">
         <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
+
+    {{/post}}
 </body>
 </html>
