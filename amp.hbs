@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html ⚡ lang='es'>
+<head>
+
+    {{!-- Page Meta --}}
+    <title>{{meta_title}}</title>
+
+    <!-- Mobile -->
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="MobileOptimized" content="320" />
+
+    {{!-- Brand icon --}}
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{!-- Autor y Descripción --}}
+    <meta name="author" content="Filiberto Santillán">
+    <meta name="description" content="{{meta_description}}" />
+
+    {{!-- Friendly --}}
+    <meta name="HandheldFriendly" content="True" />
+
+    {{!-- Google --}}
+    <link rel="author" href="https://plus.google.com/+FiliMart%C3%ADnezZ"/>
+
+    {{!-- Google Fonts --}}
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Nunito:300,400,700" rel="stylesheet">
+
+    {{!-- FontAwesome --}}
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel="stylesheet">
+
+    {{!-- Otras configuraciones --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#4299D4">
+    <meta name="google-site-verification" content="PUVeHiwvS1T4_Q8FaieZHfE0GjL2rsKJ3LU4eabFdtA" />
+
+    {{amp_ghost_head}}
+
+    <style amp-custom>
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Nunito', sans-serif;
+        }
+            
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+            
+        figure {
+            margin: 0;
+        }
+
+        .header {
+            background-color: #299FD3;
+            padding: 0.5rem 0.7rem;
+            height: 40px;
+        }
+
+        .header__title {
+            line-height: 40px;
+        }
+
+        .header__title .header__text {
+            font-size: 1.5rem;
+            font-family: 'Nunito', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .header__title .header__text .header__link {
+            color:  #F8FBFB;
+        }
+
+        .cover .cover__image {
+            margin: 0 0 0.5rem 0;
+            height: 180px;
+            max-height: 180px;
+            overflow: hidden;
+        }
+
+        .cover .cover__image .cover__img {
+            width: 110%;
+            height: auto;
+            min-height: 100%;
+        }
+    </style>
+
+    {{!-- The AMP boilerplate --}}
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    {{!-- amp_components helper renders the necessary script tags for AMP depending on the HTML in the content --}}
+    {{amp_components}}
+
+</head>
+
+<body class="amp-template">
+    {{#post}}
+
+    <header class="header">
+        <div class="header__title">
+            <strong class="header__text">
+                <a class='header__link' href="{{@blog.url}}">{{@blog.title}}</a>
+            </strong>
+        </div>
+    </header>
+    
+    {{#if image}}
+    <section class='cover'>
+        <figure class='cover__image'>
+            <amp-img class='cover__img' src={{image absolute="true"}} width="320" height="180" layout="responsive"></amp-img>
+        </figure>
+    </section>
+    {{/if}}
+
+    <main class="article-wrapper" role="main">
+        <article class='article'>
+
+            <header class="article__info">
+                <h1 class="article__title">{{title}}</h1>
+                <time class="article__date" datetime="{{date format='YYYY-MM-DD'}}">
+                    <span class="article__icon fa fa-clock-o"></span>
+                    <span class="article__text">{{date published_at format='DD MMM YYYY' timeago='true'}}</span>
+                </time>
+                {{#if tags}}
+                    {{#foreach tags}}
+                <a href='{{url}}' class="article__tag">{{name}}</a>
+                    {{/foreach}}
+                {{/if}}
+            </header>
+
+            <header class="post-header">
+                
+                <section class="post-meta">
+                    {{#author}}
+                    <p class="author">by <a href="{{url}}">{{name}}</a></p>
+                    {{/author}}
+                    <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="YYYY-MM-DD"}}</time>
+                </section>
+            </header>
+
+            <section class="post-content">
+
+                {{amp_content}}
+
+            </section>
+
+        </article>
+    </main>
+    {{/post}}
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+</body>
+</html>
