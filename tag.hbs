@@ -1,29 +1,28 @@
-{{!-- Sitio para artículos estáticos --}}
-
-{{!< default}}
+{{!-- Default --}}
+{{!< default }}
 
 {{!-- Header --}}
-{{> "header"}}
+<header class='header'>
+    {{> 'header' }}
+</header>
 
-{{!-- Portada --}}
-{{> "cover-tags"}}
+<section class='menu'>
+    {{> 'menu' }}
+</section>
 
-{{!-- Menú --}}
-{{> "menu"}}
+<section id='post-wrapper' class='post-wrapper' role='main'>
+    {{> 'loop'}}
+</section>
 
-{{!-- Busqueda --}}
-{{> "search"}}
+<nav class="pagination" role="navigation">
+    {{pagination}}
+</nav>
+
+<section id='mc_embed_signup'>
+    {{> 'subscribe' }}
+</section>
 
 
-{{!-- Contenido --}}
-<main class="post__content" role="main">
-
-    {{> "loop"}}
-
-</main>
-
-{{!-- Paginación --}}
-{{pagination}}
-
-{{!-- Footer --}}
-{{> "footer"}}
+<footer class="footer">
+    {{> "footer"}}
+</footer>
