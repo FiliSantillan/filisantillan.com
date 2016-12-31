@@ -84,7 +84,7 @@ gulp.task('concat', function() {
         .pipe(concat('vendor.js'))
         .pipe(gulp.dest('./assets/src/js-dev/'))
 
-    return merge(scripts);
+    return merge(scripts, vendor);
 })
 
 
@@ -105,7 +105,7 @@ gulp.task('minifyJS', function() {
         .pipe(uglify())
         .pipe(gulp.dest('./assets/dist/js/'))
 
-    return merge(scripts)
+    return merge(scripts, vendor)
 })
 
 gulp.task('c-images', function() {
