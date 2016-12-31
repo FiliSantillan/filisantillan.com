@@ -413,18 +413,12 @@
     {{#post}}
 
     <header class="header">
-        <div class="header__title">
-            <strong class="header__text">
-                <a class='header__link' href="{{@blog.url}}">{{@blog.title}}</a>
-            </strong>
-        </div>
+        {{> 'amp-header' }}
     </header>
     
     {{#if image}}
     <section class='cover'>
-        <figure class='cover__image'>
-            <amp-img class='cover__img' src={{image absolute="true"}} alt='{{title}}' width="320" height="180" layout="responsive"></amp-img>
-        </figure>
+        {{> 'amp-cover-post'}}
     </section>
     {{/if}}
 
@@ -453,29 +447,29 @@
             </section>
 
             <section class="article__social">
-            <strong class="article__text">Si te gusto el artículo, por favor, ayudame a compartir para que otras personas puedan leerlo.</strong>
-            <div class="article__icons">
-                <amp-social-share type="facebook" 
-                    data-param-app_id="254325784911610"
-                    data-param-text="{{title}}"
-                    data-param-url="https://filisantillan.com{{url}}">
-                </amp-social-share>
+                <strong class="article__text">Si te gusto el artículo, por favor, ayudame a compartir para que otras personas puedan leerlo.</strong>
+                <div class="article__icons">
+                    <amp-social-share type="facebook" 
+                        data-param-app_id="254325784911610"
+                        data-param-text="{{title}}"
+                        data-param-url="https://filisantillan.com{{url}}">
+                    </amp-social-share>
 
-                <amp-social-share type="twitter"
-                    data-param-text="{{title}}"
-                    data-param-url="https://filisantillan.com{{url}}">
-                </amp-social-share>
+                    <amp-social-share type="twitter"
+                        data-param-text="{{title}}"
+                        data-param-url="https://filisantillan.com{{url}}">
+                    </amp-social-share>
 
-                <amp-social-share type="gplus"
-                    data-param-text="{{title}}"
-                    data-param-url="https://filisantillan.com{{url}}">
-                </amp-social-share>
+                    <amp-social-share type="gplus"
+                        data-param-text="{{title}}"
+                        data-param-url="https://filisantillan.com{{url}}">
+                    </amp-social-share>
 
-                <amp-social-share type="linkedin"
-                    data-param-text="{{title}}"
-                    data-param-url="https://filisantillan.com{{url}}">
-                </amp-social-share>
-            </div>
+                    <amp-social-share type="linkedin"
+                        data-param-text="{{title}}"
+                        data-param-url="https://filisantillan.com{{url}}">
+                    </amp-social-share>
+                </div>
         </section>
 
         </article>
@@ -525,18 +519,7 @@
     {{/author}}
 
     <footer class="footer">
-        <strong class="footer__title">
-            <a class='footer__link' href="{{@blog.url}}">{{@blog.title}}</a>
-        </strong>
-
-        <div class="footer__info">
-            <span class="footer__copyright">
-                © 2015-2017 <a href='http://creativecommons.org/licenses/by-sa/4.0/' target='_blank' class="footer__link">Filiberto Santillán</a>
-            </span>
-            <span class="footer__digitalocean">
-                Alojado en <a href='https://m.do.co/c/c4c217c06b83' target='_blank' class="footer__link">DigitalOcean</a>
-            </span>
-        </div>
+        {{> 'amp-footer'}}
     </footer>
 
     {{/post}}
