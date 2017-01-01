@@ -68,6 +68,11 @@
             margin: 0;
         }
 
+        ul[class*='oo-no-list'] {
+            list-style: none;
+            padding: 0;
+        }
+
         .header {
             background-color: var(--color-blue);
             padding: 0.5rem 0.7rem;
@@ -76,6 +81,7 @@
 
         .header__title {
             line-height: 40px;
+            display: inline-block;
         }
 
         .header__title .header__text {
@@ -86,6 +92,50 @@
 
         .header__title .header__text .header__link {
             color:  #F8FBFB;
+        }
+
+        .header__menu {
+            line-height: 45px;
+            display: inline-block;
+            float: right;
+        }
+
+        .header__menu .header__icon {
+            font-size: 1.5rem;
+            color: var(--color-white);
+            border: none;
+            background: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu {
+            background: var(--color-white);
+            width: 80%;
+            padding: 1.5rem 2rem;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .menu .menu__arrow {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-blue);
+            box-shadow: 4px 4px 0 var(--color-red);
+            padding: 0.5rem 0.7rem;
+            font-size: 1.7rem;
+            color: var(--color-white);
+        }
+
+        .menu__option {
+            margin: 1.2rem 0;
+        }
+
+        .menu__option .menu__link {
+            color: var(--color-dark);
+            font-weight: 300;
+            letter-spacing: 1px;
         }
 
         .cover .cover__image {
@@ -403,6 +453,7 @@
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
 
     {{amp_components}}
@@ -415,6 +466,13 @@
     <header class="header">
         {{> 'amp-header' }}
     </header>
+
+    <amp-sidebar class='menu' id='sidebar1' layout='nodisplay' side="right">
+        <a href='#' class="menu__arrow fa fa-arrow-right" on='tap:sidebar1.close'></a>
+        <ul class='menu__options oo-no-list'>
+            {{navigation}}
+        </ul>
+    </amp-sidebar>
     
     {{#if image}}
     <section class='cover'>
