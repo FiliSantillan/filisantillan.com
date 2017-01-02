@@ -109,3 +109,60 @@
             .post__text
                 .post__name
                     color $color-white
+                    
+//360px 
+@media $mq-phone-sm 
+    .post:first-child
+        .post__info
+            .post__title
+                padding 0.5rem 1rem 0 1rem
+                
+            .post__description
+                padding 0 1rem
+                
+            .post__author
+                padding 0.3rem 1rem
+                
+                .post__icon
+                    right 1rem
+//375px
+@media $mq-phone-md
+    .post:first-child
+        .post__info
+            .post__title
+                padding 0.5rem 1.2rem 0 1.2rem
+                
+                .post__text
+                    font-size 1.4rem
+                
+            .post__description
+                padding 0 1.2rem
+                
+            .post__author
+                padding 0.3rem 1.2rem
+                
+                .post__icon
+                    right 1.2rem
+//412px
+@media $mq-phone-lg
+    .post:first-child
+        .post__cover
+            height 300px
+            
+            .post__img
+                width 130%
+                
+        .post__info
+            .post__title
+                padding 0.5rem 1.5rem 0 1.5rem
+                .post__text
+                    font-size 1.5rem
+                    
+            .post__description
+                padding 0.5rem 1.5rem 0 1.5rem
+                
+            .post__author
+                padding 0.3rem 1.5rem
+                
+                .post__icon
+                    right 1.5rem
