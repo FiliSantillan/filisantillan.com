@@ -1,21 +1,28 @@
 .header
     background $color-blue
     padding 0.8rem
-    display flex
-    justify-content space-between
+    position relative
+    text-align right
     
     &__image
+        position absolute
+        z-index 20
+        top 0.4rem
+        left 0.7rem
+        
         .header__img
-            width 40px
+            width 130px
     
     &__menu
         margin 0.5rem 0 0 0
-        color $color-black
         display inline-block
+        
         .header__text
             font-size 1.1rem
             vertical-align 20%
             margin 0 0.2rem 0 0
+            color $color-white
             
         .header__icon
             font-size 1.5rem
+            color $color-white
