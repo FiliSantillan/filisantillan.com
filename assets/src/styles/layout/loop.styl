@@ -1,13 +1,20 @@
 .post-wrapper
+    display flex
+    justify-content space-around
+    flex-wrap wrap
+    
     .post
+        width 100%
+        box-sizing border-box
         border-radius 5px
-        background $color-gray-A
         margin 1.5rem 1rem
+        
+        .post__info
+            background $color-gray-A
 
 .post__cover
-    margin 0 0 0.5rem 0
     height 180px
-    max-height 200px
+    max-height 250px
     overflow hidden
     border-radius 5px 5px 0 0
     
@@ -17,7 +24,7 @@
         min-height 100%
             
 .post__title
-    padding 0 0.5rem
+    padding 0.5rem 0.5rem 0 0.5rem
     
     .post__text
         margin 0 0 0.5rem 0
@@ -64,9 +71,10 @@
 
 // First Article in the blog
 .post:first-child
-    margin 0
-    position relative
+    margin 0 !important
+    width 100% !important
     
+    position relative
     .post__cover
         max-height 380px
         height 280px
@@ -157,7 +165,6 @@
             font-size 1.6rem
 
     .post:first-child
-        margin 0
         .post__cover
             height 300px
             
@@ -178,3 +185,71 @@
                 
                 .post__icon
                     right 1.5rem
+
+//600
+@media $mq-tablet-xs
+    .post-wrapper
+        .post
+            margin 1.5rem 6.5rem
+
+    .post__cover
+        height 200px
+            
+    .post:first-child
+        .post__cover
+            height 330px
+            
+            .post__img
+                width 120%
+                
+        .post__info
+            width 80%
+            margin 0 auto
+            left 0
+            right 0
+            bottom 1.5rem
+            border-radius 5px
+            
+            .post__title
+                padding 0.8rem 1.8rem 0 1.8rem
+                
+                .post__text
+                    font-size 1.7rem
+                    
+            .post__description
+                padding 0.5rem 1.8rem 0 1.8rem
+                
+            .post__author
+                padding 0.3rem 1.8rem 0.8rem 1.8rem
+                
+                .post__icon
+                    right 1.8rem
+//640px
+@media $mq-tablet-sm
+    .post-wrapper
+        .post
+            margin 1.5rem 7rem
+
+    .post__cover
+        height 210px
+        
+    .post:first-child
+        .post__info
+            .post__title
+                .post__text
+                    font-size 1.8rem
+
+//768px
+@media $mq-tablet-md
+    .post-wrapper
+        .post
+            width 45%
+            margin 1.5rem 0
+            
+    .post:first-child
+        .post__info
+            width 70%
+            .post__title
+                .post__text
+                    font-size 2rem
+    
