@@ -9,6 +9,7 @@
     box-sizing border-box
     z-index 150
     display none
+    
     &__close
         position absolute
         background-color $color-yellow
@@ -68,3 +69,85 @@
         font-size 1.8rem
         display block
         margin 1rem 0 0.3rem 0
+        
+//360px 
+@media $mq-phone-sm
+    .menu
+        width 80%
+        
+//375px
+@media $mq-phone-md
+    .menu
+        width 75%
+
+//412px
+@media $mq-phone-lg
+    .menu
+        width 70%
+        
+//600px
+@media $mq-tablet-xs
+    .menu
+        width 50%
+        
+//640px
+@media $mq-tablet-sm
+    .menu
+        width 45%
+        
+//768px
+@media $mq-tablet-md 
+    .menu
+        width 40%
+        
+//1024px
+@media $mq-desktop-xs
+    .menu
+        position initial
+        width auto
+        height auto
+        background-color none
+        padding 0
+        display block
+        
+        &__close
+            display none
+        
+    .menu__image
+        display none
+        
+    .menu__options
+        justify-content flex-end
+        flex-wrap nowrap
+        
+        .menu__option
+            width auto
+            margin 0 0.8rem
+            
+            &:first-child .menu__link > .menu__icon:before
+            &:nth-child(2) .menu__link > .menu__icon:before
+            &:nth-child(3) .menu__link > .menu__icon:before
+            &:nth-child(4) .menu__link > .menu__icon:before
+            &:nth-child(5) .menu__link > .menu__icon:before
+            &:nth-last-child(3) .menu__link > .menu__icon:before
+            &:nth-last-child(2) .menu__link > .menu__icon:before
+            &:last-child .menu__link > .menu__icon:before
+                
+            &:nth-last-child(3)
+            &:nth-last-child(2)
+            &:last-child
+                display none
+                
+    .menu__link
+        .menu__icon
+            margin 0
+
+//1200px
+@media $mq-desktop-sm
+    .menu__options
+        .menu__option
+            margin 0 1rem
+
+    .menu__link
+        .menu__text
+            font-size 1.1rem
