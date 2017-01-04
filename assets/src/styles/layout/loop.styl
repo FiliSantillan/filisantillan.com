@@ -7,7 +7,7 @@
 .post__cover
     margin 0 0 0.5rem 0
     height 180px
-    max-height 180px
+    max-height 200px
     overflow hidden
     border-radius 5px 5px 0 0
     
@@ -111,7 +111,7 @@
                     color $color-white
                     
 //360px 
-@media $mq-phone-sm 
+@media $mq-phone-sm
     .post:first-child
         .post__info
             .post__title
@@ -127,6 +127,9 @@
                     right 1rem
 //375px
 @media $mq-phone-md
+    .post__cover
+        height 200px
+            
     .post:first-child
         .post__info
             .post__title
@@ -145,7 +148,16 @@
                     right 1.2rem
 //412px
 @media $mq-phone-lg
+    .post-wrapper
+        .post
+            margin 1.5rem 2rem
+            
+    .post__title
+        .post__text
+            font-size 1.6rem
+
     .post:first-child
+        margin 0
         .post__cover
             height 300px
             
