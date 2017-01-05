@@ -239,12 +239,12 @@
                 .post__text
                     font-size 1.8rem
 
-//768px
+//750px
 @media $mq-tablet-md
     .post-wrapper
         .post
-            width 45%
-            margin 1.5rem 0
+            width 46%
+            margin 1rem 0
             
     .post:first-child
         .post__info
@@ -252,4 +252,118 @@
             .post__title
                 .post__text
                     font-size 2rem
+//1024px
+@media $mq-desktop-xs
+    .post-wrapper
+        .post
+            width 44%
+            margin 1rem 0
+            
+    // First Article in the blog
+    .post:first-child
+        margin 2rem 0 1rem 0 !important
+        width 85% !important
+        
+        .post__cover
+            display inline-block
+            box-sizing border-box
+            vertical-align top
+            width 45%
+            height 280px
+            border-radius 5px 0 0 5px
+            float left
+            
+            .post__img
+                width 130%
+                margin-left -2.5rem
+
+        .post__info
+            position relative
+            bottom 0
+            display inline-block
+            box-sizing border-box
+            width 55%
+            background-color $color-gray-A
+            border-radius 0 5px 0 0
+            height 280px
+        
+            .post__title
+                padding 0.5rem 0.7rem 0 0.7rem
+                
+                .post__text
+                    font-size 1.7rem
+                    
+                    .post__link
+                        color $color-black
+                        
+            .post__description
+                padding 0 0.7rem
+                border none
+                
+                .post__text
+                    color $color-dark
+                    font-size 1.1rem
+                        
+            .post__author
+                background $color-gray-B
+                border-radius 0 0 5px 0
+                box-sizing border-box
+                padding 0.5rem 0.7rem
+                position absolute
+                width 100%
+                bottom 0
+                
+                .post__text
+                    .post__name
+                        color $color-black
+                        
+                .post__icon
+                    right 0.7rem
+                    
+//1200px
+@media $mq-desktop-sm
+    .post-wrapper
+        .post
+            width 30%
+            margin 1rem 0
+            
+    // First Article in the blog
+    .post:first-child
+        width 80% !important
+        .post__cover
+            height 300px
+
+        .post__info
+            height 300px
+        
+            .post__title
+                padding 0.5rem 1rem 0 1rem
+                
+                .post__text
+                    font-size 1.9rem
+                        
+            .post__description
+                padding 0 1rem
+                        
+            .post__author
+                padding 0.5rem 1rem
+
+                .post__icon
+                    right 1rem
+            
+//1300px
+@media $mq-desktop-md
+    .post-wrapper
+        .post
+            width 31%
+            margin 1rem 0
+            
+    // First Article in the blog
+    .post:first-child
+        .post__info
+            .post__title
+                .post__text
+                    font-size 2rem
+            
+
     
