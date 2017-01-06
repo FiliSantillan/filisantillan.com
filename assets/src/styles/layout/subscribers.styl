@@ -31,3 +31,54 @@
             width calc(100% - 40px)
             box-sizing border-box
             border-radius 0 4px 4px 0
+            
+@media $mq-phone-lg
+    .subscribers
+        background $color-gray-B
+        padding 3rem 2rem
+        
+        &__text
+            .subscribers__title
+                font-size 2rem
+                
+@media $mq-tablet-xs
+    .subscribers
+        padding 3rem 3.5rem
+        
+        &__text
+            .subscribers__title
+                letter-spacing 1px
+                font-size 1.8rem
+                
+            .subscribers__paragraph
+                margin 0.2rem 0 2rem 0
+                
+@media $mq-tablet-sm
+    .subscribers
+        padding 3rem 4rem
+        
+        &__text
+            .subscribers__title
+                font-size 1.9rem
+                
+@media $mq-tablet-md
+    .subscribers
+        padding 3rem 2rem
+        
+    .subscribers__wrapper
+        .flex
+            .subscribers__content
+                width 47%
+                margin 0 2%
+                
+@media $mq-desktop-xs
+    .subscribers__wrapper
+        .flex
+            .subscribers__content
+                width 40%
+                
+@media $mq-desktop-sm
+    .subscribers__wrapper
+        .flex
+            .subscribers__content
+                width 35%
