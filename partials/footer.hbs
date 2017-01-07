@@ -1,32 +1,36 @@
-{{#if @blog.logo}}
-<figure class='footer__image'>
-    <img src='{{@blog.logo}}' alt='{{@blog.title}}' class='footer__img'>
-</figure>
-{{/if}}
+<div class="oo-wrap-center">
+    {{#if @blog.logo}}
+    <figure class='footer__image'>
+        <img src='{{@blog.logo}}' alt='{{@blog.title}}' class='footer__img'>
+    </figure>
+    {{/if}}
 
-<ul class="footer__social oo-no-list">
-    <li class="footer__item">
-        <a href='{{facebook_url}}' target='_blank' class='footer__icon icon-facebook'></a>
-    </li>
-    <li class="footer__item">
-        <a href='{{twitter_url}}' target='_blank' class='footer__icon icon-twitter'></a>
-    </li>
-    <li class="footer__item">
-        <a href='https://www.instagram.com/filimx/' target='_blank' class='footer__icon icon-instagram'></a>
-    </li>
-    <li class="footer__item">
-        <a href='https://www.snapchat.com/add/fili06604' target='_blank' class='footer__icon icon-snapchat'></a>
-    </li>
-    <li class="footer__item">
-        <a href='https://github.com/FiliMX' target='_blank' class='footer__icon icon-github-simple'></a>
-    </li>
-</ul>
+    <div class="flex jus--between dev--tablet-md">
+        <ul class="footer__social oo-no-list">
+            <li class="footer__item">
+                <a href='{{facebook_url}}' target='_blank' class='footer__icon icon-facebook'></a>
+            </li>
+            <li class="footer__item">
+                <a href='{{twitter_url}}' target='_blank' class='footer__icon icon-twitter'></a>
+            </li>
+            <li class="footer__item">
+                <a href='https://www.instagram.com/filimx/' target='_blank' class='footer__icon icon-instagram'></a>
+            </li>
+            <li class="footer__item">
+                <a href='https://www.snapchat.com/add/fili06604' target='_blank' class='footer__icon icon-snapchat'></a>
+            </li>
+            <li class="footer__item">
+                <a href='https://github.com/FiliMX' target='_blank' class='footer__icon icon-github-simple'></a>
+            </li>
+        </ul>
 
-<div class="footer__info">
-    <span class="footer__copyright">
-        © 2015-2017 <a href='http://creativecommons.org/licenses/by-sa/4.0/' target='_blank' class="footer__link">Filiberto Santillán</a>
-    </span>
-    <span class="footer__digitalocean">
-        Alojado en <a href='https://m.do.co/c/c4c217c06b83' target='_blank' class="footer__link">DigitalOcean</a>
-    </span>
+        <div class="footer__info">
+            <span class="footer__copyright">
+                © 2015-2017 <a href='http://creativecommons.org/licenses/by-sa/4.0/' target='_blank' class="footer__link">Filiberto Santillán</a>
+            </span>
+            <span class="footer__digitalocean">
+                Alojado en <a href='https://m.do.co/c/c4c217c06b83' target='_blank' class="footer__link">DigitalOcean</a>
+            </span>
+        </div>
+    </div>
 </div>
