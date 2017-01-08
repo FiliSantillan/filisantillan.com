@@ -1,0 +1,70 @@
+div[class*='flex']
+section[class*='flex']
+article[class*='flex']
+    display flex
+    
+div[class*='jus--start']
+section[class*='jus--start']
+article[class*='jus--start']
+    justify-content flex-start
+
+div[class*='jus--around']
+section[class*='jus--around']
+article[class*='jus--around']
+    justify-content space-around
+    
+div[class*='jus--between']
+section[class*='jus--between']
+article[class*='jus--between']
+    justify-content space-between
+    
+div[class*='jus--center']
+section[class*='jus--center']
+article[class*='jus--center']
+    justify-content center
+    
+div[class*='wrap--yes'],
+section[class*='wrap--yes'],
+article[class*='wrap--yes']
+    flex-wrap wrap
+    
+div[class*='wrap--no'],
+section[class*='wrap--no'],
+article[class*='wrap--no']
+    flex-wrap nowrap
+
+@media $mq-phone-max-360
+    div[class*='dev--tablet-375']
+        display initial
+        
+@media $mq-phone-max-375
+    div[class*='dev--tablet-412']
+        display initial
+        
+@media $mq-phone-max-412
+    div[class*='dev--tablet-600']
+        display initial
+        
+@media $mq-tablet-max-600
+    div[class*='dev--tablet-640']
+        display initial
+        
+@media $mq-tablet-max-640
+    div[class*='dev--tablet-750']
+        display initial
+        
+@media $mq-tablet-max-750
+    div[class*='dev--tablet-1024']
+        display initial
+        
+@media $mq-desktop-max-1024
+    div[class*='dev--tablet-1200']
+        display initial
+        
+@media $mq-desktop-max-1200
+    div[class*='dev--tablet-1300']
+        display initial
+        
+@media $mq-desktop-max-1300
+    div[class*='dev--tablet-1300']
+        display initial
