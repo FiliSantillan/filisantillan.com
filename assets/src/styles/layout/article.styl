@@ -137,21 +137,77 @@
 .article__fb-button
     display inline-block !important
     margin 0.5rem 0
-    text-align center
         
 .article__social
     margin 2rem 0
-    text-align left
+    text-align center
     
     .article__text
         font-size $font-nutito
         font-size 1.2rem
+        text-align left
         font-weight 300
         letter-spacing 2px
         margin 0 0 1.5rem 0
         display inline-block
+        
+    .article__addthis
+        display inline-block
+        
 
 .disqus
     padding 1rem 0.5rem
+    
+@media $mq-phone-lg 
+    .article-wrapper
+    .disqus
+        padding 0.5rem 1rem
+        
+@media $mq-tablet-xs
+    .article-wrapper
+    .disqus
+        padding 0.5rem 1.5rem
+        
+    .article__content
+        font-size 17px
+        
+        p
+            line-height 1.4rem
+        
+@media $mq-tablet-md
+    .article-wrapper
+    .disqus
+        padding 0.5rem 2rem
+        
+    .article__content
+        font-size 18px
+        
+        p
+            line-height 1.5rem
+            
+    .article__social
+        .article__text
+            text-align center
+        
+@media $mq-desktop-xs
+    .article-wrapper
+    .disqus
+        max-width 900px
+        margin 0 auto
+        padding 0.5rem 0
+        
+    .article__content
+        font-size 19px
+        
+        p
+            line-height 1.7rem
+            
+    .article__fb-button
+        margin 0.5rem 0 1rem 0
+            
+    .article__social
+        .article__text
+            text-align center
+            max-width 500px
         
         
