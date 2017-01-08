@@ -1,75 +1,89 @@
-{{!-- Default --}}
+{{!------------------------------------}}
+          {{!-- Author --}}
+{{!------------------------------------}}
+
+{{!-- Posts of the author --}}
+
+{{!-- Default: All default.hbs code is inserted in head --}}
 {{!< default }}
 
-{{!-- Header --}}
-<header class='header'>
-    {{> 'header' }}
-</header>
-
+{{!-- Everything inside the #author tags pulls data from the author --}}
 {{#author}}
 <section class='author'>
-
-    <div class="author-wrapper">
-        <div class='author__cover {{#if cover}} author--yes' style='background-image: url({{cover}})'>
-        </div>
-
-        <figure class="author__options">
-
+    
+    {{!-- Author wrapper --}}
+    <div class='author-wrapper'>
+        
+        {{!-- Author background--}}
+        <div class='author__cover {{#if cover}} author--yes' style='background-image: url({{cover}})'></div>
+        
+        {{!-- Author options --}}
+        <figure class='author__options'>
+            
+            {{!-- Facebook icon --}}
             <a href='{{facebook_url}}' target='_blank' class='author__icon icon-facebook'></a>
-
-            <a href="{{url}}">
-                <img class='author__img'src="{{image}}" alt='{{name}}'>
+            
+            {{!-- Author image --}}
+            <a href='{{url}}'>
+                <img class='author__img' src='{{image}}' alt='{{name}}'>
             </a>
 
+            {{!-- Twitter icon --}}
             <a href='{{twitter_url}}' target='_blank' class='author__icon icon-twitter'></a>
-
-            <figcaption class="author__name">
+            
+            {{!-- Author name --}}
+            <figcaption class='author__name'>
                 <strong class='author__text'>
-                    <a class='author__link' href="{{url}}">{{name}}</a>
+                    <a class='author__link' href='{{url}}'>{{name}}</a>
                 </strong>
             </figcaption>
-
-            <span class="author__pagination">
+            
+            {{!-- Pages of the author --}}
+            <span class='author__pagination'>
                 {{plural ../pagination.total empty='No hay artículos' singular='% artículo' plural='% artículos'}}
             </span>
-
 
         </figure>
         {{/if}}
     </div>
     
-    <div class="author__info">
-
+    {{!-- Author informationc --}}
+    <div class='author__info'>
+        
+        {{!-- If there is a location --}}
         {{#if location}}
-        <div class="author__location">
-            <i class="author__icon icon-check-in"></i>
-            <span class="author__text">{{location}}</span>
+        {{!-- Author location --}}
+        <div class='author__location'>
+            <i class='author__icon icon-check-in'></i>
+            <span class='author__text'>{{location}}</span>
         </div>
         {{/if}}
-
-        <div class="author__about">
+        
+        {{!-- About the author --}}
+        <div class='author__about'>
+            {{!-- If there is a biography --}}
             {{#if bio}}
-            <p class="author__bio">{{bio}}</p>
+            <p class='author__bio'>{{bio}}</p>
+            {{!-- If there is not a biography --}}
             {{else}}
-            <p class='author__post'>Lee más <a class='author__link'href="{{url}}">artículos</a> sobre este autor.</p>
+            <p class='author__post'>Lee más <a class='author__link' href='{{url}}'>artículos</a> sobre este autor.</p>
             {{/if}}
         </div>
     </div>
 </section>
 {{/author}}
 
+{{!-- Loop: The main content area on the author --}}
 <section id='post-wrapper' class='post-wrapper wrap-center' role='main'>
     {{> 'loop'}}
 </section>
 
-<nav class="pagination" role="navigation">
+{{!-- Pagination: Pages of the blog --}}
+<nav class='pagination' role='navigation'>
     {{pagination}}
 </nav>
 
+{{!-- Subscribe: tools for collecting emails from the blog --}}
 <section id='mc_embed_signup'>
     {{> 'subscribe' }}
 </section>
-
-<footer class="footer">
-    {{> "footer"}}
-</footer>

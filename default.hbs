@@ -2,59 +2,71 @@
 <html lang='es'>
 <head>
 
-    {{!-- Page Meta --}}
+    {{!-- Title --}}
     <title>{{meta_title}}</title>
 
-    {{!-- CSS --}}
+    {{!-- Styles --}}
     <link rel='stylesheet' href='{{asset "./dist/css/styles.css"}}'>
     
-    <!-- Mobile -->
+    {{!-- Mobile Meta --}}
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <meta name="MobileOptimized" content="320" />
+    <meta name='MobileOptimized' content='320' />
 
-    {{!-- Brand icon --}}
-    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+    {{!-- Favicon --}}
+    <link rel='shortcut icon' href='{{asset "./dist/favicon/fili.icon"}}'>
 
-    {{!-- Autor y Descripción --}}
-    <meta name="author" content="Filiberto Santillán">
-    <meta name="description" content="{{meta_description}}" />
+    {{!-- Author & Descripction --}}
+    <meta name='author' content='Filiberto Santillán'>
+    <meta name='description' content='{{meta_description}}' />
 
     {{!-- Friendly --}}
-    <meta name="HandheldFriendly" content="True" />
+    <meta name='HandheldFriendly' content='True' />
 
     {{!-- Google --}}
-    <link rel="author" href="https://plus.google.com/+FiliMart%C3%ADnezZ"/>
-    <link rel="canonical" href="http://filisantillan.com/" />
+    <link rel='author' href='https://plus.google.com/+FiliMart%C3%ADnezZ' />
+    <link rel='canonical' href='http://filisantillan.com/' />
 
     {{!-- Google Fonts --}}
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Nunito:300,400,700" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700|Nunito:300,400,700' rel='stylesheet'>
 
-    {{!-- Otras configuraciones --}}
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="theme-color" content="#4299D4">
-    <meta name="google-site-verification" content="PUVeHiwvS1T4_Q8FaieZHfE0GjL2rsKJ3LU4eabFdtA" />
+    {{!-- Other Configurations --}}
+    <meta charset='utf-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='theme-color' content='#4299D4'>
+    <meta name='google-site-verification' content='PUVeHiwvS1T4_Q8FaieZHfE0GjL2rsKJ3LU4eabFdtA' />
+
+    {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
 
 </head>
-<body class="{{body_class}} nav-closed">
+<body class='{{body_class}} nav-closed'>
     
-    {{!-- Contenido --}}
-    <div class="site-wrapper">
+    {{!-- Header --}}
+    <header class='header'>
+        {{> 'header' }}
+    </header>
 
+    {{!-- Content --}}
+    <div class='site-wrapper'>
         {{{body}}}
-
     </div>
-  
-    {{!-- Jquery --}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
-    {{!-- Scripts --}}
-    <script src="{{asset "./dist/js/vendor.js"}}"></script>
-    <script src="{{asset "./dist/js/scripts.js"}}"></script>
+    {{!-- Footer --}}
+    <footer class='footer'>
+        {{> 'footer'}}
+    </footer>
+
+    {{!-- Jquery --}}
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+    {{!-- Vendor --}}
+    <script src='{{asset "./dist/js/vendor.js"}}'></script>
+
+    {{!-- Default script --}}
+    <script src='{{asset "./dist/js/scripts.js"}}'></script>
 
     {{!-- Addthis --}}
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56324eb92b56efd7" async="async"></script>
+    <script type='text/javascript' src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56324eb92b56efd7' async='async'></script>
 
     {{! Gooogle Analytics }}
     <script async>
@@ -66,16 +78,17 @@
       ga('send', 'pageview');
     </script>
 
-    {{! Facebook }}
-    <div id="fb-root"></div>
+    {{! Facebook SDK }}
+    <div id='fb-root'></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8";
+      js.src = '//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8';
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-
+    
+    {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
 </body>
 </html>

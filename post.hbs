@@ -1,94 +1,114 @@
+{{!------------------------------------}}
+          {{!-- Post --}}
+{{!------------------------------------}}
 
-{{!-- Default --}}
+{{!-- This is a post template. The content of a post is displayed --}}
+
+{{!-- Default: All default.hbs code is inserted in head --}}
 {{!< default }}
 
-{{!-- Header --}}
-<header class='header'>
-    {{> 'header' }}
-</header>
-
+{{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
+
+{{!-- Cover: Post cover image --}}
 <section class='cover {{#if image}}cover-post' style='background-image: url({{image}}){{/if}}'>
     {{> 'cover-post'}}
 </section>
 
+{{!-- Post content wrap --}}
 <main class='article-wrapper' role='main'>
-    <article class="article">
+    <article class='article'>
         
-        <div class="article__fb-button fb-save" data-uri="https://filisantillan.com{{url}}" data-size="large"></div>
-
-        <section class="article__content">
+        {{!-- Facebook save button --}}
+        <div class='article__fb-button fb-save' data-uri='https://filisantillan.com{{url}}' data-size='large'></div>
+        
+        {{!-- Content of the post --}}
+        <section class='article__content'>
             {{content}}
         </section>
         
-        <section class="article__social">
-            <strong class="article__text">Si te gusto el artículo, por favor, ayudame a compartir para que otras personas puedan leerlo.</strong>
-            <div class="article__addthis addthis_sharing_toolbox"></div>
+        {{!-- Sharing Tools --}}
+        <section class='article__social'>
+            <strong class='article__text'>Si te gusto el artículo, por favor, ayudame a compartir para que otras personas puedan leerlo.</strong>
+            <div class='article__addthis addthis_sharing_toolbox'></div>
         </section>
 
     </article>
 </main>
 
+{{!-- Everything inside the #author tags pulls data from the author --}}
 {{#author}}
 <section class='author'>
 
-    <div class="author-wrapper">
+    {{!-- Author wrapper --}}
+    <div class='author-wrapper'>
+
+        {{!-- Author background--}}
         <div class='author__cover {{#if cover}} author--yes' style='background-image: url({{cover}})'>
         </div>
-
-        <figure class="author__options">
+        
+        {{!-- Author options --}}
+        <figure class='author__options'>
             
+            {{!-- Facebook icon --}}
             <a href='{{facebook_url}}' target='_blank' class='author__icon icon-facebook'></a>
-
-            <a href="{{url}}">
-                <img class='author__img'src="{{image}}" alt='{{name}}'>
+            
+            {{!-- Author image --}}
+            <a href='{{url}}'>
+                <img class='author__img'src='{{image}}' alt='{{name}}'>
             </a>
-
+            
+            {{!-- Twitter icon --}}
             <a href='{{twitter_url}}' target='_blank' class='author__icon icon-twitter'></a>
-
-            <figcaption class="author__name">
+            
+            {{!-- Author name --}}
+            <figcaption class='author__name'>
                 <strong class='author__text'>
-                    <a class='author__link' href="{{url}}">{{name}}</a>
+                    <a class='author__link' href='{{url}}'>{{name}}</a>
                 </strong>
             </figcaption>
-
+            
+            {{!-- If there is a website --}}
             {{#if website}}
-            <a href="{{website}}" class='author__button btn-default btn--radius'>Sobre mí</a>
+            {{!-- Button --}}
+            <a href='{{website}}' class='author__button btn-default btn--radius'>Sobre mí</a>
             {{/if}}
         </figure>
         {{/if}}
     </div>
     
-    <div class="author__info">
-
+    {{!-- Author informationc --}}
+    <div class='author__info'>
+        
+        {{!-- If there is a location --}}
         {{#if location}}
-        <div class="author__location">
-            <i class="author__icon icon-check-in"></i>
-            <span class="author__text">{{location}}</span>
+         {{!-- Author location --}}
+        <div class='author__location'>
+            <i class='author__icon icon-check-in'></i>
+            <span class='author__text'>{{location}}</span>
         </div>
         {{/if}}
-
-        <div class="author__about">
+        
+        {{!-- About the author --}}
+        <div class='author__about'>
+            {{!-- If there is a biography --}}
             {{#if bio}}
-            <p class="author__bio">{{bio}}</p>
+            <p class='author__bio'>{{bio}}</p>
+            {{!-- If there is not a biography --}}
             {{else}}
-            <p class='author__post'>Lee más <a class='author__link'href="{{url}}">artículos</a> sobre este autor.</p>
+            <p class='author__post'>Lee más <a class='author__link' href='{{url}}'>artículos</a> sobre este autor.</p>
             {{/if}}
         </div>
     </div>
 </section>
 {{/author}}
 
-<section class="disqus">
-    {{> "disqus"}}
+{{!-- Loop: The main content area on the author --}}
+<section id='post-wrapper' class='post-wrapper wrap-center' role='main'>
+    {{> 'loop'}}
 </section>
 
+{{!-- Subscribe: tools for collecting emails from the blog --}}
 <section id='mc_embed_signup'>
     {{> 'subscribe' }}
 </section>
-
-<footer class="footer">
-    {{> "footer"}}
-</footer>
-
-{{/post}}

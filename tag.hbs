@@ -1,24 +1,23 @@
-{{!-- Default --}}
+{{!------------------------------------}}
+          {{!-- Tag --}}
+{{!------------------------------------}}
+
+{{!-- Posts of the tag --}}
+
+{{!-- Default: All default.hbs code is inserted in head --}}
 {{!< default }}
 
-{{!-- Header --}}
-<header class='header'>
-    {{> 'header' }}
-</header>
-
+{{!-- Loop: The main content area on the tag --}}
 <section id='post-wrapper' class='post-wrapper wrap-center' role='main'>
     {{> 'loop'}}
 </section>
 
-<nav class="pagination" role="navigation">
+{{!-- Pagination: Pages of the blog --}}
+<nav class='pagination' role='navigation'>
     {{pagination}}
 </nav>
 
+{{!-- Subscribe: tools for collecting emails from the blog --}}
 <section id='mc_embed_signup'>
     {{> 'subscribe' }}
 </section>
-
-
-<footer class="footer">
-    {{> "footer"}}
-</footer>

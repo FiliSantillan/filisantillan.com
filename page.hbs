@@ -1,32 +1,34 @@
-{{!-- Default --}}
+{{!------------------------------------}}
+          {{!-- Page --}}
+{{!------------------------------------}}
+
+{{!-- This is a page template. A page outputs content just like any other post, and has all the same attributes by default, but you can also customise. --}}
+
+{{!-- Default: All default.hbs code is inserted in head --}}
 {{!< default }}
 
-{{!-- Header --}}
-<header class='header'>
-    {{> 'header' }}
-</header>
-
+{{!-- Everything inside the #post tags pulls data from the page --}}
 {{#post}}
+
+{{!-- Cover: Page cover image --}}
 <section class='cover {{#if image}}cover-post' style='background-image: url({{image}}){{/if}}'>
     {{> 'cover-page'}}
 </section>
 
+{{!-- Page content wrap --}}
 <main class='article-wrapper' role='main'>
-    <article class="article">
-
-        <section class="article__content">
+    <article class='article'>
+        
+        {{!-- Content of the page --}}
+        <section class='article__content'>
             {{content}}
         </section>
         
     </article>
 </main>
 
+{{!-- Subscribe: tools for collecting emails from the blog --}}
 <section id='mc_embed_signup'>
     {{> 'subscribe' }}
 </section>
-
-<footer class="footer">
-    {{> "footer"}}
-</footer>
-
 {{/post}}
