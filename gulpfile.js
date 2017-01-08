@@ -24,7 +24,7 @@ var onError = function(err) {
 
 gulp.task('styles', function() {
     return gulp
-        .src('./assets/src/styles/main.styl')
+        .src('./src/styles/main.styl')
         .pipe(plumber({
             errorHandler: onError
         }))
@@ -32,22 +32,22 @@ gulp.task('styles', function() {
             'include css': true
         }))
         .pipe(rename('styles.css'))
-        .pipe(gulp.dest('./assets/src/css-dev/'))
+        .pipe(gulp.dest('./src/css-dev/'))
 })
 
 gulp.task('cmq', function() {
     return gulp
-        .src('./assets/src/css-dev/*.css')
+        .src('./src/css-dev/*.css')
         .pipe(plumber({
             errorHandler: onError
         }))
         .pipe(cmq())
-        .pipe(gulp.dest('./assets/src/css-dev/'))
+        .pipe(gulp.dest('./src/css-dev/'))
 })
 
 gulp.task('prefix', function() {
     return gulp
-        .src('./assets/src/css-dev/*.css')
+        .src('./src/css-dev/*.css')
         .pipe(plumber({
             errorHandler: onError
         }))
@@ -61,7 +61,7 @@ gulp.task('prefix', function() {
 })
 
 gulp.task('c-fonts', function () {
-    return gulp.src('./assets/src/fonts/*')
+    return gulp.src('./src/fonts/*')
         .pipe(fontmin())
         .pipe(gulp.dest('./assets/dist/fonts/'));
 });
@@ -69,20 +69,20 @@ gulp.task('c-fonts', function () {
 gulp.task('concat', function() {
 
     var scripts = gulp
-        .src('./assets/src/js-dev/fili/*.js')
+        .src('./src/js-dev/fili/*.js')
         .pipe(plumber({
             errorHandler: onError
         }))
         .pipe(concat('scripts.js'))
-        .pipe(gulp.dest('./assets/src/js-dev/'))
+        .pipe(gulp.dest('./src/js-dev/'))
 
     var vendor = gulp
-        .src('./assets/src/js-dev/vendor/**/*.js')
+        .src('./src/js-dev/vendor/**/*.js')
         .pipe(plumber({
             errorHandler: onError
         }))
         .pipe(concat('vendor.js'))
-        .pipe(gulp.dest('./assets/src/js-dev/'))
+        .pipe(gulp.dest('./src/js-dev/'))
 
     return merge(scripts, vendor);
 })
@@ -90,7 +90,7 @@ gulp.task('concat', function() {
 
 gulp.task('minifyJS', function() {
     var scripts = gulp
-        .src('./assets/src/js-dev/scripts.js')
+        .src('./src/js-dev/scripts.js')
         .pipe(plumber({
             errorHandler: onError
         }))
@@ -98,7 +98,7 @@ gulp.task('minifyJS', function() {
         .pipe(gulp.dest('./assets/dist/js/'))
 
     var vendor = gulp
-        .src('./assets/src/js-dev/vendor.js')
+        .src('./src/js-dev/vendor.js')
         .pipe(plumber({
             errorHandler: onError
         }))
@@ -110,7 +110,7 @@ gulp.task('minifyJS', function() {
 
 gulp.task('c-images', function() {
     return gulp
-        .src('./assets/src/images/**/*')
+        .src('./src/images/**/*')
         .pipe(plumber({
             errorHandler: onError
         }))
@@ -130,8 +130,8 @@ gulp.task('build-js', function() {
 
 gulp.task('watch', function() {
     livereload.listen({ start: true })
-    gulp.watch('./assets/src/styles/**/*.styl', ['build-styles'])
-    gulp.watch('./assets/src/js-dev/**/*.js', ['build-js'])
+    gulp.watch('./src/styles/**/*.styl', ['build-styles'])
+    gulp.watch('./src/js-dev/**/*.js', ['build-js'])
 })
 
 gulp.task('default', function() {
