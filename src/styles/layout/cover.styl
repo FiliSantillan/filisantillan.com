@@ -1,4 +1,4 @@
-.cover-post
+.cover
     background-repeat no-repeat
     background-size cover
     height 40vh
@@ -8,6 +8,9 @@
         position absolute
         bottom 0
         width 100%
+        
+.cover--index
+    display none
         
 .cover-post__title
     padding 0.5rem 0.7rem
@@ -51,14 +54,14 @@
         padding 0.5rem 0.8rem
         
 @media $mq-phone-min-412
-    .cover-post
+    .cover
         height 45vh
         
     .cover-post__info
         padding 0.6rem 1rem
         
 @media $mq-tablet-min-600
-    .cover-post
+    .cover
         height 50vh
         
     .cover-post__title
@@ -74,7 +77,7 @@
         padding 0.8rem 1.3rem
         
 @media $mq-tablet-min-750
-    .cover-post
+    .cover
         height 60vh
         
     .cover-post__title
@@ -84,8 +87,12 @@
         padding 0.8rem 2rem
         
 @media $mq-desktop-min-1024
-    .cover-post
+    .cover
         height 70vh
+        
+    .cover--index
+        display block
+        height 40vh
         
     .cover-post__title
         padding 0 0 1.5rem 0
@@ -111,8 +118,11 @@
                 font-size 2.5rem
                 
 @media $mq-desktop-min-1200
-    .cover-post
+    .cover
         height 73vh
+        
+    .cover--index
+        height 45vh
         
     .cover-post__title
         .cover-post__text

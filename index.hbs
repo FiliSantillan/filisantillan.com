@@ -6,6 +6,9 @@
     {{> 'header' }}
 </header>
 
+<section class='cover {{#if @blog.cover}}cover--index' style='background-image: url({{@blog.cover}}){{/if}}'>
+</section>
+
 <section id='post-wrapper' class='post-wrapper wrap-center' role='main'>
     {{> 'loop'}}
 </section>
