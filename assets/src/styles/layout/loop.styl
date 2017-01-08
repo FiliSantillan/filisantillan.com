@@ -63,11 +63,14 @@
             font-weight 300
             color $color-black
             
-    .post__icon
-        position absolute
-        top 23%
-        right 0.8rem
-        font-size 1.8rem
+    .post__tag
+        color $color-black
+        
+        .post__icon
+            position absolute
+            top 23%
+            right 0.8rem
+            font-size 1.8rem
 
 // First Article in the blog
 .post:first-child
@@ -117,6 +120,9 @@
             .post__text
                 .post__name
                     color $color-white
+                    
+            .post__tag
+                color $color-white
 
 @media $mq-phone-min-360
     .post:first-child
@@ -130,8 +136,9 @@
             .post__author
                 padding 0.3rem 1rem
                 
-                .post__icon
-                    right 1rem
+                .post__tag
+                    .post__icon
+                        right 1rem
 
 @media $mq-phone-min-375
     .post__cover
@@ -151,8 +158,9 @@
             .post__author
                 padding 0.3rem 1.2rem
                 
-                .post__icon
-                    right 1.2rem
+                .post__tag
+                    .post__icon
+                        right 1.2rem
 
 @media $mq-phone-min-412
     .post-wrapper
@@ -182,8 +190,9 @@
             .post__author
                 padding 0.3rem 1.5rem
                 
-                .post__icon
-                    right 1.5rem
+                .post__tag
+                    .post__icon
+                        right 1.5rem
 
 @media $mq-tablet-min-600
     .post-wrapper
@@ -219,9 +228,9 @@
                 
             .post__author
                 padding 0.3rem 1.8rem 0.8rem 1.8rem
-                
-                .post__icon
-                    right 1.8rem
+                .post__tag
+                    .post__icon
+                        right 1.8rem
 
 @media $mq-tablet-min-640
     .post-wrapper
@@ -314,9 +323,12 @@
                 .post__text
                     .post__name
                         color $color-black
-                        
-                .post__icon
-                    right 0.7rem
+                
+                .post__tag
+                    color $color-black
+                    
+                    .post__icon
+                        right 0.7rem
 
 @media $mq-desktop-min-1200
     .post-wrapper
@@ -344,9 +356,10 @@
                         
             .post__author
                 padding 0.5rem 1rem
-
-                .post__icon
-                    right 1rem
+                
+                .post__tag
+                    .post__icon
+                        right 1rem
 
 @media $mq-desktop-min-1300
     .post-wrapper
