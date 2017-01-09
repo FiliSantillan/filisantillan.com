@@ -1,16 +1,26 @@
+{{!------------------------------------}}
+          {{!-- Header --}}
+{{!------------------------------------}}
+
+{{!-- Blog header --}}
+
+{{!-- If there is a logo --}}
 {{#if @blog.logo}}
 <a href='{{@blog.url}}'>
+    {{!-- Logo --}}
     <figure class='header__image'>
     <img src='{{@blog.logo}}' alt='{{@blog.title}}' class='header__img'>
 </figure>
 </a>
 {{/if}}
 
+{{!-- Icon Menu --}}
 <a href='#', class='header__ico-menu'>
     <span class='header__text'>Menú</span>
     <i class='header__icon icon-menu'></i>
 </a>
 
+{{!-- Menu (navigation) --}}
 <div class='menu'>
     {{> 'menu' }}
 </div>
