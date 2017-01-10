@@ -4,15 +4,8 @@
 
 {{!-- Blog header --}}
 
-{{!-- If there is a logo --}}
-{{#if @blog.logo}}
-<a href='{{@blog.url}}'>
-    {{!-- Logo --}}
-    <figure class='header__image'>
-    <img src='{{@blog.logo}}' alt='{{@blog.title}}' class='header__img'>
-</figure>
-</a>
-{{/if}}
+{{!-- Logo --}}
+<a href='{{@blog.url}}' class='header__logo'></a>
 
 {{!-- Icon Menu --}}
 <a href='#', class='header__ico-menu'>

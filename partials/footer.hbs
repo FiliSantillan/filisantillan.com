@@ -5,13 +5,8 @@
 {{!-- Blog footer --}}
 
 <div class='wrap-center'>
-    {{!-- If there is a logo --}}
-    {{#if @blog.logo}}
     {{!-- Logo --}}
-    <figure class='footer__image'>
-        <img src='{{@blog.logo}}' alt='{{@blog.title}}' class='footer__img'>
-    </figure>
-    {{/if}}
+    <a href='{{@blog.url}}' class='footer__logo'></a>
     
     {{!-- Social networks --}}
     <div class='flex jus--between dev--tablet-750'>
