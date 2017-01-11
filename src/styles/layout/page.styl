@@ -42,6 +42,7 @@
     width 100%
     padding 0.7rem 0
     text-align center
+    border none !important
     
     .page-static__link
         color $color-white
@@ -95,7 +96,12 @@
         width auto
         padding 0.7rem 1rem
         border-radius 0 4px 0 0
+        transition 0.3s
         
         .page-static__link
             font-weight 300
             letter-spacing 2px
+            transition 0.3s
+            
+        &:hover
+            background-color $color-red

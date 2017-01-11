@@ -16,3 +16,20 @@ a[class*='--radius']
 input[class*='--radius']
     border-radius 20px
     
+@media $mq-desktop-min-1024
+    button[class*='btn-']
+    a[class*='btn-']
+    input[class*='btn-']
+        cursor pointer
+        transition 0.2s
+        border 1px solid transparent
+
+        &:hover
+            background $color-white
+            color $color-red
+            border 1px solid $color-red
+            letter-spacing 2px
+            font-weight 400
+            
+        &:active
+            transform scale(0.9)

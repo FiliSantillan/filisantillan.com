@@ -69,13 +69,26 @@
         .flex
             .subscribers__content
                 width 47%
-                margin 0 2%
+                margin 0 2% 0.8rem 2%
                 
 @media $mq-desktop-min-1024
+    .subscribers
+        padding 4rem 2rem
+        
     .subscribers__wrapper
         .flex
             .subscribers__content
                 width 40%
+                
+
+                input[type='text']
+                input[type='email']
+                    transition 0.3s
+                    
+                    &:focus
+                        letter-spacing 2px
+                        font-weight 300
+                        
                 
 @media $mq-desktop-min-1200
     .subscribers__wrapper

@@ -41,6 +41,7 @@
             
     .cover-post__tag
         float right
+        color $color-white
         
         .cover-post__icon
             font-size 1.8rem
@@ -115,7 +116,11 @@
                 font-size 1.1rem
                 
         .cover-post__tag
+            transition 0.3s
             
+            &:hover
+                transform scale(1.2)
+                
             .cover-post__icon
                 font-size 2.5rem
                 

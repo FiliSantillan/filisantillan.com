@@ -16,10 +16,10 @@
         font-size 1.2rem
         
     &__newer-posts
-        box-shadow -4px 4px 0 $color-dark
+        box-shadow -3px 3px 0 $color-dark
         
     &__older-posts
-        box-shadow 4px 4px 0 $color-dark
+        box-shadow 3px 3px 0 $color-dark
         
 @media $mq-tablet-min-600
     .pagination
@@ -45,3 +45,12 @@
 @media $mq-desktop-min-1024
     .pagination
         margin 1.5rem 0 3rem 0
+        
+        &__newer-posts
+        &__older-posts
+            transition 0.3s
+            display inline-block
+
+            &:active
+                transform scale(0.9)
+                box-shadow none
