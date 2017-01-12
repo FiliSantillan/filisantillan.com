@@ -8,7 +8,12 @@
     padding 1rem 0.5rem
     box-sizing border-box
     z-index 150
-    display none
+    box-shadow -4px 0 6px rgba($color-black,0.6)
+    right -110%
+    transition 0.3s
+    
+    &-active
+        right 0
     
     &__close
         position absolute
@@ -21,23 +26,18 @@
         .menu__icon
             font-size 1.7rem
             color $color-black
-    
-.menu__image
-    text-align center
-    
-    .menu__img
-        width 120px
-        margin 0 0 0.6rem 0
-        
-    .menu__text
-        color $color-white
-        font-size 2rem
-        font-weight 700
-        font-family $font-nutito
-    
+            
+    &__logo
+        background url(../images/fili.svg)
+        background-size 200px 100px
+        display block
+        text-indent -9999px
+        width 200px
+        height 100px
+        margin 0.8rem auto
+
 .menu__options
     display flex
-    justify-content flex-start
     flex-wrap wrap
     
     .menu__option
@@ -68,7 +68,7 @@
     font-weight 300
     
     .menu__icon
-        font-size 1.8rem
+        font-size 1.9rem
         display block
         margin 1rem 0 0.3rem 0
         
@@ -101,7 +101,7 @@
         position initial
         width auto
         height auto
-        background-color none
+        background none
         padding 0
         display block
         
@@ -134,8 +134,13 @@
                 display none
                 
     .menu__link
+        transition 0.3s
+        
         .menu__icon
             margin 0
+            
+        &:hover
+            color $color-yellow
 
 @media $mq-desktop-min-1200
     .menu__options

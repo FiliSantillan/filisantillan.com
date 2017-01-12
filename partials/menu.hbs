@@ -1,13 +1,8 @@
 <div class='menu__close'>
-    <a href='#' class="menu__icon icon-arrow-right"></a>
+    <a href='#' class="menu__icon icon-arrow-right" id='close-menu'></a>
 </div>
 
-<figure class='menu__image'>
-    <img src='{{asset "./dist/images/logo.png"}}' alt='' class='menu__img'>
-    <figcaption class="menu__text">
-        <span class="menu__name">{{@blog.title}}</span>
-    </figcaption>
-</figure>
+<a href='{{@blog.url}}' class='menu__logo'></a>
 
 <nav class="menu__navigation">
     <ul class='menu__options no-list'>
