@@ -8,12 +8,11 @@
 <a href='{{@blog.url}}' class='header__logo'></a>
 
 {{!-- Icon Menu --}}
-<a href='#', class='header__ico-menu'>
-    <span class='header__text'>Menú</span>
+<a href='#', class='header__ico-menu' id='open-menu'>
     <i class='header__icon icon-menu'></i>
 </a>
 
 {{!-- Menu (navigation) --}}
-<div class='menu'>
+<div class='menu' id='menu'>
     {{> 'menu' }}
 </div>
