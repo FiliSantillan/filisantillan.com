@@ -1,3 +1,10 @@
+$('#open-menu').click(function() {
+  $('#menu').addClass('menu-active');
+});
+
+$('#close-menu').click(function() {
+  $('#menu').removeClass('menu-active');
+});
 disqus = function (newIdentifier, newUrl, newTitle) {
     if ($('#disqus_thread').length) {
         if (typeof DISQUS === 'undefined') {
