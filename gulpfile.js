@@ -56,14 +56,14 @@ gulp.task('prefix', function() {
             cascade: true
         }))
         .pipe(minifyCss())
-        .pipe(gulp.dest('./assets/dist/css/'))
+        .pipe(gulp.dest('./assets/css/'))
         .pipe(livereload())
 })
 
 gulp.task('c-fonts', function () {
     return gulp.src('./src/fonts/*')
         .pipe(fontmin())
-        .pipe(gulp.dest('./assets/dist/fonts/'));
+        .pipe(gulp.dest('./assets/fonts/'));
 });
 
 gulp.task('concat', function() {
@@ -95,7 +95,7 @@ gulp.task('minifyJS', function() {
             errorHandler: onError
         }))
         .pipe(uglify())
-        .pipe(gulp.dest('./assets/dist/js/'))
+        .pipe(gulp.dest('./assets/js/'))
 
     var vendor = gulp
         .src('./src/js-dev/vendor.js')
@@ -103,7 +103,7 @@ gulp.task('minifyJS', function() {
             errorHandler: onError
         }))
         .pipe(uglify())
-        .pipe(gulp.dest('./assets/dist/js/'))
+        .pipe(gulp.dest('./assets/js/'))
 
     return merge(scripts, vendor)
 })
@@ -117,7 +117,7 @@ gulp.task('c-images', function() {
         .pipe(imagemin({
             optimizationLevel: 5
         }))
-        .pipe(gulp.dest('./assets/dist/images/'))
+        .pipe(gulp.dest('./assets/images/'))
 })
 
 gulp.task('build-styles', function() {
