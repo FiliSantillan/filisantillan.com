@@ -85,14 +85,24 @@
     </script>
 
     {{! Facebook SDK }}
-    <div id='fb-root'></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = '//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1834876476791570',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/es_LA/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
     
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}

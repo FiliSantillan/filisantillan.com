@@ -11,6 +11,31 @@ input[class*='default']
     background $color-blue
     color $color-white
     
+button[class*='codepen']
+a[class*='codepen']
+input[class*='codepen']
+    background $color-dark
+    color $color-white !important
+    display inline-block
+    margin 0.1rem 0
+    padding 0.5rem 0.8rem
+    border-radius 5px
+    font-size 1rem
+    border 1px solid transparent !important
+    
+    &:before
+        content "\ea39"
+        font-family 'icons' !important
+        margin 0 0.5rem 0 0
+        speak none
+        font-style normal
+        font-weight normal
+        font-variant normal
+        text-transform none
+        line-height 1
+        -webkit-font-smoothing antialiased
+        -moz-osx-font-smoothing grayscale
+    
 button[class*='--radius']
 a[class*='--radius']
 input[class*='--radius']
@@ -22,6 +47,13 @@ input[class*='--radius']
     input[class*='btn-']
         cursor pointer
         transition 0.2s
+        
+        &:active
+            transform scale(0.9)
+        
+    button[class*='default']
+    a[class*='default']
+    input[class*='default']
         border 1px solid transparent
 
         &:hover
@@ -31,5 +63,10 @@ input[class*='--radius']
             letter-spacing 2px
             font-weight 400
             
-        &:active
-            transform scale(0.9)
+    button[class*='codepen']
+    a[class*='codepen']
+    input[class*='codepen']
+        &:hover
+            background-color $color-white
+            color $color-dark !important
+            border 1px solid $color-dark !important
