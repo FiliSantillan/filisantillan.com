@@ -9,6 +9,7 @@
 
 {{!-- Cover: Blog cover image --}}
 <section class='cover {{#if @blog.cover}}cover--index' style='background-image: url({{@blog.cover}}){{/if}}'>
+    {{> 'cover'}}
 </section>
 
 {{!-- Loop: The main content area on the homepage --}}
