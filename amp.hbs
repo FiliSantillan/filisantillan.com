@@ -2,14 +2,14 @@
 <html ⚡ lang='es'>
 <head>
 
-    {{!-- Page Meta --}}
+    {{!-- Title --}}
     <title>{{meta_title}}</title>
 
-    <!-- Mobile -->
+    {{!-- Mobile Meta --}}
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <meta name="MobileOptimized" content="320" />
 
-    {{!-- Brand icon --}}
+    {{!-- Favicons --}}
     <link rel="apple-touch-icon" sizes="180x180" href='{{asset "./images/favicon/apple-touch-icon.png"}}'>
     <link rel="icon" type="image/png" href='{{asset "./images/favicon/favicon-32x32.png"}}' sizes="32x32">
     <link rel="icon" type="image/png" href='{{asset "./images/favicon/favicon-16x16.png"}}' sizes="16x16">
@@ -18,9 +18,9 @@
     <meta name="apple-mobile-web-app-title" content="Fili">
     <meta name="application-name" content="Fili">
 
-    {{!-- Autor y Descripción --}}
+    {{!-- Author & Descripction --}}
     <meta name="author" content="Filiberto Santillán">
-    <meta name="description" content="{{meta_description}}" />
+    <meta name='description' content='Blogger, Geek, Lover of code - HTML, CSS, Javascript, ReactJS' />
 
     {{!-- Friendly --}}
     <meta name="HandheldFriendly" content="True" />
@@ -39,9 +39,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="theme-color" content="#4299D4">
     <meta name="google-site-verification" content="PUVeHiwvS1T4_Q8FaieZHfE0GjL2rsKJ3LU4eabFdtA" />
-
+    
+    {{!-- Ghost outputs important style and meta data with this tag (AMP) --}}
     {{amp_ghost_head}}
-
+    
+    {{!-- Post Styles --}}
     <style amp-custom>
         :root {
             --font-nutito: 'Nunito', sans-serif;
@@ -454,77 +456,108 @@
     {{!-- The AMP boilerplate --}}
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
+    {{!-- Accelerated Mobile Pages support for your posts --}}
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
-    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
 
+    {{!-- Sidebar - AMP --}}
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+
+    {{!-- Social share buttons - AMP --}}
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    
+    {{!-- For the correct functioning of gifs, iframes and audio --}}
     {{amp_components}}
 
 </head>
 
 <body class="amp-template">
     {{#post}}
-
+    
+    {{!-- Header - AMP --}}
     <header class="header">
         {{> 'amp-header' }}
     </header>
-
+    
+    {{!-- Sidevar - Menu AMP --}}
     <amp-sidebar class='menu' id='sidebar1' layout='nodisplay' side="right">
+        {{!-- icon - close --}}
         <a href='#' class="menu__arrow fa fa-arrow-right" on='tap:sidebar1.close'></a>
+        {{!-- Blog navigation  --}}
         <ul class='menu__options no-list'>
             {{navigation}}
         </ul>
     </amp-sidebar>
-    
+
+    {{!-- If there is a image (cover) --}}
     {{#if image}}
+    {{!-- Cover --}}
     <section class='cover'>
         {{> 'amp-cover-post'}}
     </section>
     {{/if}}
-
+    
+    {{!-- AMP wrapper --}}
     <main class="article-wrapper" role="main">
+        {{!-- AMP post --}}
         <article class='article'>
-
+            
+            {{!-- AMP information --}}
             <header class="article__info">
+                {{!-- AMP title --}}
                 <h1 class="article__title">{{title}}</h1>
+                {{!-- AMP date --}}
                 <time class="article__date" datetime="{{date format='YYYY-MM-DD'}}">
                     <span class="article__icon fa fa-clock-o"></span>
                     <span class="article__text">{{date published_at format='DD MMM YYYY' timeago='true'}}</span>
                 </time>
+                {{!-- If there is a tag --}}
                 {{#if tags}}
+                    {{!-- Everything inside the #tags tags pulls data from the post (AMP) --}}
                     {{#foreach tags}}
+                {{!-- AMP tag --}}
                 <a href='{{url}}' class="article__tag">{{name}}</a>
                     {{/foreach}}
                 {{/if}}
             </header>
-
+            
+            {{!-- AMP content --}}
             <section class="article__content">
                 {{amp_content}}
-
+                
+                {{!-- AMP notice - To give notice that it is in an AMP version --}}
                 <span class="article__notice">
                     Esta es la versión <a href='https://www.ampproject.org/' target='_blank'>AMP</a> del artículo, si quieres ver el artículo original y tener una mejor experiencia <a href='{{url}}'>da click aquí</a>. <strong>Recuerda que consumirás más datos</strong>
                 </span>
             </section>
-
+            
+            {{!-- AMP social --}}
             <section class="article__social">
+                {{!-- Social text --}}
                 <strong class="article__text">Si te gusto el artículo, por favor, ayudame a compartir para que otras personas puedan leerlo.</strong>
+
+                {{!-- Social icons --}}
                 <div class="article__icons">
+
+                    {{!-- Facebook --}}
                     <amp-social-share type="facebook" 
                         data-param-app_id="254325784911610"
                         data-param-text="{{title}}"
                         data-param-url="https://filisantillan.com{{url}}">
                     </amp-social-share>
 
+                    {{!-- Twitter --}}
                     <amp-social-share type="twitter"
                         data-param-text="{{title}}"
                         data-param-url="https://filisantillan.com{{url}}">
                     </amp-social-share>
-
+                    
+                    {{!-- Google+ --}}
                     <amp-social-share type="gplus"
                         data-param-text="{{title}}"
                         data-param-url="https://filisantillan.com{{url}}">
                     </amp-social-share>
-
+                    
+                    {{!-- Linkedin --}}
                     <amp-social-share type="linkedin"
                         data-param-text="{{title}}"
                         data-param-url="https://filisantillan.com{{url}}">
@@ -534,42 +567,55 @@
 
         </article>
     </main>
-
+    
+    {{!-- Everything inside the #author tags pulls data from the post (AMp) --}}
     {{#author}}
     <section class='author'>
+        {{!-- Author options --}}
         <figure class="author__options">
-            
+            {{!-- Facebook icon --}}
             <a href='{{facebook_url}}' target='_blank'class='author__icon fa fa-facebook'></a>
-
+            
+            {{!-- Author image --}}
             <a href="{{url}}">
                 <amp-img class='author__img' src={{image absolute="true"}} alt='{{name}}' width="100" height="100"></amp-img>
             </a>
 
+            {{!-- Twitter icon --}}
             <a href='{{twitter_url}}' target='_blank'class='author__icon fa fa-twitter'></a>
-
+                
+            {{!-- Author name --}}
             <figcaption class="author__name">
                 <strong class='author__text'>
                     <a class='author__link' href="{{url}}">{{name}}</a>
                 </strong>
             </figcaption>
-
+            
+            {{!-- If there is a website --}}
             {{#if website}}
+            {{!-- Button --}}
             <a href="{{website}}" class='author__button btn-default btn--radius'>Sobre mí</a>
             {{/if}}
         </figure>
         
+        {{!-- Author information --}}
         <div class="author__info">
-
+            
+            {{!-- If there is a location --}}
             {{#if location}}
+            {{!-- Author location --}}
             <div class="author__location">
                 <i class="author__icon fa fa-map-marker"></i>
                 <span class="author__text">{{location}}</span>
             </div>
             {{/if}}
-
+            
+            {{!-- About the author --}}
             <div class="author__about">
+                {{!-- If there is a biography --}}
                 {{#if bio}}
                 <p class="author__bio">{{bio}}</p>
+                {{!-- If there is not a biography --}}
                 {{else}}
                 <p class='author__post'>Lee más <a class='author__link'href="{{url}}">artículos</a> sobre este autor.</p>
                 {{/if}}
@@ -577,7 +623,8 @@
         </div>
     </section>
     {{/author}}
-
+    
+    {{!-- Footer --}}
     <footer class="footer">
         {{> 'amp-footer'}}
     </footer>

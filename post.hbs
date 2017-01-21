@@ -77,12 +77,12 @@
         {{/if}}
     </div>
     
-    {{!-- Author informationc --}}
+    {{!-- Author information --}}
     <div class='author__info'>
         
         {{!-- If there is a location --}}
         {{#if location}}
-         {{!-- Author location --}}
+        {{!-- Author location --}}
         <div class='author__location'>
             <i class='author__icon icon-check-in'></i>
             <span class='author__text'>{{location}}</span>
@@ -103,14 +103,9 @@
 </section>
 {{/author}}
 
-{{!-- Loop: The main content area on the author --}}
-<section id='post-wrapper' class='post-wrapper wrap-center' role='main'>
-    {{> 'loop'}}
-</section>
-
 {{!-- Comment system for the blog, Powered by Disqus --}}
 <section class='disqus'>
-    {{> 'disqus'}}     
+    {{> 'disqus'}}
 </section>
 
 {{!-- Subscribe: tools for collecting emails from the blog --}}
