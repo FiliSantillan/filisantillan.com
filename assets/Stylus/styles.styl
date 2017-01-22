@@ -1,0 +1,899 @@
+
+/*------------------------------------*\
+    $Tabla de contenido
+\*------------------------------------*/
+
+/*
+
+    0.  Imports
+    1.  Progress
+    2.  Header
+    3.  Cover
+    4.  Menu
+    5.  Search
+    6.  Code
+    7.  Post
+    8.  Loop
+    9.  Newsletter
+    10. Pagination
+    11. Diary - Demos - Videos - Others
+    12. Footer
+
+*/
+
+
+
+/*------------------------------------*\
+    0. $Imports
+\*------------------------------------*/
+ 
+// Estilos que forman parte del sitio pero estan separados para una mejor oganización
+
+// Para normalizar los estilos
+@import normalize
+
+// Variables que se usan en los estilos
+@import variables
+
+// Estilos para el sitio por default y OOCSS
+@import default
+
+/*------------------------------------*\
+    1. $Progress
+\*------------------------------------*/
+
+// Estilos de la barra de progreso que se utiliza para la lectura de los artículos 
+    
+//Barra transparente por default
+.progress::-webkit-progress-bar 
+    background-color transparent
+    
+//Color de la barra al hacer scroll (Webkit)
+.progress::-webkit-progress-value 
+     background-color $ColorBlue
+
+//Color de la barra al hacer scroll (Moz)
+.progress::-moz-progress-bar 
+     background-color $ColorBlue
+
+
+/*------------------------------------*\
+    2. $Header
+\*------------------------------------*/
+
+// Estilos del Header
+
+// Header
+.header
+    background-color $ColorDark
+    color white
+    padding 0.5rem 0.3rem
+    width 100%
+    border-bottom 1px solid white
+    z-index 1000
+    
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    .header__title
+        .nav
+            li
+                a
+                    transition 0.3s
+                    
+                    &:hover
+                        color white
+                
+/*------------------------------------*\
+    3. $Cover
+\*------------------------------------*/
+
+// Estilos de la imagen de portada para el blog/artículo/autor/tags + contenido
+
+//Portada + logo
+.cover
+    .logo__author
+        margin 1rem 0 0 0
+        img
+            width 110px
+            border-radius 50%
+            border 3px solid $ColorDark
+
+// Título / Descripción / Fecha
+.info-block
+    .info-date
+        font-size 1.2rem
+        text-shadow 1px 1px 0 $ColorDark
+        span
+            margin 0 0.5rem 0 0
+        
+// Redes sociales
+.cover__social
+    .cover__list
+        
+        .cover__item
+            
+            a
+                color white            
+
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    .cover__tags
+        height 350px !important
+        
+    .cover      
+        .logo__author
+            margin 0
+            bottom -5.5rem
+            img
+                width 170px
+            
+    .info-block
+            
+        .info-date
+            font-size 1.5rem
+            text-shadow 2px 2px 0 $ColorDark
+            font-weight 700
+            
+    .cover__social
+        .cover__list
+            .cover__item
+                a
+                    transition 0.3s
+                    
+                    &:hover
+                        transform scale(1.2)
+                        color $ColorBlue
+                        
+    .cover__feedly
+        img
+            transition 0.3s
+            &:hover
+                transform scale(1.2)
+                    
+/*------------------------------------*\
+    4. $Menu
+\*------------------------------------*/
+
+// Estilos del menú lateral (En caso de estar en un smartphone/tablet)
+
+// Menú
+.menu
+    
+    .menu__close
+        color white
+        
+// En caso de que el menú este activo
+.menu-active
+    display block
+    
+/*------------------------------------*\
+    5. $Search
+\*------------------------------------*/
+
+// Estilos para la sección de para busqueda de artículos
+
+// Contenedor de la busqueda - Icono para cerrar - Input - Resultados
+.big-search
+    user-select none
+    transition 0.3s
+    
+    .big-search__form
+           
+        input:placeholder-shown
+            color white
+            
+    .results
+        
+        p
+            display none
+            
+        a
+            display block
+            
+            span
+                display inline-block
+                margin 0 0.5rem 0 0
+                
+            h2
+                color white
+                font-size 1.2rem
+                margin 0.6rem 0
+                display inline-block
+                
+// En caso de que la busqueda este activa
+.search-active
+    display block
+        
+
+/*------------------------------------*\
+    6. $Code
+\*------------------------------------*/
+
+// Estilos para la sección de ¿QUÉ TE GUSTARÍA APRENDER HOY? que esta antes de los artículos
+
+// Contenedor y título
+.code
+    text-align center
+
+// Resolución para dispositivos de 360px
+@media all and (min-width 360px)
+    .code
+        &__title
+            font-size 1.4rem
+            letter-spacing 1px
+
+// Resolución para dispositivos de 412px
+@media all and (min-width 412px)
+    .code
+        &__title
+            font-size 1.5rem
+            letter-spacing 2px
+            
+
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    .code
+        
+        &__title
+            font-size 2rem
+            
+            
+/*------------------------------------*\
+    7. $Post
+\*------------------------------------*/
+
+// Estilos de la lectura de un artículo
+
+//Contenedor de todo el artículo + tags, botones para compartir
+.post-container
+    max-width 900px
+    margin 0 auto
+    width 100%
+    padding 0.5rem
+    box-sizing border-box
+    
+    .tags
+        display flex
+        justify-content flex-start
+        flex-wrap wrap
+        
+        .tag
+            padding 0.5rem 0.8rem
+            background-color $ColorBlue
+            color $ColorDark
+            font-size 1.3rem
+            vertical-align top
+            font-weight 300
+            margin 0.3rem 0.5rem
+            span
+                margin 0 0.3rem 0 0
+    
+    .post-social
+        margin 1.5rem 0
+        text-align center
+        .addthis_sharing_toolbox a
+            margin 0 0.4rem
+            
+        .post-socialText
+            font-size 1.4rem
+            display inline-block
+            margin 0.5rem 0
+        
+    .post-content 
+        line-height 1.8rem
+        font-size 1.2rem
+        
+        img
+            display block
+            max-width 100%
+            width auto
+            height auto
+            margin 0 auto
+            
+        h1,h2,h3,h4,h5,h6
+            line-height 2rem
+            
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    .post-container
+        .post-social
+            .post-socialText
+                font-size 1.8rem
+
+        .post-content
+            font-size 1.4rem
+            line-height 2rem
+            img
+                max-width 900px
+                
+/*------------------------------------*\
+    8. $Loop
+\*------------------------------------*/
+
+// Estilos de los artículos en el index (No la lectura)
+
+// Contenedor de todos los artículos
+.post__content
+    display flex
+    justify-content space-around
+    flex-wrap wrap
+    max-width 1200px
+    margin 0 auto
+    
+    .post
+        box-sizing border-box
+        padding 0 0 0.8rem 0
+        width 100%
+        margin 0.7rem 0.7rem
+        background-color white
+        
+    // Estilos únicamente para el primer artículo
+    article:first-child
+        margin 1rem 0 0 0
+        background-color $ColorDark
+        color white
+        width 100%
+        max-width 868px
+        position relative
+        
+        .post__first
+            padding 0.8rem
+            text-transform uppercase
+            letter-spacing 3px
+            display block
+            position absolute
+            background-color white
+            color $ColorDark
+            top 0
+            
+        .post__cover
+            max-width 640px
+            border none
+            
+        .post__header
+            border-bottom 3px solid $ColorBlue
+            .post__title
+                a
+                    color $ColorBlue
+                    
+        .post__description
+            display none
+            
+        .post__footer
+            display flex
+            justify-content space-between
+            margin 0.8rem 0.5rem 0 0.5rem
+            .post__author
+                display block
+                
+                a
+                    vertical-align top
+                    margin 0.9rem 0.5rem 0 0
+                    display inline-block
+                    
+                .post__image
+                    margin 0.2rem 0.5rem 0 0
+                    
+                img
+                    width 40px
+                    border-radius 50%
+            
+        .btn-default
+            border 1px solid $ColorBlue
+            box-shadow 3px 3px 0px $ColorBlue
+            padding 0.8rem 1.5rem
+            
+// Imagen de los artículos
+.post__cover
+    width 100%
+    max-width 412px
+    background-repeat no-repeat
+    background-position center
+    background-size cover
+    height 240px
+   
+// Título de los artículos
+.post__header
+    padding 0 0 0.5rem 0
+    border-bottom 3px solid $ColorDark
+    margin 0 0.5rem
+    
+    .post__title
+        margin 0.6rem 0
+        a
+            color $ColorDark
+
+// Descripción de los artílos
+.post__description
+    margin 0 0.5rem
+
+// Autor de los artículos (Solo se muestran para el primer artículo)
+.post__footer
+    margin 0 0.5rem
+        
+        
+// Resolución para dispositivos de 412px
+@media all and (min-width 412px)
+    .post__content
+        .post
+            width 412px
+    
+// Resolución para dispositivos de 601px
+@media all and (min-width 601px)
+    .post__content
+        article:first-child
+            padding 0 0 1.5rem 0
+            .post__cover
+                height 350px
+                
+            .post__header
+                 margin 0 2.5rem
+                 .post__title
+                     margin 1.5rem 0 0 0
+                
+            .post__footer
+                margin 0.8rem 2.5rem 0 2.5rem
+                
+            .btn-default
+                padding 0.8rem 2rem
+
+// Resolución para dispositivos de 640px
+@media all and (min-width 640px)
+    .post__content
+        .post
+            width 46%
+                
+        article:first-child
+            margin 2rem 0 0 0
+            padding 0
+            position relative
+            
+            .post__first
+                top -1.5rem
+                left 1rem
+                padding 1rem
+                border 2px solid $ColorDark
+                
+            .post__cover
+                width 49%
+                height 250px
+                display inline-block
+                box-sizing border-box
+                vertical-align bottom
+            
+            .post__info
+                width 50%
+                display inline-block
+                box-sizing border-box
+                vertical-align top
+                
+            .post__header
+                 margin 0 0.5rem
+                 .post__title
+                     margin 1rem 0 0 0
+                     
+            .post__description
+                display block
+                
+                
+            .post__footer
+                margin 0.8rem 0.5rem 0 0.5rem
+
+// Resolución para dispositivos de 896px
+@media all and (min-width 896px)
+    .post__content
+        .post
+            width 38%
+                
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    .post__content
+        .post
+            width 30%
+                
+        article:first-child
+            margin 2rem 0 1.5rem 0
+            .post__cover
+                height 300px
+                
+            .post__header
+                .post__title
+                    margin 0.3rem 0
+                    font-size 2rem
+                
+            .post__tags
+                display block
+                .tag
+                    padding 0.5rem
+                    border 2px solid $ColorBlue
+                    margin 0.2rem
+                    display inline-block
+                    
+            .post__footer
+                .post__author
+                    a
+                        margin 0.9rem 2rem 0 0
+                        font-size 1.2rem
+                    img
+                        width 60px
+                        position absolute
+                        bottom -1.2rem
+                        right -1.2rem
+                        border 2px solid $ColorBlue
+                        
+/*------------------------------------*\
+    $Author
+\*------------------------------------*/
+
+// Estilos para la descripción del autor al final de un artículo
+
+// Contenedor del autor
+.post__authorDescription
+    background $ColorGray-1
+    padding 0.5rem
+    border-radius 5px
+    margin 1rem 0
+    
+// Imagen del autor y botón
+.post__authorImage
+    text-align center
+    
+    img
+        border-radius 50%
+        width 200px
+        margin 0.5rem 0
+        border 3px solid $ColorDark
+        
+    a:nth-child(2)
+        display block
+        
+// Información del autor
+.post__authorInfo
+    text-align center
+    
+    .post__authorLocation
+        font-size 1.2rem
+        
+    .post__authorBio
+        font-size 1.1rem
+        
+// Resolución para dispositivos de 640px
+@media all and (min-width 640px)
+    .post__authorImage
+        width 35%
+        display inline-block
+        box-sizing border-box
+        
+        a:nth-child(2)
+            margin 0 0 0.5rem 0
+        
+    .post__authorInfo
+        width 60%
+        box-sizing border-box
+        display inline-block
+        text-align left
+        vertical-align top
+        
+        .post__authorName
+            font-size 2.5rem
+            
+        .post__authorLocation
+            font-size 1.5rem
+            
+        .post__authorBio
+            font-size 1.3rem
+    
+                
+/*------------------------------------*\
+    9. $Newsletter
+\*------------------------------------*/
+
+// Estilos del Newsletter (Subscripción)
+
+// Newsletter
+.newsletter
+    margin 1rem 0
+    
+// Fomulario del newsletter
+.newsletter__form
+    text-align center
+    padding 1rem
+    background-color $ColorDark
+    color white
+    margin 1rem 0 0 0
+    
+//Contenedor del newsletter - Títulos - Inputs - Botón
+.newsletter__content
+    .newsletter__title
+        font-size 1.5rem
+        display block
+    .newsletter__otherTitle
+        font-weight 300
+        
+    .newsletter__inputs
+        margin 0.8rem 0 0 0
+        input
+            color $ColorDark
+            
+        input[type="text"]
+        input[type="email"]
+            width 100%
+            box-sizing border-box
+            padding 0.8rem 0.5rem
+            margin 0.5rem 0
+            border 2px solid $ColorBlue
+            color white
+            background-color $ColorDark-2
+            
+        input[type="submit"]
+            padding 0.8rem
+            border 1px solid $ColorBlue
+            box-shadow 2px 2px 0px $ColorBlue
+            background none
+            color $ColorBlue
+            text-transform uppercase
+            background-color $ColorDark-2
+            
+// Resolución para dispositivos de 412px
+@media all and (min-width 412px)
+    .newsletter__form
+        padding 1.5rem 1rem
+        
+// Resolución para dispositivos de 601px
+@media all and (min-width 601px)
+    .newsletter__form
+        padding 1.5rem
+        
+    .newsletter__content
+        .newsletter__inputs
+            input[type="text"]
+            input[type="email"]
+                width 48%
+    
+            input:first-child
+                margin 0.5rem 3% 0.5rem 0
+
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    .newsletter__form
+        padding 2rem 0
+        margin 0 auto
+        max-width 868px
+        
+    .newsletter__content
+        width 600px
+        margin 0 auto
+        .newsletter__title
+            font-size 2.2rem
+        .newsletter__otherTitle
+            font-size 1.4rem
+
+/*------------------------------------*\
+    10. $Pagination
+\*------------------------------------*/
+            
+// Estilos para la paginación del blog (Solo aparece en caso de sobre pasar el número de artículos por página)
+
+//Pagination - Botones
+.pagination
+    text-align center
+    margin 2rem 0
+    .newer-posts
+        
+    .older-posts
+        padding 0.7rem 0.8rem
+        display inline-block
+        border 2px solid $ColorDark
+        color $ColorDark
+        
+/*------------------------------------*\
+    11. $Diary - Demos - Videos - Others
+\*------------------------------------*/
+
+// Estios de la Agenda - Demos - Videos - Otros artículos (Artículos estáticos)
+
+// Contenedor principal
+.post__special
+    display flex
+    justify-content space-around
+    flex-wrap wrap
+    
+// Template - Contenedor
+.special
+    width 100%
+    max-width 412px
+    margin 1rem 0
+    
+// Imagen
+.special-cover
+    img
+        width 100% !important
+        height 240px !important
+        max-width 412px !important
+
+// Iconos - Descripción
+.special-footer
+    background $ColorDark
+    color white
+    padding 0.5rem 0.7rem
+    
+    .special-title
+        color white
+        margin 0
+        padding 0.5rem 0
+        font-size 1.7rem
+        
+    .special-icon
+        display block
+        font-size 1.1rem
+        margin 0.6rem 0
+        font-weight 400
+        
+        i
+            margin 0 0.3rem 0 0
+            font-size 1.5rem
+            
+    .special-description
+        font-size 1rem
+        font-weight 300
+        
+    .special-button
+        width 100%
+        background $ColorDark-2
+        text-align center
+        cursor pointer
+        
+        a
+            color white
+            font-weight 700
+            text-transform uppercase
+            padding 1rem 0.8rem 
+            display inline-block
+
+// Resolución para dispositivos de 640px
+@media all and (min-width 640px)
+    .special
+        width 412px
+        background $ColorDark
+
+            
+    .special-footer
+        .special-button
+            transition 0.5s
+            &:hover
+                background white
+                a
+                    color $ColorDark
+                    
+/*------------------------------------*\
+    12. $Footer
+\*------------------------------------*/
+
+// Estilos del Footer
+
+// Footer
+.footer
+    background-color $ColorDark
+    color white
+    text-align center
+    padding 0.5rem
+    text-align center
+    
+// Contenedor para usar FlexBox y el contenido se centre
+.footer-wrap
+    display flex
+    justify-content space-between
+    flex-wrap wrap
+    
+// Información - Logo y nombre
+.footer__info
+    width 100%
+    box-sizing border-box
+    .footer__logo
+        img
+            width 120px
+            display inline-block
+        figcaption
+            display inline-block
+            vertical-align top
+            margin 1.5rem 0 0 0.5rem
+            font-size 1.5rem
+            
+    .footer__description
+        p
+            line-height 1.4rem
+
+// Redes sociales del footer
+.footer__social
+    .footer__list
+        display flex
+        justify-content center
+        
+        .footer__item
+            margin 0 0.7rem
+            
+            &:first-child
+                margin 0 0.7rem 0 0
+            
+            a
+                color white
+                font-size 1.7rem
+
+// Nav en el footer (Solo se muestra en Desktop)
+.footer__nav
+    display none
+
+// Información sobre Ghost y DigitalOcean
+.footer__moreInfo
+    width 100%
+    
+    .footer__love
+        margin 1.3rem 0
+        
+        span
+            margin 0 0.2rem
+            font-size 1.4rem
+            &:nth-child(3)
+                color $ColorPink
+                
+        img
+            width 45px
+            vertical-align top
+            
+    .footer__technologies
+        .footer__ghost
+        .footer__digitalOcean
+            display inline-block
+            margin 0.5rem !important
+            
+        .footer__ghost
+            margin 0 0.5rem 0 0
+            
+// Resolución para dispositivos de 412px
+@media all and (min-width 412px)
+    .footer__info
+        .footer__logo
+            figcaption
+                font-size 2rem
+                
+    .footer__social
+        .footer__list
+            .footer__item
+                margin 0 0.9rem
+                
+                a
+                    font-size 2rem
+
+// Resolución para dispositivos de 601px
+@media all and (min-width 601px)
+    .footer
+        text-align left
+        
+    .footer__info
+        width 48%
+        .footer__logo
+            figcaption
+                font-size 1.5rem
+    
+    .footer__social
+        .footer__list
+            justify-content flex-start
+        
+    .footer__moreInfo
+        width 48%
+
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    .footer
+        padding 0.5rem 2rem
+    .footer__info
+        width 30%
+        
+    .footer__nav
+        width 30%
+        display block
+        li
+            margin 0.8rem 0
+        
+    .footer__moreInfo
+        width 30%

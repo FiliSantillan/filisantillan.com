@@ -1,0 +1,240 @@
+/*------------------------------------*\
+    $Estilos por default
+\*------------------------------------*/
+
+// Encabezados
+h2, h3,h4, h5, h6
+    font-family $FontTitles
+    color $ColorDark
+    text-rendering geometricPrecision
+    margin 2rem 0 0.8rem 0
+    
+// Encabezados
+h2
+    font-size 2.3rem
+
+h3
+    font-size 1.8rem
+
+h4
+    font-size 1.6rem
+
+h5  
+    font-size 1.4rem
+
+h6
+    font-size 1.2rem
+    
+// Párrafos y listas
+p, ol, dl
+    font-feature-settings 'liga' 1, 'onum' 1, 'kern' 1
+    margin 1rem 0 1rem 0
+    text-rendering geometricPrecision
+
+// Listas
+ol
+    padding-left 3rem
+    
+// Listas
+ol ol, ul ul,
+ul ol, ol ul
+    margin 0 0 0.4em 0
+    padding-left 2em
+    
+// Listas
+dl dt
+    float left
+    width 180px
+    overflow hidden
+    clear left
+    text-align right
+    text-overflow ellipsis
+    white-space nowrap
+    font-weight 700
+    margin-bottom: 1em
+
+
+// Listas
+dl dd
+    margin-left 200px
+    margin-bottom 1em
+
+// Break
+hr
+    display block
+    height 1px
+    border 0
+    border-top $ColorDark 1px solid
+    padding 0
+
+// Notas
+blockquote
+    box-sizing border-box
+    width 100%
+    margin 1rem 0
+    padding 0 0 0 0.5rem
+    border-left $ColorGray-2 3px solid
+    color $ColorGray-2
+
+// Notas
+blockquote p
+    margin 0.8em 0
+    padding 0.7rem 0 0.7rem 0
+
+// Notas
+blockquote small
+    display inline-block
+    margin 0.8em 0 0.8em 1.5em
+    font-size 0.9em
+    color $ColorGray-2
+
+// Notas
+blockquote cite 
+    font-weight 700
+
+// Notas
+blockquote cite a 
+    font-weight normal
+
+// Mark
+mark
+    background-color #fdffb6
+
+// Código
+    
+code
+    padding .1rem .3rem
+    white-space pre-wrap
+    background rgba($ColorDark,0.2)
+    box-sizing border-box
+    border-radius 3px
+    color $ColorDark
+    
+// Tablas
+table
+    box-sizing border-box
+    margin 1.75em 0
+    width 100%
+    max-width 100%
+    background-color: transparent
+
+// Tablas
+table th,
+table td 
+    padding 8px
+    line-height 20px
+    text-align left
+    vertical-align top
+    border-top #EFEFEF 1px solid
+
+// Tablas
+table th
+    color #000
+
+// Tablas
+table caption + thead tr:first-child th,
+table caption + thead tr:first-child td,
+table colgroup + thead tr:first-child th,
+table colgroup + thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td
+    border-top 0
+
+// Tablas
+table tbody + tbody
+    border-top: #EFEFEF 2px solid
+
+// Tablas
+table table table
+    background-color: #FFF
+    
+// Tablas
+table tbody > tr:nth-child(odd) > td,
+table tbody > tr:nth-child(odd) > th
+    background-color #F6F6F6
+
+// Tablas
+table.plain tbody > tr:nth-child(odd) > td,
+table.plain tbody > tr:nth-child(odd) > th
+   background: transparent
+    
+// Tweets centrados
+iframe[id*="twitter-widget"]
+    margin 0 auto
+    
+/*------------------------------------*\
+    OOCSS - CSS Orientado a objetos
+\*------------------------------------*/
+    
+    
+// boton - default
+.btn-default
+    padding 0.8rem 2rem
+    background none
+    border 1px solid $ColorDark
+    box-shadow 3px 3px 0px $ColorDark
+    text-transform uppercase
+    transition 0.3s
+    cursor pointer
+    
+    &:hover
+        background $ColorDark
+        box-shadow 3px 3px 0px $ColorBlue
+        
+    &:active
+        transform scale(0.9)
+
+    
+//Videos Responsive
+.flex-video
+    height 0
+    overflow hidden
+    padding-bottom 56.25%
+    padding-top 30px
+    position relative
+    
+    iframe
+    object
+    embed
+    video
+        height 100%
+        left 0
+        position absolute
+        top 0
+        width 100%
+        
+/*------------------------------------*\
+    $Media queries
+\*------------------------------------*/
+    
+// Resolución para Desktop
+@media all and (min-width 1080px)
+    h2, h3,h4, h5, h6
+        margin 2rem 0 1rem 0
+        
+    h2
+        font-size 2.6rem
+
+    h3
+        font-size 2rem
+
+    h4
+        font-size 1.8rem
+
+    h5  
+        font-size 1.6rem
+
+    h6
+        font-size: 1.4rem
+        
+    pre
+        max-width 900px
+        
+        code
+            background none
+            border none
+        
+    .flex-video
+        width 900px
+        max-width 900px
+        

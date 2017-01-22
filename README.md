@@ -1,164 +1,136 @@
-# Fili Santillán Blog 2.1.1
-##Ghost 0.7.6
+# Fili Santillán 3.0.1
+Ghost 0.11.3
 
-❤ HTML • CSS • JS ❤ | Web Developer | Blogger | Geek | YouTube | Platzi Student Ambassador
+<a href="https://filisantillan.com"><img src="https://s-media-cache-ak0.pinimg.com/originals/b8/66/46/b86646fcffb185b5b56009475794684c.jpg" alt="Fili Santillán" /></a>
 
-![Logo Fili Santillán](https://s-media-cache-ak0.pinimg.com/originals/4b/2a/8a/4b2a8aedb10dc94db8b720acfecf703a.png)
+## Español - Spanish
+Pequeña guía para el uso del tema **"FiliSantillan"** en **Ghost**, esto con el objetivo de que tenga un correcto funcionamiento y la experiencia sea mucho mejor más placentera para el usuario.
 
-Mini guía para el uso de Fili Santillán.
+* [Imágenes](#im%C3%A1genes)
+* [Posts](#posts)
+* [Dependencias](#dependencias)
 
-## Tamaño para las imágenes 
+### Imágenes
+Resolución recomendada para las imágenes en el blog.
 
-Tamaño para las imágenes de los artículos (también artículos estáticos)
+Tamaño para las imágenes en los posts, incluyendo las portadas de los artículos estáticos:
 
-| Imagen        | Pixel Ratio 1 | Pixel Ratio 2 |
-| ------------- |:-------------:| :------------:|
-| Ancho         | 412px         | 824px         |
-| Alto          | 240px         | 480px         |
+| Imagen        | Resolución    |
+| ------------- | ------------- |
+| Ancho         | 1920px        |
+| Alto          | 945px         |
 
-## Código para artículos estáticos
+Tamaño para las imágenes en los artículos estáticos (Agenda, Cursos, Videos):
 
-Código para usar en artículos estáticos especiales: Agenda - Demos - Videos - Otros Artículos
+| Imagen        | Resolución    |
+| ------------- | ------------- |
+| Ancho         | 560px         |
+| Alto          | 400px         |
 
-### Agenda
+Tamaño para las imágenes del autor:
+
+| Imagen        | Resolución    |
+| ------------- | ------------- |
+| Ancho         | 300px         |
+| Alto          | 300px         |
+
+### Posts
+En algunos posts (incluyendo los estáticos) se llega a usar código HTML en algunas situaciones, este código por default tiene un comportamiento con los estilos CSS, gracias a esto se pueden ver templates distintos.
+
+Código para agenda, videos y cursos:
 ```
-<article class="special">
-
-    <figure class="special-cover">
-        <img src="" alt="">
-    </figure>
-
-    <footer class="special-footer">
-        <h2 class="special-title">Título</h2>
-
-        <span class="special-icon"><i class="fa fa-globe"></i> Lugar</span>
-        <span class="special-icon"><i class="fa fa-calendar-o"></i> Fecha</span>
-
-        <p class="special-description">
-            Descripción ...
-        </p>
-    </footer>
-</article>
-```
-
-### Demos
-```
-<article class="special">
-
-    <figure class="special-cover">
-        <img src="" alt="">
-    </figure>
-
-    <footer class="special-footer">
-        <h2 class="special-title">Título</h2>
-
-        <p class="special-description">
-            Descripción ...
-        </p>
-
-        <div class="special-button">
-            <a href="#" target="blank">Ver demo</a>
-        </div>
-    </footer>
-</article>
-
+<section class="flex jus--start wrap--yes">
+    <article class="page-static">
+        <figure class="page-static__image">
+            <img src="imagen.jpg">
+        </figure>
+        <header class="page-static__info">
+            <strong class="page-static__title">Título</strong>
+            <span class="page-static__place">Texto</span>
+            <time class="page-static__date">
+                <span class="page-static__text">Texto</span>
+            </time>
+            <p class="page-static__description">Descripción...</p>
+        </header>
+        <a href="pagina.com" target='_blank' class="page-static__button">
+            <span class="page-static__link">Botón</span>
+        </a>
+    </article>
+</section>
 ```
 
-### Videos
+![Template default](https://s-media-cache-ak0.pinimg.com/originals/5a/13/d8/5a13d80e88dc7abe720529522c4e3adf.png)
+Código para un el botón "Codepen":
 ```
-<article class="special">
-
-    <figure class="special-cover">
-        <img src="" alt="">
-    </figure>
-
-    <footer class="special-footer">
-        <h2 class="special-title">Título</h2>
-
-        <p class="special-description">
-            Descripción ... 
-        </p>
-
-        <span class="special-icon"><i class="fa fa-clock-o"></i> Tiempo</span>
-
-        <div class="special-button">
-            <a href="#" target="blank">Ver video</a>
-        </div>
-    </footer>
-</article>
+<a href='#' target='_blank' class='btn-codepen'>Ver en codepen</a>
 ```
 
-### Más Artículos
+![Botón Codepen](https://s-media-cache-ak0.pinimg.com/originals/84/85/5f/84855f410b82280f3d3256fcfc5d357d.png)
+
+Código para los mensajes de tip en un post:
 ```
-<article class="special">
-
-    <figure class="special-cover">
-        <img src="" alt="">
-    </figure>
-
-    <footer class="special-footer">
-
-        <h2 class="special-title">Título</h2>
-
-        <p class="special-description">
-            Descripción ...
-        </p>
-
-        <div class="special-button">
-            <a href="#" target="blank">Ver Artículo</a>
-        </div>
-    </footer>
-</article>
+<blockquote class='tip'>
+ <p><strong>Tip:</strong> Texto</p>
+</blockquote>
 ```
 
-## Dependencias Gulp
+![Tip](https://s-media-cache-ak0.pinimg.com/originals/30/2a/f1/302af1274d68e41fcd549e4538f78ecf.png)
 
-En el caso de Agregar nuevos archivos CSS o JS, hay que tener cuidado al concatenar ya que se puede duplicar el código.
-
-## (Stylus)
-
-### 1.- Watch
+Código para los mensajes de advertencia en un post:
 ```
-gulp watch
+<blockquote class='warning'>
+ <p><strong>Advertencia:</strong> Texto</p>
+</blockquote>
 ```
 
-### 2.- Agrupar media-queries
+![Advertencia](https://s-media-cache-ak0.pinimg.com/originals/ba/54/df/ba54dfb4e1c57fa17830150d90de112b.png)
+
+### Dependencias
+Filisantillan cuenta con un archivo `gulpfile.js` que sirve para automatizar el trabajo en desarrollo y que el código de producción sea mucho mejor.
+
+Antes de empezar, se necesita instalar lo siguiente:
+* [Node.js](https://nodejs.org/es/)
+* [Gulp](http://gulpjs.com/)
+
+Una vez instalado, podemos empezar a descargar todas las dependencias:
+
+**NPM**
 ```
-gulp group-mq
+$ npm install --save
 ```
 
-## 3.- Minificar archivo CSS
+**Yarn**
 ```
-gulp minify-stylus
-```
-
-## (Vendor)
-
-### 1.- Minificar archivos JS
-```
-gulp minify-js
+$ Yarn
 ```
 
-### 2.- Minificar archivos CSS
+De no funcionar, se puede usar `sudo` antes del comando y así ejecutar como administrador.
+
+Para que todo el código de desarrollo pase a producción es necesario ejecutar:
 ```
-gulp minify-css
+$ gulp
 ```
 
-### 3.- Concatenar archivos JS
+Con este comando, todo el código que tenemos en desarrollo va a estar optimizado, comprimido y mucho más en la zona de producción.
+
+Para comprimir imágenes:
 ```
-gulp concat-js
+$ gulp c-images
 ```
 
-### 4.- Concatenar archivos CSS
+Con este comando las imágenes de producción van a estar comprimidas.
+
+Para comprimir las fuentes:
 ```
-gulp concat-css
+$ gulp c-fonts
 ```
 
-## Contacto
+Con este comando las fuentes de producción van a estar comprimidas.
+
+### Contacto
 
 * [Facebook](https://www.facebook.com/FiliSantillanMX)
 * [Twitter](https://twitter.com/FiliMX)
 
 ## Licencia
-
 © Fili Santillán

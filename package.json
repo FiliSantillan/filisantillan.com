@@ -1,7 +1,7 @@
 {
   "name": "filisantillan",
-  "version": "2.1.1",
-  "description": "Fili Santillán: http://filisantillan.com/",
+  "version": "3.0.1",
+  "description": "Fili Santillán: https://filisantillan.com/",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
