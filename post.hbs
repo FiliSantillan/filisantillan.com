@@ -1,102 +1,115 @@
-{{!-- Sitio para artículos --}}
+{{!------------------------------------}}
+          {{!-- Post --}}
+{{!------------------------------------}}
 
-{{!< default}}
+{{!-- This is a post template. The content of a post is displayed --}}
 
+{{!-- Default: All default.hbs code is inserted in head --}}
+{{!< default }}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
-    {{!-- Barra de progreso --}}
-    {{> "progress"}}
+
+{{!-- Cover: Post cover image --}}
+<section class='cover {{#if image}}cover-post' style='background-image: url({{image}}){{/if}}'>
+    {{> 'cover-post'}}
+</section>
+
+{{!-- Post content wrap --}}
+<main class='article-wrapper' role='main'>
+    <article class='article'>
+        
+        {{!-- Facebook save button --}}
+        <div class='article__fb-button fb-save' data-uri='https://filisantillan.com{{url}}' data-size='large'></div>
+        
+        {{!-- Content of the post --}}
+        <section class='article__content'>
+            {{content}}
+        </section>
+        
+        {{!-- Sharing Tools --}}
+        <section class='article__social'>
+            <strong class='article__text'>Si te gusto el artículo, por favor, ayudame a compartir para que otras personas puedan leerlo.</strong>
+            <div class='article__addthis addthis_sharing_toolbox'></div>
+        </section>
+
+    </article>
+</main>
+
+{{!-- Everything inside the #author tags pulls data from the author --}}
+{{#author}}
+<section class='author'>
+
+    {{!-- Author wrapper --}}
+    <div class='author-wrapper'>
+
+        {{!-- Author background--}}
+        <div class='author__cover {{#if cover}} author--yes' style='background-image: url({{cover}})'>
+        </div>
+        
+        {{!-- Author options --}}
+        <figure class='author__options'>
+            
+            {{!-- Facebook icon --}}
+            <a href='{{facebook_url}}' target='_blank' class='author__icon icon-facebook'></a>
+            
+            {{!-- Author image --}}
+            <a href='{{url}}'>
+                <img class='author__img'src='{{image}}' alt='{{name}}'>
+            </a>
+            
+            {{!-- Twitter icon --}}
+            <a href='{{twitter_url}}' target='_blank' class='author__icon icon-twitter'></a>
+            
+            {{!-- Author name --}}
+            <figcaption class='author__name'>
+                <strong class='author__text'>
+                    <a class='author__link' href='{{url}}'>{{name}}</a>
+                </strong>
+            </figcaption>
+            
+            {{!-- If there is a website --}}
+            {{#if website}}
+            {{!-- Button --}}
+            <a href='{{website}}' class='author__button btn-default btn--radius'>Sobre mí</a>
+            {{/if}}
+        </figure>
+        {{/if}}
+    </div>
     
-    {{!-- Header --}}
-    {{> "header"}}
+    {{!-- Author information --}}
+    <div class='author__info'>
+        
+        {{!-- If there is a location --}}
+        {{#if location}}
+        {{!-- Author location --}}
+        <div class='author__location'>
+            <i class='author__icon icon-check-in'></i>
+            <span class='author__text'>{{location}}</span>
+        </div>
+        {{/if}}
+        
+        {{!-- About the author --}}
+        <div class='author__about'>
+            {{!-- If there is a biography --}}
+            {{#if bio}}
+            <p class='author__bio'>{{bio}}</p>
+            {{!-- If there is not a biography --}}
+            {{else}}
+            <p class='author__post'>Lee más <a class='author__link' href='{{url}}'>artículos</a> sobre este autor.</p>
+            {{/if}}
+        </div>
+    </div>
+</section>
+{{/author}}
 
-    {{!-- Portada --}}
-    {{> "cover-post"}}
+{{!-- Comment system for the blog, Powered by Disqus --}}
+<section class='disqus'>
+    {{> 'disqus'}}
+</section>
 
-    {{!-- Menú --}}
-    {{> "menu"}}
-    
-    {{!-- Busqueda --}}
-    {{> "search"}}
-
-    <main class="content" role="main">
-        <article class="post-container {{post_class}}">
-
-            {{!-- Redes sociales --}}
-            <section class="post-social">
-                <div class="addthis_sharing_toolbox"></div>
-            </section>
-            
-            {{!-- Lectura --}}
-            <section class="post-content">
-                {{content}}
-            </section>
-            
-            {{!-- Redes sociales --}}
-            <section class="post-social">
-                <strong class="post-socialText">¿Te gustó el artículo?, por favor, ayudame a compartir para que otras personas puedan leerlo.</strong>
-                <div class="addthis_sharing_toolbox"></div>
-            </section>
-            
-            {{!-- Newsletter --}}
-            {{> "newsletter"}}
-
-            {{!-- Tags --}}
-            <section class="tags">
-                {{#foreach tags}}
-                    <a href="{{url}}" class="tag">
-                        {{name}}
-                    </a>
-                {{/foreach}}
-            </section>
-            
-            {{!-- Autor --}}
-            {{#author}}
-
-                <section class="post__authorDescription">
-                    
-                    {{!-- Imagen del autor --}}
-                    {{#if image}}
-                    <figure class="post__authorImage">
-                        <a class="img" href="{{url}}">
-                            <img src="{{image}}" alt="Fili Santillán">
-                        </a>
-                        {{#if website}}
-                            <a href="{{website}}"><button class="btn-default">Sobre mí</button></a>
-                        {{/if}}
-                    </figure>
-                    {{/if}}
-                    
-                    {{!-- Información del autor --}}
-                    <section class="post__authorInfo">
-                        <h4><a class="post__authorName"href="{{url}}">{{name}}</a></h4>
-
-                        {{#if location}}
-                            <span class="post__authorLocation fa fa-globe"></span>
-                            <span class="post__authorLocation icon-location">{{location}}</span>
-                        {{/if}}
-
-                        {{#if bio}}
-                            <p class="post__authorBio">{{bio}}</p>
-
-                        {{else}}
-                            <p>Read <a href="{{url}}">more posts</a> by this author.</p>
-
-                        {{/if}}
-
-                    </section>
-                </section>
-
-            {{/author}}
-
-
-            {{!-- Disqus - Comentarios s--}}
-            {{> "disqus"}}
-
-
-        </article>
-    </main>
-
-    {{!-- Footer --}}
-    {{> "footer"}}
-
+{{!-- Subscribe: tools for collecting emails from the blog --}}
+<section id='mc_embed_signup'>
+    {{> 'subscribe' }}
+</section>
 {{/post}}

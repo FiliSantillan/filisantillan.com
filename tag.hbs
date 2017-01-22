@@ -1,29 +1,23 @@
-{{!-- Sitio para artículos estáticos --}}
+{{!------------------------------------}}
+          {{!-- Tag --}}
+{{!------------------------------------}}
 
-{{!< default}}
+{{!-- Posts of the tag --}}
 
-{{!-- Header --}}
-{{> "header"}}
+{{!-- Default: All default.hbs code is inserted in head --}}
+{{!< default }}
 
-{{!-- Portada --}}
-{{> "cover-tags"}}
+{{!-- Loop: The main content area on the tag --}}
+<section id='post-wrapper' class='post-wrapper wrap-center' role='main'>
+    {{> 'loop'}}
+</section>
 
-{{!-- Menú --}}
-{{> "menu"}}
+{{!-- Pagination: Pages of the blog --}}
+<nav class='pagination' role='navigation'>
+    {{pagination}}
+</nav>
 
-{{!-- Busqueda --}}
-{{> "search"}}
-
-
-{{!-- Contenido --}}
-<main class="post__content" role="main">
-
-    {{> "loop"}}
-
-</main>
-
-{{!-- Paginación --}}
-{{pagination}}
-
-{{!-- Footer --}}
-{{> "footer"}}
+{{!-- Subscribe: tools for collecting emails from the blog --}}
+<section id='mc_embed_signup'>
+    {{> 'subscribe' }}
+</section>

@@ -1,0 +1,385 @@
+.post-wrapper
+    display flex
+    justify-content flex-start
+    flex-wrap wrap
+    
+    .post
+        width 100%
+        box-sizing border-box
+        border-radius 5px
+        margin 1.5rem 1rem
+        
+        .post__info
+            background $color-gray-A
+
+.post__cover
+    height 180px
+    max-height 250px
+    overflow hidden
+    border-radius 5px 5px 0 0
+    
+    .post__img
+        width 110%
+        height auto
+        min-height 100%
+            
+.post__title
+    padding 0.5rem 0.5rem 0 0.5rem
+    
+    .post__text
+        margin 0 0 0.5rem 0
+        font-size 1.4rem
+        
+        .post__link
+            color $color-black
+            
+.post__description
+    padding 0 0.5rem
+    
+    .post__text
+        font-weight 300
+        margin 0 0 1.5rem 0
+        color $color-dark
+        font-family $font-nutito
+        
+.post__author
+    background-color $color-gray-B
+    padding 0.3rem 0.5rem
+    border-radius 0 0 5px 5px
+    position relative
+    
+    .post__img
+        width 35px
+        border-radius 50%
+        margin 0.2rem 0 0 0
+        
+    .post__text
+        display inline-block
+        vertical-align 55%
+        margin 0 0 0 0.3rem
+        
+        .post__name
+            font-family $font-nutito
+            font-weight 300
+            color $color-black
+            
+    .post__tag
+        color $color-black
+        
+        .post__icon
+            position absolute
+            top 23%
+            right 0.8rem
+            font-size 1.8rem
+
+// First Article in the blog
+.post:first-child
+    margin 0 !important
+    width 100% !important
+    
+    position relative
+    .post__cover
+        max-height 380px
+        height 280px
+        border-radius 0
+        
+        .post__img
+            width 150%
+            margin-left -2.5rem
+
+    .post__info
+        position absolute
+        bottom 0
+        background-color rgba($color-black,0.8)
+        width 100%
+        box-sizing border-box
+        
+        .post__title
+            padding 0.5rem 0.7rem 0 0.7rem
+            
+            .post__text
+                font-size 1.3rem
+                
+                .post__link
+                    color $color-white
+                    
+        .post__description
+            padding 0 0.7rem
+            border-bottom 1px solid $color-white
+            
+            .post__text
+                color $color-white
+                font-size 0.9rem
+                margin 0 0 0.5rem 0
+                    
+        .post__author
+            background none
+            padding 0.3rem 0.7rem
+            border-radius 0
+            
+            .post__text
+                .post__name
+                    color $color-white
+                    
+            .post__tag
+                color $color-white
+
+@media $mq-phone-min-360
+    .post:first-child
+        .post__info
+            .post__title
+                padding 0.5rem 1rem 0 1rem
+                
+            .post__description
+                padding 0 1rem
+                
+            .post__author
+                padding 0.3rem 1rem
+                
+                .post__tag
+                    .post__icon
+                        right 1rem
+
+@media $mq-phone-min-375
+    .post__cover
+        height 200px
+            
+    .post:first-child
+        .post__info
+            .post__title
+                padding 0.5rem 1.2rem 0 1.2rem
+                
+                .post__text
+                    font-size 1.4rem
+                
+            .post__description
+                padding 0 1.2rem
+                
+            .post__author
+                padding 0.3rem 1.2rem
+                
+                .post__tag
+                    .post__icon
+                        right 1.2rem
+
+@media $mq-phone-min-412
+    .post-wrapper
+        .post
+            margin 1.5rem 2rem
+            
+    .post__title
+        .post__text
+            font-size 1.6rem
+
+    .post:first-child
+        .post__cover
+            height 300px
+            
+            .post__img
+                width 130%
+                
+        .post__info
+            .post__title
+                padding 0.5rem 1.5rem 0 1.5rem
+                .post__text
+                    font-size 1.5rem
+                    
+            .post__description
+                padding 0.5rem 1.5rem 0 1.5rem
+                
+            .post__author
+                padding 0.3rem 1.5rem
+                
+                .post__tag
+                    .post__icon
+                        right 1.5rem
+
+@media $mq-tablet-min-600
+    .post-wrapper
+        .post
+            margin 1.5rem 6.5rem
+
+    .post__cover
+        height 200px
+            
+    .post:first-child
+        .post__cover
+            height 330px
+            
+            .post__img
+                width 120%
+                
+        .post__info
+            width 80%
+            margin 0 auto
+            left 0
+            right 0
+            bottom 1.5rem
+            border-radius 5px
+            
+            .post__title
+                padding 0.8rem 1.8rem 0 1.8rem
+                
+                .post__text
+                    font-size 1.7rem
+                    
+            .post__description
+                padding 0.5rem 1.8rem 0 1.8rem
+                
+            .post__author
+                padding 0.3rem 1.8rem 0.8rem 1.8rem
+                .post__tag
+                    .post__icon
+                        right 1.8rem
+
+@media $mq-tablet-min-640
+    .post-wrapper
+        .post
+            margin 1.5rem 7rem
+
+    .post__cover
+        height 210px
+        
+    .post:first-child
+        .post__info
+            .post__title
+                .post__text
+                    font-size 1.8rem
+
+
+@media $mq-tablet-min-750
+    .post-wrapper
+        .post
+            width 46%
+            margin 1rem 2%
+            
+    .post:first-child
+        .post__info
+            width 70%
+            .post__title
+                .post__text
+                    font-size 2rem
+
+@media $mq-desktop-min-1024
+    .post-wrapper
+        .post
+            width 44%
+            margin 1rem 3%
+            
+    .post__author
+        .post__tag
+            .post__icon
+                transition 0.3s
+                &:hover
+                    transform scale(1.2)
+            
+    // First Article in the blog
+    .post:first-child
+        margin 2rem auto 1rem auto !important
+        width 85% !important
+        
+        .post__cover
+            display inline-block
+            box-sizing border-box
+            vertical-align top
+            width 45%
+            height 280px
+            border-radius 5px 0 0 5px
+            float left
+            
+            .post__img
+                width 130%
+                margin-left -2.5rem
+
+        .post__info
+            position relative
+            bottom 0
+            display inline-block
+            box-sizing border-box
+            width 55%
+            background-color $color-gray-A
+            border-radius 0 5px 0 0
+            height 280px
+        
+            .post__title
+                padding 0.5rem 0.7rem 0 0.7rem
+                
+                .post__text
+                    font-size 1.7rem
+                    
+                    .post__link
+                        color $color-black
+                        
+            .post__description
+                padding 0 0.7rem
+                border none
+                
+                .post__text
+                    color $color-dark
+                    font-size 1.1rem
+                        
+            .post__author
+                background $color-gray-B
+                border-radius 0 0 5px 0
+                box-sizing border-box
+                padding 0.5rem 0.7rem
+                position absolute
+                width 100%
+                bottom 0
+                
+                .post__text
+                    .post__name
+                        color $color-black
+                
+                .post__tag
+                    color $color-black
+                    
+                    .post__icon
+                        right 0.7rem
+
+@media $mq-desktop-min-1200
+    .post-wrapper
+        .post
+            width 30%
+            margin 1rem 1.6%
+            
+    // First Article in the blog
+    .post:first-child
+        width 80% !important
+        .post__cover
+            height 300px
+
+        .post__info
+            height 300px
+        
+            .post__title
+                padding 0.5rem 1rem 0 1rem
+                
+                .post__text
+                    font-size 1.9rem
+                        
+            .post__description
+                padding 0 1rem
+                        
+            .post__author
+                padding 0.5rem 1rem
+                
+                .post__tag
+                    .post__icon
+                        right 1rem
+
+@media $mq-desktop-min-1300
+    .post-wrapper
+        .post
+            width 31%
+            margin 1rem 1.1%
+            
+    // First Article in the blog
+    .post:first-child
+        .post__info
+            .post__title
+                .post__text
+                    font-size 2rem
+            
+
+    

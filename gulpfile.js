@@ -1,70 +1,139 @@
-// Dependencias
+// Dependences
 var gulp = require('gulp'),
+    runSequence = require('run-sequence'),
+    gutil = require('gulp-util'),
+    plumber = require('gulp-plumber'),
+    merge = require('merge-stream'),
+    rename = require('gulp-rename'),
     stylus = require('gulp-stylus'),
-    uglify = require('gulp-uglify'),
+    cmq = require('gulp-combine-mq'),
+    autoprefixer = require('gulp-autoprefixer'),
     minifyCss = require('gulp-minify-css'),
+    fontmin = require('gulp-fontmin'),
     concat = require('gulp-concat'),
-    gcmq = require('gulp-group-css-media-queries'),
-    path = {},
-    stylusTasks = ['styles'];
+    uglify = require('gulp-uglify'),
+    livereload = require('gulp-livereload');
 
-// Path - Watch
-path.watch = {
-    stylus: ['./assets/stylus/*.styl']
-};
+const imagemin = require('gulp-imagemin');
 
-// Monitorea cambios en los estilos
-gulp.task('watch', function () {
-    gulp.watch(path.watch.stylus, stylusTasks);
+var onError = function(err) {
+    gutil.log(gutil.colors.red('¡Oh, no! 😱'));
+    gutil.beep();
+    console.log(err);
+}
+
+gulp.task('styles', function() {
+    return gulp
+        .src('./src/styles/main.styl')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(stylus({
+            'include css': true
+        }))
+        .pipe(rename('styles.css'))
+        .pipe(gulp.dest('./src/css-dev/'))
+})
+
+gulp.task('cmq', function() {
+    return gulp
+        .src('./src/css-dev/*.css')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(cmq())
+        .pipe(gulp.dest('./src/css-dev/'))
+})
+
+gulp.task('prefix', function() {
+    return gulp
+        .src('./src/css-dev/*.css')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: true
+        }))
+        .pipe(minifyCss())
+        .pipe(gulp.dest('./assets/css/'))
+        .pipe(livereload())
+})
+
+gulp.task('c-fonts', function () {
+    return gulp.src('./src/fonts/*')
+        .pipe(fontmin())
+        .pipe(gulp.dest('./assets/fonts/'));
 });
 
-// Compila stylus a css
-gulp.task('styles', function () {
-  gulp.src('./assets/stylus/styles.styl')
-    .pipe(stylus({
-      compress: true
-    }))
-    .pipe(gulp.dest('./assets/css/'));
-});
+gulp.task('concat', function() {
 
-// Minifica archivos JS
-gulp.task('minify-js', function() {
-  return gulp.src('./assets/js-dev/vendor/*.js')
-    .pipe(uglify())
-    .pipe(gulp.dest('./assets/js/vendor/'));
-});
+    var scripts = gulp
+        .src('./src/js-dev/fili/*.js')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(concat('scripts.js'))
+        .pipe(gulp.dest('./src/js-dev/'))
 
-// Minifica archivos CSS (Vendor)
-gulp.task('minify-css', function() {
-  return gulp.src('./assets/css-dev/vendor/*.css')
-    .pipe(minifyCss())
-    .pipe(gulp.dest('./assets/css/vendor/'));
-});
+    var vendor = gulp
+        .src('./src/js-dev/vendor/**/*.js')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(concat('vendor.js'))
+        .pipe(gulp.dest('./src/js-dev/'))
 
-// Minifica archivos CSS (Stylus)
-gulp.task('minify-stylus', function() {
-  return gulp.src('./assets/css/styles.css')
-    .pipe(minifyCss())
-    .pipe(gulp.dest('./assets/css/'));
-});
+    return merge(scripts, vendor);
+})
 
-// Concatena archivos JS
-gulp.task('concat-js', function() {
-  return gulp.src('./assets/js/vendor/*.js')
-    .pipe(concat('vendor.js'))
-    .pipe(gulp.dest('./assets/js/vendor/'));
-});
 
-// Concatena archivos CSS
-gulp.task('concat-css', function() {
-  return gulp.src('./assets/css/vendor/*.css')
-    .pipe(concat('vendor.css'))
-    .pipe(gulp.dest('./assets/css/vendor/'));
-});
+gulp.task('minifyJS', function() {
+    var scripts = gulp
+        .src('./src/js-dev/scripts.js')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(uglify())
+        .pipe(gulp.dest('./assets/js/'))
 
-// Agrupa los media-queries
-gulp.task('group-mq', function () {
-  gulp.src('./assets/css/styles.css')
-    .pipe(gcmq())
-    .pipe(gulp.dest('./assets/css'));
-});
+    var vendor = gulp
+        .src('./src/js-dev/vendor.js')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(uglify())
+        .pipe(gulp.dest('./assets/js/'))
+
+    return merge(scripts, vendor)
+})
+
+gulp.task('c-images', function() {
+    return gulp
+        .src('./src/images/**/*')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(imagemin({
+            optimizationLevel: 5
+        }))
+        .pipe(gulp.dest('./assets/images/'))
+})
+
+gulp.task('build-styles', function() {
+    runSequence('styles', 'cmq', 'prefix')
+})
+
+gulp.task('build-js', function() {
+    runSequence(['concat', 'minifyJS'])
+})
+
+gulp.task('watch', function() {
+    livereload.listen({ start: true })
+    gulp.watch('./src/styles/**/*.styl', ['build-styles'])
+    gulp.watch('./src/js-dev/**/*.js', ['build-js'])
+})
+
+gulp.task('default', function() {
+    runSequence(['build-styles', 'build-js'], 'watch')
+})

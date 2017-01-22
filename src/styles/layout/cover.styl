@@ -1,0 +1,170 @@
+.cover
+    background-repeat no-repeat
+    background-size cover
+    background-position center
+    height 40vh
+    position relative
+    
+    &__wrapper
+        position absolute
+        bottom 0
+        width 100%
+        
+.cover--index
+    display none
+
+    .cover__name
+        font-size 0
+        
+.cover-post__title
+    padding 0.5rem 0.7rem
+    font-family $font-nutito
+    .cover-post__text
+        font-size 1.5rem
+        margin 0
+        color $color-white
+        text-shadow 1px 1px 0 rgba($color-black,0.9)
+        
+.cover-post__info
+    background-color rgba($color-black,0.8)
+    height 35px
+    padding 0.5rem 0.7rem
+    
+    .cover-post__date
+        line-height 35px
+        color $color-white
+        font-weight 300
+        display inline-block
+        
+        .cover-post__icon
+            font-size 1.5rem
+            vertical-align middle
+            
+        .cover-post__text
+            margin 0 0 0 0.2rem
+            
+    .cover-post__tag
+        float right
+        color $color-white
+        
+        .cover-post__icon
+            font-size 1.8rem
+            line-height 35px
+            
+@media $mq-phone-min-360
+    .cover-post__title
+        .cover-post__text
+            font-size 1.6rem
+            
+    .cover-post__info
+        padding 0.5rem 0.8rem
+        
+@media $mq-phone-min-412
+    .cover
+        height 45vh
+        
+    .cover-post__info
+        padding 0.6rem 1rem
+        
+@media $mq-tablet-min-600
+    .cover
+        height 50vh
+        
+    .cover-post__title
+        .cover-post__text
+            font-size 2.5rem
+            text-shadow 2px 2px 0 $color-black
+        
+    .cover-post__info
+        padding 0.7rem 1.2rem
+        
+@media $mq-tablet-min-640
+    .cover-post__info
+        padding 0.8rem 1.3rem
+        
+@media $mq-tablet-min-750
+    .cover
+        height 60vh
+        
+    .cover-post__title
+        padding 0 2rem 1rem 2rem
+        
+    .cover-post__info
+        padding 0.8rem 2rem
+        
+@media $mq-desktop-min-1024
+    .cover
+        height 70vh
+        
+    .cover--index
+        display block
+        height 40vh
+        box-shadow 0 4px 6px rgba($color-black,0.8)
+        
+    .cover--page
+        height 40vh
+        box-shadow 0 4px 6px rgba($color-black,0.8)
+        
+    .cover-post__title
+        padding 0 0 1.5rem 0
+        
+        .cover-post__text
+            font-size 2.7rem
+            letter-spacing 1px
+            
+    .cover-post__info
+        padding 2rem 2rem
+        
+        .cover-post__date
+            
+            .cover-post__icon
+                font-size 1.8rem
+                
+            .cover-post__text
+                font-size 1.1rem
+                
+        .cover-post__tag
+            transition 0.3s
+            
+            &:hover
+                transform scale(1.2)
+                
+            .cover-post__icon
+                font-size 2.5rem
+                
+@media $mq-desktop-min-1200
+    .cover
+        height 73vh
+        
+    .cover--index
+        height 55vh
+        
+    .cover--page
+        height 55vh
+        
+    .cover-post__title
+        .cover-post__text
+            font-size 2.9rem
+    
+    .cover-post__info
+        .cover-post__date
+            .cover-post__icon
+                font-size 2rem
+                vertical-align -21%
+                
+            .cover-post__text
+                font-size 1.2rem
+                
+        .cover-post__tag
+            .cover-post__icon
+                font-size 2.8rem
+
+@media $mq-desktop-min-1300
+    .cover-post__title
+        .cover-post__text
+            font-size 3rem
+    
+    .cover-post__info
+        .cover-post__tag
+            .cover-post__icon
+                font-size 3.2rem

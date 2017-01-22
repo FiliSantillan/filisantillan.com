@@ -1,14 +1,16 @@
-{{!-- Disqus - Comentarios --}}
+{{!------------------------------------}}
+          {{!-- Disqus --}}
+{{!------------------------------------}}
 
-<section class="disqus">
+{{!-- Comment system for the blog, Powered by Disqus --}}
 
-    <div class="row">
-        <div class="small-12 columns">
-            <h4 class="comments-header">Comparte tu opinión</h4>
-            <div id="disqus_thread"></div>
-            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-        </div>
-    </div>
-    
-</section>
+{{!-- Comments --}}
+<div id='disqus_thread', class='disqus__comments'></div>
+
+{{!-- In case of error --}}
+<noscript>
+    Por favor, active JavaScript para ver <a href='http://disqus.com/?ref_noscript'>Disqus.</a>
+</noscript>
+
+{{!-- Message --}}
+<a href='http://disqus.com' class='dsq-brlink'>Powered by <span class='logo-disqus'>Disqus</span></a>

@@ -1,0 +1,156 @@
+.menu
+    position fixed
+    top 0
+    right 0
+    width 90%
+    height 100vh
+    background-color $color-blue
+    padding 1rem 0.5rem
+    box-sizing border-box
+    z-index 150
+    box-shadow -4px 0 6px rgba($color-black,0.6)
+    right -110%
+    transition 0.3s
+    
+    &-active
+        right 0
+    
+    &__close
+        position absolute
+        background-color $color-yellow
+        top 0.8rem
+        left -1.5rem
+        padding 0.8rem
+        box-shadow 5px 5px 0 $color-red
+        
+        .menu__icon
+            font-size 1.7rem
+            color $color-black
+            
+    &__logo
+        background url(../images/fili.svg)
+        background-size 200px 100px
+        display block
+        text-indent -9999px
+        width 200px
+        height 100px
+        margin 0.8rem auto
+
+.menu__options
+    display flex
+    flex-wrap wrap
+    
+    .menu__option
+        width 33.33%
+        text-align center
+        
+        &:first-child .menu__link > .menu__icon:before
+            content '\e900' //Home
+        &:nth-child(2) .menu__link > .menu__icon:before
+            content '\e074' //About
+        &:nth-child(3) .menu__link > .menu__icon:before
+            content '\e034' //Diary
+        &:nth-child(4) .menu__link > .menu__icon:before
+            content '\ea37' //Courses
+        &:nth-child(5) .menu__link > .menu__icon:before
+            content '\e018' //Videos
+        &:nth-child(6) .menu__link > .menu__icon:before
+            content '\e024' //Contact
+        &:nth-last-child(3) .menu__link > .menu__icon:before
+            content '\e902' //Facebook
+        &:nth-last-child(2) .menu__link > .menu__icon:before
+            content '\e901' //Twitter
+        &:last-child .menu__link > .menu__icon:before
+            content '\e903' //Instragram
+    
+.menu__link
+    color $color-white
+    font-weight 300
+    
+    .menu__icon
+        font-size 1.9rem
+        display block
+        margin 1rem 0 0.3rem 0
+        
+@media $mq-phone-min-360
+    .menu
+        width 80%
+        
+@media $mq-phone-min-375
+    .menu
+        width 75%
+
+@media $mq-phone-min-412
+    .menu
+        width 70%
+        
+@media $mq-tablet-min-600
+    .menu
+        width 50%
+        
+@media $mq-tablet-min-640
+    .menu
+        width 45%
+        
+@media $mq-tablet-min-750
+    .menu
+        width 40%
+        
+@media $mq-desktop-min-1024
+    .menu
+        position initial
+        width auto
+        height auto
+        background none
+        padding 0
+        display block
+        box-shadow none
+        
+        &__close
+            display none
+            
+        &__logo
+            display none
+        
+    .menu__image
+        display none
+        
+    .menu__options
+        justify-content flex-end
+        flex-wrap nowrap
+        
+        .menu__option
+            width auto
+            margin 0 0.8rem
+            
+            &:first-child .menu__link > .menu__icon:before
+            &:nth-child(2) .menu__link > .menu__icon:before
+            &:nth-child(3) .menu__link > .menu__icon:before
+            &:nth-child(4) .menu__link > .menu__icon:before
+            &:nth-child(5) .menu__link > .menu__icon:before
+            &:nth-child(6) .menu__link > .menu__icon:before
+            &:nth-last-child(3) .menu__link > .menu__icon:before
+            &:nth-last-child(2) .menu__link > .menu__icon:before
+            &:last-child .menu__link > .menu__icon:before
+            &:nth-last-child(3)
+            &:nth-last-child(2)
+            &:last-child
+                display none
+                
+    .menu__link
+        transition 0.3s
+        
+        .menu__icon
+            margin 0
+            
+        &:hover
+            color $color-yellow
+
+@media $mq-desktop-min-1200
+    .menu__options
+        .menu__option
+            margin 0 1rem
+
+    .menu__link
+        .menu__text
+            font-size 1.1rem

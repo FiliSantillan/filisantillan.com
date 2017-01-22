@@ -1,33 +1,34 @@
-{{!-- Sitio para artículos estáticos --}}
+{{!------------------------------------}}
+          {{!-- Page --}}
+{{!------------------------------------}}
 
-{{!< default}}
+{{!-- This is a page template. A page outputs content just like any other post, and has all the same attributes by default, but you can also customise. --}}
 
+{{!-- Default: All default.hbs code is inserted in head --}}
+{{!< default }}
+
+{{!-- Everything inside the #post tags pulls data from the page --}}
 {{#post}}
-    {{!-- Barra de progreso --}}
-    {{> "progress"}}
-    
-    {{!-- Header --}}
-    {{> "header"}}
-    
-    {{!-- Portada --}}
-    {{> "cover-post"}}
 
-    {{!-- Menú --}}
-    {{> "menu"}}
+{{!-- Cover: Page cover image --}}
+<section class='cover {{#if image}}cover-post cover--page' style='background-image: url({{image}}){{/if}}'>
+    {{> 'cover-page'}}
+</section>
 
-    {{!-- Busqueda --}}
-    {{> "search"}}
-
-{{!-- Contenido --}}
-<main class="content" role="main">
-    <article class="post-container {{post_class}}">
-        <section class="post-content post__special">
+{{!-- Page content wrap --}}
+<main class='article-wrapper' role='main'>
+    <article class='article'>
+        
+        {{!-- Content of the page --}}
+        <section class='article__content article--page'>
             {{content}}
         </section>
+        
     </article>
 </main>
 
+{{!-- Subscribe: tools for collecting emails from the blog --}}
+<section id='mc_embed_signup'>
+    {{> 'subscribe' }}
+</section>
 {{/post}}
-
-{{!-- Footer --}}
-{{> "footer"}}

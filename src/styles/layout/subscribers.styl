@@ -1,0 +1,97 @@
+.subscribers
+    background $color-gray-B
+    padding 3rem 1.2rem
+    
+    &__text
+        .subscribers__title
+            font-family $font-nutito
+            font-size 1.8rem
+            
+        .subscribers__paragraph
+            font-weight 300
+            
+.subscribers__wrapper
+    .subscribers__content
+        margin 1rem 0
+        display flex
+        justify-content center
+        
+        .subscribers__icon
+            background $color-gray-A
+            color $color-dark
+            width 40px
+            font-size 1.5rem
+            padding 0.6rem
+            box-sizing border-box
+            border-radius 4px 0 0 4px
+            
+        input[type='text']
+        input[type='email']
+            padding 0.8rem 0.5rem
+            width calc(100% - 40px)
+            box-sizing border-box
+            border-radius 0 4px 4px 0
+            
+@media $mq-phone-min-412
+    .subscribers
+        background $color-gray-B
+        padding 3rem 2rem
+        
+        &__text
+            .subscribers__title
+                font-size 2rem
+                
+@media $mq-tablet-min-600
+    .subscribers
+        padding 3rem 3.5rem
+        
+        &__text
+            .subscribers__title
+                letter-spacing 1px
+                font-size 1.8rem
+                
+            .subscribers__paragraph
+                margin 0.2rem 0 2rem 0
+                
+@media $mq-tablet-min-640
+    .subscribers
+        padding 3rem 4rem
+        
+        &__text
+            .subscribers__title
+                font-size 1.9rem
+                
+@media $mq-tablet-min-750
+    .subscribers
+        padding 3rem 2rem
+        
+    .subscribers__wrapper
+        .flex
+            .subscribers__content
+                width 47%
+                margin 0 2% 0.8rem 2%
+                
+@media $mq-desktop-min-1024
+    .subscribers
+        padding 4rem 2rem
+        
+    .subscribers__wrapper
+        .flex
+            .subscribers__content
+                width 40%
+                
+
+                input[type='text']
+                input[type='email']
+                    transition 0.3s
+                    
+                    &:focus
+                        letter-spacing 2px
+                        font-weight 300
+                        
+                
+@media $mq-desktop-min-1200
+    .subscribers__wrapper
+        .flex
+            .subscribers__content
+                width 35%

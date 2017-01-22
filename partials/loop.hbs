@@ -1,51 +1,64 @@
-{{!-- Loop: Artículos del index --}}
+{{!------------------------------------}}
+          {{!-- Loop --}}
+{{!------------------------------------}}
 
+{{!-- This is the post loop --}}
+
+{{!-- each post will be output using this markup --}}
 {{#foreach posts}}
-<article class="{{post_class}}">
+<article class='post {{post_class}}'>
+    {{!-- If there is a image (post) --}}
+    {{#if image}}
+    <a href='{{url}}'>
+        {{!-- image --}}
+        <figure class='post__cover'>
+            <img src='{{image}}' alt='' class='post__img'>
+        </figure>
+    </a>
+    {{/if}}
+    {{!-- Post Info --}}
+    <div class='post__info'>
 
-    {{!-- Primer artículo del blog --}}
-    <section class="post__first">
-        <strong class="post__first--title"><i class="fa fa-quote-left"></i> Primer Artículo <i class="fa fa-quote-right"></i></strong>
-    </section>
-    
-    {{!-- Imagen del artículo --}}
-    <section class="post__cover {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-    </section>
-
-    {{!-- Título - Fecha - Mini-descripción - Tags - Botón - Autor --}}
-    <div class="post__info">
-
-        <header class="post__header">
-            <h2 class="post__title"><a href="{{url}}">{{{title}}}</a></h2>
-            <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+        {{!-- Post title --}}
+        <header class="post__title">
+            <h2 class="post__text" id='post-text'>
+                <a href='{{url}}' class='post__link'>{{{title}}}</a>
+            </h2>
         </header>
 
+        {{!-- Post description --}}
         <section class="post__description">
-            <p>{{excerpt words="24"}}<span>...</span></p>
+            <p class='post__text'>{{excerpt words="18"}}<span>...</span></p>
         </section>
-
-        <section class="post__tags">
-            {{#foreach tags}}
-                <a href="{{url}}" class="tag">
-                    {{name}}
-                </a>
-            {{/foreach}}
-        </section>
-
-        <footer class="post__footer">
-            <a href="{{url}}">
-                <button class="btn-default">
-                    Ver más
-                </button>
-            </a>
-            <div class="post__author">
-                {{author}}
-                {{#if author.image}}
-                    <a class="post__image" href="http://filisantillan.com/author/filiberto/">
-                        <img src="{{author.image}}" alt="{{author.name}}" nopin="nopin" />
+        
+        {{!-- Post author --}}
+        <footer class="post__author">
+            {{!-- Everything inside the #author tags pulls data from the loop --}}
+            {{#author}}
+                {{!-- If there is a image (author) --}}
+                {{#if image}}
+                <figure class="post__image">
+                    <a href='{{url}}'>
+                        {{!-- Author image--}}
+                        <img src='{{image}}' alt="{{name}}" nopin="nopin" class='post__img'/>
+                        {{!-- Author name --}}
+                        <figcaption class="post__text">
+                            <strong class="post__name">{{name}}</strong>
+                        </figcaption>
                     </a>
+                </figure>
                 {{/if}}
-            </div>
+            {{/author}}
+            {{!-- If there is a tag --}}
+            {{#if tags}}
+                {{!-- Everything inside the '#tags' tags pulls data from the loop --}}
+                {{#foreach tags}}
+                <a href='{{url}}' class="post__tag">
+                    <span class='post__icon icon-{{name}}'><span class='path1'></span><span class='path2'></span><span class='path3'></span><span class='path4'></span><span class='path5'></span><span class='path6'></span><span class='path7'></span><span class='path8'></span><span class='path9'></span><span class='path10'></span><span class='path11'></span><span class='path12'></span><span class='path13'></span><span class='path14'></span><span class='path15'></span><span class='path16'></span><span class='path17'></span><span class='path18'></span><span class='path19'></span><span class='path20'></span><span class='path21'></span><span class='path22'></span><span class='path23'></span><span class='path24'></span><span class='path25'></span><span class='path26'></span><span class='path27'></span><span class='path28'></span><span class='path29'></span><span class='path30'></span><span class='path31'></span><span class='path32'></span><span class='path33'></span><span class='path34'></span><span class='path35'></span><span class='path36'></span><span class='path37'></span><span class='path38'></span><span class='path39'></span><span class='path40'></span><span class='path41'></span><span class='path42'></span><span class='path43'></span><span class='path44'></span><span class='path45'></span><span class='path46'></span><span class='path47'></span><span class='path48'></span><span class='path49'></span><span class='path50'></span><span class='path51'></span><span class='path52'></span><span class='path53'></span><span class='path54'></span><span class='path55'></span><span class='path56'></span><span class='path57'></span><span class='path58'></span><span class='path59'></span><span class='path60'></span><span class='path61'></span><span class='path62'></span><span class='path63'></span><span class='path64'></span><span class='path65'></span><span class='path66'></span><span class='path67'></span><span class='path68'></span><span class='path69'></span><span class='path70'></span><span class='path71'></span><span class='path72'></span><span class='path73'></span><span class='path74'></span><span class='path75'></span><span class='path76'></span><span class='path77'></span><span class='path78'></span><span class='path79'></span><span class='path80'></span><span class='path81'></span><span class='path82'></span><span class='path83'></span><span class='path84'></span><span class='path85'></span><span class='path86'></span><span class='path87'></span></span>
+                </a>
+                {{/foreach}}
+            {{/if}}
+
         </footer>
     </div>
 

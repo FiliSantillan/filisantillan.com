@@ -1,27 +1,18 @@
-{{!-- Header --}}
+{{!------------------------------------}}
+          {{!-- Header --}}
+{{!------------------------------------}}
 
-<header class="header">
+{{!-- Blog header --}}
 
-    <div class="header-wrap wrap-center">
+{{!-- Logo --}}
+<a href='{{@blog.url}}' class='header__logo'></a>
 
-        {{!-- Logo - Nombre - Nav --}}
-        <div class="header__title">
-            <a href="http://filisantillan.com/" class="header__name title">
-                <strong class="header__name title">{{@blog.title}}</strong>
-            </a>
-            <nav class="nav">
-                <ul class="header__list">
-                    {{navigation}}
-                </ul>
-            </nav>
-        </div>
-        
-        {{!-- Iconos: Menú - Busqueda --}}
-        <div class="header__options">
-            <div class="header__search">
-                <button class="header__iconSearch icon fa fa-search" id='js-openSearch'></button>
-            </div>
-            <button class="header__menu icon fa fa-bars" id="js-openMenu"></button>
-        </div>
-    </div>
-</header>
+{{!-- Icon Menu --}}
+<a href='#', class='header__ico-menu' id='open-menu'>
+    <i class='header__icon icon-menu'></i>
+</a>
+
+{{!-- Menu (navigation) --}}
+<div class='menu' id='menu'>
+    {{> 'menu' }}
+</div>

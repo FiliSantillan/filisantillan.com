@@ -1,0 +1,106 @@
+.page-static
+    border 1px solid $color-gray-C
+    box-sizing border-box
+    width 100%
+    border-radius 5px
+    background $color-gray-A
+    margin 1rem 0 1rem 0
+    position relative
+    
+.page-static__image
+    display none
+    
+.page-static__info
+    padding 0.5rem 0.7rem
+    font-size 1rem
+    
+    .page-static__title
+        font-family $font-nutito
+        font-size 1.4rem
+        
+    .page-static__place
+    .page-static__date
+        display block
+        
+    .page-static__place
+        margin 0 0 0.2rem 0
+        
+    .page-static__date
+        color $color-gray-C
+        
+        
+    .page-static__description
+        font-weight 300
+        margin 0.8rem 0 3.5rem 0
+        
+.page-static__button
+    position absolute
+    bottom 0
+    background-color $color-blue
+    box-sizing border-box
+    display inline-block
+    width 100%
+    padding 0.7rem 0
+    text-align center
+    border none !important
+    
+    .page-static__link
+        color $color-white
+        font-size 1.1rem
+        letter-spacing 1px
+        
+@media $mq-tablet-min-750
+    .page-static
+        width 48%
+        
+        &:nth-child(odd)
+            margin-right 4%
+            
+@media $mq-desktop-min-1024
+    .page-static
+        width 100%
+        
+        &:nth-child(odd)
+            margin-right 0
+            
+    .page-static__image
+        display inline-block
+        vertical-align top
+        width 280px
+        height 200px
+        max-height 250px
+        overflow hidden
+        border-radius 5px 0 0 5px
+        
+        .page-static__img
+            width 110%
+            height 220px
+            min-height 100%
+            
+    .page-static__info
+        display inline-block
+        vertical-align top
+        width 65%
+        
+        .page-static__title
+            font-size 1.5rem
+            
+        .page-static__description
+            margin 0.5rem 0 0 0
+
+    .page-static__button
+        top 0
+        right 0
+        bottom initial
+        width auto
+        padding 0.7rem 1rem
+        border-radius 0 4px 0 0
+        transition 0.3s
+        
+        .page-static__link
+            font-weight 300
+            letter-spacing 2px
+            transition 0.3s
+            
+        &:hover
+            background-color $color-red

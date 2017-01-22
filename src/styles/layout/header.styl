@@ -1,0 +1,81 @@
+.header
+    background-color $color-blue
+    padding 0.8rem
+    position relative
+    text-align right
+    
+    &__logo
+        background url(../images/fili.svg)
+        background-size 150px 82px
+        display block
+        text-indent -9999px
+        width 150px
+        height 82px
+        position absolute
+        z-index 20
+        top 0.5rem
+        left 0.8rem
+    
+    &__ico-menu
+        margin 0
+        display inline-block
+
+        .header__icon
+            font-size 2rem
+            color $color-white
+            
+@media $mq-phone-min-412
+        .header
+            padding 0.8rem 1.2rem
+            
+            &__logo
+                left 1.2rem
+            
+@media $mq-tablet-min-600
+    .header
+        padding 0.8rem 1.6rem
+        &__logo
+            background url(../images/fili-santillan.svg)
+            background-size 260px 85px
+            width 260px
+            height 85px
+            left 1.6rem
+            
+@media $mq-tablet-min-750
+    .header
+        padding 0.8rem 2rem
+        
+        &__logo
+            left 2rem
+            
+@media $mq-desktop-min-1024
+    .header
+        padding 0.8rem 2.5rem
+        
+        &__logo
+            background url(../images/fili-santillan-complete.svg)
+            background-size 335px 135px
+            width 335px
+            height 135px
+            left 2.5rem
+
+        &__ico-menu
+            display none
+            
+@media $mq-desktop-min-1200
+    .header
+        padding 0.8rem 3rem
+        
+        &__logo
+            left 3rem
+
+@media $mq-desktop-min-1300
+    .header
+        padding 0.8rem 3rem
+        
+        &__logo
+            background-size 400px 160px
+            width 400px
+            height 160px
+            top 0.4rem
+            left 3rem

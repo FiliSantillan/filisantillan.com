@@ -1,69 +1,56 @@
-{{!-- Footer --}}
+{{!------------------------------------}}
+          {{!-- Footer --}}
+{{!------------------------------------}}
 
-<footer class="footer">
-    <div class="footer-wrap wrap-center">
+{{!-- Blog footer --}}
 
-        {{!-- Logo - Nombre - Descripción - Redes sociales --}}
-        <section class="footer__info">
-            <figure class="footer__logo">
-                <img src="{{@blog.logo}}" alt="Logo Fili Santillán">
-                <figcaption>
-                    <strong class="footer__name title">{{@blog.title}}</strong>
-                </figcaption>
-            </figure>
-            <div class="footer__description">
-                <p>
-                    {{@blog.description}}
-                </p>
-            </div>
-            <div class="footer__social">
-                <ul class="footer__list">
-                    <li class="footer__item"><a href="https://www.facebook.com/FiliSantillanMX" target="blank" class="footer__icon fa fa-facebook"></a></li>
-                    <li class="footer__item"><a href="https://twitter.com/FiliMX" target="blank" class="footer__icon fa fa-twitter"></a></li>
-                    <li class="footer__item"><a href="https://www.instagram.com/filimx/" target="blank" class="footer__icon fa fa-instagram"></a></li>
-                    <li class="footer__item"><a href="https://github.com/FiliMX" target="blank" class="footer__icon fa fa-github-alt"></a></li>
-                </ul>
-            </div>
-        </section>
+<div class='wrap-center'>
+    {{!-- Logo --}}
+    <a href='{{@blog.url}}' class='footer__logo'></a>
+    
+    {{!-- Social networks --}}
+    <div class='flex jus--between dev--tablet-750'>
+        <ul class='footer__social no-list'>
+
+            {{!-- Facebook --}}
+            <li class='footer__item'>
+                <a href='{{facebook_url}}' target='_blank' class='footer__icon icon-facebook'></a>
+            </li>
+
+            {{!-- Twitter --}}
+            <li class='footer__item'>
+                <a href='{{twitter_url}}' target='_blank' class='footer__icon icon-twitter'></a>
+            </li>
+
+            {{!-- Instagram --}}
+            <li class='footer__item'>
+                <a href='https://www.instagram.com/filimx/' target='_blank' class='footer__icon icon-instagram'></a>
+            </li>
+
+            {{!-- Snapchat --}}
+            <li class='footer__item'>
+                <a href='https://www.snapchat.com/add/fili06604' target='_blank' class='footer__icon icon-snapchat'></a>
+            </li>
+
+            {{!-- GitHub --}}
+            <li class='footer__item'>
+                <a href='https://github.com/FiliMX' target='_blank' class='footer__icon icon-github-simple'></a>
+            </li>
+
+        </ul>
         
-        {{!-- Navegación del blog --}}
-        <section class="footer__nav">
-            <div class="my-fancy-nav-wrapper">
-                <ul class="nav footer__list">
-                    {{navigation}}
-                </ul>
-            </div>
-        </section>
+        {{!-- Blog information --}}
+        <div class='footer__info'>
 
-        {{!-- Love - Ghost - DigitalOcean --}}
-        <section class="footer__moreInfo">
+            {{!-- Copyright --}}
+            <span class='footer__copyright'>
+                © 2015-2017 <a href='http://creativecommons.org/licenses/by-sa/4.0/' target='_blank' class='footer__link'>Filiberto Santillán</a>
+            </span>
 
-            <div class="footer__love">
-                <span class="fa fa-code"></span>
-                <span>+</span>
-                <span class="fa fa-heart"></span>
-                <span>=</span>
-                <img src="{{@blog.logo}}" alt="Logo Fili Santillán">
-            </div>
-
-            <div class="footer__technologies">
-                <p>Publicado con <a href="https://ghost.org/download/" target="blank">Ghost</a> & alojado en <a href="https://www.digitalocean.com/?refcode=c4c217c06b83" target="blank">DigitalOcean</a></p>
-
-                <figure class="footer__ghost">
-                    <a href="https://ghost.org/download/" target="blank">
-                        <img src="{{asset "images/ghost.png"}}" srcset="{{asset "images/ghost@2x.png"}} 2x" alt="Ghost">
-                    </a>
-                </figure>
-                
-                <figure class="footer__digitalOcean">
-                    <a href="https://www.digitalocean.com/?refcode=c4c217c06b83" target="blank">
-                        <img src="{{asset "images/sammy.png"}}" srcset="{{asset "images/sammy@2x.png"}} 2x" alt="DigitalOcean Sammy">
-                    </a>
-                </figure>
-                <p>
-                    <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="blank">© 2015 Filiberto Santillán</a>
-                </p>
-            </div>
-        </section>
+            {{!-- DigitalOcean --}}
+            <span class='footer__digitalocean'>
+                Alojado en <a href='https://m.do.co/c/c4c217c06b83' target='_blank' class='footer__link'>DigitalOcean</a>
+            </span>
+        </div>
     </div>
-</footer>
+</div>

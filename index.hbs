@@ -1,67 +1,28 @@
-{{!< default}}
+{{!------------------------------------}}
+          {{!-- Index --}}
+{{!------------------------------------}}
 
-{{!-- Header --}}
-{{> "header"}}
+{{!-- The homepage of the blog --}}
 
-{{!-- Portada --}}
-{{> "cover"}}
+{{!-- Default: All default.hbs code is inserted in head --}}
+{{!< default }}
 
-{{!-- Menú --}}
-{{> "menu"}}
-
-{{!-- Busqueda --}}
-{{> "search"}}
-
-{{!-- Lenguajes para aprender --}}
-<section class="code">
-    <strong class="code__title">¿Qué te gustaría aprender hoy?</strong>
-    
-    <section class="code__languages">
-        
-        {{!-- HTML --}}
-        <figure>
-            <a href="/tag/html/">
-                <img src='{{asset "images/html-mobile.jpg"}}' 
-                     srcset='{{asset "images/html-tablet.jpg"}} 412w,
-                             {{asset "images/html-desktop.jpg"}} 1080w'
-                     alt="html" />
-            </a>
-        </figure>
-        
-        {{!-- CSS --}}
-        <figure>
-            <a href="/tag/css/">
-                <img src='{{asset "images/css-mobile.jpg"}}' 
-                     srcset='{{asset "images/css-tablet.jpg"}} 412w,
-                             {{asset "images/css-desktop.jpg"}} 1080w'
-                     alt="css" />
-            </a>
-        </figure>
-
-        {{!-- JavaScript --}}
-        <figure>
-            <a href="/tag/javascript/">
-                <img src='{{asset "images/javascript-mobile.jpg"}}' 
-                     srcset='{{asset "images/javascript-tablet.jpg"}} 412w,
-                             {{asset "images/javascript-desktop.jpg"}} 1080w'
-                     alt="javascript" />
-            </a>
-        </figure>
-
-    </section>
+{{!-- Cover: Blog cover image --}}
+<section class='cover {{#if @blog.cover}}cover--index' style='background-image: url({{@blog.cover}}){{/if}}'>
+    {{> 'cover'}}
 </section>
 
-{{!-- Contenido --}}
-<section id="post__content" class="post__content" role="main">
-    {{> "loop"}}
+{{!-- Loop: The main content area on the homepage --}}
+<section id='post-wrapper' class='post-wrapper wrap-center' role='main'>
+    {{> 'loop'}}
 </section>
 
-{{!-- Newsletter --}}
-{{> "newsletter"}}
+{{!-- Pagination: Pages of the blog --}}
+<nav class='pagination' role='navigation'>
+    {{pagination}}
+</nav>
 
-{{!-- Paginación --}}
-{{pagination}}
-
-{{!-- Footer --}}
-{{> "footer"}}
-
+{{!-- Subscribe: tools for collecting emails from the blog --}}
+<section id='mc_embed_signup'>
+    {{> 'subscribe' }}
+</section>
