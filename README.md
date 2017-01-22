@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-# Fili Santillán Blog 2.1.4
-##Ghost 0.7.6
-=======
-# Fili Santillán 3.0.0
+# Fili Santillán 3.0.1
 Ghost 0.11.3
->>>>>>> release-3.0.0
 
 <a href="https://filisantillan.com"><img src="https://s-media-cache-ak0.pinimg.com/originals/b8/66/46/b86646fcffb185b5b56009475794684c.jpg" alt="Fili Santillán" /></a>
 
