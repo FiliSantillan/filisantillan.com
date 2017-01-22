@@ -40,4 +40,5 @@ node_modules
 ######################
 # Production #
 ######################
+assets
 src/css-dev
