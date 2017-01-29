@@ -15,12 +15,21 @@
     {{> 'cover-post'}}
 </section>
 
+<div class='arrow-up'>
+    <a href='#header' class='arrow-up__icon icon-arrow-mini-up'></a>
+</div>
+
 {{!-- Post content wrap --}}
 <main class='article-wrapper' role='main'>
     <article class='article'>
         
         {{!-- Facebook save button --}}
         <div class='article__fb-button fb-save' data-uri='https://filisantillan.com{{url}}' data-size='large'></div>
+
+        {{!-- Sharing Tools --}}
+        <section class='article__social'>
+            <div class='article__addthis addthis_sharing_toolbox'></div>
+        </section>
         
         {{!-- Content of the post --}}
         <section class='article__content'>
