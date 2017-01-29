@@ -144,6 +144,19 @@
         vertical-align -0.2em
         display inline
         
+.arrow-up
+    position fixed
+    bottom 0
+    right 0.5rem
+    border-radius 5px 5px 0 0
+    background-color $color-gray-B
+    padding 0.5rem 0.8rem
+    z-index 100
+    
+    &__icon
+        color $color-dark
+        font-size 1.5rem
+        
 .article__fb-button
     display inline-block !important
     margin 0.5rem 0
@@ -214,6 +227,16 @@
         
         p
             line-height 1.7rem
+            
+    .arrow-up
+        top 15%
+        right 0
+        bottom initial
+        border-radius 5px 0 0 5px
+        padding 0.8rem
+        
+        &__icon
+            font-size 1.8rem
             
     .article__fb-button
         margin 0.5rem 0 1rem 0
