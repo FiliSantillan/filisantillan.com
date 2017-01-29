@@ -1,4 +1,4 @@
-# Fili Santillán 3.0.2
+# Fili Santillán 3.0.3
 Ghost 0.11.3
 
 <a href="https://filisantillan.com"><img src="https://s-media-cache-ak0.pinimg.com/originals/b8/66/46/b86646fcffb185b5b56009475794684c.jpg" alt="Fili Santillán" /></a>
