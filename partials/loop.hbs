@@ -12,7 +12,7 @@
     <a href='{{url}}'>
         {{!-- image --}}
         <figure class='post__cover'>
-            <img src='{{image}}' alt='' class='post__img'>
+            <img src='{{image_url feature_image}}' alt='' class='post__img'>
         </figure>
     </a>
     {{/if}}
@@ -30,7 +30,7 @@
         <section class="post__description">
             <p class='post__text'>{{excerpt words="18"}}<span>...</span></p>
         </section>
-        
+
         {{!-- Post author --}}
         <footer class="post__author">
             {{!-- Everything inside the #author tags pulls data from the loop --}}
@@ -40,7 +40,7 @@
                 <figure class="post__image">
                     <a href='{{url}}'>
                         {{!-- Author image--}}
-                        <img src='{{image}}' alt="{{name}}" nopin="nopin" class='post__img'/>
+                        <img src='{{image_url profile_image}}' alt="{{name}}" nopin="nopin" class='post__img'/>
                         {{!-- Author name --}}
                         <figcaption class="post__text">
                             <strong class="post__name">{{name}}</strong>

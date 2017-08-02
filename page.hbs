@@ -11,19 +11,19 @@
 {{#post}}
 
 {{!-- Cover: Page cover image --}}
-<section class='cover {{#if image}}cover-post cover--page' style='background-image: url({{image}}){{/if}}'>
+<section class='cover {{#if image}}cover-post cover--page' style='background-image: url({{image_url feature_image}}){{/if}}'>
     {{> 'cover-page'}}
 </section>
 
 {{!-- Page content wrap --}}
 <main class='article-wrapper' role='main'>
     <article class='article'>
-        
+
         {{!-- Content of the page --}}
         <section class='article__content article--page'>
             {{content}}
         </section>
-        
+
     </article>
 </main>
 
