@@ -11,7 +11,7 @@
 {{#post}}
 
 {{!-- Cover: Post cover image --}}
-<section class='cover {{#if image}}cover-post' style='background-image: url({{image}}){{/if}}'>
+<section class='cover {{#if feature_image}}cover-post' style='background-image: url({{img_url feature_image}}){{/if}}'>
     {{> 'cover-post'}}
 </section>
 
@@ -22,7 +22,7 @@
 {{!-- Post content wrap --}}
 <main class='article-wrapper' role='main'>
     <article class='article'>
-        
+
         {{!-- Facebook save button --}}
         <div class='article__fb-button fb-save' data-uri='https://filisantillan.com{{url}}' data-size='large'></div>
 
@@ -30,12 +30,12 @@
         <section class='article__social'>
             <div class='article__addthis addthis_sharing_toolbox'></div>
         </section>
-        
+
         {{!-- Content of the post --}}
         <section class='article__content'>
             {{content}}
         </section>
-        
+
         {{!-- Sharing Tools --}}
         <section class='article__social'>
             <strong class='article__text'>Si te gusto el artículo, por favor, ayudame a compartir para que otras personas puedan leerlo.</strong>
@@ -53,30 +53,30 @@
     <div class='author-wrapper'>
 
         {{!-- Author background--}}
-        <div class='author__cover {{#if cover}} author--yes' style='background-image: url({{cover}})'>
+        <div class='author__cover {{#if cover_image}} author--yes' style='background-image: url({{cover_image}})'>
         </div>
-        
+
         {{!-- Author options --}}
         <figure class='author__options'>
-            
+
             {{!-- Facebook icon --}}
             <a href='{{facebook_url}}' target='_blank' class='author__icon icon-facebook'></a>
-            
+
             {{!-- Author image --}}
             <a href='{{url}}'>
-                <img class='author__img'src='{{image}}' alt='{{name}}'>
+                <img class='author__img'src='{{img_url profile_image}}' alt='{{name}}'>
             </a>
-            
+
             {{!-- Twitter icon --}}
             <a href='{{twitter_url}}' target='_blank' class='author__icon icon-twitter'></a>
-            
+
             {{!-- Author name --}}
             <figcaption class='author__name'>
                 <strong class='author__text'>
                     <a class='author__link' href='{{url}}'>{{name}}</a>
                 </strong>
             </figcaption>
-            
+
             {{!-- If there is a website --}}
             {{#if website}}
             {{!-- Button --}}
@@ -85,10 +85,10 @@
         </figure>
         {{/if}}
     </div>
-    
+
     {{!-- Author information --}}
     <div class='author__info'>
-        
+
         {{!-- If there is a location --}}
         {{#if location}}
         {{!-- Author location --}}
@@ -97,7 +97,7 @@
             <span class='author__text'>{{location}}</span>
         </div>
         {{/if}}
-        
+
         {{!-- About the author --}}
         <div class='author__about'>
             {{!-- If there is a biography --}}

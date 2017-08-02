@@ -1,6 +1,6 @@
 {
   "name": "filisantillan",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "Fili Santillán: https://filisantillan.com/",
   "main": "index.js",
   "scripts": {
@@ -8,6 +8,9 @@
   },
   "author": "Filiberto Santillán",
   "license": "ISC",
+  "author": {
+        "email": "fili06604@gmail.com"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",

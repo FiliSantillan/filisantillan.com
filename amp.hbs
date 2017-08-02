@@ -39,10 +39,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="theme-color" content="#4299D4">
     <meta name="google-site-verification" content="PUVeHiwvS1T4_Q8FaieZHfE0GjL2rsKJ3LU4eabFdtA" />
-    
+
     {{!-- Ghost outputs important style and meta data with this tag (AMP) --}}
     {{amp_ghost_head}}
-    
+
     {{!-- Post Styles --}}
     <style amp-custom>
         :root {
@@ -63,7 +63,7 @@
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-nutito);
         }
-            
+
         body {
             font-family: var(--font-lato);
         }
@@ -71,7 +71,7 @@
         a {
             text-decoration: none;
         }
-            
+
         figure {
             margin: 0;
         }
@@ -471,7 +471,7 @@
 
     {{!-- Social share buttons - AMP --}}
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
-    
+
     {{!-- For the correct functioning of gifs, iframes and audio --}}
     {{amp_components}}
 
@@ -479,12 +479,12 @@
 
 <body class="amp-template">
     {{#post}}
-    
+
     {{!-- Header - AMP --}}
     <header class="header">
         {{> 'amp-header' }}
     </header>
-    
+
     {{!-- Sidevar - Menu AMP --}}
     <amp-sidebar class='menu' id='sidebar1' layout='nodisplay' side="right">
         {{!-- icon - close --}}
@@ -496,18 +496,18 @@
     </amp-sidebar>
 
     {{!-- If there is a image (cover) --}}
-    {{#if image}}
+    {{#if feature_image}}
     {{!-- Cover --}}
     <section class='cover'>
         {{> 'amp-cover-post'}}
     </section>
     {{/if}}
-    
+
     {{!-- AMP wrapper --}}
     <main class="article-wrapper" role="main">
         {{!-- AMP post --}}
         <article class='article'>
-            
+
             {{!-- AMP information --}}
             <header class="article__info">
                 {{!-- AMP title --}}
@@ -533,7 +533,7 @@
                 <div class="article__icons">
 
                     {{!-- Facebook --}}
-                    <amp-social-share type="facebook" 
+                    <amp-social-share type="facebook"
                         data-param-app_id="254325784911610"
                         data-param-text="{{title}}"
                         data-param-url="https://filisantillan.com{{url}}">
@@ -544,13 +544,13 @@
                         data-param-text="{{title}}"
                         data-param-url="https://filisantillan.com{{url}}">
                     </amp-social-share>
-                    
+
                     {{!-- Google+ --}}
                     <amp-social-share type="gplus"
                         data-param-text="{{title}}"
                         data-param-url="https://filisantillan.com{{url}}">
                     </amp-social-share>
-                    
+
                     {{!-- Linkedin --}}
                     <amp-social-share type="linkedin"
                         data-param-text="{{title}}"
@@ -558,7 +558,7 @@
                     </amp-social-share>
                 </div>
             </section>
-            
+
             {{!-- AMP content --}}
             <section class="article__content">
 
@@ -570,7 +570,7 @@
                 {{amp_content}}
 
             </section>
-            
+
             {{!-- AMP social --}}
             <section class="article__social">
                 {{!-- Social text --}}
@@ -580,7 +580,7 @@
                 <div class="article__icons">
 
                     {{!-- Facebook --}}
-                    <amp-social-share type="facebook" 
+                    <amp-social-share type="facebook"
                         data-param-app_id="254325784911610"
                         data-param-text="{{title}}"
                         data-param-url="https://filisantillan.com{{url}}">
@@ -591,13 +591,13 @@
                         data-param-text="{{title}}"
                         data-param-url="https://filisantillan.com{{url}}">
                     </amp-social-share>
-                    
+
                     {{!-- Google+ --}}
                     <amp-social-share type="gplus"
                         data-param-text="{{title}}"
                         data-param-url="https://filisantillan.com{{url}}">
                     </amp-social-share>
-                    
+
                     {{!-- Linkedin --}}
                     <amp-social-share type="linkedin"
                         data-param-text="{{title}}"
@@ -608,7 +608,7 @@
 
         </article>
     </main>
-    
+
     {{!-- Everything inside the #author tags pulls data from the post (AMp) --}}
     {{#author}}
     <section class='author'>
@@ -616,32 +616,32 @@
         <figure class="author__options">
             {{!-- Facebook icon --}}
             <a href='{{facebook_url}}' target='_blank'class='author__icon fa fa-facebook'></a>
-            
+
             {{!-- Author image --}}
             <a href="{{url}}">
-                <amp-img class='author__img' src='https://filisantillan.com{{image}}' alt='{{name}}' width="100" height="100"></amp-img>
+                <amp-img class='author__img' src='https://filisantillan.com{{img_url profile_image}}' alt='{{name}}' width="100" height="100"></amp-img>
             </a>
 
             {{!-- Twitter icon --}}
             <a href='{{twitter_url}}' target='_blank'class='author__icon fa fa-twitter'></a>
-                
+
             {{!-- Author name --}}
             <figcaption class="author__name">
                 <strong class='author__text'>
                     <a class='author__link' href="{{url}}">{{name}}</a>
                 </strong>
             </figcaption>
-            
+
             {{!-- If there is a website --}}
             {{#if website}}
             {{!-- Button --}}
             <a href="{{website}}" class='author__button btn-default btn--radius'>Sobre mí</a>
             {{/if}}
         </figure>
-        
+
         {{!-- Author information --}}
         <div class="author__info">
-            
+
             {{!-- If there is a location --}}
             {{#if location}}
             {{!-- Author location --}}
@@ -650,7 +650,7 @@
                 <span class="author__text">{{location}}</span>
             </div>
             {{/if}}
-            
+
             {{!-- About the author --}}
             <div class="author__about">
                 {{!-- If there is a biography --}}
@@ -664,7 +664,7 @@
         </div>
     </section>
     {{/author}}
-    
+
     {{!-- Footer --}}
     <footer class="footer">
         {{> 'amp-footer'}}

@@ -10,34 +10,34 @@
 {{!-- Everything inside the #author tags pulls data from the author --}}
 {{#author}}
 <section class='author'>
-    
+
     {{!-- Author wrapper --}}
     <div class='author-wrapper'>
-        
+
         {{!-- Author background--}}
-        <div class='author__cover {{#if cover}} author--yes' style='background-image: url({{cover}})'></div>
-        
+        <div class='author__cover {{#if cover_image}} author--yes' style='background-image: url({{cover_image}})'></div>
+
         {{!-- Author options --}}
         <figure class='author__options'>
-            
+
             {{!-- Facebook icon --}}
             <a href='{{facebook_url}}' target='_blank' class='author__icon icon-facebook'></a>
-            
+
             {{!-- Author image --}}
             <a href='{{url}}'>
-                <img class='author__img' src='{{image}}' alt='{{name}}'>
+                <img class='author__img' src='{{img_url profile_image}}' alt='{{name}}'>
             </a>
 
             {{!-- Twitter icon --}}
             <a href='{{twitter_url}}' target='_blank' class='author__icon icon-twitter'></a>
-            
+
             {{!-- Author name --}}
             <figcaption class='author__name'>
                 <strong class='author__text'>
                     <a class='author__link' href='{{url}}'>{{name}}</a>
                 </strong>
             </figcaption>
-            
+
             {{!-- Pages of the author --}}
             <span class='author__pagination'>
                 {{plural ../pagination.total empty='No hay artículos' singular='% artículo' plural='% artículos'}}
@@ -46,10 +46,10 @@
         </figure>
         {{/if}}
     </div>
-    
+
     {{!-- Author information --}}
     <div class='author__info'>
-        
+
         {{!-- If there is a location --}}
         {{#if location}}
         {{!-- Author location --}}
@@ -58,7 +58,7 @@
             <span class='author__text'>{{location}}</span>
         </div>
         {{/if}}
-        
+
         {{!-- About the author --}}
         <div class='author__about'>
             {{!-- If there is a biography --}}
