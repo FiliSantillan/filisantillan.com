@@ -1,11 +1,11 @@
 {{!-- Portada para el autor --}}
 
-<section class="cover {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{/if}}">
+<section class="cover {{#if @blog.cover_image}}" style="background-image: url({{@blog.cover_image}}){{/if}}">
 
     {{!-- Imagen del autor --}}
-    {{#if image}}
+    {{#if profile_image}}
         <figure class="logo logo__author">
-            <img class="img" src="{{image_url feature_image}}" alt="{{@blog.title}}" />
+            <img class="img" src="{{img_url profile_image}}" alt="{{@blog.title}}" />
         </figure>
     {{/if}}
 

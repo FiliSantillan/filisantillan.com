@@ -496,7 +496,7 @@
     </amp-sidebar>
 
     {{!-- If there is a image (cover) --}}
-    {{#if image}}
+    {{#if feature_image}}
     {{!-- Cover --}}
     <section class='cover'>
         {{> 'amp-cover-post'}}
@@ -619,7 +619,7 @@
 
             {{!-- Author image --}}
             <a href="{{url}}">
-                <amp-img class='author__img' src='https://filisantillan.com{{image_url feature_image}}' alt='{{name}}' width="100" height="100"></amp-img>
+                <amp-img class='author__img' src='https://filisantillan.com{{img_url profile_image}}' alt='{{name}}' width="100" height="100"></amp-img>
             </a>
 
             {{!-- Twitter icon --}}

@@ -8,11 +8,11 @@
 {{#foreach posts}}
 <article class='post {{post_class}}'>
     {{!-- If there is a image (post) --}}
-    {{#if image}}
+    {{#if feature_image}}
     <a href='{{url}}'>
         {{!-- image --}}
         <figure class='post__cover'>
-            <img src='{{image_url feature_image}}' alt='' class='post__img'>
+            <img src='{{ feature_image}}' alt='' class='post__img'>
         </figure>
     </a>
     {{/if}}
@@ -36,11 +36,11 @@
             {{!-- Everything inside the #author tags pulls data from the loop --}}
             {{#author}}
                 {{!-- If there is a image (author) --}}
-                {{#if image}}
+                {{#if profile_image}}
                 <figure class="post__image">
                     <a href='{{url}}'>
                         {{!-- Author image--}}
-                        <img src='{{image_url profile_image}}' alt="{{name}}" nopin="nopin" class='post__img'/>
+                        <img src='{{ profile_image}}' alt="{{name}}" nopin="nopin" class='post__img'/>
                         {{!-- Author name --}}
                         <figcaption class="post__text">
                             <strong class="post__name">{{name}}</strong>

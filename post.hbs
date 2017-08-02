@@ -11,7 +11,7 @@
 {{#post}}
 
 {{!-- Cover: Post cover image --}}
-<section class='cover {{#if image}}cover-post' style='background-image: url({{image_url feature_image}}){{/if}}'>
+<section class='cover {{#if feature_image}}cover-post' style='background-image: url({{img_url feature_image}}){{/if}}'>
     {{> 'cover-post'}}
 </section>
 
@@ -53,7 +53,7 @@
     <div class='author-wrapper'>
 
         {{!-- Author background--}}
-        <div class='author__cover {{#if cover}} author--yes' style='background-image: url({{cover}})'>
+        <div class='author__cover {{#if cover_image}} author--yes' style='background-image: url({{cover_image}})'>
         </div>
 
         {{!-- Author options --}}
@@ -64,7 +64,7 @@
 
             {{!-- Author image --}}
             <a href='{{url}}'>
-                <img class='author__img'src='{{image_url profile_image}}' alt='{{name}}'>
+                <img class='author__img'src='{{img_url profile_image}}' alt='{{name}}'>
             </a>
 
             {{!-- Twitter icon --}}

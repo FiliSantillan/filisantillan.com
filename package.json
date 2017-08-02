@@ -8,6 +8,9 @@
   },
   "author": "Filiberto Santillán",
   "license": "ISC",
+  "author": {
+        "email": "fili06604@gmail.com"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
