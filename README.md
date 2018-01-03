@@ -129,8 +129,8 @@ Con este comando las fuentes de producción van a estar comprimidas.
 
 ### Contacto
 
-* [Facebook](https://www.facebook.com/FiliSantillanMX)
-* [Twitter](https://twitter.com/FiliMX)
+* [Facebook](https://www.facebook.com/FiliJS/)
+* [Twitter](https://twitter.com/FiliJS)
 
 ## Licencia
 © Fili Santillán
