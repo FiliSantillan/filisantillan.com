@@ -42,6 +42,7 @@ emerald
 # Production #
 ######################
 dist/
+assets/
 
 ######################
 # API KEYS #
