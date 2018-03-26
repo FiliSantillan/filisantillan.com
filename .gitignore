@@ -7,7 +7,6 @@
 *.o
 *.so
 *.sh
-*.log
 
 ######################
 # Packages #
@@ -20,7 +19,7 @@
 *.rar
 *.tar
 *.zip
- 
+
 ######################
 # OS generated files #
 ######################
@@ -33,12 +32,37 @@ ehthumbs.db
 Thumbs.db
 
 ######################
-# NodeJS #
+# GO #
 ######################
-node_modules
+bin
+pkg
+emerald
 
 ######################
 # Production #
 ######################
-assets
-src/css-dev
+dist/
+
+######################
+# API KEYS #
+######################
+key-config.js
+
+######################
+# NodeJS / JS #
+######################
+node_modules
+.jshintrc
+.babelrc
+*.log
+
+######################
+# VSSettings #
+######################
+.vscode
+
+######################
+# Trash #
+######################
+*.swp
+*.swo
