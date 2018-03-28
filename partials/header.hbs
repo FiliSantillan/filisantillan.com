@@ -2,17 +2,33 @@
           {{!-- Header --}}
 {{!------------------------------------}}
 
-{{!-- Blog header --}}
+<header class="header">
+    <div class="header-wrapper">
 
-{{!-- Logo --}}
-<a href='{{@blog.url}}' class='header__logo'></a>
+        <picture class="blog-logo u-text-center">
+            <source 
+                media="(min-width: 650px)" 
+                srcset="../src/images/logos/fili-large.png,
+                        ../src/images/logos/fili-large@2x.png 2x,
+                        ../src/images/logos/fili-medium@2x.png 2x">
 
-{{!-- Icon Menu --}}
-<a href='#', class='header__ico-menu' id='open-menu'>
-    <i class='header__icon icon-menu'></i>
-</a>
+            <source 
+                media="(min-width: 465px)" 
+                srcset="../src/images/logos/fili-medium.png
+                        ../src/images/logos/fili-medium@2x.png 2x
+                        ../src/images/logos/fili-medium@2x.png 3x">
 
-{{!-- Menu (navigation) --}}
-<div class='menu' id='menu'>
-    {{> 'menu' }}
-</div>
+            <img 
+                src="../src/images/logos/fili-small.png"
+                srcset="../src/images/logos/fili-small@2x.png 2x,
+                        ../src/images/logos/fili-small@3x.png 3x"
+                alt="Flowers"
+                class="blog-logo__image">
+        </picture>
+
+        <div class="blog-description">
+            <strong class="blog-description__text">{{@blog.description}}</strong>
+        </div>
+
+    </div>
+</header>

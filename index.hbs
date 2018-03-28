@@ -2,10 +2,7 @@
           {{!-- Index --}}
 {{!------------------------------------}}
 
-{{!-- The homepage of the blog --}}
-
-{{!-- Default: All default.hbs code is inserted in head --}}
-{{!< default }}
+{{!< default-home }}
 
 {{!-- Cover: Blog cover image --}}
 <section class='cover {{#if @blog.cover_image}}cover--index' style='background-image: url({{@blog.cover_image}}){{/if}}'>

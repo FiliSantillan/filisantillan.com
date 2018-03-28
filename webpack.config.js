@@ -3,7 +3,7 @@ ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        index: path.resolve(__dirname, "./src/js/index.js")
+        home: path.resolve(__dirname, "./src/js/home.js")
     },
     output: {
         path: path.resolve(__dirname, "assets"),
@@ -32,6 +32,15 @@ module.exports = {
                     options: {
                         presets: "env"
                     }
+                }
+            },
+            {
+                test: /\.(jpg|png|gif)$/,
+                use: {
+                    loader: "url-loader",
+                    // options: {
+                    //     limit: 100000
+                    // }
                 }
             }
         ]

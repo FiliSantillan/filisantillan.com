@@ -1,0 +1,19 @@
+.header {
+    background-color: black;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-logo {
+    display: block;
+    margin-bottom: var(--space-bottom);
+    & .blog-logo__image {
+        width: 180px;
+    }
+}
+
+.blog-description {
+    color: white;
+}

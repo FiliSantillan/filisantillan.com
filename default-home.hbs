@@ -6,13 +6,25 @@
     <title>{{meta_title}}</title>
 
     {{!-- Styles --}}
-    <link rel='stylesheet' href='{{asset "./css/styles.css"}}'>
+    <link rel='stylesheet' href='{{asset "./css/home-bundle.css"}}'>
 
-    {{!-- Mobile Meta --}}
+    {{!-- Google Fonts --}}
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700|Nunito:300,400,700' rel='stylesheet'>
+    
+
+    {{!-- Document Settings --}}
+    <meta charset='utf-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+
+    {{!-- Author Settings --}}
+    <meta name='author' content='Filiberto Santillán'>
+    <meta name='description' content='Blogger, Geek, Lover of code - HTML, CSS, Javascript, ReactJS' />
+    
+    {{!-- Mobile Settings --}}
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <meta name='MobileOptimized' content='320' />
 
-    {{!-- Favicons --}}
+    {{!-- Favicon Settings --}}
     <link rel='apple-touch-icon' sizes='180x180' href='{{asset "./images/favicon/apple-touch-icon.png"}}'>
     <link rel='icon' type='image/png' href='{{asset "./images/favicon/favicon-32x32.png"}}' sizes='32x32'>
     <link rel='icon' type='image/png' href='{{asset "./images/favicon/favicon-16x16.png"}}' sizes='16x16'>
@@ -21,64 +33,45 @@
     <meta name='apple-mobile-web-app-title' content='Fili'>
     <meta name='application-name' content='Fili'>
 
-    {{!-- Author & Descripction --}}
-    <meta name='author' content='Filiberto Santillán'>
-    <meta name='description' content='Blogger, Geek, Lover of code - HTML, CSS, Javascript, ReactJS' />
+    {{!-- Google+ Settings --}}
+    <link rel='author' href='https://plus.google.com/+FiliMart%C3%ADnezZ' />
+    <link rel='canonical' href='http://filisantillan.com/' />
 
     {{!-- Friendly --}}
     <meta name='HandheldFriendly' content='True' />
 
-    {{!-- Google --}}
-    <link rel='author' href='https://plus.google.com/+FiliMart%C3%ADnezZ' />
-    <link rel='canonical' href='http://filisantillan.com/' />
+    {{!-- Other Settings --}}
 
-    {{!-- Google Fonts --}}
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700|Nunito:300,400,700' rel='stylesheet'>
-
-    {{!-- Other Configurations --}}
-    <meta charset='utf-8' />
-    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
     <meta name='theme-color' content='#299FD3'>
     <meta name='google-site-verification' content='PUVeHiwvS1T4_Q8FaieZHfE0GjL2rsKJ3LU4eabFdtA' />
     <meta property="fb:pages" content="379077102274280" />
 
     {{!-- Emojis --}}
-    <script src="https://twemoji.maxcdn.com/2/twemoji.min.js?2.2.3"></script>
+    {{!-- <script src="https://twemoji.maxcdn.com/2/twemoji.min.js?2.2.3"></script> --}}
 
-    {{!-- Ghost outputs important style and meta data with this tag --}}
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 
 </head>
-<body class='{{body_class}} nav-closed'>
+<body class='{{body_class}}'>
 
-    {{!-- Header --}}
-    <header class='header' id='header'>
-        {{> 'header' }}
-    </header>
+    {{> 'header' }}
 
-    {{!-- Content --}}
-    <div class='site-wrapper'>
+    {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+    <div class="site-wrapper">
         {{{body}}}
     </div>
 
-    {{!-- Footer --}}
-    <footer class='footer'>
-        {{> 'footer'}}
-    </footer>
+    {{> 'footer'}}
 
-    {{!-- Jquery --}}
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 
-    {{!-- Vendor --}}
-    <script src='{{asset "./js/vendor.js"}}'></script>
-
-    {{!-- Default script --}}
-    <script src='{{asset "./js/scripts.js"}}'></script>
+    {{!-- Scripts --}}
+    <script src='{{asset "./js/home-bundle.js"}}'></script>
 
     {{!-- Addthis --}}
-    <script type='text/javascript' src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56324eb92b56efd7' async='async'></script>
+    {{!-- <script type='text/javascript' src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56324eb92b56efd7' async='async'></script> --}}
 
-    {{! Gooogle Analytics }}
+    {{!-- {{! Gooogle Analytics }}
     <script async>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -86,10 +79,10 @@
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-59139943-5', 'auto');
       ga('send', 'pageview');
-    </script>
+    </script> --}}
 
     {{! Facebook SDK }}
-    <script>
+    {{!-- <script>
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '398916740459134',
@@ -106,9 +99,10 @@
      js.src = "//connect.facebook.net/es_LA/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-</script>
+</script> --}}
 
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
+    
 </body>
 </html>
