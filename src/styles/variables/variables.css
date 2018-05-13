@@ -3,5 +3,11 @@
     --font-heading: "Montserrat";
     --font-default: "Nunito";
 
+    --spacer-size: 1.5rem;
+    --radius-size: 5px;
+
     --small-title: 22px;
+    --xl-title: 30px;
+
+    --sm-text: 15px;
 }

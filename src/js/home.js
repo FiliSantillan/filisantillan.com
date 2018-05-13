@@ -1,9 +1,13 @@
 import "../styles/vendor/normalize.css";
 
-import "../styles/variables/variables-spacers.css";
+import "../styles/variables/variables.css";
+
+import "../styles/base/base.css";
 
 import "../styles/utilities/u-typography.css";
+import "../styles/utilities/u-elements.css";
 
 import "../styles/components/header/header.css";
+import "../styles/components/cover/cover.css";
 
 console.log("Hello");
