@@ -1,19 +1,24 @@
 .header {
-    background-color: black;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    position: absolute;
+    z-index: 99;
+    width: 100%;
 
-.blog-logo {
-    display: block;
-    margin-bottom: var(--space-bottom);
-    & .blog-logo__image {
-        width: 180px;
+    & .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: var(--spacer-size);
     }
 }
+.header__logo {
 
-.blog-description {
-    color: white;
+    & .header__title {
+        font-size: var(--small-title);
+        color: white;
+        
+        & .header__text {
+            &:first-child:after {
+                content: " |";
+            }
+        }
+    }
 }

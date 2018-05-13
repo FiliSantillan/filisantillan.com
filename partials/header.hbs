@@ -3,32 +3,16 @@
 {{!------------------------------------}}
 
 <header class="header">
-    <div class="header-wrapper">
-
-        <picture class="blog-logo u-text-center">
-            <source 
-                media="(min-width: 650px)" 
-                srcset="../src/images/logos/fili-large.png,
-                        ../src/images/logos/fili-large@2x.png 2x,
-                        ../src/images/logos/fili-medium@2x.png 2x">
-
-            <source 
-                media="(min-width: 465px)" 
-                srcset="../src/images/logos/fili-medium.png
-                        ../src/images/logos/fili-medium@2x.png 2x
-                        ../src/images/logos/fili-medium@2x.png 3x">
-
-            <img 
-                src="../src/images/logos/fili-small.png"
-                srcset="../src/images/logos/fili-small@2x.png 2x,
-                        ../src/images/logos/fili-small@3x.png 3x"
-                alt="Flowers"
-                class="blog-logo__image">
-        </picture>
-
-        <div class="blog-description">
-            <strong class="blog-description__text">{{@blog.description}}</strong>
+    <div class="header-wrapper u-wrap-center">
+        <div class="header__logo">
+            <h1 class="header__title">
+                <span class="header__text u-text-light">Fili</span>
+                <strong class="header__text u-text-bold">Santillán</strong>
+            </h1>
         </div>
 
+        <div class="header__containerIcon">
+            <a href="#" class="header__icon o-icon-menu">X</a>
+        </div>
     </div>
 </header>

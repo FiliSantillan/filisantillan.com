@@ -5,13 +5,52 @@
 {{!-- Cover of a index (default) --}}
 
 {{!-- Cover image --}}
-<div class='cover__wrapper'>
-    {{!-- Tittle --}}
-    <h1 class="cover__name">
-        {{@blog.title}}
-    </h1>
-    {{!-- Description --}}
-    <div class='cover-post__title wrap-center'>
-        <strong class='cover-post__text'>{{@blog.description}}</strong>
+<div class="cover__imageContainer">
+    <div class="cover__image {{#if @blog.cover_image}}image--true" style="background-image: url({{@blog.cover_image}}){{else}}image--false{{/if}}"></div>
+</div>
+
+<div class="cover__intro">
+    <div class="cover__description">
+        <strong class="cover__text">
+            {{@blog.description}}
+        </strong>
+    </div>
+
+    <div class="cover__optionList">
+        <article class="cover__option u-center-content">
+            <div class="cover-wrapper">
+                <div class="cover__iconContainer">
+                    <i class="cover__icon o-icon-challenge">X</i>
+                </div>
+
+                <div class="cover__name">
+                    <span class="cover__text">Challenges</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="cover__option u-center-content">
+            <div class="cover-wrapper">
+                <div class="cover__iconContainer">
+                    <i class="cover__icon o-icon-challenge">X</i>
+                </div>
+
+                <div class="cover__name">
+                    <span class="cover__text">Noticias</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="cover__option u-center-content">
+            <div class="cover-wrapper">
+                <div class="cover__iconContainer">
+                    <i class="cover__icon o-icon-challenge">X</i>
+                </div>
+
+                <div class="cover__name">
+                    <span class="cover__text">Otros</span>
+                </div>
+            </div>
+        </article>
     </div>
 </div>
