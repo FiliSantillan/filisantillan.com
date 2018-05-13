@@ -1,3 +1,11 @@
 .u-text-center {
     text-align: center;
 }
+
+.u-text-light {
+    font-weight: 300;
+}
+
+.u-text-bold {
+    font-weight: 700;
+}

@@ -1,0 +1,16 @@
+body {
+    font-family: var(--font-default), system-ui;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), system-ui;
+    margin: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
