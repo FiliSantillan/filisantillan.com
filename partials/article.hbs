@@ -1,0 +1,64 @@
+{{!------------------------------------}}
+          {{!-- Loop --}}
+{{!------------------------------------}}
+
+{{#foreach posts}}
+
+<article class="article {{post_class}}">
+    <div class="article__coverContainer">
+        {{#if feature_image}}
+        <a href="{{url}}" class`="u-display-in-block">
+            <figure class="article__cover">
+                <img src="{{feature_image}}" alt="{{title}}" class="article__image">
+            </figure>
+        </a>
+
+        {{else}}
+        <div class="article__gradient"></div>
+        {{/if}}
+
+        {{#if tags}}
+            {{#foreach tags limit="1"}}
+                <div class="article__tagContainer">
+                    <a href="{{url}}" class="article__tag btn btn-icon">
+                        <i class="article__icon o-icon-{{name}}">X</i>
+                        <span class="article__text">{{name}}</span>
+                    </a>
+                </div>
+            {{/foreach}}
+        {{/if}}
+    </div>
+ 
+    <div class="article__details">
+
+        <header class="article__title">
+            <h2 class="article__text">
+                <a href="{{url}}" class="article__link">{{title}}</a>
+            </h2>
+        </header>
+
+        <section class="article__description">
+            <p class="article__text">{{excerpt words="18"}}</p>
+        </section>
+
+        <footer class="article__options">
+            {{#author}}
+            <a href="{{url}}" class="article__author">
+                {{#if profile_image}}
+                <figure class="article__avatar"></figure>
+                    <img src="{{ profile_image}}" alt="{{name}}" nopin="nopin" class="article__image"/>
+                </figure>
+                {{/if}}
+                <span class="article__name">{{name}}</span>
+            </a>
+            {{/author}}
+
+            <a href="{{url}}" class="article__button">
+                <i class="article__icon o-icon-arrow">X</i>
+            </a>
+        </footer>
+    </div>
+
+</article>
+
+{{/foreach}}
