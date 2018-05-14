@@ -3,11 +3,20 @@
     --font-heading: "Montserrat";
     --font-default: "Nunito";
 
+    --color-dark: #161925;
+
     --spacer-size: 1.5rem;
+
     --radius-size: 5px;
+    --radius-size-double: 10px;
+    --radius-size-full: 25px;
 
     --small-title: 22px;
+    --lg-title: 28px;
     --xl-title: 30px;
 
     --sm-text: 15px;
+    --md-text: 16px;
+
+    --btn-height: 45px;
 }
