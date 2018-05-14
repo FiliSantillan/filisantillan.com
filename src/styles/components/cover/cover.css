@@ -22,7 +22,6 @@
     & .image--false {
         background-color: #299fd3;
         background-image: linear-gradient(19deg, #299fd3 0%, #B721FF 100%);
-
     }
 }
 
@@ -44,6 +43,7 @@
 
 .cover__optionList {
     display: flex;
+    justify-content: space-around;
 }
 
 .cover__option {
