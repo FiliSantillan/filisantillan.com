@@ -12,7 +12,7 @@
 .header__logo {
 
     & .header__title {
-        font-size: var(--small-title);
+        font-size: var(--sm-title);
         color: white;
         
         & .header__text {

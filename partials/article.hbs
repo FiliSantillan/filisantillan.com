@@ -44,11 +44,13 @@
         <footer class="article__options">
             {{#author}}
             <a href="{{url}}" class="article__author">
+                
                 {{#if profile_image}}
-                <figure class="article__avatar"></figure>
+                <figure class="article__avatar">
                     <img src="{{ profile_image}}" alt="{{name}}" nopin="nopin" class="article__image"/>
                 </figure>
                 {{/if}}
+
                 <span class="article__name">{{name}}</span>
             </a>
             {{/author}}
