@@ -2,53 +2,19 @@
           {{!-- Subscribe --}}
 {{!------------------------------------}}
 
-{{!-- Theme tools for collecting emails from your blog - Mailchimp --}}
-
-{{!-- If there is a subscribers --}}
-{{#if @labs.subscribers}}
-
 {{!-- Subscribers form --}}
-<form action="//filisantillan.us10.list-manage.com/subscribe/post?u=95ea8fe3ca6aa8d832c3cf074&amp;id=3592928afa" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="subscribers validate text-center" target="_blank" novalidate>
-    <div class="wrap-center">
-        {{!-- Subscribers text --}}
-        <div class="subscribers__text">
-            {{!-- Title --}}
-            <strong class="subscribers__title">Únete y entérate de todo</strong>
-            {{!-- Paragraph --}}
-            <p class="subscribers__paragraph">
-                Mantente al tanto de las últimas novedades y noticias que suceden en el blog.
-            </p>
-        </div>
-        {{!-- Subscribers wrapper --}}
-        <div id='mc_embed_signup_scroll'>
-            <div class="subscribers__wrapper">
-                
-                <div class="flex jus--center dev--tablet-750">
+<form action="https://filisantillan.us10.list-manage.com/subscribe/post?u=95ea8fe3ca6aa8d832c3cf074&amp;id=3592928afa" 
+        method="post" 
+        id="mc-embedded-subscribe-form" 
+        name="mc-embedded-subscribe-form" 
+        class="subscribe" 
+        target="_blank" novalidate>
+        
+    <div class="subscribe-wrapper">
+    
+        <input type="email" value="" name="EMAIL" class="subscribe__email" id="mce-EMAIL" placeholder="Email" required>
 
-                    {{!-- Subscribers content --}}
-                    <div class="subscribers__content">
-                        {{!-- Subscribers icon --}}
-                        <i class='subscribers__icon icon-mail'></i>
-                        {{!-- Subscribers input --}}
-                        <input type="email" name="EMAIL" placeholder="Correo" class="subscribers__input" id="mce-EMAIL">
-                    </div>
-                    
-                    {{!-- Subscribers content --}}
-                    <div class="subscribers__content">
-                        {{!-- Subscribers icon --}}
-                        <i class='subscribers__icon icon-user'></i>
-                        {{!-- Subscribers input --}}
-                        <input type="text" name="FNAME" placeholder="Nombre" class="subscribers__input" id="mce-FNAME">
-                    </div>
-                </div>
-
-                {{!-- Subscribers wrapper --}}
-                <div class="subscribers__content">
-                    {{!-- Subscribers button --}}
-                    <input type="submit" value="Suscríbirse" name="subscribe" id="mc-embedded-subscribe" class="subscribers__button btn-default btn--radius">
-                </div>
-            </div>
-        </div>
+        <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="subscribe__button">X</button>
     </div>
+
 </form>
-{{/if}}

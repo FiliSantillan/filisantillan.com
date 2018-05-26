@@ -5,7 +5,8 @@ module.exports = {
     entry: {
         home: path.resolve(__dirname, "./src/js/home.js"),
         post: path.resolve(__dirname, "./src/js/post.js"),
-        author:path.resolve(__dirname, "./src/js/author.js")
+        author:path.resolve(__dirname, "./src/js/author.js"),
+        tag: path.resolve(__dirname, "./src/js/tag.js")
     },
     output: {
         path: path.resolve(__dirname, "assets"),

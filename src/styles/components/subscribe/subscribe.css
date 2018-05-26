@@ -1,0 +1,36 @@
+.subscribe {
+    --dinamic-spacer-size: 1.5em;
+    margin-bottom: var(--spacer-size);
+
+    & .subscribe-wrapper {
+        position: relative;
+        font-size: var(--lg-text);
+        height: var(--btn-height);
+
+        & .subscribe__email {
+            background-color: white;
+            width: 100%;
+            border-radius: var(--radius-size-full);
+            padding: 0 calc(var(--dinamic-spacer-size) / 1.5 + 30px) 0 calc(var(--dinamic-spacer-size) / 1.5);
+            box-shadow: 5px 5px 10px color(black alpha(0.5));
+            height: 100%;
+            line-height: var(--btn-height);
+        }
+
+        & .subscribe__button {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: calc(var(--dinamic-spacer-size) / 2);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background: red;
+            cursor: pointer;
+            margin: auto 0;
+            box-shadow: 2.5px 2.5px 5px color(black alpha(0.5));
+        }
+    }
+}

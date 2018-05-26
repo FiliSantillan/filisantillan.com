@@ -1,0 +1,51 @@
+{{!------------------------------------}}
+          {{!-- Cover --}}
+{{!------------------------------------}}
+
+{{!-- Cover of a index (default) --}}
+
+{{!-- Cover image --}}
+{{#tag}}
+<div class="cover__imageContainer">
+    <div class="cover__image {{#if cover_image}}image--true" style="background-image: url({{cover_image}}){{else}}image--false{{/if}}"></div>
+</div>
+
+<div class="cover__intro">
+
+    <div class="cover__name">
+        <strong class="cover__text">{{name}}</strong>
+    </div>
+    
+    <div class="cover__description cover--tag">
+        <strong class="cover__text">
+            Únete a mi newsletter semanal en donde te voy a compartir contigo: artículos, videos, noticias y todo entorno a desarrollo frontend.
+        </strong>
+    </div>
+
+    <div class="cover__newsletter">
+        {{> "subscribe" }}
+    </div>
+
+    <div class="cover__postNumber">
+        <span class="cover__text">
+            {{plural ../pagination.total empty='No hay posts' singular='% post' plural='% posts'}}
+        </span>
+    </div>
+
+    <a href="{{url}}" class="cover__author u-display-in-block">
+
+        {{#if profile_image}}
+        
+            <img class="cover__authorImage"
+                    src="{{img_url profile_image}}" 
+                    alt="{{name}}">
+
+        {{else}}
+
+            <img class="cover__authorImage"
+                    src="https://api.adorable.io/avatars/face/eyes2/nose7/mouth3/299fd3">
+
+        {{/if}}
+    </a>
+</div>
+{{/tag}}

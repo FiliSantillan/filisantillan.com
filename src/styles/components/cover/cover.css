@@ -57,6 +57,13 @@
             line-height: calc(var(--md-title) * 1.3);
         }
     }
+
+    & .cover--tag {
+        & .cover__text {
+            font-size: var(--xl-text);
+            line-height: calc(var(--xl-text) * 1.3);
+        }
+    }
 }
 
 .cover__optionList {
