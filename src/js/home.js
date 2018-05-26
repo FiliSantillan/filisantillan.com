@@ -12,5 +12,3 @@ import "../styles/objects/buttons.css";
 import "../styles/components/header/header.css";
 import "../styles/components/cover/cover.css";
 import "../styles/components/posts/article.css";
-
-console.log("Hello");

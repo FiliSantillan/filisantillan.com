@@ -2,17 +2,12 @@
           {{!-- Post --}}
 {{!------------------------------------}}
 
-{{!-- This is a post template. The content of a post is displayed --}}
+{{!< default-post }}
 
-{{!-- Default: All default.hbs code is inserted in head --}}
-{{!< default }}
-
-{{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
-
 {{!-- Cover: Post cover image --}}
-<section class='cover {{#if feature_image}}cover-post' style='background-image: url({{img_url feature_image}}){{/if}}'>
-    {{> 'cover-post'}}
+<section class="cover">
+    {{> "cover-post"}}
 </section>
 
 <div class='arrow-up'>

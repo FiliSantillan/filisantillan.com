@@ -38,12 +38,6 @@
     width: 100%;
     bottom: calc(var(--btn-height) * -1 / 2);
     text-align: center;
-
-    & .article__tag {
-        & .article__icon {
-            margin-right: 0.5em;
-        }
-    }
 }
 
 .article__title {
