@@ -1,6 +1,16 @@
 module.exports = {
     plugins: [
-        require("postcss-import"),
+        require("postcss-import")({
+            plugins: [
+                require("stylelint")({
+                    "rules": {
+                        "block-no-empty": true,
+                        "unit-whitelist": ["%", "s"],
+                        "indentation": ["tab"],
+                    }
+                })
+            ]
+        }),
         require("postcss-cssnext")({
             features: {
                 autoprefixer: {
@@ -11,8 +21,7 @@ module.exports = {
                 rem: false
             }
         }),
-        require("postcss-font-magician"),
-        require("css-mqpacker")({
+        require("postcss-font-magician")({
             variants: {
                 Montserrat: {
                     300: [],
@@ -24,6 +33,7 @@ module.exports = {
                     700: []
                 }
             }
-        })
+        }),
+        require("css-mqpacker")
     ]
 };

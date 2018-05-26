@@ -3,12 +3,12 @@
 }
 
 body {
-    font-family: var(--font-default), system-ui;
+    font-family: "Nunito", system-ui;
     color: var(--color-dark);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading), system-ui;
+    font-family: "Montserrat", system-ui;
     margin: 0;
 }
 

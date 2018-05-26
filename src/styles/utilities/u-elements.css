@@ -7,3 +7,7 @@
 .u-display-in-block {
     display: inline-block;
 }
+
+.u-mg-rt-5em {
+    margin-right: 0.5em;
+}
