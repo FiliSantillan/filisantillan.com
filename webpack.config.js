@@ -10,7 +10,8 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, "assets"),
-        filename: "js/[name]-bundle.js"
+        filename: "js/[name]-bundle.js",
+        publicPath: "./assets/"
     },
     module: {
         rules: [
@@ -42,7 +43,20 @@ module.exports = {
                 use: {
                     loader: "url-loader",
                     options: {
-                        limit: 100000
+                        limit: 100000,
+                        fallback: 'file-loader',
+                        name: "images/[name].[ext]"
+                    }
+                }
+            },
+            {
+                test: /\.(woff|eot|ttf|svg)$/,
+                use: {
+                    loader: "url-loader",
+                    options: {
+                        limit: 100000,
+                        fallback: 'file-loader',
+                        name: "fonts/[name].[ext]"
                     }
                 }
             }
