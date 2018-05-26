@@ -23,3 +23,13 @@ a {
 img {
     vertical-align: bottom;
 }
+
+input,
+button {
+    border: none;
+}
+
+input:focus,
+button:focus {
+    outline: none;
+}
