@@ -20,8 +20,8 @@
     }
 
     & .image--false {
-        background-color: #299fd3;
-        background-image: linear-gradient(19deg, #299fd3 0%, #B721FF 100%);
+        background-color: var(--color-blue);
+        background-image: linear-gradient(19deg, var(--color-blue) 0%, var(--color-purple) 100%);
     }
 }
 

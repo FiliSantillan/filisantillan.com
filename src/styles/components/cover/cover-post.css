@@ -1,0 +1,61 @@
+.cover {
+    position: relative;
+
+    & .cover__image {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow:hidden;
+        z-index: 1;
+    }
+
+    & .image--true {
+        background-size: cover;
+        background-position: center;
+    }
+
+    & .image--false {
+        background-color: var(--color-blue);
+        background-image: linear-gradient(19deg, var(--color-blue) 0%, var(--color-purple) 100%);
+    }
+}
+
+.cover__details {
+    position: relative;
+    padding: calc(var(--spacer-size) * 3) var(--spacer-size) calc(var(--author-image-size) / 2 + var(--spacer-size));
+    z-index: 2;
+
+    & .cover__title {
+        margin-bottom: var(--spacer-size);
+
+        & .cover__text {
+            font-size: var(--xl-title);
+            color: white;
+            letter-spacing: 1px;
+            line-height: calc(var(--xl-title) * 1.3);
+        }
+    }
+
+    & .cover__tag {
+        font-size: var(--sm-text);
+        margin-right: calc(var(--spacer-size) / 2);
+        margin-bottom: calc(var(--spacer-size) / 2);
+    }
+
+    & .cover__author {
+        position: absolute;
+        left: 0;
+        bottom: calc(var(--author-image-size) * -1 / 2);
+        width: 100%;
+        text-align: center;
+
+        & .cover__authorImage {
+            width: var(--author-image-size);
+            height: var(--author-image-size);
+            border-radius: 50%;
+            box-shadow: 5px 5px 10px color(black alpha(0.5));
+        }
+    }
+}
+
