@@ -1,0 +1,23 @@
+.post__content {
+    padding: calc(var(--author-image-size) / 2 + var(--spacer-size)) var(--spacer-size) var(--spacer-size);
+
+    & p:first-child {
+        margin-top: 0;
+    }
+
+    & p {
+        font-size: var(--md-text);
+    }
+
+    & img {
+        width: calc(100% + var(--spacer-size) * 2);
+        margin-left: calc(var(--spacer-size) * -1);
+        margin-right: calc(var(--spacer-size) * -1);
+    }
+
+    & pre {
+        width: calc(100% + var(--spacer-size) * 2);
+        margin-left: calc(var(--spacer-size) * -1);
+        margin-right: calc(var(--spacer-size) * -1);
+    }
+}

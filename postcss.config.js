@@ -23,12 +23,16 @@ module.exports = {
         }),
         require("postcss-font-magician")({
             variants: {
-                Montserrat: {
+                "Montserrat": {
                     300: [],
                     700: []
                 },
-                Nunito: {
+                "Nunito": {
                     300: [],
+                    400: [],
+                    700: []
+                },
+                "Source Code Pro": {
                     400: [],
                     700: []
                 }
