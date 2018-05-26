@@ -2,7 +2,7 @@
 @custom-selector :--buttons-icon a[class*="btn-icon"], button[class*="btn-icon"], input[class*="btn-icon"];
 
 :--buttons {
-    background-image: linear-gradient(19deg, #299fd3 0%, #B721FF 100%);
+    background-image: linear-gradient(19deg, var(--color-blue) 0%, var(--color-purple) 100%);
     box-shadow: 5px 5px 10px color(black alpha(0.5));
     border-radius: var(--radius-size-full);
     display: inline-block;

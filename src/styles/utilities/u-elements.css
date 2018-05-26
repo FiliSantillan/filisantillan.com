@@ -8,6 +8,12 @@
     display: inline-block;
 }
 
+.u-no-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 .u-mg-rt-5em {
     margin-right: 0.5em;
 }

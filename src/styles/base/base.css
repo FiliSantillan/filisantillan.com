@@ -19,3 +19,7 @@ figure {
 a {
     text-decoration: none;
 }
+
+img {
+    vertical-align: bottom;
+}
