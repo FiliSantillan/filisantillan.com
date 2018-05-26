@@ -4,7 +4,8 @@ ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     entry: {
         home: path.resolve(__dirname, "./src/js/home.js"),
-        post: path.resolve(__dirname, "./src/js/post.js")
+        post: path.resolve(__dirname, "./src/js/post.js"),
+        author:path.resolve(__dirname, "./src/js/author.js")
     },
     output: {
         path: path.resolve(__dirname, "assets"),

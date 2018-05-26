@@ -29,6 +29,17 @@
     position: relative;
     padding: calc(var(--spacer-size) * 3) var(--spacer-size) calc(var(--spacer-size) * 5);
 
+    & .cover__name {
+        margin-bottom: var(--spacer-size);
+
+        & .cover__text {
+            font-size: calc(var(--xl-title) * 1.5);
+            color: white;
+            letter-spacing: 1px;
+            line-height: calc(var(--xl-title) * 1.5);
+        }
+    }
+
     & .cover__description {
         margin-bottom: var(--spacer-size);
 
@@ -37,6 +48,13 @@
             color: white;
             letter-spacing: 1px;
             line-height: calc(var(--xl-title) * 1.3);
+        }
+    }
+
+    & .cover--bio {
+        & .cover__text {
+            font-size: var(--md-title);
+            line-height: calc(var(--md-title) * 1.3);
         }
     }
 }
@@ -70,5 +88,37 @@
         & .cover__text {
             font-size: var(--sm-text);
         }
+    }
+}
+
+.cover__postNumber {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: skewY(-12deg);
+    transform-origin: 0;
+    background-color: var(--color-dark);
+    width: 100%;
+
+    & .cover__text {
+        font-size: var(--sm-title);
+        display: inline-block;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 var(--spacer-size);
+        color: white;
+    }
+}
+
+.cover__author {
+    position: absolute;
+    right: var(--spacer-size);
+    bottom: 0;
+
+    & .cover__authorImage {
+        width: var(--author-image-size);
+        height: var(--author-image-size);
+        border-radius: 50%;
+        box-shadow: 5px 5px 10px color(black alpha(0.5));
     }
 }

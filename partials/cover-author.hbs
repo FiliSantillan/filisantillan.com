@@ -1,37 +1,78 @@
-{{!-- Portada para el autor --}}
+{{!------------------------------------}}
+          {{!-- Cover --}}
+{{!------------------------------------}}
 
-<section class="cover {{#if @blog.cover_image}}" style="background-image: url({{@blog.cover_image}}){{/if}}">
+{{!-- Cover of a index (default) --}}
 
-    {{!-- Imagen del autor --}}
-    {{#if profile_image}}
-        <figure class="logo logo__author">
-            <img class="img" src="{{img_url profile_image}}" alt="{{@blog.title}}" />
-        </figure>
+{{!-- Cover image --}}
+{{#author}}
+<div class="cover__imageContainer">
+    <div class="cover__image {{#if cover_image}}image--true" style="background-image: url({{cover_image}}){{else}}image--false{{/if}}"></div>
+</div>
+
+<div class="cover__intro">
+
+    <div class="cover__name">
+        <strong class="cover__text">{{name}}</strong>
+    </div>
+
+    {{#if bio}}
+    <div class="cover__description cover--bio">
+        <strong class="cover__text">
+            {{bio}}
+        </strong>
+    </div>
     {{/if}}
 
-    {{!-- Nombre y biografía --}}
-    <div class="info-block">
-        <h1 class="title">{{name}}</h1>
-        <strong class="description">{{bio}}</strong>
+    <div class="cover__postNumber">
+        <span class="cover__text">
+            {{plural ../pagination.total empty='No hay posts' singular='% post' plural='% posts'}}
+        </span>
     </div>
 
-    {{!-- Redes sociales --}}
-    <div class="cover__social">
-        <ul class="cover__list">
-            <li class="cover__item"><a href="https://medium.com/@fili.js" target="blank" class="cover__icon fa fa-medium"></a></li>
-            <li class="cover__item"><a href="https://codepen.io/filiJS/" target="blank" class="cover__icon fa fa-codepen"></a></li>
-            <li class="cover__item"><a href="https://github.com/FiliJS" target="blank" class="cover__icon fa fa-github-alt"></a></li>
-            <li class="cover__item"><a href="https://www.facebook.com/FiliJS/" target="blank" class="cover__icon fa fa-facebook"></a></li>
-            <li class="cover__item"><a href="https://twitter.com/FiliJS" target="blank" class="cover__icon fa fa-twitter"></a></li>
-            <li class="cover__item"><a href="https://www.instagram.com/fili.js/" target="blank" class="cover__icon fa fa-instagram"></a></li>
-            {{!-- <li class="cover__item"><a href="https://plus.google.com/+filimartinezz" target="blank" class="cover__icon fa fa-google-plus"></a></li> --}}
-            <li class="cover__item"><a href="https://www.linkedin.com/in/filims/" target="blank" class="cover__icon fa fa-linkedin"></a></li>
-        </ul>
-    </div>
+    <ul class="cover__optionList u-no-list">
 
-    {{!-- Icono de feedly --}}
-    <a class="cover__feedly" href='https://feedly.com/i/subscription/feed%2Fhttp%3A%2F%2Ffilisantillan.com%2Frss%2F'  target='blank'>
-        <img id='feedlyFollow' src='https://s3.feedly.com/img/follows/feedly-follow-rectangle-volume-medium_2x.png' alt='follow us in feedly' width='71' height='28'>
+        {{#if website}}
+        <li class="cover__social">
+            <a href='{{website}}' class="cover__icon">X</a>
+        </li>
+        {{/if}}
+
+        {{#if facebook}}
+        <li class="cover__social">
+            <a href="{{facebook_url author.facebook}}" class="cover__icon o-icon">X</a>
+        </li>
+        {{/if}}
+
+        {{#if twitter}}
+        <li class="cover__social">
+            <a href="{{twitter_url author.facebook}}" class="cover__icon o-icon">X</a>
+        </li>
+        {{/if}}
+
+        <li class="cover__social">
+            <a href="https://www.instagram.com/fili.js/" class="cover__icon o-icon">X</a>
+        </li>
+
+        <li class="cover__social">
+            <a href="https://github.com/FiliJS" class="cover__icon o-icon">X</a>
+        </li>
+    </ul>
+
+    <a href="{{url}}" class="cover__author u-display-in-block">
+
+        {{#if profile_image}}
+        
+            <img class="cover__authorImage"
+                    src="{{img_url profile_image}}" 
+                    alt="{{name}}">
+
+        {{else}}
+
+            <img class="cover__authorImage"
+                    src="https://api.adorable.io/avatars/face/eyes2/nose7/mouth3/299fd3">
+
+        {{/if}}
     </a>
-
-</section>
+</div>
+{{/author}}
