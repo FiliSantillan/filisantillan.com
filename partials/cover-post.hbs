@@ -9,8 +9,10 @@
 
     {{#if tags}}
         {{#foreach tags}}
-            <a href="{{url}}" class="cover__tag btn btn-icon">
-                <i class="cover__icon u-mg-rt-5em o-icon-{{name}}">X</i>
+            <a href="{{url}}" class="cover__tag btn btn-secondary btn-icon">
+                <span class="cover__icon o-icon-{{name}}">
+                    {{> "tag-paths"}}
+                </span>
                 <span class="cover__text">{{name}}</span>
             </a>
         {{/foreach}}
