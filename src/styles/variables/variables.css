@@ -28,9 +28,13 @@
 
     @media (--mobile-375) {
         --sm-title: 24px;
+        --xl-title: 32px;
     }
 
     @media (--mobile-425) {
         --sm-title: 26px;
+        --xl-title: 34px;
+
+        --sm-text: 16px;
     }
 }
