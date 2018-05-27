@@ -20,8 +20,8 @@
         {{#if tags}}
             {{#foreach tags limit="1"}}
                 <div class="article__tagContainer">
-                    <a href="{{url}}" class="article__tag btn btn-icon">
-                        <i class="article__icon u-mg-rt-5em o-icon-{{name}}">X</i>
+                    <a href="{{url}}" class="article__tag btn btn-secondary btn-icon">
+                        <i class="article__icon u-mg-rt-5em o-icon-{{name}}"></i>
                         <span class="article__text">{{name}}</span>
                     </a>
                 </div>
@@ -55,8 +55,9 @@
             </a>
             {{/author}}
 
-            <a href="{{url}}" class="article__button">
-                <i class="article__icon o-icon-arrow">X</i>
+            <a href="{{url}}" class="article__button btn btn-icon btn-mini">
+                <span class="article__text u-mg-rt-5em">Leer</span>
+                <i class="article__icon o-icon-arrow-right"></i>
             </a>
         </footer>
     </div>

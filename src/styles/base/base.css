@@ -27,6 +27,7 @@ img {
 input,
 button {
     border: none;
+    appearance: none;
 }
 
 input:focus,

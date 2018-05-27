@@ -80,6 +80,9 @@
     border-radius: var(--radius-size);
     margin-right: calc(var(--spacer-size) / 2);
     box-shadow: 5px 5px 10px color(black alpha(0.5));
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:last-child {
         margin-right: 0;
@@ -87,13 +90,16 @@
 
     & .cover__iconContainer {
         & .cover__icon {
+            display: inline-block;
             font-size: var(--xl-title);
+            margin-bottom: calc(var(--spacer-size) / 2);
         }
     }
 
-    & .cover__name {
+    & .cover__optionName {
         & .cover__text {
             font-size: var(--sm-text);
+            font-weight: 300;
         }
     }
 }

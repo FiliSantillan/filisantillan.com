@@ -1,8 +1,10 @@
 @custom-selector :--buttons a[class*="btn"], button[class*="btn"], input[class*="btn"];
+@custom-selector :--buttons-secondary a[class*="btn-secondary"], button[class*="btn-secondary"], input[class*="btn-secondary"];
 @custom-selector :--buttons-icon a[class*="btn-icon"], button[class*="btn-icon"], input[class*="btn-icon"];
+@custom-selector :--buttons-mini a[class*="btn-mini"], button[class*="btn-mini"], input[class*="btn-mini"];
 
 :--buttons {
-    background-image: linear-gradient(19deg, var(--color-blue) 0%, var(--color-purple) 100%);
+    background-image: linear-gradient(130deg, var(--color-blue) 0%, var(--color-purple) 100%);
     box-shadow: 5px 5px 10px color(black alpha(0.5));
     border-radius: var(--radius-size-full);
     display: inline-block;
@@ -13,8 +15,28 @@
     line-height: var(--btn-height);
 }
 
+:--buttons-secondary {
+    background-image: linear-gradient(130deg, var(--color-yellow) 0%, var(--color-pink) 100%);
+}
+
 :--buttons-icon {
+    & span[class*="text"] {
+        vertical-align: middle;
+    }
+
     & i[class*="o-icon"] {
-        font-size: 1.3em;
+        font-size: 1.5em;
+        vertical-align: middle;
+    }
+}
+
+:--buttons-mini {
+    & span[class*="text"] {
+        display: none;
+    }
+
+    & i[class*="o-icon"] {
+        vertical-align: middle;
+        font-size: 1.2em;
     }
 }
