@@ -1,3 +1,5 @@
+@import "../utilities/u-media-queries.css";
+
 :root {
     --color-dark: #161925;
     --color-blue: #299fd3;
@@ -23,4 +25,12 @@
 
     --btn-height: 45px;
     --author-image-size: 100px;
+
+    @media (--mobile-375) {
+        --sm-title: 24px;
+    }
+
+    @media (--mobile-425) {
+        --sm-title: 26px;
+    }
 }
