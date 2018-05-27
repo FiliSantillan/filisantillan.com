@@ -28,6 +28,8 @@
 
     @media (--mobile-375) {
         --sm-title: 24px;
+        --md-title: 26px;
+        --lg-title: 28px;
         --xl-title: 32px;
     }
 
@@ -36,5 +38,8 @@
         --xl-title: 34px;
 
         --sm-text: 16px;
+        --md-text: 17px;
+        --lg-text: 18px;
+        --xl-text: 20px;
     }
 }

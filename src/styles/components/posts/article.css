@@ -74,8 +74,8 @@
     align-items: center;
 
     & .article__avatar {
-        width: 35px;
-        height: 35px;
+        width: var(--btn-height);
+        height: var(--btn-height);
         margin-right: calc(var(--spacer-size) / 2);
 
         & .article__image {
