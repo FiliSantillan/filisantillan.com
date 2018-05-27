@@ -11,6 +11,9 @@
 .o-icon-news:before {
   content: "\e900";
 }
+.o-icon-github:before {
+  content: "\e905";
+}
 .o-icon-arrow-right:before {
   content: "\e901";
 }
@@ -22,4 +25,16 @@
 }
 .o-icon-edit:before {
   content: "\e904";
+}
+.o-icon-facebook:before {
+  content: "\e906";
+}
+.o-icon-instagram:before {
+  content: "\e907";
+}
+.o-icon-link:before {
+  content: "\e908";
+}
+.o-icon-twitter:before {
+  content: "\e909";
 }
