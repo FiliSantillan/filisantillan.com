@@ -27,6 +27,9 @@
     --author-image-size: 100px;
 
     @media (--mobile-375) {
+
+        --spacer-size: 1.6rem;
+
         --sm-title: 24px;
         --md-title: 26px;
         --lg-title: 28px;
@@ -34,7 +37,12 @@
     }
 
     @media (--mobile-425) {
+
+        --spacer-size: 1.7rem;
+
         --sm-title: 26px;
+        --md-title: 28px;
+        --lg-title: 30px;
         --xl-title: 34px;
 
         --sm-text: 16px;

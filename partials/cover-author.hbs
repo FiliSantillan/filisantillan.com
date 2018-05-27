@@ -30,32 +30,32 @@
         </span>
     </div>
 
-    <ul class="cover__optionList u-no-list">
+    <ul class="cover__optionList u-no-list optionList--social">
 
         {{#if website}}
         <li class="cover__social">
-            <a href='{{website}}' class="cover__icon">X</a>
+            <a href='{{website}}' class="cover__icon o-icon-link"></a>
         </li>
         {{/if}}
 
         {{#if facebook}}
         <li class="cover__social">
-            <a href="{{facebook_url author.facebook}}" class="cover__icon o-icon">X</a>
+            <a href="{{facebook_url author.facebook}}" class="cover__icon o-icon o-icon-facebook"></a>
         </li>
         {{/if}}
 
         {{#if twitter}}
         <li class="cover__social">
-            <a href="{{twitter_url author.facebook}}" class="cover__icon o-icon">X</a>
+            <a href="{{twitter_url author.facebook}}" class="cover__icon o-icon o-icon-twitter"></a>
         </li>
         {{/if}}
 
         <li class="cover__social">
-            <a href="https://www.instagram.com/fili.js/" class="cover__icon o-icon">X</a>
+            <a href="https://www.instagram.com/fili.js/" class="cover__icon o-icon-instagram"></a>
         </li>
 
         <li class="cover__social">
-            <a href="https://github.com/FiliJS" class="cover__icon o-icon">X</a>
+            <a href="https://github.com/FiliJS" class="cover__icon o-icon-github"></a>
         </li>
     </ul>
 
