@@ -32,20 +32,12 @@
         </span>
     </div>
 
-    <a href="{{url}}" class="cover__author u-display-in-block">
+    <a href="{{url}}" class="cover__author cover--tag u-display-in-block">
 
-        {{#if profile_image}}
-        
-            <img class="cover__authorImage"
-                    src="{{img_url profile_image}}" 
-                    alt="{{name}}">
-
-        {{else}}
-
-            <img class="cover__authorImage"
-                    src="https://api.adorable.io/avatars/face/eyes2/nose7/mouth3/299fd3">
-
-        {{/if}}
+        <span class="cover__icon o-icon-{{name}}">
+            {{> "tag-paths" }}
+        </span>
     </a>
+
 </div>
 {{/tag}}

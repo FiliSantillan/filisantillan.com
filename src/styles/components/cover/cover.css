@@ -165,3 +165,9 @@
         box-shadow: 5px 5px 10px color(black alpha(0.5));
     }
 }
+
+.cover--tag {
+    & .cover__icon {
+        font-size: var(--author-image-size);
+    }
+}
