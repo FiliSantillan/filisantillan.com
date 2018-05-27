@@ -20,9 +20,6 @@
 }
 
 :--buttons-icon {
-    & span[class*="text"] {
-        vertical-align: middle;
-    }
 
     & i[class*="o-icon"] {
         font-size: 1.5em;
