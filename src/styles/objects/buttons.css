@@ -3,6 +3,8 @@
 @custom-selector :--buttons-icon a[class*="btn-icon"], button[class*="btn-icon"], input[class*="btn-icon"];
 @custom-selector :--buttons-mini a[class*="btn-mini"], button[class*="btn-mini"], input[class*="btn-mini"];
 
+@custom-selector :--iconElements i[class*="o-icon"], span[class*="o-icon"];
+
 :--buttons {
     background-image: linear-gradient(130deg, var(--color-blue) 0%, var(--color-purple) 100%);
     box-shadow: 5px 5px 10px color(black alpha(0.5));
@@ -13,6 +15,7 @@
     padding: 0 1.2em;
     height: var(--btn-height);
     line-height: var(--btn-height);
+    text-transform: capitalize;
 }
 
 :--buttons-secondary {
@@ -21,7 +24,7 @@
 
 :--buttons-icon {
 
-    & i[class*="o-icon"] {
+    & :--iconElements {
         font-size: 1.5em;
         vertical-align: middle;
     }
@@ -32,7 +35,7 @@
         display: none;
     }
 
-    & i[class*="o-icon"] {
+    & :--iconElements {
         vertical-align: middle;
         font-size: 1.2em;
     }
