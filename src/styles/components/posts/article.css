@@ -1,12 +1,12 @@
 .article-wrapper{
     display: grid;
+    grid-row-gap: var(--spacer-size);
     padding: var(--spacer-size);
 }
 
 .article {
     border-radius: var(--radius-size-double);
     box-shadow: 5px 5px 10px color(black alpha(0.5));
-    margin-bottom: var(--spacer-size);
 
     & .article__coverContainer {
         position: relative;
