@@ -1,7 +1,18 @@
+@import "../../utilities/u-media-queries.css";
+
 .article-wrapper{
     display: grid;
     grid-row-gap: var(--spacer-size);
     padding: var(--spacer-size);
+
+    @media (--tablet-768) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: var(--spacer-size);
+    }
+
+    @media (--desktop-1024) {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .article {
