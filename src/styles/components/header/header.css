@@ -16,9 +16,9 @@
 
     & .header__title {
         font-size: var(--sm-title);
-        color: white;
         
         & .header__text {
+            color: white;
             &:first-child:after {
                 content: " |";
             }
