@@ -99,6 +99,10 @@
             }
         }
     }
+
+    @media (--tablet-768) {
+        justify-content: flex-start;
+    }
 }
 
 .cover__option {
@@ -131,6 +135,10 @@
             font-size: var(--sm-text);
             font-weight: 300;
         }
+    }
+
+    @media (--tablet-768) {
+        margin-right: calc(var(--spacer-size));
     }
 }
 

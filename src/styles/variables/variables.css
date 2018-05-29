@@ -50,4 +50,19 @@
         --lg-text: 18px;
         --xl-text: 20px;
     }
+
+    @media (--tablet-768) {
+
+        --spacer-size: 2rem;
+
+        --sm-title: 29px;
+        --md-title: 31px;
+        --lg-title: 33px;
+        --xl-title: 44px;
+
+        --sm-text: 17px;
+        --md-text: 18px;
+        --lg-text: 19px;
+        --xl-text: 21px;
+    }
 }
