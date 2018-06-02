@@ -3,6 +3,9 @@
   "version": "3.0.4",
   "description": "Fili Santillán: https://filisantillan.com/",
   "main": "index.js",
+  "config": {
+    "posts_per_page": 11
+  },
   "scripts": {
     "build:dev": "webpack --mode development --watch",
     "build:pro": "webpack --mode production"

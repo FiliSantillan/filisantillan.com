@@ -20,6 +20,14 @@
     margin-right: 0.5rem;
 }
 
+.u-shadow-complete {
+    box-shadow: var(--shadow-complete);
+}
+
+.u-shadow-middle {
+    box-shadow: var(--shadow-middle);
+}
+
 @media (--desktop-1024) {
     .u-wrap-center {
         margin: 0 auto;

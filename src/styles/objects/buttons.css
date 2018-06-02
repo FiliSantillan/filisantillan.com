@@ -8,7 +8,7 @@
 @custom-selector :--iconElements i[class*="o-icon"], span[class*="o-icon"];
 
 :--buttons {
-    background-image: linear-gradient(130deg, var(--color-blue) 0%, var(--color-purple) 100%);
+    background-image: linear-gradient(var(--gradient-default));
     box-shadow: 5px 5px 10px color(black alpha(0.5));
     border-radius: var(--radius-size-full);
     display: inline-block;
@@ -21,7 +21,7 @@
 }
 
 :--buttons-secondary {
-    background-image: linear-gradient(130deg, var(--color-yellow) 0%, var(--color-pink) 100%);
+    background-image: linear-gradient(var(--gradient-secondary));
 }
 
 :--buttons-icon {
