@@ -73,6 +73,27 @@
 
     @media (--desktop-1024) {
         padding: calc(var(--spacer-size) * 3) 0 calc(var(--spacer-size) * 5);
+
+        & .cover__description {
+            & .cover__text {
+                font-size: calc(var(--xl-title) * 1.5);
+                line-height: calc(var(--xl-title)* 1.5 * 1.3);
+            }
+        }
+
+        & .cover--bio {
+            & .cover__text {
+                font-size: calc(var(--xl-title) * 1.2);
+                line-height: calc(var(--xl-title)* 1.2 * 1.3);
+            }
+        }
+
+        & .cover--tag {
+            & .cover__text {
+                font-size: var(--md-title);
+                line-height: calc(var(--md-title) * 1.3);
+            }
+        }
     }
 }
 
@@ -215,7 +236,7 @@
     }
 }
 
-.cover--tag {
+.cover--tagIcon {
     & .cover__icon {
         font-size: var(--author-image-size);
     }

@@ -1,3 +1,5 @@
+@import "../utilities/u-media-queries.css";
+
 @custom-selector :--buttons a[class*="btn"], button[class*="btn"], input[class*="btn"];
 @custom-selector :--buttons-secondary a[class*="btn-secondary"], button[class*="btn-secondary"], input[class*="btn-secondary"];
 @custom-selector :--buttons-icon a[class*="btn-icon"], button[class*="btn-icon"], input[class*="btn-icon"];
@@ -38,5 +40,20 @@
     & :--iconElements {
         vertical-align: middle;
         font-size: 1.2em;
+    }
+
+    @media (--tablet-768) {
+        font-size: var(--sm-text);
+        padding: 0 0.9em;
+        height: calc(var(--btn-height) / 1.4);
+        line-height: calc(var(--btn-height) / 1.4);
+
+        & span[class*="text"] {
+            display: inline-block;
+        }
+
+        & :--iconElements {
+            font-size: 0.9em;
+        }
     }
 }

@@ -35,35 +35,30 @@
         --lg-title: 28px;
         --xl-title: 32px;
     }
-
+s
     @media (--mobile-425) {
 
         --spacer-size: 1.7rem;
 
-        --sm-title: 26px;
-        --md-title: 28px;
-        --lg-title: 30px;
+        --sm-title: 25px;
+        --md-title: 27px;
+        --lg-title: 29px;
         --xl-title: 34px;
-
-        --sm-text: 16px;
-        --md-text: 17px;
-        --lg-text: 18px;
-        --xl-text: 20px;
     }
 
     @media (--tablet-768) {
 
         --spacer-size: 2rem;
 
-        --sm-title: 29px;
-        --md-title: 31px;
-        --lg-title: 33px;
-        --xl-title: 44px;
+        --sm-title: 27px;
+        --md-title: 29px;
+        --lg-title: 31px;
+        --xl-title: 36px;
 
-        --sm-text: 17px;
-        --md-text: 18px;
-        --lg-text: 19px;
-        --xl-text: 21px;
+        --sm-text: 16px;
+        --md-text: 17px;
+        --lg-text: 18px;
+        --xl-text: 20px;
 
         --btn-height: 48px;
         --author-image-size: 130px;
