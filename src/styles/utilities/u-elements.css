@@ -23,6 +23,12 @@
 @media (--desktop-1024) {
     .u-wrap-center {
         margin: 0 auto;
-        max-width: 980px;
+        max-width: 900px;
+    }
+}
+
+@media (--desktop-1200) {
+    .u-wrap-center {
+        max-width: 1000px;
     }
 }

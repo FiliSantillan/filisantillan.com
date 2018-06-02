@@ -1,16 +1,6 @@
 module.exports = {
     plugins: [
-        require("postcss-import")({
-            plugins: [
-                require("stylelint")({
-                    "rules": {
-                        "block-no-empty": true,
-                        "unit-whitelist": ["%", "s"],
-                        "indentation": ["tab"],
-                    }
-                })
-            ]
-        }),
+        require("postcss-import"),
         require("postcss-cssnext")({
             features: {
                 autoprefixer: {
