@@ -12,14 +12,6 @@
     transform: skewY(-12deg);
     transform-origin: 0;
 
-    &:before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(22,25,37,0.3);
-    }
-
     & .cover__image {
         height: 100%;
     }
@@ -27,6 +19,14 @@
     & .image--true {
         background-size: cover;
         background-position: center;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(22,25,37,0.4);
+        }
     }
 
     & .image--false {

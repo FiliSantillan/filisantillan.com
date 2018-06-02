@@ -8,6 +8,7 @@
     & .header-wrapper {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         padding: var(--spacer-size);
     }
 
@@ -37,5 +38,9 @@
     
     & .header__icon {
         color: white;
+    }
+
+    @media (--desktop-1024) {
+        display: none;
     }
 }

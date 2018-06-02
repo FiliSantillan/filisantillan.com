@@ -17,6 +17,22 @@
     @media (--tablet-768) {
         max-width: 450px;
     }
+
+    @media(--desktop-1024) {
+        display: block;
+        position: initial;
+        width: auto;
+        padding: 0;
+        max-width: initial;
+
+        & .navigation__itemList {
+            background-image: none;
+            border-radius: 0;
+            padding: 0;
+            box-shadow: none;
+            display: flex;
+        }
+    }
 }
 
 .navigation__item {
@@ -49,6 +65,18 @@
             line-height: var(--icon-size);
             margin-right: calc(var(--dinamic-spacer-size) / 2);
         }
+    }
 
+    @media(--desktop-1024) {
+        margin-bottom: 0;
+        margin-right: var(--spacer-size);
+
+        & .navigation__link {
+            font-weight: 300;
+
+            & .navigation__icon {
+                display: none;
+            }
+        }
     }
 }
