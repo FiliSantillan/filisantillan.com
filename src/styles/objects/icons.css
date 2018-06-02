@@ -8,6 +8,9 @@
   font-style: normal;
 }
 
+.o-icon-tag:before {
+  content: "\e90a";
+}
 .o-icon-news:before {
   content: "\e900";
 }
@@ -29,12 +32,31 @@
 .o-icon-facebook:before {
   content: "\e906";
 }
+.o-icon-agenda:before {
+  content: "\e90b";
+}
+.o-icon-heart:before,
+.o-icon-fili-core:before {
+  content: "\e90c";
+}
+.o-icon-home:before,
+.o-icon-inicio:before {
+  content: "\e90d";
+}
 .o-icon-instagram:before {
   content: "\e907";
 }
 .o-icon-link:before {
   content: "\e908";
 }
+.o-icon-menu:before {
+  content: "\e90e";
+}
 .o-icon-twitter:before {
   content: "\e909";
 }
+.o-icon-users:before,
+.o-icon-contribuye:before {
+  content: "\e90f";
+}
+
