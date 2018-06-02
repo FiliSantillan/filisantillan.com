@@ -1,3 +1,5 @@
+@import "../../utilities/u-media-queries.css";
+
 .subscribe {
     --dinamic-spacer-size: 1.5em;
     --btn-size: calc(var(--btn-height) - 8px);
@@ -17,6 +19,12 @@
             box-shadow: 5px 5px 10px color(black alpha(0.5));
             height: 100%;
             line-height: var(--btn-height);
+        }
+    }
+
+    @media (--tablet-768) {
+        & .subscribe-wrapper {
+            max-width: 350px;
         }
     }
 }
