@@ -28,6 +28,8 @@ module.exports = {
                 }
             }
         }),
-        require("css-mqpacker")
+        require("css-mqpacker")({
+            sort: true
+        })
     ]
 };

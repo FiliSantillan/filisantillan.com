@@ -27,6 +27,12 @@
             max-width: 350px;
         }
     }
+
+    @media (--desktop-1200) {
+        & .subscribe-wrapper {
+            max-width: 400px;
+        }
+    }
 }
 
 .subscribe__button {

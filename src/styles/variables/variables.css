@@ -64,22 +64,14 @@
         --md-text: 18px;
         --lg-text: 19px;
         --xl-text: 21px;
+
+        --btn-height: 48px;
+        --author-image-size: 130px;
     }
 
-    @media (--tablet-768) {
+    @media (--desktop-1024) {
 
-        --spacer-size: 2rem;
-        --btn-height: 47px;
-        --author-image-size: 110px;
+        --author-image-size: 200px;
 
-        --sm-title: 29px;
-        --md-title: 31px;
-        --lg-title: 33px;
-        --xl-title: 44px;
-
-        --sm-text: 17px;
-        --md-text: 18px;
-        --lg-text: 19px;
-        --xl-text: 21px;
     }
 }
