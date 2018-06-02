@@ -14,6 +14,7 @@ import "../styles/objects/icons.css";
 import "../styles/objects/icon-tags.css";
 
 import "../styles/components/header/header.css";
+import "../styles/components/header/navigation.css";
 import "../styles/components/cover/cover-post.css";
 import "../styles/components/posts/post.css";
 

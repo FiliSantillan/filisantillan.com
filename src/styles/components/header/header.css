@@ -31,3 +31,11 @@
         }
     }
 }
+
+.header__containerIcon {
+    font-size: var(--sm-title);
+    
+    & .header__icon {
+        color: white;
+    }
+}

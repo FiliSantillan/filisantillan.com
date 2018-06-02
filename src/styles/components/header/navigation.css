@@ -1,0 +1,54 @@
+@import "../../utilities/u-media-queries.css";
+
+.navigation {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    padding: var(--spacer-size);
+    display: none;
+
+    & .navigation__itemList {
+        background-image: linear-gradient(var(--gradient-secondary));
+        border-radius: var(--radius-size-double);
+        padding: var(--spacer-size);
+    }
+
+    @media (--tablet-768) {
+        max-width: 450px;
+    }
+}
+
+.navigation__item {
+
+    --dinamic-spacer-size: 1.5em;
+    --icon-size: calc(var(--btn-height) - 8px);
+
+    margin-bottom: var(--spacer-size);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    & .navigation__link {
+        height: var(--btn-height);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-transform: uppercase;
+        color: white;
+        font-weight: 700;
+        
+        & .navigation__icon {
+            width: var(--icon-size);
+            height: var(--icon-size);
+            border-radius: 50%;
+            background-color: white;
+            color: var(--color-dark);
+            text-align: center;
+            line-height: var(--icon-size);
+            margin-right: calc(var(--dinamic-spacer-size) / 2);
+        }
+
+    }
+}

@@ -7,12 +7,12 @@
 {{!-- Everything inside the #navigation tags pulls data from the navigation --}}
 {{#foreach navigation}}
 	{{!-- navigation item --}}
-    <li class='menu__option nav-{{slug}}{{#if current}} nav-current{{/if}}' role='presentation'>
-        <a class='menu__link' href='{{url absolute="true"}}'>
+    <li class="navigation__item " role='presentation'>
+        <a class="navigation__link" href='{{url absolute="true"}}'>
             {{!-- Icon --}}
-            <i class='menu__icon icon-'></i>
+            <i class='navigation__icon o-icon-{{slug}}'></i>
             {{!-- Text --}}
-            <span class='menu__text'>{{label}}</span>
+            <span class='navigation__text'>{{label}}</span>
         </a>
     </li>
 {{/foreach}}
