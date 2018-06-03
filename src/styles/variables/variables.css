@@ -6,6 +6,7 @@
     --color-purple: #B721FF;
     --color-yellow: #FEE140;
     --color-pink: #FA709A;
+    --color-gray: gray(150);
 
     --gradient-default: 130deg, var(--color-blue) 0%, var(--color-purple) 100%;
     --gradient-secondary: 130deg, var(--color-yellow) 0%, var(--color-pink) 100%;

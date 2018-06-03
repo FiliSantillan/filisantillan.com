@@ -21,6 +21,20 @@
         background-color: var(--color-blue);
         background-image: linear-gradient(19deg, var(--color-blue) 0%, var(--color-purple) 100%);
     }
+
+    @media (--desktop-1024) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        position: initial;
+
+        & .cover__image {
+            position: initial;
+        }
+    }
+
+    @media (--desktop-1200) {
+        grid-template-columns: 1fr minmax(700px, 700px);
+    }
 }
 
 .cover__details {
@@ -58,15 +72,56 @@
             border-radius: 50%;
             box-shadow: 5px 5px 10px color(black alpha(0.5));
         }
+
+        & .cover__name {
+            display: none
+        }
     }
 
     @media (--desktop-1024) {
+        position: initial;
         padding: calc(var(--spacer-size) * 3) 0 calc(var(--author-image-size) / 2 + var(--spacer-size));
-    z-index: 2;
+        max-width: 450px;
+        margin: 0 calc(var(--spacer-size) / 2) 0 auto;
+
+        & .cover__title {
+
+            & .cover__text {
+                font-size: calc(var(--xl-title) * 1.3 );
+                color: var(--color-dark);
+                line-height: calc(var(--xl-title) * 1.3 * 1.3);
+                font-weight: 300;
+            }
+        }
 
         & .cover__tag {
             font-weight: 700;
+            margin-bottom: var(--spacer-size);
+            box-shadow: none;
         }
+
+        & .cover__author {
+            position: initial;
+            text-align: left;
+            line-height: calc(var(--author-image-size) / 4.5);
+
+            & .cover__authorImage {
+                width: calc(var(--author-image-size) / 4.5);
+                height: calc(var(--author-image-size) / 4.5);
+                margin-right: calc(var(--spacer-size) / 3);
+                box-shadow: none;
+            }
+
+            & .cover__name {
+                display: inline-block;
+                font-size: var(--md-text);
+                color: var(--color-dark);
+            }
+        }
+    }
+
+    @media (--desktop-1024) {
+        margin: 0 var(--spacer-size) 0 auto;
     }
 }
 

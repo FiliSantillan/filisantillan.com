@@ -1,3 +1,5 @@
+@import "../../utilities/u-media-queries.css";
+
 .post__content {
     padding: calc(var(--author-image-size) / 2 + var(--spacer-size)) var(--spacer-size) var(--spacer-size);
 
@@ -9,15 +11,18 @@
         font-size: var(--md-text);
     }
 
-    & img {
+    & img,
+    & pre {
         width: calc(100% + var(--spacer-size) * 2);
         margin-left: calc(var(--spacer-size) * -1);
         margin-right: calc(var(--spacer-size) * -1);
     }
 
-    & pre {
-        width: calc(100% + var(--spacer-size) * 2);
-        margin-left: calc(var(--spacer-size) * -1);
-        margin-right: calc(var(--spacer-size) * -1);
+    @media (--desktop-1024) {
+        & img,
+        & pre {
+            border-radius: var(--radius-size-double);
+        }
+    
     }
 }
