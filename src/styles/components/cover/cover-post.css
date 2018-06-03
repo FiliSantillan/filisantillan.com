@@ -15,6 +15,14 @@
     & .image--true {
         background-size: cover;
         background-position: center;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(22,25,37,0.3);
+        }
     }
 
     & .image--false {
@@ -26,9 +34,10 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         position: initial;
+        min-height: 650px;
 
         & .cover__image {
-            position: initial;
+            position: relative;
         }
     }
 
@@ -79,11 +88,9 @@
     }
 
     @media (--desktop-1024) {
-        position: initial;
-        padding: calc(var(--spacer-size) * 3) 0 calc(var(--author-image-size) / 2 + var(--spacer-size));
-        max-width: 450px;
-        margin: 0 calc(var(--spacer-size) / 2) 0 auto;
-
+        padding: 0 var(--spacer-size);
+        margin: 0;
+        overflow: hidden;
         & .cover__title {
 
             & .cover__text {
@@ -118,10 +125,40 @@
                 color: var(--color-dark);
             }
         }
+
+        & .figures {
+            & .circle {
+                position: absolute;
+                background-color: color(gray(220) alpha(0.5));
+                z-index: -1;
+                border-radius: 50%;
+                
+                &:first-child {
+                    width: 300px;
+                    height: 300px;
+                    top: -100px;
+                    left: -130px;
+                }
+
+                &:nth-child(2) {
+                    width: 400px;
+                    height: 400px;
+                    bottom: -180px;
+                    right: -80px;
+                }
+
+                &:nth-child(3) {
+                    width: 100px;
+                    height: 100px;
+                    top: 80px;
+                    right: 80px;
+                }
+            }
+        }
     }
 
-    @media (--desktop-1024) {
-        margin: 0 var(--spacer-size) 0 auto;
+    @media (--desktop-1200) {
+        padding: 0 calc(var(--spacer-size) * 2);
     }
 }
 

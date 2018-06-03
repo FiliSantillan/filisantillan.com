@@ -2,37 +2,45 @@
           {{!-- Cover-post --}}
 {{!------------------------------------}}
 
-<div class="cover__details">
-    <div class="cover__title">
-        <h1 class="cover__text">{{title}}</h1>
+<div class="cover__details u-center-content">
+    <div class="cover-wrapper">
+        <div class="cover__title">
+            <h1 class="cover__text">{{title}}</h1>
+        </div>
+
+        {{#if tags}}
+            {{#foreach tags}}
+                <a href="{{url}}" class="cover__tag btn btn-secondary btn-icon">
+                    <span class="cover__icon o-icon-{{name}}">
+                        {{> "tag-paths"}}
+                    </span>
+                    <span class="cover__text">{{name}}</span>
+                </a>
+            {{/foreach}}
+        {{/if}}
+
+        {{#author}}
+            <a href="{{url}}" class="cover__author u-display-in-block">
+
+                {{#if profile_image}}
+                <img class="cover__authorImage"
+                        src="{{img_url profile_image}}" 
+                        alt="{{name}}">
+                {{else}}
+                <img class="cover__authorImage"
+                    src="https://api.adorable.io/avatars/face/eyes2/nose7/mouth3/299fd3">
+                {{/if}}
+
+                <span class="cover__name">{{name}}</span>
+            </a>
+        {{/author}}
     </div>
 
-    {{#if tags}}
-        {{#foreach tags}}
-            <a href="{{url}}" class="cover__tag btn btn-secondary btn-icon">
-                <span class="cover__icon o-icon-{{name}}">
-                    {{> "tag-paths"}}
-                </span>
-                <span class="cover__text">{{name}}</span>
-            </a>
-        {{/foreach}}
-    {{/if}}
-
-    {{#author}}
-        <a href="{{url}}" class="cover__author u-display-in-block">
-
-            {{#if profile_image}}
-            <img class="cover__authorImage"
-                    src="{{img_url profile_image}}" 
-                    alt="{{name}}">
-            {{else}}
-            <img class="cover__authorImage"
-                 src="https://api.adorable.io/avatars/face/eyes2/nose7/mouth3/299fd3">
-            {{/if}}
-
-            <span class="cover__name">{{name}}</span>
-        </a>
-    {{/author}}
+    <ul class="figures u-no-list">
+        <li class="circle"></li>
+        <li class="circle"></li>
+        <li class="circle"></li>
+    </ul>
 </div>
 
 <div class="cover__image {{#if feature_image}}image--true" style="background-image: url({{img_url feature_image}}){{else}}image--false{{/if}}"></div>
