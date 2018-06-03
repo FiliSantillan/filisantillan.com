@@ -8,6 +8,17 @@
     --color-pink: #FA709A;
     --color-gray: gray(150);
 
+    --color-editor-bg: #282B39;
+    --color-editor-gray: #898D94;
+    --color-editor-light-gray: #ECF1F1;
+    --color-editor-red: #EC7581;
+    --color-editor-light-blue: #95CEF7;
+    --color-editor-orange: #F29F68;
+    --color-editor-yellow: #F0CB71;
+    --color-editor-purple: #BBA0C9;
+    --color-editor-green: #A8CEBA;
+    
+
     --gradient-default: 130deg, var(--color-blue) 0%, var(--color-purple) 100%;
     --gradient-secondary: 130deg, var(--color-yellow) 0%, var(--color-pink) 100%;
 
