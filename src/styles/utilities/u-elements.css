@@ -28,10 +28,6 @@
     box-shadow: var(--shadow-middle);
 }
 
-.u-text-color-dark {
-    color: var(--color-dark) !important;
-}
-
 @media (--desktop-1024) {
     .u-wrap-center {
         margin: 0 auto;
