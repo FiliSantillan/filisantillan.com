@@ -8,6 +8,15 @@
   font-style: normal;
 }
 
+.o-icon-chrome:before {
+  content: "\e910";
+}
+.o-icon-earth:before {
+  content: "\e911";
+}
+.o-icon-lab:before {
+  content: "\e912";
+}
 .o-icon-tag:before {
   content: "\e90a";
 }
@@ -26,6 +35,9 @@
 .o-icon-challenge:before {
   content: "\e903";
 }
+.o-icon-code:before {
+  content: "\e913";
+}
 .o-icon-edit:before {
   content: "\e904";
 }
@@ -35,12 +47,10 @@
 .o-icon-agenda:before {
   content: "\e90b";
 }
-.o-icon-heart:before,
-.o-icon-fili-core:before {
+.o-icon-heart:before {
   content: "\e90c";
 }
-.o-icon-home:before,
-.o-icon-inicio:before {
+.o-icon-home:before {
   content: "\e90d";
 }
 .o-icon-instagram:before {
@@ -55,8 +65,8 @@
 .o-icon-twitter:before {
   content: "\e909";
 }
-.o-icon-users:before,
-.o-icon-contribuye:before {
+.o-icon-users:before {
   content: "\e90f";
 }
+
 
