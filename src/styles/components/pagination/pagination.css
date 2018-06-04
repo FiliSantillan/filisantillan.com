@@ -1,0 +1,41 @@
+@import "../../utilities/u-media-queries.css";
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .pagination__arrow {
+        & .pagination__icon {
+            font-size: var(--xl-title);
+            color: var(--color-pink);
+        }
+    }
+
+    & .pagination__number {
+        background-image: linear-gradient(var(--gradient-secondary));
+        width: calc(var(--xl-title) * 2.5);
+        height: calc(var(--xl-title) * 2.5);
+        text-align: center;
+        border-radius: 50%;
+        margin: 0 calc(var(--spacer-size) / 2);
+        color: white;
+
+        & .pagination__text {
+            font-size: calc(var(--xl-title) * 2);
+            line-height: calc(var(--xl-title) * 2.5);
+        }
+    }
+
+    @media (--tablet-768) {
+        & .pagination__number {
+            width: calc(var(--xl-title) * 2);
+            height: calc(var(--xl-title) * 2);
+    
+            & .pagination__text {
+                font-size: calc(var(--xl-title) * 1.5);
+                line-height: calc(var(--xl-title) * 2);
+            }
+        }
+    }
+}

@@ -11,7 +11,8 @@
     }
 
     @media (--desktop-1024) {
-        padding: var(--spacer-size) 0;
+        padding: 0;
+        margin-bottom: var(--spacer-size);
         grid-template-columns: repeat(3, 1fr);
     }
 }

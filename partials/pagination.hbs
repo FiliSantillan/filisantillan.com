@@ -7,20 +7,20 @@
 {{!-- If there is a prev --}}
 {{#if prev}}
     {{!-- icon arrow-left --}}
-    <a class="pagination__newer-posts" href="{{page_url prev}}">
-        <i class="pagination__icon icon-arrow-mini-left"></i>
+    <a class="pagination__arrow u-display-in-block" href="{{page_url prev}}">
+        <i class="pagination__icon o-icon-arrow-left-circle"></i>
     </a>
 {{/if}}
 
 {{!-- Page you are currently on --}}
-<span class="pagination__number">
-    Página <strong>{{page}}</strong> de <strong>{{pages}}</strong>
-</span>
+<div class="pagination__number">
+    <strong class="pagination__text">{{page}}</strong>
+</div>
 
 {{!-- If there is a next --}}
 {{#if next}}
     {{!-- icon arrow-right --}}
-    <a class="pagination__older-posts" href="{{page_url next}}">
-        <i class="pagination__icon icon-arrow-mini-right"></i>
+    <a class="pagination__arrow u-display-in-block" href="{{page_url next}}">
+        <i class="pagination__icon o-icon-arrow-right-circle"></i>
     </a>
 {{/if}}
