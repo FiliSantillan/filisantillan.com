@@ -26,6 +26,9 @@
 .o-icon-github:before {
   content: "\e905";
 }
+.o-icon-arrow-left-circle:before {
+  content: "\e914";
+}
 .o-icon-arrow-right:before {
   content: "\e901";
 }
