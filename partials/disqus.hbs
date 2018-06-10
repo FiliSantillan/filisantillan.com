@@ -4,13 +4,28 @@
 
 {{!-- Comment system for the blog, Powered by Disqus --}}
 
-{{!-- Comments --}}
-<div id='disqus_thread', class='disqus__comments'></div>
+<div class="disqus__title">
+    <strong class="disqus__text u-wrap-center">Comparte tu opinión o duda:</strong>
+</div>
 
-{{!-- In case of error --}}
-<noscript>
-    Por favor, active JavaScript para ver <a href='http://disqus.com/?ref_noscript'>Disqus.</a>
-</noscript>
+<div id="disqus_thread" class="u-wrap-center"></div>
 
-{{!-- Message --}}
-<a href='http://disqus.com' class='dsq-brlink'>Powered by <span class='logo-disqus'>Disqus</span></a>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+    this.page.url = "{{url absolute="true"}}";
+    this.page.identifier = "ghost-{{comment_id}}";
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://filisantillan.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Por favor, active JavaScript para ver <a href="https://disqus.com/?ref_noscript">Disqus.</a></noscript>

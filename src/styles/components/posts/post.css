@@ -85,7 +85,7 @@
     }
 
     & code {
-        background-color: var(--color-editor-bg);
+        background-color: var(--color-dark);
         color: var(--color-editor-red);
         border-radius: var(--radius-size);
         padding: 0 5px 2px;
@@ -227,5 +227,24 @@
         font-size: var(--lg-text);
         color: gray(200);
         margin: 0;
+    }
+}
+
+.disqus {
+    padding: var(--spacer-size) var(--spacer-size) 0;
+    background-color: var(--color-dark);
+    
+    & a {
+        color: var(--color-blue);
+    }
+
+    & .disqus__title {
+        margin-bottom: calc(var(--spacer-size) / 2);
+        & .disqus__text {
+            font-family: "Montserrat", system-ui;
+            display: block;
+            color: white;
+            font-size: var(--xl-title);
+        }
     }
 }
