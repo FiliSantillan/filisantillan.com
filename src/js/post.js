@@ -17,5 +17,6 @@ import "../styles/components/header/header.css";
 import "../styles/components/header/navigation.css";
 import "../styles/components/cover/cover-post.css";
 import "../styles/components/posts/post.css";
+import "../styles/components/footer/footer.css";
 
 import "./vendor/prism";
