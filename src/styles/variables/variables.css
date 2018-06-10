@@ -1,14 +1,13 @@
 @import "../utilities/u-media-queries.css";
 
 :root {
-    --color-dark: #161925;
+    --color-dark: #282B39;
     --color-blue: #299fd3;
     --color-purple: #B721FF;
     --color-yellow: #FEE140;
     --color-pink: #FA709A;
     --color-gray: gray(150);
 
-    --color-editor-bg: #282B39;
     --color-editor-gray: #898D94;
     --color-editor-light-gray: #ECF1F1;
     --color-editor-red: #EC7581;

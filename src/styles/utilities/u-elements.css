@@ -28,9 +28,14 @@
     box-shadow: var(--shadow-middle);
 }
 
+.u-margin-bottom {
+    margin-bottom: var(--spacer-size);
+}
+
 @media (--desktop-1024) {
     .u-wrap-center {
-        margin: 0 auto;
+        margin-right: auto;
+        margin-left: auto;
         max-width: 900px;
     }
 }
