@@ -18,7 +18,8 @@
     }
 
     & p,
-    & ul {
+    & ul,
+    & ol {
         font-size: var(--md-text);
         line-height: calc(var(--md-text) + 9px);
         margin-bottom: var(--spacer-size);
