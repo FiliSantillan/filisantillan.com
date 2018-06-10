@@ -4,53 +4,46 @@
 
 {{!-- Blog footer --}}
 
-<div class='wrap-center'>
-    {{!-- Logo --}}
-    <a href='{{@blog.url}}' class='footer__logo'></a>
-    
-    {{!-- Social networks --}}
-    <div class='flex jus--between dev--tablet-750'>
-        <ul class='footer__social no-list'>
-
-            {{!-- Facebook --}}
-            <li class='footer__item'>
-                <a href='{{facebook_url}}' target='_blank' class='footer__icon icon-facebook'></a>
-            </li>
-
-            {{!-- Twitter --}}
-            <li class='footer__item'>
-                <a href='{{twitter_url}}' target='_blank' class='footer__icon icon-twitter'></a>
-            </li>
-
-            {{!-- Instagram --}}
-            <li class='footer__item'>
-                <a href='https://www.instagram.com/fili.js/' target='_blank' class='footer__icon icon-instagram'></a>
-            </li>
-
-            {{!-- Snapchat --}}
-            <li class='footer__item'>
-                <a href='https://www.snapchat.com/add/fili06604' target='_blank' class='footer__icon icon-snapchat'></a>
-            </li>
-
-            {{!-- GitHub --}}
-            <li class='footer__item'>
-                <a href='https://github.com/FiliJS' target='_blank' class='footer__icon icon-github-simple'></a>
-            </li>
-
-        </ul>
+<footer class="footer">
+    <div class="footer-wrapper u-wrap-center">
         
-        {{!-- Blog information --}}
-        <div class='footer__info'>
+        <div class="footer__info">
 
-            {{!-- Copyright --}}
-            <span class='footer__copyright'>
-                © 2015-2017 <a href='http://creativecommons.org/licenses/by-sa/4.0/' target='_blank' class='footer__link'>Filiberto Santillán</a>
-            </span>
+            <div class="footer__legal">
+                <span class="footer__text">{{@blog.title}} Ⓒ 2018</span>
+                <a href="#" class="footer__text">Aviso Legal</a>
+                <a href="#" class="footer__text">Privacidad</a>
+            </div>
+            
+            <div class="footer__server">
+                <a href="#" class="footer__text">Alojado en Digital Ocean</a>
+            </div>
+        </div>
+        
+        <div class="footer__social">
+            <ul class='footer__optionList u-no-list'>
 
-            {{!-- DigitalOcean --}}
-            <span class='footer__digitalocean'>
-                Alojado en <a href='https://m.do.co/c/c4c217c06b83' target='_blank' class='footer__link'>DigitalOcean</a>
-            </span>
+                <li class="footer__item">
+                    <a href="{{facebook_url}}" class="footer__icon o-icon o-icon-facebook"></a>
+                </li>
+
+                <li class="footer__item">
+                    <a href="{{twitter_url}}" class="footer__icon o-icon o-icon-twitter"></a>
+                </li>
+
+                <li class="footer__item">
+                    <a href="https://www.instagram.com/fili.js/" class="footer__icon o-icon-instagram"></a>
+                </li>
+
+                <li class="footer__item">
+                    <a href="https://github.com/FiliJS" class="footer__icon o-icon-github"></a>
+                </li>
+
+                <li class="footer__item">
+                    <a href="https://www.youtube.com/c/filimartinezz" class="footer__icon o-icon-github"></a>
+                </li>
+
+            </ul>
         </div>
     </div>
-</div>
+</footer>
