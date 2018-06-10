@@ -11,9 +11,9 @@
     }
 
     @media (--desktop-1024) {
+        grid-template-columns: repeat(12, 1fr);
         padding: 0;
         margin-bottom: var(--spacer-size);
-        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -25,6 +25,105 @@
         position: relative;
         margin-bottom: calc(var(--btn-height) / 2 + var(--spacer-size));
     }
+
+    @media(--tablet-768) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media(--desktop-1024) {
+        &:first-child {
+            grid-column: 1 / -1;
+            max-width: 800px;
+            justify-self: center;
+            position: relative;
+            box-shadow: none;
+            border-radius: 0;
+            left: -150px;
+            margin-bottom: 50px;
+    
+            & .article__coverContainer {
+                margin-bottom: 0;
+            }
+    
+            & .article__cover {
+                & .article__image {
+                    width: 600px;
+                    min-height: 400px;
+                    max-height: 400px;
+                    border-radius: var(--radius-size-double);
+                    box-shadow: 5px 5px 10px color(black alpha(0.5));
+                }
+            }
+
+            & .article__gradient {
+                width: 600px;
+                height: 400px;
+                border-radius: var(--radius-size-double);
+                box-shadow: 5px 5px 10px color(black alpha(0.5));
+            }
+    
+            & .article__details {
+                position: absolute;
+                background: white;
+                bottom: -50px;
+                right: -300px;
+                max-width: 600px;
+                border-radius: var(--radius-size-double);
+                box-shadow: 5px 5px 10px color(black alpha(0.5));
+                padding: var(--spacer-size) calc(var(--spacer-size) * 1.5) var(--spacer-size) ;
+            }
+
+            & .article__tagContainer {
+                top: calc(var(--spacer-size) / 2);
+                left: calc(var(--spacer-size) / 2);
+                width: auto;
+                bottom: initial;
+            }
+
+            & .article__info {
+                & .article__title {
+                    font-size: var(--xl-title);
+                }
+            }
+
+        }
+
+        &:nth-child(5n+2) {
+            grid-column: 1 / 5;
+        }
+
+        &:nth-child(5n+3) {
+            grid-column: 5 / 9;
+        }
+
+        &:nth-child(5n+4) {
+            grid-column: 9 / 13;
+        }
+
+        &:nth-child(5n+5) {
+            grid-column: 1 / 7;
+            
+            & .article__cover {
+                & .article__image {
+                    min-height: 280px;
+                    max-height: 280px;
+                }
+            }
+        }
+
+        &:nth-child(5n+6) {
+            grid-column: 7 / 13;
+            
+            & .article__cover {
+                & .article__image {
+                    width: 100%;
+                    min-height: 280px;
+                    max-height: 280px;
+                }
+            }
+        }
+    }
 }
 
 .article__cover {
@@ -33,7 +132,6 @@
         min-height: 225px;
         max-height: 225px;
         border-radius: var(--radius-size-double) var(--radius-size-double) 0 0;
-        vertical-align: bottom;
     }
 }
 
@@ -46,6 +144,13 @@
 
 .article__details {
     padding: 0 calc(var(--spacer-size) / 2) var(--spacer-size);
+    
+    @media(--tablet-768) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+    }
 }
 
 .article__tagContainer {
@@ -61,25 +166,28 @@
     }
 }
 
-.article__title {
-    & .article__text {
+.article__info {
+    & .article__title {
         font-size: var(--lg-title);
-
+        margin-bottom: calc(var(--spacer-size) / 2);
         & .article__link {
             color: var(--color-dark);
         }
     }
 
-    @media(--tablet-768) {
+    & .article__description {
+        margin-bottom: var(--spacer-size);
+
         & .article__text {
-            font-size: var(--sm-title);
+            font-size: var(--md-text);
+            margin: 0;
         }
     }
-}
 
-.article__description {
-    & .article__text {
-        font-size: var(--md-text);
+    @media(--tablet-768) {
+        & .article__title {
+            font-size: var(--sm-title);
+        }
     }
 }
 
