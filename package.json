@@ -1,7 +1,7 @@
 {
   "name": "filisantillan",
-  "version": "3.0.4",
   "description": "Fili Santillán: https://filisantillan.com/",
+  "version": "3.0.4",
   "main": "index.js",
   "config": {
     "posts_per_page": 11
@@ -11,9 +11,11 @@
     "build:pro": "webpack --mode production"
   },
   "author": {
-    "email": "fili06604@gmail.com"
+    "name": "Fili Santillán",
+    "email": "fili@filisantillan.com",
+    "url": "https://filisantillan.com"
   },
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",

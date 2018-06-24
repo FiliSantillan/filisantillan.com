@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='es'>
+<html lang='{{lang}}'>
 <head>
 
     {{!-- Title --}}
@@ -17,7 +17,7 @@
     <meta name='description' content='Blogger, Geek, Lover of code - HTML, CSS, Javascript, ReactJS' />
     
     {{!-- Mobile Settings --}}
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'/>
     <meta name='MobileOptimized' content='320' />
 
     {{!-- Favicon Settings --}}
@@ -25,25 +25,21 @@
     <link rel='icon' type='image/png' href='{{asset "./images/favicon/favicon-32x32.png"}}' sizes='32x32'>
     <link rel='icon' type='image/png' href='{{asset "./images/favicon/favicon-16x16.png"}}' sizes='16x16'>
     <link rel='manifest' href='{{asset "./images/favicon/manifest.json"}}'>
-    <link rel='mask-icon' href='{{asset "./images/favicon/safari-pinned-tab.svg"}}' color='#299FD3'>
+    <link rel='mask-icon' href='{{asset "./images/favicon/safari-pinned-tab.svg"}}' color='#282B39'>
     <meta name='apple-mobile-web-app-title' content='Fili'>
     <meta name='application-name' content='Fili'>
 
     {{!-- Google+ Settings --}}
     <link rel='author' href='https://plus.google.com/+FiliMart%C3%ADnezZ' />
-    <link rel='canonical' href='http://filisantillan.com/' />
 
     {{!-- Friendly --}}
     <meta name='HandheldFriendly' content='True' />
 
     {{!-- Other Settings --}}
 
-    <meta name='theme-color' content='#299FD3'>
+    <meta name='theme-color' content='#282B39'>
     <meta name='google-site-verification' content='PUVeHiwvS1T4_Q8FaieZHfE0GjL2rsKJ3LU4eabFdtA' />
     <meta property="fb:pages" content="379077102274280" />
-
-    {{!-- Emojis --}}
-    {{!-- <script src="https://twemoji.maxcdn.com/2/twemoji.min.js?2.2.3"></script> --}}
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
@@ -60,42 +56,8 @@
 
     {{> 'footer'}}
 
-
     {{!-- Scripts --}}
     <script src='{{asset "./js/home-bundle.js"}}'></script>
-
-    {{!-- Addthis --}}
-    {{!-- <script type='text/javascript' src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56324eb92b56efd7' async='async'></script> --}}
-
-    {{!-- {{! Gooogle Analytics }}
-    <script async>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-59139943-5', 'auto');
-      ga('send', 'pageview');
-    </script> --}}
-
-    {{! Facebook SDK }}
-    {{!-- <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '398916740459134',
-      xfbml      : true,
-      version    : 'v2.8'
-    });
-    FB.AppEvents.logPageView();
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/es_LA/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script> --}}
 
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
