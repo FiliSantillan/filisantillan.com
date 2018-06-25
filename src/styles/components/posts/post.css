@@ -219,14 +219,16 @@
 }
 
 .editor-title {
-    background-color: var(--color-dark);
+    background-color: var(--color-editor-dark);
     border-radius: var(--radius-size) var(--radius-size) 0 0;
-    padding: calc(var(--spacer-size) / 4) calc(var(--spacer-size) / 2);
+    padding: calc(var(--spacer-size) / 3) calc(var(--spacer-size) / 2);
 
     & .editor-title__text {
         font-size: var(--lg-text);
-        color: gray(200);
+        color: white;
         margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
 }
 

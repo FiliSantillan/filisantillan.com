@@ -8,6 +8,7 @@
     --color-pink: #FA709A;
     --color-gray: gray(150);
 
+    --color-editor-dark: #1B1D26;
     --color-editor-gray: #898D94;
     --color-editor-light-gray: #ECF1F1;
     --color-editor-red: #EC7581;
@@ -52,7 +53,7 @@
         --lg-title: 28px;
         --xl-title: 32px;
     }
-s
+
     @media (--mobile-425) {
 
         --spacer-size: 1.7rem;
