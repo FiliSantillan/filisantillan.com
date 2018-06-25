@@ -42,7 +42,7 @@
     }
 
     @media (--desktop-1200) {
-        grid-template-columns: 1fr minmax(700px, 700px);
+        grid-template-columns: minmax(700px, 1fr) minmax(600px, 1fr);
     }
 }
 

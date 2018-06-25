@@ -32,6 +32,10 @@
     margin-bottom: var(--spacer-size);
 }
 
+.u-max-w800 {
+    max-width: 800px;
+}
+
 @media (--desktop-1024) {
     .u-wrap-center {
         margin-right: auto;
