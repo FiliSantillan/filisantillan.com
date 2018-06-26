@@ -232,6 +232,37 @@
     }
 }
 
+.twitter-tweet,
+.instagram-media {
+    margin-bottom: var(--spacer-size) !important;
+
+    @media (--tablet-768) {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+.flex-video {
+    height: 0;
+    overflow:hidden;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    position: relative;
+    margin-top: var(--spacer-size);
+    margin-bottom: calc(var(--spacer-size)*2);
+
+    & iframe,
+    & object,
+    & embed,
+    & video {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+
 .disqus {
     padding: var(--spacer-size) var(--spacer-size) 0;
     background-color: var(--color-dark);
