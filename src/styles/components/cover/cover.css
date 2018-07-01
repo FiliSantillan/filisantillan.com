@@ -252,6 +252,7 @@
 
 .cover--tagIcon {
     & .cover__icon {
+        color: var(--color-dark);
         font-size: var(--author-image-size);
     }
 }

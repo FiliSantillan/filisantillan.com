@@ -8,8 +8,15 @@
   font-style: normal;
 }
 
+.o-icon-light:before,
+.o-icon-tutoriales:before {
+  content: "\e916";
+}
 .o-icon-dots:before {
   content: "\e901";
+}
+.o-icon-arrow-right:before {
+  content: "\e917";
 }
 .o-icon-arrow-up-circle:before {
   content: "\e915";
@@ -26,7 +33,8 @@
 .o-icon-tag:before {
   content: "\e90a";
 }
-.o-icon-news:before {
+.o-icon-news:before,
+.o-icon-noticias:before {
   content: "\e900";
 }
 .o-icon-github:before {
@@ -38,13 +46,15 @@
 .o-icon-arrow-right-circle:before {
   content: "\e902";
 }
-.o-icon-challenge:before {
+.o-icon-challenge:before,
+.o-icon-challenges:before {
   content: "\e903";
 }
 .o-icon-code:before {
   content: "\e913";
 }
-.o-icon-edit:before {
+.o-icon-edit:before,
+.o-icon-comunidad:before {
   content: "\e904";
 }
 .o-icon-facebook:before {
