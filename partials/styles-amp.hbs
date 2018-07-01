@@ -507,7 +507,11 @@ button:focus {
 .navigation {
     background-image: linear-gradient(var(--gradient-secondary));
     width: 70%;
-    padding: var(--spacer-size) calc(var(--spacer-size) * 1.5);
+    padding: var(--spacer-size) calc(var(--spacer-size) * 1.5) 0;
+}
+
+.navigation__itemList {
+    padding-top: calc(var(--spacer-size) + var(--btn-height));
 }
 
 .navigation__item {
@@ -543,6 +547,25 @@ button:focus {
     line-height: var(--icon-size);
     margin-right: calc(var(--dinamic-spacer-size) / 2);
 }
+
+.navigation__close {
+    background-image: linear-gradient(var(--gradient-default));
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    border-radius: var(--radius-size-full);
+    color: white;
+    line-height: var(--btn-height);
+    text-transform: capitalize;
+    position: absolute;
+    width: calc(var(--btn-height)*2);
+    height: var(--btn-height);
+    font-size: var(--sm-title);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    left: calc(var(--btn-height) * 2 * -1 / 3);
+    padding-right: calc(var(--btn-height) / 2);
+}
+
 
 .cover .cover__gradient {
     width: 100%;
