@@ -5,15 +5,17 @@
 {{!-- Blog navigation  --}}
 
 {{!-- Everything inside the #navigation tags pulls data from the navigation --}}
+
 {{#foreach navigation}}
-	{{!-- navigation item --}}
+    {{!-- navigation item --}}
     <li class="navigation__item " role='presentation'>
         <a class="navigation__link" href='{{url absolute="true"}}'>
             {{!-- Icon --}}
-            <i class='navigation__icon o-icon-{{slug}}'></i>
+            <i class='navigation__icon fas fa-circle o-icon-{{slug}}'></i>
             {{!-- Text --}}
             <span class='navigation__text'>{{label}}</span>
         </a>
     </li>
 {{/foreach}}
+
 

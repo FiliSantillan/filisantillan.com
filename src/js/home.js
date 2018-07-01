@@ -18,3 +18,8 @@ import "../styles/components/cover/cover.css";
 import "../styles/components/posts/article.css";
 import "../styles/components/pagination/pagination.css";
 import "../styles/components/footer/footer.css";
+
+
+/* Javascript */
+
+import "./app/navigation";

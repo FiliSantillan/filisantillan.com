@@ -18,3 +18,7 @@ import "../styles/components/cover/cover.css";
 import "../styles/components/subscribe/subscribe.css";
 import "../styles/components/posts/article.css";
 import "../styles/components/footer/footer.css";
+
+/* Javascript */
+
+import "./app/navigation";

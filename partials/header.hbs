@@ -13,14 +13,18 @@
             </h1>
         </div>
 
-        <nav class="navigation">
+        <nav class="navigation" id="navigation">
             <ul class="navigation__itemList u-no-list u-shadow-complete">
                 {{ "navigation"}}
             </ul>
+
+            <div class="navigation__close u-center-content">
+                <a href="#" class="navigation__icon o-icon-arrow-up-circle btn" id="btn-navigation-close"></a>
+            </div>
         </nav>
 
         <div class="header__containerIcon">
-            <a href="#" class="header__icon o-icon-menu"></a>
+            <a href="#" class="header__icon o-icon-dots" id="btn-navigation-open"></a>
         </div>
     </div>
 </header>

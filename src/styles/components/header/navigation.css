@@ -3,15 +3,19 @@
 .navigation {
     position: fixed;
     width: 100%;
-    top: 0;
+    top: -500px;
     right: 0;
     padding: var(--spacer-size);
-    display: none;
+    transition: 0.3s;
 
     & .navigation__itemList {
         background-image: linear-gradient(var(--gradient-secondary));
         border-radius: var(--radius-size-double);
         padding: var(--spacer-size);
+    }
+
+    &.navigation--active {
+        top: 0;
     }
 
     @media (--tablet-768) {
@@ -78,5 +82,27 @@
                 display: none;
             }
         }
+    }
+}
+
+.navigation__close {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+
+    & .navigation__icon {
+        width: calc(var(--btn-height)*2);
+        height: var(--btn-height);
+        font-size: var(--sm-title);
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media(--desktop-1024) {
+        display: none;
     }
 }

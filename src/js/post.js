@@ -20,3 +20,7 @@ import "../styles/components/posts/post.css";
 import "../styles/components/footer/footer.css";
 
 import "./vendor/prism";
+
+/* Javascript */
+
+import "./app/navigation";
