@@ -7,8 +7,8 @@
     "posts_per_page": 11
   },
   "scripts": {
-    "build:dev": "webpack --mode development --watch",
-    "build:pro": "webpack --mode production"
+    "build:dev": "webpack --mode=development --watch",
+    "build:pro": "webpack --mode=production"
   },
   "author": {
     "name": "Fili Santillán",
