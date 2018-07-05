@@ -5,6 +5,10 @@
     {{!-- Title --}}
     <title>{{meta_title}}</title>
 
+    {{!-- Preload & Prefetch }}
+    <link rel="preload" href='{{asset "css/author-bundle.css"}}' as="styles">
+    <link rel="prefetch" href='{{asset "js/author-bundle.js"}}' as="script">
+
     {{!-- Styles --}}
     <link rel='stylesheet' href='{{asset "css/author-bundle.css"}}'>
     
