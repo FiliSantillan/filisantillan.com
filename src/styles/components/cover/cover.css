@@ -155,7 +155,7 @@
 }
 
 .cover__option {
-    background-color: #433455;
+    background-color: var(--color-dark);
     color: white;
     text-align: center;
     width: 100px;

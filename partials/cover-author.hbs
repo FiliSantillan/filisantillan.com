@@ -34,36 +34,36 @@
 
         {{#if website}}
         <li class="cover__social">
-            <a href='{{website}}' class="cover__icon o-icon-link"></a>
+            <a href='{{website}}' class="cover__icon o-icon-link" rel="noopener noreferrer" target="_blank"></a>
         </li>
         {{/if}}
 
         {{#if facebook}}
         <li class="cover__social">
-            <a href="{{facebook_url author.facebook}}" class="cover__icon o-icon o-icon-facebook"></a>
+            <a href="{{facebook_url author.facebook}}" class="cover__icon o-icon o-icon-facebook" rel="noopener noreferrer" target="_blank"></a>
         </li>
         {{/if}}
 
         {{#if twitter}}
         <li class="cover__social">
-            <a href="{{twitter_url author.facebook}}" class="cover__icon o-icon o-icon-twitter"></a>
+            <a href="{{twitter_url author.facebook}}" class="cover__icon o-icon o-icon-twitter" rel="noopener noreferrer" target="_blank"></a>
         </li>
         {{/if}}
 
         <li class="cover__social">
-            <a href="https://www.instagram.com/fili.js/" class="cover__icon o-icon-instagram"></a>
+            <a href="https://www.instagram.com/fili.js/" class="cover__icon o-icon-instagram" rel="noopener noreferrer" target="_blank"></a>
         </li>
 
         <li class="cover__social">
-            <a href="https://github.com/FiliJS" class="cover__icon o-icon-github"></a>
+            <a href="https://github.com/FiliJS" class="cover__icon o-icon-github" rel="noopener noreferrer" target="_blank"></a>
         </li>
 
         <li class="cover__social">
-            <a href="https://www.youtube.com/c/filimartinezz" class="cover__icon o-icon-github"></a>
+            <a href="https://www.youtube.com/c/filimartinezz" class="cover__icon o-icon-github" rel="noopener noreferrer" target="_blank"></a>
         </li>
     </ul>
 
-    <a href="{{url}}" class="cover__author u-display-in-block">
+    <div class="cover__author u-display-in-block">
 
         {{#if profile_image}}
         
@@ -77,6 +77,6 @@
                     src="https://api.adorable.io/avatars/face/eyes2/nose7/mouth3/299fd3">
 
         {{/if}}
-    </a>
+    </div>
 </div>
 {{/author}}
