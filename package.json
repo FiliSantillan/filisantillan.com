@@ -22,6 +22,7 @@
     "babel-preset-env": "^1.6.1",
     "css-loader": "^0.28.11",
     "css-mqpacker": "^6.0.2",
+    "cssnano": "^4.0.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
     "postcss": "^6.0.21",
