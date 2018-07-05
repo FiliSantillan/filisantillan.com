@@ -256,3 +256,8 @@
         font-size: var(--author-image-size);
     }
 }
+
+.cover--imageHome {
+    right: calc(var(--spacer-size) * 4 * -1) !important;
+    bottom: calc(var(--spacer-size) * 1.5) !important;
+}

@@ -36,11 +36,19 @@
     max-width: 800px;
 }
 
+.u-only-desktop {
+    display: none;
+}
+
 @media (--desktop-1024) {
     .u-wrap-center {
         margin-right: auto;
         margin-left: auto;
         max-width: 900px;
+    }
+
+    .u-only-desktop {
+        display: initial;
     }
 }
 
