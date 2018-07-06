@@ -1,6 +1,16 @@
+@font-face {
+  font-family: 'icons';
+  src:
+    url('../../fonts/icons.ttf?fr0zxo') format('truetype'),
+    url('../../fonts/icons.woff?fr0zxo') format('woff'),
+    url('../../fonts/icons.svg?fr0zxo#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 [class^="o-icon-"], [class*=" o-icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icons", "tags" !important;
+  font-family: 'icons' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
