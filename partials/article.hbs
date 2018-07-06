@@ -7,14 +7,18 @@
 <article class="article {{post_class}}">
     <div class="article__coverContainer">
         {{#if feature_image}}
-        <a href="{{url}}" class`="u-display-in-block">
+
+        <a href="{{url}}" class="u-display-in-block">
             <figure class="article__cover">
                 <img src="{{feature_image}}" alt="{{title}}" class="article__image">
             </figure>
         </a>
 
         {{else}}
-        <div class="article__gradient"></div>
+        <a href="{{url}}" class="u-display-in-block">
+            <div class="article__gradient"></div>
+        </a>
+        
         {{/if}}
 
         {{#if tags}}
@@ -30,7 +34,7 @@
             {{/foreach}}
         {{/if}}
     </div>
- 
+    
     <div class="article__details">
 
         <header class="article__info">
@@ -57,10 +61,6 @@
             </a>
             {{/author}}
 
-            <a href="{{url}}" class="article__button btn btn-icon btn-mini">
-                <span class="article__text u-mg-rt-5em">Leer</span>
-                <i class="article__icon o-icon-arrow-right"></i>
-            </a>
         </footer>
     </div>
 
