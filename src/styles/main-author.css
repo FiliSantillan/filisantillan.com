@@ -6,6 +6,7 @@
 @import "./utilities/u-elements.css";
 
 @import "./objects/buttons.css";
+@import "./objects/icons.css";
 
 @import "./components/header/header.css";
 @import "./components/header/navigation.css";
