@@ -30,9 +30,6 @@ module.exports = {
         }),
         require("css-mqpacker")({
             sort: true
-        }),
-        // require("cssnano")({
-        //     autoprefixer: false,
-        // })
+        })
     ]
 };
