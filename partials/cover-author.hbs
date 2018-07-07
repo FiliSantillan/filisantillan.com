@@ -1,11 +1,16 @@
-{{!------------------------------------}}
-          {{!-- Cover --}}
-{{!------------------------------------}}
+{{!--
+    Layout: Cover (Author)
 
-{{!-- Cover of a index (default) --}}
+    Cover image of the author. This is set in the blog settings
+--}}
 
-{{!-- Cover image --}}
 {{#author}}
+
+{{!--
+    Cover
+    The cover image of the author.
+--}}
+
 <div class="cover__imageContainer">
     <div class="cover__image {{#if cover_image}}image--true" style="background-image: url({{cover_image}}){{else}}image--false{{/if}}"></div>
 </div>

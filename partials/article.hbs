@@ -1,28 +1,43 @@
-{{!------------------------------------}}
-          {{!-- Loop --}}
-{{!------------------------------------}}
+{{!--
+    Layout: Article
+
+    A list of the articles that will be displayed on the website.
+    (index, author, tags)
+--}}
 
 {{#foreach posts}}
 
 <article class="article {{post_class}}">
-    <div class="article__coverContainer">
-        {{#if feature_image}}
 
+    {{!--
+        Cover
+        The cover image of the post.
+    --}}
+
+    <div class="article__coverContainer">
+
+        {{!-- If the image exists --}}
+        {{#if feature_image}}
+        
         <a href="{{url}}" class="u-display-in-block">
             <figure class="article__cover">
                 <img src="{{feature_image}}" alt="{{title}}" class="article__image">
             </figure>
         </a>
 
+        {{!-- If the image does not exist --}}
         {{else}}
+
         <a href="{{url}}" class="u-display-in-block">
             <div class="article__gradient"></div>
         </a>
         
         {{/if}}
 
+        {{!-- It the tags exists --}}
         {{#if tags}}
-            {{#foreach tags limit="1"}}
+            {{!-- Second tag of the post --}}
+            {{#foreach tags from="2" limit="1"}}
                 <div class="article__tagContainer">
                     <a href="{{url}}" class="article__tag btn btn-secondary btn-icon">
                         <span class="article__icon o-icon-{{name}}">
@@ -34,30 +49,44 @@
             {{/foreach}}
         {{/if}}
     </div>
+
+    {{!--
+        Details
+        Brief information about the post.
+    --}}
     
     <div class="article__details">
 
+        {{!-- Top --}}
         <header class="article__info">
+
+            {{!-- Title --}}
             <h2 class="article__title">
                 <a href="{{url}}" class="article__link">{{title}}</a>
             </h2>
 
+            {{!-- Description --}}
             <section class="article__description">
                 <p class="article__text">{{excerpt words="20"}}</p>
             </section>
         </header>
 
+        {{!-- Bottom --}}
         <footer class="article__options">
+            
             {{#author}}
             <a href="{{url}}" class="article__author">
                 
+                {{!-- If there is an image of the author --}}
                 {{#if profile_image}}
                 <figure class="article__avatar">
                     <img src="{{ profile_image}}" alt="{{name}}" nopin="nopin" class="article__image"/>
                 </figure>
                 {{/if}}
 
+                {{!-- Author name --}}
                 <span class="article__name">{{name}}</span>
+
             </a>
             {{/author}}
 
