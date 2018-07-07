@@ -1,5 +1,6 @@
 const path = require("path"),
-  ExtractTextPlugin = require("extract-text-webpack-plugin");
+  ExtractTextPlugin = require("extract-text-webpack-plugin"),
+  UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = (env, argv) => {
   const pluginsList = [
@@ -10,6 +11,13 @@ module.exports = (env, argv) => {
         };
 
   if (argv.mode === "production") {
+    pluginsList.push(
+      new UglifyJsPlugin({
+        test: /\.js($|\?)/i,
+        exclude: /(node_modules)/
+      })
+    );
+
     cssOptions.minimize = true;
   }
 
