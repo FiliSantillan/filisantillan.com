@@ -1,6 +1,7 @@
 const path = require("path"),
   ExtractTextPlugin = require("extract-text-webpack-plugin"),
-  UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+  UglifyJsPlugin = require('uglifyjs-webpack-plugin'),
+  CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = (env, argv) => {
   const pluginsList = [
@@ -11,11 +12,19 @@ module.exports = (env, argv) => {
         };
 
   if (argv.mode === "production") {
+
+    let pathsToClean = [
+      "assets/**/*.css",
+      "assets/**/*.js",
+      "assets/fonts/*"
+    ];
+
     pluginsList.push(
       new UglifyJsPlugin({
         test: /\.js($|\?)/i,
         exclude: /(node_modules)/
-      })
+      }),
+      new CleanWebpackPlugin(pathsToClean, {root: __dirname})
     );
 
     cssOptions.minimize = true;
