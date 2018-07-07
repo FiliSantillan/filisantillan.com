@@ -4,12 +4,11 @@
 @custom-selector :--buttons-secondary a[class*="btn-secondary"], button[class*="btn-secondary"], input[class*="btn-secondary"];
 @custom-selector :--buttons-icon a[class*="btn-icon"], button[class*="btn-icon"], input[class*="btn-icon"];
 @custom-selector :--buttons-mini a[class*="btn-mini"], button[class*="btn-mini"], input[class*="btn-mini"];
-
 @custom-selector :--iconElements i[class*="o-icon"], span[class*="o-icon"];
 
 :--buttons {
     background-image: linear-gradient(var(--gradient-default));
-    box-shadow: 5px 5px 10px color(black alpha(0.5));
+    box-shadow: var(--shadow-full);
     border-radius: var(--radius-size-full);
     display: inline-block;
     font-size: var(--md-text);

@@ -8,48 +8,48 @@ http://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clik
 
 code,
 pre {
-	font-family: "Source Code Pro", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: "Source Code Pro", Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+    monospace;
 }
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: var(--color-editor-light-gray);
-	background: none;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
+  color: var(--color-editor-light-gray);
+  background: none;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
 
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
 
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
-	margin: 0;
-	overflow: auto;
+  padding: 1em;
+  margin: 0;
+  overflow: auto;
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: var(--color-dark);
+  background: var(--color-dark);
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
 }
 
 .token.comment,
@@ -57,35 +57,35 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: var(--color-editor-gray);
+  color: var(--color-editor-gray);
 }
 
 .token.punctuation {
-	color: var(--color-editor-light-gray);
+  color: var(--color-editor-light-gray);
 }
 
 .token.tag,
 .token.attr-name,
 .token.namespace,
 .token.deleted {
-	color: var(--color-editor-yellow); 
+  color: var(--color-editor-yellow);
 }
 
 .token.function-name {
-	color: var(--color-editor-blue);
+  color: var(--color-editor-blue);
 }
 
 .token.boolean,
 .token.number,
 .token.function {
-	color: var(--color-editor-red);
+  color: var(--color-editor-red);
 }
 
 .token.property,
 .token.class-name,
 .token.constant,
 .token.symbol {
-	color: var(--color-editor-orange);
+  color: var(--color-editor-orange);
 }
 
 .token.selector,
@@ -93,7 +93,7 @@ pre[class*="language-"] {
 .token.atrule,
 .token.keyword,
 .token.builtin {
-	color: var(--color-editor-purple);
+  color: var(--color-editor-purple);
 }
 
 .token.string,
@@ -101,69 +101,68 @@ pre[class*="language-"] {
 .token.attr-value,
 .token.regex,
 .token.variable {
-	color: var(--color-editor-green);
+  color: var(--color-editor-green);
 }
 
 .token.operator,
 .token.entity,
 .token.url {
-	color: var(--color-editor-light-blue);
+  color: var(--color-editor-light-blue);
 }
 
 .token.important,
 .token.bold {
-	font-weight: bold;
+  font-weight: bold;
 }
 .token.italic {
-	font-style: italic;
+  font-style: italic;
 }
 
 .token.entity {
-	cursor: help;
+  cursor: help;
 }
 
 .token.inserted {
-	color: green;
+  color: green;
 }
 
 pre.line-numbers {
-	position: relative;
-	padding-left: 3.8em;
-	counter-reset: linenumber;
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
 }
 
 pre.line-numbers > code {
-	position: relative;
-    white-space: inherit;
+  position: relative;
+  white-space: inherit;
 }
 
 .line-numbers .line-numbers-rows {
-	position: absolute;
-	pointer-events: none;
-	top: 0;
-	font-size: 100%;
-	left: -3.8em;
-	width: 3em; /* works for line-numbers below 1000 lines */
-	letter-spacing: -1px;
-	border-right: 1px solid #999;
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  left: -3.8em;
+  width: 3em; /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  border-right: 1px solid #999;
 
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-	.line-numbers-rows > span {
-		pointer-events: none;
-		display: block;
-		counter-increment: linenumber;
-	}
+.line-numbers-rows > span {
+  pointer-events: none;
+  display: block;
+  counter-increment: linenumber;
+}
 
-		.line-numbers-rows > span:before {
-			content: counter(linenumber);
-			color: #999;
-			display: block;
-			padding-right: 0.8em;
-			text-align: right;
-		}
+.line-numbers-rows > span:before {
+  content: counter(linenumber);
+  color: #999;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+}

@@ -13,4 +13,5 @@
 @import "./components/cover/cover.css";
 @import "./components/subscribe/subscribe.css";
 @import "./components/posts/article.css";
+@import "./components/pagination/pagination.css";
 @import "./components/footer/footer.css";

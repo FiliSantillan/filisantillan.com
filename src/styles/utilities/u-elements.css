@@ -20,8 +20,8 @@
     margin-right: 0.5rem;
 }
 
-.u-shadow-complete {
-    box-shadow: var(--shadow-complete);
+.u-shadow-full {
+    box-shadow: var(--shadow-full);
 }
 
 .u-shadow-middle {

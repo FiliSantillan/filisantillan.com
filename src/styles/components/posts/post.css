@@ -19,10 +19,17 @@
 
     & p,
     & ul,
+    & ol,
+    & pre,
+    & blockquote {
+        margin-bottom: var(--spacer-size);
+    }
+
+    & p,
+    & ul,
     & ol {
         font-size: var(--md-text);
         line-height: calc(var(--md-text) + 9px);
-        margin-bottom: var(--spacer-size);
     }
 
     & h2,
@@ -46,27 +53,33 @@
     }
 
     & h4 {
+        margin-top: calc(var(--spacer-size) * 1.4);
         font-size: var(--sm-title);
         line-height: calc(var(--sm-title) * 1.2);
     }
 
     & h5 {
+        margin-top: calc(var(--spacer-size) * 1.3);
         font-size: calc(var(--sm-title) - 2px );
         line-height: calc((var(--sm-title) - 2px) * 1.2);
     }
 
     & h6 {
+        margin-top: calc(var(--spacer-size) * 1.2);
         font-size: var(--xl-text);
         line-height: calc(var(--xl-text) * 1.2);
+    }
+
+    & blockquote,
+    & code {
+        position: relative;
+        border-radius: var(--radius-size);
     }
 
     & blockquote {
         background-color: gray(220);
         margin: 0;
         padding: var(--spacer-size);
-        position: relative;
-        margin-bottom: var(--spacer-size);
-        border-radius: var(--radius-size);
 
         & p {
             margin: 0;
@@ -87,9 +100,7 @@
     & code {
         background-color: var(--color-dark);
         color: var(--color-editor-red);
-        border-radius: var(--radius-size);
         padding: 0 5px 2px;
-        position: relative;
         top: -1px;
         margin: 0 3px 0 1px;
         font-size: 90%;
@@ -99,8 +110,7 @@
     }
 
     & pre {
-        margin-bottom: var(--spacer-size);
-
+        border-radius: 0 0 var(--radius-size) var(--radius-size);
         & code {
             background: none;
             color: var(--color-editor-light-gray);
@@ -120,6 +130,7 @@
         margin: 0 auto;
         display: block;
         box-shadow: 2.5px 2.5px 8px rgba(0,0,0,0.5);
+        border-radius: var(--radius-size);
     }
 
     @media (--desktop-1024) {
@@ -129,16 +140,7 @@
         & ul {
             font-size: var(--xl-text);
             line-height: calc(var(--xl-text) + 12px);
-        }
-
-        & img {
-            border-radius: var(--radius-size);
-        }
- 
-        & pre {
-            border-radius: 0 0 var(--radius-size) var(--radius-size);
-        }
-    
+        }    
     }
 }
 

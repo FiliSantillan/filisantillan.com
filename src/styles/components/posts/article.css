@@ -19,7 +19,7 @@
 
 .article {
     border-radius: var(--radius-size-double);
-    box-shadow: 5px 5px 10px color(black alpha(0.5));
+    box-shadow: var(--shadow-full);
 
     & .article__coverContainer {
         position: relative;
@@ -32,6 +32,7 @@
     }
 
     @media(--desktop-1024) {
+        
         &:first-child {
             grid-column: 1 / -1;
             max-width: 800px;
@@ -52,15 +53,19 @@
                     min-height: 400px;
                     max-height: 400px;
                     border-radius: var(--radius-size-double);
-                    box-shadow: 5px 5px 10px color(black alpha(0.5));
+                    box-shadow: var(--shadow-full);
                 }
+            }
+
+            & .article__gradient,
+            & .article__details {
+                border-radius: var(--radius-size-double);
+                box-shadow: var(--shadow-full);
             }
 
             & .article__gradient {
                 width: 600px;
                 height: 400px;
-                border-radius: var(--radius-size-double);
-                box-shadow: 5px 5px 10px color(black alpha(0.5));
             }
     
             & .article__details {
@@ -69,8 +74,6 @@
                 bottom: -50px;
                 right: -300px;
                 max-width: 600px;
-                border-radius: var(--radius-size-double);
-                box-shadow: 5px 5px 10px color(black alpha(0.5));
                 padding: var(--spacer-size) calc(var(--spacer-size) * 1.5) var(--spacer-size) ;
             }
 
@@ -101,27 +104,22 @@
             grid-column: 9 / 13;
         }
 
-        &:nth-child(5n+5) {
-            grid-column: 1 / 7;
-            
+        &:nth-child(5n+5),
+        &:nth-child(5n+6) {
             & .article__cover {
                 & .article__image {
                     min-height: 280px;
                     max-height: 280px;
                 }
             }
+         }
+
+        &:nth-child(5n+5) {
+            grid-column: 1 / 7;
         }
 
         &:nth-child(5n+6) {
             grid-column: 7 / 13;
-            
-            & .article__cover {
-                & .article__image {
-                    width: 100%;
-                    min-height: 280px;
-                    max-height: 280px;
-                }
-            }
         }
     }
 }

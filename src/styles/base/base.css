@@ -1,6 +1,6 @@
 html {
     box-sizing: border-box;
-  }
+}
 
 *, *:before, *:after {
     box-sizing: inherit;
@@ -13,10 +13,9 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Montserrat", system-ui;
-    margin: 0;
 }
 
-figure {
+h1, h2, h3, h4, h5, h6, figure {
     margin: 0;
 }
 

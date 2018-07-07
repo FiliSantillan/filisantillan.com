@@ -19,12 +19,20 @@
 
 .footer__info {
     margin-bottom: var(--spacer-size);
+
+    & .footer__legal,
+    & .footer__server {
+        & .footer__text {
+            font-size: var(--sm-text);
+            color: white;
+        }
+    }
+
     & .footer__legal {
         display: block;
         margin-bottom: calc(var(--spacer-size) / 2);
+
         & .footer__text {
-            font-size: var(--sm-text);
-            color: white;
 
             &:after {
                 content: " | ";
@@ -34,13 +42,6 @@
                 content: "";
             }
 
-        }
-    }
-
-    & .footer__server {
-        & .footer__text {
-            font-size: var(--sm-text);
-            color: white;
         }
     }
 
@@ -75,7 +76,6 @@
             font-size: var(--lg-text);
             color: var(--color-dark);
             border-radius: 50%;
-            box-shadow: 2.5px 2.5px 8px rgba(0,0,0,0.5);
         }
     }
 }

@@ -26,6 +26,7 @@
         
         & .header__text {
             color: white;
+            
             &:first-child:after {
                 content: " |";
             }
