@@ -41,8 +41,10 @@ emerald
 ######################
 # Production #
 ######################
-dist/
-assets/
+!assets/
+
+assets/*
+!assets/favicon/
 
 ######################
 # API KEYS #
