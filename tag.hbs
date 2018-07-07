@@ -1,13 +1,24 @@
-{{!------------------------------------}}
-          {{!-- Tag --}}
-{{!------------------------------------}}
+
+{{!--
+    Template: Tag
+
+    A tag template for the tag archive pages.
+--}}
+
+{{!--
+    default-tag
+    main structure of the templates
+    Important: The code below is not a comment
+--}}
 
 {{!< default-tag }}
+
+{{!-- Cover layout --}}
 <section class="cover">
     {{> "cover-tag" }}
 </section>
 
-{{!-- Loop: The main content area on the author --}}
+{{!-- Articles --}}
 <section id='article-wrapper' class='article-wrapper u-wrap-center' role='main'>
     {{> 'article'}}
 </section>

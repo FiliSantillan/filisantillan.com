@@ -1,14 +1,25 @@
-{{!------------------------------------}}
-          {{!-- Author --}}
-{{!------------------------------------}}
+
+{{!--
+    Template: Author
+
+    Author pages get access to both a list of posts and details
+    of the author. Tag pages get access to both a list of posts (and pagination info) and details of the tag.
+--}}
+
+{{!--
+    default-author
+    main structure of the templates
+    Important: The code below is not a comment
+--}}
 
 {{!< default-author }}
 
+{{!-- Cover layout --}}
 <section class="cover">
     {{> "cover-author" }}
 </section>
 
-{{!-- Loop: The main content area on the author --}}
+{{!-- Articles --}}
 <section id='article-wrapper' class='article-wrapper u-wrap-center' role='main'>
     {{> 'article'}}
 </section>

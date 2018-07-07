@@ -1,3 +1,10 @@
+{{!--
+    Layout: Default (Tag)
+
+    The "default" files are basically the main structure of the templates.
+    It is the general structure that the website will have.
+--}}
+
 <!DOCTYPE html>
 <html lang='{{lang}}'>
 <head>
@@ -43,23 +50,37 @@
     {{!-- Other Settings --}}
     <meta name='google-site-verification' content='PUVeHiwvS1T4_Q8FaieZHfE0GjL2rsKJ3LU4eabFdtA' />
 
-    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{!--
+        Ghost Head
+        This tag outputs SEO meta+structured data and other important settings.
+    --}}
+
     {{ghost_head}}
 
 </head>
 <body class='{{body_class}}'>
 
+    {{!-- Header layout --}}
     {{> 'header' }}
 
-    {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+    {{!-- 
+        Body layout
+        Depending on the type of template, it will show a different content.
+    --}}
+
     {{{body}}}
 
+    {{!-- Footer layout --}}
     {{> 'footer'}}
 
-    {{!-- Scripts --}}
+    {{!-- Default JS Bundle--}}
     <script src='{{asset "js/tag-bundle.js"}}'></script>
 
-    {{!-- Ghost outputs important scripts and data with this tag --}}
+    {{!--
+        Ghost Foot
+        Ghost outputs important scripts and data with this tag.
+    --}}
+
     {{ghost_foot}}
     
 </body>

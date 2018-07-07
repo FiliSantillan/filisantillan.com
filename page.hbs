@@ -1,16 +1,28 @@
-{{!------------------------------------}}
-          {{!-- Post --}}
-{{!------------------------------------}}
+
+{{!--
+    Template: Page
+
+    A page template for static pages.
+    Pages have exactly the same data available as a post, 
+    they simply don't appear in the list of posts.
+--}}
+
+{{!--
+    default-post
+    main structure of the templates
+    Important: The code below is not a comment
+--}}
 
 {{!< default-post }}
 
 {{#post}}
-{{!-- Cover: Post cover image --}}
+
+{{!-- Cover layout --}}
 <section class="cover">
     {{> "cover-post"}}
 </section>
 
-{{!-- Post content wrap --}}
+{{!-- Single Post --}}
 <main class='post-wrapper u-wrap-center' role='main'>
     <article class='post'>
 

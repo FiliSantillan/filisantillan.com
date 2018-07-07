@@ -1,16 +1,26 @@
-{{!------------------------------------}}
-          {{!-- Post --}}
-{{!------------------------------------}}
+
+{{!--
+    Template: Post
+
+    This is the template for a single post.
+--}}
+
+{{!--
+    default-post
+    main structure of the templates
+    Important: The code below is not a comment
+--}}
 
 {{!< default-post }}
 
 {{#post}}
-{{!-- Cover: Post cover image --}}
+
+{{!-- Cover layout --}}
 <section class="cover">
     {{> "cover-post"}}
 </section>
 
-{{!-- Post content wrap --}}
+{{!-- Single Post --}}
 <main class='post-wrapper u-wrap-center' role='main'>
     <article class='post'>
 
@@ -22,7 +32,7 @@
     </article>
 </main>
 
-{{!-- Comment system for the blog, Powered by Disqus --}}
+{{!-- Comment (Disqus) --}}
 <section class='disqus'>
     {{> 'disqus'}}
 </section>
