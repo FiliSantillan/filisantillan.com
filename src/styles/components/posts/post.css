@@ -144,6 +144,10 @@
     }
 }
 
+.content--page {
+    padding: var(--spacer-size);
+}
+
 .optionList {
     background-color: var(--color-dark);
     padding: var(--spacer-size);
@@ -264,6 +268,47 @@
         width: 100%;
     }
 }
+
+.event {
+    margin-bottom: var(--spacer-size);
+    
+    & .event__date {
+        font-weight:300;
+        font-size: var(--lg-text);
+        color: gray(150);
+    }
+
+    & .event__details {
+        & .event__title {
+            margin-top: 0;
+            margin-bottom: calc(var(--spacer-size) / 3);
+            font-weight: 300;
+        }
+
+        & .event__tag {
+            background-color: var(--color-blue);
+            color: white;
+            border-radius: var(--radius-size);
+            padding: 4px 8px;
+        }
+    }
+
+    @media (--tablet-768) {
+        & .event__details {
+            & .event__title {
+                display: inline-block;
+                margin-bottom: 0;
+                vertical-align: middle;
+            }
+
+            & .event__tag {
+                vertical-align: middle;
+                margin-left: calc(var(--spacer-size) / 3);
+            }
+        }
+    }
+}
+
 
 .disqus {
     padding: var(--spacer-size) var(--spacer-size) 0;

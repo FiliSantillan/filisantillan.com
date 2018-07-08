@@ -162,3 +162,28 @@
     }
 }
 
+.cover--page {
+    padding: calc(var(--spacer-size) * 4) var(--spacer-size) calc(var(--spacer-size) * 3);
+    text-align: center;
+
+    & .cover__title {
+        margin-bottom: 0;
+
+        & .cover__text {
+            font-size: calc(var(--xl-title) * 1.3);
+            line-height: initial;
+        }
+    }
+
+    @media (--desktop-1024) {
+        text-align: left;
+
+        & .cover__title {
+            & .cover__text {
+                font-size: calc(var(--xl-title) * 2.5);
+                line-height: calc(var(--xl-title) * 2.5 * 1.3);
+            }
+        }
+    }
+}
+

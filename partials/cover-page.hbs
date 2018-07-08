@@ -1,15 +1,20 @@
 {{!------------------------------------}}
-          {{!-- Cover-page --}}
+          {{!-- Cover-post --}}
 {{!------------------------------------}}
 
-{{!-- Cover of a page --}}
+<div class="cover__details cover--page u-center-content">
+    <div class="cover-wrapper u-max-w800">
+        <div class="cover__title">
+            <h1 class="cover__text">{{title}}</h1>
+        </div>
 
-{{!-- Post cover image --}}
-<div class='cover__wrapper'>
-    
-    {{!-- Post title --}}
-    <div class='cover-post__title wrap-center'>
-        <h1 class='cover-post__text'>{{title}}</h1>
     </div>
 
+    <ul class="figures u-no-list">
+        <li class="circle"></li>
+        <li class="circle"></li>
+        <li class="circle"></li>
+    </ul>
 </div>
+
+<div class="cover__image {{#if feature_image}}image--true" style="background-image: url({{img_url feature_image}}){{else}}image--false{{/if}}"></div>
