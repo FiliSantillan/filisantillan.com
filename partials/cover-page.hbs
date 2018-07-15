@@ -1,15 +1,26 @@
-{{!------------------------------------}}
-          {{!-- Cover-post --}}
-{{!------------------------------------}}
+{{!--
+    Layout: Cover (Page)
+
+    Cover image of the page. This is set in the blog settings
+--}}
+
+{{!--
+    Cover
+    The cover image of the page.
+--}}
 
 <div class="cover__details cover--page u-center-content">
+    
+    {{!-- Title Wrapper --}}
     <div class="cover-wrapper u-max-w800">
+
         <div class="cover__title">
             <h1 class="cover__text">{{title}}</h1>
         </div>
 
     </div>
 
+    {{!-- Circles --}}
     <ul class="figures u-no-list">
         <li class="circle"></li>
         <li class="circle"></li>
@@ -17,4 +28,5 @@
     </ul>
 </div>
 
+{{!-- Background Image--}}
 <div class="cover__image {{#if feature_image}}image--true" style="background-image: url({{img_url feature_image}}){{else}}image--false{{/if}}"></div>

@@ -1,13 +1,23 @@
-{{!------------------------------------}}
-          {{!-- Cover-post --}}
-{{!------------------------------------}}
+{{!--
+    Layout: Cover (Post)
+
+    Cover image of the post. This is set in the blog settings
+--}}
+
+{{!--
+    Cover
+    The cover image of the post.
+--}}
 
 <div class="cover__details u-center-content">
+
+    {{!-- Title Wrapper --}}
     <div class="cover-wrapper u-max-w800">
         <div class="cover__title">
             <h1 class="cover__text">{{title}}</h1>
         </div>
 
+        {{!-- If there are tags --}}
         {{#if tags}}
             {{#foreach tags}}
                 <a href="{{url}}" class="cover__tag btn btn-secondary btn-icon">
@@ -21,21 +31,26 @@
 
         {{#author}}
             <a href="{{url}}" class="cover__author u-display-in-block">
-
+                
+                {{!-- If the author's image exists --}}
                 {{#if profile_image}}
                 <img class="cover__authorImage"
                         src="{{img_url profile_image}}"
                         alt="{{name}}">
+
+                {{!-- If it does not exist --}}
                 {{else}}
                 <img class="cover__authorImage"
                     src="https://api.adorable.io/avatars/face/eyes2/nose7/mouth3/299fd3">
                 {{/if}}
 
+                {{!-- Author's name--}}
                 <span class="cover__name">{{name}}</span>
             </a>
         {{/author}}
     </div>
 
+    {{!-- Circles --}}
     <ul class="figures u-no-list">
         <li class="circle"></li>
         <li class="circle"></li>
@@ -43,4 +58,5 @@
     </ul>
 </div>
 
+{{!-- Background Image--}}
 <div class="cover__image {{#if feature_image}}image--true" style="background-image: url({{img_url feature_image}}){{else}}image--false{{/if}}"></div>

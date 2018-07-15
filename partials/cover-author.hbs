@@ -4,23 +4,31 @@
     Cover image of the author. This is set in the blog settings
 --}}
 
-{{#author}}
-
 {{!--
     Cover
     The cover image of the author.
 --}}
 
+{{#author}}
+
+{{!-- Background image --}}
 <div class="cover__imageContainer">
     <div class="cover__image {{#if cover_image}}image--true" style="background-image: url({{cover_image}}){{else}}image--false{{/if}}"></div>
 </div>
 
+{{!--
+    Intro
+    Information shown on the cover.
+--}}
+
 <div class="cover__intro u-wrap-center">
 
+    {{!-- Name --}}
     <div class="cover__name">
         <strong class="cover__text">{{name}}</strong>
     </div>
-
+    
+    {{!-- if there is a biography --}}
     {{#if bio}}
     <div class="cover__description cover--bio">
         <strong class="cover__text">
@@ -29,12 +37,14 @@
     </div>
     {{/if}}
 
+    {{!-- Number of public posts --}}
     <div class="cover__postNumber">
         <span class="cover__text">
             {{plural ../pagination.total empty='No hay posts' singular='% post' plural='% posts'}}
         </span>
     </div>
 
+    {{!-- Social Networks --}}
     <ul class="cover__optionList u-no-list optionList--social">
 
         {{#if website}}
@@ -68,14 +78,17 @@
         </li>
     </ul>
 
+    {{!-- Image of the author --}}
     <div class="cover__author u-display-in-block">
 
+        {{!-- If the image exists --}}
         {{#if profile_image}}
         
             <img class="cover__authorImage"
                     src="{{img_url profile_image}}" 
                     alt="{{name}}">
 
+        {{!-- If it does not exist --}}
         {{else}}
 
             <img class="cover__authorImage"

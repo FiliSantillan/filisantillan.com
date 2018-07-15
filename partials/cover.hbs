@@ -1,21 +1,30 @@
-{{!------------------------------------}}
-          {{!-- Cover --}}
-{{!------------------------------------}}
+{{!--
+    Layout: Cover (Default)
 
-{{!-- Cover of a index (default) --}}
+    Cover image of the home. This is set in the blog settings
+--}}
 
-{{!-- Cover image --}}
+{{!--
+    Cover
+    The cover image of the home.
+--}}
+
+{{!-- Background image --}}
 <div class="cover__imageContainer">
     <div class="cover__image {{#if @blog.cover_image}}image--true" style="background-image: url({{@blog.cover_image}}){{else}}image--false{{/if}}"></div>
 </div>
 
+
 <div class="cover__intro u-wrap-center">
+
+    {{!-- Description --}}
     <div class="cover__description">
         <strong class="cover__text">
             {{@blog.description}}
         </strong>
     </div>
 
+    {{!-- Options --}}
     <div class="cover__optionList">
         <a href="https://filisantillan.com/tag/challenges/" class="cover__option u-center-content">
             <div class="cover-wrapper">
@@ -54,6 +63,7 @@
         </a>
     </div>
 
+    {{!-- Icon image --}}
     <div class="cover__author cover--imageHome u-only-desktop" id="cover-home"></div>
 
 </div>
