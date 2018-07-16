@@ -1,3 +1,7 @@
+.o-icon-pencil:before,
+.o-icon-tutorial:before {
+  content: "\e97b";
+}
 .o-icon-javascript .path1:before {
   content: "\e905";
   color: rgb(247, 223, 30);
@@ -523,6 +527,7 @@
   content: "\e909";
 }
 .o-icon-users:before,
-.o-icon-contribuye:before {
+.o-icon-contribuye:before,
+.o-icon-comunidad {
   content: "\e90f";
 }
