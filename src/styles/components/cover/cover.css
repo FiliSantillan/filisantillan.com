@@ -19,6 +19,8 @@
     & .image--true {
         background-size: cover;
         background-position: center;
+        transform: skewY(12deg);
+        transform-origin: 0;
 
         &:before {
             content: "";

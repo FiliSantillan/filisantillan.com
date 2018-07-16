@@ -78,7 +78,8 @@
 
     & blockquote {
         background-color: gray(220);
-        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
         padding: var(--spacer-size);
 
         & p {
