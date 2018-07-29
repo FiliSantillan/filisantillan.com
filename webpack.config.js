@@ -1,7 +1,8 @@
 const path = require("path"),
   ExtractTextPlugin = require("extract-text-webpack-plugin"),
   UglifyJsPlugin = require('uglifyjs-webpack-plugin'),
-  CleanWebpackPlugin = require('clean-webpack-plugin');
+  CleanWebpackPlugin = require('clean-webpack-plugin'),
+  webpack = require("webpack");
 
 module.exports = (env, argv) => {
   const pluginsList = [
@@ -92,6 +93,12 @@ module.exports = (env, argv) => {
         }
       ]
     },
-    plugins: pluginsList
+    plugins: pluginsList,
+    optimization: {
+        splitChunks: {
+            name: "common",
+            chunks: "initial"
+        }
+    }
   };
 };
