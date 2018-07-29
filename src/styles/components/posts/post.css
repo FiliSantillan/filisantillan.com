@@ -138,7 +138,8 @@
         padding: var(--spacer-size) 0 var(--spacer-size);
 
         & p,
-        & ul {
+        & ul,
+        & ol {
             font-size: var(--xl-text);
             line-height: calc(var(--xl-text) + 12px);
         }    
