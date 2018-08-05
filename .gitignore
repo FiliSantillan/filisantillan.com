@@ -45,6 +45,7 @@ emerald
 
 assets/*
 !assets/favicon/
+!assets/images/
 
 ######################
 # API KEYS #
