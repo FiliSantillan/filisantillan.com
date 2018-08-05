@@ -19,7 +19,7 @@
         {{!-- If the image exists --}}
         {{#if feature_image}}
         
-        <a href="{{url}}" class="u-display-block">
+        <a href="{{url}}" class="u-display-block" title="{{title}}" aria-label="{{title}}">
             <figure class="article__cover">
                 <img src="{{asset 'images/lazyload.jpg'}}" data-src="{{feature_image}}" alt="{{title}}" class="article__image lazy">
             </figure>
@@ -28,7 +28,7 @@
         {{!-- If the image does not exist --}}
         {{else}}
 
-        <a href="{{url}}">
+        <a href="{{url}}" title="{{title}}" aria-label="{{title}}">
             <div class="article__gradient"></div>
         </a>
         

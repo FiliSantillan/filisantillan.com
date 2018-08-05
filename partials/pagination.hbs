@@ -7,7 +7,7 @@
 {{!-- If there is a prev --}}
 {{#if prev}}
     {{!-- icon arrow-left --}}
-    <a class="pagination__arrow u-display-in-block" href="{{page_url prev}}">
+    <a class="pagination__arrow u-display-in-block" href="{{page_url prev}}" title="Anterior" aria-label="Anterior">
         <i class="pagination__icon o-icon-arrow-left-circle"></i>
     </a>
 {{/if}}
@@ -20,7 +20,7 @@
 {{!-- If there is a next --}}
 {{#if next}}
     {{!-- icon arrow-right --}}
-    <a class="pagination__arrow u-display-in-block" href="{{page_url next}}">
+    <a class="pagination__arrow u-display-in-block" href="{{page_url next}}" title="Posterior" aria-label="Posterior">
         <i class="pagination__icon o-icon-arrow-right-circle"></i>
     </a>
 {{/if}}
