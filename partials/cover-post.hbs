@@ -17,6 +17,9 @@
             <h1 class="cover__text">{{title}}</h1>
         </div>
 
+        {{!-- Post date --}}
+         <time datetime="{{date format="YYYY-MM-DD"}}" class="cover__date">{{date format="DD MMMM, YYYY"}}</time>
+
         {{!-- If there are tags --}}
         {{#if tags}}
             {{#foreach tags}}
