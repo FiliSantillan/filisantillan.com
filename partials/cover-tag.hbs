@@ -29,6 +29,13 @@
     </div>
     
     {{!-- Newsletter Text --}}
+    {{#if description}}
+    <div class="cover__description cover--tag">
+        <strong class="cover__text">{{description}}</strong>
+    </div>
+
+    {{else}}
+
     <div class="cover__description cover--tag">
         <strong class="cover__text">
             Únete a mi newsletter semanal en donde te voy a compartir contigo: artículos, videos, noticias y todo entorno a desarrollo frontend.
@@ -39,6 +46,8 @@
     <div class="cover__newsletter">
         {{> "subscribe" }}
     </div>
+        
+    {{/if}}
 
     {{!-- Number of public posts --}}
     <div class="cover__postNumber">
