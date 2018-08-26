@@ -6,6 +6,16 @@
   "config": {
     "posts_per_page": 11
   },
+  "keywords": [
+    "ghost-theme",
+    "ghost-blog",
+    "html",
+    "css",
+    "javascript",
+    "react",
+    "frontend",
+    "developer"
+  ],
   "scripts": {
     "build:dev": "webpack --mode=development --watch",
     "build:pro": "webpack --mode=production"
@@ -30,6 +40,7 @@
     "postcss-font-magician": "^2.1.1",
     "postcss-import": "^11.1.0",
     "postcss-loader": "^2.1.3",
+    "size-plugin": "^1.0.0",
     "style-loader": "^0.20.3",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "url-loader": "^1.0.1",
