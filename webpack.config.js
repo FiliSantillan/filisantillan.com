@@ -2,13 +2,13 @@ const path = require("path"),
   ExtractTextPlugin = require("extract-text-webpack-plugin"),
   UglifyJsPlugin = require('uglifyjs-webpack-plugin'),
   CleanWebpackPlugin = require('clean-webpack-plugin'),
-  webpack = require("webpack"),
-  SizePlugin = require("size-plugin");
+  webpack = require("webpack");
+  // SizePlugin = require("size-plugin");
 
 module.exports = (env, argv) => {
   const pluginsList = [
             new ExtractTextPlugin("css/[name]-bundle.css"),
-            new SizePlugin()
+            // new SizePlugin()
         ],
         cssOptions = {
             importLoaders: 1
