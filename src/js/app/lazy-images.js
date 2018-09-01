@@ -7,19 +7,12 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   for (let i=0; i < lazyImages.length; i++) {
-
-    var url = lazyImages[i].dataset.src;
-    var state = url.search("s3-us-west-1");
-
-    if (state !== -1) {
-      let namePath = returnNamePath(lazyImages[i].dataset.src),
-          imageAbsolute = `https://filisantillan.imgix.net/${namePath}`;
+    let namePath = returnNamePath(lazyImages[i].dataset.src),
+        imageAbsolute = `https://filisantillan.imgix.net/${namePath}`;
       
-      lazyImages[i].src = `${imageAbsolute}?w=100&h=100&blur=100`;
-      lazyImages[i].dataset.src = `${imageAbsolute}?w=425&h=225`;
-      lazyImages[i].dataset.srcset = `${imageAbsolute}?w=425&h=225&dpr=2 2x, ${imageAbsolute}?w=425&h=225&dpr=3 3x`;
-    }
-
+    lazyImages[i].src = `${imageAbsolute}?w=100&h=100&blur=50`;
+    lazyImages[i].dataset.src = `${imageAbsolute}?w=425&h=225`;
+    lazyImages[i].dataset.srcset = `${imageAbsolute}?w=425&h=225&dpr=2 2x, ${imageAbsolute}?w=425&h=225&dpr=3 3x`;
   }
 
   if ("IntersectionObserver" in window) {
@@ -31,9 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
           if (entry.isIntersecting) {
             let lazyImage = entry.target;
             lazyImage.src = lazyImage.dataset.src;
-            if (state !== -1) {
-              lazyImage.srcset = lazyImage.dataset.srcset;
-            }
+            lazyImage.srcset = lazyImage.dataset.srcset;
             lazyImage.classList.remove("lazy");
             lazyImageObserver.unobserve(lazyImage);
           }
@@ -44,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
     lazyImages.forEach(function(lazyImage) {
       lazyImageObserver.observe(lazyImage);
     });
+
   } else {
     const lazyLoad = function() {
       if (active === false) {
@@ -57,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
               getComputedStyle(lazyImage).display !== "none"
             ) {
               lazyImage.src = lazyImage.dataset.src;
-              // lazyImage.srcset = lazyImage.dataset.srcset;
+              lazyImage.srcset = lazyImage.dataset.srcset;
               lazyImage.classList.remove("lazy");
               lazyImages = lazyImages.filter(function(image) {
                 return image !== lazyImage;
