@@ -13,12 +13,21 @@ Pequeña guía para el uso del tema **"FiliSantillan"** en **Ghost**, esto con e
 ### Imágenes
 Resolución recomendada para las imágenes en el blog.
 
-Tamaño para las imágenes en los posts, incluyendo las portadas de los artículos estáticos:
+Tamaño para las imágenes las portadas
 
-| Imagen        | Resolución    |
-| ------------- | ------------- |
-| Ancho         | 1920px        |
-| Alto          | 945px         |
+| Device             | 1x            | 2x              | 3x             |
+| ------------------ | ------------- | --------------- | ---------------|
+| Mobile             |               |                 |                |
+| Tablet             |               |                 |                |
+| Desktop            | 1080 x 722    | 2160 x 1444     | 3240 x 2166    |
+
+Tamaño para las imágenes en el Home
+
+| Device             | 1x            | 2x              | 3x             |
+| ------------------ | ------------- | --------------- | ---------------|
+| Mobile             | 425 x 225     | 850 x 450       | 1275 x 675     |
+| Tablet             | 425 x 225     | 850 x 450       | 1275 x 675     |
+| Desktop            | 425 x 250     | 850 x 450       | 1275 x 675     |
 
 Tamaño para las imágenes en los artículos estáticos (Agenda, Cursos, Videos):
 
