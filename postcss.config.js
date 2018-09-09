@@ -12,6 +12,7 @@ module.exports = {
             }
         }),
         require("postcss-font-magician")({
+            display: "swap",
             variants: {
                 "Montserrat": {
                     300: [],
