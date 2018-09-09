@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+
   let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
   let active = false;
 
@@ -8,11 +9,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
   for (let i=0; i < lazyImages.length; i++) {
     let namePath = returnNamePath(lazyImages[i].dataset.src),
-        imageAbsolute = `https://filisantillan.imgix.net/${namePath}`;
-      
-    lazyImages[i].src = `${imageAbsolute}?w=100&h=100&blur=50`;
-    lazyImages[i].dataset.src = `${imageAbsolute}?w=425&h=225`;
-    lazyImages[i].dataset.srcset = `${imageAbsolute}?w=425&h=225&dpr=2 2x, ${imageAbsolute}?w=425&h=225&dpr=3 3x`;
+        imageAbsolute = `https://filisantillan.imgix.net/${namePath}`,
+        imageWidth, imageHeight;
+  
+    lazyImages[i].src = `${imageAbsolute}?w=20&h=20&blur=50`;
+
+    window.addEventListener("load", function() {
+      imageWidth = lazyImages[i].width;
+      imageHeight = lazyImages[i].height;
+    });
+
+    lazyImages[i].dataset.src = `${imageAbsolute}?w=${imageWidth}&h=${imageHeight}`;
+    lazyImages[i].dataset.srcset = `${imageAbsolute}?w=${imageWidth}&h=${imageHeight}&dpr=2 2x, ${imageAbsolute}?w=${imageWidth}&h=${imageHeight}&dpr=3 3x`;
   }
 
   if ("IntersectionObserver" in window) {

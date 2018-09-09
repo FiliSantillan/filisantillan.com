@@ -85,7 +85,7 @@
                 {{!-- If there is an image of the author --}}
                 {{#if profile_image}}
                 <figure class="article__avatar">
-                    <img src="{{ profile_image}}" alt="{{name}}" nopin="nopin" class="article__image"/>
+                    <img data-src="{{ profile_image}}" alt="{{name}}" nopin="nopin" class="article__image lazy"/>
                 </figure>
                 {{/if}}
 
