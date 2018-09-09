@@ -14,10 +14,10 @@ document.addEventListener("DOMContentLoaded", function() {
   
     lazyImages[i].src = `${imageAbsolute}?w=20&h=20&blur=50`;
 
-    window.addEventListener("load", function() {
-      imageWidth = lazyImages[i].width;
-      imageHeight = lazyImages[i].height;
-    });
+    imageWidth = lazyImages[i].width;
+    imageHeight = lazyImages[i].height;
+
+    console.log(imageWidth);
 
     lazyImages[i].dataset.src = `${imageAbsolute}?w=${imageWidth}&h=${imageHeight}`;
     lazyImages[i].dataset.srcset = `${imageAbsolute}?w=${imageWidth}&h=${imageHeight}&dpr=2 2x, ${imageAbsolute}?w=${imageWidth}&h=${imageHeight}&dpr=3 3x`;
