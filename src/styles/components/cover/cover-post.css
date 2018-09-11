@@ -72,6 +72,19 @@
         font-weight: 700;
     }
 
+    & .social {
+        margin-bottom: var(--spacer-size);
+
+        & .fb-share-button {
+            margin-right: calc(var(--spacer-size) / 3);
+        }
+
+        & .fb-share-button,
+        & .twitter-share-button {
+            vertical-align: top;
+        }
+    }
+
     & .cover__tag {
         font-size: var(--sm-text);
         margin-right: calc(var(--spacer-size) / 2);

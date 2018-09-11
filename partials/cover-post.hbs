@@ -19,6 +19,13 @@
 
         {{!-- Post date --}}
          <time datetime="{{date format="YYYY-MM-DD"}}" class="cover__date">{{date format="DD MMMM, YYYY"}}</time>
+        
+        {{!-- social buttons --}}
+        <div class="social">
+            <div class="fb-share-button" data-href="{{url absolute="true"}}" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="{{url absolute="true"}}" class="fb-xfbml-parse-ignore">Compartir</a></div>
+
+            <a class="twitter-share-button" href="{{url absolute="true"}}" data-size="large">Tweet</a>
+        </div>
 
         {{!-- If there are tags --}}
         {{#if tags}}
