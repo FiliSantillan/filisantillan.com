@@ -1,3 +1,6 @@
+.o-icon-performance:before {
+  content: "\e97c";
+}
 .o-icon-pencil:before,
 .o-icon-tutorial:before {
   content: "\e97b";
@@ -481,7 +484,8 @@
   content: "\e90a";
 }
 .o-icon-news:before,
-.o-icon-noticias:before {
+.o-icon-noticias:before,
+.o-icon-newsletter:before {
   content: "\e900";
 }
 .o-icon-arrow-left-circle:before {
