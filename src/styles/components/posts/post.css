@@ -21,13 +21,17 @@
     & ul,
     & ol,
     & pre,
-    & blockquote {
-        margin-bottom: var(--spacer-size);
+    & blockquote,
+    & table
+    & figure {
+        margin-top: calc(var(--spacer-size) / 2.5);
+        margin-bottom: calc(var(--spacer-size) / 1.5);
     }
 
     & p,
     & ul,
-    & ol {
+    & ol,
+    & blockquote {
         font-size: var(--md-text);
         line-height: calc(var(--md-text) + 9px);
     }
@@ -37,35 +41,35 @@
     & h4,
     & h5,
     & h6 {
-        margin-bottom: calc(var(--spacer-size) / 2);
+        margin-bottom: calc(var(--spacer-size) / 2.5);
     }
 
     & h2 {
-        margin-top: calc(var(--spacer-size) * 2);
+        margin-top: calc(var(--spacer-size) * 1.5);
         font-size: var(--xl-title);
         line-height: calc(var(--xl-title) * 1.2);
     }
 
     & h3 {
-        margin-top: calc(var(--spacer-size) * 1.5);
+        margin-top: calc(var(--spacer-size) * 1.4);
         font-size: var(--md-title);
         line-height: calc(var(--md-title) * 1.2);
     }
 
     & h4 {
-        margin-top: calc(var(--spacer-size) * 1.4);
+        margin-top: calc(var(--spacer-size) * 1.3);
         font-size: var(--sm-title);
         line-height: calc(var(--sm-title) * 1.2);
     }
 
     & h5 {
-        margin-top: calc(var(--spacer-size) * 1.3);
+        margin-top: calc(var(--spacer-size) * 1.2);
         font-size: calc(var(--sm-title) - 2px );
         line-height: calc((var(--sm-title) - 2px) * 1.2);
     }
 
     & h6 {
-        margin-top: calc(var(--spacer-size) * 1.2);
+        margin-top: calc(var(--spacer-size) * 1.1);
         font-size: var(--xl-text);
         line-height: calc(var(--xl-text) * 1.2);
     }
@@ -97,6 +101,32 @@
             border-radius: var(--radius-size) 0 0 var(--radius-size);
         }
     }
+
+    & table {
+        border-collapse: collapse;
+        width: 100%;
+
+        & th,
+        & td {
+            border: 1px solid gray(200);
+            padding: calc(var(--spacer-size) / 2);
+        }
+
+        & tr:nth-child(even) {
+            background-color: gray(240);
+        }
+
+        & th {
+            padding-top: calc(var(--spacer-size) / 2);
+            padding-bottom: calc(var(--spacer-size) / 2);
+            background-color: var(--color-dark);
+            color: white;
+            font-family: "Montserrat", system-ui;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+    }
+
 
     & code {
         background-color: var(--color-dark);
@@ -156,7 +186,8 @@
         
         & p,
         & ul,
-        & ol {
+        & ol,
+        & blockquote {
             font-size: var(--xl-text);
             line-height: calc(var(--xl-text) + 12px);
         }
@@ -300,6 +331,23 @@
     }
 }
 
+.gallery {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: calc(var(--spacer-size) / 2.5);
+    margin-bottom: calc(var(--spacer-size) / 1.5);
+
+    & .gallery__image {
+        max-width: 400px;
+        margin-bottom: var(--spacer-size);
+    }
+}
+
+.table-container {
+    overflow-x:auto;
+}
+
 .event {
     margin-bottom: var(--spacer-size);
     
@@ -339,7 +387,6 @@
         }
     }
 }
-
 
 .disqus {
     padding: var(--spacer-size) var(--spacer-size) 0;
