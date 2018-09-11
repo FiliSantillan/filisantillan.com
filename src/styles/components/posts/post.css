@@ -20,7 +20,6 @@
     & p,
     & ul,
     & ol,
-    & pre,
     & blockquote,
     & table,
     & figure {
@@ -142,6 +141,7 @@
 
     & pre {
         border-radius: 0 0 var(--radius-size) var(--radius-size);
+        margin-bottom: calc(var(--spacer-size) / 1.5);
         & code {
             background: none;
             color: var(--color-editor-light-gray);
