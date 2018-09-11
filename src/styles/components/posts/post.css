@@ -22,7 +22,7 @@
     & ol,
     & pre,
     & blockquote,
-    & table
+    & table,
     & figure {
         margin-top: calc(var(--spacer-size) / 2.5);
         margin-bottom: calc(var(--spacer-size) / 1.5);
