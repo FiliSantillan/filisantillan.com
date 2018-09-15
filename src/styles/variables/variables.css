@@ -18,6 +18,9 @@
     --color-editor-purple: #BBA0C9;
     --color-editor-green: #A8CEBA;
     
+    --color-quote-red: #DB4641;
+    --color-quote-green: #3BC665;
+    --color-quote-yellow: #F9C84A;
 
     --gradient-default: 130deg, var(--color-blue) 0%, var(--color-purple) 100%;
     --gradient-secondary: 130deg, var(--color-yellow) 0%, var(--color-pink) 100%;
