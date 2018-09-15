@@ -14,7 +14,8 @@
 
     @media (--desktop-1024) {
         & .header-wrapper {
-            padding: var(--spacer-size) 0;
+            height: 100px;
+            padding: var(--spacer-size) 0 0 0;
         }
     }
 }
@@ -23,6 +24,7 @@
 
     & .header__title {
         font-size: var(--sm-title);
+        margin: 0;
         
         & .header__text {
             color: white;

@@ -96,7 +96,7 @@
     }
 
     @media (--desktop-1024) {
-        padding: calc(var(--spacer-size) * 3) 0 calc(var(--spacer-size) * 5);
+        padding: calc(var(--spacer-size) + 100px) 0 calc(var(--spacer-size) * 5);
 
         & .cover__description {
             & .cover__text {
