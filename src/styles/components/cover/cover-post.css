@@ -189,6 +189,14 @@
     }
 }
 
+.cover--post {
+    @media (--desktop-1024) {
+        display: flex;
+        justify-content: center;
+        align-items:center;
+    }
+}
+
 .cover--page {
     padding: calc(var(--spacer-size) * 4) var(--spacer-size) calc(var(--spacer-size) * 3);
     text-align: center;

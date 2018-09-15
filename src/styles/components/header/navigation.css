@@ -26,8 +26,11 @@
         display: block;
         position: initial;
         width: auto;
-        padding: 0;
+        padding: 0 var(--spacer-size);
         max-width: initial;
+        background: white;
+        border-radius: var(--radius-size-full);
+        box-shadow: var(--shadow-middle);
 
         & .navigation__itemList {
             background-image: none;
@@ -77,6 +80,7 @@
 
         & .navigation__link {
             font-weight: 300;
+            color: var(--color-dark);
 
             & .navigation__icon {
                 display: none;
