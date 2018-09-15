@@ -1,3 +1,15 @@
+.o-icon-notifications:before {
+  content: "\e97d";
+}
+.o-icon-quotes-left:before {
+  content: "\e97f";
+}
+.o-icon-alert-triangle:before {
+  content: "\e97e";
+}
+.o-icon-performance:before {
+  content: "\e97c";
+}
 .o-icon-performance:before {
   content: "\e97c";
 }
