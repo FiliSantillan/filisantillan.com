@@ -37,3 +37,8 @@ input:focus,
 button:focus {
     outline: none;
 }
+
+::selection {
+    background-color: var(--color-blue);
+    color: white;
+}

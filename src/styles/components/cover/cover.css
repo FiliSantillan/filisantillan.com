@@ -156,6 +156,12 @@
     @media (--tablet-768) {
         justify-content: flex-start;
 
+        & .cover-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         &.optionList--social {
             & .cover__social {
                 margin-right: calc(var(--spacer-size) / 1.5);
@@ -165,8 +171,8 @@
 }
 
 .cover__option {
-    background-color: var(--color-dark);
-    color: white;
+    background-color: white;
+    color: var(--color-dark);
     text-align: center;
     width: 100px;
     height: 100px;
@@ -180,6 +186,10 @@
 
     & .cover__iconContainer {
         & .cover__icon {
+            background-image: linear-gradient(var(--gradient-default));
+            color: white;
+            padding: calc(var(--spacer-size) / 2);
+            border-radius: 50%;
             display: inline-block;
             font-size: var(--xl-title);
             margin-bottom: calc(var(--spacer-size) / 2);
@@ -194,7 +204,20 @@
     }
 
     @media (--tablet-768) {
-        margin-right: calc(var(--spacer-size));
+        width: auto;
+        height: auto;
+        margin-right: var(--spacer-size);
+        padding: calc(var(--spacer-size) / 2.5) var(--spacer-size);
+        box-shadow: var(--shadow-middle);
+        
+        & .cover__iconContainer {
+            margin-right: calc(var(--spacer-size) / 2);
+
+            & .cover__icon {
+                font-size: var(--sm-title);
+                margin-bottom: 0;
+            }    
+        }
     }
 }
 
