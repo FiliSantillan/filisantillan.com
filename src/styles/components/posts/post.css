@@ -90,6 +90,10 @@
             margin: 0;
         }
 
+        & a {
+            font-weight: 700;
+        }
+
         &:before {
             font-family: "icons" !important;
             speak: none;
@@ -130,9 +134,24 @@
             &:before {
                 content: "\e97e";
             }
+
+            a {
+                color: var(--color-dark);
+            }
         }
 
-        &.update {
+        &.note {
+
+            & code {
+                background-color: white;
+            }
+            
+            &:before {
+                content: "\e97b";
+            }
+        }
+
+        &.notification {
             background-color: var(--color-quote-green);
             color: var(--color-dark);
 
@@ -241,11 +260,6 @@
             max-width: 100vw;
             border-radius: 0;
             box-shadow: none;
-        }
-
-        & blockquote {
-            width: 70vw;
-            align-self: center;
         }
     }
 }
