@@ -168,6 +168,16 @@
             }
         }
     }
+
+    @media (--desktop-1024) {
+        & .cover__social {
+            transition: 0.3s;
+            
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
 }
 
 .cover__option {
@@ -217,6 +227,19 @@
                 font-size: var(--sm-title);
                 margin-bottom: 0;
             }    
+        }
+
+        & .cover__optionName {
+            & .cover__text {
+                font-size: var(--md-text);
+            }
+        }
+    }
+    @media (--desktop-1024) {
+        transition: 0.3s;
+        
+        &:hover {
+            transform: scale(1.1);
         }
     }
 }

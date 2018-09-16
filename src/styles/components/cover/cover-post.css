@@ -138,6 +138,7 @@
             position: initial;
             text-align: left;
             line-height: calc(var(--author-image-size) / 4.5);
+            transition: 0.3s;
 
             & .cover__authorImage {
                 width: calc(var(--author-image-size) / 4.5);
@@ -150,6 +151,10 @@
                 display: inline-block;
                 font-size: var(--md-text);
                 color: var(--color-dark);
+            }
+
+            &:hover {
+                transform: translate(-8px, 0);
             }
         }
 

@@ -51,4 +51,12 @@
     & .subscribe__icon {
         color: white;
     }
+
+    @media (--desktop-1024) {
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
 }

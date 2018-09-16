@@ -33,4 +33,14 @@
             height: var(--btn-height-lg);
         }
     }
+
+    @media (--desktop-1024) {
+        & .pagination__arrow {
+            transition: 0.3s;
+            
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
 }

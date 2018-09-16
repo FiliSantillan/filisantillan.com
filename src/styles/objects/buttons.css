@@ -17,6 +17,14 @@
     height: var(--btn-height);
     line-height: var(--btn-height);
     text-transform: capitalize;
+
+    @media (--desktop-1024) {
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
 }
 
 :--buttons-secondary {

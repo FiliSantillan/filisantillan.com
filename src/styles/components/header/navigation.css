@@ -81,9 +81,15 @@
         & .navigation__link {
             font-weight: 300;
             color: var(--color-dark);
+            border-bottom: 3px solid transparent;
+            transition: 0.3s;
 
             & .navigation__icon {
                 display: none;
+            }
+
+            &:hover {
+                color: var(--color-pink);
             }
         }
 

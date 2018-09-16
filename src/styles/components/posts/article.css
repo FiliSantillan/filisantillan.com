@@ -187,6 +187,17 @@
             font-size: var(--sm-title);
         }
     }
+
+    @media (--desktop-1024) {
+        & .article__title {
+            & .article__link {
+                transition: 0.3s;
+                &:hover {
+                    color: var(--color-blue);
+                }
+            }
+        }
+    }
 }
 
 .article__options {
@@ -221,6 +232,14 @@
         & .article__avatar {
             width: calc(var(--btn-height) / 1.4);
             height: calc(var(--btn-height) / 1.4);
+        }
+    }
+
+    @media (--desktop-1024) {
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
         }
     }
 }

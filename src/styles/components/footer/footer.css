@@ -78,4 +78,18 @@
             border-radius: 50%;
         }
     }
+
+    @media (--desktop-1024) {
+        & .footer__item {
+            & .footer__icon {
+                transition: 0.3s;
+                
+                &:hover {
+                    transform: translate(0, -3px);
+                    background-color: var(--color-pink);
+                    color: white;
+                }
+            }
+        }
+    }
 }
