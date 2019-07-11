@@ -8,4 +8,4 @@ import "../styles/main-home.css";
 
 import lazyImages from "./app/lazy-images";
 
-import "./app/navigation";
+// import "./app/navigation";

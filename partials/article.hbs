@@ -8,7 +8,7 @@
 {{#foreach posts}}
 
 <article class="article {{post_class}}">
-
+    {{!-- <a href="{{url}}" class="u-display-block" title="{{title}}" aria-label="{{title}}"> --}}
     {{!--
         Cover
         The cover image of the post.
@@ -18,17 +18,34 @@
 
         {{!-- If the image exists --}}
         {{#if feature_image}}
-        
-        <a href="{{url}}" class="u-display-block" title="{{title}}" aria-label="{{title}}">
 
-            <figure class="article__cover lazyContainer">
+        {{#has number="1"}}
 
-                <img data-src="{{feature_image}}"
-                     alt="{{title}}"
-                     class="article__image lazy"
-                >
-            </figure>
-        </a>
+        {{!-- If first post --}}
+
+        <picture class="article__cover">
+            <source srcset="{{img_url feature_image size="size-20"}}"
+                data-srcset="{{img_url feature_image size="size-425"}} 1x, {{img_url feature_image size="size-850"}} 2x, {{img_url feature_image size="size-1275"}} 3x"
+                media="(min-width: 375px)" class="lazy">
+
+            <img src="{{img_url feature_image size="size-20"}}" data-src="{{img_url feature_image size="size-320"}}"
+                data-srcset="{{img_url feature_image size="size-640"}} 2x, {{img_url feature_image size="size-960"}} 3x"
+                alt="{{title}}" class="article__image lazy">
+        </picture>
+
+        {{!-- If other posts --}}
+        {{else}}
+
+        <picture class="article__cover lazy">
+            <source srcset="{{img_url feature_image size="size-20"}}"
+                data-srcset="{{img_url feature_image size="size-320"}} 1x, {{img_url feature_image size="size-640"}} 2x, {{img_url feature_image size="size-960"}} 3x"
+                media="(min-width: 375px)" class="lazy">
+
+            <img src="{{img_url feature_image size="size-20"}}" data-src="{{img_url feature_image size="size-270"}}"
+                data-srcset="{{img_url feature_image size="size-540"}} 2x, {{img_url feature_image size="size-810"}} 3x"
+                alt="{{title}}" class="article__image lazy">
+        </picture>
+        {{/has}}
 
         {{!-- If the image does not exist --}}
         {{else}}
@@ -36,22 +53,7 @@
         <a href="{{url}}" title="{{title}}" aria-label="{{title}}">
             <div class="article__gradient"></div>
         </a>
-        
-        {{/if}}
 
-        {{!-- It the tags exists --}}
-        {{#if tags}}
-            {{!-- Second tag of the post --}}
-            {{#foreach tags from="2" limit="1"}}
-                <div class="article__tagContainer">
-                    <a href="{{url}}" class="article__tag btn btn-secondary btn-icon">
-                        <span class="article__icon o-icon-{{name}}">
-                            {{> "tag-paths" }}
-                        </span>
-                        <span class="article__text">{{name}}</span>
-                    </a>
-                </div>
-            {{/foreach}}
         {{/if}}
     </div>
 
@@ -59,7 +61,7 @@
         Details
         Brief information about the post.
     --}}
-    
+
     <div class="article__details">
 
         {{!-- Top --}}
@@ -78,26 +80,35 @@
 
         {{!-- Bottom --}}
         <footer class="article__options">
-            
-            {{#primary_author}}
-            <a href="{{url}}" class="article__author">
-                
-                {{!-- If there is an image of the author --}}
-                {{#if profile_image}}
-                <figure class="article__avatar">
-                    <img data-src="{{ profile_image}}" alt="{{name}}" nopin="nopin" class="article__image lazy"/>
-                </figure>
-                {{/if}}
 
-                {{!-- Author name --}}
-                <span class="article__name">{{name}}</span>
+            <div class="article__author">
+                <span class="article__name">
+                    Por
+                    {{!-- Author name --}}
+                    {{#primary_author}}
+                    <a href="{{url}}" class="article__link">{{name}}</a>
+                    {{/primary_author}}
+                </span>
+            </div>
 
-            </a>
-            {{/primary_author}}
+            {{!-- It the tags exists --}}
+            {{#if tags}}
+            {{!-- Second tag of the post --}}
+            {{#foreach tags from="2" limit="1"}}
+            <div class="article__tagContainer">
+                <a href="{{url}}" class="article__tag">
+                    <span class="article__icon o-icon-{{name}}">
+                        {{> "tag-paths" }}
+                    </span>
+                    <span class="article__text">{{name}}</span>
+                </a>
+            </div>
+            {{/foreach}}
+            {{/if}}
 
         </footer>
     </div>
-
+    {{!-- </a> --}}
 </article>
 
 {{/foreach}}
