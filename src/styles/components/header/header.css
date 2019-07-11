@@ -1,57 +1,12 @@
 @import "../../utilities/u-media-queries.css";
 
 .header {
-    position: absolute;
-    z-index: 99;
-    width: 100%;
-
-    & .header-wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: var(--spacer-size);
-    }
+    padding: calc(var(--spacer-size) / 2);
 
     @media (--desktop-1024) {
         & .header-wrapper {
             height: 100px;
             padding: var(--spacer-size) 0 0 0;
         }
-    }
-}
-
-.header__logo {
-
-    & .header__title {
-        font-size: var(--sm-title);
-        margin: 0;
-        
-        & .header__text {
-            color: white;
-            
-            &:first-child:after {
-                content: " |";
-            }
-        }
-    }
-
-    @media (--desktop-1024) {
-        & .header--post {
-            & .header__text {
-                color: var(--color-dark);
-            }
-        }
-    }
-}
-
-.header__containerIcon {
-    font-size: var(--sm-title);
-    
-    & .header__icon {
-        color: white;
-    }
-
-    @media (--desktop-1024) {
-        display: none;
     }
 }
