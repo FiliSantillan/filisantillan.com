@@ -4,7 +4,39 @@
   "version": "3.0.4",
   "main": "index.js",
   "config": {
-    "posts_per_page": 11
+    "posts_per_page": 11,
+    "image_sizes": {
+      "size-20": {
+        "width": 20
+      },
+      "size-270": {
+        "width":270
+      },
+      "size-320": {
+        "width": 320
+      },
+      "size-425": {
+        "width": 425
+      },
+      "size-540": {
+        "width": 540
+      },
+      "size-640": {
+        "width": 640
+      },
+      "size-810": {
+        "width": 810
+      },
+      "size-850": {
+        "width": 850
+      },
+      "size-960": {
+        "width": 960
+      },
+      "size-1275": {
+        "width": 1275
+      }
+    }
   },
   "keywords": [
     "ghost-theme",

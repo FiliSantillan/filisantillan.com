@@ -44,6 +44,10 @@
     display: none;
 }
 
+.u-zindex-3 {
+    z-index: 3;
+}
+
 @media (--desktop-1024) {
     .u-wrap-center {
         margin-right: auto;
