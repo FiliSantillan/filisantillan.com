@@ -10,60 +10,66 @@
 --}}
 
 {{!-- Background image --}}
-<div class="cover__imageContainer">
-    <div class="cover__image {{#if @blog.cover_image}}image--true" style="background-image: url({{@blog.cover_image}}){{else}}image--false{{/if}}"></div>
-</div>
+<div class="cover__image {{#if @blog.cover_image}}image--true"
+    style="background-image: url({{@blog.cover_image}}){{else}}image--false{{/if}}">
 
+    <div class="cover-wrapper u-wrap-center u-zindex-3">
+        <div class="cover__logo">
+            <h1 class="cover__title">
+                <a href="{{@blog.url}}" class="cover__link u-display-in-block">
+                    <span class="cover__text u-text-light">Fili</span>
+                    <strong class="cover__text u-text-bold">Santillán</strong>
+                </a>
+            </h1>
+        </div>
 
-<div class="cover__intro u-wrap-center">
+        {{!-- Description --}}
+        <div class="cover__description">
+            <strong class="cover__text">
+                {{@blog.description}}
+            </strong>
+        </div>
 
-    {{!-- Description --}}
-    <div class="cover__description">
-        <strong class="cover__text">
-            {{@blog.description}}
-        </strong>
+        {{!-- Options --}}
+        <div class="cover__optionList">
+            <a href="https://filisantillan.com/tag/challenges/" class="cover__option u-center-content">
+                <div class="cover-wrapper">
+                    <div class="cover__iconContainer">
+                        <i class="cover__icon o-icon-challenge"></i>
+                    </div>
+
+                    <div class="cover__optionName">
+                        <span class="cover__text">Challenges</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://filisantillan.com/tag/noticias/" class="cover__option u-center-content">
+                <div class="cover-wrapper">
+                    <div class="cover__iconContainer">
+                        <i class="cover__icon o-icon-news"></i>
+                    </div>
+
+                    <div class="cover__optionName">
+                        <span class="cover__text">Noticias</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://filisantillan.com/tag/comunidad" class="cover__option u-center-content">
+                <div class="cover-wrapper">
+                    <div class="cover__iconContainer">
+                        <i class="cover__icon o-icon-users"></i>
+                    </div>
+
+                    <div class="cover__optionName">
+                        <span class="cover__text">Comunidad</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        {{!-- Icon image --}}
+        <div class="cover__author cover--imageHome u-only-desktop" id="cover-home"></div>
     </div>
-
-    {{!-- Options --}}
-    <div class="cover__optionList">
-        {{!-- <a href="https://filisantillan.com/tag/challenges/" class="cover__option u-center-content">
-            <div class="cover-wrapper">
-                <div class="cover__iconContainer">
-                    <i class="cover__icon o-icon-challenge"></i>
-                </div>
-
-                <div class="cover__optionName">
-                    <span class="cover__text">Challenges</span>
-                </div>
-            </div>
-        </a> --}}
-
-        <a href="https://filisantillan.com/tag/noticias/" class="cover__option u-center-content">
-            <div class="cover-wrapper">
-                <div class="cover__iconContainer">
-                    <i class="cover__icon o-icon-news"></i>
-                </div>
-
-                <div class="cover__optionName">
-                    <span class="cover__text">Noticias</span>
-                </div>
-            </div>
-        </a>
-
-        <a href="https://filisantillan.com/tag/comunidad" class="cover__option u-center-content">
-            <div class="cover-wrapper">
-                <div class="cover__iconContainer">
-                    <i class="cover__icon o-icon-users"></i>
-                </div>
-
-                <div class="cover__optionName">
-                    <span class="cover__text">Comunidad</span>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    {{!-- Icon image --}}
-    <div class="cover__author cover--imageHome u-only-desktop" id="cover-home"></div>
-
 </div>
