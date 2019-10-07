@@ -72,10 +72,15 @@
                 <a href="{{url}}" class="article__link">{{title}}</a>
             </h2>
 
-            {{!-- Description --}}
-            <section class="article__description">
-                <p class="article__text">{{excerpt words="20"}}</p>
-            </section>
+            {{#has number="1"}}
+            
+                {{!-- Description --}}
+                <section class="article__description">
+                    <p class="article__text">{{excerpt words="20"}}</p>
+                </section>
+                
+            {{/has}}
+
         </header>
 
         {{!-- Bottom --}}

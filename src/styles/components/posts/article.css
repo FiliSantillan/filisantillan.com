@@ -2,9 +2,9 @@
 
 .article-wrapper {
   display: grid;
+  grid-template-columns: 1fr;
   grid-row-gap: var(--spacer-size);
-  padding: calc(var(--spacer-size) * 2 + 45px) var(--spacer-size)
-    var(--spacer-size);
+  padding: calc(var(--spacer-size) * 2 + 45px) var(--spacer-size) var(--spacer-size);
 
   @media (--tablet-768) {
     grid-template-columns: repeat(2, 1fr);
@@ -59,9 +59,11 @@
   @media (--tablet-768) {
     display: flex;
     flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  @media (--desktop-1024) {
+  @media (--tablet-768) {
     &:first-child {
       grid-column: 1 / -1;
       max-width: 800px;
@@ -97,7 +99,7 @@
         height: 400px;
       }
 
-      & .article__details {
+      /* & .article__details {
         position: absolute;
         background: white;
         bottom: -50px;
@@ -105,7 +107,7 @@
         max-width: 600px;
         padding: var(--spacer-size) calc(var(--spacer-size) * 1.5)
           var(--spacer-size);
-      }
+      } */
 
       & .article__tagContainer {
         top: calc(var(--spacer-size) / 2);
@@ -190,18 +192,30 @@
 }
 
 .article__tagContainer {
-  display: inline-block;
+  display: inline-flex;
+  background: linear-gradient(var(--gradient-secondary));
+  padding: 6px 12px;
+  border-radius: var(--radius-size-full);
+
   & .article__tag {
+    display: inline-flex;
     color: white;
+    font-size: var(--xxs-text);
 
     & .article__icon,
     & .article__text {
       vertical-align: middle;
+      display: inline-flex;
+    }
+
+    & .article__icon {
+      margin-right: 0.4rem;
     }
 
     & .article__text {
       text-transform: uppercase;
-      font-weight: 300;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
   }
 }
@@ -210,6 +224,7 @@
   & .article__title {
     font-size: var(--lg-title);
     margin-bottom: calc(var(--spacer-size) / 2);
+    line-height: 1.5;
     & .article__link {
       color: white;
     }
@@ -234,9 +249,6 @@
     & .article__title {
       & .article__link {
         transition: 0.3s;
-        &:hover {
-          color: var(--color-blue);
-        }
       }
     }
   }
@@ -270,9 +282,5 @@
 
   @media (--desktop-1024) {
     transition: 0.3s;
-
-    &:hover {
-      transform: scale(1.1);
-    }
   }
 }
