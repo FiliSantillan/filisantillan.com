@@ -1,0 +1,30 @@
+{{!--
+    Template: Index
+
+    This is the standard template for a list of posts.
+    It is used by default for the home page and subsequent pages of blog posts.
+--}}
+
+{{!--
+    default-home
+    main structure of the templates
+    Important: The code below is not a comment
+--}}
+
+{{!< default-home }}
+
+{{!-- Cover layout --}}
+<section class="cover">
+  {{> "cover" }}
+</section>
+
+
+{{!-- Articles --}}
+<section id='article-wrapper' class='article-wrapper u-wrap-center' role='main'>
+  {{> 'article'}}
+</section>
+
+{{!-- Pagination  --}}
+{{!-- <section class="pagination u-center-content">
+  {{"pagination"}}
+</section> --}}
