@@ -21,12 +21,7 @@
   }
 
   & .image--false {
-    background-color: var(--color-blue);
-    background-image: linear-gradient(
-      19deg,
-      var(--color-blue) 0%,
-      var(--color-purple) 100%
-    );
+    background-image: linear-gradient(var(--gradient-default));
   }
 
   @media (--desktop-1024) {
@@ -58,13 +53,6 @@
         }
       }
     }
-    /* @media (--desktop-1024) {
-      & .cover--post {
-        & .cover__text {
-          color: var(--color-dark);
-        }
-      }
-    } */
   }
 
   & .cover__name,
@@ -86,6 +74,7 @@
 
   & .cover__description {
     margin-bottom: calc(var(--spacer-size)*2);
+
     & .cover__text {
       font-weight: 400;
       font-size: var(--lg-text);
@@ -114,7 +103,7 @@
 
     & .cover__description {
       & .cover__text {
-        font-size: calc(var(--xl-title) * 1.5);
+        font-size: calc(var(--xl-title));
         line-height: calc(var(--xl-title) * 1.5 * 1.3);
       }
     }
