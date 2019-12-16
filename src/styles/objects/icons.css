@@ -1,549 +1,69 @@
-.o-icon-notifications:before {
-  content: "\e97d";
-}
-.o-icon-quotes-left:before {
-  content: "\e97f";
-}
-.o-icon-alert-triangle:before {
-  content: "\e97e";
-}
-.o-icon-performance:before {
-  content: "\e97c";
-}
-.o-icon-performance:before {
-  content: "\e97c";
-}
-.o-icon-pencil:before,
-.o-icon-tutorial:before {
-  content: "\e97b";
-}
-.o-icon-javascript .path1:before {
-  content: "\e905";
-  color: rgb(247, 223, 30);
-}
-.o-icon-javascript .path2:before {
-  content: "\e918";
-  margin-left: -1em;
-  color: rgb(0, 0, 0);
-}
-.o-icon-javascript .path3:before {
-  content: "\e919";
-  margin-left: -1em;
-  color: rgb(0, 0, 0);
-}
-.o-icon-postcss:before {
-  content: "\e91a";
-  color: #dd3735;
-}
-.o-icon-pug .path1:before {
-  content: "\e91b";
-  color: rgb(242, 242, 242);
-}
-.o-icon-pug .path2:before {
-  content: "\e91c";
-  margin-left: -1em;
-  color: rgb(237, 28, 36);
-}
-.o-icon-pug .path3:before {
-  content: "\e91d";
-  margin-left: -1em;
-  color: rgb(193, 39, 45);
-}
-.o-icon-pug .path4:before {
-  content: "\e91e";
-  margin-left: -1em;
-  color: rgb(193, 39, 45);
-}
-.o-icon-pug .path5:before {
-  content: "\e91f";
-  margin-left: -1em;
-  color: rgb(255, 147, 30);
-}
-.o-icon-pug .path6:before {
-  content: "\e920";
-  margin-left: -1em;
-  color: rgb(255, 184, 30);
-}
-.o-icon-pug .path7:before {
-  content: "\e921";
-  margin-left: -1em;
-  color: rgb(255, 147, 30);
-}
-.o-icon-pug .path8:before {
-  content: "\e922";
-  margin-left: -1em;
-  color: rgb(255, 184, 30);
-}
-.o-icon-pug .path9:before {
-  content: "\e923";
-  margin-left: -1em;
-  color: rgb(255, 147, 30);
-}
-.o-icon-pug .path10:before {
-  content: "\e924";
-  margin-left: -1em;
-  color: rgb(247, 189, 137);
-}
-.o-icon-pug .path11:before {
-  content: "\e925";
-  margin-left: -1em;
-  color: rgb(251, 213, 160);
-}
-.o-icon-pug .path12:before {
-  content: "\e926";
-  margin-left: -1em;
-  color: rgb(0, 0, 0);
-}
-.o-icon-pug .path13:before {
-  content: "\e927";
-  margin-left: -1em;
-  color: rgb(247, 189, 137);
-}
-.o-icon-pug .path14:before {
-  content: "\e928";
-  margin-left: -1em;
-  color: rgb(0, 0, 0);
-}
-.o-icon-pug .path15:before {
-  content: "\e929";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.o-icon-pug .path16:before {
-  content: "\e92a";
-  margin-left: -1em;
-  color: rgb(247, 189, 137);
-}
-.o-icon-pug .path17:before {
-  content: "\e92b";
-  margin-left: -1em;
-  color: rgb(0, 0, 0);
-}
-.o-icon-pug .path18:before {
-  content: "\e92c";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.o-icon-pug .path19:before {
-  content: "\e92d";
-  margin-left: -1em;
-  color: rgb(247, 189, 137);
-}
-.o-icon-pug .path20:before {
-  content: "\e92e";
-  margin-left: -1em;
-  color: rgb(247, 189, 137);
-}
-.o-icon-pug .path21:before {
-  content: "\e92f";
-  margin-left: -1em;
-  color: rgb(77, 77, 77);
-}
-.o-icon-pug .path22:before {
-  content: "\e930";
-  margin-left: -1em;
-  color: rgb(0, 0, 0);
-}
-.o-icon-pug .path23:before {
-  content: "\e931";
-  margin-left: -1em;
-  color: rgb(247, 189, 137);
-}
-.o-icon-pug .path24:before {
-  content: "\e932";
-  margin-left: -1em;
-  color: rgb(247, 189, 137);
-}
-.o-icon-pug .path25:before {
-  content: "\e933";
-  margin-left: -1em;
-  color: rgb(247, 189, 137);
-}
-.o-icon-pug .path26:before {
-  content: "\e934";
-  margin-left: -1em;
-  color: rgb(128, 128, 128);
-}
-.o-icon-vim .path1:before {
-  content: "\e935";
-  color: rgb(1, 152, 51);
-}
-.o-icon-vim .path2:before {
-  content: "\e936";
-  margin-left: -1em;
-  color: rgb(102, 254, 152);
-}
-.o-icon-vim .path3:before {
-  content: "\e937";
-  margin-left: -1em;
-  color: rgb(69, 254, 2);
-}
-.o-icon-vim .path4:before {
-  content: "\e938";
-  margin-left: -1em;
-  color: rgb(1, 125, 23);
-}
-.o-icon-vim .path5:before {
-  content: "\e939";
-  margin-left: -1em;
-  color: rgb(0, 93, 4);
-}
-.o-icon-vim .path6:before {
-  content: "\e93a";
-  margin-left: -1em;
-  color: rgb(0, 0, 0);
-}
-.o-icon-vim .path7:before {
-  content: "\e93b";
-  margin-left: -1em;
-  color: rgb(0, 0, 0);
-}
-.o-icon-vim .path8:before {
-  content: "\e93c";
-  margin-left: -1em;
-  color: rgb(254, 254, 254);
-}
-.o-icon-vim .path9:before {
-  content: "\e93d";
-  margin-left: -1em;
-  color: rgb(254, 254, 254);
-}
-.o-icon-vim .path10:before {
-  content: "\e93e";
-  margin-left: -1em;
-  color: rgb(128, 128, 128);
-}
-.o-icon-vim .path11:before {
-  content: "\e93f";
-  margin-left: -1em;
-  color: rgb(254, 254, 254);
-}
-.o-icon-vim .path12:before {
-  content: "\e940";
-  margin-left: -1em;
-  color: rgb(128, 128, 128);
-}
-.o-icon-vim .path13:before {
-  content: "\e941";
-  margin-left: -1em;
-  color: rgb(128, 128, 128);
-}
-.o-icon-vim .path14:before {
-  content: "\e942";
-  margin-left: -1em;
-  color: rgb(128, 128, 128);
-}
-.o-icon-vim .path15:before {
-  content: "\e943";
-  margin-left: -1em;
-  color: rgb(204, 204, 204);
-}
-.o-icon-vim .path16:before {
-  content: "\e944";
-  margin-left: -1em;
-  color: rgb(128, 128, 128);
-}
-.o-icon-vim .path17:before {
-  content: "\e945";
-  margin-left: -1em;
-  color: rgb(204, 204, 204);
-}
-.o-icon-vim .path18:before {
-  content: "\e946";
-  margin-left: -1em;
-  color: rgb(0, 0, 0);
-}
-.o-icon-vim .path19:before {
-  content: "\e947";
-  margin-left: -1em;
-  color: rgb(0, 0, 0);
-}
-.o-icon-vim .path20:before {
-  content: "\e948";
-  margin-left: -1em;
-  color: rgb(0, 0, 0);
-}
-.o-icon-vscode:before {
-  content: "\e949";
-  color: #016ec5;
-}
-.o-icon-vue .path1:before {
-  content: "\e94a";
-  color: rgb(65, 184, 131);
-}
-.o-icon-vue .path2:before {
-  content: "\e94b";
-  margin-left: -1em;
-  color: rgb(65, 184, 131);
-}
-.o-icon-vue .path3:before {
-  content: "\e94c";
-  margin-left: -1em;
-  color: rgb(53, 73, 94);
-}
-.o-icon-webassembly:before {
-  content: "\e94d";
-  color: #654ff0;
-}
-.o-icon-webcomponents .path1:before {
-  content: "\e94e";
-  color: rgb(228, 77, 38);
-}
-.o-icon-webcomponents .path2:before {
-  content: "\e94f";
-  margin-left: -1em;
-  color: rgb(241, 101, 41);
-}
-.o-icon-webcomponents .path3:before {
-  content: "\e950";
-  margin-left: -1em;
-  color: rgb(239, 239, 239);
-}
-.o-icon-webcomponents .path4:before {
-  content: "\e951";
-  margin-left: -1em;
-  color: rgb(188, 188, 188);
-}
-.o-icon-webcomponents .path5:before {
-  content: "\e952";
-  margin-left: -1em;
-  color: rgb(239, 239, 239);
-}
-.o-icon-webcomponents .path6:before {
-  content: "\e953";
-  margin-left: -1em;
-  color: rgb(188, 188, 188);
-}
-.o-icon-webpack .path1:before {
-  content: "\e954";
-  color: rgb(255, 255, 255);
-}
-.o-icon-webpack .path2:before {
-  content: "\e955";
-  margin-left: -1em;
-  color: rgb(142, 214, 251);
-}
-.o-icon-webpack .path3:before {
-  content: "\e956";
-  margin-left: -1em;
-  color: rgb(28, 120, 192);
-}
-.o-icon-wordpress:before {
-  content: "\e957";
-}
-.o-icon-amp:before {
-  content: "\e958";
-  color: #0379c4;
-}
-.o-icon-elm .path1:before {
-  content: "\e959";
-  color: rgb(95, 180, 203);
-}
-.o-icon-elm .path2:before {
-  content: "\e95a";
-  margin-left: -1em;
-  color: rgb(238, 164, 0);
-}
-.o-icon-elm .path3:before {
-  content: "\e95b";
-  margin-left: -1em;
-  color: rgb(89, 98, 119);
-}
-.o-icon-elm .path4:before {
-  content: "\e95c";
-  margin-left: -1em;
-  color: rgb(95, 180, 203);
-}
-.o-icon-elm .path5:before {
-  content: "\e95d";
-  margin-left: -1em;
-  color: rgb(140, 214, 54);
-}
-.o-icon-elm .path6:before {
-  content: "\e95e";
-  margin-left: -1em;
-  color: rgb(140, 214, 54);
-}
-.o-icon-elm .path7:before {
-  content: "\e95f";
-  margin-left: -1em;
-  color: rgb(238, 164, 0);
-}
-.o-icon-android:before {
-  content: "\e960";
-  color: #a4c639;
-}
-.o-icon-angular:before {
-  content: "\e961";
-  color: #dd0031;
-}
-.o-icon-apple:before {
-  content: "\e962";
-  color: #999;
-}
-.o-icon-atom:before {
-  content: "\e963";
-  color: #66595c;
-}
-.o-icon-bitcoin:before {
-  content: "\e964";
-  color: #f7931a;
-}
-.o-icon-css:before {
-  content: "\e965";
-  color: #1572b6;
-}
-.o-icon-digitalocean:before {
-  content: "\e966";
-  color: #0080ff;
-}
-.o-icon-docker:before {
-  content: "\e967";
-  color: #1488c6;
-}
-.o-icon-ethereum:before {
-  content: "\e968";
-}
-.o-icon-firebase:before {
-  content: "\e969";
-  color: #ffca28;
-}
-.o-icon-ghost:before {
-  content: "\e96a";
-  color: #738a94;
-}
-.o-icon-git:before {
-  content: "\e96b";
-  color: #f05032;
-}
-.o-icon-github:before {
-  content: "\e96c";
-}
-.o-icon-gitlab:before {
-  content: "\e96d";
-  color: #e24329;
-}
-.o-icon-graphql:before {
-  content: "\e96e";
-  color: #e10098;
-}
-.o-icon-html:before {
-  content: "\e96f";
-  color: #e34f26;
-}
-.o-icon-jekyll:before {
-  content: "\e970";
-  color: #c00;
-}
-.o-icon-python:before {
-  content: "\e971";
-  color: #3776ab;
-}
-.o-icon-react:before {
-  content: "\e972";
-  color: #61dafb;
-}
-.o-icon-redux:before {
-  content: "\e973";
-  color: #764abc;
-}
-.o-icon-ruby:before {
-  content: "\e974";
-  color: #cc342d;
-}
-.o-icon-rust:before {
-  content: "\e975";
-}
-.o-icon-stylus:before {
-  content: "\e976";
-}
-.o-icon-sublime:before {
-  content: "\e977";
-}
-.o-icon-swift:before {
-  content: "\e978";
-  color: #fa7343;
-}
-.o-icon-curious:before,
-.o-icon-curiosidades:before {
-  content: "\e916";
-}
-.o-icon-dots:before {
-  content: "\e901";
-}
-.o-icon-youtube:before {
-  content: "\e979";
-}
-.o-icon-github-simple:before {
-  content: "\e97a";
-}
-.o-icon-arrow-right:before {
-  content: "\e917";
-}
-.o-icon-arrow-up-circle:before {
-  content: "\e915";
-}
-.o-icon-chrome:before {
-  content: "\e910";
-}
-.o-icon-earth:before {
-  content: "\e911";
-}
-.o-icon-lab:before {
-  content: "\e912";
-}
-.o-icon-tag:before {
-  content: "\e90a";
-}
-.o-icon-news:before,
-.o-icon-noticias:before,
-.o-icon-newsletter:before {
+.o-icon-unsplash:before {
   content: "\e900";
 }
-.o-icon-arrow-left-circle:before {
-  content: "\e914";
+.o-icon-codepen:before {
+  content: "\e901";
 }
-.o-icon-arrow-right-circle:before {
+.o-icon-github:before {
   content: "\e902";
 }
-.o-icon-challenge:before,
-.o-icon-challenges:before {
+.o-icon-youtube:before {
   content: "\e903";
 }
-.o-icon-code:before {
-  content: "\e913";
-}
-.o-icon-edit:before,
-.o-icon-comunidad:before {
+.o-icon-twitter:before {
   content: "\e904";
 }
-.o-icon-facebook:before {
+.o-icon-instagram:before {
+  content: "\e905";
+}
+.o-icon-bits:before {
   content: "\e906";
 }
+.o-icon-stack:before {
+  content: "\e907";
+}
 .o-icon-agenda:before {
+  content: "\e908";
+}
+.o-icon-facebook:before {
+  content: "\e909";
+}
+.o-icon-contacto:before {
+  content: "\e90a";
+}
+.o-icon-sobre-mi:before {
   content: "\e90b";
 }
-.o-icon-heart:before,
-.o-icon-fili-core:before {
+.o-icon-videos:before {
   content: "\e90c";
 }
 .o-icon-home:before {
   content: "\e90d";
 }
-.o-icon-instagram:before {
-  content: "\e907";
-}
-.o-icon-link:before {
-  content: "\e908";
+.o-icon-blog:before {
+  content: "\e915";
 }
 .o-icon-menu:before {
   content: "\e90e";
 }
-.o-icon-twitter:before {
-  content: "\e909";
-}
-.o-icon-users:before,
-.o-icon-contribuye:before,
-.o-icon-comunidad {
+.o-icon-search:before {
   content: "\e90f";
+}
+.o-icon-sun-complete:before {
+  content: "\e910";
+}
+.o-icon-sun:before {
+  content: "\e911";
+}
+.o-icon-moon-complete:before {
+  content: "\e912";
+}
+.o-icon-moon:before {
+  content: "\e913";
+}
+.o-icon-close:before {
+  content: "\e914";
+}
+.o-icon-mac:before {
+  content: "\e916";
 }
