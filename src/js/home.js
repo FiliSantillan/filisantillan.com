@@ -6,6 +6,6 @@ import "../styles/main-home.css";
 
 /* Javascript */
 
-import lazyImages from "./app/lazy-images";
+// import lazyImages from "./app/lazy-images";
 
-// import "./app/navigation";
+import "./app/navigation";

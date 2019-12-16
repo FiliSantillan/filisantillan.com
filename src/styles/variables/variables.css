@@ -22,7 +22,7 @@
     --color-quote-green: #3BC665;
     --color-quote-yellow: #F9C84A;
 
-    --gradient-default: 130deg, var(--color-blue) 0%, var(--color-purple) 100%;
+    --gradient-default: 130deg, var(--color-pink) 0%, var(--color-yellow) 100%;
     --gradient-secondary: 130deg, var(--color-yellow) 0%, var(--color-pink) 100%;
 
     --shadow-full: 5px 5px 10px color(black alpha(0.5));

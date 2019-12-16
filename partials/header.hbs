@@ -1,13 +1,25 @@
 {{!------------------------------------}}
-          {{!-- Header --}}
+{{!-- Header --}}
 {{!------------------------------------}}
 
 <header class="header">
     <div class="header-wrapper u-wrap-center">
-        <nav class="navigation" id="navigation">
-            <ul class="navigation__itemList u-no-list">
-                {{ "navigation"}}
-            </ul>
+
+        <div class="header__iconList">
+            <a href="#" class="header__icon o-icon-search"></a>
+            <a href="#" class="header__icon o-icon-moon"></a>
+        </div>
+
+        <div class="header__iconList header__iconList--menu">
+            <a href="#" class="header__icon o-icon-menu" id="btn-open"></a>
+        </div>
+
+        <nav class="navigation" id="menu-wrapper">
+            <div class="navigation-wrapper" id="menu">
+                <ul class="navigation__itemList u-no-list">
+                    {{ "navigation"}}
+                </ul>
+            </div>
         </nav>
     </div>
 </header>

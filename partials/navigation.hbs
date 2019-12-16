@@ -1,19 +1,51 @@
 {{!------------------------------------}}
-          {{!-- Navigation --}}
+{{!-- Navigation --}}
 {{!------------------------------------}}
 
 {{!-- Blog navigation  --}}
 
 {{!-- Everything inside the #navigation tags pulls data from the navigation --}}
 
+<li class="navigation__item navigation__item--icon">
+    <a class="navigation__link" href="#" id="btn-close">
+
+        {{!-- Icon --}}
+        <i class="navigation__icon o-icon-close"></i>
+    </a>
+</li>
+
 {{#foreach navigation}}
-    {{!-- navigation item --}}
-    <li class="navigation__item " role='presentation'>
-        <a class="navigation__link" href='{{url absolute="true"}}'>
-            {{!-- Icon --}}
-            <i class='navigation__icon fas fa-circle o-icon-{{slug}}'></i>
-            {{!-- Text --}}
-            <span class='navigation__text'>{{label}}</span>
-        </a>
-    </li>
+{{!-- navigation item --}}
+<li class="navigation__item" role='presentation'>
+    <a class="navigation__link" href='{{url absolute="true"}}'>
+        {{!-- Icon --}}
+        <i class='navigation__icon o-icon-{{slug}}'></i>
+        {{!-- Text --}}
+        <span class='navigation__text'>{{label}}</span>
+    </a>
+</li>
 {{/foreach}}
+
+<li class="navigation__item navigation__item--icon">
+    <a class="navigation__link" href="#">
+
+        {{!-- Icon --}}
+        <i class="navigation__icon o-icon-instagram"></i>
+    </a>
+</li>
+
+<li class="navigation__item navigation__item--icon">
+    <a class="navigation__link" href="#">
+
+        {{!-- Icon --}}
+        <i class="navigation__icon o-icon-twitter"></i>
+    </a>
+</li>
+
+<li class="navigation__item navigation__item--icon">
+    <a class="navigation__link" href="#">
+
+        {{!-- Icon --}}
+        <i class="navigation__icon o-icon-facebook"></i>
+    </a>
+</li>

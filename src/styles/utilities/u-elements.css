@@ -1,67 +1,73 @@
 @import "../utilities/u-media-queries.css";
 
 .u-center-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .u-display-in-block {
-    display: inline-block;
+  display: inline-block;
 }
 
 .u-display-block {
-    display: block;
+  display: block;
 }
 
 .u-no-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .u-mg-rt-5em {
-    margin-right: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .u-shadow-full {
-    box-shadow: var(--shadow-full);
+  box-shadow: var(--shadow-full);
 }
 
 .u-shadow-middle {
-    box-shadow: var(--shadow-middle);
+  box-shadow: var(--shadow-middle);
 }
 
 .u-margin-bottom {
-    margin-bottom: var(--spacer-size);
+  margin-bottom: var(--spacer-size);
 }
 
 .u-max-w800 {
-    max-width: 800px;
+  max-width: 800px;
 }
 
 .u-only-desktop {
-    display: none;
+  display: none;
 }
 
 .u-zindex-3 {
-    z-index: 3;
+  z-index: 3;
 }
 
 @media (--desktop-1024) {
-    .u-wrap-center {
-        margin-right: auto;
-        margin-left: auto;
-        max-width: 900px;
-    }
+  .u-wrap-center {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1000px;
+  }
 
-    .u-only-desktop {
-        display: initial;
-    }
+  .u-only-desktop {
+    display: initial;
+  }
 }
 
 @media (--desktop-1200) {
-    .u-wrap-center {
-        max-width: 1000px;
-    }
+  .u-wrap-center {
+    max-width: 1100px;
+  }
+}
+
+@media (--desktop-1440) {
+  .u-wrap-center {
+    max-width: 1350px;
+  }
 }

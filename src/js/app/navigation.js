@@ -1,10 +1,12 @@
-const $btnNavigationOpen = document.getElementById("btn-navigation-open"),
-      $navigation = document.getElementById("navigation"),
-      $btnNavigationClose = document.getElementById("btn-navigation-close");
+const $buttonOpen = document.getElementById("btn-open"),
+  $buttonClose = document.getElementById("btn-close"),
+  $wrapper = document.getElementById("menu-wrapper"),
+  $menu = document.getElementById("menu");
 
 function navigationToggle() {
-    $navigation.classList.toggle("navigation--active");
+  $wrapper.classList.toggle("active");
+  $menu.classList.toggle("active");
 }
 
-$btnNavigationOpen.addEventListener("click", navigationToggle);
-$btnNavigationClose.addEventListener("click", navigationToggle);
+$buttonOpen.addEventListener("click", navigationToggle);
+$buttonClose.addEventListener("click", navigationToggle);
