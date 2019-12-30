@@ -21,9 +21,24 @@
 
 {{!-- Articles --}}
 <section id='article-wrapper' class='article-wrapper u-wrap-center' role='main'>
-  {{> 'article'}}
-</section>
 
+  {{#get "posts" limit="1" include="tags,authors" filter="featured:true"}} 
+    {{> 'article-feature'}}
+  {{/get}}
+
+  {{#get "posts" limit="3" filter="primary_tag:bit"}}
+  {{> "article-block"}}
+  {{/get}}
+  
+  {{#get "posts" limit="3" include="tags,authors" filter="primary_tag:blog"}}
+  {{> "article-block"}}
+  {{/get}}
+  
+  {{#get "posts" limit="3" filter="primary_tag:video"}}
+  {{> "article-block"}}
+  {{/get}}
+
+</section>
 {{!-- Pagination  --}}
 {{!-- <section class="pagination u-center-content">
   {{"pagination"}}
