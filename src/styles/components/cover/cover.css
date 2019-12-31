@@ -90,6 +90,7 @@
   }
 
   @media (--tablet-768) {
+    min-height: 50vh;
     & .cover--tag {
       & .cover__text {
         font-size: var(--sm-title);
