@@ -10,19 +10,39 @@
 <html lang='{{@site.lang}}'>
 <head>
 
-    {{!-- Title --}}
     <title>{{meta_title}}</title>
 
-    {{!-- Preload & Prefetch --}}
+    {{!-- Title --}}
+
     <link rel="preload" href='{{asset "css/common-bundle.css"}}' as="style">
-    <link rel="preload" href='{{asset "css/home-bundle.css"}}' as="style">
     <link rel="prefetch" href='{{asset "js/common-bundle.js"}}' as="script">
-    <link rel="prefetch" href='{{asset "js/home-bundle.js"}}' as="script">
 
-    {{!-- Styles --}}
-    <link rel='stylesheet' href='{{asset "css/home-bundle.css"}}'>
+    {{#is "home, blog, bits, videos"}}
+        <link rel="preload" href='{{asset "css/home-bundle.css"}}' as="style">
+        <link rel="prefetch" href='{{asset "js/home-bundle.js"}}' as="script">
+        <link rel='stylesheet' href='{{asset "css/home-bundle.css"}}'>
+    {{/is}}
+
+    {{#is "post"}}
+        <link rel="preload" href='{{asset "css/post-bundle.css"}}' as="style">
+        <link rel="prefetch" href='{{asset "js/post-bundle.js"}}' as="script">
+        <link rel='stylesheet' href='{{asset "css/post-bundle.css"}}'>
+    {{/is}}
+
+    {{#is "tag"}}
+        <link rel="preload" href='{{asset "css/tag-bundle.css"}}' as="style">
+        <link rel="prefetch" href='{{asset "js/tag-bundle.js"}}' as="script">
+        <link rel='stylesheet' href='{{asset "css/tag-bundle.css"}}'>
+    {{/is}}
+
+    {{#is "author"}}
+        <link rel="preload" href='{{asset "css/author-bundle.css"}}' as="style">
+        <link rel="prefetch" href='{{asset "js/author-bundle.js"}}' as="script">
+        <link rel='stylesheet' href='{{asset "css/author-bundle.css"}}'>
+    {{/is}}
+
     <link rel='stylesheet' href='{{asset "css/common-bundle.css"}}'>
-
+    
     {{!-- Document Settings --}}
     <meta charset='utf-8' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
@@ -77,9 +97,25 @@
     {{!-- Footer layout --}}
     {{> 'footer'}}
 
-    {{!-- Default JS Bundle--}}
     <script src='{{asset "js/common-bundle.js"}}'></script>
-    <script src='{{asset "js/home-bundle.js"}}'></script>
+
+    {{!-- Default JS Bundle--}}
+    {{#is "home, blog, bits, videos"}}
+        <script src='{{asset "js/home-bundle.js"}}'></script>
+    {{/is}}
+
+    {{#is "post"}}
+        <script src='{{asset "js/post-bundle.js"}}'></script>
+    {{/is}}
+
+    {{#is "tag"}}
+        <script src='{{asset "js/tag-bundle.js"}}'></script>
+    {{/is}}
+    
+    {{#is "author"}}
+        <script src='{{asset "js/author-bundle.js"}}'></script>
+    {{/is}}
+    
 
     {{!--
         Ghost Foot
