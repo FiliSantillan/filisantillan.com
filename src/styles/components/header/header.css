@@ -1,4 +1,4 @@
-@import "../../utilities/u-media-queries.css";
+@import "../../global/media-queries.css";
 
 .header {
   padding: var(--spacer-size) calc(var(--spacer-size) / 2);

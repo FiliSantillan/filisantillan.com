@@ -22,19 +22,19 @@
 <section id='article-wrapper' class='article-wrapper u-wrap-center' role='main'>
 
   {{#get "posts" limit="1" include="tags,authors" filter="featured:true"}} 
-    {{> 'article-feature'}}
+    {{> 'post-feature'}}
   {{/get}}
 
   {{#get "posts" limit="3" filter="primary_tag:bit"}}
-    {{> "article-block"}}
+    {{> "post-card"}}
   {{/get}}
   
   {{#get "posts" limit="3" include="tags,authors" filter="primary_tag:blog"}}
-  {{> "article-block"}}
+  {{> "post-card"}}
   {{/get}}
   
   {{#get "posts" limit="3" filter="primary_tag:video"}}
-  {{> "article-block"}}
+  {{> "post-card"}}
   {{/get}}
 
 </section>

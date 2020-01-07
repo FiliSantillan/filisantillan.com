@@ -1,7 +1,4 @@
 import "../styles/vendor/normalize.css";
-
-import "../styles/utilities/u-icons.css";
-
 import "../styles/main-home.css";
 
 // Hacer función para que tome los datos de data-icon: icon-star y ese sea el que tome.

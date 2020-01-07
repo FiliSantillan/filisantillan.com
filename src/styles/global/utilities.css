@@ -1,4 +1,4 @@
-@import "../utilities/u-media-queries.css";
+@import "./media-queries.css";
 
 .u-center-content {
   display: flex;
@@ -50,6 +50,18 @@
 
 .o-icon {
   width: 20px;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-text-light {
+  font-weight: 300;
+}
+
+.u-text-bold {
+  font-weight: 700;
 }
 
 @media (--desktop-1024) {

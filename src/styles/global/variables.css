@@ -1,4 +1,4 @@
-@import "../utilities/u-media-queries.css";
+@import "./media-queries.css";
 
 :root {
     --color-dark: #282B39;

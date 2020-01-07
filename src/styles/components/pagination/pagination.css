@@ -1,4 +1,4 @@
-@import "../../utilities/u-media-queries.css";
+@import "../../global/media-queries.css";
 
 .pagination {
     --btn-height-lg: calc(var(--btn-height) * 1.3);

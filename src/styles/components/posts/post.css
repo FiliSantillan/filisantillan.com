@@ -1,4 +1,4 @@
-@import "../../utilities/u-media-queries.css";
+@import "../../global/media-queries.css";
 
 .post-wrapper {
   @media (--desktop-1200) {
