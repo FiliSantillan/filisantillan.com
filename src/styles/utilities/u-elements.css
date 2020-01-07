@@ -48,6 +48,10 @@
   z-index: 3;
 }
 
+.o-icon {
+  width: 20px;
+}
+
 @media (--desktop-1024) {
   .u-wrap-center {
     margin-right: auto;

@@ -18,7 +18,6 @@
   {{> "cover" }}
 </section>
 
-
 {{!-- Articles --}}
 <section id='article-wrapper' class='article-wrapper u-wrap-center' role='main'>
 
@@ -27,7 +26,7 @@
   {{/get}}
 
   {{#get "posts" limit="3" filter="primary_tag:bit"}}
-  {{> "article-block"}}
+    {{> "article-block"}}
   {{/get}}
   
   {{#get "posts" limit="3" include="tags,authors" filter="primary_tag:blog"}}

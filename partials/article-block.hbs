@@ -1,7 +1,9 @@
-{{#foreach posts}}
-  <h1>{{title}}</h1>
-  By:
-  {{#primary_author}}
-  <a href="{{url}}" class="article-footer__linkfff">Filips</a>
-  {{/primary_author}}
-{{/foreach}}
+<section class="feature-bits">
+  {{#foreach posts}}
+  <article class=" {{post_class}}" id="feature-post">
+
+    <h1>{{title}}</h1>
+
+  </article>
+  {{/foreach}}
+</section>
