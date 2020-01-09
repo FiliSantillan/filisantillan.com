@@ -10,24 +10,23 @@
 --}}
 
 {{!-- Background image --}}
-<div class="cover__image {{#if @site.cover_image}}image--true"
-    style="background-image: url({{@site.cover_image}}){{else}}image--false{{/if}}">
+<div class="cover {{#if @site.cover_image}}image--enable"
+    style="background-image: url({{@site.cover_image}}){{else}}image--disable{{/if}}">
 
-    <div class="cover-wrapper u-wrap-center u-zindex-3">
+    <div class="cover-container">
+
         <div class="cover__logo">
             <h1 class="cover__title">
-                <a href="{{@site.url}}" class="cover__link u-display-in-block">
-                    <span class="cover__text u-text-light">Fili</span>
-                    <strong class="cover__text u-text-bold">Santillán</strong>
-                </a>
+                <span class="cover__text u-text-light">Fili</span>
+                <strong class="cover__text u-text-bold">Santillán</strong>
             </h1>
         </div>
 
         {{!-- Description --}}
         <div class="cover__description">
-            <strong class="cover__text">
+            <h2 class="cover__text">
                 {{@site.description}}
-            </strong>
+            </h2>
         </div>
 
         {{!-- Icon image --}}
