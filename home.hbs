@@ -14,12 +14,13 @@
 {{!< default }}
 
 {{!-- Cover layout --}}
-<section class="cover-wrapper">
+<section class="cover {{#if @site.cover_image}}image--enable"
+    style="background-image: url({{@site.cover_image}}){{else}}image--disable{{/if}}">
   {{> "cover" }}
 </section>
 
 {{!-- Articles --}}
-<section id='article-wrapper' class='article-wrapper u-wrap-center' role='main'>
+{{!-- <section id='article-wrapper' class='article-wrapper u-wrap-center' role='main'>
 
   {{#get "posts" limit="1" include="tags,authors" filter="featured:true"}} 
     {{> 'post-feature'}}
@@ -37,7 +38,7 @@
   {{> "post-card"}}
   {{/get}}
 
-</section>
+</section> --}}
 {{!-- Pagination  --}}
 {{!-- <section class="pagination u-center-content">
   {{"pagination"}}

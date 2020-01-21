@@ -10,26 +10,18 @@
 --}}
 
 {{!-- Background image --}}
-<div class="cover {{#if @site.cover_image}}image--enable"
-    style="background-image: url({{@site.cover_image}}){{else}}image--disable{{/if}}">
+<div class="cover-wrap u-wrap-center">
 
-    <div class="cover-container">
-
-        <div class="cover__logo">
-            <h1 class="cover__title">
-                <span class="cover__text u-text-light">Fili</span>
-                <strong class="cover__text u-text-bold">Santillán</strong>
-            </h1>
-        </div>
-
-        {{!-- Description --}}
-        <div class="cover__description">
-            <h2 class="cover__text">
-                {{@site.description}}
-            </h2>
-        </div>
-
-        {{!-- Icon image --}}
-        {{!-- <div class="cover__author cover--imageHome u-only-desktop" id="cover-home"></div> --}}
+    <div class="cover__description">
+        <h2 class="cover__title">
+            {{@site.description}}
+        </h2>
+    </div>
+    
+    {{!-- Description --}}
+    <div class="cover__details">
+        <span class="cover__text">
+            Aprende, crece y mejora tus habilidades como Desarrollador.
+        </span>
     </div>
 </div>

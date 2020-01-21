@@ -1,9 +1,12 @@
 @import "../../global/media-queries.css";
 
-.cover-wrapper {
-  text-align: center;
+.cover {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 30vh;
 
-  & .image--enable {
+  &.image--enable {
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -15,11 +18,11 @@
       width: 100%;
       height: 100%;
       background-color: rgba(22, 25, 37, 0.3);
-      z-index: 1;
+      z-index: -1;
     }
   }
 
-  & .image--disable {
+  &.image--disable {
     background-image: linear-gradient(var(--gradient-default));
   }
 
@@ -30,50 +33,52 @@
   }
 }
 
-.cover {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 45vh;
+.cover-wrap {
+  padding: 0 var(--spacer);
+  color: white;
 
-  & .cover-container {
-    margin-top: calc(var(--spacer-size) * - 1);
-    color: white;
-    z-index: 2;
-  }
+  & .cover__description {
+    margin-bottom: calc(var(--spacer) / 2);
 
-  & .cover__logo {
     & .cover__title {
-      font-size: var(--xl-title);
-      margin-top: 0;
-      margin-bottom: calc(var(--spacer-size)/2);
-
-      & .cover__text {
-        color: white;
-        &:first-child:after {
-          content: " |";
-        }
-      }
+      font-size: 1.7em;
     }
   }
 
-  & .cover__description {
+  & .cover__details {
     & .cover__text {
-      font-weight: 400;
-      font-size: var(--lg-text);
+      font-weight: 300;
+      font-size: 1em;
     }
   }
 
   @media (--tablet-768) {
-    min-height: 60vh;
+    & .cover__description {
+      & .cover__title {
+        font-size: 1.9em;
+      }
+    }
+
+    & .cover__details {
+      & .cover__text {
+        font-size: 1.1em;
+      }
+    }
   }
 
   @media (--desktop-1024) {
-    padding: calc(var(--spacer-size) + 100px) 0 calc(var(--spacer-size) * 5);
+    width: 100%;
+    padding: 0;
+    
     & .cover__description {
+      & .cover__title {
+        font-size: 2.2em;
+      }
+    }
+
+    & .cover__details {
       & .cover__text {
-        font-size: calc(var(--xl-title));
+        font-size: 1.2em;
       }
     }
   }
