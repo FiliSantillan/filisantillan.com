@@ -1,12 +1,31 @@
 @import "./media-queries.css";
 
 :root {
-    --color-dark: #282B39;
-    --color-blue: #299fd3;
-    --color-purple: #B721FF;
-    --color-yellow: #FEE140;
-    --color-pink: #FA709A;
-    --color-gray: gray(150);
+
+    /* COLORS */
+
+    --color-ligth: #F7FFF7;
+    --color-light-b: #EDF2F4;
+    --color-gray: #DDDDDD;
+    --color-gray-b: #CCCCCC;
+    --color-gray-c: #B1B1B1;
+    --color-dark: #46494C;
+    --color-dark-b: #363A4B;
+    --color-dark-c: #282B39;
+    --color-dark-d: #10062D;
+    --color-red: #F37795;
+    --color-red-b: #EA5A7C;
+    --color-red-c: #EF476F;
+    --color-red-d: #EE3D64;
+    --color-yellow: #FFE66D;
+    --color-yellow-b: #FFD166;
+    --color-yellow-c: #FFD553;
+    --color-green: #05EDB1;
+    --color-green-b: #0DE1AA;
+    --color-green-c: #06D6A0;
+    --color-blue: #5BC0EB;
+    --color-blue-b: #00A8E8;
+    --color-brown: #6C5400;
 
     --color-editor-dark: #1B1D26;
     --color-editor-gray: #898D94;
@@ -22,13 +41,19 @@
     --color-quote-green: #3BC665;
     --color-quote-yellow: #F9C84A;
 
+    /* Gradients */
+
     --gradient-default: 130deg, var(--color-pink) 0%, var(--color-yellow) 100%;
     --gradient-secondary: 130deg, var(--color-yellow) 0%, var(--color-pink) 100%;
+
+    /* Shadows */
 
     --shadow-full: 5px 5px 10px color(black alpha(0.5));
     --shadow-middle: 2.5px 2.5px 5px color(black alpha(0.5));
 
-    --spacer-size: 1.5rem;
+    /* Spacers */
+
+    --spacer-size: 1.3rem;
 
     --radius-size: 5px;
     --radius-size-double: 10px;
@@ -51,8 +76,6 @@
 
     @media (--mobile-375) {
 
-        --spacer-size: 1.6rem;
-
         --sm-title: 24px;
         --md-title: 26px;
         --lg-title: 28px;
@@ -61,7 +84,6 @@
 
     @media (--mobile-425) {
 
-        --spacer-size: 1.7rem;
 
         --sm-title: 25px;
         --md-title: 27px;
@@ -71,7 +93,6 @@
 
     @media (--tablet-768) {
 
-        --spacer-size: 2rem;
 
         --sm-title: 27px;
         --md-title: 29px;

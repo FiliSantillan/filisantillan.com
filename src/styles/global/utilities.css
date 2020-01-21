@@ -6,12 +6,16 @@
   align-items: center;
 }
 
-.u-display-in-block {
+.u-d-inline-block {
   display: inline-block;
 }
 
-.u-display-block {
+.u-d-block {
   display: block;
+}
+
+.u-d-inline-flex {
+   display: inline-flex;
 }
 
 .u-no-list {
