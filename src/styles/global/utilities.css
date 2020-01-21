@@ -1,59 +1,22 @@
 @import "./media-queries.css";
 
-.u-center-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .u-d-inline-block {
   display: inline-block;
-}
-
-.u-d-block {
-  display: block;
 }
 
 .u-d-inline-flex {
    display: inline-flex;
 }
 
+.u-d-block {
+  display: block;
+}
+
 .u-no-list {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.u-mg-rt-5em {
-  margin-right: 0.5rem;
-}
-
-.u-shadow-full {
-  box-shadow: var(--shadow-full);
-}
-
-.u-shadow-middle {
-  box-shadow: var(--shadow-middle);
-}
-
-.u-margin-bottom {
-  margin-bottom: var(--spacer-size);
-}
-
-.u-max-w800 {
-  max-width: 800px;
-}
-
-.u-only-desktop {
-  display: none;
-}
-
-.u-zindex-3 {
-  z-index: 3;
-}
-
-.o-icon {
-  width: 20px;
 }
 
 .u-text-center {
