@@ -2,37 +2,48 @@
 
 .header {
   padding: var(--spacer-size) calc(var(--spacer-size) / 2);
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
 
-  & .header-wrapper {
+  & .header-wrap {
     display: flex;
     justify-content: space-between;
-    align-content: center;
+    align-items: center;
   }
+}
 
-  @media (--desktop-1024) {
-    & .header-wrapper {
-      flex-direction: row-reverse;
+.header__logo {
+  font-size: 1.6em;
+  margin: 0;
+
+  & .header__text {
+    &.text--fili {
+      font-weight: 300;
     }
   }
 }
 
-.header__iconList {
+.header__optionsList {
   display: flex;
   align-items: center;
-  
-  & .header__icon,
-  & .header__switch {
-    display: inline-flex;
-    vertical-align: middle;
-    margin-right: 0.5rem;
+  vertical-align: middle;
+}
 
-    &:last-child {
-      margin-right: 0;
+
+.header__option {
+  margin-right: 0.6em;
+
+  & .header__link {
+    & .header__icon {
+      width: 1.4em;
     }
   }
 
+  &:last-child {
+    margin-right: 0;
+  }
+
   @media (--desktop-1024) {
-    &.header__iconList--menu {
+    &:last-child {
       display: none;
     }
   }
