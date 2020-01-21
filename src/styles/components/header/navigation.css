@@ -1,4 +1,5 @@
 @import "../../global/media-queries.css";
+@import "../../global/icons.css";
 
 .navigation {
   background: white;
@@ -15,6 +16,10 @@
   display: flex;
   align-items: center;
   overflow-x: scroll;
+
+  @media (--tablet-625) {
+    justify-content: space-evenly;
+  }
 }
 
 .navigation__item {
@@ -26,6 +31,7 @@
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
+    color: var(--color-dark);
 
     & .navigation__icon {
       width: 22px;
@@ -44,44 +50,49 @@
   }
 
   &.item--current {
-    background: var(--color-red);
-    border-radius: 5px;
-    padding: 3px 0;
+    --icon-home: var(--icon-home-active);
+    --icon-blog: var(--icon-blog-active);
+    --icon-bit: var(--icon-bit-active);
+    --icon-video: var(--icon-video-active);
+    --icon-agenda: var(--icon-agenda-active);
+    --icon-stack: var(--icon-stack-active);
+    --icon-about: var(--icon-about-active);
+    --icon-contact: var(--icon-contact-active);
 
     & .navigation__link {
-      color: var(--color-ligth);
+      color: var(--color-dark-c);
     } 
   }
 }
 
 .icon-home {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg data-name='Layer 2'%3E%3Cg data-name='home'%3E%3Crect width='24' height='24' opacity='0'/%3E%3Cpath d='M20.42 10.18L12.71 2.3a1 1 0 0 0-1.42 0l-7.71 7.89A2 2 0 0 0 3 11.62V20a2 2 0 0 0 1.89 2h14.22A2 2 0 0 0 21 20v-8.38a2.07 2.07 0 0 0-.58-1.44zM10 20v-6h4v6zm9 0h-3v-7a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v7H5v-8.42l7-7.15 7 7.19z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: var(--icon-home);
 }
 
 .icon-blog {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg data-name='Layer 2'%3E%3Cg data-name='edit'%3E%3Crect width='24' height='24' opacity='0'/%3E%3Cpath d='M19.4 7.34L16.66 4.6A2 2 0 0 0 14 4.53l-9 9a2 2 0 0 0-.57 1.21L4 18.91a1 1 0 0 0 .29.8A1 1 0 0 0 5 20h.09l4.17-.38a2 2 0 0 0 1.21-.57l9-9a1.92 1.92 0 0 0-.07-2.71zM9.08 17.62l-3 .28.27-3L12 9.32l2.7 2.7zM16 10.68L13.32 8l1.95-2L18 8.73z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: var(--icon-blog);
 }
 
 .icon-bits {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg data-name='Layer 2'%3E%3Cg data-name='image'%3E%3Crect width='24' height='24' opacity='0'/%3E%3Cpath d='M18 3H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3zM6 5h12a1 1 0 0 1 1 1v8.36l-3.2-2.73a2.77 2.77 0 0 0-3.52 0L5 17.7V6a1 1 0 0 1 1-1zm12 14H6.56l7-5.84a.78.78 0 0 1 .93 0L19 17v1a1 1 0 0 1-1 1z'/%3E%3Ccircle cx='8' cy='8.5' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: var(--icon-bit);
 }
 
 .icon-videos {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg data-name='Layer 2'%3E%3Cg data-name='play-circle'%3E%3Crect width='24' height='24' opacity='0'/%3E%3Cpath d='M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z'/%3E%3Cpath d='M12.34 7.45a1.7 1.7 0 0 0-1.85-.3 1.6 1.6 0 0 0-1 1.48v6.74a1.6 1.6 0 0 0 1 1.48 1.68 1.68 0 0 0 .69.15 1.74 1.74 0 0 0 1.16-.45L16 13.18a1.6 1.6 0 0 0 0-2.36zm-.84 7.15V9.4l2.81 2.6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: var(--icon-video);
 }
 
 .icon-agenda {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg data-name='Layer 2'%3E%3Cg data-name='bookmark'%3E%3Crect width='24' height='24' opacity='0'/%3E%3Cpath d='M6.09 21.06a1 1 0 0 1-1-1L4.94 5.4a2.26 2.26 0 0 1 2.18-2.35L16.71 3a2.27 2.27 0 0 1 2.23 2.31l.14 14.66a1 1 0 0 1-.49.87 1 1 0 0 1-1 0l-5.7-3.16-5.29 3.23a1.2 1.2 0 0 1-.51.15zm5.76-5.55a1.11 1.11 0 0 1 .5.12l4.71 2.61-.12-12.95c0-.2-.13-.34-.21-.33l-9.6.09c-.08 0-.19.13-.19.33l.12 12.9 4.28-2.63a1.06 1.06 0 0 1 .51-.14z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: var(--icon-agenda);
 }
 
 .icon-stack {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg data-name='Layer 2'%3E%3Cg data-name='monitor'%3E%3Crect width='24' height='24' opacity='0'/%3E%3Cpath d='M19 3H5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h6v2H7a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2h-4v-2h6a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3zm1 11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: var(--icon-stack);
 }
 
 .icon-fili {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg data-name='Layer 2'%3E%3Cg data-name='person'%3E%3Crect width='24' height='24' opacity='0'/%3E%3Cpath d='M12 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0-6a2 2 0 1 1-2 2 2 2 0 0 1 2-2z'/%3E%3Cpath d='M12 13a7 7 0 0 0-7 7 1 1 0 0 0 2 0 5 5 0 0 1 10 0 1 1 0 0 0 2 0 7 7 0 0 0-7-7z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: var(--icon-about);
 }
 
 .icon-contacto {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg data-name='Layer 2'%3E%3Cg data-name='email'%3E%3Crect width='24' height='24' opacity='0'/%3E%3Cpath d='M19 4H5a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-.67 2L12 10.75 5.67 6zM19 18H5a1 1 0 0 1-1-1V7.25l7.4 5.55a1 1 0 0 0 .6.2 1 1 0 0 0 .6-.2L20 7.25V17a1 1 0 0 1-1 1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");;
+  background-image: var(--icon-contact);
 }

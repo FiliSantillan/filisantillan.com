@@ -1,1 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g data-name="Layer 2"><g data-name="edit"><rect width="24" height="24" opacity="0"/><path d="M19.4 7.34L16.66 4.6A2 2 0 0 0 14 4.53l-9 9a2 2 0 0 0-.57 1.21L4 18.91a1 1 0 0 0 .29.8A1 1 0 0 0 5 20h.09l4.17-.38a2 2 0 0 0 1.21-.57l9-9a1.92 1.92 0 0 0-.07-2.71zM9.08 17.62l-3 .28.27-3L12 9.32l2.7 2.7zM16 10.68L13.32 8l1.95-2L18 8.73z"/></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#282B39;fill-opacity:0;}
+	.st1{fill:#282B39;}
+</style>
+<g>
+	<g>
+		<rect class="st0" width="24" height="24"/>
+		<path class="st1" d="M19.4,7.3l-2.7-2.7c-0.7-0.7-1.9-0.7-2.7-0.1l-9,9c-0.3,0.3-0.5,0.8-0.6,1.2L4,18.9c0,0.3,0.1,0.6,0.3,0.8
+			C4.5,19.9,4.7,20,5,20h0.1l4.2-0.4c0.5,0,0.9-0.2,1.2-0.6l9-9C20.2,9.3,20.2,8.1,19.4,7.3z M9.1,17.6l-3,0.3l0.3-3L12,9.3l2.7,2.7
+			L9.1,17.6z M16,10.7L13.3,8l1.9-2L18,8.7L16,10.7z"/>
+	</g>
+</g>
+</svg>
