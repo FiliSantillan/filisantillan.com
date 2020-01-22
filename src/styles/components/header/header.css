@@ -2,7 +2,7 @@
 
 .header {
   padding: var(--spacer) calc(var(--spacer) / 2);
-  box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
 
   & .header-wrap {
     display: flex;
@@ -22,29 +22,20 @@
   }
 }
 
-.header__optionsList {
+.header__options {
   display: flex;
   align-items: center;
   vertical-align: middle;
-}
+  
+  & .header__link {
+    margin-right: 0.6em;
 
-
-.header__option {
-  margin-right: 0.6em;
-
-  & .header__link {
     & .header__icon {
       width: 1.4em;
     }
-  }
 
-  &:last-child {
-    margin-right: 0;
-  }
-
-  @media (--desktop-1024) {
     &:last-child {
-      display: none;
+      margin-right: 0;
     }
   }
 }
