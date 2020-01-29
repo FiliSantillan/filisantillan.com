@@ -22,26 +22,32 @@
 </section>
 
 {{!-- Articles --}}
-<section id='post-card-wrapper' class='post-card-wrapper u-wrap-center' role='main'>
+<section id='post-card-wrapper' class='post-card-wrapper' role='main'>
 
   {{!-- {{#get "posts" limit="1" include="tags,authors" filter="featured:true"}} 
     {{> 'post-feature'}}
   {{/get}} --}}
 
-  <section class="post-card-container card--blog">
-    {{#get "posts" limit="5" filter="primary_tag:blog" include="tags,authors"}}
+  <section class="post-card-container card--blog u-wrap-center">
+    {{#get "posts" limit="5" include="tags,authors" filter="primary_tag:blog"}}
+      {{> "post-card"}}
+    {{/get}}
+  </section>
+
+  <section class="post-card-container card--bits">
+    {{#get "posts" limit="3" include="tags" filter="primary_tag:bit"}}
+      {{> "post-card-bit"}}
+    {{/get}}
+  </section>
+
+  <section class="post-card-container card--video">
+    {{#get "posts" limit="3" include="tags" filter="primary_tag:video"}}
       {{> "post-card"}}
     {{/get}}
   </section>
 
   
-  {{!-- {{#get "posts" limit="3" include="tags,authors" filter="primary_tag:blog"}}
-  {{> "post-card"}}
-  {{/get}}
   
-  {{#get "posts" limit="3" filter="primary_tag:video"}}
-  {{> "post-card"}}
-  {{/get}} --}}
 
 </section>
 {{!-- Pagination  --}}

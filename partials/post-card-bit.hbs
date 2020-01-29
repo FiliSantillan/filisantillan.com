@@ -1,0 +1,22 @@
+{{#foreach posts}}
+<article class="post-card-bit {{post_class}}">
+
+  <a href="{{url}}" class="post-card-link" title="{{title}}" aria-label="{{title}}"></a>
+
+  <picture class="post-card-bit__cover">
+    <source srcset="{{img_url feature_image size="size-640"}}"
+      data-srcset="{{img_url feature_image size="size-425"}} 1x, {{img_url feature_image size="size-850"}} 2x, {{img_url feature_image size="size-1275"}} 3x"
+      media="(min-width: 375px)" class="lazy">
+
+    <img src="{{img_url feature_image size="size-640"}}" data-src="{{img_url feature_image size="size-320"}}"
+      data-srcset="{{img_url feature_image size="size-640"}} 2x, {{img_url feature_image size="size-960"}} 3x"
+      alt="{{title}}" class="post-card-bit__image">
+  </picture>
+
+  <h2 class="post-card-bit__title">
+    {{title}}
+  </h2>
+
+
+</article>
+{{/foreach}}

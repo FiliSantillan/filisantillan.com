@@ -1,24 +1,33 @@
 @import "../../global/media-queries.css";
 
 .post-card-wrapper {
-  padding: var(--spacer);
-
   & .post-card-container {
     display: grid;
     grid-template-columns: 1fr;
     grid-row-gap: var(--spacer);
+    padding: var(--spacer);
+
+    &.card--bits {
+      background-color: var(--color-dark-c);
+      padding: calc(var(--spacer) * 3) var(--spacer);
+    }
   }
 
-  @media(--tablet-625) {
+  @media (--tablet-625) {
     & .post-card-container {
       grid-template-columns: 1fr 1fr;
       grid-column-gap: var(--spacer);
     }
   }
 
-  @media(--desktop-1024) {
+  @media (--desktop-1024) {
     & .post-card-container {
       grid-template-columns: 1fr 1fr 1fr;
+
+      &.card--bits {
+        grid-template-columns: repeat(3, auto);
+        justify-content: space-evenly;
+      }
     }
   }
 }
@@ -53,7 +62,7 @@
     border-radius: 15px;
   }
 
-  @media(--tablet-625) {
+  @media (--tablet-625) {
     &:first-child  {
       grid-column-start: 1;
       grid-column-end: 3;
@@ -113,7 +122,7 @@
     }
   }
 
-  @media(--mobile-375) {
+  @media (--mobile-375) {
     & .post-card__feature  {
       & .post-card__icon {
         display: block;
@@ -139,5 +148,32 @@
     text-transform: uppercase;
     font-size: 0.8em;
     z-index: 3;
+  }
+}
+
+.post-card-bit {
+  position: relative;
+  border-radius: 15px;
+  background: blue;
+  max-width: 300px;
+
+  & .post-card-bit__title  {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    padding: calc(var(--spacer) / 2);
+    color: var(--dark-color-c);
+    font-size: 0.9em;
+    text-align: center;
+    border-radius: 0 0 15px 15px;
+  }
+}
+
+.post-card-bit__cover {
+  & .post-card-bit__image {
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
   }
 }

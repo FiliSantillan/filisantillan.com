@@ -7,6 +7,6 @@
 @import "./components/header/header.css";
 @import "./components/header/navigation.css";
 @import "./components/cover/cover.css";
-@import "./components/posts/article.css";
+@import "./components/posts/post-card.css";
 @import "./components/pagination/pagination.css";
 @import "./components/footer/footer.css";
