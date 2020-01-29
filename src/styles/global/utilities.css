@@ -49,9 +49,3 @@
   }
 }
 
-@media (--desktop-1440) {
-  .u-wrap-center {
-    max-width: 1350px;
-  }
-}
-

@@ -16,29 +16,34 @@
 {{!-- Cover layout --}}
 <section class="cover {{#if @site.cover_image}}image--enable"
     style="background-image: url({{@site.cover_image}}){{else}}image--disable{{/if}}">
-  {{> "cover" }}
+  
+  {{> "cover-card" }}
+
 </section>
 
 {{!-- Articles --}}
-{{!-- <section id='article-wrapper' class='article-wrapper u-wrap-center' role='main'>
+<section id='post-card-wrapper' class='post-card-wrapper u-wrap-center' role='main'>
 
-  {{#get "posts" limit="1" include="tags,authors" filter="featured:true"}} 
+  {{!-- {{#get "posts" limit="1" include="tags,authors" filter="featured:true"}} 
     {{> 'post-feature'}}
-  {{/get}}
+  {{/get}} --}}
 
-  {{#get "posts" limit="3" filter="primary_tag:bit"}}
-    {{> "post-card"}}
-  {{/get}}
+  <section class="post-card-container card--blog">
+    {{#get "posts" limit="5" filter="primary_tag:blog" include="tags,authors"}}
+      {{> "post-card"}}
+    {{/get}}
+  </section>
+
   
-  {{#get "posts" limit="3" include="tags,authors" filter="primary_tag:blog"}}
+  {{!-- {{#get "posts" limit="3" include="tags,authors" filter="primary_tag:blog"}}
   {{> "post-card"}}
   {{/get}}
   
   {{#get "posts" limit="3" filter="primary_tag:video"}}
   {{> "post-card"}}
-  {{/get}}
+  {{/get}} --}}
 
-</section> --}}
+</section>
 {{!-- Pagination  --}}
 {{!-- <section class="pagination u-center-content">
   {{"pagination"}}
