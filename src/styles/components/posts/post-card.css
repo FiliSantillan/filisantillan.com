@@ -77,6 +77,11 @@
   }
 }
 
+.post-card-video {
+  height: 200px;
+  padding: 0;
+}
+
 .post-card__cover {
   position: absolute;
   overflow: hidden;
@@ -91,6 +96,13 @@
 
   & .post-card__image {
     width: 80%;
+  }
+
+  & .post-card-image-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
   }
 }
 
@@ -132,6 +144,12 @@
   }
 }
 
+.post-card-header-video {
+  margin-top: var(--spacer);
+  margin-left: var(--spacer);
+  margin-right: var(--spacer);
+}
+
 .post-card__content {
   display: flex;
   flex-direction: column;
@@ -149,6 +167,11 @@
     font-size: 0.8em;
     z-index: 3;
   }
+}
+
+.post-card-content-video {
+  margin-left: var(--spacer);
+  margin-right: var(--spacer);
 }
 
 .post-card-bit {
@@ -176,4 +199,10 @@
     width: 100%;
     height: 100%;
   }
+}
+
+.post-card-video-icon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
