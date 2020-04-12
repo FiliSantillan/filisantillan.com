@@ -1,55 +1,57 @@
 {{!--
-    Template: Index
+    Template: Home
 
     This is the standard template for a list of posts.
     It is used by default for the home page and subsequent pages of blog posts.
 --}}
 
-{{!--
-    default-home
-    main structure of the templates
-    Important: The code below is not a comment
---}}
+{{!-- default main structure of the templates --}}
 
 {{!< default }}
 
-{{!-- Cover layout --}}
-<section class="cover {{#if @site.cover_image}}image--enable"
-    style="background-image: url({{@site.cover_image}}){{else}}image--disable{{/if}}">
-  
-  {{> "cover-card" }}
+{{!-- Cover --}}
+<section class="cover {{#if @site.cover_image}}isCoverEnable"
+         style="background-image: url({{@site.cover_image}}){{else}}isDisabled{{/if}}">
+
+  {{> "cover" }}
 
 </section>
 
 {{!-- Articles --}}
-<section id='post-card-wrapper' class='post-card-wrapper' role='main'>
+<section id="post-card-main" class="post-card-main" role="main">
 
-  {{!-- {{#get "posts" limit="1" include="tags,authors" filter="featured:true"}} 
-    {{> 'post-feature'}}
-  {{/get}} --}}
+  <div class="post-card-wrapper u-wrap-center">
+    <strong class="post-card-wrapper__title">Artículos</strong>
 
-  <section class="post-card-container card--blog u-wrap-center">
-    {{#get "posts" limit="5" include="tags,authors" filter="primary_tag:blog"}}
+    <section class="post-card-container card--blog">
+      {{#get "posts" limit="5" include="tags,authors" filter="primary_tag:blog"}}
       {{> "post-card"}}
-    {{/get}}
-  </section>
+      {{/get}}
+    </section>
+  </div>
 
-  <section class="post-card-container card--bits">
-    {{#get "posts" limit="3" include="tags" filter="primary_tag:bit"}}
+  <div class="post-card-wrapper">
+    <strong class="post-card-wrapper__title u-wrap-center">Bits</strong>
+
+    <section class="post-card-container card--bits">
+      {{#get "posts" limit="3" include="tags" filter="primary_tag:bit"}}
       {{> "post-card-bit"}}
-    {{/get}}
-  </section>
+      {{/get}}
+    </section>
+  </div>
 
-  <section class="post-card-container card--video">
-    {{#get "posts" limit="3" include="tags" filter="primary_tag:video"}}
+  <div class="post-card-wrapper u-wrap-center">
+    <strong class="post-card-wrapper__title">Videos</strong>
+
+    <section class="post-card-container card--video">
+      {{#get "posts" limit="3" include="tags" filter="primary_tag:video"}}
       {{> "post-card-video"}}
-    {{/get}}
-  </section>
-
-  
-  
+      {{/get}}
+    </section>
+  </div>
 
 </section>
+
 {{!-- Pagination  --}}
 {{!-- <section class="pagination u-center-content">
   {{"pagination"}}

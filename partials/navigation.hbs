@@ -1,24 +1,19 @@
-{{!------------------------------------}}
-{{!-- Navigation --}}
-{{!------------------------------------}}
-
 {{!-- Blog navigation  --}}
-
 {{!-- Everything inside the #navigation tags pulls data from the navigation --}}
 
-
-<div class="navigation-wrap">
+<div class="navigation-container">
     <ul class="navigation__itemsList u-no-list">
+
         {{#foreach navigation}}
-        {{!-- navigation item --}}
-        <li class="navigation__item {{#if current}} item--current {{/if}}" role='presentation'>
-            <a class="navigation__link u-d-inline-block" href='{{url absolute="true"}}'>
-                {{!-- Icon --}}
-                <div class='navigation__icon icon-{{slug}}'></div>
-                {{!-- Text --}}
-                <span class='navigation__text'>{{label}}</span>
-            </a>
-        </li>
+            <li class="navigation__item {{#if current}} isItemCurrent {{/if}}" role='presentation'>
+                <a class="navigation__link u-disp-inline-block" href='{{url absolute="true"}}'>
+                    {{!-- Icon --}}
+                    <div class='navigation__icon icon-{{slug}}'></div>
+                    {{!-- Text --}}
+                    <span class='navigation__text'>{{label}}</span>
+                </a>
+            </li>
         {{/foreach}}
+
     </ul>
 </div>

@@ -38,7 +38,7 @@
 }
 
 .navigation__item {
-  margin: 0 0.5em;
+  margin: 0 0.8em;
   min-width: 60px;
 
   & .navigation__link {
@@ -56,7 +56,6 @@
     }
 
     & .navigation__text {
-      font-size: 0.6em;
       font-weight: 300;
       text-transform: uppercase;
       display: block;
@@ -72,7 +71,7 @@
     margin-right: 0;
   }
 
-  &.item--current {
+  &.isItemCurrent {
     --icon-home: var(--icon-home-active);
     --icon-blog: var(--icon-blog-active);
     --icon-bit: var(--icon-bit-active);
@@ -83,7 +82,7 @@
     --icon-contact: var(--icon-contact-active);
 
     & .navigation__link {
-      color: var(--color-dark-c);
+      color: var(--color-dark);
     }
   }
 
@@ -93,10 +92,6 @@
     & .navigation__link {
       & .navigation__icon {
         display: none;
-      }
-
-      & .navigation__text {
-        font-size: 0.9em;
       }
     }
   }

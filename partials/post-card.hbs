@@ -30,7 +30,6 @@
       </span>
     </div>
     {{/if}}
-
   </header>
 
   <section class="post-card__content">
@@ -47,13 +46,13 @@
       </div>
 
       {{#if tags}}
-        {{#foreach tags from="3" limit="1"}}
-        <div class="post-card__wrapTag">
-          <a href="{{url}}" class="post-card__tag">
-            {{name}}
-          </a>
-        </div>
-        {{/foreach}}
+      {{#foreach tags from="3" limit="1"}}
+      <div class="post-card__wrapTag">
+        <a href="{{url}}" class="post-card__tag">
+          {{name}}
+        </a>
+      </div>
+      {{/foreach}}
       {{/if}}
     </footer>
   </section>

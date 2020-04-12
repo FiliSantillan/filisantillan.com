@@ -1,33 +1,65 @@
 @import "../../global/media-queries.css";
 
 .post-card-wrapper {
-  & .post-card-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-row-gap: var(--spacer);
-    padding: var(--spacer);
+  padding: var(--spacer) var(--spacer) 0;
 
-    &.card--bits {
-      background-color: var(--color-dark-c);
-      padding: calc(var(--spacer) * 3) var(--spacer);
+  & .post-card-wrapper__title  {
+    display: block;
+    font-family: "Montserrat", system-ui;
+    font-weight: 300;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: var(--spacer);
+
+    &:before {
+      content: "";
+      display: inline-flex;
+      width: 80px;
+      height: 4px;
+      margin-right: calc(var(--spacer) / 2);
+      vertical-align: middle;
+      background-color: var(--color-dark);
     }
   }
 
+  &:last-child {
+    padding-bottom: var(--spacer);
+  }
+
+  @media (--desktop-1024) {
+    padding: var(--spacer) 0 0;
+
+    & .post-card-wrapper__title  {
+      font-size: 2rem;
+    }
+  }
+}
+
+.post-card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: var(--spacer);
+
+  &.card--bits {
+    background-color: var(--color-dark-c);
+    padding: calc(var(--spacer) * 5) var(--spacer);
+  }
+
   @media (--tablet-625) {
-    & .post-card-container {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: var(--spacer);
+
+    &.card--video {
       grid-template-columns: 1fr 1fr;
-      grid-column-gap: var(--spacer);
     }
   }
 
   @media (--desktop-1024) {
-    & .post-card-container {
-      grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 
-      &.card--bits {
-        grid-template-columns: repeat(3, auto);
-        justify-content: space-evenly;
-      }
+    &.card--bits {
+      grid-template-columns: repeat(5, auto);
+      justify-content: space-evenly;
     }
   }
 }
@@ -62,6 +94,11 @@
     border-radius: 15px;
   }
 
+  &.post-card-video {
+    height: 200px;
+    padding: 0;
+  }
+
   @media (--tablet-625) {
     &:first-child  {
       grid-column-start: 1;
@@ -74,12 +111,13 @@
         }
       }
     }
-  }
-}
 
-.post-card-video {
-  height: 200px;
-  padding: 0;
+    &.post-card-video {
+      grid-column-start: auto;
+      grid-column-end: auto;
+      height: 280px;
+    }
+  }
 }
 
 .post-card__cover {

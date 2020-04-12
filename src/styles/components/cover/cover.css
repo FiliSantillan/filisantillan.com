@@ -4,9 +4,9 @@
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 30vh;
+  min-height: 40vh;
 
-  &.image--enable {
+  &.isCoverEnable {
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -17,71 +17,39 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(22, 25, 37, 0.3);
+      background-color: rgba(22, 25, 37, 0.6);
       z-index: -1;
     }
   }
 
-  &.image--disable {
-    background-image: linear-gradient(var(--gradient-default));
+  &.isCoverDisabled {
+    background-image: var(--color-yellow);
+    color: var(--color-dark);
   }
 
   @media (--desktop-1024) {
-    min-height: 35vh;
-
-    &.image--enable {
-      background-attachment: fixed;
-    }
+    min-height: 40vh;
   }
 }
 
-.cover-wrap {
+.cover-container {
   padding: 0 var(--spacer);
   color: white;
 
-  & .cover__description {
+  & .cover__introduction {
     margin-bottom: calc(var(--spacer) / 2);
-
-    & .cover__title {
-      font-size: 1.7em;
-    }
   }
 
-  & .cover__details {
+  & .cover__description {
+    margin-bottom: var(--spacer);
     & .cover__text {
       font-weight: 300;
-      font-size: 1em;
-    }
-  }
-
-  @media (--tablet-768) {
-    & .cover__description {
-      & .cover__title {
-        font-size: 1.9em;
-      }
-    }
-
-    & .cover__details {
-      & .cover__text {
-        font-size: 1.1em;
-      }
     }
   }
 
   @media (--desktop-1024) {
     width: 100%;
     padding: 0;
-    
-    & .cover__description {
-      & .cover__title {
-        font-size: 2.2em;
-      }
-    }
 
-    & .cover__details {
-      & .cover__text {
-        font-size: 1.2em;
-      }
-    }
   }
 }

@@ -1,10 +1,10 @@
-@import "../../global/media-queries.css";
+@import '../../global/media-queries.css';
 
 .header {
-  padding: var(--spacer) calc(var(--spacer) / 2);
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  padding: var(--spacer);
+  background: white;
 
-  & .header-wrap {
+  & .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,10 +12,9 @@
 }
 
 .header__logo {
-  font-size: 1.6em;
   margin: 0;
-
   & .header__text {
+    vertical-align: middle;
     &.text--fili {
       font-weight: 300;
     }
@@ -26,7 +25,7 @@
   display: flex;
   align-items: center;
   vertical-align: middle;
-  
+
   & .header__link {
     margin-right: 0.6em;
 
