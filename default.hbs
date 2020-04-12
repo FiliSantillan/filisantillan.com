@@ -1,22 +1,52 @@
-
 {{!--
-    Layout: Default (Home)
+    Template: Default (Home)
 
     The "default" files are basically the main structure of the templates.
     It is the general structure that the website will have.
 --}}
 
+
 <!DOCTYPE html>
 <html lang='{{@site.lang}}'>
-<head>
 
+<head>
     <title>{{meta_title}}</title>
 
-    {{!-- Title --}}
+    {{!-- Document Settings --}}
+    <meta charset='utf-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
 
+    {{!-- Author Settings --}}
+    <meta name='author' content='Filiberto Santillán'>
+    <meta name='description' content='{{@site.description}}' />
+
+    {{!-- Mobile Settings --}}
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+    <meta name='MobileOptimized' content='320' />
+
+    {{!-- Favicon Settings --}}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset 'favicon/apple-touch-icon.png'}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset 'favicon/favicon-32x32.png'}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset 'favicon/favicon-16x16.png'}}">
+    <link rel="manifest" href='{{asset "favicon/manifest.json"}}'>
+    <link rel="mask-icon" href="{{asset "favicon/safari-pinned-tab.svg"}}" color="#282b39">
+    <meta name="msapplication-TileColor" content="#282b39">
+    <meta name="theme-color" content="#282b39">
+
+    {{!-- Friendly --}}
+    <meta name='HandheldFriendly' content='True' />
+
+    {{!-- Other Settings --}}
+    <meta name='google-site-verification' content='PUVeHiwvS1T4_Q8FaieZHfE0GjL2rsKJ3LU4eabFdtA' />
+
+    {{!-- Preload and prefetch settings --}}
     <link rel="preload" href='{{asset "css/common-bundle.css"}}' as="style">
     <link rel="prefetch" href='{{asset "js/common-bundle.js"}}' as="script">
 
+    {{!-- Default styles --}}
+    <link rel='stylesheet' href='{{asset "css/common-bundle.css"}}'>
+
+    {{!-- Custom styles by page type --}}
     {{#is "home, blog, bits, videos"}}
         <link rel="preload" href='{{asset "css/home-bundle.css"}}' as="style">
         <link rel="prefetch" href='{{asset "js/home-bundle.js"}}' as="script">
@@ -41,65 +71,28 @@
         <link rel='stylesheet' href='{{asset "css/author-bundle.css"}}'>
     {{/is}}
 
-    <link rel='stylesheet' href='{{asset "css/common-bundle.css"}}'>
-    
-    {{!-- Document Settings --}}
-    <meta charset='utf-8' />
-    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
-
-    {{!-- Author Settings --}}
-    <meta name='author' content='Filiberto Santillán'>
-    <meta name='description' content='{{@site.description}}' />
-    
-    {{!-- Mobile Settings --}}
-    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
-    <meta name='MobileOptimized' content='320' />
-
-    {{!-- Favicon Settings --}}
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset 'favicon/apple-touch-icon.png'}}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset 'favicon/favicon-32x32.png'}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset 'favicon/favicon-16x16.png'}}">
-    <link rel="manifest" href='{{asset "favicon/manifest.json"}}'>
-    <link rel="mask-icon" href="{{asset "favicon/safari-pinned-tab.svg"}}" color="#282b39">
-    <meta name="msapplication-TileColor" content="#282b39">
-    <meta name="theme-color" content="#282b39">
-
-    {{!-- Google+ Settings --}}
-    <link rel='author' href='https://plus.google.com/+FiliMart%C3%ADnezZ' />
-
-    {{!-- Friendly --}}
-    <meta name='HandheldFriendly' content='True' />
-
-    {{!-- Other Settings --}}
-    <meta name='google-site-verification' content='PUVeHiwvS1T4_Q8FaieZHfE0GjL2rsKJ3LU4eabFdtA' />
-
-    {{!--
-        Ghost Head
-        This tag outputs SEO meta+structured data and other important settings.
-    --}}
+    {{!-- Ghost Head This tag outputs SEO meta + structured data and other important settings. --}}
 
     {{ghost_head}}
 
 </head>
 
-<body class='{{body_class}}'>
+<body class="{{body_class}}">
 
-    {{!-- Header layout --}}
-    {{> 'header' }}
+    {{!-- header template --}}
+    {{> "header" }}
 
-    {{!-- 
-        Body layout
-        Depending on the type of template, it will show a different content.
-    --}}
+    {{!-- Body layout Depending on the type of template, it will show a different content. --}}
 
     {{{body}}}
 
     {{!-- Footer layout --}}
-    {{> 'footer'}}
+    {{> "footer"}}
 
+    {{!-- Default script file --}}
     <script src='{{asset "js/common-bundle.js"}}'></script>
 
-    {{!-- Default JS Bundle--}}
+    {{!-- Custom scripts by page type --}}
     {{#is "home, blog, bits, videos"}}
         <script src='{{asset "js/home-bundle.js"}}'></script>
     {{/is}}
@@ -111,18 +104,15 @@
     {{#is "tag"}}
         <script src='{{asset "js/tag-bundle.js"}}'></script>
     {{/is}}
-    
+
     {{#is "author"}}
         <script src='{{asset "js/author-bundle.js"}}'></script>
     {{/is}}
-    
 
-    {{!--
-        Ghost Foot
-        Ghost outputs important scripts and data with this tag.
-    --}}
+    {{!-- Ghost Footer, Ghost outputs important scripts and data with this tag. --}}
 
     {{ghost_foot}}
-    
+
 </body>
+
 </html>

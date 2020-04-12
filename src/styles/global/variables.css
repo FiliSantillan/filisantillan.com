@@ -2,115 +2,30 @@
 
 :root {
 
-    /* COLORS */
-
-    --color-light: #F7FFF7;
-    --color-light-b: #EDF2F4;
-    --color-gray: #DDDDDD;
-    --color-gray-b: #CCCCCC;
-    --color-gray-c: #B1B1B1;
-    --color-dark: #46494C;
-    --color-dark-b: #363A4B;
-    --color-dark-c: #282B39;
-    --color-dark-d: #10062D;
-    --color-red: #F37795;
-    --color-red-b: #EA5A7C;
-    --color-red-c: #EF476F;
-    --color-red-d: #EE3D64;
-    --color-yellow: #FFE66D;
-    --color-yellow-b: #FFD166;
-    --color-yellow-c: #FFD553;
-    --color-green: #05EDB1;
-    --color-green-b: #0DE1AA;
-    --color-green-c: #06D6A0;
+    /* Brand Colors */
+    --color-dark: #363A4B;
+    --color-yellow: #FFD166;
     --color-blue: #5BC0EB;
-    --color-blue-b: #00A8E8;
-    --color-brown: #6C5400;
+    --color-pink: #EA5A7C;
 
-    --color-editor-dark: #1B1D26;
-    --color-editor-gray: #898D94;
-    --color-editor-light-gray: #ECF1F1;
-    --color-editor-red: #EC7581;
-    --color-editor-light-blue: #95CEF7;
-    --color-editor-orange: #F29F68;
-    --color-editor-yellow: #F0CB71;
-    --color-editor-purple: #BBA0C9;
-    --color-editor-green: #A8CEBA;
-    
-    --color-quote-red: #DB4641;
-    --color-quote-green: #3BC665;
-    --color-quote-yellow: #F9C84A;
+    /* Light colors */
+    --color-light: #F7FFF7;
+    --color-gray: #EDF2F4;
 
-    /* Gradients */
+    /* Interactive colors */
 
-    --gradient-default: 130deg, var(--color-pink) 0%, var(--color-yellow) 100%;
-    --gradient-secondary: 130deg, var(--color-yellow) 0%, var(--color-pink) 100%;
+    /* Denotive colors (states) */
+    --color-error: #EE3D64;
+    --color-sucess: #06D6A0;
+    --color-disabled: #DDDDDD;
+    --coñor-disabled-dark: #CCCCCC;
 
-    /* Shadows */
+    /* Spacer */
+    --spacer: 1.5rem;
 
-    --shadow-full: 5px 5px 10px color(black alpha(0.5));
-    --shadow-middle: 2.5px 2.5px 5px color(black alpha(0.5));
+    /* Others */
+    --border-radius-default: 5px;
+    --shadow-default: 6px 6px 10px color(black alpha(0.2));
+    --btn-height-size: 40px;
 
-    /* Spacers */
-
-    --spacer: 1.3rem;
-
-    --radius-size: 5px;
-    --radius-size-double: 10px;
-    --radius-size-full: 25px;
-
-    --sm-title: 22px;
-    --md-title: 25px;
-    --lg-title: 28px;
-    --xl-title: 30px;
-
-    --xxs-text: 13px;
-    --xs-text: 14px;
-    --sm-text: 15px;
-    --md-text: 16px;
-    --lg-text: 17px;
-    --xl-text: 19px;
-
-    --btn-height: 45px;
-    --author-image-size: 100px;
-
-    @media (--mobile-375) {
-
-        --sm-title: 24px;
-        --md-title: 26px;
-        --lg-title: 28px;
-        --xl-title: 32px;
-    }
-
-    @media (--mobile-425) {
-
-
-        --sm-title: 25px;
-        --md-title: 27px;
-        --lg-title: 29px;
-        --xl-title: 34px;
-    }
-
-    @media (--tablet-768) {
-
-
-        --sm-title: 27px;
-        --md-title: 29px;
-        --lg-title: 31px;
-        --xl-title: 36px;
-
-        --sm-text: 16px;
-        --md-text: 17px;
-        --lg-text: 18px;
-        --xl-text: 20px;
-
-        --btn-height: 48px;
-        --author-image-size: 130px;
-    }
-
-    @media (--desktop-1024) {
-
-        --author-image-size: 200px;
-
-    }
 }

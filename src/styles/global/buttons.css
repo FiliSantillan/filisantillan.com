@@ -1,34 +1,36 @@
 @import "./media-queries.css";
 
-@custom-selector :--buttons
-  a[class*="btn"],
-  button[class*="btn"],
-  input[class*="btn"];
-@custom-selector :--buttons-secondary
-  a[class*="btn-secondary"],
-  button[class*="btn-secondary"],
-  input[class*="btn-secondary"];
-@custom-selector :--buttons-icon
-  a[class*="btn-icon"],
-  button[class*="btn-icon"],
-  input[class*="btn-icon"];
-@custom-selector :--buttons-mini
-  a[class*="btn-mini"],
-  button[class*="btn-mini"],
-  input[class*="btn-mini"];
-@custom-selector :--iconElements i[class*="o-icon"], span[class*="o-icon"];
+@custom-selector :--buttons a[class*="btn"], button[class*="btn"], input[class*="btn"];
+@custom-selector :--buttons-invert a[class*="btn-invert"], button[class*="btn-invert"], input[class*="btn-invert"];
 
 :--buttons {
-  background-image: linear-gradient(var(--gradient-default));
-  box-shadow: var(--shadow-full);
-  border-radius: var(--radius-size-full);
-  display: inline-block;
-  font-size: var(--md-text);
+  background-color: var(--color-dark);
+  display: inline-flex;
   color: white;
-  padding: 0 1.2em;
-  height: var(--btn-height);
-  line-height: var(--btn-height);
-  text-transform: capitalize;
+  padding: 0 var(--spacer);
+  height: var(--btn-height-size);
+  line-height: var(--btn-height-size);
+  text-transform: uppercase;
+  font-weight: 700;
+  position: relative;
+  margin-right: 8px;
+  margin-bottom: 8px;
+
+
+  &:after {
+    content: "";
+    position: absolute;
+    padding: inherit;
+    height: inherit;
+    background: none;
+    border: 1px solid var(--color-dark);
+    top: 8px;
+    left: 8px;
+    width: 100%;
+    z-index: -1;
+    display: inline-block;
+  }
+
 
   @media (--desktop-1024) {
     transition: 0.3s;
@@ -39,44 +41,16 @@
   }
 }
 
-:--buttons-secondary {
-  background-image: linear-gradient(var(--gradient-secondary));
-}
+:--buttons-invert {
+  background-color: white;
+  color: var(--color-dark);
 
-:--buttons-icon {
-  & :--iconElements {
-    font-size: 1.5em;
-    vertical-align: middle;
+  &:after {
+    border: 1px solid white;
   }
 }
 
-:--buttons-mini {
-  & span[class*="text"]  {
-    display: none;
-  }
-
-  & :--iconElements {
-    vertical-align: middle;
-    font-size: 1.2em;
-  }
-
-  @media (--tablet-768) {
-    font-size: var(--sm-text);
-    padding: 0 0.9em;
-    height: calc(var(--btn-height) / 1.4);
-    line-height: calc(var(--btn-height) / 1.4);
-
-    & span[class*="text"]  {
-      display: inline-block;
-    }
-
-    & :--iconElements {
-      font-size: 0.9em;
-    }
-  }
-}
-
-.switch {
+/* .switch {
   & .switch-button {
     --switch-height: 26px;
     cursor: pointer;
@@ -120,4 +94,4 @@
   100% {
     left: 20px;
   }
-}
+} */

@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;
+    font-size: clamp(16px, 4vw, 17px);
 }
 
 *, *:before, *:after {
@@ -8,7 +9,8 @@ html {
 
 body {
     font-family: "Nunito", system-ui;
-    color: var(--color-dark-c);
+    background-color: var(--color-gray);
+    color: var(--color-dark);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -17,6 +19,10 @@ h1, h2, h3, h4, h5, h6 {
 
 h1, h2, h3, h4, h5, h6, figure {
     margin: 0;
+}
+
+h1 {
+    font-size: clamp(25px, 4vw, 28px);
 }
 
 a {

@@ -1,15 +1,18 @@
 @import "./media-queries.css";
 
+.u-margin-top-disabled {
+  margin-top: 0;
+}
 
-.u-d-inline-block {
+.u-disp-inline-block {
   display: inline-block;
 }
 
-.u-d-inline-flex {
+.u-disp-inline-flex {
    display: inline-flex;
 }
 
-.u-d-block {
+.u-disp-block {
   display: block;
 }
 
@@ -32,7 +35,7 @@
 }
 
 @media (--desktop-1024) {
-  .u-wrap-center {
+  .u-content-center {
     margin-right: auto;
     margin-left: auto;
     max-width: 1000px;
@@ -44,7 +47,7 @@
 }
 
 @media (--desktop-1200) {
-  .u-wrap-center {
+  .u-content-center {
     max-width: 1100px;
   }
 }
