@@ -1,7 +1,8 @@
 @import "./media-queries.css";
 
 @custom-selector :--buttons a[class*="btn"], button[class*="btn"], input[class*="btn"];
-@custom-selector :--buttons-invert a[class*="btn-invert"], button[class*="btn-invert"], input[class*="btn-invert"];
+@custom-selector :--buttons-secondary a[class*="btn-secondary"], button[class*="btn-secondary"], input[class*="btn-secondary"];
+@custom-selector :--buttons-alternative a[class*="btn-alternative"], button[class*="btn-alternative"], input[class*="btn-alternative"];
 
 :--buttons {
   background-color: var(--color-dark);
@@ -15,6 +16,7 @@
   position: relative;
   margin-right: 8px;
   margin-bottom: 8px;
+  justify-content: center;
 
 
   &:after {
@@ -27,26 +29,26 @@
     top: 8px;
     left: 8px;
     width: 100%;
-    z-index: -1;
     display: inline-block;
-  }
-
-
-  @media (--desktop-1024) {
-    transition: 0.3s;
-
-    &:hover  {
-      transform: scale(1.1);
-    }
+    z-index: -1;
   }
 }
 
-:--buttons-invert {
+:--buttons-secondary {
   background-color: white;
   color: var(--color-dark);
 
   &:after {
     border: 1px solid white;
+  }
+}
+
+:--buttons-alternative {
+  background-color: white;
+  color: var(--color-dark);
+
+  &:after {
+    background-color: var(--color-dark);
   }
 }
 

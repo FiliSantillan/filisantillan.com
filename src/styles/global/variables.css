@@ -25,7 +25,7 @@
 
     /* Others */
     --border-radius-default: 5px;
-    --shadow-default: 6px 6px 10px color(black alpha(0.2));
-    --btn-height-size: 40px;
+    --shadow-default: 6px 6px 8px color(black alpha(0.2));
+    --btn-height-size: 45px;
 
 }

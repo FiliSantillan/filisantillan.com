@@ -25,6 +25,10 @@ h1 {
     font-size: clamp(25px, 4vw, 28px);
 }
 
+/* h2 {
+    font-size: clamp(23px, 4vw, 26px);
+} */
+
 a {
     text-decoration: none;
     color: inherit;

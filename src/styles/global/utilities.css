@@ -34,6 +34,15 @@
   font-weight: 700;
 }
 
+.u-font-h2 {
+  font-size: clamp(23px, 4vw, 26px);
+}
+
+.u-margin-x-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media (--desktop-1024) {
   .u-content-center {
     margin-right: auto;
