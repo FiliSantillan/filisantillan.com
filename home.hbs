@@ -11,46 +11,68 @@
 
 {{!-- Cover --}}
 <section class="cover {{#if @site.cover_image}}isCoverEnable"
-         style="background-image: url({{@site.cover_image}}){{else}}isDisabled{{/if}}">
+  style="background-image: url({{@site.cover_image}}){{else}}isDisabled{{/if}}">
 
   {{> "cover" }}
 
 </section>
 
 {{!-- Articles --}}
-<section id="post-card-main" class="post-card-main" role="main">
+<main id="site-main" class="site-main" role="main">
 
-  <div class="post-card-wrapper u-wrap-center">
-    <strong class="post-card-wrapper__title">Artículos</strong>
+  <section class="site-main-container u-content-center">
+    <strong class="site-main-container__title u-font-h2">Artículos</strong>
 
-    <section class="post-card-container card--blog">
+    <div class="site-main-wrapper">
       {{#get "posts" limit="5" include="tags,authors" filter="primary_tag:blog"}}
-      {{> "post-card"}}
+        {{> "post-card"}}
       {{/get}}
-    </section>
-  </div>
 
-  <div class="post-card-wrapper">
-    <strong class="post-card-wrapper__title u-wrap-center">Bits</strong>
+      <div class="site-main-wrapper__button u-margin-x-auto">
+        <a href="/blog" class="btn">Más artículos</a>
+      </div>
+    </div>
+  </section>
 
-    <section class="post-card-container card--bits">
-      {{#get "posts" limit="3" include="tags" filter="primary_tag:bit"}}
-      {{> "post-card-bit"}}
-      {{/get}}
-    </section>
-  </div>
+  <section class="site-main-container site-main-container--bits">
+    <div class="u-content-center">
 
-  <div class="post-card-wrapper u-wrap-center">
-    <strong class="post-card-wrapper__title">Videos</strong>
+      <div class="site-main-container__info">
+        <strong class="site-main-container__title u-font-h2">Bits</strong>
+        <p class="site-main-container__description">
+          Una colección de imágenes que explican diferentes conceptos entorno a desarrollo web. Sus principales
+          características es que sean cortos, directos y fáciles de digerir, he de ahí el nombre (Bits).
+        </p>
+      </div>
 
-    <section class="post-card-container card--video">
+      <div class="site-main-container__buttons">
+        <a href="/blog" class="site-main-container__button btn">Más bits</a>
+        <a href="/blog" class="site-main-container__button btn-alternative">Ver en github</a>
+      </div>
+
+      <div class="site-main-wrapper">
+        {{#get "posts" limit="3" include="tags" filter="primary_tag:bit"}}
+          {{> "post-card-bits"}}
+        {{/get}}
+      </div>
+    </div>
+
+  </section>
+
+  <section class="site-main-container u-content-center">
+    <strong class="site-main-container__title u-font-h2">Videos</strong>
+
+    <div class="site-main-wrapper">
       {{#get "posts" limit="3" include="tags" filter="primary_tag:video"}}
-      {{> "post-card-video"}}
+        {{> "post-card"}}
       {{/get}}
-    </section>
-  </div>
 
-</section>
+      <div class="site-main-wrapper__button u-margin-x-auto">
+        <a href="/videos" class="btn">Más videos</a>
+      </div>
+    </div>
+  </section>
+</main>
 
 {{!-- Pagination  --}}
 {{!-- <section class="pagination u-center-content">

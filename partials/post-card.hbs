@@ -1,61 +1,60 @@
 {{#foreach posts}}
-<article class="post-card {{post_class}}">
+  <article class="post-card {{post_class}} {{#has tag="video"}}post-card--video{{/has}}">
 
-  <a href="{{url}}" class="post-card-link" title="{{title}}" aria-label="{{title}}"></a>
+    <a href="{{url}}" class="post-card-link" title="{{title}}" aria-label="{{title}}"></a>
 
-  <picture class="post-card__cover">
-    <source srcset="{{img_url feature_image size="size-640"}}"
-      data-srcset="{{img_url feature_image size="size-425"}} 1x, {{img_url feature_image size="size-850"}} 2x, {{img_url feature_image size="size-1275"}} 3x"
-      media="(min-width: 375px)" class="lazy">
+    <picture class="post-card-cover">
+      <source srcset="{{img_url feature_image size="size-640"}}"
+        data-srcset="{{img_url feature_image size="size-425"}} 1x, {{img_url feature_image size="size-850"}} 2x, {{img_url feature_image size="size-1275"}} 3x"
+        media="(min-width: 375px)" class="lazy">
 
-    <img src="{{img_url feature_image size="size-640"}}" data-src="{{img_url feature_image size="size-320"}}"
-      data-srcset="{{img_url feature_image size="size-640"}} 2x, {{img_url feature_image size="size-960"}} 3x"
-      alt="{{title}}" class="post-card__image post-card-image">
-  </picture>
+      <img src="{{img_url feature_image size="size-640"}}" data-src="{{img_url feature_image size="size-320"}}"
+        data-srcset="{{img_url feature_image size="size-640"}} 2x, {{img_url feature_image size="size-960"}} 3x"
+        alt="{{title}}" class="post-card__image post-card-image">
+    </picture>
 
-  <header class="post-card__header">
-    <div class="post-card__date">
-      <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD.MMMYYYY"}}</time>
-    </div>
+    <div class="post-card-container">
 
-    {{#if featured}}
-    <div class="post-card__feature">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" class="post-card__icon">
-        <path fill="none" d="M0 0h24v24H0z" />
-        <path
-          d="M17.6 21c-.2 0-.3 0-.5-.1L12 18.2l-5.1 2.7c-.5.3-1.1.1-1.4-.4-.1-.2-.1-.4-.1-.6l1-5.6-4.1-4c-.2-.4-.3-.7-.2-1.1.1-.4.4-.6.8-.7l5.7-.8 2.5-5.1c.2-.5.8-.7 1.3-.5.2.1.4.3.5.5l2.5 5.1 5.7.8c.4.1.7.3.8.7.1.4 0 .7-.2 1l-4.1 4 1 5.6c.1.4-.1.8-.4 1-.2.1-.4.2-.6.2z"
-          fill="#FFFFFF" /></svg>
-      <span class="post-card__text u-d-inline-flex">
-        Artículo destacado
-      </span>
-    </div>
-    {{/if}}
-  </header>
+      {{#has tag="blog"}}
+        <header class="post-card__header">
+          <div class="post-card__date">
+            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD.MMMYYYY"}}</time>
+          </div>
 
-  <section class="post-card__content">
-    <h2 class="post-card__title">{{title}}</h2>
+          {{#if featured}}
+            <div class="post-card__feature">
+              <span class="post-card__text u-d-inline-flex">
+                Destacado
+              </span>
+            </div>
+          {{/if}}
+        </header>
+      {{/has}}
 
-    <footer class="post-card__details">
+      <footer class="post-card__footer">
+        <h2 class="post-card__title">{{title}}</h2>
 
-      <div class="post-card__author">
-        {{#primary_author}}
-        <a href="{{url}}" class="post-card__name">
-          {{name}}
-        </a>
-        {{/primary_author}}
-      </div>
+        {{#has tag="blog"}}
+          <div class="post-card__details">
+            <div class="post-card__author">
+              {{#primary_author}}
+                <a href="{{url}}" class="post-card__name">
+                  {{name}}
+                </a>
+              {{/primary_author}}
+            </div>
 
-      {{#if tags}}
-      {{#foreach tags from="3" limit="1"}}
-      <div class="post-card__wrapTag">
-        <a href="{{url}}" class="post-card__tag">
-          {{name}}
-        </a>
-      </div>
-      {{/foreach}}
-      {{/if}}
-    </footer>
-  </section>
-
-</article>
+            {{#if tags}}
+              {{#foreach tags from="3" limit="1"}}
+                <div class="post-card__tag">
+                  <a href="{{url}}" class="post-card__tag-container">
+                    {{name}}
+                  </a>
+                </div>
+              {{/foreach}}
+            {{/if}}
+          </div>
+      </footer>
+      {{/has}}
+  </article>
 {{/foreach}}
