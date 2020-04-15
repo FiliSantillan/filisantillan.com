@@ -74,7 +74,8 @@
   </section>
 </main>
 
-{{!-- Pagination  --}}
-{{!-- <section class="pagination u-center-content">
-  {{"pagination"}}
-</section> --}}
+{{#if @labs.members}}
+  <section class="subscription">
+    {{> subscription }}
+  </section>
+{{/if}}

@@ -1,0 +1,55 @@
+@import "../../global/media-queries.css";
+
+.subscription {
+  background: var(--color-dark);
+  color: white;
+  padding: calc(var(--spacer) * 2) var(--spacer);
+}
+
+.subscription__details {
+  & .subscription__title {
+    text-transform: uppercase;
+    margin-bottom: calc(var(--spacer) / 2);
+    display: block;
+  }
+
+  & .subscription__description {
+      font-weight: 300;
+      margin: 0 0 var(--spacer);
+  }
+}
+
+.subscription__form {
+    & .subscription__form-wrap {
+        background: white;
+        border-radius: 25px;
+        display: flex;
+        padding: 5px;
+        position: relative;
+        height: 50px;
+
+        & .subscription__input-text {
+            width: calc(100% - 100px);
+            padding: calc(var(--spacer) / 2);
+            border-radius: 25px 0 0 25px;
+            height: 40px;
+        }
+
+        & .subscription__button {
+            background: var(--color-yellow);
+            color: var(--color-dark);
+            border-radius: 25px;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+
+    & .subscription__error {
+        color: var(--color-error);
+        margin-top: var(--spacer);
+        margin-bottom: 0;
+    }
+}
