@@ -1,46 +1,70 @@
-{{!------------------------------------}}
-          {{!-- Footer --}}
-{{!------------------------------------}}
-
-{{!-- Blog footer --}}
-
 <footer class="footer">
-    <div class="footer-wrapper u-wrap-center">
-        
-        <div class="footer__info">
+    <div class="footer-container u-content-center">
+
+        <div class="footer__details">
 
             <div class="footer__legal">
-                <span class="footer__text">{{@site.title}} Ⓒ 2018</span>
-                <a href="https://filisantillan.com/aviso-legal/" class="footer__text">Aviso Legal</a>
-                <a href="https://filisantillan.com/privacidad/" class="footer__text">Privacidad</a>
+                <span class="footer__text">{{@site.title}} Ⓒ 2020 - Todos los derechos reservados.</span>
+                <a href="https://filisantillan.com/aviso-legal/" class="footer__link">Aviso Legal</a>
+                <a href="https://filisantillan.com/privacidad/" class="footer__link">Privacidad</a>
             </div>
-            
+
             <div class="footer__server">
-                <a href="https://m.do.co/c/c4c217c06b83" class="footer__text" rel="noopener noreferrer" target="_blank">Alojado en Digital Ocean</a>
+                <span> Alojado en <a href="https://m.do.co/c/c4c217c06b83" class="footer__link" rel="noopener noreferrer" target="_blank">Digital Ocean</a>
+                </span>
             </div>
         </div>
-        
+
         <div class="footer__social">
-            <ul class='footer__optionList u-no-list'>
+            <ul class='footer__socialList u-no-list'>
 
                 <li class="footer__item">
-                    <a href="{{facebook_url}}" class="footer__icon o-icon o-icon-facebook" rel="noopener noreferrer" target="_blank" title="Facebook" aria-label="Facebook"></a>
+                    <a href="https://www.instagram.com/fili.js/" class="footer__link" rel="noopener noreferrer"
+                        target="_blank" title="Instagram" aria-label="Instagram">
+                        {{> icon-instagram }}
+                    </a>
                 </li>
 
                 <li class="footer__item">
-                    <a href="{{twitter_url}}" class="footer__icon o-icon-twitter" rel="noopener noreferrer" target="_blank" title="Twitter" aria-label="Twitter"></a>
+                    <a href="{{twitter_url}}" class="footer__link" rel="noopener noreferrer" target="_blank"
+                        title="Twitter" aria-label="Twitter">
+                        {{> icon-twitter }}
+                    </a>
                 </li>
 
                 <li class="footer__item">
-                    <a href="https://www.instagram.com/fili.js/" class="footer__icon o-icon-instagram" rel="noopener noreferrer" target="_blank" title="Instagram" aria-label="Instagram"></a>
+                    <a href="{{facebook_url}}" class="footer__link" rel="noopener noreferrer" target="_blank"
+                        title="Facebook" aria-label="Facebook">
+                        {{> icon-facebook }}
+                    </a>
                 </li>
 
                 <li class="footer__item">
-                    <a href="https://github.com/FiliJS" class="footer__icon o-icon-github-simple" rel="noopener noreferrer" target="_blank" title="GitHub" aria-label="GitHub"></a>
+                    <a href="https://www.youtube.com/c/filimartinezz" class="footer__link" rel="noopener noreferrer"
+                        target="_blank" title="Youtube" aria-label="Youtube">
+                        {{> icon-youtube }}
+                    </a>
                 </li>
 
                 <li class="footer__item">
-                    <a href="https://www.youtube.com/c/filimartinezz" class="footer__icon o-icon-youtube" rel="noopener noreferrer" target="_blank" title="Youtube" aria-label="Youtube"></a>
+                    <a href="https://github.com/FiliJS" class="footer__link" rel="noopener noreferrer" target="_blank"
+                        title="GitHub" aria-label="GitHub">
+                        {{> icon-github }}
+                    </a>
+                </li>
+
+                <li class="footer__item">
+                    <a href="https://github.com/FiliJS" class="footer__link" rel="noopener noreferrer" target="_blank"
+                        title="GitHub" aria-label="GitHub">
+                        {{> icon-codepen }}
+                    </a>
+                </li>
+
+                <li class="footer__item">
+                    <a href="https://github.com/FiliJS" class="footer__link" rel="noopener noreferrer" target="_blank"
+                        title="GitHub" aria-label="GitHub">
+                        {{> icon-unsplash }}
+                    </a>
                 </li>
 
             </ul>

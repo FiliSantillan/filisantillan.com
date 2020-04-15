@@ -35,6 +35,7 @@
 }
 
 .u-font-h2 {
+  font-family: "Montserrat", system-ui;
   font-size: clamp(23px, 4vw, 26px);
 }
 
