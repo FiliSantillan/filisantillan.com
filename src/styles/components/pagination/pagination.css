@@ -27,14 +27,14 @@
         }
     }
 
-    @media (--tablet-768) {
+    @media (--screen-768) {
         & .pagination__number {
             width: var(--btn-height-lg);
             height: var(--btn-height-lg);
         }
     }
 
-    @media (--desktop-1024) {
+    @media (--screen-1024) {
         & .pagination__arrow {
             transition: 0.3s;
             

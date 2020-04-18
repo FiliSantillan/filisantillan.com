@@ -30,7 +30,7 @@
         background-image: linear-gradient(19deg, var(--color-blue) 0%, var(--color-purple) 100%);
     }
 
-    @media (--desktop-1024) {
+    @media (--screen-1024) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         position: initial;
@@ -41,7 +41,7 @@
         }
     }
 
-    @media (--desktop-1200) {
+    @media (--screen-1200) {
         grid-template-columns: minmax(700px, 1fr) minmax(600px, 1fr);
     }
 }
@@ -110,7 +110,7 @@
         }
     }
 
-    @media (--desktop-1024) {
+    @media (--screen-1024) {
         padding: 0 var(--spacer-size);
         margin: 0;
         overflow: hidden;
@@ -189,13 +189,13 @@
         }
     }
 
-    @media (--desktop-1200) {
+    @media (--screen-1200) {
         padding: 0 calc(var(--spacer-size) * 2);
     }
 }
 
 .cover--post {
-    @media (--desktop-1024) {
+    @media (--screen-1024) {
         display: flex;
         justify-content: center;
         align-items:center;
@@ -215,7 +215,7 @@
         }
     }
 
-    @media (--desktop-1024) {
+    @media (--screen-1024) {
         text-align: left;
 
         & .cover__title {

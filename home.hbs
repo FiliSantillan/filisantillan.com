@@ -21,7 +21,7 @@
 <main id="site-main" class="site-main" role="main">
 
   <section class="site-main-container u-content-center">
-    <strong class="site-main-container__title u-font-h2">Artículos</strong>
+    <strong class="site-main-container__title u-font-xlarge">Artículos</strong>
 
     <div class="site-main-wrapper">
       {{#get "posts" limit="5" include="tags,authors" filter="primary_tag:blog"}}
@@ -38,7 +38,7 @@
     <div class="u-content-center">
 
       <div class="site-main-container__info">
-        <strong class="site-main-container__title u-font-h2">Bits</strong>
+        <strong class="site-main-container__title u-font-xlarge">Bits</strong>
         <p class="site-main-container__description">
           Una colección de imágenes que explican diferentes conceptos entorno a desarrollo web. Sus principales
           características es que sean cortos, directos y fáciles de digerir, he de ahí el nombre (Bits).
@@ -50,7 +50,7 @@
         <a href="/blog" class="site-main-container__button btn-alternative">Ver en github</a>
       </div>
 
-      <div class="site-main-wrapper">
+      <div class="site-main-wrapper site-main-wrapper--bits">
         {{#get "posts" limit="3" include="tags" filter="primary_tag:bit"}}
           {{> "post-card-bits"}}
         {{/get}}
@@ -60,7 +60,7 @@
   </section>
 
   <section class="site-main-container u-content-center">
-    <strong class="site-main-container__title u-font-h2">Videos</strong>
+    <strong class="site-main-container__title u-font-xlarge">Videos</strong>
 
     <div class="site-main-wrapper">
       {{#get "posts" limit="3" include="tags" filter="primary_tag:video"}}

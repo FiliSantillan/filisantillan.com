@@ -40,35 +40,35 @@
     <meta name='google-site-verification' content='PUVeHiwvS1T4_Q8FaieZHfE0GjL2rsKJ3LU4eabFdtA' />
 
     {{!-- Preload and prefetch settings --}}
-    <link rel="preload" href='{{asset "css/common-bundle.css"}}' as="style">
+    <link rel="preload" href='{{asset "styles/common-bundle.css"}}' as="style">
     <link rel="prefetch" href='{{asset "js/common-bundle.js"}}' as="script">
 
     {{!-- Default styles --}}
-    <link rel='stylesheet' href='{{asset "css/common-bundle.css"}}'>
+    <link rel='stylesheet' href='{{asset "styles/common-bundle.css"}}'>
 
     {{!-- Custom styles by page type --}}
     {{#is "home, blog, bits, videos"}}
-        <link rel="preload" href='{{asset "css/home-bundle.css"}}' as="style">
+        <link rel="preload" href='{{asset "styles/home-bundle.css"}}' as="style">
         <link rel="prefetch" href='{{asset "js/home-bundle.js"}}' as="script">
-        <link rel='stylesheet' href='{{asset "css/home-bundle.css"}}'>
+        <link rel='stylesheet' href='{{asset "styles/home-bundle.css"}}'>
     {{/is}}
 
     {{#is "post"}}
-        <link rel="preload" href='{{asset "css/post-bundle.css"}}' as="style">
+        <link rel="preload" href='{{asset "styles/post-bundle.css"}}' as="style">
         <link rel="prefetch" href='{{asset "js/post-bundle.js"}}' as="script">
-        <link rel='stylesheet' href='{{asset "css/post-bundle.css"}}'>
+        <link rel='stylesheet' href='{{asset "styles/post-bundle.css"}}'>
     {{/is}}
 
     {{#is "tag"}}
-        <link rel="preload" href='{{asset "css/tag-bundle.css"}}' as="style">
+        <link rel="preload" href='{{asset "styles/tag-bundle.css"}}' as="style">
         <link rel="prefetch" href='{{asset "js/tag-bundle.js"}}' as="script">
-        <link rel='stylesheet' href='{{asset "css/tag-bundle.css"}}'>
+        <link rel='stylesheet' href='{{asset "styles/tag-bundle.css"}}'>
     {{/is}}
 
     {{#is "author"}}
-        <link rel="preload" href='{{asset "css/author-bundle.css"}}' as="style">
+        <link rel="preload" href='{{asset "styles/author-bundle.css"}}' as="style">
         <link rel="prefetch" href='{{asset "js/author-bundle.js"}}' as="script">
-        <link rel='stylesheet' href='{{asset "css/author-bundle.css"}}'>
+        <link rel='stylesheet' href='{{asset "styles/author-bundle.css"}}'>
     {{/is}}
 
     {{!-- Ghost Head This tag outputs SEO meta + structured data and other important settings. --}}

@@ -3,26 +3,20 @@ const path = require("path"),
   UglifyJsPlugin = require('uglifyjs-webpack-plugin'),
   CleanWebpackPlugin = require('clean-webpack-plugin'),
   webpack = require("webpack");
-  // SizePlugin = require("size-plugin");
+
+const plugins = [
+        new ExtractTextPlugin("styles/[name]-bundle.css"),
+      ],
+      cssOptions = {
+        importLoaders: 1
+      };
+
+const pathsToClean = ["assets/**/*.css", "assets/**/*.js", "assets/fonts/*"];
 
 module.exports = (env, argv) => {
-  const pluginsList = [
-            new ExtractTextPlugin("css/[name]-bundle.css"),
-            // new SizePlugin()
-        ],
-        cssOptions = {
-            importLoaders: 1
-        };
-
   if (argv.mode === "production") {
 
-    let pathsToClean = [
-      "assets/**/*.css",
-      "assets/**/*.js",
-      "assets/fonts/*"
-    ];
-
-    pluginsList.push(
+    plugins.push(
       new UglifyJsPlugin({
         test: /\.js($|\?)/i,
         exclude: /(node_modules)/
@@ -95,7 +89,7 @@ module.exports = (env, argv) => {
         }
       ]
     },
-    plugins: pluginsList,
+    plugins: plugins,
     optimization: {
         splitChunks: {
             name: "common",

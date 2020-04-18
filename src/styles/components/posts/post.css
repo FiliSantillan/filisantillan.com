@@ -1,7 +1,7 @@
 @import "../../global/media-queries.css";
 
 .post-wrapper {
-  @media (--desktop-1200) {
+  @media (--screen-1200) {
     max-width: 900px;
   }
 }
@@ -239,7 +239,7 @@
     margin-top: calc(var(--spacer-size) / 3);
   }
 
-  @media (--desktop-1024) {
+  @media (--screen-1024) {
     padding: var(--spacer-size) 0 var(--spacer-size);
     display: flex;
     flex-direction: column;
@@ -312,7 +312,7 @@
     background: var(--color-pink);
   }
 
-  @media (--mobile-425) {
+  @media (--screen-425) {
     & .option__link {
       width: 47%;
 
@@ -322,14 +322,14 @@
     }
   }
 
-  @media (--tablet-768) {
+  @media (--screen-768) {
     & .option__link {
       width: 23%;
       margin-bottom: 0;
     }
   }
 
-  @media (--desktop-1024) {
+  @media (--screen-1024) {
     & .option__link {
       width: 20%;
       margin-bottom: 0;
@@ -363,7 +363,7 @@
 
   & .twitter-tweet,
   & .instagram-media {
-    @media (--tablet-768) {
+    @media (--screen-768) {
       margin-left: auto !important;
       margin-right: auto !important;
     }
@@ -432,7 +432,7 @@
     }
   }
 
-  @media (--tablet-768) {
+  @media (--screen-768) {
     & .event__details {
       & .event__title {
         display: inline-block;

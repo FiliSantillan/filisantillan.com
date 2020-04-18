@@ -16,13 +16,13 @@
     overflow-x: scroll;
   }
 
-  @media (--tablet-625) {
+  @media (--screen-625) {
     & .navigation__itemsList {
       justify-content: space-evenly;
     }
   }
 
-  @media (--desktop-1024) {
+  @media (--screen-1024) {
     background: none;
     position: initial;
     width: auto;
@@ -60,6 +60,7 @@
       text-transform: uppercase;
       display: block;
       width: 100%;
+      font-size: var(--font-size-xsmall);
     }
   }
 
@@ -86,7 +87,7 @@
     }
   }
 
-  @media (--desktop-1024) {
+  @media (--screen-1024) {
     min-width: initial;
 
     & .navigation__link {

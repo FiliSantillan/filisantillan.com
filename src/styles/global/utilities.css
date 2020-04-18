@@ -9,7 +9,7 @@
 }
 
 .u-disp-inline-flex {
-   display: inline-flex;
+  display: inline-flex;
 }
 
 .u-disp-block {
@@ -34,9 +34,22 @@
   font-weight: 700;
 }
 
-.u-font-h2 {
+.u-font-h1,
+.u-font-h2,
+.u-font-xlarge {
   font-family: "Montserrat", system-ui;
-  font-size: clamp(23px, 4vw, 26px);
+}
+
+.u-font-h1 {
+  font-size: var(--font-size-h1);
+}
+
+.u-font-h2 {
+  font-size: var(--font-size-h2);
+}
+
+.u-font-xlarge {
+  font-size: var(--font-size-xlarge);
 }
 
 .u-margin-x-auto {
@@ -44,7 +57,7 @@
   margin-right: auto;
 }
 
-@media (--desktop-1024) {
+@media (--screen-1024) {
   .u-content-center {
     margin-right: auto;
     margin-left: auto;
@@ -56,9 +69,8 @@
   }
 }
 
-@media (--desktop-1200) {
+@media (--screen-1200) {
   .u-content-center {
     max-width: 1100px;
   }
 }
-

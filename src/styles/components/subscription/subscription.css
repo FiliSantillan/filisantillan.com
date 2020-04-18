@@ -11,6 +11,7 @@
     text-transform: uppercase;
     margin-bottom: calc(var(--spacer) / 2);
     display: block;
+    font-size: var(--font-size-xlarge);
   }
 
   & .subscription__description {
@@ -44,6 +45,9 @@
             line-height: 40px;
             text-align: center;
             cursor: pointer;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: var(--font-size-xsmall);
         }
     }
 

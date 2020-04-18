@@ -27,7 +27,7 @@
     color: var(--color-dark);
   }
 
-  @media (--desktop-1024) {
+  @media (--screen-1024) {
     min-height: 45vh;
   }
 }
@@ -47,7 +47,7 @@
     }
   }
 
-  @media (--desktop-1024) {
+  @media (--screen-1024) {
     width: 100%;
     padding: 0;
 

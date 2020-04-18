@@ -50,8 +50,7 @@
   ],
   "scripts": {
     "build:dev": "webpack --mode=development --watch",
-    "build:dev:server": "webpack-dev-server --config webpack.dev.js",
-    "build:pro": "webpack --config webpack.prod.js"
+    "build:pro": "webpack --mode=production"
   },
   "author": {
     "name": "Fili Santillán",
@@ -69,10 +68,10 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
     "postcss": "^6.0.21",
-    "postcss-cssnext": "^3.1.0",
     "postcss-font-magician": "^2.1.1",
     "postcss-import": "^11.1.0",
     "postcss-loader": "^2.1.3",
+    "postcss-preset-env": "^6.7.0",
     "string-replace-loader": "^2.2.0",
     "style-loader": "^0.20.3",
     "uglifyjs-webpack-plugin": "^1.2.7",

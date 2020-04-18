@@ -2,6 +2,17 @@
 
 :root {
 
+    /* Fonts */
+
+    --font-size-h1: clamp(25px, 4vw, 28px);
+    --font-size-h2: clamp(23px, 4vw, 26px);
+
+    --font-size-xlarge: clamp(30px, 4vw, 34px);
+
+    --font-size-default: clamp(16px, 4vw, 17px);
+    --font-size-small: clamp(15px, 4vw, 16px);
+    --font-size-xsmall: clamp(14px, 4vw, 15px);
+
     /* Brand Colors */
     --color-dark: #363A4B;
     --color-yellow: #FFD166;
