@@ -59,8 +59,13 @@
   @media (--screen-1024) {
     padding: 0;
 
+    & .cover__introduction {
+      margin-bottom: var(--spacer);
+    }
+
     & .cover__description {
       width: 50%;
+      margin-bottom: calc(var(--spacer) * 2);
     }
   }
 
