@@ -1,17 +1,26 @@
-<div class="subscription__details">
-    <strong class="subscription__title u-font-h2">Suscribete a mi newsletter</strong>
-    <p class="subscription__description">
-        Aprende, crece y mejora tus habilidades como Desarrollador, Aprende, crece y mejora tus habilidades como
-        Desarrollador.
-    </p>
-</div>
+<div class=" subscription-container u-content-center">
+    <div class="subscription-wrapper">
+        <div class="subscription__details">
+            <strong class="subscription__title u-font-h2">Suscribete a mi newsletter</strong>
+            <p class="subscription__description">
+                Aprende, crece y mejora tus habilidades como Desarrollador, Aprende, crece y mejora tus habilidades como
+                Desarrollador.
+            </p>
+        </div>
 
-<form data-members-form="subscribe" class="subscription__form">
-    <div class="subscription__form-wrap">
-        <input data-members-email type="email" required="true" class="subscription__input-text" placeholder="Tu email" />
-        <button type="submit" class="subscription__button">Ser parte</button>
+        <form data-members-form="subscribe" class="subscription__form">
+            <div class="subscription__form-wrap">
+                <input data-members-email type="email" required="true" class="subscription__input-text"
+                    placeholder="Tu email" />
+                <button type="submit" class="subscription__button">Ser parte</button>
+            </div>
+            {{!-- <p data-members-error class="subscription__error">
+                Ocurrión un error al intentar suscribirse, por favor intenta más tarde.
+            </p> --}}
+        </form>
     </div>
-    {{!-- <p data-members-error class="subscription__error">
-        Ocurrión un error al intentar suscribirse, por favor intenta más tarde.
-    </p> --}}
-</form>
+
+    <picture class="subscription__image">
+        <img src="{{asset 'images/newsletter.png'}}" alt="Newsletter" class="subscription__img">
+    </picture>
+</div>
