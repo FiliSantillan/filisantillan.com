@@ -1,4 +1,4 @@
-@import '../../global/media-queries.css';
+@import "../../global/media-queries.css";
 
 .header {
   padding: var(--spacer);
@@ -27,10 +27,10 @@
   vertical-align: middle;
 
   & .header__link {
-    margin-right: 0.6em;
+    margin-right: 0.5rem;
 
     & .header__icon {
-      width: 1.4em;
+      width: 25px;
     }
 
     &:last-child {

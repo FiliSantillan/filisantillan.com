@@ -1,19 +1,32 @@
-{{!-- Blog navigation  --}}
-{{!-- Everything inside the #navigation tags pulls data from the navigation --}}
-
 <div class="navigation-container">
-    <ul class="navigation__itemsList u-no-list">
+    <ul class="navigation__itemsList u-no-list" role="main">
 
-        {{#foreach navigation}}
+        {{#foreach navigation limit="4"}}
             <li class="navigation__item {{#if current}} isItemCurrent {{/if}}" role='presentation'>
                 <a class="navigation__link u-disp-inline-block" href='{{url absolute="true"}}'>
-                    {{!-- Icon --}}
                     <div class='navigation__icon icon-{{slug}}'></div>
-                    {{!-- Text --}}
                     <span class='navigation__text'>{{label}}</span>
                 </a>
             </li>
         {{/foreach}}
 
+        <li class="navigation__item" role='presentation'>
+            <a class="navigation__link link--menu u-disp-inline-block" href="#">
+                <div class='navigation__icon icon-menu'></div>
+                <span class='navigation__text'>Más</span>
+            </a>
+
+            <ul class="navigation__itemsList itemsList--submenu u-no-list">
+                {{#foreach navigation from="5"}}
+                    <li class="navigation__item item--submenu {{#if current}} isItemCurrent {{/if}}"
+                        role='presentation'>
+                        <a class="navigation__link u-disp-inline-block" href='{{url absolute="true"}}'>
+                            <div class='navigation__icon icon-{{slug}}'></div>
+                            <span class='navigation__text'>{{label}}</span>
+                        </a>
+                    </li>
+                {{/foreach}}
+            </ul>
+        </li>
     </ul>
 </div>
