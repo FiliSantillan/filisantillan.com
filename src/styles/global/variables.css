@@ -1,42 +1,42 @@
 @import "./media-queries.css";
 
 :root {
+  /* Fonts */
 
-    /* Fonts */
+  --font-size-h1: clamp(25px, 4vw, 28px);
+  --font-size-h2: clamp(23px, 4vw, 26px);
 
-    --font-size-h1: clamp(25px, 4vw, 28px);
-    --font-size-h2: clamp(23px, 4vw, 26px);
+  --font-size-large: clamp(30px, 4vw, 40px);
+  --font-size-xlarge: clamp(30px, 4vw, 60px);
 
-    --font-size-xlarge: clamp(30px, 4vw, 34px);
+  --font-size-default: clamp(16px, 4vw, 17px);
+  --font-size-small: clamp(15px, 4vw, 16px);
+  --font-size-xsmall: clamp(14px, 4vw, 15px);
 
-    --font-size-default: clamp(16px, 4vw, 17px);
-    --font-size-small: clamp(15px, 4vw, 16px);
-    --font-size-xsmall: clamp(14px, 4vw, 15px);
+  /* Brand Colors */
+  --color-dark: #363a4b;
+  --color-yellow: #ffd166;
+  --color-yellow-alpha: #ffd16670;
+  --color-blue: #5bc0eb;
+  --color-pink: #ea5a7c;
 
-    /* Brand Colors */
-    --color-dark: #363A4B;
-    --color-yellow: #FFD166;
-    --color-blue: #5BC0EB;
-    --color-pink: #EA5A7C;
+  /* Light colors */
+  --color-light: #f7fff7;
+  --color-gray: #edf2f4;
 
-    /* Light colors */
-    --color-light: #F7FFF7;
-    --color-gray: #EDF2F4;
+  /* Interactive colors */
 
-    /* Interactive colors */
+  /* Denotive colors (states) */
+  --color-error: #f52246;
+  --color-sucess: #06d6a0;
+  --color-disabled: #dddddd;
+  --coñor-disabled-dark: #cccccc;
 
-    /* Denotive colors (states) */
-    --color-error: #F52246;
-    --color-sucess: #06D6A0;
-    --color-disabled: #DDDDDD;
-    --coñor-disabled-dark: #CCCCCC;
+  /* Spacer */
+  --spacer: 1.5rem;
 
-    /* Spacer */
-    --spacer: 1.5rem;
-
-    /* Others */
-    --border-radius-default: 5px;
-    --shadow-default: 6px 6px 8px color(black alpha(0.2));
-    --btn-height-size: 45px;
-
+  /* Others */
+  --border-radius-default: 5px;
+  --shadow-default: 6px 6px 8px color(black alpha(0.2));
+  --btn-height-size: 45px;
 }

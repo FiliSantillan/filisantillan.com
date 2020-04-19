@@ -17,11 +17,9 @@ module.exports = {
       variants: {
         Montserrat: {
           300: [],
-          700: [],
-        },
-        Nunito: {
-          300: [],
           400: [],
+          500: [],
+          600: [],
           700: [],
         },
         "Source Code Pro": {

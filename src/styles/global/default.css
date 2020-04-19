@@ -3,21 +3,34 @@ html {
     font-size: var(--font-size-default);
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
 body {
-    font-family: "Nunito", system-ui;
+    font-family: "Montserrat", system-ui;
     background-color: var(--color-gray);
     color: var(--color-dark);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "Montserrat", system-ui;
 }
 
-h1, h2, h3, h4, h5, h6, figure {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure {
     margin: 0;
 }
 

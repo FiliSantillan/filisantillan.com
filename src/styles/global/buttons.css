@@ -1,8 +1,17 @@
 @import "./media-queries.css";
 
-@custom-selector :--buttons a[class*="btn"], button[class*="btn"], input[class*="btn"];
-@custom-selector :--buttons-secondary a[class*="btn-secondary"], button[class*="btn-secondary"], input[class*="btn-secondary"];
-@custom-selector :--buttons-alternative a[class*="btn-alternative"], button[class*="btn-alternative"], input[class*="btn-alternative"];
+@custom-selector :--buttons
+  a[class*="btn"],
+  button[class*="btn"],
+  input[class*="btn"];
+@custom-selector :--buttons-secondary
+  a[class*="btn-secondary"],
+  button[class*="btn-secondary"],
+  input[class*="btn-secondary"];
+@custom-selector :--buttons-alternative
+  a[class*="btn-alternative"],
+  button[class*="btn-alternative"],
+  input[class*="btn-alternative"];
 
 :--buttons {
   background-color: var(--color-dark);
@@ -12,12 +21,11 @@
   height: var(--btn-height-size);
   line-height: var(--btn-height-size);
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   position: relative;
   margin-right: 8px;
   margin-bottom: 8px;
   justify-content: center;
-
 
   &:after {
     content: "";
@@ -38,7 +46,7 @@
   background-color: white;
   color: var(--color-dark);
 
-  &:after {
+  &:after  {
     border: 1px solid white;
   }
 }
