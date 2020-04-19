@@ -24,19 +24,22 @@
   </section>
 
   <section class="site-main-container site-main-container--bits">
-    <div class="u-content-center">
+    <div class="site-main-container__details u-content-center">
 
       <div class="site-main-container__info">
-        <strong class="site-main-container__title u-font-large">Bits</strong>
-        <p class="site-main-container__description">
-          Una colección de imágenes que explican diferentes conceptos entorno a desarrollo web. Sus principales
-          características es que sean cortos, directos y fáciles de digerir, he de ahí el nombre (Bits).
-        </p>
-      </div>
+        <div class="site-main-container__textBlock">
+          <strong class="site-main-container__title u-font-large">Bits</strong>
+          <p class="site-main-container__description">
+            Una colección de imágenes que explican diferentes conceptos entorno a desarrollo web. Sus principales
+            características es que sean cortos, directos y fáciles de digerir, he de ahí el nombre (Bits). Espero que
+            estos te sean de ayuda, como introducción, guía o simplemente para repasar conceptos.
+          </p>
+        </div>
 
-      <div class="site-main-container__buttons">
-        <a href="/blog" class="site-main-container__button btn">Ver más bits</a>
-        <a href="/blog" class="site-main-container__button btn-alternative">Ver en github</a>
+        <div class="site-main-container__buttons">
+          <a href="/blog" class="site-main-container__button btn">Ver más bits</a>
+          <a href="/blog" class="site-main-container__button btn-alternative">Ver en github</a>
+        </div>
       </div>
 
       <div class="site-main-wrapper site-main-wrapper--bits">
@@ -51,7 +54,7 @@
     <strong class="site-main-container__title u-font-large">Videos</strong>
 
     <div class="site-main-wrapper site-main-wrapper--video">
-      {{#get "posts" limit="3" include="tags" filter="primary_tag:video"}}
+      {{#get "posts" limit="4" include="tags" filter="primary_tag:video"}}
         {{> "post-card"}}
       {{/get}}
 
