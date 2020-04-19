@@ -13,7 +13,7 @@
         alt="{{title}}" class="post-card__image post-card-image">
     </picture>
 
-    <div class="post-card-container">
+    <div class="post-card__info">
 
       {{#has tag="blog"}}
         <header class="post-card__header">
@@ -54,11 +54,11 @@
               {{/foreach}}
             {{/if}}
           </div>
-        {{else}}
+          {{else}}
 
-          <div class="post-card__playButton">
-            {{> "icon-play"}}
-          </div>
+            <div class="post-card__playButton">
+              {{> "icon-play"}}
+            </div>
         {{/has}}
 
 

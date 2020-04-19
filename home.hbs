@@ -1,15 +1,5 @@
-{{!--
-    Template: Home
-
-    This is the standard template for a list of posts.
-    It is used by default for the home page and subsequent pages of blog posts.
---}}
-
-{{!-- default main structure of the templates --}}
-
 {{!< default }}
 
-{{!-- Cover --}}
 <section class="cover {{#if @site.cover_image}}isCoverEnable"
   style="background-image: url({{@site.cover_image}}){{else}}isDisabled{{/if}}">
 
@@ -17,11 +7,10 @@
 
 </section>
 
-{{!-- Articles --}}
 <main id="site-main" class="site-main" role="main">
 
   <section class="site-main-container u-content-center">
-    <strong class="site-main-container__title u-font-xlarge">Artículos</strong>
+    <strong class="site-main-container__title u-font-large">Artículos</strong>
 
     <div class="site-main-wrapper">
       {{#get "posts" limit="5" include="tags,authors" filter="primary_tag:blog"}}
@@ -29,7 +18,7 @@
       {{/get}}
 
       <div class="site-main-wrapper__button u-margin-x-auto">
-        <a href="/blog" class="btn">Más artículos</a>
+        <a href="/blog" class="btn">Ver más artículos</a>
       </div>
     </div>
   </section>
@@ -38,7 +27,7 @@
     <div class="u-content-center">
 
       <div class="site-main-container__info">
-        <strong class="site-main-container__title u-font-xlarge">Bits</strong>
+        <strong class="site-main-container__title u-font-large">Bits</strong>
         <p class="site-main-container__description">
           Una colección de imágenes que explican diferentes conceptos entorno a desarrollo web. Sus principales
           características es que sean cortos, directos y fáciles de digerir, he de ahí el nombre (Bits).
@@ -46,29 +35,28 @@
       </div>
 
       <div class="site-main-container__buttons">
-        <a href="/blog" class="site-main-container__button btn">Más bits</a>
+        <a href="/blog" class="site-main-container__button btn">Ver más bits</a>
         <a href="/blog" class="site-main-container__button btn-alternative">Ver en github</a>
       </div>
 
       <div class="site-main-wrapper site-main-wrapper--bits">
-        {{#get "posts" limit="3" include="tags" filter="primary_tag:bit"}}
+        {{#get "posts" limit="4" include="tags" filter="primary_tag:bit"}}
           {{> "post-card-bits"}}
         {{/get}}
       </div>
     </div>
-
   </section>
 
-  <section class="site-main-container u-content-center">
-    <strong class="site-main-container__title u-font-xlarge">Videos</strong>
+  <section class="site-main-container u-content-center site-main-container--video">
+    <strong class="site-main-container__title u-font-large">Videos</strong>
 
-    <div class="site-main-wrapper">
+    <div class="site-main-wrapper site-main-wrapper--video">
       {{#get "posts" limit="3" include="tags" filter="primary_tag:video"}}
         {{> "post-card"}}
       {{/get}}
 
       <div class="site-main-wrapper__button u-margin-x-auto">
-        <a href="/videos" class="btn">Más videos</a>
+        <a href="/videos" class="btn">Ver más videos</a>
       </div>
     </div>
   </section>
