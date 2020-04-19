@@ -28,7 +28,7 @@
   }
 
   @media (--screen-1024) {
-    min-height: 45vh;
+    min-height: 50vh;
   }
 }
 
@@ -38,18 +38,35 @@
 
   & .cover__introduction {
     margin-bottom: calc(var(--spacer) / 2);
+
+    & span {
+      font-weight: 300;
+    }
+
+    & strong {
+      font-weight: 700;
+    }
   }
 
   & .cover__description {
     margin-bottom: var(--spacer);
+
     & .cover__text {
-      font-weight: 300;
+      font-weight: 400;
     }
   }
 
   @media (--screen-1024) {
-    width: 100%;
     padding: 0;
 
+    & .cover__description {
+      width: 50%;
+    }
+  }
+
+  @media (--screen-1200) {
+    & .cover__description {
+      width: 60%;
+    }
   }
 }
