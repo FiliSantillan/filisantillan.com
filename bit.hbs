@@ -1,29 +1,23 @@
-{{!--
-    Template: Index
-
-    This is the standard template for a list of posts.
-    It is used by default for the home page and subsequent pages of blog posts.
---}}
-
-{{!--
-    default-home
-    main structure of the templates
-    Important: The code below is not a comment
---}}
-
 {{!< default }}
 
-{{!-- Cover layout --}}
-<section class="cover">
-  {{> "cover" }}
+<section class="cover {{#if @site.cover_image}}isCoverEnable"
+  style="background-image: url({{@site.cover_image}}){{else}}isDisabled{{/if}}">
+
+  {{> "cover" title="Bits" description="Una colección de imágenes que explican diferentes conceptos entorno a desarrollo web. Sus principales características es que sean cortos, directos y fáciles de digerir, he de ahí el nombre (Bits). Espero que
+  estos te sean de ayuda, como introducción, guía o simplemente para repasar conceptos." }}
+
 </section>
 
-{{!-- Articles --}}
-<section id='article-wrapper' class='article-wrapper u-wrap-center' role='main'>
-  {{> 'post-feature'}}
-</section>
+<main id="site-main" class="site-main" role="main">
+  <section class="site-main-container u-content-center">
+    <div class="site-main-wrapper site-main-wrapper--bits-page">
+      {{> "post-card-bits"}}
+    </div>
+  </section>
+</main>
 
-{{!-- Pagination  --}}
-<section class="pagination u-center-content">
-  {{"pagination"}}
-</section>
+{{#if @labs.members}}
+  <section class="subscription">
+    {{> subscription }}
+  </section>
+{{/if}}

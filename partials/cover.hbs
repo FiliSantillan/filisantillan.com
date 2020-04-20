@@ -1,14 +1,38 @@
 <div class="cover-container u-content-center">
     <div class="cover__introduction">
-        <span class="u-font-xlarge">Hola, soy </span>
-        <strong class="u-font-xlarge">Fili.</strong>
+        {{#if title}}
+            <span class="u-font-xlarge">{{title}}</span>
+        {{else}}
+            <span class="u-font-xlarge">Hola, soy </span>
+            <strong class="u-font-xlarge">Fili.</strong>
+        {{/if}}
     </div>
 
     <div class="cover__description">
-        <p class="cover__text u-margin-top-disabled">{{@site.description}}</p>
+        <p class="cover__text u-margin-top-disabled">
+            {{#if description}}
+                {{description}}
+            {{else}}
+                {{@site.description}}
+            {{/if}}
+        </p>
     </div>
 
-    <div class="cover__button">
-        <a href="#" class="btn-secondary">Saber más</a>
-    </div>
+    {{#is "home"}}
+        <div class="cover__button">
+            <a href="#" class="btn-secondary">Saber más</a>
+        </div>
+    {{/is}}
+
+    {{#is "bits"}}
+        <div class="cover__button">
+            <a href="#" class="btn-secondary">Ver en github</a>
+        </div>
+    {{/is}}
+
+    {{#is "videos"}}
+        <div class="cover__button">
+            <a href="#" class="btn-secondary">Ver en youtube</a>
+        </div>
+    {{/is}}
 </div>

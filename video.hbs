@@ -1,29 +1,22 @@
-{{!--
-    Template: Index
-
-    This is the standard template for a list of posts.
-    It is used by default for the home page and subsequent pages of blog posts.
---}}
-
-{{!--
-    default-home
-    main structure of the templates
-    Important: The code below is not a comment
---}}
-
 {{!< default }}
 
-{{!-- Cover layout --}}
-<section class="cover">
-  {{> "cover" }}
+<section class="cover {{#if @site.cover_image}}isCoverEnable"
+  style="background-image: url({{@site.cover_image}}){{else}}isDisabled{{/if}}">
+
+  {{> "cover" title="Videos" description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. In quidem similique consequuntur illo! Nisi, reprehenderit nemo? Odio possimus accusamus deserunt modi eaque! Ipsa similique non consequatur, maxime rerum modi. Ad." }}
+
 </section>
 
-{{!-- Articles --}}
-<section id='article-wrapper' class='article-wrapper u-wrap-center' role='main'>
-  {{> 'post-feature'}}
-</section>
+<main id="site-main" class="site-main" role="main">
+  <section class="site-main-container u-content-center site-main-container--video">
+    <div class="site-main-wrapper site-main-wrapper--video">
+      {{> "post-card"}}
+    </div>
+  </section>
+</main>
 
-{{!-- Pagination  --}}
-<section class="pagination u-center-content">
-  {{"pagination"}}
-</section>
+{{#if @labs.members}}
+  <section class="subscription">
+    {{> subscription }}
+  </section>
+{{/if}}

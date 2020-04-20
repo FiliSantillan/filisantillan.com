@@ -1,5 +1,6 @@
 {{#foreach posts}}
-  <article class="post-card {{post_class}} {{#has tag="video"}}post-card--video{{/has}}">
+  <article
+    class="post-card {{post_class}} {{#has tag="video"}}post-card--video{{/has}} {{#is "videos"}}post-card--video-page{{/is}} {{#is "blog"}}post-card--blog-page{{/is}}">
 
     <a href="{{url}}" class="post-card-link" title="{{title}}" aria-label="{{title}}"></a>
 
