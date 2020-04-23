@@ -9,9 +9,7 @@
 @import "./components/cover/cover.css";
 
 @import "./components/posts/post-main.css";
-@import "./components/posts/post-card.css";
 @import "./components/posts/post-card-bit.css";
-@import "./components/posts/post-card-video.css";
 
 @import "./components/subscription/subscription.css";
 @import "./components/footer/footer.css";

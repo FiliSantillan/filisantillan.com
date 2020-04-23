@@ -49,8 +49,8 @@
         "developer"
     ],
     "scripts": {
-        "build:dev": "webpack --mode=development --watch",
-        "build:pro": "webpack --mode=production"
+        "dev": "webpack --mode=development --watch",
+        "prod": "webpack --mode=production"
     },
     "author": {
         "name": "Fili Santillán",

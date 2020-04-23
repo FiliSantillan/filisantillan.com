@@ -1,0 +1,36 @@
+@import "../../global/media-queries.css";
+
+/* Now you are in the personalization post-cards of videos */
+
+.post-card--video {
+    height: 200px;
+
+    @media (--screen-375) {
+        height: 230px;
+    }
+
+    @media (--screen-768) {
+        height: 230px;
+
+        &:first-child {
+            grid-column-start: auto;
+            grid-column-end: auto;
+            height: 230px;
+        }
+    }
+
+    @media (--screen-1024) {
+        height: 300px;
+        &:first-child {
+            height: 300px;
+        }
+    }
+}
+
+.footer--video {
+    @media (--screen-425) {
+        & .post-card__title {
+            font-size: var(--font-size-large);
+        }
+    }
+}

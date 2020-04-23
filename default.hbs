@@ -47,10 +47,28 @@
     <link rel='stylesheet' href='{{asset "styles/common-bundle.css"}}'>
 
     {{!-- Custom styles by page type --}}
-    {{#is "home, blog, bits, videos"}}
+    {{#is "home"}}
         <link rel="preload" href='{{asset "styles/home-bundle.css"}}' as="style">
         <link rel="prefetch" href='{{asset "js/home-bundle.js"}}' as="script">
         <link rel='stylesheet' href='{{asset "styles/home-bundle.css"}}'>
+    {{/is}}
+
+    {{#is "blog"}}
+        <link rel="preload" href='{{asset "styles/blog-bundle.css"}}' as="style">
+        <link rel="prefetch" href='{{asset "js/blog-bundle.js"}}' as="script">
+        <link rel='stylesheet' href='{{asset "styles/blog-bundle.css"}}'>
+    {{/is}}
+
+    {{#is "bits"}}
+        <link rel="preload" href='{{asset "styles/bit-bundle.css"}}' as="style">
+        <link rel="prefetch" href='{{asset "js/bit-bundle.js"}}' as="script">
+        <link rel='stylesheet' href='{{asset "styles/bit-bundle.css"}}'>
+    {{/is}}
+
+    {{#is "videos"}}
+        <link rel="preload" href='{{asset "styles/video-bundle.css"}}' as="style">
+        <link rel="prefetch" href='{{asset "js/video-bundle.js"}}' as="script">
+        <link rel='stylesheet' href='{{asset "styles/video-bundle.css"}}'>
     {{/is}}
 
     {{#is "post"}}
@@ -93,8 +111,20 @@
     <script src='{{asset "js/common-bundle.js"}}'></script>
 
     {{!-- Custom scripts by page type --}}
-    {{#is "home, blog, bits, videos"}}
+    {{#is "home"}}
         <script src='{{asset "js/home-bundle.js"}}'></script>
+    {{/is}}
+
+    {{#is "blog"}}
+        <script src='{{asset "js/blog-bundle.js"}}'></script>
+    {{/is}}
+
+    {{#is "bits"}}
+        <script src='{{asset "js/bit-bundle.js"}}'></script>
+    {{/is}}
+
+    {{#is "videos"}}
+        <script src='{{asset "js/video-bundle.js"}}'></script>
     {{/is}}
 
     {{#is "post"}}

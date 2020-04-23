@@ -1,0 +1,46 @@
+@import "../../global/media-queries.css";
+
+/* Now you are in the bit post-card customization */
+
+.post-card-bit {
+    position: relative;
+    max-width: 250px;
+    border: 2px solid var(--color-dark);
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+
+    & .post-card-link {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+    }
+
+    & .post-card-bit__title  {
+        position: absolute;
+        bottom: 0;
+        background: white;
+        width: 100%;
+        padding: calc(var(--spacer) / 2);
+        color: var(--dark-color);
+        text-align: center;
+        border-top: 2px solid var(--color-dark);
+    }
+
+    @media (--screen-768) {
+        max-width: 300px;
+    }
+
+    @media (--screen-1024) {
+        max-width: 100%;
+    }
+}
+
+.post-card-bit__cover {
+    display: block;
+    & .post-card-bit__image {
+        width: 100%;
+        height: 100%;
+    }
+}
