@@ -26,13 +26,13 @@ module.exports = (env, argv) => {
 
     return {
         entry: {
-            home: path.resolve(__dirname, "./src/js/home.js"),
-            blog: path.resolve(__dirname, "./src/js/blog.js"),
-            bit: path.resolve(__dirname, "./src/js/bit.js"),
-            video: path.resolve(__dirname, "./src/js/video.js"),
-            post: path.resolve(__dirname, "./src/js/post.js"),
-            author: path.resolve(__dirname, "./src/js/author.js"),
-            tag: path.resolve(__dirname, "./src/js/tag.js"),
+            home: path.resolve(__dirname, "./src/pages/Home/Home.js"),
+            blog: path.resolve(__dirname, "./src/pages/Blog/Blog.js"),
+            bit: path.resolve(__dirname, "./src/pages/Bit/Bit.js"),
+            video: path.resolve(__dirname, "./src/pages/Video/Video.js"),
+            post: path.resolve(__dirname, "./src/pages/Post/Post.js"),
+            author: path.resolve(__dirname, "./src/pages/Author/Author.js"),
+            tag: path.resolve(__dirname, "./src/pages/Tag/Tag.js"),
         },
         output: {
             path: path.resolve(__dirname, "assets"),
