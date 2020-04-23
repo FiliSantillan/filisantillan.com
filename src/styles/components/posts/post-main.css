@@ -105,6 +105,7 @@
 
         &.site-main-wrapper--bits {
             grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
         }
 
         &.site-main-wrapper--bits-page {

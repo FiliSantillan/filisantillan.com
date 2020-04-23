@@ -1,31 +1,24 @@
-
-
-{{!--
-    Template: Author
-
-    Author pages get access to both a list of posts and details
-    of the author. Tag pages get access to both a list of posts (and pagination info) and details of the tag.
---}}
-
-{{!--
-    default-author
-    main structure of the templates
-    Important: The code below is not a comment
---}}
-
 {{!< default }}
 
-{{!-- Cover layout --}}
-<section class="cover">
-    {{> "cover-author" }}
-</section>
+{{#author}}
+    <section class="cover {{#if cover_image}}isCoverEnable"
+        style="background-image: url({{cover_image}}){{else}}isCoverDisabled{{/if}}">
 
-{{!-- Articles --}}
-<section id='article-wrapper' class='article-wrapper u-wrap-center' role='main'>
-    {{> 'article'}}
-</section>
+        {{> "cover-filtered" }}
 
-{{!-- Pagination  --}}
-<section class="pagination u-center-content">
-    {{"pagination"}}
-</section>
+    </section>
+{{/author}}
+
+<main id="site-main" class="site-main" role="main">
+    <section class="site-main-container u-content-center">
+        <div class="site-main-wrapper">
+            {{> "post-card-filtered"}}
+        </div>
+    </section>
+</main>
+
+{{#if @labs.members}}
+    <section class="subscription">
+        {{> subscription }}
+    </section>
+{{/if}}

@@ -3,5 +3,4 @@ import "../styles/main-tag.css";
 
 /* Javascript */
 
-import lazyImages from "./app/lazy-images";
-import "./app/navigation";
+import { infiniteScroll } from "./app/infiniteScroll.js";

@@ -77,6 +77,13 @@
                 }
             }
         }
+
+        &.post-card--filtered-page {
+            height: 350px;
+            &:first-child  {
+                grid-column: auto / auto;
+            }
+        }
     }
 
     @media (--screen-1024) {

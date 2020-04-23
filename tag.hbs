@@ -1,29 +1,24 @@
-
-{{!--
-    Template: Tag
-
-    A tag template for the tag archive pages.
---}}
-
-{{!--
-    default-tag
-    main structure of the templates
-    Important: The code below is not a comment
---}}
-
 {{!< default }}
 
-{{!-- Cover layout --}}
-<section class="cover">
-    {{> "cover-tag" }}
-</section>
+{{#tag}}
+    <section class="cover {{#if feature_image}}isCoverEnable"
+        style="background-image: url({{feature_image}}){{else}}isCoverDisabled{{/if}}">
 
-{{!-- Articles --}}
-<section id='article-wrapper' class='article-wrapper u-wrap-center' role='main'>
-    {{> 'article'}}
-</section>
+        {{> "cover-filtered" }}
 
-{{!-- Pagination  --}}
-<section class="pagination u-center-content">
-    {{"pagination"}}
-</section>
+    </section>
+{{/tag}}
+
+<main id="site-main" class="site-main" role="main">
+    <section class="site-main-container u-content-center">
+        <div class="site-main-wrapper">
+            {{> "post-card-filtered"}}
+        </div>
+    </section>
+</main>
+
+{{#if @labs.members}}
+    <section class="subscription">
+        {{> subscription }}
+    </section>
+{{/if}}

@@ -1,0 +1,54 @@
+{{#foreach posts}}
+  <article class="post-card {{post_class}} {{#is "tag, author"}}post-card--filtered-page{{/is}}">
+
+    <a href="{{url}}" class="post-card-link" title="{{title}}" aria-label="{{title}}"></a>
+
+    <picture class="post-card-cover">
+      <source srcset="{{img_url feature_image size="size-640"}}"
+        data-srcset="{{img_url feature_image size="size-425"}} 1x, {{img_url feature_image size="size-850"}} 2x, {{img_url feature_image size="size-1275"}} 3x"
+        media="(min-width: 375px)" class="lazy">
+
+      <img src="{{img_url feature_image size="size-640"}}" data-src="{{img_url feature_image size="size-320"}}"
+        data-srcset="{{img_url feature_image size="size-640"}} 2x, {{img_url feature_image size="size-960"}} 3x"
+        alt="{{title}}" class="post-card__image post-card-image">
+    </picture>
+
+    <div class="post-card__info">
+
+      <header class="post-card__header">
+        {{#primary_tag}}
+          <div class="post-card__feature">
+            <span class="post-card__text u-d-inline-flex u-text-transform-capitalize">
+              {{name}}
+            </span>
+          </div>
+        {{/primary_tag}}
+      </header>
+
+      <footer class="post-card__footer">
+        <h2 class="post-card__title">{{title}}</h2>
+        <div class="post-card__details">
+
+          {{#if tags}}
+            {{#foreach tags from="3" limit="1"}}
+              <div class="post-card__tag">
+                <a href="{{url}}" class="post-card__tag-container">
+                  {{name}}
+                </a>
+              </div>
+            {{/foreach}}
+          {{/if}}
+        </div>
+
+        {{#has tag="video"}}
+
+          <div class="post-card__playButton">
+            {{> "icon-play"}}
+          </div>
+        {{/has}}
+
+
+      </footer>
+
+  </article>
+{{/foreach}}
