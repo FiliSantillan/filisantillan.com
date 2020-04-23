@@ -23,8 +23,8 @@
     }
 
     &.isCoverDisabled {
-        background-image: var(--color-yellow);
-        color: var(--color-dark);
+        background: var(--color-dark);
+        color: white;
     }
 
     @media (--screen-1024) {
@@ -53,6 +53,23 @@
 
         & .cover__text {
             font-weight: 400;
+        }
+    }
+
+    & .cover__social {
+        display: flex;
+        flex-wrap: wrap;
+
+        & .cover__link {
+            margin-right: calc(var(--spacer) / 2);
+        }
+    }
+
+    @media (--screen-768) {
+        & .cover__social {
+            & .cover__link {
+                margin-right: var(--spacer);
+            }
         }
     }
 

@@ -26,19 +26,23 @@
                     </a>
                 </li>
 
-                <li class="footer__item">
-                    <a href="{{twitter_url}}" class="footer__link" rel="noopener noreferrer" target="_blank"
-                        title="Twitter" aria-label="Twitter">
-                        {{> icon-twitter }}
-                    </a>
-                </li>
+                {{#if twitter}}
+                    <li class="footer__item">
+                        <a href="{{twitter_url}}" class="footer__link" rel="noopener noreferrer" target="_blank"
+                            title="Twitter" aria-label="Twitter">
+                            {{> icon-twitter }}
+                        </a>
+                    </li>
+                {{/if}}
 
-                <li class="footer__item">
-                    <a href="{{facebook_url}}" class="footer__link" rel="noopener noreferrer" target="_blank"
-                        title="Facebook" aria-label="Facebook">
-                        {{> icon-facebook }}
-                    </a>
-                </li>
+                {{#if facebook}}
+                    <li class="footer__item">
+                        <a href="{{facebook_url}}" class="footer__link" rel="noopener noreferrer" target="_blank"
+                            title="Facebook" aria-label="Facebook">
+                            {{> icon-facebook }}
+                        </a>
+                    </li>
+                {{/if}}
 
                 <li class="footer__item">
                     <a href="https://www.youtube.com/c/filimartinezz" class="footer__link" rel="noopener noreferrer"

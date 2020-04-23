@@ -55,11 +55,13 @@
               {{/foreach}}
             {{/if}}
           </div>
-          {{else}}
+        {{/has}}
 
-            <div class="post-card__playButton">
-              {{> "icon-play"}}
-            </div>
+        {{#has tag="video"}}
+
+          <div class="post-card__playButton">
+            {{> "icon-play"}}
+          </div>
         {{/has}}
 
 

@@ -57,6 +57,10 @@
     font-size: var(--font-size-xlarge);
 }
 
+.u-text-transform-capitalize {
+    text-transform: capitalize;
+}
+
 .u-margin-x-auto {
     margin-left: auto;
     margin-right: auto;
