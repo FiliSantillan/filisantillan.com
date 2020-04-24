@@ -28,11 +28,12 @@
     }
 
     @media (--screen-1024) {
-        min-height: 50vh;
+        min-height: 60vh;
     }
 }
 
 .cover-container {
+    width: 100%;
     padding: 0 var(--spacer);
     color: white;
 

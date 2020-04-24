@@ -1,40 +1,35 @@
-
-{{!--
-    Template: Post
-
-    This is the template for a single post.
---}}
-
-{{!--
-    default-post
-    main structure of the templates
-    Important: The code below is not a comment
---}}
-
 {{!< default }}
 
 {{#post}}
 
-{{!-- Cover layout --}}
-<section class="cover">
-    {{> "cover-post"}}
-</section>
+    <section class="cover cover--post {{#if feature_image}}isCoverEnable"
+        style="background-image: url({{feature_image}}){{else}}isCoverDisabled{{/if}}">
 
-{{!-- Single Post --}}
-<main class='post-wrapper u-wrap-center' role='main'>
-    <article class='post'>
+        {{> "cover-posts" }}
 
-        {{!-- Content of the post --}}
-        <section class='post__content'>
-            {{content}}
+    </section>
+
+    {{!-- Single Post --}}
+    <main class='post-wrapper u-content-center' role='main'>
+        <article class='post'>
+
+            {{!-- Content of the post --}}
+            <section class='post__content'>
+                {{content}}
+            </section>
+
+        </article>
+    </main>
+
+    {{#if @labs.members}}
+        <section class="subscription">
+            {{> subscription }}
         </section>
+    {{/if}}
 
-    </article>
-</main>
-
-{{!-- Comment (Disqus) --}}
-<section class='disqus'>
-    {{> 'disqus'}}
-</section>
+    {{!-- Comment (Disqus) --}}
+    <section class='disqus'>
+        {{> 'disqus'}}
+    </section>
 
 {{/post}}

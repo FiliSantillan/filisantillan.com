@@ -1,0 +1,43 @@
+<div class="cover-container u-content-center">
+    <header class="cover__header">
+        <div class="cover__tag">
+            {{#if tags}}
+                {{#foreach tags from="3" limit="1"}}
+                    <a href="{{url}}" class="cover__text u-text-transform-uppercase">
+                        {{name}}
+                    </a>
+                {{/foreach}}
+            {{/if}}
+        </div>
+
+        <div class="cover__share">
+            <div class="fb-share-button" data-href="{{url absolute="true"}}" data-layout="button_count"
+                data-size="large" data-mobile-iframe="true"><a target="_blank" href="{{url absolute="true"}}"
+                    class="fb-xfbml-parse-ignore">Compartir</a></div>
+            <a class="twitter-share-button" href="{{url absolute="true"}}" data-size="large">Tweet</a>
+        </div>
+    </header>
+
+    {{#if title}}
+        <div class="cover__introduction">
+            <strong class="u-font-xlarge">{{title}}</strong>
+        </div>
+    {{/if}}
+
+    <footer class="cover__footer">
+        <div class="cover__author u-text-transform-uppercase">
+            {{#primary_author}}
+                <a href="{{url}}" class="cover__text">
+                    {{name}}
+                </a>
+            {{/primary_author}}
+        </div>
+
+        <div class="cover__date u-text-transform-uppercase">
+            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD.MMMYYYY"}}</time>
+        </div>
+
+    </footer>
+
+
+</div>
