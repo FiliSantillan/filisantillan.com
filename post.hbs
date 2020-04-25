@@ -1,7 +1,6 @@
 {{!< default }}
 
 {{#post}}
-
     <section class="cover cover--post {{#if feature_image}}isCoverEnable"
         style="background-image: url({{feature_image}}){{else}}isCoverDisabled{{/if}}">
 
@@ -9,12 +8,16 @@
 
     </section>
 
-    {{!-- Single Post --}}
-    <main class='post-wrapper u-content-center' role='main'>
-        <article class='post'>
+    <main class='post-container' role='main'>
+        <article class='post-wrapper'>
+            <section class='post'>
 
-            {{!-- Content of the post --}}
-            <section class='post__content'>
+                <div class="post-resources">
+                    <a href="#" class="post-resources__button btn">Soporte</a>
+                    <a href="#" class="post-resources__button btn-secondary">Demo</a>
+                    <a href="#" class="post-resources__button btn-alternative">Github</a>
+                </div>
+
                 {{content}}
             </section>
 
@@ -27,9 +30,20 @@
         </section>
     {{/if}}
 
-    {{!-- Comment (Disqus) --}}
-    <section class='disqus'>
+    {{!-- <section class='disqus'>
         {{> 'disqus'}}
-    </section>
+    </section> --}}
 
 {{/post}}
+
+{{!-- <script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    console.log(images);
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
+</script> --}}
