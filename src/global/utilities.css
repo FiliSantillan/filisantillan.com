@@ -61,6 +61,10 @@
     text-transform: capitalize;
 }
 
+.u-text-transform-uppercase {
+    text-transform: uppercase;
+}
+
 .u-margin-x-auto {
     margin-left: auto;
     margin-right: auto;

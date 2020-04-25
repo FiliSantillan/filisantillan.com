@@ -42,6 +42,10 @@ h2 {
     font-size: var(--font-size-h2);
 }
 
+h3 {
+    font-size: var(--font-size-h3);
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -61,7 +65,7 @@ button:focus {
     outline: none;
 }
 
-::selection {
+/* ::selection {
     background-color: var(--color-dark-c);
     color: var(--color-ligth);
-}
+} */

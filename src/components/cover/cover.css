@@ -28,7 +28,11 @@
     }
 
     @media (--screen-1024) {
-        min-height: 60vh;
+        min-height: 450px;
+    }
+
+    @media (--screen-1440) {
+        min-height: 500px;
     }
 }
 
