@@ -1,5 +1,5 @@
-/* PrismJS 1.14.0
-http://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+css-extras+git+go+json+markdown+nginx+pug+jsx+stylus+vim&plugins=line-numbers */
+/* PrismJS 1.20.0
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+css-extras+git+go+graphql+handlebars+js-extras+js-templates+json+liquid+markdown+markup-templating+nginx+python+jsx+tsx+regex+typescript+vim+wasm&plugins=line-highlight */
 /**
  * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
  * Based on https://github.com/chriskempson/tomorrow-theme
@@ -8,161 +8,136 @@ http://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clik
 
 code,
 pre {
-  font-family: "Source Code Pro", Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
-    monospace;
+    font-family: "Source Code Pro", Consolas, Monaco, "Andale Mono",
+        "Ubuntu Mono", monospace;
 }
 
-code[class*="language-"],
+pre[class*="language-"],
+code[class*="language-"] {
+    color: #e6bc5c;
+    font-size: var(--font-size-code);
+    text-shadow: none;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+pre[class*="language-"]::selection,
+code[class*="language-"]::selection,
+pre[class*="language-"]::mozselection,
+code[class*="language-"]::mozselection {
+    text-shadow: none;
+    background: #b3d4fc;
+}
+@media print {
+    pre[class*="language-"],
+    code[class*="language-"] {
+        text-shadow: none;
+    }
+}
 pre[class*="language-"] {
-  color: var(--color-editor-light-gray);
-  background: none;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
-
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
+    padding: 1em;
+    margin: 0.5em 0;
+    overflow: auto;
+    background: var(--color-dark);
 }
-
-/* Code blocks */
-pre[class*="language-"] {
-  padding: 1em;
-  margin: 0;
-  overflow: auto;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-  background: var(--color-dark);
-}
-
-/* Inline code */
 :not(pre) > code[class*="language-"] {
-  padding: 0.1em;
-  border-radius: 0.3em;
-  white-space: normal;
+    padding: 0.1em 0.3em;
+    border-radius: 0.3em;
+    color: none;
+    background: none;
 }
-
+/*********************************************************
+* Tokens
+*/
+.namespace {
+    opacity: 0.7;
+}
 .token.comment,
-.token.block-comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: var(--color-editor-gray);
+    color: #9e9fa1;
 }
-
 .token.punctuation {
-  color: var(--color-editor-light-gray);
+    color: #88c6be;
 }
-
+.token.property,
 .token.tag,
-.token.attr-name,
-.token.namespace,
-.token.deleted {
-  color: var(--color-editor-yellow);
-}
-
-.token.function-name {
-  color: var(--color-editor-blue);
-}
-
 .token.boolean,
 .token.number,
-.token.function {
-  color: var(--color-editor-red);
-}
-
-.token.property,
-.token.class-name,
 .token.constant,
-.token.symbol {
-  color: var(--color-editor-orange);
+.token.symbol,
+.token.deleted {
+    color: #fc929e;
 }
-
 .token.selector,
-.token.important,
-.token.atrule,
-.token.keyword,
-.token.builtin {
-  color: var(--color-editor-purple);
-}
-
+.token.attr-name,
 .token.string,
 .token.char,
-.token.attr-value,
-.token.regex,
-.token.variable {
-  color: var(--color-editor-green);
+.token.builtin,
+.token.inserted {
+    color: #83b988;
 }
-
 .token.operator,
 .token.entity,
-.token.url {
-  color: var(--color-editor-light-blue);
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #88c6be;
 }
-
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: #aa7bab;
+}
+.token.function {
+    color: #68badd;
+}
+.token.regex,
+.token.important,
+.token.variable {
+    color: #ffaf53;
+}
 .token.important,
 .token.bold {
-  font-weight: bold;
+    font-weight: bold;
 }
 .token.italic {
-  font-style: italic;
+    font-style: italic;
 }
-
 .token.entity {
-  cursor: help;
+    cursor: help;
 }
-
-.token.inserted {
-  color: green;
+/*********************************************************
+* Line highlighting
+*/
+pre[data-line] {
+    position: relative;
 }
-
-pre.line-numbers {
-  position: relative;
-  padding-left: 3.8em;
-  counter-reset: linenumber;
+pre[class*="language-"] > code[class*="language-"] {
+    position: relative;
+    z-index: 1;
 }
-
-pre.line-numbers > code {
-  position: relative;
-  white-space: inherit;
-}
-
-.line-numbers .line-numbers-rows {
-  position: absolute;
-  pointer-events: none;
-  top: 0;
-  font-size: 100%;
-  left: -3.8em;
-  width: 3em; /* works for line-numbers below 1000 lines */
-  letter-spacing: -1px;
-  border-right: 1px solid #999;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.line-numbers-rows > span {
-  pointer-events: none;
-  display: block;
-  counter-increment: linenumber;
-}
-
-.line-numbers-rows > span:before {
-  content: counter(linenumber);
-  color: #999;
-  display: block;
-  padding-right: 0.8em;
-  text-align: right;
+.line-highlight {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: inherit 0;
+    margin-top: 1em;
+    background: #363a4b;
+    box-shadow: inset 5px 0 0 #68badd;
+    z-index: 0;
+    pointer-events: none;
+    line-height: inherit;
+    white-space: pre;
 }
