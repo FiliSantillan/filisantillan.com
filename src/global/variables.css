@@ -27,6 +27,7 @@
     /* Light colors */
     --color-light: #f7fff7;
     --color-gray: #edf2f4;
+    --color-gray-b: #b1b1b1;
 
     /* Interactive colors */
 
@@ -34,7 +35,7 @@
     --color-error: #ee6969;
     --color-sucess: #06d6a0;
     --color-disabled: #dddddd;
-    --coñor-disabled-dark: #cccccc;
+    --color-disabled-dark: #cccccc;
 
     /* Spacer */
     --spacer: 1.5rem;

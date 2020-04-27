@@ -66,3 +66,34 @@
         }
     }
 }
+
+.bit-single-post {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    height: calc(100vh - 80px);
+}
+
+.cover-bit {
+    background: var(--color-dark);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover-bit__header {
+    & .cover-bit__share {
+        & .fb-share-button {
+            vertical-align: top;
+            margin-right: 0.5rem;
+        }
+    }
+}
+
+.cover-bit__image {
+    max-width: 450px;
+
+    & img {
+        width: 100%;
+    }
+}
