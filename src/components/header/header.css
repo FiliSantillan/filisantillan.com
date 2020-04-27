@@ -1,40 +1,40 @@
 @import "../../global/media-queries.css";
 
 .header {
-  padding: var(--spacer);
-  background: white;
-
-  & .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    padding: var(--spacer);
+    background: white;
+    box-shadow: var(--shadow-default);
+    & .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 .header__logo {
-  margin: 0;
-  & .header__text {
-    vertical-align: middle;
-    &.text--fili {
-      font-weight: 300;
+    margin: 0;
+    & .header__text {
+        vertical-align: middle;
+        &.text--fili {
+            font-weight: 300;
+        }
     }
-  }
 }
 
 .header__options {
-  display: flex;
-  align-items: center;
-  vertical-align: middle;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
 
-  & .header__link {
-    margin-right: 0.5rem;
+    & .header__link {
+        margin-right: 0.5rem;
 
-    & .header__icon {
-      width: 25px;
+        & .header__icon {
+            width: 25px;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
 }

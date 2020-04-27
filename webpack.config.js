@@ -31,6 +31,7 @@ module.exports = (env, argv) => {
             bit: path.resolve(__dirname, "./src/pages/Bit/Bit.js"),
             video: path.resolve(__dirname, "./src/pages/Video/Video.js"),
             post: path.resolve(__dirname, "./src/pages/Post/Post.js"),
+            postBit: path.resolve(__dirname, "./src/pages/PostBit/PostBit.js"),
             author: path.resolve(__dirname, "./src/pages/Author/Author.js"),
             tag: path.resolve(__dirname, "./src/pages/Tag/Tag.js"),
         },

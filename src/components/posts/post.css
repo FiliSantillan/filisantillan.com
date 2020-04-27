@@ -16,6 +16,7 @@
     & h4 {
         margin-top: calc(var(--spacer) * 2);
         margin-bottom: var(--spacer);
+        overflow: auto;
     }
 
     & h1,
@@ -161,7 +162,6 @@
 
     @media (--screen-768) {
         & .resources__button {
-            min-width: 200px;
             margin-right: calc((var(--spacer) * 1.5) + 8px);
             margin-bottom: 0;
 

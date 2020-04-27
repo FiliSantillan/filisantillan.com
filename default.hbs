@@ -72,9 +72,18 @@
     {{/is}}
 
     {{#is "post"}}
-        <link rel="preload" href='{{asset "styles/post-bundle.css"}}' as="style">
-        <link rel="prefetch" href='{{asset "js/post-bundle.js"}}' as="script">
-        <link rel='stylesheet' href='{{asset "styles/post-bundle.css"}}'>
+        {{#post}}
+            {{#has tag="blog"}}
+                <link rel="preload" href='{{asset "styles/post-bundle.css"}}' as="style">
+                <link rel="prefetch" href='{{asset "js/post-bundle.js"}}' as="script">
+                <link rel='stylesheet' href='{{asset "styles/post-bundle.css"}}'>
+            {{/has}}
+            {{#has tag="bit"}}
+                <link rel="preload" href='{{asset "styles/postBit-bundle.css"}}' as="style">
+                <link rel="prefetch" href='{{asset "js/postBit-bundle.js"}}' as="script">
+                <link rel='stylesheet' href='{{asset "styles/postBit-bundle.css"}}'>
+            {{/has}}
+        {{/post}}
     {{/is}}
 
     {{#is "tag"}}
@@ -128,7 +137,14 @@
     {{/is}}
 
     {{#is "post"}}
-        <script src='{{asset "js/post-bundle.js"}}'></script>
+        {{#post}}
+            {{#has tag="blog"}}
+                <script src='{{asset "js/post-bundle.js"}}'></script>
+            {{/has}}
+            {{#has tag="bit"}}
+                <script src='{{asset "js/postBit-bundle.js"}}'></script>
+            {{/has}}
+        {{/post}}
     {{/is}}
 
     {{#is "tag"}}

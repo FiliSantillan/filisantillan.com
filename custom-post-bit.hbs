@@ -3,16 +3,12 @@
 {{#post}}
 
   <section class="bit-single-post">
-    <section class="cover-bit">
-      {{> "cover/cover-post-bit"}}
-    </section>
-
     <main class='post-container post-container--bit' role='main'>
       <article class='post-wrapper'>
-        <section class='post'>
+        <section class='post post--bit'>
+          <h1 class="u-font-xlarge">{{title}}</h1>
           {{content}}
         </section>
-
       </article>
 
       <section class='comments'>
@@ -20,13 +16,15 @@
       </section>
     </main>
 
+    <section class="cover-bit">
+      {{> "cover/cover-post-bit"}}
+    </section>
 
   </section>
 
-
   {{#if @labs.members}}
     <section class="subscription">
-      {{> subscription }}
+      {{> subscription/subscription }}
     </section>
   {{/if}}
 

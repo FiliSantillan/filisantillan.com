@@ -6,17 +6,22 @@
           class="fb-xfbml-parse-ignore">Compartir</a></div>
       <a class="twitter-share-button" href="{{url absolute="true"}}" data-size="large">Tweet</a>
     </div>
-
-    <div class="cover-bit__title">
-      <h1 class="cover-bit__text">
-        {{title}}
-      </h1>
-    </div>
-
-    {{#if feature_image}}
-      <figure class="cover-bit__image">
-        <img src="{{feature_image}}" alt="" class="cover-bit__img">
-      </figure>
+    {{#if tags}}
+      {{#foreach tags from="3" limit="1"}}
+        <div class="cover-bit__tags">
+          <a href="{{url}}" class="cover-bit__tag">
+            {{name}}
+          </a>
+        </div>
+      {{/foreach}}
     {{/if}}
   </header>
+
+  {{#if feature_image}}
+    <figure class="cover-bit__image">
+      <img src="{{feature_image}}" alt="" class="cover-bit__img">
+    </figure>
+  {{/if}}
+
+
 </div>
