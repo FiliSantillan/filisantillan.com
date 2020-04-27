@@ -4,7 +4,7 @@
     <section class="cover cover--post {{#if feature_image}}isCoverEnable"
         style="background-image: url({{feature_image}}){{else}}isCoverDisabled{{/if}}">
 
-        {{> "cover-posts" }}
+        {{> "cover/cover-posts" }}
 
     </section>
 
@@ -17,13 +17,13 @@
         </article>
 
         <aside class='comments'>
-            {{> 'comments'}}
+            {{> 'comments/comments'}}
         </aside>
     </main>
 
     {{#if @labs.members}}
         <section class="subscription">
-            {{> subscription }}
+            {{> subscription/subscription }}
         </section>
     {{/if}}
 

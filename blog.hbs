@@ -3,20 +3,20 @@
 <section class="cover {{#if @site.cover_image}}isCoverEnable"
     style="background-image: url({{@site.cover_image}}){{else}}isDisabled{{/if}}">
 
-    {{> "cover" title="Blog" description="Artículos sobre desarrollo web, encuentre y Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam obcaecati sit et similique, quidem repellat voluptatem" }}
+    {{> "cover/cover" title="Blog" description="Artículos sobre desarrollo web, encuentre y Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam obcaecati sit et similique, quidem repellat voluptatem" }}
 
 </section>
 
 <main id="site-main" class="site-main" role="main">
     <section class="site-main-container u-content-center">
         <div class="site-main-wrapper">
-            {{> "post-card"}}
+            {{> "posts/post-card"}}
         </div>
     </section>
 </main>
 
 {{#if @labs.members}}
     <section class="subscription">
-        {{> subscription }}
+        {{> subscription/subscription }}
     </section>
 {{/if}}

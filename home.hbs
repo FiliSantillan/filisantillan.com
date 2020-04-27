@@ -3,7 +3,7 @@
 <section class="cover {{#if @site.cover_image}}isCoverEnable"
   style="background-image: url({{@site.cover_image}}){{else}}isCoverDisabled{{/if}}">
 
-  {{> "cover" }}
+  {{> "cover/cover" }}
 
 </section>
 
@@ -14,7 +14,7 @@
 
     <div class="site-main-wrapper">
       {{#get "posts" limit="5" include="tags,authors" filter="primary_tag:blog"}}
-        {{> "post-card"}}
+        {{> "posts/post-card"}}
       {{/get}}
 
       <div class="site-main-wrapper__button u-margin-x-auto">
@@ -44,7 +44,7 @@
 
       <div class="site-main-wrapper site-main-wrapper--bits">
         {{#get "posts" limit="4" include="tags" filter="primary_tag:bit"}}
-          {{> "post-card-bits"}}
+          {{> "posts/post-card-bits"}}
         {{/get}}
       </div>
     </div>
@@ -55,7 +55,7 @@
 
     <div class="site-main-wrapper site-main-wrapper--video">
       {{#get "posts" limit="4" include="tags" filter="primary_tag:video"}}
-        {{> "post-card"}}
+        {{> "posts/post-card"}}
       {{/get}}
 
       <div class="site-main-wrapper__button u-margin-x-auto">
@@ -67,6 +67,6 @@
 
 {{#if @labs.members}}
   <section class="subscription">
-    {{> subscription }}
+    {{> subscription/subscription }}
   </section>
 {{/if}}

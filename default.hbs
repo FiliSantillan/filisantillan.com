@@ -98,14 +98,14 @@
 <body class="{{body_class}}">
 
     {{!-- header template --}}
-    {{> "header" }}
+    {{> "header/header" }}
 
     {{!-- Body layout Depending on the type of template, it will show a different content. --}}
 
     {{{body}}}
 
     {{!-- Footer layout --}}
-    {{> "footer"}}
+    {{> "footer/footer"}}
 
     {{!-- Default script file --}}
     <script src='{{asset "js/common-bundle.js"}}'></script>

@@ -4,7 +4,7 @@
     <section class="cover {{#if cover_image}}isCoverEnable"
         style="background-image: url({{cover_image}}){{else}}isCoverDisabled{{/if}}">
 
-        {{> "cover-filtered" }}
+        {{> "cover/cover-filtered" }}
 
     </section>
 {{/author}}
@@ -12,13 +12,13 @@
 <main id="site-main" class="site-main" role="main">
     <section class="site-main-container u-content-center">
         <div class="site-main-wrapper">
-            {{> "post-card-filtered"}}
+            {{> "posts/post-card-filtered"}}
         </div>
     </section>
 </main>
 
 {{#if @labs.members}}
     <section class="subscription">
-        {{> subscription }}
+        {{> subscription/subscription }}
     </section>
 {{/if}}

@@ -3,20 +3,20 @@
 <section class="cover {{#if @site.cover_image}}isCoverEnable"
   style="background-image: url({{@site.cover_image}}){{else}}isDisabled{{/if}}">
 
-  {{> "cover" title="Videos" description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. In quidem similique consequuntur illo! Nisi, reprehenderit nemo? Odio possimus accusamus deserunt modi eaque! Ipsa similique non consequatur, maxime rerum modi. Ad." }}
+  {{> "cover/cover" title="Videos" description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. In quidem similique consequuntur illo! Nisi, reprehenderit nemo? Odio possimus accusamus deserunt modi eaque! Ipsa similique non consequatur, maxime rerum modi. Ad." }}
 
 </section>
 
 <main id="site-main" class="site-main" role="main">
   <section class="site-main-container u-content-center site-main-container--video">
     <div class="site-main-wrapper site-main-wrapper--video">
-      {{> "post-card"}}
+      {{> "posts/post-card"}}
     </div>
   </section>
 </main>
 
 {{#if @labs.members}}
   <section class="subscription">
-    {{> subscription }}
+    {{> subscription/subscription }}
   </section>
 {{/if}}
