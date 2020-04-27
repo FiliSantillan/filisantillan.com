@@ -11,18 +11,15 @@
     <main class='post-container' role='main'>
         <article class='post-wrapper'>
             <section class='post'>
-
-                <div class="post-resources">
-                    <a href="#" class="post-resources__button btn">Soporte</a>
-                    <a href="#" class="post-resources__button btn-secondary">Demo</a>
-                    <a href="#" class="post-resources__button btn-alternative">Github</a>
-                </div>
-
                 {{content}}
             </section>
 
         </article>
     </main>
+
+    <section class='comments'>
+        {{> 'comments'}}
+    </section>
 
     {{#if @labs.members}}
         <section class="subscription">
@@ -30,15 +27,10 @@
         </section>
     {{/if}}
 
-    {{!-- <section class='disqus'>
-        {{> 'disqus'}}
-    </section> --}}
-
 {{/post}}
 
-{{!-- <script>
+<script>
     var images = document.querySelectorAll('.kg-gallery-image img');
-    console.log(images);
     images.forEach(function (image) {
         var container = image.closest('.kg-gallery-image');
         var width = image.attributes.width.value;
@@ -46,4 +38,4 @@
         var ratio = width / height;
         container.style.flex = ratio + ' 1 0%';
     })
-</script> --}}
+</script>
