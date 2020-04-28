@@ -18,6 +18,7 @@
 
     /* Brand Colors */
     --color-dark: #282b39;
+    --color-dark-alpha: #282b3990;
     --color-dark-b: #363a4b;
     --color-yellow: #ffd166;
     --color-yellow-alpha: #ffd16670;
@@ -42,6 +43,7 @@
 
     /* Others */
     --border-radius-default: 5px;
-    --shadow-default: 6px 6px 8px color(black alpha(0.2));
+    --shadow-default: 6px 6px 8px rgba(0, 0, 0, 0.2);
+    --shadow-default-invert: -6px -6px 8px rgba(0, 0, 0, 0.2);
     --btn-height-size: 45px;
 }
