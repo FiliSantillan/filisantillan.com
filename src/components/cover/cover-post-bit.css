@@ -26,11 +26,11 @@
     }
 
     @media (--screen-1200) {
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1.2fr;
     }
 
     @media (--screen-1440) {
-        grid-template-columns: 2fr 0.8fr;
+        grid-template-columns: 2fr 1fr;
     }
 }
 

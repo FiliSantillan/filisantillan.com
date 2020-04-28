@@ -73,7 +73,7 @@
 
     {{#is "post"}}
         {{#post}}
-            {{#has tag="blog"}}
+            {{#has tag="blog,video"}}
                 <link rel="preload" href='{{asset "styles/post-bundle.css"}}' as="style">
                 <link rel="prefetch" href='{{asset "js/post-bundle.js"}}' as="script">
                 <link rel='stylesheet' href='{{asset "styles/post-bundle.css"}}'>
@@ -138,7 +138,7 @@
 
     {{#is "post"}}
         {{#post}}
-            {{#has tag="blog"}}
+            {{#has tag="blog,video"}}
                 <script src='{{asset "js/post-bundle.js"}}'></script>
             {{/has}}
             {{#has tag="bit"}}

@@ -89,7 +89,8 @@
     }
 
     @media (--screen-1024) {
-        margin-bottom: calc(var(--spacer) * 2);
+        /* margin-bottom: calc(var(--spacer) * 2); */
+
         & .resources__button {
             margin-right: calc(calc(var(--spacer) + 8px));
             margin-bottom: var(--spacer);
@@ -102,9 +103,6 @@
 
     @media (--screen-1200) {
         padding: 0;
-        & .resources__button {
-            margin-bottom: 0;
-        }
     }
 
     @media (--screen-1440) {
