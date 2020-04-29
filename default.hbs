@@ -10,7 +10,21 @@
 <html lang='{{@site.lang}}'>
 
 <head>
-    <title>{{meta_title}}</title>
+    {{#is "home, page, post, tag, author"}}
+        <title>{{meta_title}}</title>
+    {{/is}}
+
+    {{#is "blog"}}
+        <title>Blog</title>
+    {{/is}}
+
+    {{#is "bits"}}
+        <title>Bits</title>
+    {{/is}}
+
+    {{#is "videos"}}
+        <title>Videos</title>
+    {{/is}}
 
     {{!-- Document Settings --}}
     <meta charset='utf-8' />
@@ -18,7 +32,13 @@
 
     {{!-- Author Settings --}}
     <meta name='author' content='Filiberto Santillán'>
-    <meta name='description' content='{{@site.description}}' />
+
+    {{#is "homel, blog, bits, videos"}}
+        <meta name='description' content='{{@site.description}}' />
+
+        {{else}}
+            <meta name='description' content='{{meta_description}}' />
+    {{/is}}
 
     {{!-- Mobile Settings --}}
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
