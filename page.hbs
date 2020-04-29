@@ -1,37 +1,39 @@
-
-{{!--
-    Template: Page
-
-    A page template for static pages.
-    Pages have exactly the same data available as a post, 
-    they simply don't appear in the list of posts.
---}}
-
-{{!--
-    default-post
-    main structure of the templates
-    Important: The code below is not a comment
---}}
-
-{{!< default-post }}
+{{!< default }}
 
 {{#post}}
 
-{{!-- Cover layout --}}
-<section class="cover">
-    {{> "cover-page"}}
-</section>
+    {{!-- Cover layout --}}
 
-{{!-- Single Post --}}
-<main class='post-wrapper u-wrap-center' role='main'>
-    <article class='post'>
+    <section class="cover cover--post {{#if feature_image}}isCoverEnable"
+        style="background-image: url({{feature_image}}){{else}}isCoverDisabled{{/if}}">
 
-        {{!-- Content of the post --}}
-        <section class='post__content content--page'>
-            {{content}}
+        {{> "cover/cover-page"}}
+
+    </section>
+
+    <main class='page-container' role='main'>
+        <article class='page-wrapper u-content-center'>
+            <section class='page'>
+                {{content}}
+            </section>
+        </article>
+    </main>
+
+    {{#if @labs.members}}
+        <section class="subscription">
+            {{> subscription/subscription }}
         </section>
-
-    </article>
-</main>
+    {{/if}}
 
 {{/post}}
+
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
+</script>

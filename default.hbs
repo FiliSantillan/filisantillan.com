@@ -79,11 +79,17 @@
                 <link rel='stylesheet' href='{{asset "styles/post-bundle.css"}}'>
             {{/has}}
             {{#has tag="bit"}}
-                <link rel="preload" href='{{asset "styles/postBit-bundle.css"}}' as="style">
-                <link rel="prefetch" href='{{asset "js/postBit-bundle.js"}}' as="script">
-                <link rel='stylesheet' href='{{asset "styles/postBit-bundle.css"}}'>
+                <link rel="preload" href='{{asset "styles/postbit-bundle.css"}}' as="style">
+                <link rel="prefetch" href='{{asset "js/postbit-bundle.js"}}' as="script">
+                <link rel='stylesheet' href='{{asset "styles/postbit-bundle.css"}}'>
             {{/has}}
         {{/post}}
+    {{/is}}
+
+    {{#is "page"}}
+        <link rel="preload" href='{{asset "styles/singlepage-bundle.css"}}' as="style">
+        <link rel="prefetch" href='{{asset "js/singlepage-bundle.js"}}' as="script">
+        <link rel='stylesheet' href='{{asset "styles/singlepage-bundle.css"}}'>
     {{/is}}
 
     {{#is "tag"}}
@@ -142,9 +148,13 @@
                 <script src='{{asset "js/post-bundle.js"}}'></script>
             {{/has}}
             {{#has tag="bit"}}
-                <script src='{{asset "js/postBit-bundle.js"}}'></script>
+                <script src='{{asset "js/postbit-bundle.js"}}'></script>
             {{/has}}
         {{/post}}
+    {{/is}}
+
+    {{#is "page"}}
+        <script src='{{asset "js/singlepage-bundle.js"}}'></script>
     {{/is}}
 
     {{#is "tag"}}

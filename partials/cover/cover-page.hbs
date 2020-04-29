@@ -1,32 +1,39 @@
-{{!--
-    Layout: Cover (Page)
-
-    Cover image of the page. This is set in the blog settings
---}}
-
-{{!--
-    Cover
-    The cover image of the page.
---}}
-
-<div class="cover__details cover--page u-center-content">
-    
-    {{!-- Title Wrapper --}}
-    <div class="cover-wrapper u-max-w800">
-
-        <div class="cover__title">
-            <h1 class="cover__text">{{title}}</h1>
-        </div>
-
+<div class="cover-container u-content-center">
+    <div class="cover__introduction">
+        <span class="u-font-xlarge">{{title}}</span>
     </div>
 
-    {{!-- Circles --}}
-    <ul class="figures u-no-list">
-        <li class="circle"></li>
-        <li class="circle"></li>
-        <li class="circle"></li>
-    </ul>
-</div>
+    {{#has tag="#page-agenda"}}
+        <div class="cover__description">
+            <p class="cover__text u-margin-top-disabled">
+                Frontend Developer. Aprende y mejora tus habilidades como desarrollador a través de mi conocimiento de
+                posts, bits y videos. Press Kit
+            </p>
+        </div>
 
-{{!-- Background Image--}}
-<div class="cover__image {{#if feature_image}}image--true" style="background-image: url({{img_url feature_image}}){{else}}image--false{{/if}}"></div>
+        <div class="cover__button">
+            <a href="#" class=" btn-secondary">Invítame a hablar</a>
+        </div>
+    {{/has}}
+
+    {{#has tag="#page-stack"}}
+        <div class="cover__description">
+            <p class="cover__text u-margin-top-disabled">
+                Frontend Developer. Aprende y mejora tus habilidades como desarrollador a través de mi conocimiento de
+                posts, bits y videos. Press Kit
+            </p>
+        </div>
+    {{/has}}
+
+    {{#has tag="#page-contact"}}
+        <div class="cover__description">
+            <p class="cover__text u-margin-top-disabled">
+                Frontend Developer. Aprende y mejora tus habilidades como desarrollador a través de mi conocimiento de
+                posts, bits y videos. Press Kit
+            </p>
+        </div>
+        <div class="cover__button">
+            <a href="#" class=" btn-secondary">Mandar correo</a>
+        </div>
+    {{/has}}
+</div>
