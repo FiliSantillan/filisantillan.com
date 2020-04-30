@@ -42,11 +42,27 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
+
+        & .fb-share-button,
+        & .twitter-share-button,
+        & .cover-bit__tags {
+            vertical-align: top;
+        }
 
         & .fb-share-button,
         & .twitter-share-button {
-            vertical-align: top;
-            margin-right: 0.8rem;
+            margin-right: calc(var(--spacer) / 2);
+            margin-bottom: calc(var(--spacer) / 2);
+        }
+    }
+
+    @media (--screen-375) {
+        & .cover-bit__share {
+            & .fb-share-button,
+            & .twitter-share-button {
+                margin-bottom: 0;
+            }
         }
     }
 

@@ -6,6 +6,12 @@
         margin-bottom: calc(var(--spacer) * 1.5);
     }
 
+    & .cover__introduction {
+        & h1 {
+            font-weight: 700;
+        }
+    }
+
     & .cover__header,
     & .cover__footer {
         display: flex;

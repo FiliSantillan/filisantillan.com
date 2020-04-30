@@ -2,10 +2,18 @@
     <div class="header-container u-content-center">
 
         <a href="{{@site.url}}" class="u-disp-inline-flex">
-            <h1 class="header__logo u-font-h2">
-                <span class="header__text text--fili">Fili</span>
-                <span class="header__text text--santillan">Santillán</span>
-            </h1>
+            {{#is "home"}}
+                <h1 class="header__logo u-font-h2">
+                    <span class="header__text text--fili">Fili </span>
+                    <span class="header__text text--santillan">Santillán</span>
+                </h1>
+
+                {{else}}
+                    <div class="header__logo">
+                        <span class="header__text text--fili">Fili </span>
+                        <span class="header__text text--santillan">Santillán</span>
+                    </div>
+            {{/is}}
         </a>
 
         <div class="header__options">

@@ -5,16 +5,17 @@
         data-mobile-iframe="true"><a target="_blank" href="{{url absolute="true"}}"
           class="fb-xfbml-parse-ignore">Compartir</a></div>
       <a class="twitter-share-button" href="{{url absolute="true"}}" data-size="large">Tweet</a>
+      {{#if tags}}
+        {{#foreach tags from="3" limit="1"}}
+          <div class="cover-bit__tags">
+            <a href="{{url}}" class="cover-bit__tag">
+              {{name}}
+            </a>
+          </div>
+        {{/foreach}}
+      {{/if}}
     </div>
-    {{#if tags}}
-      {{#foreach tags from="3" limit="1"}}
-        <div class="cover-bit__tags">
-          <a href="{{url}}" class="cover-bit__tag">
-            {{name}}
-          </a>
-        </div>
-      {{/foreach}}
-    {{/if}}
+
   </header>
 
   {{#if feature_image}}

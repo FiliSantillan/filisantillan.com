@@ -1,11 +1,11 @@
-<div class="cover-container u-content-center">
+8<div class="cover-container u-content-center">
     <div class="cover__introduction">
-        {{#if title}}
-            <span class="u-font-xlarge">{{title}}</span>
-        {{else}}
+        {{#is "home"}}
             <span class="u-font-xlarge">Hola, soy </span>
             <strong class="u-font-xlarge">Fili.</strong>
-        {{/if}}
+            {{else}}
+                <h1 class="u-font-xlarge">{{title}}</h1>
+        {{/is}}
     </div>
 
     <div class="cover__description">
@@ -17,12 +17,6 @@
             {{/if}}
         </p>
     </div>
-
-    {{!-- {{#is "home"}}
-        <div class="cover__button">
-            <a href="#" class="btn-secondary">Saber más</a>
-        </div>
-    {{/is}} --}}
 
     {{#is "bits"}}
         <div class="cover__button">
@@ -37,10 +31,4 @@
                 youtube</a>
         </div>
     {{/is}}
-
-    {{#if btn}}
-        <div class="cover__button">
-            <a href="{{btnUrl}}" class="btn-secondary">{{btn}}</a>
-        </div>
-    {{/if}}
 </div>

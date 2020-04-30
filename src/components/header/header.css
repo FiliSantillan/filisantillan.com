@@ -4,6 +4,7 @@
     padding: var(--spacer);
     background: white;
     box-shadow: var(--shadow-default);
+
     & .header-container {
         display: flex;
         justify-content: space-between;
@@ -13,10 +14,18 @@
 
 .header__logo {
     margin: 0;
+    font-size: 0;
+
     & .header__text {
         vertical-align: middle;
+        font-size: var(--font-size-h2);
+
         &.text--fili {
             font-weight: 300;
+        }
+
+        &.text--santillan {
+            font-weight: 600;
         }
     }
 }
