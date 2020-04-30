@@ -3,6 +3,7 @@
     line-height: 1.5;
 
     @media (--screen-1024) {
+        line-height: 1.8;
         padding: 0 0 var(--spacer);
     }
 }

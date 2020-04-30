@@ -58,6 +58,7 @@
         padding: 5px;
         position: relative;
         height: 50px;
+        margin-bottom: var(--spacer);
 
         & .subscription__input-text {
             width: calc(100% - 110px);
@@ -82,7 +83,7 @@
 
     & .subscription__error {
         color: var(--color-error);
-        margin-top: var(--spacer);
+        margin-top: 0;
         margin-bottom: 0;
     }
 

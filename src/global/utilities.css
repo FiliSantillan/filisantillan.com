@@ -16,6 +16,10 @@
     display: block;
 }
 
+.u-disp-none {
+    display: none;
+}
+
 .u-no-list {
     list-style: none;
     margin: 0;

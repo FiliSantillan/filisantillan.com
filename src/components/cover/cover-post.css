@@ -1,10 +1,10 @@
 @import "../../global/media-queries.css";
 
 .cover-container {
-    & .cover__introduction,
-    & .cover__header {
-        margin-bottom: calc(var(--spacer) * 1.5);
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
 
     & .cover__introduction {
         & h1 {

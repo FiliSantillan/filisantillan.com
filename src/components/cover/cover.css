@@ -4,7 +4,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    min-height: 50vh;
+    height: 50vh;
 
     &.isCoverEnable {
         background-size: cover;
@@ -28,11 +28,11 @@
     }
 
     @media (--screen-1024) {
-        min-height: 450px;
+        height: 450px;
     }
 
     @media (--screen-1440) {
-        min-height: 500px;
+        height: 500px;
     }
 }
 
@@ -42,8 +42,6 @@
     color: white;
 
     & .cover__introduction {
-        margin-bottom: calc(var(--spacer) / 2);
-
         & span {
             font-weight: 300;
         }
@@ -58,11 +56,16 @@
     }
 
     & .cover__description {
-        margin-bottom: var(--spacer);
-
+        margin-top: calc(var(--spacer) / 2);
+        line-height: 1.5;
         & .cover__text {
             font-weight: 400;
+            margin-bottom: 0;
         }
+    }
+
+    & .cover__button {
+        margin-top: var(--spacer);
     }
 
     & .cover__social {
@@ -85,14 +88,14 @@
     @media (--screen-1024) {
         padding: 0;
 
-        & .cover__introduction {
-            margin-bottom: var(--spacer);
+        & .cover__description {
+            margin-top: var(--spacer);
+            width: 50%;
+            line-height: 1.8;
         }
 
-        & .cover__description {
-            width: 50%;
-            margin-bottom: calc(var(--spacer) * 2);
-            line-height: 1.5;
+        & .cover__button {
+            margin-top: calc(var(--spacer) * 2);
         }
     }
 
