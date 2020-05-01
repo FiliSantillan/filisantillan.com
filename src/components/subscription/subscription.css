@@ -79,12 +79,36 @@
             text-transform: uppercase;
             font-size: var(--font-size-xsmall);
         }
+
+        & .subscription__button:disabled {
+            cursor: default;
+        }
+    }
+
+    & .subscription__error,
+    & .subscription__sucess {
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     & .subscription__error {
         color: var(--color-error);
-        margin-top: 0;
-        margin-bottom: 0;
+    }
+
+    & .subscription__sucess {
+        color: var(--color-sucess);
+    }
+
+    &.error {
+        & .subscription__form-wrap {
+            border: 1px solid var(--color-error);
+        }
+    }
+
+    &.success {
+        & .subscription__form-wrap {
+            border: 1px solid var(--color-sucess);
+        }
     }
 
     @media (--screen-1024) {
