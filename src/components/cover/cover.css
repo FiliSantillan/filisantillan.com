@@ -71,6 +71,7 @@
     & .cover__social {
         display: flex;
         flex-wrap: wrap;
+        margin-top: var(--spacer);
 
         & .cover__link {
             margin-right: calc(var(--spacer) / 2);
@@ -95,6 +96,10 @@
         }
 
         & .cover__button {
+            margin-top: calc(var(--spacer) * 2);
+        }
+
+        & .cover__social {
             margin-top: calc(var(--spacer) * 2);
         }
     }
