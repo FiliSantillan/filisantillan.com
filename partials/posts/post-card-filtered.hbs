@@ -4,13 +4,17 @@
     <a href="{{url}}" class="post-card-link" title="{{title}}" aria-label="{{title}}"></a>
 
     <picture class="post-card-cover">
-      <source srcset="{{img_url feature_image size="size-640"}}"
-        data-srcset="{{img_url feature_image size="size-425"}} 1x, {{img_url feature_image size="size-850"}} 2x, {{img_url feature_image size="size-1275"}} 3x"
-        media="(min-width: 375px)" class="lazy">
+      <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
+        media="(min-width: 1200px)">
 
-      <img src="{{img_url feature_image size="size-640"}}" data-src="{{img_url feature_image size="size-320"}}"
-        data-srcset="{{img_url feature_image size="size-640"}} 2x, {{img_url feature_image size="size-960"}} 3x"
-        alt="{{title}}" class="post-card__image post-card-image">
+      <source srcset="{{img_url feature_image size="xs"}} 1x, {{img_url feature_image size="m"}} 2x"
+        media="(min-width: 1024px)">
+
+      <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
+        media="(min-width: 425px)">
+
+      <img src="{{img_url feature_image size='xs'}}" srcset="{{img_url feature_image size='m'}} 2x" alt="{{title}}"
+        class="post-card__image post-card-image" loading="lazy">
     </picture>
 
     <div class="post-card__info">

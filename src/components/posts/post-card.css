@@ -78,6 +78,13 @@
             }
         }
 
+        &.post-card--blog-page {
+            &:first-child {
+                grid-column-start: auto;
+                grid-column-end: auto;
+            }
+        }
+
         &.post-card--filtered-page {
             height: 350px;
             &:first-child  {
@@ -99,12 +106,6 @@
                         }
                     }
                 }
-            }
-        }
-
-        &.post-card--blog-page {
-            &:nth-child(7n) {
-                grid-column: -1 / 2;
             }
         }
     }

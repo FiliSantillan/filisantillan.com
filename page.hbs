@@ -1,11 +1,47 @@
 {{!< default }}
 
+
 {{#post}}
 
-    {{!-- Cover layout --}}
+    {{#if feature_image}}
+        <style type="text/css">
+            .cover {
+                background-image: url({{img_url feature_image size="s"}});
+                background-image: -webkit-image-set(url({{img_url feature_image size="s"}}) 1x,
+                    url({{img_url feature_image size="l"}}) 2x);
+                background-image: image-set(url({{img_url feature_image size="s"}}) 1x,
+                    url({{img_url feature_image size="l"}}) 2x);
+            }
 
-    <section class="cover cover--post {{#if feature_image}}isCoverEnable"
-        style="background-image: url({{feature_image}}){{else}}isCoverDisabled{{/if}}">
+            @media(min-width: 768px) {
+                .cover {
+                    background-image: url({{img_url feature_image size="l"}});
+                    background-image: -webkit-image-set(url({{img_url feature_image size="l"}}) 1x,
+                        url({{img_url feature_image size="xxl"}}) 2x);
+                    background-image: image-set(url({{img_url feature_image size="l"}}) 1x,
+                        url({{img_url feature_image size="xxl"}}) 2x);
+                }
+            }
+
+            @media(min-width: 1024px) {
+                .cover {
+                    background-image: url({{img_url feature_image size="xl"}});
+                    background-image: -webkit-image-set(url({{img_url feature_image size="xl"}}) 1x,
+                        url({{img_url feature_image size="3xl"}}) 2x);
+                    background-image: image-set(url({{img_url feature_image size="xl"}}) 1x,
+                        url({{img_url feature_image size="3xl"}}) 2x);
+                }
+            }
+
+            @media(min-width: 1440px) {
+                .cover {
+                    background-image: url({{img_url feature_image size="3xl"}});
+                }
+            }
+        </style>
+    {{/if}}
+
+    <section class="cover cover--post {{#if feature_image}}isCoverEnable {{else}}isCoverDisabled{{/if}}">
 
         {{> "cover/cover-page"}}
 

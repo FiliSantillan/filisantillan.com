@@ -91,6 +91,7 @@
     border: 2px solid var(--color-dark);
     border-radius: 5px;
     overflow: hidden;
+    display: inline-block;
 
     & img {
         width: 100%;

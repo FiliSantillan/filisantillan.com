@@ -19,9 +19,22 @@
   </header>
 
   {{#if feature_image}}
-    <figure class="cover-bit__image">
-      <img src="{{feature_image}}" alt="" class="cover-bit__img">
-    </figure>
+
+    <picture class="cover-bit__image">
+
+      <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
+        media="(min-width: 1024px)">
+
+      <source srcset="{{img_url feature_image size="l"}} 1x, {{img_url feature_image size="xxl"}} 2x"
+        media="(min-width: 768px)">
+
+      <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
+        media="(min-width: 425px)">
+
+      <img src="{{img_url feature_image size='xs'}}" srcset="{{img_url feature_image size='m'}} 2x" alt="{{title}}"
+        class="cover-bit__img" loading="lazy">
+    </picture>
+
   {{/if}}
 
 

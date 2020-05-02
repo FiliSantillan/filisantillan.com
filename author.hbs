@@ -1,8 +1,46 @@
 {{!< default }}
 
 {{#author}}
-    <section class="cover {{#if cover_image}}isCoverEnable"
-        style="background-image: url({{cover_image}}){{else}}isCoverDisabled{{/if}}">
+
+    {{#if cover_image}}
+        <style type="text/css">
+            .cover {
+                background-image: url({{img_url cover_image size="s"}});
+                background-image: -webkit-image-set(url({{img_url cover_image size="s"}}) 1x,
+                    url({{img_url cover_image size="l"}}) 2x);
+                background-image: image-set(url({{img_url cover_image size="s"}}) 1x,
+                    url({{img_url cover_image size="l"}}) 2x);
+            }
+
+            @media(min-width: 768px) {
+                .cover {
+                    background-image: url({{img_url cover_image size="l"}});
+                    background-image: -webkit-image-set(url({{img_url cover_image size="l"}}) 1x,
+                        url({{img_url cover_image size="xxl"}}) 2x);
+                    background-image: image-set(url({{img_url cover_image size="l"}}) 1x,
+                        url({{img_url cover_image size="xxl"}}) 2x);
+                }
+            }
+
+            @media(min-width: 1024px) {
+                .cover {
+                    background-image: url({{img_url cover_image size="xl"}});
+                    background-image: -webkit-image-set(url({{img_url cover_image size="xl"}}) 1x,
+                        url({{img_url cover_image size="3xl"}}) 2x);
+                    background-image: image-set(url({{img_url cover_image size="xl"}}) 1x,
+                        url({{img_url cover_image size="3xl"}}) 2x);
+                }
+            }
+
+            @media(min-width: 1440px) {
+                .cover {
+                    background-image: url({{img_url cover_image size="3xl"}});
+                }
+            }
+        </style>
+    {{/if}}
+
+    <section class="cover {{#if cover_image}}isCoverEnable {{else}}isCoverDisabled{{/if}}">
 
         {{> "cover/cover-filtered" }}
 

@@ -1,7 +1,44 @@
 {{!< default }}
 
-<section class="cover {{#if @site.cover_image}}isCoverEnable"
-  style="background-image: url({{@site.cover_image}}){{else}}isDisabled{{/if}}">
+{{#if @site.cover_image}}
+  <style type="text/css">
+    .cover {
+      background-image: url({{img_url @site.cover_image size="s"}});
+      background-image: -webkit-image-set(url({{img_url @site.cover_image size="s"}}) 1x,
+        url({{img_url @site.cover_image size="l"}}) 2x);
+      background-image: image-set(url({{img_url @site.cover_image size="s"}}) 1x,
+        url({{img_url @site.cover_image size="l"}}) 2x);
+    }
+
+    @media(min-width: 768px) {
+      .cover {
+        background-image: url({{img_url @site.cover_image size="l"}});
+        background-image: -webkit-image-set(url({{img_url @site.cover_image size="l"}}) 1x,
+          url({{img_url @site.cover_image size="xxl"}}) 2x);
+        background-image: image-set(url({{img_url @site.cover_image size="l"}}) 1x,
+          url({{img_url @site.cover_image size="xxl"}}) 2x);
+      }
+    }
+
+    @media(min-width: 1024px) {
+      .cover {
+        background-image: url({{img_url @site.cover_image size="xl"}});
+        background-image: -webkit-image-set(url({{img_url @site.cover_image size="xl"}}) 1x,
+          url({{img_url @site.cover_image size="3xl"}}) 2x);
+        background-image: image-set(url({{img_url @site.cover_image size="xl"}}) 1x,
+          url({{img_url @site.cover_image size="3xl"}}) 2x);
+      }
+    }
+
+    @media(min-width: 1440px) {
+      .cover {
+        background-image: url({{img_url @site.cover_image size="3xl"}});
+      }
+    }
+  </style>
+{{/if}}
+
+<section class="cover {{#if @site.cover_image}}isCoverEnable {{else}}isCoverDisabled{{/if}}">
 
   {{> "cover/cover" title="Videos" description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. In quidem similique consequuntur illo! Nisi, reprehenderit nemo? Odio possimus accusamus deserunt modi eaque! Ipsa similique non consequatur, maxime rerum modi. Ad." }}
 
