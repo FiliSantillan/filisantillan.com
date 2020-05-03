@@ -88,6 +88,19 @@
     &.item--submenu {
         width: 25%;
 
+        &.isItemCurrent {
+            & .navigation__link {
+                padding: 0;
+                background: none;
+                border-radius: 0;
+                border: none;
+
+                & .navigation__icon {
+                    margin-right: 0;
+                }
+            }
+        }
+
         & .navigation__link {
             justify-content: center;
             text-align: center;

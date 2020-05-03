@@ -2,11 +2,8 @@
     display: grid;
 
     & .cover-bit  {
-        background-image: linear-gradient(
-            120deg,
-            var(--color-blue),
-            var(--color-sucess)
-        );
+        background: var(--color-blue);
+        background-image: var(--custom-gradient);
         padding: var(--spacer);
         display: flex;
         justify-content: center;

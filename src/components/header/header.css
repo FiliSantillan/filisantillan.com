@@ -4,6 +4,8 @@
     padding: var(--spacer);
     background: white;
     box-shadow: var(--shadow-default);
+    z-index: 99;
+    position: relative;
 
     & .header-container {
         display: flex;
