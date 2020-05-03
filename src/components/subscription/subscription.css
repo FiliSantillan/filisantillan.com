@@ -41,11 +41,12 @@
     & .subscription__description {
         font-weight: 300;
         margin: 0 0 var(--spacer);
+        line-height: 1.5;
     }
 
     @media (--screen-1024) {
         & .subscription__description {
-            line-height: 1.5;
+            line-height: 1.8;
         }
     }
 }

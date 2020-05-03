@@ -2,9 +2,72 @@
     padding: 0 var(--spacer) var(--spacer);
     line-height: 1.5;
 
+    & h1,
+    & h2,
+    & h3,
+    & h4 {
+        margin-top: calc(var(--spacer) * 2);
+        margin-bottom: var(--spacer);
+        overflow: auto;
+        line-height: 1.5;
+    }
+
+    & h2 {
+        font-size: var(--font-size-large);
+    }
+
+    & h3 {
+        font-size: var(--font-size-h1);
+    }
+
+    & a {
+        text-decoration: underline;
+    }
+
+    & strong {
+        font-weight: 600;
+    }
+
+    & ul,
+    & ol {
+        & li {
+            margin-bottom: calc(var(--spacer) / 2);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    & figcaption {
+        font-size: var(--font-size-xsmall);
+        text-align: center;
+        padding: 8px 0;
+        color: var(--color-gray-b);
+    }
+
+    & p,
+    & ul,
+    & ol,
+    & hr,
+    & figure {
+        margin-top: 0;
+        margin-bottom: var(--spacer);
+    }
+
+    & img {
+        width: auto;
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+        border: 2px solid var(--color-dark);
+    }
+
     @media (--screen-1024) {
         line-height: 1.8;
         padding: 0 0 var(--spacer);
+        max-width: 900px;
+        margin: 0 auto;
     }
 }
 
@@ -23,6 +86,10 @@
     margin-left: -50vw;
     margin-right: -50vw;
     margin-bottom: var(--spacer);
+
+    & a {
+        text-decoration: none;
+    }
 
     & .resources__button {
         min-width: 200px;
@@ -143,8 +210,10 @@
 
     & .event__details {
         & .event__title {
+            margin-top: 0;
             margin-bottom: var(--spacer);
             font-weight: 500;
+            font-size: var(--font-size-h3);
         }
     }
 }
@@ -185,5 +254,66 @@
 
     @media (--screen-1440) {
         padding: calc(var(--spacer) / 2);
+    }
+}
+
+div[class="warning"],
+div[class="note"],
+div[class="tip"],
+blockquote[class="block"],
+blockquote {
+    border: 2px solid var(--color-dark);
+    padding: calc(var(--spacer) + 17.5px) var(--spacer) var(--spacer);
+    font-size: var(--font-size-xsmall);
+    position: relative;
+    margin-top: calc(var(--spacer) + 17.5px);
+    margin-bottom: var(--spacer);
+    margin-left: 0;
+    margin-right: 0;
+
+    & .title {
+        position: absolute;
+        top: -17.5px;
+        left: 0.5rem;
+        background: white;
+        line-height: 35px;
+        padding: 0 var(--spacer);
+        height: 35px;
+        border: 2px solid var(--color-dark);
+        font-weight: 700;
+    }
+
+    & code {
+        background: var(--color-dark);
+        color: white;
+    }
+
+    & .text {
+        margin: 0;
+    }
+}
+
+div[class="warning"] {
+    background-color: var(--color-error);
+}
+
+div[class="note"] {
+    background-color: var(--color-yellow);
+}
+
+div[class="tip"] {
+    background-color: var(--color-sucess);
+}
+
+blockquote {
+    background-color: white;
+}
+
+blockquote:not(.block) {
+    padding: var(--spacer);
+
+    & p:first-of-type,
+    & p {
+        margin: 0;
     }
 }

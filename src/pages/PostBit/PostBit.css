@@ -5,6 +5,7 @@
 
 @import "../../components/header/header.css";
 @import "../../components/header/navigation.css";
+@import "../../components/search/search.css";
 @import "../../components/cover/cover-post-bit.css";
 
 @import "../../components/posts/post.css";

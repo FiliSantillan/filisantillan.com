@@ -3,8 +3,13 @@ import "../../vendor/prism.css";
 import "./Post.css";
 
 import "../../vendor/prism";
+import { subscription } from "../../theme/subscription";
+import { states } from "../../theme/states";
 
-/* Javascript */
+document.addEventListener("DOMContentLoaded", () => {
+    states();
+    subscription();
+});
 
 document.addEventListener("DOMContentLoaded", () => {
     // Youtube

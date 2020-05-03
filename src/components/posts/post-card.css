@@ -10,7 +10,7 @@
     border-radius: 10px;
     overflow: hidden;
     border: 2px solid var(--color-dark);
-    background: var(--color-pink);
+    background: var(--color-dark);
     z-index: 2;
     box-shadow: var(--shadow-default);
     color: white;
@@ -68,6 +68,7 @@
             grid-column-start: 1;
             grid-column-end: 3;
             height: 400px;
+            z-index: 100;
 
             & .post-card__info {
                 & .post-card__footer {
@@ -94,6 +95,7 @@
     }
 
     @media (--screen-1024) {
+        transition: 0.3s;
         &.post-card--video-page {
             &:nth-child(3n) {
                 grid-column: 1 / -1;
@@ -145,6 +147,7 @@
         justify-content: space-between;
         text-transform: uppercase;
         z-index: 15;
+        position: relative;
     }
 
     & .post-card__playButton {

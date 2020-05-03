@@ -72,7 +72,7 @@
         padding: calc(var(--spacer) / 2) var(--spacer);
         padding-left: 2.5rem;
         width: 100%;
-        line-height: 0;
+        line-height: 1;
     }
 }
 

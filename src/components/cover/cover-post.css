@@ -64,6 +64,7 @@
     & .fb-share-button {
         vertical-align: top;
         margin-right: 0.5rem;
+        display: inline-block;
     }
 
     @media (--screen-768) {

@@ -3,18 +3,31 @@
 :root {
     /* Fonts */
 
-    --font-size-h1: clamp(25px, 4vw, 28px);
-    --font-size-h2: clamp(23px, 4vw, 26px);
-    --font-size-h3: clamp(21px, 4vw, 24px);
+    --font-size-h1: calc(25px + (28 - 25) * ((100vw - 300px) / (1600 - 300)));
+    --font-size-h2: calc(23px + (26 - 23) * ((100vw - 300px) / (1600 - 300)));
+    --font-size-h3: calc(21px + (24 - 21) * ((100vw - 300px) / (1600 - 300)));
 
-    --font-size-large: clamp(30px, 4vw, 40px);
-    --font-size-xlarge: clamp(30px, 4vw, 60px);
+    --font-size-large: calc(
+        30px + (40 - 30) * ((100vw - 300px) / (1600 - 300))
+    );
 
-    --font-size-medium: clamp(17px, 4vw, 20px);
-    --font-size-default: clamp(16px, 4vw, 17px);
-    --font-size-small: clamp(15px, 4vw, 16px);
-    --font-size-xsmall: clamp(14px, 4vw, 15px);
-    --font-size-code: clamp(13px, 4vw, 14px);
+    --font-size-xlarge: calc(
+        30px + (60 - 30) * ((100vw - 300px) / (1600 - 300))
+    );
+
+    --font-size-medium: calc(
+        17px + (20 - 17) * ((100vw - 300px) / (1440 - 300))
+    );
+    --font-size-default: calc(
+        16px + (17 - 16) * ((100vw - 300px) / (1440 - 300))
+    );
+    --font-size-small: calc(
+        15px + (16 - 15) * ((100vw - 300px) / (1440 - 300))
+    );
+    --font-size-xsmall: calc(
+        14px + (15 - 14) * ((100vw - 300px) / (1440 - 300))
+    );
+    --font-size-code: calc(13px + (14 - 13) * ((100vw - 300px) / (1440 - 300)));
 
     /* Brand Colors */
     --color-dark: #282b39;

@@ -28,6 +28,7 @@
     & .site-main-container__description {
         margin-top: 0;
         margin-bottom: var(--spacer);
+        line-height: 1.5;
     }
 
     & .site-main-container__buttons {
@@ -60,7 +61,7 @@
         }
 
         & .site-main-container__description {
-            line-height: 1.5;
+            line-height: 1.8;
         }
 
         & .site-main-container__buttons {
@@ -90,6 +91,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-row-gap: var(--spacer);
+    transition: 0.3s;
 
     @media (--screen-768) {
         grid-template-columns: repeat(2, 1fr);

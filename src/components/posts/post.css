@@ -1,7 +1,5 @@
 @import "../../global/media-queries.css";
 
-/* POST DEFAULT STYLES */
-
 .post {
     padding: 0 var(--spacer);
     line-height: 1.5;
@@ -99,6 +97,10 @@
             max-width: 900px;
             margin: 0 auto;
         }
+    }
+
+    & figure {
+        display: block;
     }
 
     & img {

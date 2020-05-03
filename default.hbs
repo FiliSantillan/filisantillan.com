@@ -135,6 +135,10 @@
     {{!-- header template --}}
     {{> "header/header" }}
 
+    <section class="search-container" id="search-container">
+        {{> search/search }}
+    </section>
+
     {{!-- Body layout Depending on the type of template, it will show a different content. --}}
 
     {{{body}}}

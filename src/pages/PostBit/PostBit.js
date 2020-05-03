@@ -3,6 +3,13 @@ import "../../vendor/prism.css";
 import "./PostBit.css";
 
 import "../../vendor/prism";
+import { subscription } from "../../theme/subscription";
+import { states } from "../../theme/states";
+
+document.addEventListener("DOMContentLoaded", () => {
+    states();
+    subscription();
+});
 
 /* Javascript */
 
