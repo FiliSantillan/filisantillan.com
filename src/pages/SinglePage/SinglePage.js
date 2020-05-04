@@ -1,6 +1,6 @@
 import "../../vendor/normalize.css";
 import "../../vendor/prism.css";
-import "./singlePage.css";
+import "./SinglePage.css";
 
 import "../../vendor/prism";
 import { subscription } from "../../theme/subscription";
