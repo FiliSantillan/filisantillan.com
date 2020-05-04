@@ -1,7 +1,10 @@
 {
     "name": "filisantillan",
     "description": "Fili Santillán: https://filisantillan.com/",
-    "version": "3.0.4",
+    "version": "4.0.0",
+    "engines": {
+        "ghost-api": "v3"
+    },
     "main": "index.js",
     "config": {
         "posts_per_page": 10,

@@ -10,7 +10,7 @@
 <html lang='{{@site.lang}}'>
 
 <head>
-    {{#is "home, page, post, tag, author"}}
+    {{#is "index, page, post, tag, author"}}
         <title>{{meta_title}}</title>
     {{/is}}
 
@@ -32,13 +32,6 @@
 
     {{!-- Author Settings --}}
     <meta name='author' content='Filiberto Santillán'>
-
-    {{#is "homel, blog, bits, videos"}}
-        <meta name='description' content='{{@site.description}}' />
-
-        {{else}}
-            <meta name='description' content='{{meta_description}}' />
-    {{/is}}
 
     {{!-- Mobile Settings --}}
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
@@ -66,7 +59,7 @@
     <link rel='stylesheet' href='{{asset "styles/common-bundle.css"}}'>
 
     {{!-- Custom styles by page type --}}
-    {{#is "home"}}
+    {{#is "index"}}
         <link rel="preload" href='{{asset "styles/home-bundle.css"}}' as="style">
         <link rel="prefetch" href='{{asset "js/home-bundle.js"}}' as="script">
         <link rel='stylesheet' href='{{asset "styles/home-bundle.css"}}'>
@@ -149,7 +142,7 @@
     <script src='{{asset "js/common-bundle.js"}}'></script>
 
     {{!-- Custom scripts by page type --}}
-    {{#is "home"}}
+    {{#is "index"}}
         <script src='{{asset "js/home-bundle.js"}}'></script>
     {{/is}}
 

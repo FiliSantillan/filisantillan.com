@@ -438,6 +438,10 @@ blockquote:not(.block) {
                     margin-right: 0.5rem;
                 }
 
+                & .kg-bookmark-publisher  {
+                    font-weight: 500;
+                }
+
                 & .kg-bookmark-author {
                     display: none;
                 }
@@ -466,8 +470,8 @@ blockquote:not(.block) {
     @media (--screen-1024) {
         & .kg-bookmark-container {
             & .kg-bookmark-thumbnail img {
-                min-height: 180px;
-                max-height: 180px;
+                min-height: 190px;
+                max-height: 190px;
             }
         }
     }
