@@ -97,6 +97,7 @@
         min-width: 200px;
         margin-bottom: var(--spacer);
         text-decoration: none;
+        color: white;
     }
 
     @media (--screen-768) {
@@ -221,6 +222,7 @@
 
         & .event__button {
             text-decoration: none;
+            color: white;
         }
     }
 }

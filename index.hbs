@@ -46,64 +46,70 @@
 
 <main id="site-main" class="site-main" role="main">
 
-  <section class="site-main-container u-content-center">
-    <strong class="site-main-container__title u-font-large">Artículos</strong>
+  {{#get "posts" limit="5" include="tags,authors" filter="primary_tag:blog"}}
+    <section class="site-main-container u-content-center">
+      <strong class="site-main-container__title u-font-large">Artículos</strong>
 
-    <div class="site-main-wrapper">
-      {{#get "posts" limit="5" include="tags,authors" filter="primary_tag:blog"}}
+      <div class="site-main-wrapper">
+
         {{> "posts/post-card"}}
-      {{/get}}
 
-      <div class="site-main-wrapper__button u-margin-x-auto">
-        <a href="/blog" class="btn">Ver más artículos</a>
-      </div>
-    </div>
-  </section>
 
-  <section class="site-main-container site-main-container--bits">
-    <div class="site-main-container__details u-content-center">
-
-      <div class="site-main-container__info">
-        <div class="site-main-container__textBlock">
-          <strong class="site-main-container__title u-font-large">Bits</strong>
-          <p class="site-main-container__description">
-            Una colección de imágenes que explican diferentes conceptos entorno a desarrollo web. Sus principales
-            características es
-            que sean cortos, directos y fáciles de digerir, he de ahí el nombre (Bits). Es como un pequeño snack de
-            código.
-          </p>
-        </div>
-
-        <div class="site-main-container__buttons">
-          <a href="/bits" class="site-main-container__button btn">Ver más bits</a>
-          <a href="https://rebrand.ly/bits" class="site-main-container__button btn-alternative" target="_blank"
-            rel="noopener noreferrer"><span>
-              Ver en github
-            </span></a>
+        <div class="site-main-wrapper__button u-margin-x-auto">
+          <a href="/blog" class="btn">Ver más artículos</a>
         </div>
       </div>
+    </section>
+  {{/get}}
 
-      <div class="site-main-wrapper site-main-wrapper--bits">
-        {{#get "posts" limit="4" include="tags" filter="primary_tag:bit"}}
+  {{#get "posts" limit="4" include="tags" filter="primary_tag:bit"}}
+    <section class="site-main-container site-main-container--bits">
+      <div class="site-main-container__details u-content-center">
+
+        <div class="site-main-container__info">
+          <div class="site-main-container__textBlock">
+            <strong class="site-main-container__title u-font-large">Bits</strong>
+            <p class="site-main-container__description">
+              Una colección de imágenes que explican diferentes conceptos entorno a desarrollo web. Sus principales
+              características son
+              que sean cortos, directos y fáciles de digerir, he de ahí el nombre (Bits). Es como un pequeño snack de
+              código.
+            </p>
+          </div>
+
+          <div class="site-main-container__buttons">
+            <a href="/bits" class="site-main-container__button btn">Ver más bits</a>
+            <a href="https://rebrand.ly/bits" class="site-main-container__button btn-alternative" target="_blank"
+              rel="noopener noreferrer"><span>
+                Ver en github
+              </span></a>
+          </div>
+        </div>
+
+        <div class="site-main-wrapper site-main-wrapper--bits">
+
           {{> "posts/post-card-bits"}}
-        {{/get}}
+
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  {{/get}}
 
-  <section class="site-main-container u-content-center site-main-container--video">
-    <strong class="site-main-container__title u-font-large">Videos</strong>
+  {{#get "posts" limit="4" include="tags" filter="primary_tag:video"}}
+    <section class="site-main-container u-content-center site-main-container--video">
+      <strong class="site-main-container__title u-font-large">Videos</strong>
 
-    <div class="site-main-wrapper site-main-wrapper--video">
-      {{#get "posts" limit="4" include="tags" filter="primary_tag:video"}}
+      <div class="site-main-wrapper site-main-wrapper--video">
+
         {{> "posts/post-card"}}
-      {{/get}}
 
-      <div class="site-main-wrapper__button u-margin-x-auto">
-        <a href="/videos" class="btn">Ver más videos</a>
+
+        <div class="site-main-wrapper__button u-margin-x-auto">
+          <a href="/videos" class="btn">Ver más videos</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  {{/get}}
 </main>
 
 {{#if @labs.members}}
