@@ -40,7 +40,8 @@
         </style>
     {{/if}}
 
-    <section class="cover {{#if feature_image}}isCoverEnable {{else}}isCoverDisabled{{/if}}">
+    <section
+        class="cover {{#if feature_image}}isCoverEnable {{else}}isCoverDisabled{{/if}} {{#is "tag"}}cover--tag{{/is}}">
 
         {{> "cover/cover-filtered" }}
 

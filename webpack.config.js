@@ -1,15 +1,23 @@
 const path = require("path"),
     ExtractTextPlugin = require("extract-text-webpack-plugin"),
     UglifyJsPlugin = require("uglifyjs-webpack-plugin"),
+    CopyWebpackPlugin = require("copy-webpack-plugin"),
     CleanWebpackPlugin = require("clean-webpack-plugin"),
     webpack = require("webpack");
 
-const plugins = [new ExtractTextPlugin("styles/[name]-bundle.css")],
+const plugins = [
+        new ExtractTextPlugin("styles/[name]-bundle.css"),
+        new CopyWebpackPlugin([
+            {
+                from: "./src/images/",
+                to: "",
+                ignore: ["icons/*"],
+            },
+        ]),
+    ],
     cssOptions = {
         importLoaders: 1,
     };
-
-const pathsToClean = ["assets/**/*.css", "assets/**/*.js", "assets/fonts/*"];
 
 module.exports = (env, argv) => {
     if (argv.mode === "production") {
@@ -18,7 +26,9 @@ module.exports = (env, argv) => {
                 test: /\.js($|\?)/i,
                 exclude: /(node_modules)/,
             }),
-            new CleanWebpackPlugin(pathsToClean, { root: __dirname })
+            new CleanWebpackPlugin("assets/*", {
+                root: __dirname,
+            })
         );
 
         cssOptions.minimize = true;
