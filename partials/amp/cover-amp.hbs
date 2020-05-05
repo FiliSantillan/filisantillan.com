@@ -1,0 +1,39 @@
+{{!------------------------------------}}
+          {{!-- Amp cover-post --}}
+{{!------------------------------------}}
+
+{{!-- Cover of a amp post --}}
+
+{{!-- Image --}}
+<section class="cover u-wrap-center">
+    {{#if feature_image}}
+
+    <figure class='cover__image'>
+
+        <amp-img class='cover__img' src='{{img_url feature_image absolute="true"}}' alt='{{title}}' width="320" height="170" layout="responsive"></amp-img>
+
+    </figure>
+
+    {{else}}
+
+    <div class="cover__gradient"></div>
+
+    {{/if}}
+
+    <div class="cover__details u-center-content">
+        <div class="cover-wrapper">
+            <div class="cover__title">
+                <h1 class="cover__text">{{title}}</h1>
+            </div>
+
+            {{#if tags}}
+                {{#foreach tags}}
+                    <a href="{{url}}" class="cover__tag btn btn-secondary btn-icon">
+                        {{name}}
+                    </a>
+                {{/foreach}}
+            {{/if}}
+
+        </div>
+    </div>
+</section>

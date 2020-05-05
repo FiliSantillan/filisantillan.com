@@ -1,19 +1,32 @@
-{{!------------------------------------}}
-          {{!-- Navigation --}}
-{{!------------------------------------}}
+<div class="navigation-container">
+    <ul class="navigation__itemsList u-no-list" role="main">
 
-{{!-- Blog navigation  --}}
+        {{#foreach navigation limit="4"}}
+            <li class="navigation__item {{#if current}} isItemCurrent {{/if}}" role='presentation'>
+                <a class="navigation__link u-disp-inline-block" href='{{url absolute="true"}}'>
+                    <div class='navigation__icon icon-{{slug}}'></div>
+                    <span class='navigation__text'>{{label}}</span>
+                </a>
+            </li>
+        {{/foreach}}
 
-{{!-- Everything inside the #navigation tags pulls data from the navigation --}}
-{{#foreach navigation}}
-	{{!-- navigation item --}}
-    <li class='menu__option nav-{{slug}}{{#if current}} nav-current{{/if}}' role='presentation'>
-        <a class='menu__link' href='{{url absolute="true"}}'>
-            {{!-- Icon --}}
-            <i class='menu__icon icon-'></i>
-            {{!-- Text --}}
-            <span class='menu__text'>{{label}}</span>
-        </a>
-    </li>
-{{/foreach}}
+        <li class="navigation__item" role='presentation'>
+            <a class="navigation__link link--menu u-disp-inline-block" href="#" id="icon-menu">
+                <div class='navigation__icon icon-arrow-up' id="icon-arrow"></div>
+                <span class='navigation__text'>Más</span>
+            </a>
 
+            <ul class="navigation__itemsList itemsList--submenu u-no-list" id="navigation-submenu">
+                {{#foreach navigation from="5"}}
+                    <li class="navigation__item item--submenu {{#if current}} isItemCurrent {{/if}}"
+                        role='presentation'>
+                        <a class="navigation__link u-disp-inline-block" href='{{url absolute="true"}}'>
+                            <div class='navigation__icon icon-{{slug}}'></div>
+                            <span class='navigation__text'>{{label}}</span>
+                        </a>
+                    </li>
+                {{/foreach}}
+            </ul>
+        </li>
+    </ul>
+</div>

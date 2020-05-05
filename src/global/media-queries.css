@@ -1,0 +1,11 @@
+/* mobile */
+
+@custom-media --screen-375 screen and (width >= 375px);
+@custom-media --screen-425 screen and (width >= 425px);
+
+@custom-media --screen-625 screen and (width >= 625px);
+@custom-media --screen-768 screen and (width >= 768px);
+
+@custom-media --screen-1024 screen and (width >= 1024px);
+@custom-media --screen-1200 screen and (width >= 1200px);
+@custom-media --screen-1440 screen and (width >= 1440px);

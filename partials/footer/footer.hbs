@@ -1,0 +1,77 @@
+<footer class="footer">
+    <div class="footer-container u-content-center">
+
+        <div class="footer__details">
+
+            <div class="footer__legal">
+                <span class="footer__text">{{@site.title}} Ⓒ 2020 - Todos los derechos reservados.</span>
+                <a href="https://filisantillan.com/privacidad/" class="footer__link">Política de privacidad</a>
+            </div>
+
+            <div class="footer__server">
+                <span> Alojado en <a href="https://m.do.co/c/c4c217c06b83" class="footer__link"
+                        rel="noopener noreferrer" target="_blank">Digital Ocean</a>
+                </span>
+            </div>
+        </div>
+
+        <div class="footer__social">
+            <ul class='footer__socialList u-no-list'>
+
+                <li class="footer__item">
+                    <a href="https://rebrand.ly/80766" class="footer__link" rel="noopener noreferrer" target="_blank"
+                        title="Instagram" aria-label="Instagram">
+                        {{> icons/icon-instagram }}
+                    </a>
+                </li>
+
+                {{#if @blog.twitter}}
+                    <li class="footer__item">
+                        <a href="{{twitter_url @blog.twitter}}" class="footer__link" rel="noopener noreferrer"
+                            target="_blank" title="Twitter" aria-label="Twitter">
+                            {{> icons/icon-twitter }}
+                        </a>
+                    </li>
+                {{/if}}
+
+                {{#if @blog.facebook}}
+                    <li class="footer__item">
+                        <a href="{{facebook_url @blog.facebook}}" class="footer__link" rel="noopener noreferrer"
+                            target="_blank" title="Facebook" aria-label="Facebook">
+                            {{> icons/icon-facebook }}
+                        </a>
+                    </li>
+                {{/if}}
+
+                <li class="footer__item">
+                    <a href="https://rebrand.ly/f2jmm48" class="footer__link" rel="noopener noreferrer" target="_blank"
+                        title="Youtube" aria-label="Youtube">
+                        {{> icons/icon-youtube }}
+                    </a>
+                </li>
+
+                <li class="footer__item">
+                    <a href="https://rebrand.ly/0432d" class="footer__link" rel="noopener noreferrer" target="_blank"
+                        title="GitHub" aria-label="GitHub">
+                        {{> icons/icon-github }}
+                    </a>
+                </li>
+
+                <li class="footer__item">
+                    <a href="https://rebrand.ly/ka1v0uy" class="footer__link" rel="noopener noreferrer" target="_blank"
+                        title="GitHub" aria-label="Codepen">
+                        {{> icons/icon-codepen }}
+                    </a>
+                </li>
+
+                <li class="footer__item">
+                    <a href="https://rebrand.ly/xo8tu7u" class="footer__link" rel="noopener noreferrer" target="_blank"
+                        title="GitHub" aria-label="Unsplash">
+                        {{> icons/icon-unsplash }}
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,42 @@
+{{!< default }}
+
+{{#post}}
+
+  <section class="bit-single-post">
+    <main class='post-container post-container--bit' role='main'>
+      <article class='post-wrapper'>
+        <section class='post post--bit'>
+          <h1 class="u-font-xlarge">{{title}}</h1>
+          {{content}}
+        </section>
+      </article>
+
+      <section class='comments'>
+        {{> 'comments/comments'}}
+      </section>
+    </main>
+
+    <section class="cover-bit">
+      {{> "cover/cover-post-bit"}}
+    </section>
+
+  </section>
+
+  {{#if @labs.members}}
+    <section class="subscription">
+      {{> subscription/subscription }}
+    </section>
+  {{/if}}
+
+{{/post}}
+
+<script>
+  var images = document.querySelectorAll('.kg-gallery-image img');
+  images.forEach(function (image) {
+    var container = image.closest('.kg-gallery-image');
+    var width = image.attributes.width.value;
+    var height = image.attributes.height.value;
+    var ratio = width / height;
+    container.style.flex = ratio + ' 1 0%';
+  })
+</script>

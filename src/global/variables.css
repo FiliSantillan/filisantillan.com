@@ -1,0 +1,62 @@
+@import "./media-queries.css";
+
+:root {
+    /* Fonts */
+
+    --font-size-h1: calc(25px + (28 - 25) * ((100vw - 300px) / (1600 - 300)));
+    --font-size-h2: calc(23px + (26 - 23) * ((100vw - 300px) / (1600 - 300)));
+    --font-size-h3: calc(21px + (24 - 21) * ((100vw - 300px) / (1600 - 300)));
+
+    --font-size-large: calc(
+        30px + (40 - 30) * ((100vw - 300px) / (1600 - 300))
+    );
+
+    --font-size-xlarge: calc(
+        30px + (60 - 30) * ((100vw - 300px) / (1600 - 300))
+    );
+
+    --font-size-medium: calc(
+        17px + (20 - 17) * ((100vw - 300px) / (1440 - 300))
+    );
+    --font-size-default: calc(
+        16px + (17 - 16) * ((100vw - 300px) / (1440 - 300))
+    );
+    --font-size-small: calc(
+        15px + (16 - 15) * ((100vw - 300px) / (1440 - 300))
+    );
+    --font-size-xsmall: calc(
+        14px + (15 - 14) * ((100vw - 300px) / (1440 - 300))
+    );
+    --font-size-code: calc(13px + (14 - 13) * ((100vw - 300px) / (1440 - 300)));
+
+    /* Brand Colors */
+    --color-dark: #282b39;
+    --color-dark-alpha: #282b3990;
+    --color-dark-b: #363a4b;
+    --color-yellow: #ffd166;
+    --color-yellow-alpha: #ffd16670;
+    --color-blue: #5bc0eb;
+    --color-pink: #ea5a7c;
+
+    /* Light colors */
+    --color-light: #f7fff7;
+    --color-gray: #edf2f4;
+    --color-gray-b: #b1b1b1;
+
+    /* Interactive colors */
+
+    /* Denotive colors (states) */
+    --color-error: #ee6969;
+    --color-sucess: #06d6a0;
+    --color-disabled: #dddddd;
+    --color-disabled-dark: #cccccc;
+
+    /* Spacer */
+    --spacer: 1.5rem;
+
+    /* Others */
+    --border-radius-default: 5px;
+    --shadow-default: 6px 6px 8px rgba(0, 0, 0, 0.2);
+    --shadow-default-invert: -6px -6px 8px rgba(0, 0, 0, 0.2);
+    --btn-height-size: 45px;
+}

@@ -1,0 +1,27 @@
+<div class=" subscription-container u-content-center">
+    <div class="subscription-wrapper">
+        <div class="subscription__details">
+            <strong class="subscription__title u-font-h2">Se parte de mi newsletter</strong>
+            <p class="subscription__description">
+                Compartiré contigo las últimas novedades del sitio y otros recursos sobre
+                desarrollo web que no te puedes perder.
+            </p>
+        </div>
+
+        <form data-members-form="subscribe" class="subscription__form" id="subcription-form">
+            <div class="subscription__form-wrap">
+                <input data-members-email type="email" required="true" class="subscription__input-text"
+                    placeholder="Tu email" />
+                <button type="submit" class="subscription__button" id="subscription-button">
+                    Unirse
+                </button>
+            </div>
+
+            <p data-members-error class="subscription__error"></p>
+        </form>
+    </div>
+
+    <picture class="subscription__image">
+        {{> "icons/icon-rocket"}}
+    </picture>
+</div>

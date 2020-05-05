@@ -1,0 +1,41 @@
+<div class="cover-bit-container">
+  <header class="cover-bit__header">
+    <div class="cover-bit__share">
+      <div class="fb-share-button" data-href="{{url absolute="true"}}" data-layout="button_count" data-size="large"
+        data-mobile-iframe="true"><a target="_blank" href="{{url absolute="true"}}"
+          class="fb-xfbml-parse-ignore">Compartir</a></div>
+      <a class="twitter-share-button" href="{{url absolute="true"}}" data-size="large">Tweet</a>
+      {{#if tags}}
+        {{#foreach tags from="3" limit="1"}}
+          <div class="cover-bit__tags">
+            <a href="{{url}}" class="cover-bit__tag">
+              {{name}}
+            </a>
+          </div>
+        {{/foreach}}
+      {{/if}}
+    </div>
+
+  </header>
+
+  {{#if feature_image}}
+
+    <picture class="cover-bit__image">
+
+      <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
+        media="(min-width: 1024px)">
+
+      <source srcset="{{img_url feature_image size="l"}} 1x, {{img_url feature_image size="xxl"}} 2x"
+        media="(min-width: 768px)">
+
+      <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
+        media="(min-width: 425px)">
+
+      <img src="{{img_url feature_image size='xs'}}" srcset="{{img_url feature_image size='m'}} 2x" alt="{{title}}"
+        class="cover-bit__img" loading="lazy">
+    </picture>
+
+  {{/if}}
+
+
+</div>

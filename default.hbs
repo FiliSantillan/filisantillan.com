@@ -1,114 +1,190 @@
+{{!--
+    Template: Default (Home)
+
+    The "default" files are basically the main structure of the templates.
+    It is the general structure that the website will have.
+--}}
+
+
 <!DOCTYPE html>
-<html lang='es'>
+<html lang='{{@site.lang}}'>
+
 <head>
+    {{#is "index, page, post, tag, author"}}
+        <title>{{meta_title}}</title>
+    {{/is}}
 
-    {{!-- Title --}}
-    <title>{{meta_title}}</title>
+    {{#is "blog"}}
+        <title>Blog</title>
+    {{/is}}
 
-    {{!-- Styles --}}
-    <link rel='stylesheet' href='{{asset "./css/styles.css"}}'>
+    {{#is "bits"}}
+        <title>Bits</title>
+    {{/is}}
 
-    {{!-- Mobile Meta --}}
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    {{#is "videos"}}
+        <title>Videos</title>
+    {{/is}}
+
+    {{!-- Document Settings --}}
+    <meta charset='utf-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+
+    {{!-- Author Settings --}}
+    <meta name='author' content='Filiberto Santillán'>
+
+    {{!-- Mobile Settings --}}
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
     <meta name='MobileOptimized' content='320' />
 
-    {{!-- Favicons --}}
-    <link rel='apple-touch-icon' sizes='180x180' href='{{asset "./images/favicon/apple-touch-icon.png"}}'>
-    <link rel='icon' type='image/png' href='{{asset "./images/favicon/favicon-32x32.png"}}' sizes='32x32'>
-    <link rel='icon' type='image/png' href='{{asset "./images/favicon/favicon-16x16.png"}}' sizes='16x16'>
-    <link rel='manifest' href='{{asset "./images/favicon/manifest.json"}}'>
-    <link rel='mask-icon' href='{{asset "./images/favicon/safari-pinned-tab.svg"}}' color='#299FD3'>
-    <meta name='apple-mobile-web-app-title' content='Fili'>
-    <meta name='application-name' content='Fili'>
-
-    {{!-- Author & Descripction --}}
-    <meta name='author' content='Filiberto Santillán'>
-    <meta name='description' content='Blogger, Geek, Lover of code - HTML, CSS, Javascript, ReactJS' />
+    {{!-- Favicon Settings --}}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset 'favicon/apple-touch-icon.png'}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset 'favicon/favicon-32x32.png'}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset 'favicon/favicon-16x16.png'}}">
+    <link rel="manifest" href='{{asset "favicon/manifest.json"}}'>
+    <meta name="msapplication-TileColor" content="#282b39">
+    <meta name="theme-color" content="#282b39">
 
     {{!-- Friendly --}}
     <meta name='HandheldFriendly' content='True' />
 
-    {{!-- Google --}}
-    <link rel='author' href='https://plus.google.com/+FiliMart%C3%ADnezZ' />
-    <link rel='canonical' href='http://filisantillan.com/' />
-
-    {{!-- Google Fonts --}}
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700|Nunito:300,400,700' rel='stylesheet'>
-
-    {{!-- Other Configurations --}}
-    <meta charset='utf-8' />
-    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
-    <meta name='theme-color' content='#299FD3'>
+    {{!-- Other Settings --}}
     <meta name='google-site-verification' content='PUVeHiwvS1T4_Q8FaieZHfE0GjL2rsKJ3LU4eabFdtA' />
-    <meta property="fb:pages" content="379077102274280" />
 
-    {{!-- Emojis --}}
-    <script src="https://twemoji.maxcdn.com/2/twemoji.min.js?2.2.3"></script>
+    {{!-- Preload and prefetch settings --}}
+    <link rel="preload" href='{{asset "styles/common-bundle.css"}}' as="style">
+    <link rel="prefetch" href='{{asset "js/common-bundle.js"}}' as="script">
 
-    {{!-- Ghost outputs important style and meta data with this tag --}}
+    {{!-- Default styles --}}
+    <link rel='stylesheet' href='{{asset "styles/common-bundle.css"}}'>
+
+    {{!-- Custom styles by page type --}}
+    {{#is "index"}}
+        <link rel="preload" href='{{asset "styles/home-bundle.css"}}' as="style">
+        <link rel="prefetch" href='{{asset "js/home-bundle.js"}}' as="script">
+        <link rel='stylesheet' href='{{asset "styles/home-bundle.css"}}'>
+    {{/is}}
+
+    {{#is "blog"}}
+        <link rel="preload" href='{{asset "styles/blog-bundle.css"}}' as="style">
+        <link rel="prefetch" href='{{asset "js/blog-bundle.js"}}' as="script">
+        <link rel='stylesheet' href='{{asset "styles/blog-bundle.css"}}'>
+    {{/is}}
+
+    {{#is "bits"}}
+        <link rel="preload" href='{{asset "styles/bit-bundle.css"}}' as="style">
+        <link rel="prefetch" href='{{asset "js/bit-bundle.js"}}' as="script">
+        <link rel='stylesheet' href='{{asset "styles/bit-bundle.css"}}'>
+    {{/is}}
+
+    {{#is "videos"}}
+        <link rel="preload" href='{{asset "styles/video-bundle.css"}}' as="style">
+        <link rel="prefetch" href='{{asset "js/video-bundle.js"}}' as="script">
+        <link rel='stylesheet' href='{{asset "styles/video-bundle.css"}}'>
+    {{/is}}
+
+    {{#is "post"}}
+        {{#post}}
+            {{#has tag="blog,video"}}
+                <link rel="preload" href='{{asset "styles/post-bundle.css"}}' as="style">
+                <link rel="prefetch" href='{{asset "js/post-bundle.js"}}' as="script">
+                <link rel='stylesheet' href='{{asset "styles/post-bundle.css"}}'>
+            {{/has}}
+            {{#has tag="bit"}}
+                <link rel="preload" href='{{asset "styles/postbit-bundle.css"}}' as="style">
+                <link rel="prefetch" href='{{asset "js/postbit-bundle.js"}}' as="script">
+                <link rel='stylesheet' href='{{asset "styles/postbit-bundle.css"}}'>
+            {{/has}}
+        {{/post}}
+    {{/is}}
+
+    {{#is "page"}}
+        <link rel="preload" href='{{asset "styles/singlepage-bundle.css"}}' as="style">
+        <link rel="prefetch" href='{{asset "js/singlepage-bundle.js"}}' as="script">
+        <link rel='stylesheet' href='{{asset "styles/singlepage-bundle.css"}}'>
+    {{/is}}
+
+    {{#is "tag"}}
+        <link rel="preload" href='{{asset "styles/tag-bundle.css"}}' as="style">
+        <link rel="prefetch" href='{{asset "js/tag-bundle.js"}}' as="script">
+        <link rel='stylesheet' href='{{asset "styles/tag-bundle.css"}}'>
+    {{/is}}
+
+    {{#is "author"}}
+        <link rel="preload" href='{{asset "styles/author-bundle.css"}}' as="style">
+        <link rel="prefetch" href='{{asset "js/author-bundle.js"}}' as="script">
+        <link rel='stylesheet' href='{{asset "styles/author-bundle.css"}}'>
+    {{/is}}
+
+    {{!-- Ghost Head This tag outputs SEO meta + structured data and other important settings. --}}
+
     {{ghost_head}}
 
 </head>
-<body class='{{body_class}} nav-closed'>
 
-    {{!-- Header --}}
-    <header class='header' id='header'>
-        {{> 'header' }}
-    </header>
+<body class="{{body_class}}">
 
-    {{!-- Content --}}
-    <div class='site-wrapper'>
-        {{{body}}}
-    </div>
+    {{!-- header template --}}
+    {{> "header/header" }}
 
-    {{!-- Footer --}}
-    <footer class='footer'>
-        {{> 'footer'}}
-    </footer>
+    <section class="search-container" id="search-container">
+        {{> search/search }}
+    </section>
 
-    {{!-- Jquery --}}
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    {{!-- Body layout Depending on the type of template, it will show a different content. --}}
 
-    {{!-- Vendor --}}
-    <script src='{{asset "./js/vendor.js"}}'></script>
+    {{{body}}}
 
-    {{!-- Default script --}}
-    <script src='{{asset "./js/scripts.js"}}'></script>
+    {{!-- Footer layout --}}
+    {{> "footer/footer"}}
 
-    {{!-- Addthis --}}
-    <script type='text/javascript' src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56324eb92b56efd7' async='async'></script>
+    {{!-- Default script file --}}
+    <script src='{{asset "js/common-bundle.js"}}'></script>
 
-    {{! Gooogle Analytics }}
-    <script async>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-59139943-5', 'auto');
-      ga('send', 'pageview');
-    </script>
+    {{!-- Custom scripts by page type --}}
+    {{#is "index"}}
+        <script src='{{asset "js/home-bundle.js"}}'></script>
+    {{/is}}
 
-    {{! Facebook SDK }}
-    <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '398916740459134',
-      xfbml      : true,
-      version    : 'v2.8'
-    });
-    FB.AppEvents.logPageView();
-  };
+    {{#is "blog"}}
+        <script src='{{asset "js/blog-bundle.js"}}'></script>
+    {{/is}}
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/es_LA/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
+    {{#is "bits"}}
+        <script src='{{asset "js/bit-bundle.js"}}'></script>
+    {{/is}}
 
-    {{!-- Ghost outputs important scripts and data with this tag --}}
+    {{#is "videos"}}
+        <script src='{{asset "js/video-bundle.js"}}'></script>
+    {{/is}}
+
+    {{#is "post"}}
+        {{#post}}
+            {{#has tag="blog,video"}}
+                <script src='{{asset "js/post-bundle.js"}}'></script>
+            {{/has}}
+            {{#has tag="bit"}}
+                <script src='{{asset "js/postbit-bundle.js"}}'></script>
+            {{/has}}
+        {{/post}}
+    {{/is}}
+
+    {{#is "page"}}
+        <script src='{{asset "js/singlepage-bundle.js"}}'></script>
+    {{/is}}
+
+    {{#is "tag"}}
+        <script src='{{asset "js/tag-bundle.js"}}'></script>
+    {{/is}}
+
+    {{#is "author"}}
+        <script src='{{asset "js/author-bundle.js"}}'></script>
+    {{/is}}
+
+    {{!-- Ghost Footer, Ghost outputs important scripts and data with this tag. --}}
+
     {{ghost_foot}}
+
 </body>
+
 </html>

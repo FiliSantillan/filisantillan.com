@@ -1,0 +1,34 @@
+<header class="header">
+    <div class="header-container u-content-center">
+
+        <a href="{{@site.url}}" class="u-disp-inline-flex">
+            {{#is "index"}}
+                <h1 class="header__logo u-font-h2">
+                    <span class="header__text text--fili">Fili </span>
+                    <span class="header__text text--santillan">Santillán</span>
+                </h1>
+
+                {{else}}
+                    <div class="header__logo">
+                        <span class="header__text text--fili">Fili </span>
+                        <span class="header__text text--santillan">Santillán</span>
+                    </div>
+            {{/is}}
+        </a>
+
+        <div class="header__options">
+
+            <nav class="navigation">
+                {{"navigation"}}
+            </nav>
+
+            <a href="#" class="header__link u-disp-flex" id="icon-search">
+                {{> "icons/icon-search"}}
+            </a>
+
+            {{!-- <a href="#" class="header__link u-disp-flex">
+                {{> "icons/icon-settings"}}
+            </a> --}}
+            </ul>
+        </div>
+</header>

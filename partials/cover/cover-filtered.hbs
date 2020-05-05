@@ -1,0 +1,74 @@
+<div class="cover-container u-content-center">
+    <div class="cover__introduction">
+        <h1 class="u-font-xlarge u-text-transform-capitalize">{{name}}</h1>
+    </div>
+
+    {{#is "tag"}}
+        {{#if description}}
+            <div class="cover__description">
+                <p class="cover__text u-margin-top-disabled">
+                    {{description}}
+                </p>
+            </div>
+        {{/if}}
+    {{/is}}
+
+    {{#is "author"}}
+        {{#if bio}}
+            <div class="cover__description">
+                <p class="cover__text u-margin-top-disabled">
+                    {{bio}}
+                </p>
+            </div>
+        {{/if}}
+
+        <div class="cover__social">
+
+            {{#if facebook}}
+                <a href="{{facebook_url}}" class="cover__link" rel="noopener noreferrer" target="_blank"
+                    title="Facebook" aria-label="Facebook">
+                    {{> icons/icon-facebook fill="#FFFFFF" }}
+                </a>
+            {{/if}}
+
+            {{#if twitter}}
+                <a href="{{twitter_url}}" class="cover__link" rel="noopener noreferrer" target="_blank" title="Twitter"
+                    aria-label="Twitter">
+                    {{> icons/icon-twitter fill="#FFFFFF" }}
+                </a>
+            {{/if}}
+
+            {{#has slug="fili"}}
+                <a href="https://www.instagram.com/fili.santillan/" class="cover__link" rel="noopener noreferrer"
+                    target="_blank" title="Instagram" aria-label="Instagram">
+                    {{> icons/icon-instagram fill="#FFFFFF" }}
+                </a>
+
+                <a href="https://www.youtube.com/c/filimartinezz" class="cover__link" rel="noopener noreferrer"
+                    target="_blank" title="Youtube" aria-label="Youtube">
+                    {{> icons/icon-youtube fill="#FFFFFF" }}
+                </a>
+
+                <a href="https://github.com/FiliSantillan" class="cover__link" rel="noopener noreferrer" target="_blank"
+                    title="GitHub" aria-label="GitHub">
+                    {{> icons/icon-github fill="#FFFFFF" }}
+                </a>
+
+                <a href="https://codepen.io/filisantillan" class="cover__link" rel="noopener noreferrer" target="_blank"
+                    title="GitHub" aria-label="Codepen">
+                    {{> icons/icon-codepen fill="#FFFFFF" }}
+                </a>
+
+                <a href="https://unsplash.com/@filisantillan" class="cover__link" rel="noopener noreferrer"
+                    target="_blank" title="GitHub" aria-label="Unsplash">
+                    {{> icons/icon-unsplash fill="#FFFFFF" }}
+                </a>
+            {{/has}}
+
+
+
+
+        </div>
+    {{/is}}
+
+</div>

@@ -1,0 +1,93 @@
+@import "./media-queries.css";
+
+.u-margin-top-disabled {
+    margin-top: 0;
+}
+
+.u-disp-inline-block {
+    display: inline-block;
+}
+
+.u-disp-inline-flex {
+    display: inline-flex;
+}
+
+.u-disp-block {
+    display: block;
+}
+
+.u-disp-none {
+    display: none;
+}
+
+.u-no-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.u-text-center {
+    text-align: center;
+}
+
+.u-text-light {
+    font-weight: 300;
+}
+
+.u-text-bold {
+    font-weight: 700;
+}
+
+.u-font-h1,
+.u-font-h2,
+.u-font-large,
+.u-font-xlarge {
+    font-family: "Montserrat", system-ui;
+}
+
+.u-font-h1 {
+    font-size: var(--font-size-h1);
+}
+
+.u-font-h2 {
+    font-size: var(--font-size-h2);
+}
+
+.u-font-large {
+    font-size: var(--font-size-large);
+}
+
+.u-font-xlarge {
+    font-size: var(--font-size-xlarge);
+}
+
+.u-text-transform-capitalize {
+    text-transform: capitalize;
+}
+
+.u-text-transform-uppercase {
+    text-transform: uppercase;
+}
+
+.u-margin-x-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (--screen-1024) {
+    .u-content-center {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 950px;
+    }
+
+    .u-only-desktop {
+        display: initial;
+    }
+}
+
+@media (--screen-1200) {
+    .u-content-center {
+        max-width: 1100px;
+    }
+}

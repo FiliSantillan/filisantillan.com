@@ -1,0 +1,196 @@
+@import "../../global/media-queries.css";
+
+.navigation {
+    background: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: calc(var(--spacer) / 2) 0;
+
+    & .navigation__itemsList {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        &.itemsList--submenu {
+            background: var(--color-yellow);
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            flex-wrap: wrap;
+            top: 70px;
+            transition: 0.3s;
+            z-index: 99;
+        }
+
+        &.itemsList--submenu.isActive {
+            top: -70px;
+        }
+    }
+
+    @media (--screen-1024) {
+        background: none;
+        position: initial;
+        width: auto;
+        padding: 0;
+        margin-right: var(--spacer);
+
+        & .navigation__itemsList {
+            &.itemsList--submenu {
+                background: none;
+                position: initial;
+                width: auto;
+                padding: 0;
+                display: flex;
+                height: auto;
+            }
+        }
+    }
+}
+
+.navigation__item {
+    & .navigation__link {
+        display: flex;
+        align-items: center;
+        color: var(--color-dark);
+
+        & .navigation__icon {
+            width: 25px;
+            height: 25px;
+        }
+
+        & .navigation__text {
+            display: none;
+            font-size: var(--font-size-xsmall);
+        }
+    }
+
+    &.isItemCurrent {
+        & .navigation__link {
+            padding: calc(var(--spacer) / 4) calc(var(--spacer) / 2);
+            background: var(--color-yellow-alpha);
+            border-radius: 5px;
+            border: 1px solid var(--color-yellow);
+
+            & .navigation__icon {
+                margin-right: 0.3rem;
+            }
+
+            & .navigation__text {
+                display: block;
+            }
+        }
+    }
+
+    &.item--submenu {
+        width: 25%;
+
+        &.isItemCurrent {
+            & .navigation__link {
+                padding: 0;
+                background: none;
+                border-radius: 0;
+                border: none;
+
+                & .navigation__icon {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        & .navigation__link {
+            justify-content: center;
+            text-align: center;
+            flex-wrap: wrap;
+
+            & .navigation__icon {
+                margin-bottom: 0.5rem;
+            }
+            & .navigation__text {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        @media (--screen-1024) {
+            width: initial;
+        }
+    }
+
+    @media (--screen-1024) {
+        width: initial;
+        margin-right: 1rem;
+
+        & .navigation__link {
+            text-transform: uppercase;
+
+            &.link--menu {
+                display: none;
+            }
+            & .navigation__icon {
+                display: none;
+            }
+
+            & .navigation__text {
+                display: block;
+            }
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.isItemCurrent {
+            & .navigation__link {
+                color: var(--color-pink);
+                padding: 0;
+                background: none;
+                border-radius: 0;
+                border: none;
+            }
+        }
+    }
+}
+
+.icon-inicio {
+    background-image: var(--icon-home);
+}
+
+.icon-blog {
+    background-image: var(--icon-blog);
+}
+
+.icon-bits {
+    background-image: var(--icon-bit);
+}
+
+.icon-videos {
+    background-image: var(--icon-video);
+}
+
+.icon-agenda {
+    background-image: var(--icon-agenda);
+}
+
+.icon-mi-stack {
+    background-image: var(--icon-stack);
+}
+
+.icon-sobre-mi {
+    background-image: var(--icon-about);
+}
+
+.icon-contacto {
+    background-image: var(--icon-contact);
+}
+
+.icon-arrow-up {
+    background-image: var(--icon-arrow-up);
+}
+
+.icon-arrow-down {
+    background-image: var(--icon-arrow-down);
+}

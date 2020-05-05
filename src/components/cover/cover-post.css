@@ -1,0 +1,75 @@
+@import "../../global/media-queries.css";
+
+.cover-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 90%;
+
+    & .cover__introduction {
+        & h1 {
+            font-weight: 700;
+        }
+    }
+
+    & .cover__header,
+    & .cover__footer {
+        display: flex;
+    }
+
+    & .cover__header {
+        flex-wrap: wrap;
+
+        & .cover__tag {
+            width: 100%;
+            margin-bottom: calc(var(--spacer) / 2);
+        }
+    }
+
+    & .cover__footer {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @media (--screen-768) {
+        & .cover__introduction,
+        & .cover__header {
+            margin-bottom: calc(var(--spacer) * 2);
+        }
+
+        & .cover__introduction {
+            max-width: 75%;
+        }
+
+        & .cover__header {
+            justify-content: space-between;
+            align-items: center;
+
+            & .cover__tag {
+                width: auto;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @media (--screen-1200) {
+        & .cover__introduction,
+        & .cover__header {
+            margin-bottom: calc(var(--spacer) * 3);
+        }
+    }
+}
+
+.cover__share {
+    & .fb-share-button {
+        vertical-align: top;
+        margin-right: 0.5rem;
+        display: inline-block;
+    }
+
+    @media (--screen-768) {
+        & .fb-share-button {
+            margin-right: calc(var(--spacer) / 2);
+        }
+    }
+}

@@ -1,0 +1,47 @@
+<div class="cover-container u-content-center">
+    <div class="cover__introduction">
+        <h1 class="u-font-xlarge">{{title}}</h1>
+    </div>
+
+    {{#has tag="#page-agenda"}}
+        <div class="cover__description">
+            <p class="cover__text u-margin-top-disabled">
+                Me encanta compartir y transmitir conocimiento. A lo largo de mi vida como desarrollador he dado
+                diferentes charlas sobre distintos temas o tecnologías.
+            </p>
+        </div>
+
+        <div class="cover__button">
+            <a href="mailto:fili@filisantillan.com" class="btn-secondary">Invítame a hablar</a>
+        </div>
+    {{/has}}
+
+    {{#has tag="#page-stack"}}
+        <div class="cover__description">
+            <p class="cover__text u-margin-top-disabled">
+                Una lista de las herramientas, apps y el hardware que uso.
+            </p>
+        </div>
+    {{/has}}
+
+    {{#has tag="#page-me"}}
+        <div class="cover__description">
+            <p class="cover__text u-margin-top-disabled">
+                Hola, soy Fili. Desarrollador Frontend en México 🇲🇽 .
+            </p>
+        </div>
+    {{/has}}
+
+    {{#has tag="#page-contact"}}
+        <div class="cover__description">
+            <p class="cover__text u-margin-top-disabled">
+                Si tienes una opinión, encontraste un bug, tienes una idea para el sitio o quieres hablar de negocios,
+                estas en el lugar indicado.
+            </p>
+        </div>
+
+        <div class="cover__button">
+            <a href="mailto:fili@filisantillan.com" class=" btn-secondary">Mandar correo</a>
+        </div>
+    {{/has}}
+</div>

@@ -1,0 +1,124 @@
+@import "../../global/media-queries.css";
+
+.cover {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 50vh;
+
+    &.isCoverEnable {
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(22, 25, 37, 0.6);
+            z-index: -1;
+        }
+    }
+
+    &.isCoverDisabled {
+        background: var(--color-dark);
+        color: white;
+    }
+
+    &.cover--tag {
+        height: 25vh;
+    }
+
+    @media (--screen-1024) {
+        height: 450px;
+
+        &.cover--tag {
+            height: 250px;
+        }
+    }
+
+    @media (--screen-1440) {
+        height: 500px;
+
+        &.cover--tag {
+            height: 300px;
+        }
+    }
+}
+
+.cover-container {
+    width: 100%;
+    padding: 0 var(--spacer);
+    color: white;
+
+    & .cover__introduction {
+        & span {
+            font-weight: 300;
+        }
+
+        & strong {
+            font-weight: 700;
+        }
+
+        & h1 {
+            font-weight: 300;
+        }
+    }
+
+    & .cover__description {
+        margin-top: calc(var(--spacer) / 2);
+        line-height: 1.5;
+        & .cover__text {
+            font-weight: 400;
+            margin-bottom: 0;
+        }
+    }
+
+    & .cover__button {
+        margin-top: var(--spacer);
+    }
+
+    & .cover__social {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: var(--spacer);
+
+        & .cover__link {
+            margin-right: calc(var(--spacer) / 2);
+        }
+    }
+
+    @media (--screen-768) {
+        & .cover__social {
+            & .cover__link {
+                margin-right: var(--spacer);
+            }
+        }
+    }
+
+    @media (--screen-1024) {
+        padding: 0;
+
+        & .cover__description {
+            margin-top: var(--spacer);
+            width: 50%;
+            line-height: 1.8;
+        }
+
+        & .cover__button {
+            margin-top: calc(var(--spacer) * 2);
+        }
+
+        & .cover__social {
+            margin-top: calc(var(--spacer) * 2);
+        }
+    }
+
+    @media (--screen-1200) {
+        & .cover__description {
+            width: 60%;
+        }
+    }
+}

@@ -1,34 +1,75 @@
-{{!------------------------------------}}
-          {{!-- Page --}}
-{{!------------------------------------}}
-
-{{!-- This is a page template. A page outputs content just like any other post, and has all the same attributes by default, but you can also customise. --}}
-
-{{!-- Default: All default.hbs code is inserted in head --}}
 {{!< default }}
 
-{{!-- Everything inside the #post tags pulls data from the page --}}
+
 {{#post}}
 
-{{!-- Cover: Page cover image --}}
-<section class='cover {{#if feature_image}}cover-post cover--page' style='background-image: url({{img_url feature_image}}){{/if}}'>
-    {{> 'cover-page'}}
-</section>
+    {{#if feature_image}}
+        <style type="text/css">
+            .cover {
+                background-image: url({{img_url feature_image size="s"}});
+                background-image: -webkit-image-set(url({{img_url feature_image size="s"}}) 1x,
+                    url({{img_url feature_image size="l"}}) 2x);
+                background-image: image-set(url({{img_url feature_image size="s"}}) 1x,
+                    url({{img_url feature_image size="l"}}) 2x);
+            }
 
-{{!-- Page content wrap --}}
-<main class='article-wrapper' role='main'>
-    <article class='article'>
+            @media(min-width: 768px) {
+                .cover {
+                    background-image: url({{img_url feature_image size="l"}});
+                    background-image: -webkit-image-set(url({{img_url feature_image size="l"}}) 1x,
+                        url({{img_url feature_image size="xxl"}}) 2x);
+                    background-image: image-set(url({{img_url feature_image size="l"}}) 1x,
+                        url({{img_url feature_image size="xxl"}}) 2x);
+                }
+            }
 
-        {{!-- Content of the page --}}
-        <section class='article__content article--page'>
-            {{content}}
+            @media(min-width: 1024px) {
+                .cover {
+                    background-image: url({{img_url feature_image size="xl"}});
+                    background-image: -webkit-image-set(url({{img_url feature_image size="xl"}}) 1x,
+                        url({{img_url feature_image size="3xl"}}) 2x);
+                    background-image: image-set(url({{img_url feature_image size="xl"}}) 1x,
+                        url({{img_url feature_image size="3xl"}}) 2x);
+                }
+            }
+
+            @media(min-width: 1440px) {
+                .cover {
+                    background-image: url({{img_url feature_image size="3xl"}});
+                }
+            }
+        </style>
+    {{/if}}
+
+    <section class="cover cover--post {{#if feature_image}}isCoverEnable {{else}}isCoverDisabled{{/if}}">
+
+        {{> "cover/cover-page"}}
+
+    </section>
+
+    <main class='page-container' role='main'>
+        <article class='page-wrapper u-content-center'>
+            <section class='page'>
+                {{content}}
+            </section>
+        </article>
+    </main>
+
+    {{#if @labs.members}}
+        <section class="subscription">
+            {{> subscription/subscription }}
         </section>
+    {{/if}}
 
-    </article>
-</main>
-
-{{!-- Subscribe: tools for collecting emails from the blog --}}
-<section id='mc_embed_signup'>
-    {{> 'subscribe' }}
-</section>
 {{/post}}
+
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    });
+</script>

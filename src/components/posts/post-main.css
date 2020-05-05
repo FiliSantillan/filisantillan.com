@@ -1,0 +1,121 @@
+@import "../../global/media-queries.css";
+
+/* Main containers of the different post-cards on the site */
+/* Default container for posts, bits and videos */
+
+.site-main-container {
+    padding: calc(var(--spacer) * 2) var(--spacer);
+
+    & .site-main-container__title  {
+        display: block;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: var(--spacer);
+    }
+
+    @media (--screen-1024) {
+        padding: calc(var(--spacer) * 3) 0;
+    }
+}
+
+/* Variant container for bits only */
+
+.site-main-container--bits {
+    background: var(--color-blue);
+    position: relative;
+    z-index: 0;
+
+    & .site-main-container__description {
+        margin-top: 0;
+        margin-bottom: var(--spacer);
+        line-height: 1.5;
+    }
+
+    & .site-main-container__buttons {
+        text-align: center;
+        margin-bottom: calc(var(--spacer) * 2);
+
+        & .site-main-container__button {
+            min-width: 183px;
+
+            &:first-child {
+                margin-bottom: var(--spacer);
+            }
+        }
+    }
+
+    @media (--screen-1024) {
+        & .site-main-container__details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: var(--spacer);
+        }
+
+        & .site-main-container__title {
+            background: var(--color-dark);
+            color: white;
+            padding: var(--spacer);
+            margin: 0 0 var(--spacer);
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        & .site-main-container__description {
+            line-height: 1.8;
+        }
+
+        & .site-main-container__buttons {
+            margin-bottom: 8px;
+            text-align: left;
+
+            & .site-main-container__button {
+                margin-bottom: 0;
+
+                &:first-child {
+                    margin-right: var(--spacer);
+                }
+            }
+        }
+    }
+
+    @media (--screen-1200) {
+        & .site-main-container__details {
+            grid-template-columns: minmax(auto, 500px) 1fr;
+        }
+    }
+}
+
+/* Secondary container for post-cards and grid operation */
+
+.site-main-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: var(--spacer);
+    transition: 0.3s;
+
+    @media (--screen-768) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: var(--spacer);
+
+        & .site-main-wrapper__button {
+            grid-column: 1 / -1;
+        }
+    }
+
+    @media (--screen-1024) {
+        grid-template-columns: repeat(3, 1fr);
+
+        &.site-main-wrapper--bits {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        &.site-main-wrapper--bits-page {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        &.site-main-wrapper--video {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

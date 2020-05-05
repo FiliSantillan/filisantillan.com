@@ -1,0 +1,59 @@
+{{!< default }}
+
+{{#if @site.cover_image}}
+    <style type="text/css">
+        .cover {
+            background-image: url({{img_url @site.cover_image size="s"}});
+            background-image: -webkit-image-set(url({{img_url @site.cover_image size="s"}}) 1x,
+                url({{img_url @site.cover_image size="l"}}) 2x);
+            background-image: image-set(url({{img_url @site.cover_image size="s"}}) 1x,
+                url({{img_url @site.cover_image size="l"}}) 2x);
+        }
+
+        @media(min-width: 768px) {
+            .cover {
+                background-image: url({{img_url @site.cover_image size="l"}});
+                background-image: -webkit-image-set(url({{img_url @site.cover_image size="l"}}) 1x,
+                    url({{img_url @site.cover_image size="xxl"}}) 2x);
+                background-image: image-set(url({{img_url @site.cover_image size="l"}}) 1x,
+                    url({{img_url @site.cover_image size="xxl"}}) 2x);
+            }
+        }
+
+        @media(min-width: 1024px) {
+            .cover {
+                background-image: url({{img_url @site.cover_image size="xl"}});
+                background-image: -webkit-image-set(url({{img_url @site.cover_image size="xl"}}) 1x,
+                    url({{img_url @site.cover_image size="3xl"}}) 2x);
+                background-image: image-set(url({{img_url @site.cover_image size="xl"}}) 1x,
+                    url({{img_url @site.cover_image size="3xl"}}) 2x);
+            }
+        }
+
+        @media(min-width: 1440px) {
+            .cover {
+                background-image: url({{img_url @site.cover_image size="3xl"}});
+            }
+        }
+    </style>
+{{/if}}
+
+<section class="cover {{#if @site.cover_image}}isCoverEnable {{else}}isCoverDisabled{{/if}}">
+
+    {{> "cover/cover" title="Blog" description="Aprende, crece y mejora tus habilidades. Los artículos están enfocados en que logres entender y profundizar sobre un tema en particular." }}
+
+</section>
+
+<main id="site-main" class="site-main" role="main">
+    <section class="site-main-container u-content-center">
+        <div class="site-main-wrapper">
+            {{> "posts/post-card"}}
+        </div>
+    </section>
+</main>
+
+{{#if @labs.members}}
+    <section class="subscription">
+        {{> subscription/subscription }}
+    </section>
+{{/if}}

@@ -1,0 +1,17 @@
+@import "../../global/variables.css";
+@import "../../global/icons.css";
+@import "../../global/default.css";
+@import "../../global/utilities.css";
+@import "../../global/buttons.css";
+
+@import "../../components/header/header.css";
+@import "../../components/header/navigation.css";
+@import "../../components/search/search.css";
+@import "../../components/cover/cover.css";
+
+@import "../../components/posts/post-main.css";
+@import "../../components/posts/post-card.css";
+@import "../../components/posts/post-card-video.css";
+
+@import "../../components/subscription/subscription.css";
+@import "../../components/footer/footer.css";

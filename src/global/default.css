@@ -1,0 +1,71 @@
+html {
+    box-sizing: border-box;
+    font-size: var(--font-size-default);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Montserrat", system-ui;
+    background-color: var(--color-gray);
+    color: var(--color-dark);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", system-ui;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure {
+    margin: 0;
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+input,
+button {
+    border: none;
+}
+
+input:focus,
+button:focus {
+    outline: none;
+}
+
+/* ::selection {
+    background-color: var(--color-dark-c);
+    color: var(--color-ligth);
+} */

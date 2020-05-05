@@ -1,0 +1,108 @@
+.bit-single-post {
+    display: grid;
+
+    & .cover-bit  {
+        background: var(--color-blue);
+        background-image: var(--custom-gradient);
+        padding: var(--spacer);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        order: -1;
+    }
+
+    @media (--screen-1024) {
+        grid-template-columns: 2fr 1.5fr;
+        height: calc(100vh - 81.5px);
+
+        & .cover-bit {
+            text-align: left;
+            order: 0;
+        }
+    }
+
+    @media (--screen-1200) {
+        grid-template-columns: 2fr 1.2fr;
+    }
+
+    @media (--screen-1440) {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.cover-bit__header {
+    margin-bottom: var(--spacer);
+    display: flex;
+
+    & .cover-bit__share {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        & .fb-share-button,
+        & .twitter-share-button,
+        & .cover-bit__tags {
+            vertical-align: top;
+        }
+
+        & .fb-share-button,
+        & .twitter-share-button {
+            margin-right: calc(var(--spacer) / 2);
+            margin-bottom: calc(var(--spacer) / 2);
+        }
+    }
+
+    @media (--screen-375) {
+        & .cover-bit__share {
+            & .fb-share-button,
+            & .twitter-share-button {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @media (--screen-1024) {
+        & .cover-bit__share {
+            justify-content: flex-start;
+        }
+    }
+}
+
+.cover-bit__tags {
+    border: 1px solid var(--color-dark);
+    display: inline-flex;
+    padding: 4px 8px;
+    border-radius: 5px;
+    background-color: var(--color-dark);
+    color: white;
+
+    & .cover-bit__tag {
+        font-size: var(--font-size-xsmall);
+    }
+}
+
+.cover-bit__image {
+    margin-bottom: var(--spacer);
+    border: 2px solid var(--color-dark);
+    border-radius: 5px;
+    overflow: hidden;
+    display: inline-block;
+
+    & img {
+        width: 100%;
+    }
+
+    @media (--screen-1024) {
+        max-width: 350px;
+    }
+
+    @media (--screen-1200) {
+        max-width: 380px;
+    }
+
+    @media (--screen-1440) {
+        max-width: 450px;
+    }
+}

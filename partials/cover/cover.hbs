@@ -1,0 +1,34 @@
+<div class="cover-container u-content-center">
+    <div class="cover__introduction">
+        {{#is "index"}}
+            <span class="u-font-xlarge">Hola, soy </span>
+            <strong class="u-font-xlarge">Fili.</strong>
+            {{else}}
+                <h1 class="u-font-xlarge">{{title}}</h1>
+        {{/is}}
+    </div>
+
+    <div class="cover__description">
+        <p class="cover__text u-margin-top-disabled">
+            {{#if description}}
+                {{description}}
+            {{else}}
+                {{@site.description}}
+            {{/if}}
+        </p>
+    </div>
+
+    {{#is "bits"}}
+        <div class="cover__button">
+            <a href="https://rebrand.ly/bits" class="btn-secondary" target="_blank" rel="noopener noreferrer">Ver en
+                github</a>
+        </div>
+    {{/is}}
+
+    {{#is "videos"}}
+        <div class="cover__button">
+            <a href="https://rebrand.ly/f2jmm48" class="btn-secondary" target="_blank" rel="noopener noreferrer">Ver en
+                youtube</a>
+        </div>
+    {{/is}}
+</div>
