@@ -5,7 +5,7 @@ export const states = () => {
         input: "#search-input",
         showResult: "#search-result",
         resultTemplate: "<ul class='search-results-wrapper'>##results</ul>",
-        contentApiKey: "e08066d77dbdb6606d68c93656",
+        contentApiKey: "4028f2ac7879799938592eb6cc",
     });
 
     const iconSearch = document.getElementById("icon-search");

@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 100%;
+    height: 90%;
 
     & .cover__introduction {
         & h1 {
@@ -38,7 +38,7 @@
         }
 
         & .cover__introduction {
-            max-width: 70%;
+            max-width: 75%;
         }
 
         & .cover__header {

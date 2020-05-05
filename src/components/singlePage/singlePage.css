@@ -2,6 +2,10 @@
     padding: 0 var(--spacer) var(--spacer);
     line-height: 1.5;
 
+    & p:first-of-type {
+        margin-top: var(--spacer);
+    }
+
     & h1,
     & h2,
     & h3,
