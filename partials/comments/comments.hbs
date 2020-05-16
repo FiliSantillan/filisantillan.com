@@ -6,7 +6,16 @@
     <strong class="comments__text">Comparte tu opinión o duda:</strong>
 </div>
 
-<div class="facebook-wrapper u-content-center">
-    <div class="fb-comments" data-href="{{url absolute="true"}}" data-width="100%" data-numposts="5"
-        data-colorscheme="light"></div>
-</div>
+<div id="disqus_thread" class="u-content-center"></div>
+<script>
+    var disqus_config = function () {
+        this.page.url = "{{url absolute="true"}}";
+        this.page.identifier = "ghost-{{comment_id}}"
+    };
+    (function () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://filisantillan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>

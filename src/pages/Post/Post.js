@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let titleId = title.id;
         let titleText = title.textContent;
         let a = document.createElement("a");
+        a.classList.add("h2-link");
 
         ul.innerHTML += `<li class="table-of-contents__item">
                             <a href="#${titleId}" class="table-of-contents__link">${titleText}</a>
