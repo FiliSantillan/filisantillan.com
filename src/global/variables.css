@@ -12,7 +12,7 @@
     );
 
     --font-size-xlarge: calc(
-        30px + (60 - 30) * ((100vw - 300px) / (1600 - 300))
+        30px + (50 - 30) * ((100vw - 300px) / (1600 - 300))
     );
 
     --font-size-medium: calc(
@@ -43,7 +43,10 @@
     --color-gray: #edf2f4;
     --color-gray-b: #b1b1b1;
 
-    /* Interactive colors */
+    /*  Social colors */
+
+    --color-facebook: #1877f2;
+    --color-twitter: #00acee;
 
     /* Denotive colors (states) */
     --color-error: #ee6969;

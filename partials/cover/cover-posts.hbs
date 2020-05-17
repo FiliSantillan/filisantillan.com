@@ -11,10 +11,23 @@
         </div>
 
         <div class="cover__share">
-            <div class="fb-share-button" data-href="{{url absolute="true"}}" data-layout="button_count"
-                data-size="large" data-mobile-iframe="true"><a target="_blank" href="{{url absolute="true"}}"
-                    class="fb-xfbml-parse-ignore">Compartir</a></div>
-            <a class="twitter-share-button" href="{{url absolute="true"}}" data-size="large">Tweet</a>
+
+            <a href="{{url absolute="true"}}" class="share__button share-post-button" id="share-button"
+                title="Compartir">
+                Compartir
+            </a>
+
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                class="share__facebook share-post-button" id="share-facebook" title="Facebook">
+                {{> icons/icon-facebook-mini }}
+                <span>Compartir</span>
+            </a>
+
+            <a href="https://twitter.com/intent/tweet?url={{url absolute="true"}}&amp;text={{title}}"
+                class="share__twitter share-post-button" id="share-twitter" title="Twitter">
+                {{> icons/icon-twitter-mini}}
+                <span>Twittear</span>
+            </a>
         </div>
     </header>
 

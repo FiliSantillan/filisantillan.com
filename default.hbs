@@ -118,8 +118,101 @@
 
     {{!-- Ghost Head This tag outputs SEO meta + structured data and other important settings. --}}
 
-    {{ghost_head}}
+    <script async defer>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Facebook Pixel (Analytics)
+            !function (f, b, e, v, n, t, s) {
+                if (f.fbq) return; n = f.fbq = function () {
+                    n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                };
+                if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+                n.queue = []; t = b.createElement(e); t.async = !0;
+                t.src = v; s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s)
+            }(window, document, 'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1772585146121107');
+            fbq('track', 'PageView');
 
+            const socialButtons = document.getElementsByClassName("social-link");
+
+            for (const button of socialButtons) {
+
+                button.addEventListener("click", function () {
+                    fbq('trackCustom', "socialClick", {
+                        content_name: document.title,
+                        destination_name: this.title,
+                        destination_url: this.href,
+                    });
+                })
+            }
+        });
+    </script>
+
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1772585146121107&ev=PageView&noscript=1" />
+    </noscript>
+
+    {{#is "post"}}
+        {{#post}}
+            {{#has tag="blog,bit,video"}}
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+
+                        fbq('track', 'ViewContent', {
+                            id: "ghost-{{id}}",
+                            title: "{{title}}",
+                            published_at: "{{date format='YYYY-MM-DD'}}"
+                        });
+
+                        const buttons = document.getElementsByClassName("share-post-button");
+
+                        for (const button of buttons) {
+                            button.addEventListener("click", function () {
+
+                                let platform;
+
+                                if (this.title === "Facebook") {
+                                    platform = "Facebook";
+                                } else if (this.title === "Twitter") {
+                                    platform = "Twitter";
+                                } else {
+                                    platform = "Native";
+                                }
+
+                                fbq('trackCustom', "shareClick", {
+                                    content_name: document.title,
+                                    sharing_platform: platform,
+                                });
+                            })
+                        }
+                    });
+                </script>
+            {{/has}}
+        {{/post}}
+    {{/is}}
+
+    {{#is "page"}}
+        {{#post}}
+            {{#has tag="#page-agenda, #page-contact"}}
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        const contactButton = document.getElementById("btn-contact");
+
+                        contactButton.addEventListener("click", function () {
+                            fbq('track', "Contact", {
+                                content_name: document.title,
+                            });
+                        });
+                    });
+                </script>
+            {{/has}}
+        {{/post}}
+    {{/is}}
+
+    {{ghost_head}}
 </head>
 
 <body class="{{body_class}}">
@@ -182,6 +275,47 @@
     {{/is}}
 
     {{!-- Ghost Footer, Ghost outputs important scripts and data with this tag. --}}
+
+    {{#is "post"}}
+        {{#post}}
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    if (navigator.share) {
+                        let buttonShare = document.getElementById("share-button");
+
+                        buttonShare.addEventListener("click", (event) => {
+                            event.preventDefault();
+                            const URL = this.href;
+
+                            navigator.share({
+                                title: document.title,
+                                url: URL
+                            });
+                            return false;
+                        });
+                    }
+
+                    const fbButton = document.getElementById("share-facebook"),
+                        twButton = document.getElementById("share-twitter"),
+                        twFrame = document.querySelector(".kg-embed-card script[src='https://platform.twitter.com/widgets.js']");
+
+                    if (!twFrame) {
+                        twButton.addEventListener("click", (event) => {
+                            event.preventDefault();
+                            let twpopup = window.open(this.href, document.title, "width=600, height=400, scrollbars=no");
+                            return false;
+                        });
+                    }
+
+                    fbButton.addEventListener("click", (event) => {
+                        event.preventDefault();
+                        let fbpopup = window.open(this.href, document.title, "width=600, height=400, scrollbars=no");
+                        return false;
+                    });
+                });
+            </script>
+        {{/post}}
+    {{/is}}
 
     {{ghost_foot}}
 

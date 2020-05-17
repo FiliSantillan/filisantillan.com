@@ -3,7 +3,7 @@
 {{#post}}
 
   <section class="bit-single-post">
-    <main class='post-container post-container--bit' role='main'>
+    <main class='post-container post-container--bit' role='main' id="post">
       <article class='post-wrapper'>
         <section class='post post--bit'>
           <h1 class="u-font-xlarge">{{title}}</h1>
@@ -38,5 +38,5 @@
     var height = image.attributes.height.value;
     var ratio = width / height;
     container.style.flex = ratio + ' 1 0%';
-  })
+  });
 </script>

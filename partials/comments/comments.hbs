@@ -6,7 +6,32 @@
     <strong class="comments__text">Comparte tu opinión o duda:</strong>
 </div>
 
-<div class="facebook-wrapper u-content-center">
-    <div class="fb-comments" data-href="{{url absolute="true"}}" data-width="100%" data-numposts="5"
-        data-colorscheme="light"></div>
+<div id="disqus_thread" class="u-content-center">
+    <button class="btn" id="load-comments">Ver comentarios</button>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const disqus_shortname = "filisantillan";
+        const btnLoadComments = document.getElementById("load-comments");
+
+        const disqus_config = function () {
+            this.page.url = "{{url absolute="true"}}";
+            this.page.identifier = "ghost-{{comment_id}}"
+        };
+
+        let is_disqus_loaded = false;
+
+        btnLoadComments.addEventListener("click", function () {
+            if (!is_disqus_loaded) {
+                is_disqus_loaded = true;
+                let d = document, s = d.createElement('script');
+
+                s.src = `https://${disqus_shortname}.disqus.com/embed.js`;
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            }
+
+        });
+    });
+</script>

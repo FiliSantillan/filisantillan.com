@@ -8,6 +8,12 @@
         margin-top: var(--spacer);
     }
 
+    &
+        a:not(.btn, .btn-alternative, .table-of-contents__link, .h2-link, .kg-bookmark-container) {
+        text-decoration: underline;
+        color: var(--color-pink);
+    }
+
     & h1,
     & h2,
     & h3,
@@ -17,23 +23,12 @@
         overflow: auto;
     }
 
-    & h1,
-    & h2 {
-        & a {
-            text-decoration: none;
-        }
-    }
-
     & h2 {
         font-size: var(--font-size-large);
     }
 
     & h3 {
         font-size: var(--font-size-h1);
-    }
-
-    & a {
-        text-decoration: underline;
     }
 
     & strong {
@@ -305,6 +300,10 @@ blockquote {
 
     & .text {
         margin: 0;
+    }
+
+    & a {
+        color: var(--color-dark) !important;
     }
 }
 
@@ -604,9 +603,5 @@ blockquote:not(.block) {
             display: block;
             font-size: var(--font-size-large);
         }
-    }
-
-    @media (--screen-1024) {
-        padding: var(--spacer) 0;
     }
 }
