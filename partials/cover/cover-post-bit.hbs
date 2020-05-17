@@ -1,18 +1,18 @@
 <div class="cover-bit-container">
   <header class="cover-bit__header">
     <div class="cover-bit__share">
-      <a href="https://filisantillan.com/" class="share__button" id="share-button">
+      <a href="{{url absolute="true"}}" class="share__button share-post-button" id="share-button" title="Compartir">
         Compartir
       </a>
 
-      <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" class="share__facebook"
-        id="share-facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+        class="share__facebook share-post-button" id="share-facebook" title="Facebook">
         {{> icons/icon-facebook-mini }}
         <span>Compartir</span>
       </a>
 
-      <a href="https://twitter.com/intent/tweet?url={{url absolute="true"}}&amp;text={{title}}" class="share__twitter"
-        id="share-twitter">
+      <a href="https://twitter.com/intent/tweet?url={{url absolute="true"}}&amp;text={{title}}"
+        class="share__twitter share-post-button" id="share-twitter" title="Twitter">
         {{> icons/icon-twitter-mini}}
         <span>Twittear</span>
       </a>

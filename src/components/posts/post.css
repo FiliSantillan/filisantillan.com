@@ -301,6 +301,10 @@ blockquote {
     & .text {
         margin: 0;
     }
+
+    & a {
+        color: var(--color-dark) !important;
+    }
 }
 
 div[class="warning"] {

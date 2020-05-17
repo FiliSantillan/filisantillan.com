@@ -39,28 +39,4 @@
     var ratio = width / height;
     container.style.flex = ratio + ' 1 0%';
   });
-
-  if (navigator.share) {
-    let buttonShare = document.getElementById("share-button");
-
-    buttonShare.addEventListener("click", (event) => {
-      event.preventDefault();
-      const URL = this.href;
-
-      navigator.share({
-        title: document.title,
-        url: URL
-      });
-      return false;
-    });
-  }
-
-  const fbButton = document.getElementById("share-facebook"),
-    twButton = document.getElementById("share-twitter");
-
-  fbButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    let fbpopup = window.open(this.href, document.title, "width=600, height=400, scrollbars=no");
-    return false;
-  });
 </script>

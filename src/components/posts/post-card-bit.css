@@ -22,10 +22,11 @@
         bottom: 0;
         background: white;
         width: 100%;
-        padding: calc(var(--spacer) / 2);
+        padding: calc(var(--spacer) / 2) calc(var(--spacer) / 4);
         color: var(--dark-color);
         text-align: center;
         border-top: 2px solid var(--color-dark);
+        font-size: var(--font-size-h3);
     }
 
     @media (--screen-768) {

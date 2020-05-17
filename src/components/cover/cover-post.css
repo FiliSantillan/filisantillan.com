@@ -85,7 +85,8 @@
     }
 
     & .share__button {
-        background-color: var(--color-dark);
+        background-color: white;
+        color: var(--color-dark);
         padding: 0 12px;
     }
 
