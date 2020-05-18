@@ -300,14 +300,14 @@
                         twFrame = document.querySelector(".kg-embed-card script[src='https://platform.twitter.com/widgets.js']");
 
                     if (!twFrame) {
-                        twButton.addEventListener("click", (event) => {
+                        twButton.addEventListener("click", function (event) {
                             event.preventDefault();
                             let twpopup = window.open(this.href, document.title, "width=600, height=400, scrollbars=no");
                             return false;
                         });
                     }
 
-                    fbButton.addEventListener("click", (event) => {
+                    fbButton.addEventListener("click", function (event) {
                         event.preventDefault();
                         let fbpopup = window.open(this.href, document.title, "width=600, height=400, scrollbars=no");
                         return false;
