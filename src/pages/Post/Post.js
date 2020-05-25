@@ -12,8 +12,19 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Youtube
+    let links = document.querySelectorAll("#post a");
 
+    for (let link of links) {
+        const text = link.href;
+        const isSiteMatching = /^https:\/\/filisantillan.com/.test(text);
+
+        if (!isSiteMatching) {
+            link.setAttribute("target", "_blank");
+            link.setAttribute("rel", "noopener noreferrer");
+        }
+    }
+
+    // Youtube
     const allVideos = document.querySelectorAll(
         "iframe[src^='https://www.youtube.com/embed/'], iframe[src^='https://player.vimeo.com/video/']"
     );

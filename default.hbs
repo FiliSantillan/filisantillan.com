@@ -283,7 +283,7 @@
                     if (navigator.share) {
                         let buttonShare = document.getElementById("share-button");
 
-                        buttonShare.addEventListener("click", (event) => {
+                        buttonShare.addEventListener("click", function (event) {
                             event.preventDefault();
                             const URL = this.href;
 
