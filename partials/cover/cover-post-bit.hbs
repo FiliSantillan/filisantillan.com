@@ -2,7 +2,8 @@
   <header class="cover-bit__header">
     <div class="cover-bit__share">
       <a href="{{url absolute="true"}}" class="share__button share-post-button" id="share-button" title="Compartir">
-        Compartir
+        {{> icons/icon-share }}
+        <span>Compartir</span>
       </a>
 
       <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
@@ -16,6 +17,7 @@
         {{> icons/icon-twitter-mini}}
         <span>Twittear</span>
       </a>
+
       {{#if tags}}
         {{#foreach tags from="3" limit="1"}}
           <div class="cover-bit__tags">

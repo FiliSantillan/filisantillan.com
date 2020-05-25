@@ -340,7 +340,7 @@ blockquote:not(.block) {
         position: relative;
         width: 75vw;
         min-width: 100%;
-        margin: auto calc(50% - 50vw);
+        margin: auto calc(50% - 50vw) var(--spacer);
         transform: translateX(calc(50vw - 50%));
     }
 
@@ -603,5 +603,9 @@ blockquote:not(.block) {
             display: block;
             font-size: var(--font-size-large);
         }
+    }
+
+    @media (--screen-1024) {
+        padding: var(--spacer) var(--spacer) calc(var(--spacer) * 2);
     }
 }
