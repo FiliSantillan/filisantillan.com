@@ -11,19 +11,19 @@
 
 <head>
     {{#is "index, page, post, tag, author"}}
-        <title>{{meta_title}}</title>
+    <title>{{meta_title}}</title>
     {{/is}}
 
     {{#is "blog"}}
-        <title>Blog</title>
+    <title>Blog</title>
     {{/is}}
 
     {{#is "bits"}}
-        <title>Bits</title>
+    <title>Bits</title>
     {{/is}}
 
     {{#is "videos"}}
-        <title>Videos</title>
+    <title>Videos</title>
     {{/is}}
 
     {{!-- Document Settings --}}
@@ -60,60 +60,60 @@
 
     {{!-- Custom styles by page type --}}
     {{#is "index"}}
-        <link rel="preload" href='{{asset "styles/home-bundle.css"}}' as="style">
-        <link rel="prefetch" href='{{asset "js/home-bundle.js"}}' as="script">
-        <link rel='stylesheet' href='{{asset "styles/home-bundle.css"}}'>
+    <link rel="preload" href='{{asset "styles/home-bundle.css"}}' as="style">
+    <link rel="prefetch" href='{{asset "js/home-bundle.js"}}' as="script">
+    <link rel='stylesheet' href='{{asset "styles/home-bundle.css"}}'>
     {{/is}}
 
     {{#is "blog"}}
-        <link rel="preload" href='{{asset "styles/blog-bundle.css"}}' as="style">
-        <link rel="prefetch" href='{{asset "js/blog-bundle.js"}}' as="script">
-        <link rel='stylesheet' href='{{asset "styles/blog-bundle.css"}}'>
+    <link rel="preload" href='{{asset "styles/blog-bundle.css"}}' as="style">
+    <link rel="prefetch" href='{{asset "js/blog-bundle.js"}}' as="script">
+    <link rel='stylesheet' href='{{asset "styles/blog-bundle.css"}}'>
     {{/is}}
 
     {{#is "bits"}}
-        <link rel="preload" href='{{asset "styles/bit-bundle.css"}}' as="style">
-        <link rel="prefetch" href='{{asset "js/bit-bundle.js"}}' as="script">
-        <link rel='stylesheet' href='{{asset "styles/bit-bundle.css"}}'>
+    <link rel="preload" href='{{asset "styles/bit-bundle.css"}}' as="style">
+    <link rel="prefetch" href='{{asset "js/bit-bundle.js"}}' as="script">
+    <link rel='stylesheet' href='{{asset "styles/bit-bundle.css"}}'>
     {{/is}}
 
     {{#is "videos"}}
-        <link rel="preload" href='{{asset "styles/video-bundle.css"}}' as="style">
-        <link rel="prefetch" href='{{asset "js/video-bundle.js"}}' as="script">
-        <link rel='stylesheet' href='{{asset "styles/video-bundle.css"}}'>
+    <link rel="preload" href='{{asset "styles/video-bundle.css"}}' as="style">
+    <link rel="prefetch" href='{{asset "js/video-bundle.js"}}' as="script">
+    <link rel='stylesheet' href='{{asset "styles/video-bundle.css"}}'>
     {{/is}}
 
     {{#is "post"}}
-        {{#post}}
-            {{#has tag="blog,video"}}
-                <link rel="preload" href='{{asset "styles/post-bundle.css"}}' as="style">
-                <link rel="prefetch" href='{{asset "js/post-bundle.js"}}' as="script">
-                <link rel='stylesheet' href='{{asset "styles/post-bundle.css"}}'>
-            {{/has}}
-            {{#has tag="bit"}}
-                <link rel="preload" href='{{asset "styles/postbit-bundle.css"}}' as="style">
-                <link rel="prefetch" href='{{asset "js/postbit-bundle.js"}}' as="script">
-                <link rel='stylesheet' href='{{asset "styles/postbit-bundle.css"}}'>
-            {{/has}}
-        {{/post}}
+    {{#post}}
+    {{#has tag="blog,video"}}
+    <link rel="preload" href='{{asset "styles/post-bundle.css"}}' as="style">
+    <link rel="prefetch" href='{{asset "js/post-bundle.js"}}' as="script">
+    <link rel='stylesheet' href='{{asset "styles/post-bundle.css"}}'>
+    {{/has}}
+    {{#has tag="bit"}}
+    <link rel="preload" href='{{asset "styles/postbit-bundle.css"}}' as="style">
+    <link rel="prefetch" href='{{asset "js/postbit-bundle.js"}}' as="script">
+    <link rel='stylesheet' href='{{asset "styles/postbit-bundle.css"}}'>
+    {{/has}}
+    {{/post}}
     {{/is}}
 
     {{#is "page"}}
-        <link rel="preload" href='{{asset "styles/singlepage-bundle.css"}}' as="style">
-        <link rel="prefetch" href='{{asset "js/singlepage-bundle.js"}}' as="script">
-        <link rel='stylesheet' href='{{asset "styles/singlepage-bundle.css"}}'>
+    <link rel="preload" href='{{asset "styles/singlepage-bundle.css"}}' as="style">
+    <link rel="prefetch" href='{{asset "js/singlepage-bundle.js"}}' as="script">
+    <link rel='stylesheet' href='{{asset "styles/singlepage-bundle.css"}}'>
     {{/is}}
 
     {{#is "tag"}}
-        <link rel="preload" href='{{asset "styles/tag-bundle.css"}}' as="style">
-        <link rel="prefetch" href='{{asset "js/tag-bundle.js"}}' as="script">
-        <link rel='stylesheet' href='{{asset "styles/tag-bundle.css"}}'>
+    <link rel="preload" href='{{asset "styles/tag-bundle.css"}}' as="style">
+    <link rel="prefetch" href='{{asset "js/tag-bundle.js"}}' as="script">
+    <link rel='stylesheet' href='{{asset "styles/tag-bundle.css"}}'>
     {{/is}}
 
     {{#is "author"}}
-        <link rel="preload" href='{{asset "styles/author-bundle.css"}}' as="style">
-        <link rel="prefetch" href='{{asset "js/author-bundle.js"}}' as="script">
-        <link rel='stylesheet' href='{{asset "styles/author-bundle.css"}}'>
+    <link rel="preload" href='{{asset "styles/author-bundle.css"}}' as="style">
+    <link rel="prefetch" href='{{asset "js/author-bundle.js"}}' as="script">
+    <link rel='stylesheet' href='{{asset "styles/author-bundle.css"}}'>
     {{/is}}
 
     {{!-- Ghost Head This tag outputs SEO meta + structured data and other important settings. --}}
@@ -156,60 +156,60 @@
     </noscript>
 
     {{#is "post"}}
-        {{#post}}
-            {{#has tag="blog,bit,video"}}
-                <script>
-                    document.addEventListener("DOMContentLoaded", () => {
+    {{#post}}
+    {{#has tag="blog,bit,video"}}
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
 
-                        fbq('track', 'ViewContent', {
-                            id: "ghost-{{id}}",
-                            title: "{{title}}",
-                            published_at: "{{date format='YYYY-MM-DD'}}"
-                        });
+            fbq('track', 'ViewContent', {
+                id: "ghost-{{id}}",
+                title: "{{title}}",
+                published_at: "{{date format='YYYY-MM-DD'}}"
+            });
 
-                        const buttons = document.getElementsByClassName("share-post-button");
+            const buttons = document.getElementsByClassName("share-post-button");
 
-                        for (const button of buttons) {
-                            button.addEventListener("click", function () {
+            for (const button of buttons) {
+                button.addEventListener("click", function () {
 
-                                let platform;
+                    let platform;
 
-                                if (this.title === "Facebook") {
-                                    platform = "Facebook";
-                                } else if (this.title === "Twitter") {
-                                    platform = "Twitter";
-                                } else {
-                                    platform = "Native";
-                                }
+                    if (this.title === "Facebook") {
+                        platform = "Facebook";
+                    } else if (this.title === "Twitter") {
+                        platform = "Twitter";
+                    } else {
+                        platform = "Native";
+                    }
 
-                                fbq('trackCustom', "shareClick", {
-                                    content_name: document.title,
-                                    sharing_platform: platform,
-                                });
-                            })
-                        }
+                    fbq('trackCustom', "shareClick", {
+                        content_name: document.title,
+                        sharing_platform: platform,
                     });
-                </script>
-            {{/has}}
-        {{/post}}
+                })
+            }
+        });
+    </script>
+    {{/has}}
+    {{/post}}
     {{/is}}
 
     {{#is "page"}}
-        {{#post}}
-            {{#has tag="#page-agenda, #page-contact"}}
-                <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                        const contactButton = document.getElementById("btn-contact");
+    {{#post}}
+    {{#has tag="#page-agenda, #page-contact"}}
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const contactButton = document.getElementById("btn-contact");
 
-                        contactButton.addEventListener("click", function () {
-                            fbq('track', "Contact", {
-                                content_name: document.title,
-                            });
-                        });
-                    });
-                </script>
-            {{/has}}
-        {{/post}}
+            contactButton.addEventListener("click", function () {
+                fbq('track', "Contact", {
+                    content_name: document.title,
+                });
+            });
+        });
+    </script>
+    {{/has}}
+    {{/post}}
     {{/is}}
 
     {{ghost_head}}
@@ -236,85 +236,85 @@
 
     {{!-- Custom scripts by page type --}}
     {{#is "index"}}
-        <script src='{{asset "js/home-bundle.js"}}'></script>
+    <script src='{{asset "js/home-bundle.js"}}'></script>
     {{/is}}
 
     {{#is "blog"}}
-        <script src='{{asset "js/blog-bundle.js"}}'></script>
+    <script src='{{asset "js/blog-bundle.js"}}'></script>
     {{/is}}
 
     {{#is "bits"}}
-        <script src='{{asset "js/bit-bundle.js"}}'></script>
+    <script src='{{asset "js/bit-bundle.js"}}'></script>
     {{/is}}
 
     {{#is "videos"}}
-        <script src='{{asset "js/video-bundle.js"}}'></script>
+    <script src='{{asset "js/video-bundle.js"}}'></script>
     {{/is}}
 
     {{#is "post"}}
-        {{#post}}
-            {{#has tag="blog,video"}}
-                <script src='{{asset "js/post-bundle.js"}}'></script>
-            {{/has}}
-            {{#has tag="bit"}}
-                <script src='{{asset "js/postbit-bundle.js"}}'></script>
-            {{/has}}
-        {{/post}}
+    {{#post}}
+    {{#has tag="blog,video"}}
+    <script src='{{asset "js/post-bundle.js"}}'></script>
+    {{/has}}
+    {{#has tag="bit"}}
+    <script src='{{asset "js/postbit-bundle.js"}}'></script>
+    {{/has}}
+    {{/post}}
     {{/is}}
 
     {{#is "page"}}
-        <script src='{{asset "js/singlepage-bundle.js"}}'></script>
+    <script src='{{asset "js/singlepage-bundle.js"}}'></script>
     {{/is}}
 
     {{#is "tag"}}
-        <script src='{{asset "js/tag-bundle.js"}}'></script>
+    <script src='{{asset "js/tag-bundle.js"}}'></script>
     {{/is}}
 
     {{#is "author"}}
-        <script src='{{asset "js/author-bundle.js"}}'></script>
+    <script src='{{asset "js/author-bundle.js"}}'></script>
     {{/is}}
 
     {{!-- Ghost Footer, Ghost outputs important scripts and data with this tag. --}}
 
     {{#is "post"}}
-        {{#post}}
-            <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                    if (navigator.share) {
-                        let buttonShare = document.getElementById("share-button");
+    {{#post}}
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (navigator.share) {
+                let buttonShare = document.getElementById("share-button");
 
-                        buttonShare.addEventListener("click", function (event) {
-                            event.preventDefault();
-                            const URL = this.href;
+                buttonShare.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const URL = this.href;
 
-                            navigator.share({
-                                title: document.title,
-                                url: URL
-                            });
-                            return false;
-                        });
-                    }
-
-                    const fbButton = document.getElementById("share-facebook"),
-                        twButton = document.getElementById("share-twitter"),
-                        twFrame = document.querySelector(".kg-embed-card script[src='https://platform.twitter.com/widgets.js']");
-
-                    if (!twFrame) {
-                        twButton.addEventListener("click", function (event) {
-                            event.preventDefault();
-                            let twpopup = window.open(this.href, document.title, "width=600, height=400, scrollbars=no");
-                            return false;
-                        });
-                    }
-
-                    fbButton.addEventListener("click", function (event) {
-                        event.preventDefault();
-                        let fbpopup = window.open(this.href, document.title, "width=600, height=400, scrollbars=no");
-                        return false;
+                    navigator.share({
+                        title: document.title,
+                        url: URL
                     });
+                    return false;
                 });
-            </script>
-        {{/post}}
+            }
+
+            const fbButton = document.getElementById("share-facebook"),
+                twButton = document.getElementById("share-twitter"),
+                twFrame = document.querySelector(".kg-embed-card script[src='https://platform.twitter.com/widgets.js']");
+
+            if (!twFrame) {
+                twButton.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    let twpopup = window.open(this.href, document.title, "width=600, height=400, scrollbars=no");
+                    return false;
+                });
+            }
+
+            fbButton.addEventListener("click", function (event) {
+                event.preventDefault();
+                let fbpopup = window.open(this.href, document.title, "width=600, height=400, scrollbars=no");
+                return false;
+            });
+        });
+    </script>
+    {{/post}}
     {{/is}}
 
     {{ghost_foot}}

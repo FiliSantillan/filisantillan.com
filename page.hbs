@@ -3,63 +3,63 @@
 
 {{#post}}
 
-    {{#if feature_image}}
-        <style type="text/css">
-            .cover {
-                background-image: url({{img_url feature_image size="s"}});
-                background-image: -webkit-image-set(url({{img_url feature_image size="s"}}) 1x,
-                    url({{img_url feature_image size="l"}}) 2x);
-                background-image: image-set(url({{img_url feature_image size="s"}}) 1x,
-                    url({{img_url feature_image size="l"}}) 2x);
-            }
+{{#if feature_image}}
+<style type="text/css">
+    .cover {
+        background-image: url({{img_url feature_image size="s"}});
+        background-image: -webkit-image-set(url({{img_url feature_image size="s"}}) 1x,
+            url({{img_url feature_image size="l"}}) 2x);
+        background-image: image-set(url({{img_url feature_image size="s"}}) 1x,
+            url({{img_url feature_image size="l"}}) 2x);
+    }
 
-            @media(min-width: 768px) {
-                .cover {
-                    background-image: url({{img_url feature_image size="l"}});
-                    background-image: -webkit-image-set(url({{img_url feature_image size="l"}}) 1x,
-                        url({{img_url feature_image size="xxl"}}) 2x);
-                    background-image: image-set(url({{img_url feature_image size="l"}}) 1x,
-                        url({{img_url feature_image size="xxl"}}) 2x);
-                }
-            }
+    @media(min-width: 768px) {
+        .cover {
+            background-image: url({{img_url feature_image size="l"}});
+            background-image: -webkit-image-set(url({{img_url feature_image size="l"}}) 1x,
+                url({{img_url feature_image size="xxl"}}) 2x);
+            background-image: image-set(url({{img_url feature_image size="l"}}) 1x,
+                url({{img_url feature_image size="xxl"}}) 2x);
+        }
+    }
 
-            @media(min-width: 1024px) {
-                .cover {
-                    background-image: url({{img_url feature_image size="xl"}});
-                    background-image: -webkit-image-set(url({{img_url feature_image size="xl"}}) 1x,
-                        url({{img_url feature_image size="3xl"}}) 2x);
-                    background-image: image-set(url({{img_url feature_image size="xl"}}) 1x,
-                        url({{img_url feature_image size="3xl"}}) 2x);
-                }
-            }
+    @media(min-width: 1024px) {
+        .cover {
+            background-image: url({{img_url feature_image size="xl"}});
+            background-image: -webkit-image-set(url({{img_url feature_image size="xl"}}) 1x,
+                url({{img_url feature_image size="3xl"}}) 2x);
+            background-image: image-set(url({{img_url feature_image size="xl"}}) 1x,
+                url({{img_url feature_image size="3xl"}}) 2x);
+        }
+    }
 
-            @media(min-width: 1440px) {
-                .cover {
-                    background-image: url({{img_url feature_image size="3xl"}});
-                }
-            }
-        </style>
-    {{/if}}
+    @media(min-width: 1440px) {
+        .cover {
+            background-image: url({{img_url feature_image size="3xl"}});
+        }
+    }
+</style>
+{{/if}}
 
-    <section class="cover cover--post {{#if feature_image}}isCoverEnable {{else}}isCoverDisabled{{/if}}">
+<section class="cover cover--post {{#if feature_image}}isCoverEnable {{else}}isCoverDisabled{{/if}}">
 
-        {{> "cover/cover-page"}}
+    {{> "cover/cover-page"}}
 
-    </section>
+</section>
 
-    <main class='page-container' role='main'>
-        <article class='page-wrapper u-content-center'>
-            <section class='page'>
-                {{content}}
-            </section>
-        </article>
-    </main>
-
-    {{#if @labs.members}}
-        <section class="subscription">
-            {{> subscription/subscription }}
+<main class='page-container' role='main'>
+    <article class='page-wrapper u-content-center'>
+        <section class='page'>
+            {{content}}
         </section>
-    {{/if}}
+    </article>
+</main>
+
+{{#if @labs.members}}
+<section class="subscription">
+    {{> subscription/subscription }}
+</section>
+{{/if}}
 
 {{/post}}
 

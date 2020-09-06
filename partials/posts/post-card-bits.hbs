@@ -1,16 +1,18 @@
 {{#foreach posts}}
-  <article class="post-card-bit {{post_class}}">
+<article class="post-card-bit {{post_class}}">
 
     <a href="{{url}}" class="post-card-link" title="{{title}}" aria-label="{{title}}"></a>
 
     <picture class="post-card-bit__cover">
-      <img src="{{img_url feature_image size='xs'}}" srcset="{{img_url feature_image size='m'}} 2x" alt="{{title}}"
-        class="post-card-bit__image" loading="lazy">
+        <img src="{{img_url feature_image size='xs'}}" srcset="{{img_url feature_image size='m'}} 2x" alt="{{title}}"
+            class="post-card-bit__image" loading="lazy">
     </picture>
 
     <h2 class="post-card-bit__title">
-      {{title}}
+        {{title}}
     </h2>
 
-  </article>
+    {{!--  --}}
+
+</article>
 {{/foreach}}

@@ -1,118 +1,120 @@
 {{!< default }}
 
 {{#if @site.cover_image}}
-  <style type="text/css">
+<style type="text/css">
     .cover {
-      background-image: url({{img_url @site.cover_image size="s"}});
-      background-image: -webkit-image-set(url({{img_url @site.cover_image size="s"}}) 1x,
-        url({{img_url @site.cover_image size="l"}}) 2x);
-      background-image: image-set(url({{img_url @site.cover_image size="s"}}) 1x,
-        url({{img_url @site.cover_image size="l"}}) 2x);
+        background-image: url({{img_url @site.cover_image size="s"}});
+        background-image: -webkit-image-set(url({{img_url @site.cover_image size="s"}}) 1x,
+            url({{img_url @site.cover_image size="l"}}) 2x);
+        background-image: image-set(url({{img_url @site.cover_image size="s"}}) 1x,
+            url({{img_url @site.cover_image size="l"}}) 2x);
     }
 
     @media(min-width: 768px) {
-      .cover {
-        background-image: url({{img_url @site.cover_image size="l"}});
-        background-image: -webkit-image-set(url({{img_url @site.cover_image size="l"}}) 1x,
-          url({{img_url @site.cover_image size="xxl"}}) 2x);
-        background-image: image-set(url({{img_url @site.cover_image size="l"}}) 1x,
-          url({{img_url @site.cover_image size="xxl"}}) 2x);
-      }
+        .cover {
+            background-image: url({{img_url @site.cover_image size="l"}});
+            background-image: -webkit-image-set(url({{img_url @site.cover_image size="l"}}) 1x,
+                url({{img_url @site.cover_image size="xxl"}}) 2x);
+            background-image: image-set(url({{img_url @site.cover_image size="l"}}) 1x,
+                url({{img_url @site.cover_image size="xxl"}}) 2x);
+        }
     }
 
     @media(min-width: 1024px) {
-      .cover {
-        background-image: url({{img_url @site.cover_image size="xl"}});
-        background-image: -webkit-image-set(url({{img_url @site.cover_image size="xl"}}) 1x,
-          url({{img_url @site.cover_image size="3xl"}}) 2x);
-        background-image: image-set(url({{img_url @site.cover_image size="xl"}}) 1x,
-          url({{img_url @site.cover_image size="3xl"}}) 2x);
-      }
+        .cover {
+            background-image: url({{img_url @site.cover_image size="xl"}});
+            background-image: -webkit-image-set(url({{img_url @site.cover_image size="xl"}}) 1x,
+                url({{img_url @site.cover_image size="3xl"}}) 2x);
+            background-image: image-set(url({{img_url @site.cover_image size="xl"}}) 1x,
+                url({{img_url @site.cover_image size="3xl"}}) 2x);
+        }
     }
 
     @media(min-width: 1440px) {
-      .cover {
-        background-image: url({{img_url @site.cover_image size="3xl"}});
-      }
+        .cover {
+            background-image: url({{img_url @site.cover_image size="3xl"}});
+        }
     }
-  </style>
+</style>
 {{/if}}
 
 <section class="cover {{#if @site.cover_image}}isCoverEnable {{else}}isCoverDisabled{{/if}}">
 
-  {{> "cover/cover" }}
+    {{> "cover/cover" }}
 
 </section>
 
 <main id="site-main" class="site-main" role="main">
 
-  {{#get "posts" limit="5" include="tags,authors" filter="primary_tag:blog"}}
+    {{#get "posts" limit="5" include="tags,authors" filter="primary_tag:blog"}}
     <section class="site-main-container u-content-center">
-      <strong class="site-main-container__title u-font-large">Artículos</strong>
+        <strong class="site-main-container__title u-font-large">Artículos</strong>
 
-      <div class="site-main-wrapper">
+        <div class="site-main-wrapper">
 
-        {{> "posts/post-card"}}
+            {{> "posts/post-card"}}
 
 
-        <div class="site-main-wrapper__button u-margin-x-auto">
-          <a href="/blog" class="btn">Ver artículos</a>
+            <div class="site-main-wrapper__button u-margin-x-auto">
+                <a href="/blog" class="btn">Ver artículos</a>
+            </div>
         </div>
-      </div>
     </section>
-  {{/get}}
+    {{/get}}
 
-  {{#get "posts" limit="4" include="tags" filter="primary_tag:bit"}}
+    {{#get "posts" limit="4" include="tags" filter="primary_tag:bit"}}
     <section class="site-main-container site-main-container--bits">
-      <div class="site-main-container__details u-content-center">
+        <div class="site-main-container__details u-content-center">
 
-        <div class="site-main-container__info">
-          <div class="site-main-container__textBlock">
-            <strong class="site-main-container__title u-font-large">Bits</strong>
-            <p class="site-main-container__description">
-              Una colección de imágenes que explican diferentes conceptos entorno a desarrollo web. Sus principales
-              características son
-              que sean cortos, directos y fáciles de digerir, he de ahí el nombre (Bits). Es como un pequeño snack de
-              código.
-            </p>
-          </div>
+            <div class="site-main-container__info">
+                <div class="site-main-container__textBlock">
+                    <strong class="site-main-container__title u-font-large">Bits</strong>
+                    <p class="site-main-container__description">
+                        Una colección de imágenes que explican diferentes conceptos entorno a desarrollo web. Sus
+                        principales
+                        características son
+                        que sean cortos, directos y fáciles de digerir, he de ahí el nombre (Bits). Es como un pequeño
+                        snack de
+                        código.
+                    </p>
+                </div>
 
-          <div class="site-main-container__buttons">
-            <a href="/bits" class="site-main-container__button btn">Ver bits</a>
-            <a href="https://rebrand.ly/bits" class="site-main-container__button btn-alternative" target="_blank"
-              rel="noopener noreferrer"><span>
-                Ver en github
-              </span></a>
-          </div>
+                <div class="site-main-container__buttons">
+                    <a href="/bits" class="site-main-container__button btn">Ver bits</a>
+                    <a href="https://rebrand.ly/bits" class="site-main-container__button btn-alternative"
+                        target="_blank" rel="noopener noreferrer"><span>
+                            Ver en github
+                        </span></a>
+                </div>
+            </div>
+
+            <div class="site-main-wrapper site-main-wrapper--bits">
+
+                {{> "posts/post-card-bits"}}
+
+            </div>
         </div>
-
-        <div class="site-main-wrapper site-main-wrapper--bits">
-
-          {{> "posts/post-card-bits"}}
-
-        </div>
-      </div>
     </section>
-  {{/get}}
+    {{/get}}
 
-  {{#get "posts" limit="4" include="tags" filter="primary_tag:video"}}
+    {{#get "posts" limit="4" include="tags" filter="primary_tag:video"}}
     <section class="site-main-container u-content-center site-main-container--video">
-      <strong class="site-main-container__title u-font-large">Videos</strong>
+        <strong class="site-main-container__title u-font-large">Videos</strong>
 
-      <div class="site-main-wrapper site-main-wrapper--video">
+        <div class="site-main-wrapper site-main-wrapper--video">
 
-        {{> "posts/post-card"}}
+            {{> "posts/post-card"}}
 
-        <div class="site-main-wrapper__button u-margin-x-auto">
-          <a href="/videos" class="btn">Ver videos</a>
+            <div class="site-main-wrapper__button u-margin-x-auto">
+                <a href="/videos" class="btn">Ver videos</a>
+            </div>
         </div>
-      </div>
     </section>
-  {{/get}}
+    {{/get}}
 </main>
 
 {{#if @labs.members}}
-  <section class="subscription">
+<section class="subscription">
     {{> subscription/subscription }}
-  </section>
+</section>
 {{/if}}
