@@ -132,6 +132,13 @@
                 display: inline-block;
             }
         }
+
+        & h1,
+        & h2,
+        & h3,
+        & h4 {
+            line-height: 1.5;
+        }
     }
 }
 

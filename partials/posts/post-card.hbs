@@ -1,95 +1,95 @@
 {{#foreach posts}}
-  <article
+<article
     class="post-card {{post_class}} {{#has tag="video"}}post-card--video{{/has}} {{#is "videos"}}post-card--video-page{{/is}} {{#is "blog"}}post-card--blog-page{{/is}}">
 
     <a href="{{url}}" class="post-card-link" title="{{title}}" aria-label="{{title}}"></a>
 
     {{#is "index"}}
-      {{#has tag="blog"}}
-        {{#has number="1"}}
-          <picture class="post-card-cover">
-            <source srcset="{{img_url feature_image size="l"}} 1x, {{img_url feature_image size="xxl"}} 2x"
-              media="(min-width: 768px)">
+    {{#has tag="blog"}}
+    {{#has number="1"}}
+    <picture class="post-card-cover">
+        <source srcset="{{img_url feature_image size="l"}} 1x, {{img_url feature_image size="xxl"}} 2x"
+            media="(min-width: 768px)">
 
-            <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
-              media="(min-width: 425px)">
-
-            <img src="{{img_url feature_image size='xs'}}" srcset="{{img_url feature_image size='m'}} 2x"
-              alt="{{title}}" class="post-card__image post-card-image" loading="lazy">
-          </picture>
-          {{else}}
-            <picture class="post-card-cover">
-              <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
-                media="(min-width: 1200px)">
-
-              <source srcset="{{img_url feature_image size="xs"}} 1x, {{img_url feature_image size="m"}} 2x"
-                media="(min-width: 1024px)">
-
-              <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
-                media="(min-width: 425px)">
-
-              <img src="{{img_url feature_image size='xs'}}" srcset="{{img_url feature_image size='m'}} 2x"
-                alt="{{title}}" class="post-card__image post-card-image" loading="lazy">
-            </picture>
-        {{/has}}
-      {{/has}}
-
-      {{#has tag="video"}}
-        <picture class="post-card-cover">
-          <source srcset="{{img_url feature_image size="m"}} 1x, {{img_url feature_image size="xl"}} 2x"
-            media="(min-width: 1024px)">
-
-          <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
+        <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
             media="(min-width: 425px)">
 
-          <img src="{{img_url feature_image size='xs'}}" srcset="{{img_url feature_image size='m'}} 2x" alt="{{title}}"
+        <img src="{{img_url feature_image size='xs'}}" srcset="{{img_url feature_image size='m'}} 2x" alt="{{title}}"
             class="post-card__image post-card-image" loading="lazy">
-        </picture>
-      {{/has}}
+    </picture>
+    {{else}}
+    <picture class="post-card-cover">
+        <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
+            media="(min-width: 1200px)">
+
+        <source srcset="{{img_url feature_image size="xs"}} 1x, {{img_url feature_image size="m"}} 2x"
+            media="(min-width: 1024px)">
+
+        <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
+            media="(min-width: 425px)">
+
+        <img src="{{img_url feature_image size='xs'}}" srcset="{{img_url feature_image size='m'}} 2x" alt="{{title}}"
+            class="post-card__image post-card-image" loading="lazy">
+    </picture>
+    {{/has}}
+    {{/has}}
+
+    {{#has tag="video"}}
+    <picture class="post-card-cover">
+        <source srcset="{{img_url feature_image size="m"}} 1x, {{img_url feature_image size="xl"}} 2x"
+            media="(min-width: 1024px)">
+
+        <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
+            media="(min-width: 425px)">
+
+        <img src="{{img_url feature_image size='xs'}}" srcset="{{img_url feature_image size='m'}} 2x" alt="{{title}}"
+            class="post-card__image post-card-image" loading="lazy">
+    </picture>
+    {{/has}}
     {{/is}}
 
     {{#is "blog"}}
-      <picture class="post-card-cover">
+    <picture class="post-card-cover">
         <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
-          media="(min-width: 1200px)">
+            media="(min-width: 1200px)">
 
         <source srcset="{{img_url feature_image size="xs"}} 1x, {{img_url feature_image size="m"}} 2x"
-          media="(min-width: 1024px)">
+            media="(min-width: 1024px)">
 
         <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
-          media="(min-width: 425px)">
+            media="(min-width: 425px)">
 
         <img src="{{img_url feature_image size='xs'}}" srcset="{{img_url feature_image size='m'}} 2x" alt="{{title}}"
-          class="post-card__image post-card-image" loading="lazy">
-      </picture>
+            class="post-card__image post-card-image" loading="lazy">
+    </picture>
     {{/is}}
 
     {{#is "videos"}}
 
-      {{#has tag="#video-xl"}}
-        <picture class="post-card-cover">
-          <source srcset="{{img_url feature_image size="xl"}} 1x, {{img_url feature_image size="3xl"}} 2x"
+    {{#has tag="#video-xl"}}
+    <picture class="post-card-cover">
+        <source srcset="{{img_url feature_image size="xl"}} 1x, {{img_url feature_image size="3xl"}} 2x"
             media="(min-width: 1024px)">
 
-          <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
+        <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
             media="(min-width: 425px)">
 
-          <img src="{{img_url feature_image size='xs'}}" srcset="{{img_url feature_image size='m'}} 2x" alt="{{title}}"
+        <img src="{{img_url feature_image size='xs'}}" srcset="{{img_url feature_image size='m'}} 2x" alt="{{title}}"
             class="post-card__image post-card-image" loading="lazy">
-        </picture>
+    </picture>
 
-        {{else}}
-          <picture class="post-card-cover">
-            <source srcset="{{img_url feature_image size="m"}} 1x, {{img_url feature_image size="xl"}} 2x"
-              media="(min-width: 1024px)">
+    {{else}}
+    <picture class="post-card-cover">
+        <source srcset="{{img_url feature_image size="m"}} 1x, {{img_url feature_image size="xl"}} 2x"
+            media="(min-width: 1024px)">
 
-            <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
-              media="(min-width: 425px)">
+        <source srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="l"}} 2x"
+            media="(min-width: 425px)">
 
-            <img src="{{img_url feature_image size='xs'}}" srcset="{{img_url feature_image size='m'}} 2x"
-              alt="{{title}}" class="post-card__image post-card-image" loading="lazy">
-          </picture>
-      {{/has}}
+        <img src="{{img_url feature_image size='xs'}}" srcset="{{img_url feature_image size='m'}} 2x" alt="{{title}}"
+            class="post-card__image post-card-image" loading="lazy">
+    </picture>
+    {{/has}}
 
 
     {{/is}}
@@ -97,56 +97,56 @@
 
     <div class="post-card__info">
 
-      {{#has tag="blog"}}
-        <header class="post-card__header">
-          <div class="post-card__date">
-            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD.MMMYYYY"}}</time>
-          </div>
-
-          {{#if featured}}
-            <div class="post-card__feature">
-              <span class="post-card__text u-d-inline-flex">
-                Destacado
-              </span>
-            </div>
-          {{/if}}
-        </header>
-      {{/has}}
-
-      <footer class="post-card__footer {{#has tag="video"}}footer--video{{/has}}">
-        <h2 class="post-card__title u-font-h1">{{title}}</h2>
-
         {{#has tag="blog"}}
-          <div class="post-card__details">
-            <div class="post-card__author">
-              {{#primary_author}}
-                <a href="{{url}}" class="post-card__name">
-                  {{name}}
-                </a>
-              {{/primary_author}}
+        <header class="post-card__header">
+            <div class="post-card__date">
+                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD.MMMYYYY"}}</time>
             </div>
 
-            {{#if tags}}
-              {{#foreach tags from="3" limit="1"}}
-                <div class="post-card__tag">
-                  <a href="{{url}}" class="post-card__tag-container">
-                    {{name}}
-                  </a>
-                </div>
-              {{/foreach}}
+            {{#if featured}}
+            <div class="post-card__feature">
+                <span class="post-card__text u-d-inline-flex">
+                    Destacado
+                </span>
+            </div>
             {{/if}}
-          </div>
+        </header>
         {{/has}}
 
-        {{#has tag="video"}}
+        <footer class="post-card__footer {{#has tag="video"}}footer--video{{/has}}">
+            <h2 class="post-card__title u-font-h1">{{title}}</h2>
 
-          <div class="post-card__playButton">
-            {{> "icons/icon-play"}}
-          </div>
-        {{/has}}
+            {{#has tag="blog"}}
+            <div class="post-card__details">
+                <div class="post-card__author">
+                    {{#primary_author}}
+                    <a href="{{url}}" class="post-card__name">
+                        {{name}}
+                    </a>
+                    {{/primary_author}}
+                </div>
+
+                {{#if tags}}
+                {{#foreach tags from="3" limit="1"}}
+                <div class="post-card__tag">
+                    <a href="{{url}}" class="post-card__tag-container">
+                        {{name}}
+                    </a>
+                </div>
+                {{/foreach}}
+                {{/if}}
+            </div>
+            {{/has}}
+
+            {{#has tag="video"}}
+
+            <div class="post-card__playButton">
+                {{> "icons/icon-play"}}
+            </div>
+            {{/has}}
 
 
-      </footer>
+        </footer>
 
-  </article>
+</article>
 {{/foreach}}

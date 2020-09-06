@@ -5,7 +5,7 @@
     <img src="gh-static/gh-logo.png" alt="Logo">
   </a>
 
-  <h3 align="center">Fili Santillán 4.0.3</h3>
+  <h3 align="center">Fili Santillán 4.0.4</h3>
 
   <p align="center">
     Código fuente de mi sitio web
@@ -25,9 +25,13 @@
 
 <hr />
 
-¡Hola! mi nombre es Filiberto, aunque todos me suelen decir Fili. Desarrollador Frontend desde el 2015. Me encanta aprender y compartir conocimiento. En este repositorio encontrarás todo el código fuente de mi sitio web.
+¡Hola! mi nombre es Filiberto, aunque todos me suelen decir Fili. Desarrollador
+Frontend desde el 2015. Me encanta aprender y compartir conocimiento. En este
+repositorio encontrarás todo el código fuente de mi sitio web.
 
-Si quieres usar mi tema para tu blog/proyecto lo puedes hacer sin ningún problema, sería increíble que me lo hagas saber en mis [redes sociales](#%f0%9f%a4%93-aprende-algo-hoy) 🤟.
+Si quieres usar mi tema para tu blog/proyecto lo puedes hacer sin ningún
+problema, sería increíble que me lo hagas saber en mis
+[redes sociales](#%f0%9f%a4%93-aprende-algo-hoy) 🤟.
 
 ## 💻 Comandos
 
@@ -51,7 +55,8 @@ npm run dev
 
 ## 📦 Módulos
 
-Actualmente algunos botones, bloques y fragmentos de código tienen que ser puestos manualmente en cada post. Esos módulos son los siguientes:
+Actualmente algunos botones, bloques y fragmentos de código tienen que ser
+puestos manualmente en cada post. Esos módulos son los siguientes:
 
 ### Tabla de contenidos
 
@@ -76,23 +81,17 @@ Actualmente algunos botones, bloques y fragmentos de código tienen que ser pues
 ```html
 <div class="tip">
     <strong class="title">Tip</strong>
-    <p class="text">
-        Bloque para tips
-    </p>
+    <p class="text">Bloque para tips</p>
 </div>
 
 <div class="note">
     <strong class="title">Nota</strong>
-    <p class="text">
-        Bloque para notas.
-    </p>
+    <p class="text">Bloque para notas.</p>
 </div>
 
 <div class="warning">
     <strong class="title">Advertencia</strong>
-    <p class="text">
-        Bloque para advertencias.
-    </p>
+    <p class="text">Bloque para advertencias.</p>
 </div>
 ```
 
@@ -105,11 +104,14 @@ Sitio web: http://filisantillan.com
 
 ## 🤜 Contribuye
 
-Cualquier contribución es bienvenida, si crees que podrías aportar al código, manda tu PR para cualquier mejora o corrección.
+Cualquier contribución es bienvenida, si crees que podrías aportar al código,
+manda tu PR para cualquier mejora o corrección.
 
 ## 📚 Recursos
 
-En el sitio usé unos magníficos iconos con degradados, si te interesan esos iconos y quisieras ver más, lo puedes hacer en la página de [gradientify](https://www.iconshock.com/svg-icons/).
+En el sitio usé unos magníficos iconos con degradados, si te interesan esos
+iconos y quisieras ver más, lo puedes hacer en la página de
+[gradientify](https://www.iconshock.com/svg-icons/).
 
 ## 📜 Licencia
 

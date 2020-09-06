@@ -1,15 +1,18 @@
-export const infiniteScroll = (function(window, document) {
+import { shortenText } from "./shortenText";
+
+export const infiniteScroll = (function (window, document) {
     let nextElement = document.querySelector("link[rel=next]");
     if (!nextElement) {
         return;
     }
 
     const wrapperElement = document.querySelector(".site-main-wrapper");
+
     if (!wrapperElement) {
         return;
     }
 
-    const buffer = 300;
+    const buffer = 700;
 
     let ticking = false;
     let loading = false;
@@ -25,9 +28,16 @@ export const infiniteScroll = (function(window, document) {
             return;
         }
 
-        let postElements = this.response.querySelectorAll(".post-card");
+        let postElements =
+            this.response.querySelectorAll(".post-card").length !== 0
+                ? this.response.querySelectorAll(".post-card")
+                : this.response.querySelectorAll(".post-card-bit");
 
         postElements.forEach(item => {
+            const bitTitle = item.querySelector(".post-card-bit__title");
+
+            shortenText(bitTitle, 32);
+
             wrapperElement.appendChild(document.importNode(item, true));
         });
 

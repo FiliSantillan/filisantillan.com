@@ -29,6 +29,11 @@
         font-size: var(--font-size-h3);
     }
 
+    & .post-card-bit--loader  {
+        width: 100%;
+        background: red;
+    }
+
     @media (--screen-768) {
         max-width: 300px;
     }
