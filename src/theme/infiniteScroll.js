@@ -36,7 +36,9 @@ export const infiniteScroll = (function (window, document) {
         postElements.forEach(item => {
             const bitTitle = item.querySelector(".post-card-bit__title");
 
-            shortenText(bitTitle, 32);
+            if (bitTitle) {
+                shortenText(bitTitle, 25);
+            }
 
             wrapperElement.appendChild(document.importNode(item, true));
         });
