@@ -1,7 +1,7 @@
 {
     "name": "filisantillan",
     "description": "Fili Santillán: https://filisantillan.com/",
-    "version": "4.0.3",
+    "version": "4.0.5",
     "engines": {
         "ghost-api": "v3"
     },
