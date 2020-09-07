@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const titleElements = document.querySelectorAll(".post-card-bit__title");
 
     titleElements.forEach(titleElement => {
-        shortenText(titleElement, 32);
+        shortenText(titleElement, 25);
     });
 
     states();
