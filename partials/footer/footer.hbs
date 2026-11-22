@@ -25,18 +25,18 @@
                     </a>
                 </li>
 
-                {{#if @blog.twitter}}
+                {{#if @site.twitter}}
                     <li class="footer__item">
-                        <a href="{{twitter_url @blog.twitter}}" class="footer__link social-link"
+                        <a href="{{social_url type="twitter"}}" class="footer__link social-link"
                             rel="noopener noreferrer" target="_blank" title="Twitter" aria-label="Twitter">
                             {{> icons/icon-twitter }}
                         </a>
                     </li>
                 {{/if}}
 
-                {{#if @blog.facebook}}
+                {{#if @site.facebook}}
                     <li class="footer__item">
-                        <a href="{{facebook_url @blog.facebook}}" class="footer__link social-link"
+                        <a href="{{social_url type="facebook"}}" class="footer__link social-link"
                             rel="noopener noreferrer" target="_blank" title="Facebook" aria-label="Facebook">
                             {{> icons/icon-facebook }}
                         </a>
