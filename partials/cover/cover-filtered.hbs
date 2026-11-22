@@ -25,14 +25,14 @@
         <div class="cover__social">
 
             {{#if facebook}}
-                <a href="{{facebook_url}}" class="cover__link" rel="noopener noreferrer" target="_blank"
+                <a href="{{social_url type="facebook"}}" class="cover__link" rel="noopener noreferrer" target="_blank"
                     title="Facebook" aria-label="Facebook">
                     {{> icons/icon-facebook fill="#FFFFFF" }}
                 </a>
             {{/if}}
 
             {{#if twitter}}
-                <a href="{{twitter_url}}" class="cover__link" rel="noopener noreferrer" target="_blank" title="Twitter"
+                <a href="{{social_url type="twitter"}}" class="cover__link" rel="noopener noreferrer" target="_blank" title="Twitter"
                     aria-label="Twitter">
                     {{> icons/icon-twitter fill="#FFFFFF" }}
                 </a>
